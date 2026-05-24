@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\Core.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\LambdaFunction.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedObject.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedProcess.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedReference.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedService.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedWeakReference.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\MetricsManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ObjectUpdateToDatabaseTask.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\RunStatistics.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\Task.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TaskManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TaskManagerImpl.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TaskPriorityQueue.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TaskQueue.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TaskScheduler.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TaskWorkerThread.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TimedTaskQueue.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\util\ManagedSortedVector.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\util\ManagedVector.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\util\ManagedVectorMap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\dbo\ObjectDatabase.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\BerkeleyDatabase.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\BTransaction.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\CheckpointConfig.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\Cursor.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\CursorConfig.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\DatabaseConfig.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\DatabaseEntry.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\Environment.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\EnvironmentConfig.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\TransactionConfig.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\BinaryData.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\Database.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\DatabaseException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\DatabaseManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\IndexDatabase.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\LocalDatabase.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\mysql\MysqlDatabaseManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\ObjectDatabase.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\ObjectDatabaseManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\ResultSet.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\engine.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\log\Logger.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\log\LoggerHelperStream.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\lua\Lua.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\lua\LuaCallbackException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\lua\LuaFunction.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\lua\LuaObject.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\lua\LuaPanicException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\lua\Luna.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\lua\Lunar.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\control\ControlMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\control\ObjectBrokerAgent.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\control\ObjectBrokerDirector.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\control\ObjectBrokerTable.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\control\StateUpdateMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\CommitMasterTransactionThread.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\DestroyFromRamObjectsTask.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\DistributedObjectDirectory.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\DistributedObjectMap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\DOBObjectManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\ObjectDatabaseGarbageCollector.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\UpdateModifiedObjectsTask.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\UpdateModifiedObjectsThread.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\DistributedObjectBroker.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\DistributionException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\DeployObjectMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\DOBMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\DOBMessageFactory.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\DOBServiceClient.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\DOBServiceHandler.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\GetNextFreeObjectIDMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\InvokeMethodMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\LoadPersistentObjectMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\LookUpObjectByIDMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\LookUpObjectMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\RemoteObjectBroker.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\RequestServantMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\SendObjectDataMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\UndeployObjectMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\UpdatePersistentObjectMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\NameAlreadyBoundException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\NamingDirectoryService.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\ObjectBroker.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedMethod.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedObject.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedObjectAdapter.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedObjectClassHelper.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedObjectClassHelperMap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedObjectPOD.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedObjectServant.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedObjectStub.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\ObjectAlreadyDeployedException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\ObjectNotDeployedException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\ObjectNotLocalException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\DatagramServiceClient.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\DatagramServiceClientProxy.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\DatagramServiceThread.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\Message.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\MessageQueue.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\AbstractProtocol.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseClient.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseClientProxy.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseClientStats.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseFragmentedPacket.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseMultiPacket.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BasePacket.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BasePacketHandler.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseProtocol.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\AcknowledgeTask.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\BaseClientCleanupEvent.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\BaseClientEvent.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\BaseClientHealthEvent.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\BaseClientNetStatusCheckupEvent.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\BaseClientNetStatusRequestEvent.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\BasePacketChekupEvent.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\DisconnectTask.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\NetStatusResponseTask.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\OutOfOrderTask.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\SessionResponseTask.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\SessionStartTask.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\PacketHandler.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\AcknowledgeMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\AcknowledgeOkMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\ConnectionServerMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\DisconnectMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\ErrorMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\LoginServerMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\NetStatusRequestMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\NetStatusResponseMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\OutOfOrderMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\PingMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\SessionIDRequestMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\packets\SessionIDResponseMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\StandaloneBaseMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceClient.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceClientMap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceFilter.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceHandler.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceMessageHandlerThread.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceProcessor.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceThread.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\StreamServiceClient.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\StreamServiceClientProxy.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\StreamServiceThread.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\SynchronizedMessageQueue.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\algos\FraserSTM.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\algos\STMAlgorithm.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\mm\HazardPointer.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\mm\KernelCall.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\mm\TransactionalObjectCloner.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\orb\LocalObjectManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\orb\TransactionalObjectManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\service\TransactionalBaseClientManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\service\TransactionalSocketManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\task\LocalTaskManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\task\TransactionalTaskManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\Transaction.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\TransactionAbortedException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\TransactionalMemoryManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\TransactionalObjectHandle.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\TransactionalObjectHeader.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\TransactionalReference.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\TransactionalWeakReference.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\bytell_hash_map.hpp" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\Command.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\Facade.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\flat_hash_map.hpp" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\chunks\Chunk.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\chunks\data\Data.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\chunks\form\Form.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\exceptions.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\exceptions\IffStreamException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\exceptions\InvalidChunkTypeException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\exceptions\InvalidFileTypeException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\exceptions\NoChunksException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\exceptions\NoOpenedChunkException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\IffStream.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\json.hpp" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\JSONSerializationType.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\json_utils.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\lru\LRUCache.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\lru\lru_cache.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\lru\lru_cache_using_engine3.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\lru\lru_cache_using_std.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\lru\lru_cache_using_std_c98.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\lru\SynchronizedLRUCache.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\ObjectContainer.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\ObjectFactory.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\Observable.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\Observer.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\ObserverEventMap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\ResourcePool.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\Singleton.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\AABB.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\AABBNode.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\AABBTree.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\AStarAlgorithm.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\BasicOcTree.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\BasicOcTreeNode.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\BasicQuadTree.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\BasicQuadTreeNode.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Coordinate.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Funnel.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Matrix3.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Matrix4.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\OcTreeEntryInterface.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\QuadTreeEntryInterface.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Quaternion.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Ray.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Segment.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Sphere.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Triangle.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\TriangleNode.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\TriangulationAStarAlgorithm.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Vector3.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Vector4.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\unordered_map.hpp" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\BufferedReader.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\File.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\FileDescriptor.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\FileInputStream.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\FileLogWriter.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\FileNotFoundException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\FileOutputStream.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\FileReader.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\FileWriter.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\InputStream.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\IOException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\IOHandler.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\IOProcessor.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\ObjectInputStream.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\ObjectOutputStream.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\OutputStream.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\Pipe.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\Reader.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\Serializable.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\Stream.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\StreamIndexOutOfBoundsException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\StringTokenizer.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\TextStream.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\UnicodeTokenizer.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\Writer.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\ArrayIndexOutOfBoundsException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\BaseTypeVariable.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Bool.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Byte.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Character.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\ConstString.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\DivisionByZeroException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Double.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Exception.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Float.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Function.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\IllegalArgumentException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\IllegalStateException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Integer.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Long.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Math.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\mersenne\MersenneTwister.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\NumberFormatException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Object.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\OutOfMemoryError.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Pair.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\ref\Reference.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\ref\ReferenceCounter.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\ref\StrongAndWeakReferenceCount.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\ref\UniqueReference.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\ref\WeakReference.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Runnable.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Short.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\SignalException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\StackTrace.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\String.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\StringBuffer.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\System.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Time.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\types.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\UnicodeString.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Variable.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Variant.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\variant.hpp" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\AllocationHook.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\AllocationReplacement.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\AllocationTracker.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\Allocator.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\DLAllocator.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\Heap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\MemoryManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\MemoryMappedFile.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\MultimapMemoryManager.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\ObjectCloner.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\ProcessHeap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\ProtectedHeap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\PTAllocator.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\InetAddress.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\NetworkInterface.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\Packet.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\PacketIndexOutOfBoundsException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\Socket.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\SocketAddress.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\SocketException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\TCPServerSocket.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\TCPSocket.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\UDPServerSocket.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\UDPSocket.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\platform.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\security\Crypto.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\atomic\AtomicBoolean.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\atomic\AtomicInteger.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\atomic\AtomicLong.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\atomic\AtomicReference.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\atomic\AtomicTime.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\ChildProcess.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Condition.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\DeadlockException.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Lockable.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Locker.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Mutex.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Process.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\ReadLocker.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\ReadWriteLock.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Thread.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\ThreadLocal.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\ArrayList.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\ArrayQueue.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\BinaryHeap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\BinarySearchTree.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\HashSet.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\HashTable.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\Iterator.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\LinkedList.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\MPSCNode.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\MPSCQueue.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\Optional.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\optional.hpp" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\PriorityQueue.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\SortedVector.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\StaticMap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\SynchronizedHashTable.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\SynchronizedLinkedList.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\SynchronizedSortedVector.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\SynchronizedVector.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\SynchronizedVectorMap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\TickTimer.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\Timer.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\Vector.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\VectorMap.h" />
+    <ClInclude Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\VectorSet.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\Core.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedObject.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedObjectImplementation.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedProcess.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedService.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\MetricsManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ObjectUpdateToDatabaseTask.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\RunStatistics.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\Task.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TaskManagerImpl.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TaskQueue.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TaskScheduler.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TaskWorkerThread.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\TimedTaskQueue.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\util\ManagedVector.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\BerkeleyDatabase.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\BTransaction.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\Cursor.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\DatabaseEntry.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\berkeley\Environment.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\BinaryData.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\DatabaseManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\IndexDatabase.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\LocalDatabase.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\mysql\MysqlDatabaseManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\ObjectDatabase.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\db\ObjectDatabaseManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\log\Logger.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\lua\Lua.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\lua\LuaFunction.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\lua\LuaObject.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\control\ObjectBrokerAgent.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\control\ObjectBrokerDirector.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\CommitMasterTransactionThread.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\DistributedObjectDirectory.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\DOBObjectManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\ObjectDatabaseGarbageCollector.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\db\UpdateModifiedObjectsThread.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\DistributedObjectBroker.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\DeployObjectMessage.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\DOBMessage.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\DOBMessageFactory.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\DOBServiceClient.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\DOBServiceHandler.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\GetNextFreeObjectIDMessage.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\InvokeMethodMessage.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\RemoteObjectBroker.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\RequestServantMessage.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\messages\SendObjectDataMessage.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\NamingDirectoryService.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedMethod.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedObject.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedObjectServant.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\orb\object\DistributedObjectStub.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\DatagramServiceClient.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\DatagramServiceClientProxy.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\DatagramServiceThread.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\MessageQueue.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseClient.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseClientProxy.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseFragmentedPacket.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseMultiPacket.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BasePacket.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BasePacketHandler.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\BaseProtocol.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\proto\events\BasePacketChekupEvent.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceClient.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceMessageHandlerThread.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\ServiceThread.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\StreamServiceClient.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\StreamServiceThread.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\service\SynchronizedMessageQueue.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\algos\FraserSTM.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\mm\KernelCall.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\orb\LocalObjectManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\orb\TransactionalObjectManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\service\TransactionalBaseClientManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\service\TransactionalSocketManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\task\LocalTaskManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\task\TransactionalTaskManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\Transaction.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\stm\TransactionalMemoryManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\Facade.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\chunks\Chunk.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\chunks\form\Form.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\iffstream\IffStream.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\json_utils.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\Observable.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\Observer.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\ObserverEventMap.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\ObserverImplementation.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\AABBTree.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\BasicOcTree.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\BasicQuadTree.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Funnel.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Matrix4.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Segment.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Sphere.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\Triangle.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\util\u3d\TriangulationAStarAlgorithm.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\BufferedReader.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\File.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\FileDescriptor.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\FileLogWriter.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\IOProcessor.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\Pipe.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\Serializable.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\Stream.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\StringTokenizer.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\TextStream.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\io\UnicodeTokenizer.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\ArrayIndexOutOfBoundsException.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\ConstString.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Exception.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Integer.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Math.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\mersenne\MersenneTwister.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Object.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\StackTrace.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\String.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\StringBuffer.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\System.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\Time.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\types.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\lang\UnicodeString.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\AllocationHook.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\AllocationReplacement.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\AllocationTracker.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\DLAllocator.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\Heap.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\MemoryManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\MemoryMappedFile.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\MultimapMemoryManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\ProcessHeap.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\ProtectedHeap.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\mm\PTAllocator.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\InetAddress.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\NetworkInterface.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\Packet.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\Socket.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\net\SocketAddress.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\security\Crypto.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\ChildProcess.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Lockable.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Mutex.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Process.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\ReadWriteLock.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Thread.cpp" />
+    <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\PriorityQueue.cpp" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{51e69088-bc53-4e6d-8e81-87df0ecaa3b7}</ProjectGuid>
+    <RootNamespace>engine3</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_TIMESPEC_DEFINED;__x86_64__;_DEBUG;_LIB</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>..\MMOCoreORB\utils\engine3\MMOEngine\src;$(SolutionDir)libs\pthreads\include;$(SolutionDir)libs\db\include;$(SolutionDir)libs\lua\include;$(SolutionDir)libs\boost;$(SolutionDir)libs\zlib\include;$(SolutionDir)libs\openssl\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>engine3idlc.bat</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Compile the IDL files first</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_TIMESPEC_DEFINED;__x86_64__;_DEBUG;_LIB</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>..\MMOCoreORB\utils\engine3\MMOEngine\src;$(SolutionDir)libs\pthreads\include;$(SolutionDir)libs\db\include;$(SolutionDir)libs\lua\include;$(SolutionDir)libs\boost;$(SolutionDir)libs\zlib\include;$(SolutionDir)libs\openssl\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>engine3idlc.bat</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Compile the IDL files first</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_TIMESPEC_DEFINED;__x86_64__;_DEBUG;_LIB</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>..\MMOCoreORB\utils\engine3\MMOEngine\src;$(SolutionDir)libs\pthreads\include;$(SolutionDir)libs\db\include;$(SolutionDir)libs\lua\include;$(SolutionDir)libs\boost;$(SolutionDir)libs\zlib\include;$(SolutionDir)libs\openssl\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>engine3idlc.bat</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Compile the IDL files first</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_TIMESPEC_DEFINED;__x86_64__;_DEBUG;_LIB</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>..\MMOCoreORB\utils\engine3\MMOEngine\src;$(SolutionDir)libs\pthreads\include;$(SolutionDir)libs\db\include;$(SolutionDir)libs\lua\include;$(SolutionDir)libs\boost;$(SolutionDir)libs\zlib\include;$(SolutionDir)libs\openssl\include</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+    </ClCompile>
+    <Link>
+      <SubSystem>
+      </SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>engine3idlc.bat</Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>Compile the IDL files first</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -107,7 +107,7 @@ public:
 				trx.commit();
 			}
 		} else {
-			TransactionLog trx(player, TrxCode::TRAVELSYSTEM, false);
+			TransactionLog trx(player, TrxCode::TRAVELSYSTEM, static_cast<uint32>(0), false);
 			trx.addState("departurePlanet", departurePlanet);
 			trx.addState("departurePoint", departurePoint);
 			trx.addState("arrivalPlanet", arrivalPlanet);
