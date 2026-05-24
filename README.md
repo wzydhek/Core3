@@ -1,3 +1,11 @@
+# SWGEmu Core3 Win32 Fork
+
+I created this fork for those that prefer windows machines and Visual Studio. The base repro only compiles completely and runs on linux. I have created a Visual Studio solution and projects for core3 and engine3. The solution and project files are in the Core3/win32. The debugging working directory is swg directory within the win32 directory. Within the swg directory I have duplicated all the configs and scripts that are found in Core3/MMOOCoreORB/bin.
+
+There is also a libs directory off of win32 with an empty directory structure. You will need to provide include and win32library files for boost, db5 (berkeley db), googlemock, googletest, lua, mysql, openssl, pthreads (pthreads4w) and zlib. For boost, googlemock and googletest, only the source/include files are needed, no win32 libs.
+
+You will also need to set up MySql Community Server on your machine. settings for mysql connection are in the swg/conf/config.lua file. once the database user and database have been added to mysql, you will need to run the sql query file swgemu.sql located in MMOCoreORB/sql to create all the tables needed.
+
 # SWGEmu Core3: Recreating the Classic Star Wars Galaxies Experience
 
 ## What is SWGEmu?
