@@ -19,7 +19,7 @@
 #include "conf/ConfigManager.h"
 #include "engine/orb/db/UpdateModifiedObjectsThread.h"
 #include "engine/orb/db/CommitMasterTransactionThread.h"
-
+#include "server/zone/managers/ship/SpaceSpawn.h"
 
 using namespace engine::db;
 

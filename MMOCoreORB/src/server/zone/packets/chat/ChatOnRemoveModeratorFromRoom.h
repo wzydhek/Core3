@@ -9,6 +9,8 @@
 #define CHATONREMOVEMODERATORFROMROOM_H_
 
 #include "engine/service/proto/BaseMessage.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/ZoneServer.h"
 
 class ChatOnRemoveModeratorFromRoom : public BaseMessage {
 public:

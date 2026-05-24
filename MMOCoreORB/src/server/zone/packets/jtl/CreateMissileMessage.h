@@ -10,6 +10,7 @@
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/ship/ShipObject.h"
+#include "server/zone/managers/spacecombat/projectile/ShipMissile.h"
 
 class CreateMissileMessage : public BaseMessage {
 	enum PlayerMissileType : int {

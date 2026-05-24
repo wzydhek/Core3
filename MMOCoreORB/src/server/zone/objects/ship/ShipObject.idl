@@ -44,7 +44,8 @@ include engine.util.u3d.Vector3;
 include server.chat.StringIdChatParameter;
 include server.zone.objects.ship.transform.ShipObjectTransform;
 include server.zone.objects.ship.transform.SpaceTransform;
-
+include server.zone.objects.ship.components.ShipComponent;
+include server.zone.objects.tangible.ship.interiorComponents.ShipInteriorComponent;
 
 class ShipObject extends TangibleObject {
 	public static final int HYPERSPACE_DELAY = 40;

@@ -8,7 +8,7 @@
 #include "engine/engine.h"
 #include "engine/lua/LuaObject.h"
 #include <cassert>
-#include "server/zone/objects/ship/ai/btspace/BlackboardDataSpace.h"
+#include "BlackboardDataSpace.h"
 #include "BehaviorTreeSlotSpace.h"
 
 #define _ARGPAIR(bigT, getter)                                                \

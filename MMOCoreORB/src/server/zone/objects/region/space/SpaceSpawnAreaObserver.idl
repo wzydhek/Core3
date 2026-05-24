@@ -10,6 +10,7 @@ import engine.util.Observable;
 include server.zone.objects.region.space.SpaceSpawnArea;
 include engine.log.Logger;
 import engine.core.ManagedObject;
+include server.zone.managers.ship.SpaceSpawn;
 
 @json
 class SpaceSpawnAreaObserver extends Observer implements Logger {

@@ -21,6 +21,7 @@ import server.zone.managers.vendor.VendorManager;
 import server.zone.managers.minigames.FishingManager;
 import server.zone.managers.minigames.GamblingManager;
 import server.zone.managers.minigames.ForageManager;
+import server.zone.objects.tangible.terminal.gambling.GamblingTerminal;
 
 @dirty
 class ZoneProcessServer extends ManagedService {

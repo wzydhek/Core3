@@ -19,7 +19,6 @@
 #include "server/zone/managers/collision/CollisionManager.h"
 #include "server/zone/managers/collision/IntersectionResults.h"
 #include "server/zone/managers/objectcontroller/ObjectController.h"
-#include "server/zone/Zone.h"
 #include "server/zone/SpaceZone.h"
 
 class DataTransform : public ObjectControllerMessage {

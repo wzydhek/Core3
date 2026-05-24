@@ -17,6 +17,7 @@
 #include "server/zone/managers/spacecombat/SpaceCombatManager.h"
 #include "server/zone/managers/spacecombat/projectile/ShipMissile.h"
 #include "server/zone/managers/spacecombat/projectile/ShipCountermeasure.h"
+#include "server/zone/ZoneServer.h"
 
 class CreateProjectileMessage : public BaseMessage {
 private:

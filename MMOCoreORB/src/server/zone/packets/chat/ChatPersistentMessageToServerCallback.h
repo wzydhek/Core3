@@ -17,6 +17,8 @@
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/objects/region/CitizenList.h"
 #include "server/zone/packets/chat/ChatOnSendPersistentMessage.h"
+#include "server/zone/managers/player/PlayerManager.h"
+#include "server/zone/objects/player/PlayerObject.h"
 
 class ChatPersistentMessageToServerCallback : public MessageCallback {
 	UnicodeString header;

@@ -9,6 +9,8 @@
 #define CHATONUNINVITEFROMROOM_H_
 
 #include "engine/service/proto/BaseMessage.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/ZoneServer.h"
 
 class ChatOnUninviteFromRoom : public BaseMessage {
 public:

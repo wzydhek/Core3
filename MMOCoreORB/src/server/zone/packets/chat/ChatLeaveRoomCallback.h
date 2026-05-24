@@ -11,6 +11,7 @@
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class ChatLeaveRoomCallback : public MessageCallback {
 

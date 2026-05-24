@@ -87,9 +87,6 @@ public:
 		swap(*this, in);
 	}
 
-	friend void swap(BlackboardData& a, BlackboardData& b) {
-		std::swap(a.data, b.data);
-	}
 
 	BlackboardData& operator=(BlackboardData in) {
 		swap(*this, in);
@@ -112,7 +109,12 @@ public:
 	void set(T&& in) {
 		data.reset(new Data<BlackboardType<T>>(std::forward<T>(in)));
 	}
+	friend void swap(BlackboardData& a, BlackboardData& b);
 };
+inline void swap(BlackboardData& a, BlackboardData& b) {
+	using std::swap;
+	swap(a.data, b.data);
+}
 
 // template specializations to avoid passing BlackboardData into the input ctor
 template <>

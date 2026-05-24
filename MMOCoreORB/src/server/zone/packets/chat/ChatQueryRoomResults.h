@@ -10,6 +10,7 @@
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/chat/room/ChatRoom.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class ChatQueryRoomResults : public BaseMessage {
 public:

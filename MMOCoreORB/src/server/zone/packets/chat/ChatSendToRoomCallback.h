@@ -10,6 +10,7 @@
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
+#include "server/zone/ZoneServer.h"
 
 class ChatSendToRoomCallback : public MessageCallback {
 	UnicodeString chatMessage;

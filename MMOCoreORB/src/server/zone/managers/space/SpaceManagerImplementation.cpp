@@ -12,7 +12,6 @@
 #include "server/zone/ZoneProcessServer.h"
 #include "server/zone/managers/collision/CollisionManager.h"
 #include "server/zone/managers/object/ObjectManager.h"
-#include "server/zone/managers/object/ObjectManager.h"
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 #include "conf/ConfigManager.h"
 #include "templates/datatables/DataTableIff.h"

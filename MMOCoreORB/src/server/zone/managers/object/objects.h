@@ -48,7 +48,6 @@
 #include "server/zone/objects/tangible/Instrument.h"
 #include "server/zone/objects/tangible/consumable/Food.h"
 #include "server/zone/objects/tangible/consumable/Drink.h"
-#include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/cell/CellObject.h"
 #include "server/zone/objects/staticobject/AsteroidObject.h"

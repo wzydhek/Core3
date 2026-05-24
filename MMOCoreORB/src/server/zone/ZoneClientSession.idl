@@ -17,6 +17,7 @@ include system.util.SynchronizedVectorMap;
 include server.zone.objects.scene.variables.PendingTasksMap;
 include server.zone.objects.scene.variables.OrderedTaskExecutioner;
 include engine.log.Logger;
+import server.zone.objects.area.ActiveArea;
 
 @dirty
 class ZoneClientSession extends ManagedObject {

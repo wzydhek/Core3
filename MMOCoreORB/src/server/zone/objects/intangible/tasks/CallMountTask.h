@@ -10,6 +10,7 @@
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/intangible/ControlDevice.h"
+#include "server/zone/objects/intangible/VehicleControlDevice.h"
 
 class CallMountTask : public Task {
 	ManagedReference<CreatureObject*> player;

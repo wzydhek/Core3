@@ -25,7 +25,7 @@
 #include "server/zone/Zone.h"
 
 #include "server/zone/objects/creature/commands/JediQueueCommand.h"
-
+#include "server/zone/objects/tangible/terminal/gambling/GamblingTerminal.h"
 #include "server/zone/objects/creature/commands/ActionShot1Command.h"
 #include "server/zone/objects/creature/commands/ActionShot2Command.h"
 #include "server/zone/objects/creature/commands/ActivateCloneCommand.h"

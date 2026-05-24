@@ -135,7 +135,11 @@ void ZoneClientSessionImplementation::startPacketLogging(const String& playerNam
 		return;
 	}
 
+#ifdef PLATFORM_WIN
+	mkdir("log/packets");
+#else
 	mkdir("log/packets", 0755);
+#endif
 
 	Time now;
 

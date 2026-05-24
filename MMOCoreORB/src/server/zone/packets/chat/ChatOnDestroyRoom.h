@@ -5,6 +5,7 @@
 #ifndef CHATONDESTROYROOM_H_
 #define CHATONDESTROYROOM_H_
 
+#include "engine/service/proto/BaseMessage.h"
 class ChatOnDestroyRoom : public BaseMessage {
 public:
 

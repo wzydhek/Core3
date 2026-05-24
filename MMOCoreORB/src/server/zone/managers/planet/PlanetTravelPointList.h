@@ -40,11 +40,11 @@ public:
 
 		int totalPoints = size();
 
-#ifdef PLATFORM_WIN
-		char* incomingAllowed = (char*) _malloca(totalPoints);
-#else
+//#ifdef PLATFORM_WIN
+//		char* incomingAllowed = (char*) _malloca(totalPoints);
+//#else
 		Vector<bool> incomingAllowed;
-#endif
+//#endif
 		int insertionPoints = totalPoints;
 
 		for (int i = 0; i < totalPoints; ++i) {
@@ -108,9 +108,9 @@ public:
 				message->insertByte((byte) VectorMap<String, Reference<PlanetTravelPoint*> >::get(i)->isInterplanetary());
 		}
 
-#ifdef PLATFORM_WIN
-		_freea(incomingAllowed);
-#endif
+//#ifdef PLATFORM_WIN
+//		_freea(incomingAllowed);
+//#endif
 
 		runlock();
 	}

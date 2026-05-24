@@ -7,6 +7,8 @@
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/chat/room/ChatRoom.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/ZoneServer.h"
 
 class ChatOnCreateRoom : public BaseMessage {
 public:
