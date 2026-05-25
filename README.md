@@ -6,6 +6,8 @@ There is also a libs directory off of win32 with an empty directory structure. Y
 
 You will also need to set up MySql Community Server on your machine. Settings for mysql connection are in the swg/conf/config.lua file. Once the database user and database have been added to mysql, you will need to run the sql query file swgemu.sql located in MMOCoreORB/sql to create all the tables needed.
 
+All the source code modifications affect only win32 builds, or are still directly linux compatible. The changes were minor. So this repro can be compiled under either platform and continues to work fine, except a minor issue I am still trying to track down regarding a hang when destroying some Reference Object variables during shutdown process.
+
 # SWGEmu Core3: Recreating the Classic Star Wars Galaxies Experience
 
 ## What is SWGEmu?
