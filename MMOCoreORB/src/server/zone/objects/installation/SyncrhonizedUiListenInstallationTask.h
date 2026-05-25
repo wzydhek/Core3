@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SYNCRHONIZEDUILISTENHARVESTERTASK_H_
-#define SYNCRHONIZEDUILISTENHARVESTERTASK_H_
+#pragma once
 
 #include "server/zone/objects/installation/InstallationObject.h"
 
@@ -55,5 +54,3 @@ public:
 }
 
 using namespace server::zone::objects::installation;
-
-#endif /* SyncrhonizedUiListenInstallationTask_H_ */

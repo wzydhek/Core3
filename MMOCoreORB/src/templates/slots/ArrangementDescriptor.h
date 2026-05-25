@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef ARRANGEMENTDESCRIPTOR_H_
-#define ARRANGEMENTDESCRIPTOR_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 
@@ -57,5 +56,3 @@ public:
 		return arrangementSlots;
 	}
 };
-
-#endif /* ARRANGEMENTDESCRIPTOR_H_ */

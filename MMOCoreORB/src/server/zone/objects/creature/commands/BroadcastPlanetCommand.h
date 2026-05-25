@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BROADCASTPLANETCOMMAND_H_
-#define BROADCASTPLANETCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/managers/player/PlayerMap.h"
@@ -159,5 +158,3 @@ public:
 	}
 
 };
-
-#endif //BROADCASTPLANETCOMMAND_H_

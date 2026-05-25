@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SURRENDERSKILLCOMMAND_H_
-#define SURRENDERSKILLCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/skill/SkillManager.h"
 
@@ -30,5 +29,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // SURRENDERSKILLCOMMAND_H_

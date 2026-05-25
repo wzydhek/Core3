@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GRANTSKILLCOMMAND_H_
-#define GRANTSKILLCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/skill/SkillManager.h"
@@ -59,5 +58,3 @@ public:
 	}
 
 };
-
-#endif //GRANTSKILLCOMMAND_H_

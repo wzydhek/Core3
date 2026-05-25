@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ADDFRIENDCOMMAND_H_
-#define ADDFRIENDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/chat/StringIdChatParameter.h"
@@ -84,5 +83,3 @@ public:
 	}
 
 };
-
-#endif //ADDFRIENDCOMMAND_H_

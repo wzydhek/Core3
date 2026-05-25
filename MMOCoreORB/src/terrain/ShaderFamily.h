@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHADERFAMILY_H_
-#define SHADERFAMILY_H_
+#pragma once
 
 #include "TemplateVariable.h"
 
@@ -61,6 +60,3 @@ public:
 		iffStream->closeChunk('SFAM');
 	}
 };
-
-
-#endif /* SHADERFAMILY_H_ */

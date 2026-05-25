@@ -1,5 +1,4 @@
-#ifndef AUCTIONSEARCHTASK_H_
-#define AUCTIONSEARCHTASK_H_
+#pragma once
 
 #include "server/zone/managers/auction/AuctionManager.h"
 
@@ -68,5 +67,3 @@ public:
 }
 }
 }
-
-#endif /* AUCTIONSEARCHTASK_H_ */

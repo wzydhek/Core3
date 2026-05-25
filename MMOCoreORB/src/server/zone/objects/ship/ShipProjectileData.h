@@ -2,8 +2,7 @@
 // Created by vagrant on 8/23/17.
 //
 
-#ifndef CORE3_SHIPPROJECTILEDATA_H_H
-#define CORE3_SHIPPROJECTILEDATA_H_H
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
@@ -84,4 +83,3 @@ public:
 	}
 
 };
-#endif //CORE3_SHIPPROJECTILEDATA_H_H

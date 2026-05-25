@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ONLINEZONECLIENTMAP_H_
-#define ONLINEZONECLIENTMAP_H_
+#pragma once
 
 #include "server/zone/ZoneClientSession.h"
 #include "server/db/ServerDatabase.h"
@@ -124,5 +123,3 @@ private:
 	}
 #endif // !WITH_SWGREALMS_API
 };
-
-#endif /* ONLINEZONECLIENTMAP_H_ */

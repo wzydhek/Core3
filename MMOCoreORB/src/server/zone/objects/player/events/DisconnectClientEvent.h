@@ -5,12 +5,12 @@
  *      Author: oru
  */
 
-#ifndef DISCONNECTCLIENTEVENT_H_
-#define DISCONNECTCLIENTEVENT_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
+
 #ifdef WITH_SWGREALMS_API
-#include "server/login/SWGRealmsAPI.h"
+	#include "server/login/SWGRealmsAPI.h"
 #endif // WITH_SWGREALMS_API
 
 class DisconnectClientEvent : public Task {
@@ -79,6 +79,3 @@ public:
 
 
 };
-
-
-#endif /* DISCONNECTCLIENTEVENT_H_ */

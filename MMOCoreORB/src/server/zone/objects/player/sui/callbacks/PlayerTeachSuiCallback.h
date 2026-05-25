@@ -5,8 +5,7 @@
  *      Author: katherine
  */
 
-#ifndef PLAYERTEACHSUICALLBACK_H_
-#define PLAYERTEACHSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -47,6 +46,3 @@ public:
 		playerManager->offerTeaching(teacher, student, skill);
 	}
 };
-
-
-#endif /* PLAYERTEACHSUICALLBACK_H_ */

@@ -5,8 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef CHATONREMOVEMODERATORFROMROOM_H_
-#define CHATONREMOVEMODERATORFROMROOM_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -35,5 +34,3 @@ public:
 	}
 
 };
-
-#endif /*CHATONREMOVEMODERATORFROMROOM_H_*/

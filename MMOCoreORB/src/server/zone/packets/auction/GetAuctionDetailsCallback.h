@@ -5,12 +5,10 @@
  *      Author: victor
  */
 
-#ifndef GETAUCTIONDETAILSCALLBACK
-#define GETAUCTIONDETAILSCALLBACK
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/auction/AuctionManager.h"
-
 
 class GetAuctionDetailsCallback : public MessageCallback {
 	uint64 objectid;
@@ -38,5 +36,3 @@ public:
 	}
 
 };
-
-#endif

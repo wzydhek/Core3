@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef SHAREDSTRUCTUREOBJECTTEMPLATE_H_
-#define SHAREDSTRUCTUREOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -118,5 +117,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* SHAREDSTRUCTUREOBJECTTEMPLATE_H_ */

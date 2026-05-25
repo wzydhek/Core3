@@ -5,12 +5,9 @@
  *      Author: victor
  */
 
-#ifndef PLANETTRAVELPOINTLISTREQUESTCALLBACK_H_
-#define PLANETTRAVELPOINTLISTREQUESTCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-
 #include "server/zone/managers/planet/PlanetManager.h"
 #include "PlanetTravelPointListResponse.h"
 #include "server/zone/Zone.h"
@@ -55,6 +52,3 @@ public:
 		planetManager->sendPlanetTravelPointListResponse(object);
 	}
 };
-
-
-#endif /* PLANETTRAVELPOINTLISTREQUESTCALLBACK_H_ */

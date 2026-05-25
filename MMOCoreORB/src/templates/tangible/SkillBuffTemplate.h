@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef SKILLBUFFTEMPLATE_H_
-#define SKILLBUFFTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -68,6 +67,3 @@ public:
 	}
 
 };
-
-
-#endif /* SKILLBUFFTEMPLATE_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TEMPLATEDATA_H_
-#define TEMPLATEDATA_H_
+#pragma once
 
 #include "system/lang/Object.h"
 
@@ -18,5 +17,3 @@ public:
 
 	}
 };
-
-#endif /* TEMPLATEDATA_H_ */

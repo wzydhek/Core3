@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CHATDELETEPERSISTENTMESSAGECALLBACK_H_
-#define CHATDELETEPERSISTENTMESSAGECALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
@@ -36,6 +34,3 @@ public:
 	}
 
 };
-
-
-#endif /* CHATDELETEPERSISTENTMESSAGECALLBACK_H_ */

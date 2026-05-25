@@ -5,8 +5,8 @@
  *      Author: root
  */
 
-#ifndef DEFAULTDROIDATTACKCOMMAND_H_
-#define DEFAULTDROIDATTACKCOMMAND_H_
+#pragma once
+
 #include "CombatQueueCommand.h"
 
 class DefaultDroidAttackCommand : public CombatQueueCommand {
@@ -28,9 +28,3 @@ public:
 	}
 
 };
-
-
-
-
-
-#endif /* DEFAULTDROIDATTACKCOMMAND_H_ */

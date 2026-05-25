@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MULTITARGETSHOTCOMMAND_H_
-#define MULTITARGETSHOTCOMMAND_H_
+#pragma once
 
 class MultiTargetShotCommand : public CombatQueueCommand {
 public:
@@ -24,5 +23,3 @@ public:
 	}
 
 };
-
-#endif //MULTITARGETSHOTCOMMAND_H_

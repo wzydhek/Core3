@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef LUASUICALLBACK_H_
-#define LUASUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -23,5 +22,3 @@ public:
 
 	void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args);
 };
-
-#endif /* LUASUICALLBACK_H_ */

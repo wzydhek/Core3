@@ -1,6 +1,5 @@
 
-#ifndef PETMENUCOMPONENT_H_
-#define PETMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 
@@ -26,6 +25,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* PETMENUCOMPONENT_H_ */

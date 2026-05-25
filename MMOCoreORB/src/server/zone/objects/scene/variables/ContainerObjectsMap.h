@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CONTAINEROBJECTSMAP_H_
-#define CONTAINEROBJECTSMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "system/thread/atomic/AtomicTime.h"
@@ -120,5 +119,3 @@ namespace server {
 }
 
 using namespace server::zone::objects::scene;
-
-#endif /* CONTAINEROBJECTSMAP_H_ */

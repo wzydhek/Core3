@@ -5,8 +5,7 @@
  *      Author: GSlomin
  */
 
-#ifndef INTERIORLAYOUTTEMPLATE_H_
-#define INTERIORLAYOUTTEMPLATE_H_
+#pragma once
 
 class InteriorNode : public Object {
 	Matrix4 transform;
@@ -86,5 +85,3 @@ public:
 		return children;
 	}
 };
-
-#endif /* INTERIORLAYOUTTEMPLATE_H_ */

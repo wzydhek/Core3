@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLIENTPROXY_H_
-#define CLIENTPROXY_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/service/proto/events/BaseClientEvent.h"
@@ -19,5 +18,3 @@ public:
 #endif
 	}
 };
-
-#endif // CLIENTPROXY_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INFORMANTMISSIONSCREENHANDLER_H_
-#define INFORMANTMISSIONSCREENHANDLER_H_
+#pragma once
 
 #include "ScreenHandler.h"
 #include "server/zone/objects/mission/MissionObject.h"
@@ -44,5 +43,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::creature::conversation::screenhandlers;
-
-#endif /* INFORMANTMISSIONSCREENHANDLER_H_ */

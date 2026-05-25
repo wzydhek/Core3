@@ -2,13 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OBJECTMANAGER_H_
-#define OBJECTMANAGER_H_
+#pragma once
 
 #include "server/zone/ZoneProcessServer.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
-
 #include "SceneObjectFactory.h"
 
 class TemplateManager;
@@ -151,5 +148,3 @@ namespace zone {
 }
 
 using namespace server::zone::managers::object;
-
-#endif /*OBJECTMANAGER_H_*/

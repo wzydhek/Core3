@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORAGEAREACOLLECTION_H_
-#define FORAGEAREACOLLECTION_H_
+#pragma once
 
 #include "ForageArea.h"
 #include "server/zone/managers/minigames/events/ForageCleanupEvent.h"
@@ -82,5 +81,3 @@ public:
 	}
 
 };
-
-#endif /*FORAGEAREACOLLECTION_H_*/

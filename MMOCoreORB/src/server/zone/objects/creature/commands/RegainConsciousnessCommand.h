@@ -2,15 +2,12 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REGAINCONSCIOUSNESSCOMMAND_H_
-#define REGAINCONSCIOUSNESSCOMMAND_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/managers/player/PlayerManager.h"
-
 #include "server/zone/objects/creature/buffs/PrivateBuff.h"
 #include "server/zone/objects/creature/buffs/PrivateSkillMultiplierBuff.h"
-
 #include "JediQueueCommand.h"
 
 class RegainConsciousnessCommand : public JediQueueCommand {
@@ -96,5 +93,3 @@ public:
 	}
 
 };
-
-#endif //REGAINCONSCIOUSNESSCOMMAND_H_

@@ -2,8 +2,7 @@
  * DroidDatapadContainerComponent.h
  */
 
-#ifndef DROIDDATAPADCONTAINERCOMPONENT_H_
-#define DROIDDATAPADCONTAINERCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
@@ -17,5 +16,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* DROIDDATAPADCONTAINERCOMPONENT_H_ */

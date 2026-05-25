@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef VENDORCREATURETEMPLATE_H_
-#define VENDORCREATURETEMPLATE_H_
+#pragma once
 
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 
@@ -122,5 +121,3 @@ public:
 	}
 
 };
-
-#endif /* VENDORCREATURETEMPLATE_H_ */

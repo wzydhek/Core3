@@ -70,4 +70,5 @@ namespace server {
 
 }
 }
+
 #endif // WITH_REST_API

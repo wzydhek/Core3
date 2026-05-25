@@ -1,6 +1,5 @@
 
-#ifndef PETFOLLOWCOMMAND_H_
-#define PETFOLLOWCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
@@ -115,5 +114,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* PETFOLLOWCOMMAND_H_ */

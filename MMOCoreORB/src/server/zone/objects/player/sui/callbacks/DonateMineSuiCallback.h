@@ -5,8 +5,7 @@
  *  Author: Hakry
  */
 
-#ifndef DONATEMINESUICALLBACK_H_
-#define DONATEMINESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/gcw/GCWManager.h"
@@ -78,5 +77,3 @@ public:
 		minefield->broadcastObject(mine, false);
 	}
 };
-
-#endif /* DONATEMINESUICALLBACK_H_ */

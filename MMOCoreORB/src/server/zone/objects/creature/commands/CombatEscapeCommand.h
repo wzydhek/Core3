@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMBATESCAPECOMMAND_H_
-#define COMBATESCAPECOMMAND_H_
+#pragma once
 
 class CombatEscapeCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //COMBATESCAPECOMMAND_H_

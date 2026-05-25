@@ -1,12 +1,9 @@
 
-#ifndef SPAWNPOINTINAREACOMMAND_H
-#define SPAWNPOINTINAREACOMMAND_H
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
-
 #include "server/zone/managers/collision/PathFinderManager.h"
 
 class SpawnPointInAreaCommand {
@@ -43,5 +40,3 @@ public:
 		player->sendSystemMessage("Syntax: /server spawnpointinarea radius");
 	}
 };
-
-#endif //SPAWNPOINTINAREACOMMAND_H

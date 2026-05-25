@@ -1,6 +1,5 @@
 
-#ifndef DESPAWNDYNAMICSPAWNTASK_H_
-#define DESPAWNDYNAMICSPAWNTASK_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -24,6 +23,3 @@ public:
 
 	}
 };
-
-
-#endif /* DESPAWNDYNAMICSPAWNTASK_H_ */

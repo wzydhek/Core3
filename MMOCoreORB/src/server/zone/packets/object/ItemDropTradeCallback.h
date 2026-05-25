@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ITEMDROPTRADECALLBACK_H_
-#define ITEMDROPTRADECALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/packets/trade/BeginTradeMessage.h"
@@ -155,5 +154,3 @@ public:
 			targetPlayer->sendMessage(msg2);
 	}
 };
-
-#endif /* ITEMDROPTRADECALLBACK_H_ */

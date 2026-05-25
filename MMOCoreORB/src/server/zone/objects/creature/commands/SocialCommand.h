@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SOCIALCOMMAND_H_
-#define SOCIALCOMMAND_H_
+#pragma once
 
 class SocialCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SOCIALCOMMAND_H_

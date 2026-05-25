@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CHECKAUCTIONSTASK_H_
-#define CHECKAUCTIONSTASK_H_
+#pragma once
 
 #include "server/zone/managers/auction/AuctionManager.h"
 
@@ -35,5 +34,3 @@ public:
 		strongRef->checkVendorItems();
 	}
 };
-
-#endif /* CHECKAUCTIONSTASK_H_ */

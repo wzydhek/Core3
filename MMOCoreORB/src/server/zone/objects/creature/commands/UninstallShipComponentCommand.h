@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UNINSTALLSHIPCOMPONENTCOMMAND_H_
-#define UNINSTALLSHIPCOMPONENTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/ship/ShipObject.h"
 
@@ -54,5 +53,3 @@ public:
 	}
 
 };
-
-#endif //UNINSTALLSHIPCOMPONENTCOMMAND_H_

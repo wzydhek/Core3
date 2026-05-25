@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SESSIONFACADETYPE_H_
-#define SESSIONFACADETYPE_H_
+#pragma once
 
 class SessionFacadeType {
 public:
@@ -43,5 +42,3 @@ public:
 	};
 
 };
-
-#endif /* SESSIONFACADETYPES_H_ */

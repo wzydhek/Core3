@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef SQUADLEADERCOMMAND_H_
-#define SQUADLEADERCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 #include "server/zone/objects/group/GroupObject.h"
@@ -198,5 +197,3 @@ public:
 		this->action = action;
 	}
 };
-
-#endif /* SQUADLEADERCOMMAND_H_ */

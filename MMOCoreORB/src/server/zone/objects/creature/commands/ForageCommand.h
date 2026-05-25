@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORAGECOMMAND_H_
-#define FORAGECOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/minigames/ForageManager.h"
 
@@ -36,5 +35,3 @@ public:
 	}
 
 };
-
-#endif //FORAGECOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DELTABASICVARIABLE_H_
-#define DELTABASICVARIABLE_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -95,5 +94,3 @@ public:
 		return object;
 	}
 };
-
-#endif /* DELTAVARIABLE_H_ */

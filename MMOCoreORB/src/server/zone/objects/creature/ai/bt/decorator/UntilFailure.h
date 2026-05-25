@@ -1,8 +1,6 @@
-#ifndef UNTILFAILURE_H_
-#define UNTILFAILURE_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/decorator/Decorator.h"
-
 #include <cassert>
 
 namespace server {
@@ -42,5 +40,3 @@ public:
 }
 }
 }
-
-#endif // UNTILFAILURE_H_

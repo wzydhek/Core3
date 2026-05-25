@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHANGEBANDMUSICCOMMAND_H_
-#define CHANGEBANDMUSICCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/tangible/Instrument.h"
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
@@ -169,5 +168,3 @@ public:
 	}
 
 };
-
-#endif //CHANGEBANDMUSICCOMMAND_H_

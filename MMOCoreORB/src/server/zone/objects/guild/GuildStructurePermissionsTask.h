@@ -5,8 +5,7 @@
  *	By: Hakry
  */
 
-#ifndef GUILDSTRUCTUREPERMISSIONSTASK_H_
-#define GUILDSTRUCTUREPERMISSIONSTASK_H_
+#pragma once
 
 #include "server/zone/objects/guild/GuildObject.h"
 #include "server/zone/objects/building/BuildingObject.h"
@@ -56,5 +55,3 @@ public:
 		}
 	}
 };
-
-#endif /* GUILDSTRUCTUREPERMISSIONSTASK_H_ */

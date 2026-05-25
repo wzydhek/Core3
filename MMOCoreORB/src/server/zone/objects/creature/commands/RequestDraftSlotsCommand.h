@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTDRAFTSLOTSCOMMAND_H_
-#define REQUESTDRAFTSLOTSCOMMAND_H_
+#pragma once
 
 class RequestDraftSlotsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTDRAFTSLOTSCOMMAND_H_

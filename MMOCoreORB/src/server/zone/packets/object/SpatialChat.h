@@ -2,11 +2,9 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef SPATIALCHAT_H_
-#define SPATIALCHAT_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
-
 #include "server/chat/StringIdChatParameter.h"
 
 class SpatialChat: public ObjectControllerMessage {
@@ -76,5 +74,3 @@ public:
 		setCompression(true);
 	}
 };
-
-#endif /*SPATIALCHAT_H_*/

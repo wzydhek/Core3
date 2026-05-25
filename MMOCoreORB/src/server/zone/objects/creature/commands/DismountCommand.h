@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DISMOUNTCOMMAND_H_
-#define DISMOUNTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/intangible/ControlDevice.h"
@@ -259,5 +258,3 @@ public:
 		}, "RemoveGallopModsLambda");
 	}
 };
-
-#endif // DISMOUNTCOMMAND_H_

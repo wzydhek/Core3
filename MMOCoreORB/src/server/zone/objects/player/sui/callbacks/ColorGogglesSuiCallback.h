@@ -5,11 +5,9 @@
  *      Author: Kyle
  */
 
-#ifndef COLORGOGGLESSUICALLBACK_H_
-#define COLORGOGGLESSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
-
 
 class ColorGogglesSuiCallback : public SuiCallback {
 	String nodeName;
@@ -47,5 +45,3 @@ public:
 		}
 	}
 };
-
-#endif /* AREATRACKSUICALLBACK_H_ */

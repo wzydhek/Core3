@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SPLITCREDITSWITHGROUPCOMMAND_H_
-#define SPLITCREDITSWITHGROUPCOMMAND_H_
+#pragma once
 
 class SplitCreditsWithGroupCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SPLITCREDITSWITHGROUPCOMMAND_H_

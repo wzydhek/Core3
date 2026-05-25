@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TRADECOMPLETEMESSAGE_H_
-#define TRADECOMPLETEMESSAGE_H_
+#pragma once
 
 class TradeCompleteMessage : public BaseMessage {
 public:
@@ -12,5 +11,3 @@ public:
 		insertInt(0xC542038B);
 	}
 };
-
-#endif /*TRADECOMPLETEMESSAGE_H_*/

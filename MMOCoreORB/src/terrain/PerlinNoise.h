@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PERLINNOISE_H_
-#define PERLINNOISE_H_
+#pragma once
 
 #include "system/platform.h"
 
@@ -191,5 +190,3 @@ public:
 	}
 
 };
-
-#endif /* PERLINNOISE_H_ */

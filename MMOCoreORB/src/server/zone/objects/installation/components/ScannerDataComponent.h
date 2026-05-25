@@ -5,8 +5,8 @@
  *      Author: root
  */
 
-#ifndef SCANNERDATACOMPONENT_H_
-#define SCANNERDATACOMPONENT_H_
+#pragma once
+
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
 class ScannerDataComponent : public DataObjectComponent, public Logger {
@@ -42,10 +42,3 @@ public:
 		return true;
 	}
 };
-
-
-
-
-
-
-#endif /* SCANNERDATACOMPONENT_H_ */

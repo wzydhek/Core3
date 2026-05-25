@@ -1,5 +1,4 @@
-#ifndef BLACKBOARDDATASPACE_H_
-#define BLACKBOARDDATASPACE_H_
+#pragma once
 
 #include <type_traits>
 #include <utility>
@@ -134,5 +133,3 @@ inline BlackboardDataSpace::BlackboardDataSpace(BlackboardDataSpace&& in) : Blac
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // BLACKBOARDDATASPACE_H_

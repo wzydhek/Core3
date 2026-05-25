@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FILTERSLOPE_H_
-#define FILTERSLOPE_H_
-
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "FilterProceduralRule.h"
@@ -119,5 +117,3 @@ public:
 	}
 
 };
-
-#endif /* FILTERSLOPE_H_ */

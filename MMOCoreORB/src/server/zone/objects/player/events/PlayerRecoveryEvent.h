@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYERRECOVERYEVENT_H_
-#define PLAYERRECOVERYEVENT_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 
@@ -61,5 +60,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::player::events;
-
-#endif /*PLAYERRECOVERYEVENT_H_*/

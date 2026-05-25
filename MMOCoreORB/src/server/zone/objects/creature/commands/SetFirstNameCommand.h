@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETFIRSTNAMECOMMAND_H_
-#define SETFIRSTNAMECOMMAND_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/objects/creature/commands/QueueCommand.h"
@@ -85,5 +84,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // SETFIRSTNAMECOMMAND_H_

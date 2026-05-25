@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef INTVECTORDELTAVECTOR_H_
-#define INTVECTORDELTAVECTOR_H_
+#pragma once
 
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 
@@ -34,6 +33,3 @@ public:
 }
 
 using namespace server::zone::objects::manufactureschematic::variables;
-
-
-#endif /* INTVECTORDELTAVECTOR_H_ */

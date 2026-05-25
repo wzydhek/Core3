@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TAUNTCOMMAND_H_
-#define TAUNTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
@@ -79,5 +78,3 @@ public:
 		return res;
 	}
 };
-
-#endif // TAUNTCOMMAND_H_

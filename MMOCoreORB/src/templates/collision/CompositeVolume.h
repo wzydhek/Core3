@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef COMPOSITEVOLUME_H_
-#define COMPOSITEVOLUME_H_
+#pragma once
 
 #include "BaseBoundingVolume.h"
 
@@ -25,5 +24,3 @@ public:
 	virtual osg::ref_ptr<osg::Node> draw() const;
 #endif
 };
-
-#endif /* COMPOSITEVOLUME_H_ */

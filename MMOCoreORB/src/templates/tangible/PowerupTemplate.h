@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef POWERUPTEMPLATE_H_
-#define POWERUPTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "templates/tangible/PowerupStat.h"
@@ -132,5 +131,3 @@ public:
 		}
 	}
 };
-
-#endif /* POWERUPTEMPLATE_H_ */

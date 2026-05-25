@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INTANGIBLEOBJECTMESSAGE3_H_
-#define INTANGIBLEOBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/intangible/IntangibleObject.h"
@@ -38,5 +37,3 @@ public:
 	}
 
 };
-
-#endif /*INTANGIBLEOBJECTMESSAGE3_H_*/

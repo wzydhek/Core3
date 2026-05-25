@@ -1,6 +1,5 @@
 
-#ifndef DROIDCOMMANDDATA_H_
-#define DROIDCOMMANDDATA_H_
+#pragma once
 
 namespace server {
 namespace zone {
@@ -83,5 +82,3 @@ public:
 }
 }
 }
-
-#endif /* DROIDCOMMANDDATA_H_ */

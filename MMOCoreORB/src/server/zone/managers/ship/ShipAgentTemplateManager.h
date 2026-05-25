@@ -5,8 +5,7 @@
  *  Author: Hakry
  */
 
-#ifndef ShipAgentTemplateManager_H_
-#define ShipAgentTemplateManager_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/ShipAgentTemplate.h"
 #include "server/zone/objects/ship/ai/SpacePatrolPoint.h"
@@ -74,5 +73,3 @@ public:
 } // namespace server
 
 using namespace server::zone::managers::ship;
-
-#endif /* ShipAgentTemplateManager_H_ */

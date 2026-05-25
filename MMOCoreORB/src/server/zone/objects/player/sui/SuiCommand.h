@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef SUICOMMAND_H_
-#define SUICOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -93,5 +92,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* SUICOMMAND_H_ */

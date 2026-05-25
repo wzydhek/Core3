@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETINTIMIDATECOMMAND_H_
-#define SETINTIMIDATECOMMAND_H_
+#pragma once
 
 class SetIntimidateCommand : public QueueCommand {
 public:
@@ -63,5 +62,3 @@ public:
 	}
 
 };
-
-#endif //SETINTIMIDATECOMMAND_H_

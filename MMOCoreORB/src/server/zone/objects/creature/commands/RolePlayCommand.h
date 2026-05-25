@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ROLEPLAYCOMMAND_H_
-#define ROLEPLAYCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 
@@ -35,5 +34,3 @@ public:
 	}
 
 };
-
-#endif //ROLEPLAYCOMMAND_H_

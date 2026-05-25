@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FRIENDLIST_H_
-#define FRIENDLIST_H_
+#pragma once
 
 #include "PlayerList.h"
 
@@ -147,5 +146,3 @@ public:
 	}
 
 };
-
-#endif /* FRIENDLIST_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef WEAPONRANGES_H_
-#define WEAPONRANGES_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
@@ -23,5 +22,3 @@ public:
 	}
 
 };
-
-#endif /* WEAPONRANGES_H_ */

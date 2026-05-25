@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef CREATEOBJECTTASK_H_
-#define CREATEOBJECTTASK_H_
+#pragma once
 
 #include "server/zone/objects/transaction/TransactionLog.h"
 
@@ -62,5 +61,3 @@ public:
 		craftingTool->setFinished();
 	}
 };
-
-#endif /*CREATEOBJECTTASK_H_*/

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef FORCEMEDITATECOMMAND_H_
-#define FORCEMEDITATECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/events/ForceMeditateTask.h"
 
@@ -62,5 +61,3 @@ public:
 	}
 
 };
-
-#endif //FORCEMEDITATECOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTCRAFTINGSESSIONCOMMAND_H_
-#define REQUESTCRAFTINGSESSIONCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/tool/CraftingTool.h"
@@ -139,5 +138,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // REQUESTCRAFTINGSESSIONCOMMAND_H_

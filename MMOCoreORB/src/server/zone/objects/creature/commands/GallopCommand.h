@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GALLOPCOMMAND_H_
-#define GALLOPCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/buffs/GallopBuff.h"
@@ -101,5 +100,3 @@ public:
 	}
 
 };
-
-#endif //GALLOPCOMMAND_H_

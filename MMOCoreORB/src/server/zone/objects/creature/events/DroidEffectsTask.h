@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DROIDEFFECTSTASK_H_
-#define DROIDEFFECTSTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/DroidObject.h"
 #include "server/zone/objects/tangible/components/droid/DroidEffectsModuleDataComponent.h"
@@ -85,5 +84,3 @@ public:
 } // server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /*DROIDEFFECTSTASK_H_*/

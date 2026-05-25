@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef EMPTYHOPPERCALLBACK_H_
-#define EMPTYHOPPERCALLBACK_H_
+#pragma once
 
 #include "ObjectControllerMessageCallback.h"
 #include "GenericResponse.h"
@@ -162,6 +161,3 @@ public:
 		//if (byte1 == 0 && player->getInventory()->getUnequippedItemCount() >= InventoryImplementation::MAXUNEQUIPPEDCOUNT)
 	}
 };
-
-
-#endif /* EMPTYHOPPERCALLBACK_H_ */

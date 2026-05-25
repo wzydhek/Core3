@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef DONATEDEFENSESUICALLBACK_H_
-#define DONATEDEFENSESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/gcw/GCWManager.h"
@@ -60,5 +59,3 @@ public:
 		gcwMan->performDefenseDonation(building, player, objectid);
 	}
 };
-
-#endif /* DONATEDEFENSESUICALLBACK_H_ */

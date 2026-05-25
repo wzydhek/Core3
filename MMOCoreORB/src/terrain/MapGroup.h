@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef MAPGROUP_H_
-#define MAPGROUP_H_
+#pragma once
 
 #include "MapFractal.h"
 #include "MapFamily.h"
@@ -65,7 +64,3 @@ public:
 
 
 };
-
-
-
-#endif /* MAPGROUP_H_ */

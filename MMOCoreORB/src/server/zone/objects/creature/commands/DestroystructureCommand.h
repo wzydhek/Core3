@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DESTROYSTRUCTURECOMMAND_H_
-#define DESTROYSTRUCTURECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/structure/StructureObject.h"
@@ -116,5 +115,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //DESTROYSTRUCTURECOMMAND_H_

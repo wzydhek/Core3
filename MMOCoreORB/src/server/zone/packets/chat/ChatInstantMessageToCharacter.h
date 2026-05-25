@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATINSTANTMESSAGETOCHARACTER_H_
-#define CHATINSTANTMESSAGETOCHARACTER_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
@@ -73,5 +72,3 @@ public:
 }
 
 using namespace server::zone::packets::chat;
-
-#endif /*CHATINSTANTMESSAGETOCHARACTER_H_*/

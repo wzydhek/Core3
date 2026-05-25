@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef VERIFYTRADEMESSAGECALLBACK_H_
-#define VERIFYTRADEMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -46,6 +45,3 @@ public:
 	}
 
 };
-
-
-#endif /* VERIFYTRADEMESSAGECALLBACK_H_ */

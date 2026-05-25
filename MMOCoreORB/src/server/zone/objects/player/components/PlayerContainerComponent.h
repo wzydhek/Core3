@@ -5,6 +5,8 @@
  *      Author: victor
  */
 
+#pragma once
+
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
 class PlayerContainerComponent : public ContainerComponent {

@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef ENTERTAININGSESSIONTASK_H_
-#define ENTERTAININGSESSIONTASK_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
 
 namespace server {
@@ -44,5 +42,3 @@ public:
 }
 
 using namespace server::zone::objects::player::events;
-
-#endif /* ENTERTAININGSESSIONTASK_H_ */

@@ -1,6 +1,5 @@
 
-#ifndef REMOVEPETSFROMGROUPTASK_H_
-#define REMOVEPETSFROMGROUPTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
@@ -65,7 +64,3 @@ public:
 		}
 	}
 };
-
-
-
-#endif /* REMOVEPETSFROMGROUPTASK_H_ */

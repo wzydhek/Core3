@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef GIVEMONEYMESSAGECALLBACK_H_
-#define GIVEMONEYMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -46,6 +45,3 @@ public:
 	}
 
 };
-
-
-#endif /* GIVEMONEYMESSAGECALLBACK_H_ */

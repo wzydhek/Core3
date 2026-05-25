@@ -5,11 +5,9 @@
  *      Author: Halyn
  */
 
-#ifndef DROIDPROGRAMMINGCHIPSUICALLBACK_H_
-#define DROIDPROGRAMMINGCHIPSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
-
 
 class DroidProgrammingChipSuiCallback : public SuiCallback {
 public:
@@ -71,5 +69,3 @@ public:
 		creature->sendSystemMessage("@space/space_interaction:memory_chip_burnt");
 	}
 };
-
-#endif /* DROIDPROGRAMMINGCHIPSUICALLBACK_H_ */

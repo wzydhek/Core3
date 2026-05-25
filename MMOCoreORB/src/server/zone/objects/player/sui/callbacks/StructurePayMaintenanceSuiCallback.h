@@ -5,14 +5,12 @@
  *      Author: cRush
  */
 
-#ifndef STRUCTUREPAYMAINTENANCESUICALLBACK_H_
-#define STRUCTUREPAYMAINTENANCESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/structure/StructureObject.h"
 #include "server/zone/managers/structure/StructureManager.h"
-
 
 class StructurePayMaintenanceSuiCallback : public SuiCallback {
 public:
@@ -51,5 +49,3 @@ public:
 		StructureManager::instance()->payMaintenance(structure, creature, amount);
 	}
 };
-
-#endif /* STRUCTUREPAYMAINTENANCESUICALLBACK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OPTIONBITMASK_H_
-#define OPTIONBITMASK_H_
+#pragma once
 
 class OptionBitmask {
 public:
@@ -40,5 +39,3 @@ public:
 		LOCKED               = 0x10000000,
 	};
 };
-
-#endif /*OptionBitmask_H_*/

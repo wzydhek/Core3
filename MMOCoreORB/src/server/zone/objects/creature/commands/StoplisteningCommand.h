@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STOPLISTENINGCOMMAND_H_
-#define STOPLISTENINGCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/player/PlayerManager.h"
 
@@ -35,5 +34,3 @@ public:
 	}
 
 };
-
-#endif //STOPLISTENINGCOMMAND_H_

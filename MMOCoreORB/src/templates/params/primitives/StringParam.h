@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef STRINGPARAM_H_
-#define STRINGPARAM_H_
+#pragma once
 
 #include "templates/params/TemplateBase.h"
 
@@ -76,5 +75,3 @@ public:
 		return value;
 	}
 };
-
-#endif /* STRINGPARAM_H_ */

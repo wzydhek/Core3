@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef HARVESTERSETUPSHAREDNETWORKMESSAGE_H_
-#define HARVESTERSETUPSHAREDNETWORKMESSAGE_H_
+#pragma once
 
 #include "server/zone/packets/object/ObjectControllerMessage.h"
 #include "server/zone/objects/installation/InstallationObject.h"
@@ -18,5 +17,3 @@ public:
 
 	}
 };
-
-#endif /* HARVESTERSETUPSHAREDNETWORKMESSAGE_H_ */

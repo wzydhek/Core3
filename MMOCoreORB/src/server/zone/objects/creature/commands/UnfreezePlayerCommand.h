@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UNFREEZEPLAYERCOMMAND_H_
-#define UNFREEZEPLAYERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "templates/params/creature/CreatureState.h"
@@ -85,5 +84,3 @@ public:
 	}
 
 };
-
-#endif //UNFREEZEPLAYERCOMMAND_H_

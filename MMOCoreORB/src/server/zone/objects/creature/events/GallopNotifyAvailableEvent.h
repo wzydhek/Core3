@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GALLOPNOTIFYAVAILABLEEVENT_H_
-#define GALLOPNOTIFYAVAILABLEEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -32,5 +31,3 @@ public:
 	}
 
 };
-
-#endif /*GALLOPNOTIFYAVAILABLEEVENT_H_*/

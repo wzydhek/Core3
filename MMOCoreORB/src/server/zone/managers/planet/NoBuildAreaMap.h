@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NOBUILDAREAMAP_H_
-#define NOBUILDAREAMAP_H_
+#pragma once
 
 #include "server/zone/objects/region/Region.h"
 
@@ -35,4 +34,3 @@ public:
 		return false;
 	}
 };
-#endif /* NOBUILDAREAMAP_H_ */

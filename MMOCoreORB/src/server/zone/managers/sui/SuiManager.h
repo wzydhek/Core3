@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SUIMANAGER_H_
-#define SUIMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiPageData.h"
 #include "server/zone/ZoneProcessServer.h"
@@ -69,7 +68,3 @@ namespace server {
 }
 
 using namespace server::zone::managers::sui;
-
-
-
-#endif /*SUIMANAGER_H_*/

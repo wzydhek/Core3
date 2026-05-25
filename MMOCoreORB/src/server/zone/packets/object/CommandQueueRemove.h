@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMMANDQUEUEREMOVE_H_
-#define COMMANDQUEUEREMOVE_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -53,5 +52,3 @@ public:
 	}
 
 };
-
-#endif /*COMMANDQUEUEREMOVE_H_*/

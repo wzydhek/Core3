@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef SHAREDSTATICOBJECTTEMPLATE_H_
-#define SHAREDSTATICOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedObjectTemplate.h"
-
 #include "building/SharedBuildingObjectTemplate.h"
 
 class SharedStaticObjectTemplate : public SharedBuildingObjectTemplate {
@@ -72,6 +70,3 @@ public:
 	}
 
 };
-
-
-#endif /* SHAREDSTATICOBJECTTEMPLATE_H_ */

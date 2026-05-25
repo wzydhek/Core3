@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef REPAIRVEHICLESUICALLBACK_H_
-#define REPAIRVEHICLESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/VehicleObject.h"
@@ -83,5 +82,3 @@ public:
 
 	}
 };
-
-#endif /* REPAIRVEHICLESUICALLBACK_H_ */

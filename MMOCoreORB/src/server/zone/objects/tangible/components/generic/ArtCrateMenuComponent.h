@@ -5,8 +5,7 @@
  *      Author: elvaron
  */
 
-#ifndef ARTCRATEMENUCOMPONENT_H_
-#define ARTCRATEMENUCOMPONENT_H_
+#pragma once
 
 #include "../TangibleObjectMenuComponent.h"
 
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* ARTCRATEMENUCOMPONENT_H_ */

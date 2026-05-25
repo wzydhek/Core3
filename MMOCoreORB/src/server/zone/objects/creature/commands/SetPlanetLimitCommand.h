@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETPLANETLIMITCOMMAND_H_
-#define SETPLANETLIMITCOMMAND_H_
+#pragma once
 
 class SetPlanetLimitCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETPLANETLIMITCOMMAND_H_

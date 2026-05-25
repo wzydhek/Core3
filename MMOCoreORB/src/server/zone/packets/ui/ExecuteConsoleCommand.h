@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef EXECUTECONSOLECOMMAND_H_
-#define EXECUTECONSOLECOMMAND_H_
+#pragma once
 
 class ExecuteConsoleCommand : public BaseMessage {
 public:
@@ -19,5 +18,3 @@ public:
    }
 
 };
-
-#endif /* EXECUTECONSOLECOMMAND_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GMCREATESPECIFICRESOURCECOMMAND_H_
-#define GMCREATESPECIFICRESOURCECOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/resource/ResourceManager.h"
 
@@ -33,5 +32,3 @@ public:
 	}
 
 };
-
-#endif //GMCREATESPECIFICRESOURCECOMMAND_H_

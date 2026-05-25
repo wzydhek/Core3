@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef STARTDANCECOMMAND_H_
-#define STARTDANCECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -81,5 +80,3 @@ public:
 	}
 
 };
-
-#endif //STARTDANCECOMMAND_H_

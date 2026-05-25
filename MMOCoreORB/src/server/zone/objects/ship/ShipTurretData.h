@@ -1,5 +1,4 @@
-#ifndef SHIPTURRETDATA_H_
-#define SHIPTURRETDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
@@ -97,5 +96,3 @@ public:
 		maxPitch = maxP;
 	}
 };
-
-#endif //SHIPTURRETDATA_H_

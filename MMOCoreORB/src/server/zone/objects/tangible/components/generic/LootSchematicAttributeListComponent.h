@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef LOOTSCHEMATICATTIBUTELISTCOMPONENT_H_
-#define LOOTSCHEMATICATTIBUTELISTCOMPONENT_H_
+#pragma once
 
 #include "templates/tangible/LootSchematicTemplate.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif /* ATTIBUTELISTCOMPONENT_H_ */

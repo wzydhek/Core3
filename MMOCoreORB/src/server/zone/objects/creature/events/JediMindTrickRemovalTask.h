@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef JEDIMINDTRICKREMOVALTASK_H_
-#define JEDIMINDTRICKREMOVALTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/intangible/PetControlDevice.h"
@@ -83,5 +82,3 @@ public:
 } // server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /*JediMindTrickRemovalTask_H_*/

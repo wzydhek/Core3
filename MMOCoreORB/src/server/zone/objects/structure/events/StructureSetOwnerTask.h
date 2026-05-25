@@ -1,6 +1,5 @@
 
-#ifndef STRUCTURESETOWNERTASK_H_
-#define STRUCTURESETOWNERTASK_H_
+#pragma once
 
 #include "server/zone/objects/structure/StructureObject.h"
 
@@ -23,5 +22,3 @@ public:
 		structure->setOwner(newOwnerID);
 	}
 };
-
-#endif /* STRUCTURESETOWNERTASK_H_ */

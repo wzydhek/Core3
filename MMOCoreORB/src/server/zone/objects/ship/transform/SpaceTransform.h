@@ -1,5 +1,4 @@
-#ifndef SPACETRANSFORM_H_
-#define SPACETRANSFORM_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -68,5 +67,3 @@ public:
 		return msg.toString();
 	}
 };
-
-#endif // SPACETRANSFORM_H_

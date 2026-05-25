@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYERMAP_H_
-#define PLAYERMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -50,6 +49,3 @@ public:
 }
 
 using namespace server::zone::managers::player;
-
-
-#endif /*PLAYERMAPIMPLEMENTATION_H_*/

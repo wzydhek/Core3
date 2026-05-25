@@ -1,5 +1,4 @@
-#ifndef FIELDFACTIONCHANGESUICALLBACK_H_
-#define FIELDFACTIONCHANGESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/FactionStatus.h"
@@ -73,5 +72,3 @@ public:
 		}
 	}
 };
-
-#endif /* FIELDFACTIONCHANGESUICALLBACK_H_ */

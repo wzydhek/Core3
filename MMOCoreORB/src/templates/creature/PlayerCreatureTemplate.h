@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef PLAYERCREATURETEMPLATE_H_
-#define PLAYERCREATURETEMPLATE_H_
+#pragma once
 
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 #include "templates/customization/CustomizationDataMap.h"
@@ -63,5 +62,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* PLAYERCREATURETEMPLATE_H_ */

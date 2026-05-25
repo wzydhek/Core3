@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OBJECTCONTROLLERMESSAGE_H_
-#define OBJECTCONTROLLERMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -23,7 +22,3 @@ public:
 	}
 
 };
-
-
-#endif /*OBJECTCONTROLLERMESSAGE_H_*/
-

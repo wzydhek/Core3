@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FACTORYCRATEOBJECTDELTAMESSAGE3_H_
-#define FACTORYCRATEOBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/factorycrate/FactoryCrate.h"
@@ -22,5 +21,3 @@ public:
 		addIntUpdate(7, quantity);
 	}
 };
-
-#endif /*FACTORYCRATEOBJECTDELTAMESSAGE3_H_*/

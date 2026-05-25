@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMBATACTION_H_
-#define COMBATACTION_H_
+#pragma once
 
 #include "StandaloneObjectControllerMessage.h"
 #include "server/zone/managers/combat/DefenderHitList.h"
@@ -169,5 +168,3 @@ public:
 		updateDefenderSize();
 	}
 };
-
-#endif /*COMBATACTION_H_*/

@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef OBJECTMANAGER_H_
-#define OBJECTMANAGER_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -54,6 +53,3 @@ public:
 	static int addTemplateCRC(lua_State* L);
 
 };
-
-
-#endif /* OBJECTMANAGER_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INSTALLATIONOBJECTMESSAGE7_H_
-#define INSTALLATIONOBJECTMESSAGE7_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/managers/resource/ResourceManager.h"
@@ -129,5 +128,3 @@ public:
 		}
 	}
 };
-
-#endif /* INSTALLATIONOBJECTMESSAGE7_H_ */

@@ -5,8 +5,8 @@
  *      Author: root
  */
 
-#ifndef TURRETCONTROLTERMINALDATACOMPONENT_H_
-#define TURRETCONTROLTERMINALDATACOMPONENT_H_
+#pragma once
+
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
 class TurretControlTerminalDataComponent : public DataObjectComponent {
@@ -57,5 +57,3 @@ private:
 		addSerializableVariable("turretIndex",&turretIndex);
 	}
 };
-
-#endif /* TURRETCONTROLTERMINALDATACOMPONENT_H_ */

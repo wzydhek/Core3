@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef ABILITY_H_
-#define ABILITY_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -52,5 +51,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* ABILITY_H_ */

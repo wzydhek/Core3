@@ -5,9 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef FORAGEAREA_H_
-#define FORAGEAREA_H_
-
+#pragma once
 
 class ForageArea : public Object {
 
@@ -69,5 +67,3 @@ public:
      }
 
 };
-
-#endif /* FORAGEAREA_H_ */

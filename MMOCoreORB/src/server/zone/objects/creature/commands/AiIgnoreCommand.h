@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef AIIGNORECOMMAND_H_
-#define AIIGNORECOMMAND_H_
+#pragma once
 
 class AiIgnoreCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //AIIGNORECOMMAND_H_

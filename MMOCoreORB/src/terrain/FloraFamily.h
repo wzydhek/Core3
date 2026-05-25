@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FLORAFAMILY_H_
-#define FLORAFAMILY_H_
+#pragma once
 
 #include "TemplateVariable.h"
 
@@ -72,6 +71,3 @@ public:
 		iffStream->closeChunk('FFAM');
 	}
 };
-
-
-#endif /* FLORAFAMILY_H_ */

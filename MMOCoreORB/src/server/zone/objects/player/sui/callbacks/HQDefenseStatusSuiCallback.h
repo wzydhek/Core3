@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef HQDEFENSESTATUSSUICALLBACK_H_
-#define HQDEFENSESTATUSSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/gcw/GCWManager.h"
@@ -53,7 +52,3 @@ public:
 
 	}
 };
-
-
-
-#endif /* HQDEFENSESTATUSCALLBACK_H_ */

@@ -5,8 +5,7 @@
  *      Author: Halyn
  */
 
-#ifndef STARSHIPPAINTKITOBJECTMENUCOMPONENT_H_
-#define STARSHIPPAINTKITOBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-#endif /* StarshipPaintKitObjectMenuComponent_H_ */
-

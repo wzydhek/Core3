@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef APPLYPOWERUPCOMMAND_H_
-#define APPLYPOWERUPCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/powerup/PowerupObject.h"
@@ -106,5 +105,3 @@ public:
 	}
 
 };
-
-#endif //APPLYPOWERUPCOMMAND_H_

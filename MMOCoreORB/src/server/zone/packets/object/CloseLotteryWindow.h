@@ -5,9 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CLOSELOTTERYWINDOW_H_
-#define CLOSELOTTERYWINDOW_H_
-
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -19,6 +17,3 @@ public:
 	}
 
 };
-
-
-#endif /* CLOSELOTTERYWINDOW_H_ */

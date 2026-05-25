@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef SLICINGSESSIONCALLBACK_H_
-#define SLICINGSESSIONCALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/SlicingSession.h"
@@ -55,5 +54,3 @@ public:
 
 	}
 };
-
-#endif /* SLICINGSESSIONCALLBACK_H_ */

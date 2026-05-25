@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FINDPLAYERCOMMAND_H_
-#define FINDPLAYERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -81,5 +80,3 @@ public:
 	}
 
 };
-
-#endif //FINDPLAYERCOMMAND_H_

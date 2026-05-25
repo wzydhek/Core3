@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DESPAWNCREATUREONPLAYERDISSAPPEAR_H_
-#define DESPAWNCREATUREONPLAYERDISSAPPEAR_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 
@@ -64,5 +63,3 @@ public:
 }
 
 using namespace server::zone::objects::creature::events;
-
-#endif /* DESPAWNCREATUREONPLAYERDISSAPPEAR_H_ */

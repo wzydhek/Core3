@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef VALUESCLASSES_H_
-#define VALUESCLASSES_H_
+#pragma once
 
 #include "system/lang.h"
 #include "engine/log/Logger.h"
@@ -241,6 +240,7 @@ public:
 	}
 
 };
+
 /*
 class Subclasses : public Object {
 	VectorMap<String, Reference<Values*> > valueList;
@@ -402,4 +402,3 @@ public:
 	}
 };
 */
-#endif /*VALUESCLASSES_H_*/

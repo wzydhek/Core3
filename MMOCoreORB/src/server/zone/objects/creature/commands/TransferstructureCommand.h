@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TRANSFERSTRUCTURECOMMAND_H_
-#define TRANSFERSTRUCTURECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/region/CityRegion.h"
@@ -246,5 +245,3 @@ public:
 	}
 
 };
-
-#endif //TRANSFERSTRUCTURECOMMAND_H_

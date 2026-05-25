@@ -1,6 +1,5 @@
 
-#ifndef FLAGGAMEPULSETASK_H_
-#define FLAGGAMEPULSETASK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/eventperk/FlagGame.h"
 #include "templates/faction/Factions.h"
@@ -54,5 +53,3 @@ public:
 }
 
 using namespace server::zone::objects::tangible::tasks;
-
-#endif /* FLAGGAMEPULSETASK_H_ */

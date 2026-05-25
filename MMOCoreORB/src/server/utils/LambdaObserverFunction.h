@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef LAMBDAOBSERVERFUNCTION_H_
-#define LAMBDAOBSERVERFUNCTION_H_
+#pragma once
 
 #include "engine/util/Observable.h"
 #include <functional>
@@ -32,5 +31,3 @@ public:
 	}
 
 };
-
-#endif

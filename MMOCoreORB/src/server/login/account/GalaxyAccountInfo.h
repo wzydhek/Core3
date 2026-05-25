@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef GALAXYACCOUNTINFO_H_
-#define GALAXYACCOUNTINFO_H_
+#pragma once
 
 #include "system/lang.h"
 #include "system/util/SynchronizedVectorMap.h"
@@ -34,5 +33,3 @@ public:
 
 	friend void to_json(nlohmann::json& j, const GalaxyAccountInfo& p);
 };
-
-#endif /* #define GALAXYACCOUNTINFO_H_ */

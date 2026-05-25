@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef COMMANDQUEUEADD_H_
-#define COMMANDQUEUEADD_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -19,5 +18,3 @@ public:
 	}
 
 };
-
-#endif /* COMMANDQUEUEADD_H_ */

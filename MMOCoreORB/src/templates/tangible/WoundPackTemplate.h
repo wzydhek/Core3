@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef WOUNDPACKTEMPLATE_H_
-#define WOUNDPACKTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -50,5 +49,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* WOUNDPACKTEMPLATE_H_ */

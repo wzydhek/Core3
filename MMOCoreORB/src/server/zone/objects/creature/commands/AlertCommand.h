@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ALERTCOMMAND_H_
-#define ALERTCOMMAND_H_
+#pragma once
 
 class AlertCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //ALERTCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef IMAGEDESIGNCOMMAND_H_
-#define IMAGEDESIGNCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/sessions/ImageDesignSession.h"
@@ -115,5 +114,3 @@ public:
 	}
 
 };
-
-#endif //IMAGEDESIGNCOMMAND_H_

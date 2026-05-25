@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef AVOIDINCAPACITATIONCOMMAND_H_
-#define AVOIDINCAPACITATIONCOMMAND_H_
+#pragma once
 
 #include "JediQueueCommand.h"
 
@@ -41,5 +40,3 @@ public:
 	}
 
 };
-
-#endif //AVOIDINCAPACITATIONCOMMAND_H_

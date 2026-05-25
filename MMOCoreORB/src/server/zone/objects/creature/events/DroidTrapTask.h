@@ -2,8 +2,7 @@
  * DroidTrapTask.h
  */
 
-#ifndef DROIDTRAPTASK_H_
-#define DROIDTRAPTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -79,5 +78,3 @@ public:
 }
 
 using namespace server::zone::objects::creature::events;
-
-#endif /* DROIDTRAPTASK_H_ */

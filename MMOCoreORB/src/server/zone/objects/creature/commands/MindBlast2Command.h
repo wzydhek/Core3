@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MINDBLAST2COMMAND_H_
-#define MINDBLAST2COMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "ForcePowersQueueCommand.h"
@@ -38,5 +37,3 @@ public:
 	}
 
 };
-
-#endif //MINDBLAST2COMMAND_H_

@@ -11,8 +11,7 @@
  *  Description: Task created by LogoutServerCommand to implement the /logout process
  */
 
-#ifndef LOGOUTTASK_H_
-#define LOGOUTTASK_H_
+#pragma once
 
 #include "server/zone/packets/player/LogoutMessage.h"
 
@@ -86,5 +85,3 @@ public:
 		}
 	}
 };
-
-#endif /* LOGOUTTASK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INVULNERABLECOMMAND_H_
-#define INVULNERABLECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/events/InvisibleDelayEvent.h"
 
@@ -78,5 +77,3 @@ public:
 	}
 
 };
-
-#endif //INVULNERABLECOMMAND_H_

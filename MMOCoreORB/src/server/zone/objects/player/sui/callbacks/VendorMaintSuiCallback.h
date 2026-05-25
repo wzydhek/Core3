@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef VENDORMAINTCALLBACK_H_
-#define VENDORMAINTCALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
@@ -55,5 +54,3 @@ public:
 		}
 	}
 };
-
-#endif /* VENDORMAINTCALLBACK_H_ */

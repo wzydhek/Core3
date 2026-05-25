@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SELECTDRAFTSCHEMATICCOMMAND_H_
-#define SELECTDRAFTSCHEMATICCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/player/sessions/TradeSession.h"
@@ -57,5 +56,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // SELECTDRAFTSCHEMATICCOMMAND_H_

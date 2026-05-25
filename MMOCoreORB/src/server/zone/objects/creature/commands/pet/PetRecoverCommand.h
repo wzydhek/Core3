@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef PETRECOVERCOMMAND_H_
-#define PETRECOVERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
@@ -61,5 +60,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* PETRECOVERCOMMAND_H_ */

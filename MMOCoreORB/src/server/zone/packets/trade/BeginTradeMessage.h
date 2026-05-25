@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BEGINTRADEMESSAGE_H_
-#define BEGINTRADEMESSAGE_H_
+#pragma once
 
 class BeginTradeMessage : public BaseMessage {
 public:
@@ -13,5 +12,3 @@ public:
 		insertLong(playerID);
 	}
 };
-
-#endif /*BEGINTRADEMESSAGE_H_*/

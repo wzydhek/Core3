@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MAXSTATSCOMMAND_H_
-#define MAXSTATSCOMMAND_H_
+#pragma once
 
 class MaxStatsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //MAXSTATSCOMMAND_H_

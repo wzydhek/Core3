@@ -5,10 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORSHADERREPLACE_H_
-#define AFFECTORSHADERREPLACE_H_
-
-
+#pragma once
 
 #include "../ProceduralRule.h"
 
@@ -53,6 +50,3 @@ public:
 		iffStream->closeChunk('DATA');
 	}
 };
-
-
-#endif /* AFFECTORSHADERREPLACE_H_ */

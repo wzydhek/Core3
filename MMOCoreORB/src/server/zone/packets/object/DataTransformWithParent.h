@@ -2,12 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DATATRANSFORMWITHPARENT_H_
-#define DATATRANSFORMWITHPARENT_H_
+#pragma once
 
 #include "server/zone/Zone.h"
 #include "server/zone/SpaceZone.h"
-
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/building/BuildingObject.h"
@@ -51,6 +49,7 @@ public:
 		insertFloat(speed);
 	}
 };
+
 class DataTransformWithParentCallback : public MessageCallback {
 	ObjectControllerMessageCallback* objectControllerMain;
 
@@ -534,5 +533,3 @@ public:
 		}
 	}
 };
-
-#endif // DATATRANSFORMWITHPARENT_H_

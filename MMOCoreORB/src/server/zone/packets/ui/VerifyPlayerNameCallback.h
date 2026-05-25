@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef VERIFYPLAYERNAMECALLBACK_H_
-#define VERIFYPLAYERNAMECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -42,5 +41,3 @@ public:
 		playerCreature->sendMessage(vpnrm);
 	}
 };
-
-#endif /* VERIFYPLAYERNAMECALLBACK_H_ */

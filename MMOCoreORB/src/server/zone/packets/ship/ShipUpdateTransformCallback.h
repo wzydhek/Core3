@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef SHIPUPDATETRANSFORMCALLBACK_H_
-#define SHIPUPDATETRANSFORMCALLBACK_H_
+#pragma once
 
 // #define SHIP_TRANSFORM_DEBUG
 
@@ -22,9 +21,9 @@
 #include "server/zone/packets/object/transform/Transform.h"
 
 #ifdef SHIP_TRANSFORM_DEBUG
-#include "server/zone/managers/ship/ShipManager.h"
-#include "server/zone/objects/ship/ShipCollisionData.h"
-#include "server/zone/packets/ui/CreateClientPathMessage.h"
+	#include "server/zone/managers/ship/ShipManager.h"
+	#include "server/zone/objects/ship/ShipCollisionData.h"
+	#include "server/zone/packets/ui/CreateClientPathMessage.h"
 #endif // SHIP_TRANSFORM_DEBUG
 
 class ShipUpdateTransformCallback : public MessageCallback {
@@ -476,5 +475,3 @@ public:
 	}
 #endif // SHIP_TRANSFORM_DEBUG
 };
-
-#endif /* SHIPUPDATETRANSFORMCALLBACK_H_ */

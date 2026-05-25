@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef LOGINHANDLER_H_
-#define LOGINHANDLER_H_
+#pragma once
 
 #include "server/login/LoginClient.h"
 #include "server/login/LoginServer.h"
@@ -102,5 +101,3 @@ namespace server {
 } // namespace server
 
 using namespace server::login;
-
-#endif /* LOGINHANDLER_H_ */

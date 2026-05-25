@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef DESTROYCLIENTPATHMESSAGE_H_
-#define DESTROYCLIENTPATHMESSAGE_H_
+#pragma once
 
 class DestroyClientPathMessage : public BaseMessage {
 public:
@@ -19,5 +18,3 @@ public:
    }
 
 };
-
-#endif /* DESTROYCLIENTPATHMESSAGE_H_ */

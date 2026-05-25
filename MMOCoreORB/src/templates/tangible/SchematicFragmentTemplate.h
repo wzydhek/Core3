@@ -5,8 +5,7 @@
  *      Author: Halyn
  */
 
-#ifndef SCHEMATICFRAGMENTTEMPLATE_H_
-#define SCHEMATICFRAGMENTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -52,5 +51,3 @@ public:
 		return targetSchematic;
 	}
 };
-
-#endif

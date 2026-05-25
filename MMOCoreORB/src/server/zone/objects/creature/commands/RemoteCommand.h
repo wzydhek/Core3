@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REMOTECOMMAND_H_
-#define REMOTECOMMAND_H_
+#pragma once
 
 class RemoteCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //REMOTECOMMAND_H_

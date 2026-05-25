@@ -5,9 +5,7 @@
  *      Author: oru
  */
 
-#ifndef CHATENTERROOMBYIDCALLBACK_H_
-#define CHATENTERROOMBYIDCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
@@ -38,6 +36,3 @@ public:
 	}
 
 };
-
-
-#endif /* CHATENTERROOMBYIDCALLBACK_H_ */

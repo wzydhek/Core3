@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef CITYDECORATIONMENUCOMPONENT_H_
-#define CITYDECORATIONMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -33,10 +32,3 @@ public:
 
 	bool isInInventory(SceneObject* sceneObject, CreatureObject* player) const;
 };
-
-
-
-
-
-
-#endif /* CITYDECORATIONMENUCOMPONENT_H_ */

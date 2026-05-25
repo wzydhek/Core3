@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BETCOMMAND_H_
-#define BETCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/minigames/GamblingManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -77,5 +76,3 @@ public:
 	}
 
 };
-
-#endif //BETCOMMAND_H_

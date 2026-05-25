@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef WEAPONOBJECTMESSAGE6_H_
-#define WEAPONOBJECTMESSAGE6_H_
+#pragma once
 
 #include "TangibleObjectMessage6.h"
 
@@ -19,6 +18,3 @@ public:
 	}
 
 };
-
-
-#endif /* WEAPONOBJECTMESSAGE6_H_ */

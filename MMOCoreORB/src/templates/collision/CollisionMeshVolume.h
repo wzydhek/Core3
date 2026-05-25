@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef COLLISIONMESHVOLUME_H_
-#define COLLISIONMESHVOLUME_H_
+#pragma once
 
 #include "BaseBoundingVolume.h"
 
@@ -27,5 +26,3 @@ public:
 	virtual osg::ref_ptr<osg::Node> draw() const;
 #endif
 };
-
-#endif /* COLLISIONMESHVOLUME_H_ */

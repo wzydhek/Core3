@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LEAVEGAMECOMMAND_H_
-#define LEAVEGAMECOMMAND_H_
+#pragma once
 
 class LeaveGameCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //LEAVEGAMECOMMAND_H_

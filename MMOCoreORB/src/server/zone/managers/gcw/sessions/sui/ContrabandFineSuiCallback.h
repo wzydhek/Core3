@@ -5,8 +5,7 @@
  *      Author: loshult
  */
 
-#ifndef CONTRABANDFINESUICALLBACK_H_
-#define CONTRABANDFINESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/gcw/sessions/ContrabandScanSession.h"
@@ -28,5 +27,3 @@ public:
 		}
 	}
 };
-
-#endif /* CONTRABANDFINESUICALLBACK_H_ */

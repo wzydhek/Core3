@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OBJECTMENURESPONSE_H_
-#define OBJECTMENURESPONSE_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -148,5 +147,3 @@ public:
 }
 
 using namespace server::zone::packets::object;
-
-#endif

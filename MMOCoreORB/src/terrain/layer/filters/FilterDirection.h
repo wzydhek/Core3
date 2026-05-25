@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FILTERDIRECTION_H_
-#define FILTERDIRECTION_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "FilterProceduralRule.h"
@@ -112,7 +111,3 @@ public:
 		iffStream->closeChunk('DATA');
 	}
 };
-
-
-
-#endif /* FILTERDIRECTION_H_ */

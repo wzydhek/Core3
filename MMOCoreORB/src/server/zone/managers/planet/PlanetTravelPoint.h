@@ -6,11 +6,9 @@
  *  Updated on: Sat Oct 15 10:40:05 PDT 2011 by lordkator - Converted to Vector3, arrival/departure and a number of fixes to make travel more stable
  */
 
-#ifndef PLANETTRAVELPOINT_H_
-#define PLANETTRAVELPOINT_H_
+#pragma once
 
 #include <atomic>
-
 #include "server/zone/objects/creature/CreatureObject.h"
 
 using namespace server::zone::objects::creature;
@@ -200,5 +198,3 @@ public:
 		return buf.toString();
 	}
 };
-
-#endif /* PLANETTRAVELPOINT_H_ */

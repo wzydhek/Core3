@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLIENTIDMESSAGE_H_
-#define CLIENTIDMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -25,5 +24,3 @@ public:
 		insertAscii("20050408-18:00"); // Client version
 	}
 };
-
-#endif /*CLIENTIDMESSAGE_H_*/

@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef CHATMESSAGEPARAMETER_H_
-#define CHATMESSAGEPARAMETER_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -53,6 +52,5 @@ public:
 
 }
 }
-using namespace server::chat;
 
-#endif /* CHATMESSAGEPARAMETER_H_ */
+using namespace server::chat;

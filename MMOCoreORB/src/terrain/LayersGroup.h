@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LAYERS_H_
-#define LAYERS_H_
+#pragma once
 
 #include "TemplateVariable.h"
 #include "layer/Layer.h"
@@ -51,5 +50,3 @@ public:
 		return &layers;
 	}
 };
-
-#endif /* LAYERS_H_ */

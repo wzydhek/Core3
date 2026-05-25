@@ -1,5 +1,4 @@
-#ifndef UPDATESHIPTARGETSLOT_H_
-#define UPDATESHIPTARGETSLOT_H_
+#pragma once
 
 #include "server/zone/packets/object/ObjectControllerMessageCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -48,5 +47,3 @@ public:
 		ship->setShipTargetSlot(targetSlot, true);
 	}
 };
-
-#endif // UPDATESHIPTARGETSLOT_H_

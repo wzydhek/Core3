@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef DATATABLECELL_H_
-#define DATATABLECELL_H_
+#pragma once
 
 #include "system/lang.h"
 #include "engine/util/iffstream/chunks/Chunk.h"
@@ -187,5 +186,3 @@ public:
 		return String::valueOf(value);
 	}
 };
-
-#endif /* DATATABLECELL_H_ */

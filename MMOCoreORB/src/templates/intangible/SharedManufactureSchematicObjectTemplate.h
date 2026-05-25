@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDMANUFACTURESCHEMATICOBJECTTEMPLATE_H_
-#define SHAREDMANUFACTURESCHEMATICOBJECTTEMPLATE_H_
-
+#pragma once
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
@@ -68,5 +66,3 @@ public:
 		iffStream->closeForm('SMSC');
 	}
 };
-
-#endif /* SHAREDMANUFACTURESCHEMATICOBJECTTEMPLATE_H_ */

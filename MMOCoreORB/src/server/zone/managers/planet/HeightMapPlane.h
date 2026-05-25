@@ -1,5 +1,4 @@
-#ifndef HEIGHTMAPPLANE_H_
-#define HEIGHTMAPPLANE_H_
+#pragma once
 
 class HeightMapPlane {
 	byte* buffer;
@@ -43,5 +42,3 @@ public:
 		index = idx;
 	}
 };
-
-#endif /*HEIGHTMAPPLANE_H_*/

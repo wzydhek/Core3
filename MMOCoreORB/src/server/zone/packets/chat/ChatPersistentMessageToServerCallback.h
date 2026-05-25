@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CHATPERSISTENTMESSAGETOSERVERCALLBACK_H_
-#define CHATPERSISTENTMESSAGETOSERVERCALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
@@ -312,5 +311,3 @@ public:
 	}
 
 };
-
-#endif /* CHATPERSISTENTMESSAGETOSERVERCALLBACK_H_ */

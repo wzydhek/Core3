@@ -8,8 +8,7 @@
  * date 10.01.2010
  */
 
-#ifndef INVISIBLEDELAYEVENT_H_
-#define INVISIBLEDELAYEVENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -75,5 +74,3 @@ public:
 	}
 
 };
-
-#endif /* INVISIBLEDELAYEVENT_H_ */

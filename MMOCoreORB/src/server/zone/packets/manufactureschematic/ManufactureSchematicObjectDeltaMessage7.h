@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef MANUFACTURESCHEMATICOBJECTDELTAMESSAGE7_H_
-#define MANUFACTURESCHEMATICOBJECTDELTAMESSAGE7_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "templates/params/RangedIntCustomizationVariable.h"
@@ -301,5 +300,3 @@ public:
 	}
 
 };
-
-#endif /*MANUFACTURESCHEMATICOBJECTMESSAGE7_H_*/

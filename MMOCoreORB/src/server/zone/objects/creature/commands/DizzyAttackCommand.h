@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DIZZYATTACKCOMMAND_H_
-#define DIZZYATTACKCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif //DIZZYATTACKCOMMAND_H_

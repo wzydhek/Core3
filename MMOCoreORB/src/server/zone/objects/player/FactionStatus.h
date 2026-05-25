@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FACTIONSTATUS_H_
-#define FACTIONSTATUS_H_
+#pragma once
 
 class FactionStatus {
 public:
@@ -14,5 +13,3 @@ public:
 	const static int COVERT = 1;
 	const static int ONLEAVE = 0;
 };
-
-#endif /* FACTIONSTATUS_H_ */

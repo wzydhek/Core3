@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UNARMEDCOMBO1COMMAND_H_
-#define UNARMEDCOMBO1COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -32,5 +31,3 @@ public:
 	}
 
 };
-
-#endif //UNARMEDCOMBO1COMMAND_H_

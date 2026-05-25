@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DELTAMESSAGE_H_
-#define DELTAMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/scene/variables/StringId.h"
@@ -160,5 +159,3 @@ public:
 	}
 
 };
-
-#endif /*DELTAMESSAGE_H_*/

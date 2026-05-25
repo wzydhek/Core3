@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDBATTLEFIELDMARKEROBJECTTEMPLATE_H_
-#define SHAREDBATTLEFIELDMARKEROBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -72,6 +71,3 @@ public:
 	}
 
 };
-
-
-#endif /* SHAREDBATTLEFIELDMARKEROBJECTTEMPLATE_H_ */

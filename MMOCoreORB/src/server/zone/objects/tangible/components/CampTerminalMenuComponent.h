@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef CAMPTERMINALMENUCOMPONENT_H_
-#define CAMPTERMINALMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 #include "server/zone/objects/area/CampSiteActiveArea.h"
@@ -39,5 +38,3 @@ public:
 
 	void awardCampExperience(PlayerObject* ghost, CampSiteActiveArea* campArea) const;
 };
-
-#endif /* CAMPTERMINALMENUCOMPONENT_H_ */

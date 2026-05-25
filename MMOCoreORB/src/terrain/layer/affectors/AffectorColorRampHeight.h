@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORCOLORRAMPHEIGHT_H_
-#define AFFECTORCOLORRAMPHEIGHT_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 
@@ -53,5 +52,3 @@ public:
 		iffStream->closeChunk('DATA');
 	}
 };
-
-#endif /* AFFECTORCOLORRAMPHEIGHT_H_ */

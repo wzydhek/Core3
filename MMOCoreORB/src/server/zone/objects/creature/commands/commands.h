@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef COMMANDSNEW_H_
-#define COMMANDSNEW_H_
+#pragma once
 
 #include "ActionShot1Command.h"
 #include "ActionShot2Command.h"
@@ -836,9 +835,3 @@
 #include "InspacereloadCommand.h"
 #include "InspacerrCommand.h"
 #include "RequestSpaceTrainerCommand.h"
-
-
-
-
-#endif /* COMMANDSNEW_H_ */
-

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DIZZYFALLDOWNEVENT_H_
-#define DIZZYFALLDOWNEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -56,6 +55,3 @@ public:
 }
 }
 }
-
-
-#endif /* DIZZYFALLDOWNEVENT_H_ */

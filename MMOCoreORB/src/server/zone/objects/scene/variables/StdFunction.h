@@ -1,9 +1,6 @@
 
-#ifndef STDFUNCTION_H_
-#define STDFUNCTION_H_
+#pragma once
 
 #include <functional>
 
 typedef std::function<void()> StdFunction;
-
-#endif /* STDFUNCTION_H_ */

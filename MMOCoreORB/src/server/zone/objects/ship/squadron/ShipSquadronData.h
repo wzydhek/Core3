@@ -1,5 +1,4 @@
-#ifndef SHIPSQUADRONDATA_H_
-#define SHIPSQUADRONDATA_H_
+#pragma once
 
 namespace server {
 	namespace zone {
@@ -111,5 +110,3 @@ public:
 
 	float getFormationSpeed() const;
 };
-
-#endif // SHIPSQUADRONDATA_H_

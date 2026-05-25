@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef BANKTERMINALMENUCOMPONENT_H_
-#define BANKTERMINALMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -45,6 +44,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* BankTerminalMENUCOMPONENT_H_ */

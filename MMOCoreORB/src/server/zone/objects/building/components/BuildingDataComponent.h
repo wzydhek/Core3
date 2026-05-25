@@ -5,8 +5,8 @@
  *      Author: root
  */
 
-#ifndef BUILDINGDATACOMPONENT_H_
-#define BUILDINGDATACOMPONENT_H_
+#pragma once
+
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
 class BuildingDataComponent : public DataObjectComponent {
@@ -26,6 +26,3 @@ public:
 		return true;
 	}
 };
-
-
-#endif /* BUILDINGDATACOMPONENT_H_ */

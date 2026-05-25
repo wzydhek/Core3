@@ -1,5 +1,4 @@
-#ifndef SPACECOLLISIONMANAGER_H_
-#define SPACECOLLISIONMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/ship/ShipObject.h"
 #include "server/zone/managers/spacecollision/SpaceCollisionResult.h"
@@ -43,5 +42,3 @@ private:
 
 	Vector3 getAxisAlignedVector(const Vector3& vector, const Matrix4& rotation);
 };
-
-#endif // SPACECOLLISIONMANAGER_H_

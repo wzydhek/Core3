@@ -2,8 +2,7 @@
  * SequenceSpace.h
  */
 
-#ifndef SEQUENCESPACE_H_
-#define SEQUENCESPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/btspace/nodespace/CompositeSpace.h"
 
@@ -46,5 +45,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif /* SEQUENCESPACE_H_ */

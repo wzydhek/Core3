@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HARVESTERDEACTIVATECOMMAND_H_
-#define HARVESTERDEACTIVATECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -53,5 +52,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // HARVESTERDEACTIVATECOMMAND_H_

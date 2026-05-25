@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INSPACERR_H_
-#define INSPACERR_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //INSPACERR_H_

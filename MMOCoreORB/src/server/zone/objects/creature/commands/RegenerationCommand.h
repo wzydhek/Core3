@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REGENERATIONCOMMAND_H_
-#define REGENERATIONCOMMAND_H_
+#pragma once
 
 class RegenerationCommand : public QueueCommand {
 public:
@@ -79,5 +78,3 @@ public:
 	}
 
 };
-
-#endif //REGENERATIONCOMMAND_H_

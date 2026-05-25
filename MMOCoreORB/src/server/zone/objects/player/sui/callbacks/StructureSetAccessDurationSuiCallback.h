@@ -5,11 +5,9 @@
  *      Author: Kyle
  */
 
-#ifndef STRUCTURESETACCESSDURATIONSUICALLBACK_H_
-#define STRUCTURESETACCESSDURATIONSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
-
 
 class StructureSetAccessDurationSuiCallback : public SuiCallback {
 
@@ -43,5 +41,3 @@ public:
 
 	}
 };
-
-#endif /* STRUCTURESETACCESSDURATIONSUICALLBACK_H_ */

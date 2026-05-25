@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef OBJECTCONTROLLER_H_
-#define OBJECTCONTROLLER_H_
+#pragma once
 
 #include "system/lang.h"
 #include "engine/service/Message.h"
@@ -23,5 +22,3 @@ public:
 		zone = zon;
 	}
 };
-
-#endif /* OBJECTCONTROLLER_H_ */

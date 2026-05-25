@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef GALAXYBANENTRY_H_
-#define GALAXYBANENTRY_H_
+#pragma once
 
 #include "system/lang/Object.h"
 
@@ -94,6 +93,3 @@ public:
 		return banAdmin;
 	}
 };
-
-
-#endif /*GALAXYBANENTRY_H_*/

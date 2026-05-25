@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef FORCERUN1COMMAND_H_
-#define FORCERUN1COMMAND_H_
+#pragma once
 
 #include "JediQueueCommand.h"
 
@@ -48,5 +47,3 @@ public:
 	}
 
 };
-
-#endif //FORCERUN1COMMAND_H_

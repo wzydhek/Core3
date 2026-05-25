@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef STRINGFILE_H_
-#define STRINGFILE_H_
+#pragma once
 
 #include "system/lang.h"
 #include "engine/log/Logger.h"
@@ -31,5 +30,3 @@ public:
 protected:
 	bool checkHeader(ObjectInputStream* inputFile);
 };
-
-#endif /* STRINGFILE_H_ */

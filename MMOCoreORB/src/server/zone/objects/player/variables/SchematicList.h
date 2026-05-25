@@ -5,12 +5,10 @@
  *      Author: kyle
  */
 
-#ifndef SCHEMATICLIST_H_
-#define SCHEMATICLIST_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 #include "server/zone/objects/draftschematic/DraftSchematic.h"
 
@@ -66,6 +64,3 @@ public:
 
 	void insertToMessage(BaseMessage* msg) const override;
 };
-
-
-#endif /* SCHEMATICLIST_H_ */

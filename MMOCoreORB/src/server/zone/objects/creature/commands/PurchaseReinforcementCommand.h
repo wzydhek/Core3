@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PURCHASEREINFORCEMENTCOMMAND_H_
-#define PURCHASEREINFORCEMENTCOMMAND_H_
+#pragma once
 
 class PurchaseReinforcementCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //PURCHASEREINFORCEMENTCOMMAND_H_

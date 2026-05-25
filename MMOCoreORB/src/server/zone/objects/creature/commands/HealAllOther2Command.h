@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef HEALALLOTHER2COMMAND_H_
-#define HEALALLOTHER2COMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/packets/object/CombatAction.h"
@@ -15,5 +14,3 @@ public:
 		: ForceHealQueueCommand(name, server) {
 	}
 };
-
-#endif /* HEALALLOTHER2COMMAND_H_ */

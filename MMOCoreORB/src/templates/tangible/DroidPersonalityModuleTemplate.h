@@ -3,8 +3,7 @@
  * 11/26/2014
  */
 
-#ifndef DROIDPERSONALITYMODULETEMPLATE_H_
-#define DROIDPERSONALITYMODULETEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -48,5 +47,3 @@ public:
 		 return true;
 	 }
 };
-
-#endif /*DROIDPERSONALITYMODULETEMPLATE_H_*/

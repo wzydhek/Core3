@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef CONFIRMVETERANREWARDSUICALLBACK_H_
-#define CONFIRMVETERANREWARDSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -35,6 +34,3 @@ public:
 
 	}
 };
-
-
-#endif /* CONFIRMVETERANREWARDSUICALLBACK_H_ */

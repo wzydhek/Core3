@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SABER1HFLURRYCOMMAND_H_
-#define SABER1HFLURRYCOMMAND_H_
+#pragma once
 
 #include "JediCombatQueueCommand.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif //SABER1HFLURRYCOMMAND_H_

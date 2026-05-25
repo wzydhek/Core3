@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLIENTQUALIFIEDFORSKILLCOMMAND_H_
-#define CLIENTQUALIFIEDFORSKILLCOMMAND_H_
+#pragma once
 
 class ClientQualifiedForSkillCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CLIENTQUALIFIEDFORSKILLCOMMAND_H_

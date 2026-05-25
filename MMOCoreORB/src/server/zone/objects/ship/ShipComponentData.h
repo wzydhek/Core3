@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHIPCOMPONENTDATA_H_
-#define SHIPCOMPONENTDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
@@ -51,7 +50,3 @@ public:
 		return sharedObjectTemplate;
 	}
 };
-
-
-
-#endif /* SHIPCOMPONENT_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SERVERDESTROYOBJECTCOMMAND_H_
-#define SERVERDESTROYOBJECTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -168,5 +167,3 @@ public:
 		object->destroyObjectFromDatabase(true);
 	}
 };
-
-#endif // SERVERDESTROYOBJECTCOMMAND_H_

@@ -1,5 +1,4 @@
-#ifndef FIREWORKSHOWREMOVEEVENTSUICALLBACK_H_
-#define FIREWORKSHOWREMOVEEVENTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/firework/components/FireworkShowMenuComponent.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -70,5 +69,3 @@ public:
 
 	}
 };
-
-#endif /* FIREWORKSHOWREMOVEEVENTSUICALLBACK_H_ */

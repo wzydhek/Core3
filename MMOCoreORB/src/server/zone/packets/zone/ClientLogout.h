@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLIENTLOGOUT_H_
-#define CLIENTLOGOUT_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -15,5 +14,3 @@ public:
 	}
 	
 };
-
-#endif /*CLIENTLOGOUT_H_*/

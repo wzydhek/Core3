@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef WIPEITEMSCOMMAND_H_
-#define WIPEITEMSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -82,5 +81,3 @@ public:
 	}
 
 };
-
-#endif //WIPEITEMSCOMMAND_H_

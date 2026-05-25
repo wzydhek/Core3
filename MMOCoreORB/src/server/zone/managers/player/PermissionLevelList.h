@@ -5,8 +5,7 @@
  *      Author: Itac
  */
 
-#ifndef PERMISSIONLEVELLIST_H_
-#define PERMISSIONLEVELLIST_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -154,5 +153,3 @@ public:
 		return permissionNames.contains(name);
 	}
 };
-
-#endif //PERMISSIONLEVELLIST_H_

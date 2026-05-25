@@ -1,5 +1,4 @@
-#ifndef VEHICLEOBJECTTEMPLATE_H_
-#define VEHICLEOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 
@@ -35,5 +34,3 @@ public:
 	}
 
 };
-
-#endif /* VEHICLEOBJECTTEMPLATE_H_ */

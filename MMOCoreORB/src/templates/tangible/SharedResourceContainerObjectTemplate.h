@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDRESOURCECONTAINEROBJECTTEMPLATE_H_
-#define SHAREDRESOURCECONTAINEROBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -71,5 +70,3 @@ public:
 		iffStream->closeForm('RCCT');
 	}
 };
-
-#endif /* SHAREDRESOURCECONTAINEROBJECTTEMPLATE_H_ */

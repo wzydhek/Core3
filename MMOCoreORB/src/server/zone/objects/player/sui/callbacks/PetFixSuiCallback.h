@@ -1,6 +1,5 @@
 
-#ifndef PETFIXSUICALLBACK_H_
-#define PETFIXSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/intangible/PetControlDevice.h"
@@ -62,5 +61,3 @@ public:
 		device->sendAttributeListTo(player);
 	}
 };
-
-#endif /* PETFIXSUICALLBACK_H_ */

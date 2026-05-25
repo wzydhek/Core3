@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETATTRIBUTESBATCHCOMMAND_H_
-#define GETATTRIBUTESBATCHCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
@@ -92,5 +91,3 @@ public:
 		creature->notifyObservers(ObserverEventType::GETATTRIBUTESBATCHCOMMAND, object, incr);
 	}
 };
-
-#endif // GETATTRIBUTESBATCHCOMMAND_H_

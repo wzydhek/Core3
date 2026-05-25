@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TENDWOUNDCOMMAND_H_
-#define TENDWOUNDCOMMAND_H_
+#pragma once
 
 #include "TendCommand.h"
 
@@ -28,5 +27,3 @@ public:
 
 
 };
-
-#endif //TENDWOUNDCOMMAND_H_

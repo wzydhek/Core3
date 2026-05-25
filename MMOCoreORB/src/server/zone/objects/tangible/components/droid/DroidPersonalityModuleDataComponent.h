@@ -2,8 +2,7 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DROIDPERSONALITYMODULEDATACOMPONENT_H_
-#define DROIDPERSONALITYMODULEDATACOMPONENT_H_
+#pragma once
 
 #include "BaseDroidModuleComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidPersonalityObserver.h"
@@ -70,5 +69,5 @@ public:
 } // objects
 } // zone
 } // server
+
 using namespace server::zone::objects::tangible::components::droid;
-#endif /* DROIDPERSONALITYMODULEDATACOMPONENT_H_ */

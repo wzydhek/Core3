@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CLIENTPOIDATATABLE_H_
-#define CLIENTPOIDATATABLE_H_
+#pragma once
 
 #include "templates/datatables/DataTableIff.h"
 #include "templates/datatables/DataTableRow.h"
@@ -89,6 +88,3 @@ public:
 		return count;
 	}
 };
-
-
-#endif /* CLIENTPOIDATATABLE_H_ */

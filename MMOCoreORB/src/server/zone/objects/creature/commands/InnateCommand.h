@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INNATECOMMAND_H_
-#define INNATECOMMAND_H_
+#pragma once
 
 class InnateCommand : public QueueCommand {
 public:
@@ -63,5 +62,3 @@ public:
 	}
 
 };
-
-#endif //INNATECOMMAND_H_

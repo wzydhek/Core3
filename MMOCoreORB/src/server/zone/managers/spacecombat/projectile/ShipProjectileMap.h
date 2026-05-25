@@ -1,5 +1,4 @@
-#ifndef SHIPPROJECTILEVECTOR_H_
-#define SHIPPROJECTILEVECTOR_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "ShipProjectile.h"
@@ -176,5 +175,3 @@ public:
 		return projectileMap.size();
 	}
 };
-
-#endif // SHIPPROJECTILE_H_

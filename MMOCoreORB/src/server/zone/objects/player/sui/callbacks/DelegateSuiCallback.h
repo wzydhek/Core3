@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DELEGATESUICALLBACK_H_
-#define DELEGATESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -17,5 +16,3 @@ public:
 
 	void run(server::zone::objects::creature::CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args);
 };
-
-#endif /* DELEGATESUICALLBACK_H_ */

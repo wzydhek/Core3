@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef LUASUIBOX_H_
-#define LUASUIBOX_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -39,6 +38,3 @@ namespace sui {
 }
 
 using namespace server::zone::objects::player::sui;
-
-
-#endif /* LUASUIBOX_H_ */

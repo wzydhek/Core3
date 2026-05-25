@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef LOOTGROUPTEMPLATE_H_
-#define LOOTGROUPTEMPLATE_H_
+#pragma once
 
 #include "system/lang.h"
 #include "engine/lua/LuaObject.h"
@@ -122,6 +121,3 @@ public:
 		return templateName;
 	}
 };
-
-
-#endif /* LOOTGROUPTEMPLATE_H_ */

@@ -1,5 +1,4 @@
-#ifndef BASEREBOOTTASK_H_
-#define BASEREBOOTTASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 
@@ -28,5 +27,3 @@ public:
 		gcwManager->broadcastBuilding(buildingObject, restartMessage);
 	}
 };
-
-#endif /* BASEREBOOTTASK_H_ */

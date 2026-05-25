@@ -1,6 +1,5 @@
 
-#ifndef PVPTEFREMOVALTASK_H_
-#define PVPTEFREMOVALTASK_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 #include "templates/params/creature/ObjectFlag.h"
@@ -65,5 +64,3 @@ public:
 }
 
 using namespace server::zone::objects::player::events;
-
-#endif /* PVPTEFREMOVALTASK_H_ */

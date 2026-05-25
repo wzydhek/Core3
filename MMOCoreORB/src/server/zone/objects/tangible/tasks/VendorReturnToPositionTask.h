@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef VENDORRETURNTOPOSITIONTASK_H_
-#define VENDORRETURNTOPOSITIONTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -32,5 +31,3 @@ public:
 		strongref->removePendingTask("vendorreturn");
 	}
 };
-
-#endif /* VENDORRETURNTOPOSITIONTASK_H_ */

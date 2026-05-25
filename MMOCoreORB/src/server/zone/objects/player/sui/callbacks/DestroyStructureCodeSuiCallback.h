@@ -5,12 +5,10 @@
  *      Author: crush
  */
 
-#ifndef DESTROYSTRUCTURECODESUICALLBACK_H_
-#define DESTROYSTRUCTURECODESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/DestroyStructureSession.h"
-
 
 class DestroyStructureCodeSuiCallback : public SuiCallback {
 public:
@@ -41,5 +39,3 @@ public:
 		session->destroyStructure();
 	}
 };
-
-#endif /* DESTROYSTRUCTURECODESUICALLBACK_H_ */

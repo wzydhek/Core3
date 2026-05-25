@@ -3,8 +3,7 @@
 	See file COPYING for copying conditions.
 */
 
-#ifndef CALLARAKYDTASK_H_
-#define CALLARAKYDTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/packets/scene/PlayClientEffectLocMessage.h"
@@ -128,5 +127,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::mission::bountyhunter::events;
-
-#endif /* CALLARAKYDTASK_H_ */

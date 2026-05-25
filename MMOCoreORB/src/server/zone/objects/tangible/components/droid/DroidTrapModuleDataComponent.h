@@ -2,8 +2,7 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DROIDTRAPMODULEDATACOMPONENT_H_
-#define DROIDTRAPMODULEDATACOMPONENT_H_
+#pragma once
 
 #include "BaseDroidModuleComponent.h"
 
@@ -68,6 +67,5 @@ private:
 } // objects
 } // zone
 } // server
-using namespace server::zone::objects::tangible::components::droid;
 
-#endif /* DROIDTRAPMODULEDATACOMPONENT_H_ */
+using namespace server::zone::objects::tangible::components::droid;

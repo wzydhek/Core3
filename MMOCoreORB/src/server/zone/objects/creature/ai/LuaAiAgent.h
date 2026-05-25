@@ -5,12 +5,9 @@
  *      Author: victor
  */
 
-#ifndef LUAAIAGENT_H_
-#define LUAAIAGENT_H_
-
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/creature/LuaCreatureObject.h"
 
 namespace server {
@@ -140,5 +137,3 @@ namespace ai {
 }
 
 using namespace server::zone::objects::creature::ai;
-
-#endif /* LUAAIAGENT_H_ */

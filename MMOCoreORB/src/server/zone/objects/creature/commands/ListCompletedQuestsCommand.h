@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LISTCOMPLETEDQUESTSCOMMAND_H_
-#define LISTCOMPLETEDQUESTSCOMMAND_H_
+#pragma once
 
 class ListCompletedQuestsCommand : public QueueCommand {
 public:
@@ -75,5 +74,3 @@ public:
 	}
 
 };
-
-#endif //LISTCOMPLETEDQUESTSCOMMAND_H_

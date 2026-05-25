@@ -1,5 +1,4 @@
-#ifndef SHIPUNIQUEIDMAP_H_
-#define SHIPUNIQUEIDMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/ship/ShipObject.h"
@@ -111,5 +110,3 @@ public:
 		return shipIdMap.size();
 	}
 };
-
-#endif // SHIPUNIQUEIDMAP_H_

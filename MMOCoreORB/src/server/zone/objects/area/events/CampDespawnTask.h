@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CAMPDESPAWNTASK_H_
-#define CAMPDESPAWNTASK_H_
+#pragma once
 
 #include "server/zone/objects/area/CampSiteActiveArea.h"
 #include "server/zone/ZoneServer.h"
@@ -45,5 +44,3 @@ public:
 }
 }
 }
-
-#endif /* CAMPDESPAWNTASK_H_ */

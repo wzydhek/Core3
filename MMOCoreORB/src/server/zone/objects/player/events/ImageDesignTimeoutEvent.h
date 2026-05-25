@@ -8,8 +8,7 @@
  * \date 02.07.2011
  */
 
-#ifndef IMAGEDESIGNTIMEOUTEVENT_H_
-#define IMAGEDESIGNTIMEOUTEVENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/player/sessions/ImageDesignSession.h"
@@ -44,5 +43,3 @@ public:
 }
 }
 }
-
-#endif /* IMAGEDESIGNTIMEOUTEVENT_H_ */

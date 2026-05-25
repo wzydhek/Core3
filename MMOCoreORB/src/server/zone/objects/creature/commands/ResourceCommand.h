@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESOURCECOMMAND_H_
-#define RESOURCECOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/stringid/StringIdManager.h"
 
@@ -331,5 +330,3 @@ public:
 	}
 
 };
-
-#endif //RESOURCECOMMAND_H_

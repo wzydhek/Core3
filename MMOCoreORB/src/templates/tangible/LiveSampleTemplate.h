@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef LIVESAMPLETEMPLATE_H_
-#define LIVESAMPLETEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -34,6 +33,3 @@ public:
 		return animation;
 	}
 };
-
-
-#endif /* LIVESAMPLETEMPLATE_H_ */

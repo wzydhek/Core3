@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef FORCERUN2COMMAND_H_
-#define FORCERUN2COMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/buffs/PrivateSkillMultiplierBuff.h"
 #include "JediQueueCommand.h"
@@ -62,5 +61,3 @@ public:
 	}
 
 };
-
-#endif //FORCERUN2COMMAND_H_

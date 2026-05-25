@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETATTRIBUTESCOMMAND_H_
-#define GETATTRIBUTESCOMMAND_H_
+#pragma once
 
 class GetAttributesCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GETATTRIBUTESCOMMAND_H_

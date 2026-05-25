@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CRAFTCOMMAND_H_
-#define CRAFTCOMMAND_H_
+#pragma once
 
 class CraftCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CRAFTCOMMAND_H_

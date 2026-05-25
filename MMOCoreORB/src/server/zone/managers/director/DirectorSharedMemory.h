@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef DIRECTORSHAREDMEMORY_H_
-#define DIRECTORSHAREDMEMORY_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -77,5 +76,3 @@ public:
 		return TransactionalObjectCloner<DirectorSharedMemory>::clone(this);
 	}
 };
-
-#endif /* DIRECTORSHAREDMEMORY_H_ */

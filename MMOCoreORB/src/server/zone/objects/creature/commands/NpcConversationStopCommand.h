@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NPCCONVERSATIONSTOPCOMMAND_H_
-#define NPCCONVERSATIONSTOPCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -56,5 +55,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // NPCCONVERSATIONSTOPCOMMAND_H_

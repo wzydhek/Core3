@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CREATEMISSILEMESSAGE_H_
-#define CREATEMISSILEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/ship/ShipObject.h"
@@ -110,5 +109,3 @@ public:
 		insertInt(missile->getComponentSlot());
 	}
 };
-
-#endif // CREATEMISSILEMESSAGE_H_

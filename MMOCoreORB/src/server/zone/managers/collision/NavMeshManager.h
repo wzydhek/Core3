@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef NAVMESHMANAGER_H_
-#define NAVMESHMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/pathfinding/NavArea.h"
 #include "engine/util/u3d/AABB.h"
@@ -52,4 +51,3 @@ public:
 	static const String MeshQueue; //"NavMeshBuilder";
 
 };
-#endif

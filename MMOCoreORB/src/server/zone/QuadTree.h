@@ -3,8 +3,7 @@ Copyright (C) 2007 <SWGEmu>. All rights reserved.
 Distribution of this file for usage outside of Core3 is prohibited.
 */
 
-#ifndef QUADTREE_H_
-#define QUADTREE_H_
+#pragma once
 
 /*
    Quad tree interface
@@ -28,7 +27,6 @@ Distribution of this file for usage outside of Core3 is prohibited.
 */
 
 #include "system/lang.h"
-
 #include "engine/log/Logger.h"
 
 /**
@@ -39,7 +37,6 @@ Distribution of this file for usage outside of Core3 is prohibited.
  */
 
 #include "server/zone/TreeEntry.h"
-
 #include "TreeNode.h"
 
 namespace server {
@@ -158,5 +155,3 @@ namespace server {
 	};
   } // namespace zone
 } // namespace server
-
-#endif /*QUADTREE_H_*/

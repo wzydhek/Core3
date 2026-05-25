@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INSTALLATIONOBJECTDELTAMESSAGE3_H_
-#define INSTALLATIONOBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/tangible/TangibleObjectDeltaMessage3.h"
 #include "server/zone/objects/installation/InstallationObject.h"
@@ -25,6 +24,3 @@ public:
 		addByteUpdate(0x0B, value);
 	}
 };
-
-
-#endif /* INSTALLATIONOBJECTDELTAMESSAGE3_H_ */

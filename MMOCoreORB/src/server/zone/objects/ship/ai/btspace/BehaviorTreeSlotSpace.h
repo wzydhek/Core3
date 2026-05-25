@@ -1,5 +1,4 @@
-#ifndef BEHAVIORTREESLOTSPACE_H_
-#define BEHAVIORTREESLOTSPACE_H_
+#pragma once
 
 #include "system/io/ObjectInputStream.h"
 #include "system/io/ObjectOutputStream.h"
@@ -82,5 +81,3 @@ public:
 		return true;
 	}
 };
-
-#endif // BEHAVIORTREESLOTSPACE_H_

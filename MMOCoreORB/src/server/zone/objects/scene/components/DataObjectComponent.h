@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef DATAOBJECTCOMPONENT_H_
-#define DATAOBJECTCOMPONENT_H_
+#pragma once
 
 #include "SceneObjectComponent.h"
-
 #include "engine/util/json_utils.h"
 
 #define SERIALIZE_JSON_MEMBER(x) j[#x] = x;
@@ -133,5 +131,3 @@ public:
 	}
 
 };
-
-#endif /* DATAOBJECTCOMPONENT_H_ */

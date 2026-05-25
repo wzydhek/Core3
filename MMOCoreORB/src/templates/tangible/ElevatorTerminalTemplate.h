@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef ELEVATORTERMINALTEMPLATE_H_
-#define ELEVATORTERMINALTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -47,5 +46,3 @@ public:
 		return (movementType == DOWNONLY || movementType == UPANDDOWN);
 	}
 };
-
-#endif /* ELEVATORTERMINALTEMPLATE_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef THREATSTATES_H_
-#define THREATSTATES_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -21,4 +20,3 @@ public:
 	const static int TAUNTED = 0x101;
 	const static int FOCUSED = 0x102;
 };
-#endif /* THREATSTATES_H_ */

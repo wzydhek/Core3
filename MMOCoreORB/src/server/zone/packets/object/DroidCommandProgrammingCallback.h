@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef DROIDCOMMANDPROGRAMMINGCALLBACK_H_
-#define DROIDCOMMANDPROGRAMMINGCALLBACK_H_
+#pragma once
 
 #include "ObjectControllerMessageCallback.h"
 #include "server/zone/objects/intangible/PetControlDevice.h"
@@ -371,5 +370,3 @@ public:
 		return currentDataSize <= capacity;
 	}
 };
-
-#endif // DROIDCOMMANDPROGRAMMINGCALLBACK_H_

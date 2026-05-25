@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef MFRC_H_
-#define MFRC_H_
+#pragma once
 
 #include "TemplateVariable.h"
 #include "Random.h"
@@ -124,6 +123,3 @@ public:
 		combination = comb; // combination
 	}
 };
-
-
-#endif /* MFRC_H_ */

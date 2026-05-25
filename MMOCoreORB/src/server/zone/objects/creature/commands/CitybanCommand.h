@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CITYBANCOMMAND_H_
-#define CITYBANCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -82,5 +81,3 @@ public:
 	}
 
 };
-
-#endif //CITYBANCOMMAND_H_

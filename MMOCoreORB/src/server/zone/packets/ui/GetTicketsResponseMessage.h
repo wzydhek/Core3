@@ -1,6 +1,5 @@
 
-#ifndef GETTICKETSRESPONSEMESSAGE_H_
-#define GETTICKETSRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -43,6 +42,3 @@ public:
   	   insertInt(15, ticketCount++);
      }
 };
-
-#endif /*GETTICKETSRESPONSEMESSAGE_H__*/
-

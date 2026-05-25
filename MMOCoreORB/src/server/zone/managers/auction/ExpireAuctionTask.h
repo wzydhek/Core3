@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef EXPIREAUCTIONTASK_H_
-#define EXPIREAUCTIONTASK_H_
+#pragma once
 
 #include "server/zone/managers/auction/AuctionManager.h"
 
@@ -30,5 +29,3 @@ public:
 		strongRef->expireAuction(strongRefItem);
 	}
 };
-
-#endif /* EXPIREAUCTIONTASK_H_ */

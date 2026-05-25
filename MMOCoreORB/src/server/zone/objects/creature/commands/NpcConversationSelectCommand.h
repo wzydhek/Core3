@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NPCCONVERSATIONSELECTCOMMAND_H_
-#define NPCCONVERSATIONSELECTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/ship/ai/SpaceStationObject.h"
@@ -67,5 +66,3 @@ public:
 	}
 
 };
-
-#endif //NPCCONVERSATIONSELECTCOMMAND_H_

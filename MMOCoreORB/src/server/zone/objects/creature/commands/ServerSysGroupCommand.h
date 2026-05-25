@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SERVERSYSGROUPCOMMAND_H_
-#define SERVERSYSGROUPCOMMAND_H_
+#pragma once
 
 class ServerSysGroupCommand : public QueueCommand {
 public:
@@ -46,5 +45,3 @@ public:
 	}
 
 };
-
-#endif //SERVERSYSGROUPCOMMAND_H_

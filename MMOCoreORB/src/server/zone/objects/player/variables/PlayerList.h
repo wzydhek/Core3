@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef PLAYERLIST_H_
-#define PLAYERLIST_H_
+#pragma once
 
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 
 template <int DeltaUpdate>
@@ -100,5 +98,3 @@ public:
 	}
 
 };
-
-#endif /* PLAYERLIST_H_ */

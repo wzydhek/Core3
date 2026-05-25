@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef VENDORCONTAINERCOMPONENT_H_
-#define VENDORCONTAINERCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
@@ -14,5 +13,3 @@ class VendorContainerComponent : public ContainerComponent {
 public:
 	bool checkContainerPermission(SceneObject* sceneObject, CreatureObject* creature, uint16 permission) const;
 };
-
-#endif /* VENDORCONTAINERCOMPONENT_H_ */

@@ -5,8 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef GROUPLOOTRULESUICALLBACK_H_
-#define GROUPLOOTRULESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -43,6 +42,3 @@ public:
 	}
 
 };
-
-
-#endif /* GROUPLOOTRULESUICALLBACK_H_ */

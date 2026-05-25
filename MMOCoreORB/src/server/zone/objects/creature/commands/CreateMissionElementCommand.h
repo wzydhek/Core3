@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATEMISSIONELEMENTCOMMAND_H_
-#define CREATEMISSIONELEMENTCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/mission/MissionManager.h"
 
@@ -40,5 +39,3 @@ public:
 	}
 
 };
-
-#endif //CREATEMISSIONELEMENTCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DEATHBLOWCOMMAND_H_
-#define DEATHBLOWCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/creature/PetManager.h"
@@ -118,5 +117,3 @@ public:
 	}
 
 };
-
-#endif //DEATHBLOWCOMMAND_H_

@@ -8,8 +8,7 @@
  * \date 5-27-10
  */
 
-#ifndef REQUESTCORESAMPLECOMMAND_H_
-#define REQUESTCORESAMPLECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sessions/survey/SurveySession.h"
 
@@ -79,5 +78,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //REQUESTCORESAMPLECOMMAND_H_

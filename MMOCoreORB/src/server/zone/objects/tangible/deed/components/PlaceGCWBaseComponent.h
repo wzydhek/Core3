@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef PLACEGCWBASECOMPONENT_H_
-#define PLACEGCWBASECOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/deed/components/PlaceStructureComponent.h"
 
@@ -15,8 +14,3 @@ public:
 	int placeStructure(StructureDeed* deed, CreatureObject* creature, float x, float y, int angle) const;
 	int notifyStructurePlaced(StructureDeed* deed, CreatureObject* creature, StructureObject* structure) const;
 };
-
-
-
-
-#endif /* PLACEGCWBASECOMPONENT_H_ */

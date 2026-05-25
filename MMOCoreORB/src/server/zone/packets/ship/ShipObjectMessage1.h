@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef SHIPOBJECTMESSAGE1_H_
-#define SHIPOBJECTMESSAGE1_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/ship/ShipObject.h"
@@ -100,5 +99,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*SHIPOBJECTMESSAGE1_H_*/

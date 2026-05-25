@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef GALAXYACCOUNTINFOMAP_H_
-#define GALAXYACCOUNTINFOMAP_H_
+#pragma once
 
 #include "server/login/account/GalaxyAccountInfo.h"
 
@@ -19,5 +18,3 @@ public:
 
 	friend void to_json(nlohmann::json& j, const GalaxyAccountInfoMap& p);
 };
-
-#endif /* #define GALAXYACCOUNTINFOMAP_H_ */

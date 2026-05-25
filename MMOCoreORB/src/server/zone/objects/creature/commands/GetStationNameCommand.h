@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETSTATIONNAMECOMMAND_H_
-#define GETSTATIONNAMECOMMAND_H_
+#pragma once
 
 #include "server/login/account/Account.h"
 
@@ -60,5 +59,3 @@ public:
 	}
 
 };
-
-#endif //GETSTATIONNAMECOMMAND_H_

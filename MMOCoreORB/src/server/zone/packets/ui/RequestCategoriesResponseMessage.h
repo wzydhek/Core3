@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef REQUESTCATEGORIESRESPONSEMESSAGE_H_
-#define REQUESTCATEGORIESRESPONSEMESSAGE_H_
+#pragma once
 
 #include "server/zone/managers/holocron/HolocronManager.h"
 #include "server/zone/packets/MessageCallback.h"
@@ -51,5 +50,3 @@ public:
 		holocronManager->sendRequestCategoriesResponseTo(client);
 	}
 };
-
-#endif /* REQUESTCATEGORIESRESPONSEMESSAGE_H_ */

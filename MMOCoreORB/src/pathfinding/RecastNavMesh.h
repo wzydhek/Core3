@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef RECASTNAVMESH_H_
-#define RECASTNAVMESH_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "pathfinding/RecastTileBuilder.h"
@@ -65,4 +64,3 @@ public:
 
 	void saveToFile();
 };
-#endif /* RECASTNAVMESH_H_ */

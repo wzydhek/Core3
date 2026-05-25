@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETPUBLICSTATECOMMAND_H_
-#define SETPUBLICSTATECOMMAND_H_
+#pragma once
 
 class SetPublicStateCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETPUBLICSTATECOMMAND_H_

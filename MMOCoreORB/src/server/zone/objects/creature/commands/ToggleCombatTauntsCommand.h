@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TOGGLECOMBATTAUNTSCOMMAND_H_
-#define TOGGLECOMBATTAUNTSCOMMAND_H_
+#pragma once
 
 class ToggleCombatTauntsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //TOGGLECOMBATTAUNTSCOMMAND_H_

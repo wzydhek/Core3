@@ -2,8 +2,8 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DENYTRADEMESSAGE_H_
-#define DENYTRADEMESSAGE_H_
+#pragma once
+
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/sessions/TradeSession.h"
@@ -52,5 +52,3 @@ public:
 			target->sendMessage(new DenyTradeMessage());
 	}
 };
-
-#endif /*DENYTRADEMESSAGE_H_*/

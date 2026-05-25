@@ -5,8 +5,7 @@
  *      Author: dannuic
  */
 
-#ifndef STRINGIDMANAGER_H_
-#define STRINGIDMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/scene/variables/StringId.h"
 
@@ -39,5 +38,3 @@ public:
 }
 
 using namespace server::zone::managers::stringid;
-
-#endif /* STRINGIDMANAGER_H_ */

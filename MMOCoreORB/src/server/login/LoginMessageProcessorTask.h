@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LOGINMESSAGEPROCESSORTASK_H_
-#define LOGINMESSAGEPROCESSORTASK_H_
+#pragma once
 
 #include "LoginPacketHandler.h"
 
@@ -49,5 +48,3 @@ namespace server {
 } // namespace server
 
 using namespace server::login;
-
-#endif /*LOGINMESSAGEPROCESSORTASK_H_*/

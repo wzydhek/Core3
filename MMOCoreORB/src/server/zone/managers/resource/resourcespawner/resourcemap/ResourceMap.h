@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef RESOURCEMAP_H_
-#define RESOURCEMAP_H_
+#pragma once
 
 #include "server/zone/objects/resource/ResourceSpawn.h"
 
@@ -149,5 +148,3 @@ public:
 	 */
 	void getAttributeSubset(ResourceMap& subMap, const String& attributeName);
 };
-
-#endif /* RESOURCEMAP_H_ */

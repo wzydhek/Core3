@@ -1,5 +1,4 @@
-#ifndef VOTESTATUSTASK_H_
-#define VOTESTATUSTASK_H_
+#pragma once
 
 #include "server/zone/managers/frs/FrsManager.h"
 
@@ -66,5 +65,3 @@ public:
 }
 }
 }
-
-#endif /* VOTESTATUSTASK_H_ */

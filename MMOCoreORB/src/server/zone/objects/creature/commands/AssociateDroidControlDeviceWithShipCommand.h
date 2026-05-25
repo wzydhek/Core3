@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ASSOCIATEDROIDCONTROLDEVICEWITHSHIPCOMMAND_H_
-#define ASSOCIATEDROIDCONTROLDEVICEWITHSHIPCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/ship/ShipDroidData.h"
 #include "server/zone/objects/intangible/PetControlDevice.h"
@@ -116,5 +115,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // ASSOCIATEDROIDCONTROLDEVICEWITHSHIPCOMMAND_H_

@@ -16,13 +16,11 @@
 // 3. This notice may not be removed or altered from any source distribution.
 //
 
-#ifndef RECASTTILEBUILDER_H_
-#define RECASTTILEBUILDER_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "pathfinding/recast/DetourNavMesh.h"
 #include "pathfinding/recast/Recast.h"
-
 #include "RecastPolygon.h"
 
 class MeshData;
@@ -43,7 +41,6 @@ struct NavMeshTileHeader {
 	dtTileRef tileRef;
 	int dataSize;
 };
-
 
 class RecastSettings {
 public:
@@ -130,6 +127,3 @@ private:
 
 	RecastTileBuilder& operator=(const RecastTileBuilder&);
 };
-
-
-#endif // RECASTTILEBUILDER_H_

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CAMPKITTEMPLATE_H_
-#define CAMPKITTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -28,5 +27,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* CAMPKITTEMPLATE_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DELTASHORTVARIABLE_H_
-#define DELTASHORTVARIABLE_H_
+#pragma once
 
 #include "DeltaBasicVariable.h"
 
@@ -29,8 +28,3 @@ public:
 		obj->broadcastMessage(msg, true);
 	}
 };
-
-
-
-
-#endif /* DELTASHORTVARIABLE_H_ */

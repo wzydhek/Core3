@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ENTERSTRUCTUREPLACEMENTMODEMESSAGE_H_
-#define ENTERSTRUCTUREPLACEMENTMODEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -17,5 +16,3 @@ public:
 		insertAscii(crcpath); //path to the object.
 	}
 };
-
-#endif /*ENTERSTRUCTUREPLACEMENTMODEMESSAGE_H_*/

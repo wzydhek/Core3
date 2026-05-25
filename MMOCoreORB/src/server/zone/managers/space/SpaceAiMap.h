@@ -2,8 +2,7 @@
  * SpaceAiMap.h
  */
 
-#ifndef SPACEAIMAP_H_
-#define SPACEAIMAP_H_
+#pragma once
 
 #include "server/ServerCore.h"
 #include "system/util/VectorMap.h"
@@ -11,7 +10,6 @@
 // Space AI
 #include "server/zone/objects/ship/ai/btspace/BehaviorSpace.h"
 #include "server/zone/objects/ship/ai/btspace/BehaviorTreeSlotSpace.h"
-
 #include "templates/params/ship/ShipFlag.h"
 
 // include all behaviors we want to register
@@ -516,5 +514,3 @@ private:
 		return 0;
 	}
 };
-
-#endif /* SPACEAIMAP_H_ */

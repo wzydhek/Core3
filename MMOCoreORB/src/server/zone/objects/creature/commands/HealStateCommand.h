@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HEALSTATECOMMAND_H_
-#define HEALSTATECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/chat/StringIdChatParameter.h"
@@ -312,5 +311,3 @@ public:
 	}
 
 };
-
-#endif //HEALSTATECOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ENUMERATECHARACTERID_H_
-#define ENUMERATECHARACTERID_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/login/account/Account.h"
@@ -46,4 +45,3 @@ public:
 	}
 
 };
-#endif /*ENUMERATECHARACTERID_H_*/

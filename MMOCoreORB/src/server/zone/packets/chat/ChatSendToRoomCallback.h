@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CHATSENDTOROOMCALLBACK_H_
-#define CHATSENDTOROOMCALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
@@ -47,6 +46,3 @@ public:
 	}
 
 };
-
-
-#endif /* CHATSENDTOROOMCALLBACK_H_ */

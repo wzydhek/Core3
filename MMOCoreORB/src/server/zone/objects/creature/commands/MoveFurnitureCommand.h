@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MOVEFURNITURECOMMAND_H_
-#define MOVEFURNITURECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/building/BuildingObject.h"
@@ -157,5 +156,3 @@ public:
 	}
 
 };
-
-#endif //MOVEFURNITURECOMMAND_H_

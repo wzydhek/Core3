@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LUAINTANGIBLEOBJECT_H_
-#define LUAINTANGIBLEOBJECT_H_
+#pragma once
 
 #include "server/zone/objects/scene/LuaSceneObject.h"
 
@@ -41,5 +40,3 @@ namespace intangible {
 }
 
 using namespace server::zone::objects::intangible;
-
-#endif /* LUAINTANGIBLEOBJECT_H_ */

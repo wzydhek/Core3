@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CHARACTERNAMEMAP_H_
-#define CHARACTERNAMEMAP_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -94,5 +93,3 @@ public:
 		return names;
 	}
 };
-
-#endif /* CHARACTERNAMEMAP_H_ */

@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef ATTIBUTELISTCOMPONENT_H_
-#define ATTIBUTELISTCOMPONENT_H_
+#pragma once
 
 #include "SceneObjectComponent.h"
 
@@ -36,7 +35,6 @@ using namespace server::zone::objects::scene;
 using namespace server::zone::objects::creature;
 using namespace server::zone::packets::scene;
 
-
 class AttributeListComponent : public SceneObjectComponent, public Logger {
 public:
 
@@ -49,5 +47,3 @@ public:
 	virtual void fillAttributeList(AttributeListMessage* alm, CreatureObject* creature, SceneObject* object) const;
 
 };
-
-#endif /* ATTIBUTELISTCOMPONENT_H_ */

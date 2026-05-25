@@ -1,6 +1,5 @@
 
-#ifndef JEDIROBEATTIBUTELISTCOMPONENT_H_
-#define JEDIROBEATTIBUTELISTCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/wearables/RobeObject.h"
 #include "server/zone/objects/scene/components/AttributeListComponent.h"
@@ -61,5 +60,3 @@ public:
 		}
 	}
 };
-
-#endif /* JEDIROBEATTIBUTELISTCOMPONENT_H_ */

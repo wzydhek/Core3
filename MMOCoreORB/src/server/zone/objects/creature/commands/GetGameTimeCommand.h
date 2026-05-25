@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETGAMETIMECOMMAND_H_
-#define GETGAMETIMECOMMAND_H_
+#pragma once
 
 class GetGameTimeCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GETGAMETIMECOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FAILMISSIONAFTERCERTAINTIMETASK_H_
-#define FAILMISSIONAFTERCERTAINTIMETASK_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -30,5 +29,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::mission::events;
-
-#endif /* FAILMISSIONAFTERCERTAINTIMETASK_H_ */

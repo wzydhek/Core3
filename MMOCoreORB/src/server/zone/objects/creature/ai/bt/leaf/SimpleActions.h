@@ -1,5 +1,4 @@
-#ifndef SIMPLEACTIONS_H_
-#define SIMPLEACTIONS_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/Behavior.h"
 #include "server/zone/objects/creature/ai/bt/BlackboardData.h"
@@ -1101,5 +1100,3 @@ public:
 }
 }
 }
-
-#endif // SIMPLEACTIONS_H_

@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef CONVERSATIONTEMPLATE_H_
-#define CONVERSATIONTEMPLATE_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "ConversationScreen.h"
 
 namespace server {
@@ -74,5 +72,3 @@ public:
 }
 
 using namespace server::zone::objects::creature::conversation;
-
-#endif /* CONVERSATIONTEMPLATE_H_ */

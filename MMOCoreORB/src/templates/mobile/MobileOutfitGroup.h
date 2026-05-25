@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef MOBILEOUTFITGROUP_H_
-#define MOBILEOUTFITGROUP_H_
+#pragma once
 
 #include "templates/mobile/MobileOutfit.h"
 
@@ -50,6 +49,3 @@ public:
 	}
 
 };
-
-
-#endif /* MOBILEOUTFITGROUP_H_ */

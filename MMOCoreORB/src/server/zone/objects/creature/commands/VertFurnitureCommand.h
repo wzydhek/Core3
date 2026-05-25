@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef VERTFURNITURECOMMAND_H_
-#define VERTFURNITURECOMMAND_H_
+#pragma once
 
 class VertFurnitureCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //VERTFURNITURECOMMAND_H_

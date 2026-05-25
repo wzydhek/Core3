@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef FORCECUREPOISONCOMMAND_H_
-#define FORCECUREPOISONCOMMAND_H_
+#pragma once
 
 #include "ForceHealQueueCommand.h"
 
@@ -16,5 +15,3 @@ public:
 	}
 
 };
-
-#endif //FORCECUREPOISONCOMMAND_H_

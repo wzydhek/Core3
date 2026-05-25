@@ -5,11 +5,9 @@
  *      Author: kyle
  */
 
-#ifndef CREATUREHABITATMENUCOMPONENT_H_
-#define CREATUREHABITATMENUCOMPONENT_H_
+#pragma once
 
 #include "../TangibleObjectMenuComponent.h"
-
 
 class CreatureHabitatMenuComponent : public TangibleObjectMenuComponent {
 public:
@@ -40,6 +38,3 @@ private:
 	ManagedReference<TangibleObject*> getLiveCreatures( TangibleObject* creatureHabitat ) const;
 
 };
-
-
-#endif /* CREATUREHABITATMENUCOMPONENT_H_ */

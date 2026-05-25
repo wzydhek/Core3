@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REMOVEALLOWEDPLAYERCOMMAND_H_
-#define REMOVEALLOWEDPLAYERCOMMAND_H_
+#pragma once
 
 class RemoveAllowedPlayerCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //REMOVEALLOWEDPLAYERCOMMAND_H_

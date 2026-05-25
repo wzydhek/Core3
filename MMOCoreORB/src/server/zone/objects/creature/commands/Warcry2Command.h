@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef WARCRY2COMMAND_H_
-#define WARCRY2COMMAND_H_
+#pragma once
 
 #include "server/zone/managers/combat/CombatManager.h"
 #include "CombatQueueCommand.h"
@@ -46,5 +45,3 @@ public:
 	}
 
 };
-
-#endif //WARCRY2COMMAND_H_

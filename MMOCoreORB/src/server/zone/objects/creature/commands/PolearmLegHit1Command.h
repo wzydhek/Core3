@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef POLEARMLEGHIT1COMMAND_H_
-#define POLEARMLEGHIT1COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //POLEARMLEGHIT1COMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PATHNODE_H_
-#define PATHNODE_H_
+#pragma once
 
 #include "engine/util/u3d/Vector3.h"
 #include "templates/appearance/PathEdge.h"
@@ -164,5 +163,3 @@ public:
 		return toString();
 	}
 };
-
-#endif /* PATHNODE_H_ */

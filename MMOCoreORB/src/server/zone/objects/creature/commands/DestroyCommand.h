@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DESTROYCOMMAND_H_
-#define DESTROYCOMMAND_H_
+#pragma once
 
 class DestroyCommand : public QueueCommand {
 public:
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //DESTROYCOMMAND_H_

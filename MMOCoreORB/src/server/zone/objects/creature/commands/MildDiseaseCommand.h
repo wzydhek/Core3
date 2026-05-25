@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef MILDDISEASECOMMAND_H_
-#define MILDDISEASECOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif /* MILDDISEASECOMMAND_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CONFUSIONSHOTCOMMAND_H_
-#define CONFUSIONSHOTCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //CONFUSIONSHOTCOMMAND_H_

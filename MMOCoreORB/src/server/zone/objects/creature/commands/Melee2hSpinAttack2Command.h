@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MELEE2HSPINATTACK2COMMAND_H_
-#define MELEE2HSPINATTACK2COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //MELEE2HSPINATTACK2COMMAND_H_

@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef SURVEYTASK_H_
-#define SURVEYTASK_H_
+#pragma once
 
 #include "server/zone/packets/resource/SurveyMessage.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -49,5 +48,3 @@ public:
 		playerCreature->removePendingTask("survey");
 	}
 };
-
-#endif /* SURVEYTASK_H_ */

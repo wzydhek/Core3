@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETMAPLOCATIONSRESPONSEMESSAGE_H_
-#define GETMAPLOCATIONSRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/managers/planet/MapLocationTable.h"
@@ -53,4 +52,3 @@ public:
 	}
 
 };
-#endif /*GETMAPLOCATIONSRESPONSEMESSAGE_H_*/

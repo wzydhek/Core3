@@ -2,8 +2,7 @@
 // Created by g on 12/20/17.
 //
 
-#ifndef CORE3_HYPERSPACETOLOCATIONTASK_H
-#define CORE3_HYPERSPACETOLOCATIONTASK_H
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/ship/ShipObject.h"
@@ -309,5 +308,3 @@ public:
 	}
 #endif // DEBUG_HYPERSPACE
 };
-
-#endif // CORE3_HYPERSPACETOLOCATIONTASK_H

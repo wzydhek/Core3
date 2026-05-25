@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FREEZEPLAYERCOMMAND_H_
-#define FREEZEPLAYERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -97,5 +96,3 @@ public:
 	}
 
 };
-
-#endif //FREEZEPLAYERCOMMAND_H_

@@ -1,10 +1,8 @@
-#ifndef LOOKFORTARGETSPACE_H_
-#define LOOKFORTARGETSPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 #include "server/zone/objects/ship/ai/btspace/decoratorspace/DecoratorSpace.h"
 #include "templates/params/creature/ObjectFlag.h"
-
 #include <cassert>
 
 namespace server {
@@ -147,5 +145,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // LOOKFORTARGETSPACE_H_

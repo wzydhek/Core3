@@ -5,8 +5,7 @@
  *      Author: oru
  */
 
-#ifndef OBJECTVERSIONUPDATEMANAGER_H_
-#define OBJECTVERSIONUPDATEMANAGER_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -39,5 +38,3 @@ public:
 	int run();
 
 };
-
-#endif /* OBJECTVERSIONUPDATEMANAGER_H_ */

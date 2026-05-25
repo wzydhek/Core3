@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef NEWTICKETACTIVITYRESPONSEMESSAGE_H_
-#define NEWTICKETACTIVITYRESPONSEMESSAGE_H_
+#pragma once
 
 class NewTicketActivityResponseMessage : public BaseMessage {
 public:
@@ -40,5 +39,3 @@ public:
 		client->sendMessage(ntar);
 	}
 };
-
-#endif /* NEWTICKETACTIVITYRESPONSEMESSAGE_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef AIMCOMMAND_H_
-#define AIMCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
@@ -42,5 +41,3 @@ public:
 	}
 
 };
-
-#endif //AIMCOMMAND_H_

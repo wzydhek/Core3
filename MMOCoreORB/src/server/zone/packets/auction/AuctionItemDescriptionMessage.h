@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef AUCTIONITEMDESCRIPTIONMESSAGE_H_
-#define AUCTIONITEMDESCRIPTIONMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -24,5 +23,3 @@ public:
 	}
 	
 };
-
-#endif /*AUCTIONITEMDESCRIPTIONMESSAGE_H_*/

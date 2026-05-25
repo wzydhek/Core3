@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LEAVESTATION_H_
-#define LEAVESTATION_H_
+#pragma once
 
 #include "QueueCommand.h"
 #include "server/zone/objects/cell/CellObject.h"
@@ -57,5 +56,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //LEAVESTATION_H_

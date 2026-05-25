@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DEPLOYTRAPCOMMAND_H_
-#define DEPLOYTRAPCOMMAND_H_
+#pragma once
 
 class DeployTrapCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //DEPLOYTRAPCOMMAND_H_

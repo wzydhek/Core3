@@ -5,8 +5,7 @@
  * Actions self-register at link time using static initializers
  */
 
-#ifndef ACTIONBASE_H_
-#define ACTIONBASE_H_
+#pragma once
 
 #include "system/lang.h"
 #include "engine/log/Logger.h"
@@ -220,5 +219,3 @@ public:
 	 */
 	virtual String getHelpText() const = 0;
 };
-
-#endif /* ACTIONBASE_H_ */

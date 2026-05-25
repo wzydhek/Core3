@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMMCOMMAND_H_
-#define COMMCOMMAND_H_
+#pragma once
 
 class CommCommand : public QueueCommand {
 public:
@@ -27,5 +26,3 @@ public:
 	}
 
 };
-
-#endif //COMMCOMMAND_H_

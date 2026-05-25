@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ACTIVATEQUESTCOMMAND_H_
-#define ACTIVATEQUESTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -60,5 +59,3 @@ public:
 	}
 
 };
-
-#endif //ACTIVATEQUESTCOMMAND_H_

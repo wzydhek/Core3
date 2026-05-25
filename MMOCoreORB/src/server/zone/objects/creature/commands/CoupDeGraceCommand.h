@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COUPDEGRACECOMMAND_H_
-#define COUPDEGRACECOMMAND_H_
+#pragma once
 
 class CoupDeGraceCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //COUPDEGRACECOMMAND_H_

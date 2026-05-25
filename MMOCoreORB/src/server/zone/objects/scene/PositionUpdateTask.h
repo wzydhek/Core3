@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef POSITIONUPDATETASK_H_
-#define POSITIONUPDATETASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -28,6 +27,3 @@ public:
 		object->notifyObservers(ObserverEventType::OBJECTINRANGEMOVED, entry);
 	}
 };
-
-
-#endif /* POSITIONUPDATETASK_H_ */

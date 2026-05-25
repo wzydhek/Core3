@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STRUCTUREMANAGER_H_
-#define STRUCTUREMANAGER_H_
+#pragma once
 
 #include "templates/manager/TemplateManager.h"
 #include "templates/tangible/SharedStructureObjectTemplate.h"
@@ -196,5 +195,3 @@ public:
 
 	void promptMaintenanceDroid(StructureObject* structure, CreatureObject* creature);
 };
-
-#endif /*STRUCTUREMANAGER_H_*/

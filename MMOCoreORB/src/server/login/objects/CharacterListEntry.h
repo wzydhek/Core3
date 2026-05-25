@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHARACTERLISTENTRY_H_
-#define CHARACTERLISTENTRY_H_
+#pragma once
 
 #include "system/lang/Object.h"
 
@@ -194,6 +193,3 @@ public:
 		return toString();
 	}
 };
-
-
-#endif /*CHARACTERLISTENTRY_H_*/

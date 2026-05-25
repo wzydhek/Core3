@@ -1,5 +1,4 @@
-#ifndef SHIPDROIDDATA_H_
-#define SHIPDROIDDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -79,5 +78,3 @@ public:
 		}
 	}
 };
-
-#endif // SHIPDROIDDATA_H_

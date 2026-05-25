@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORFLORANONCOLLIDABLECONSTANT_H_
-#define AFFECTORFLORANONCOLLIDABLECONSTANT_H_
-
+#pragma once
 
 #include "../ProceduralRule.h"
 
@@ -54,6 +52,3 @@ public:
 		iffStream->closeChunk('DATA');
 	}
 };
-
-
-#endif /* AFFECTORFLORANONCOLLIDABLECONSTANT_H_ */

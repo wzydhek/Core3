@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef STARTINGLOCATION_H_
-#define STARTINGLOCATION_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 
@@ -146,5 +145,3 @@ public:
 		return location;
 	}
 };
-
-#endif /* STARTINGLOCATION_H_ */

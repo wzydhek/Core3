@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ABORTTRADEMESSAGE_H_
-#define ABORTTRADEMESSAGE_H_
+#pragma once
 
 class AbortTradeMessage : public BaseMessage {
 public:
@@ -12,5 +11,3 @@ public:
 		insertInt(0x9CA80F98);
 	}
 };
-
-#endif /*ABORTTRADEMESSAGE_H_*/

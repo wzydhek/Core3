@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef VENDORDATACOMPONENT_H_
-#define VENDORDATACOMPONENT_H_
+#pragma once
 
 #include "AuctionTerminalDataComponent.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -275,5 +274,3 @@ public:
 private:
 	void addSerializableVariables();
 };
-
-#endif /* VENDORDATACOMPONENT_H_ */

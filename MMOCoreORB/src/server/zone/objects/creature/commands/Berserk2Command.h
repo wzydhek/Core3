@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BERSERK2COMMAND_H_
-#define BERSERK2COMMAND_H_
+#pragma once
 
 class Berserk2Command : public QueueCommand {
 public:
@@ -64,5 +63,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //BERSERK2COMMAND_H_

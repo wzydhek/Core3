@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LAIRSPAWN_H_
-#define LAIRSPAWN_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -108,6 +107,3 @@ namespace creature {
 }
 
 using namespace server::zone::managers::creature;
-
-
-#endif /* LAIRSPAWN_H_ */

@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef PLANETMAPCATEGORY_H_
-#define PLANETMAPCATEGORY_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 
@@ -109,5 +108,3 @@ public:
 	}
 
 };
-
-#endif /* PLANETMAPCATEGORY_H_ */

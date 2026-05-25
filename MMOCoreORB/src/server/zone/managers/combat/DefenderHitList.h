@@ -4,8 +4,7 @@ DefenderHitList.h
 Author: Hakry
 */
 
-#ifndef DEFENDERHITLIST_H_
-#define DEFENDERHITLIST_H_
+#pragma once
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 
@@ -149,5 +148,3 @@ public:
 		return poolsToWound;
 	}
 };
-
-#endif /* DEFENDERHITLIST_H_ */

@@ -6,8 +6,7 @@
  *		Credits: TA & Valk
  */
 
-#ifndef COLORWITHKITSUICALLBACK_H
-#define COLORWITHKITSUICALLBACK_H
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/ai/DroidObject.h"
@@ -60,5 +59,3 @@ public:
 		target->refreshPaint();
 	}
 };
-
-#endif /* COLORWITHKITSUICALLBACK_H */

@@ -1,12 +1,11 @@
-#ifndef LOTTERYDROIDSUICALLBACK_H_
-#define LOTTERYDROIDSUICALLBACK_H_
-
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/eventperk/LotteryDroid.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
 #include "server/zone/objects/transaction/TransactionLog.h"
+#include "server/zone/objects/player/PlayerObject.h"
 
 class LotteryDroidSuiCallback : public SuiCallback {
 private:
@@ -133,5 +132,3 @@ public:
 		}
 	}
 };
-
-#endif /* LOTTERYDROIDSUICALLBACK_H_ */

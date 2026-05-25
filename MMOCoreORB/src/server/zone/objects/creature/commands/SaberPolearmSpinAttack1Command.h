@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SABERPOLEARMSPINATTACK1COMMAND_H_
-#define SABERPOLEARMSPINATTACK1COMMAND_H_
+#pragma once
 
 #include "JediCombatQueueCommand.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif //SABERPOLEARMSPINATTACK1COMMAND_H_

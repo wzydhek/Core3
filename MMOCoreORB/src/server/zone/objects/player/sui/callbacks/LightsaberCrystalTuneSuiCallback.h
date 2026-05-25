@@ -5,8 +5,7 @@
  *      Author: katherine
  */
 
-#ifndef LIGHTSABERCRYSTALTUNESUICALLBACK_H_
-#define LIGHTSABERCRYSTALTUNESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -35,6 +34,3 @@ public:
 		}
 	}
 };
-
-
-#endif /* LIGHTSABERCRYSTALTUNESUICALLBACK_H_ */

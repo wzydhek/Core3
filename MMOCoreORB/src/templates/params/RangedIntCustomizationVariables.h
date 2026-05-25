@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef RANGEDINTCUSTOMIZATIONVARIABLES_H_
-#define RANGEDINTCUSTOMIZATIONVARIABLES_H_
+#pragma once
 
 #include "engine/util/iffstream/IffStream.h"
 #include "templates/params/RangedIntCustomizationVariable.h"
@@ -44,5 +43,3 @@ public:
 
 	void parseType1(IffStream* source);
 };
-
-#endif /* RANGEDINTCUSTOMIZATIONVARIABLES_H_ */

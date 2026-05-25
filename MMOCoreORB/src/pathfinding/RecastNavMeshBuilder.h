@@ -16,8 +16,7 @@
 // 3. This notice may not be removed or altered from any source distribution.
 //
 
-#ifndef RECASTSAMPLETILEMESH_H
-#define RECASTSAMPLETILEMESH_H
+#pragma once
 
 #include "engine/engine.h"
 #include "pathfinding/recast/DetourNavMesh.h"
@@ -125,6 +124,3 @@ private:
 
 	RecastNavMeshBuilder& operator=(const RecastNavMeshBuilder&);
 };
-
-
-#endif // RECASTSAMPLETILEMESH_H

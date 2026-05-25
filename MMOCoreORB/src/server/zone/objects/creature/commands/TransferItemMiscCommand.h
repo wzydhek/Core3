@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TRANSFERITEMMISCCOMMAND_H_
-#define TRANSFERITEMMISCCOMMAND_H_
+#pragma once
 
 #include "server/ServerCore.h"
 #include "server/zone/ZoneServer.h"
@@ -386,5 +385,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //TRANSFERITEMMISCCOMMAND_H_

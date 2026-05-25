@@ -2,8 +2,7 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DROIDHARVESTMODULEDATACOMPONENT_H_
-#define DROIDHARVESTMODULEDATACOMPONENT_H_
+#pragma once
 
 #include "BaseDroidModuleComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidHarvestObserver.h"
@@ -105,5 +104,5 @@ public:
 } // objects
 } // zone
 } // server
+
 using namespace server::zone::objects::tangible::components::droid;
-#endif /* DROIDHARVESTMODULEDATACOMPONENT_H_ */

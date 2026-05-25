@@ -5,14 +5,10 @@
  *      Author: oru
  */
 
-#ifndef WAYPOINTCHATPARAMETERVECTOR_H_
-#define WAYPOINTCHATPARAMETERVECTOR_H_
+#pragma once
 
 #include "WaypointChatParameter.h"
 
 class WaypointChatParameterVector : public Vector<WaypointChatParameter> {
 
 };
-
-
-#endif /* WAYPOINTCHATPARAMETERVECTOR_H_ */

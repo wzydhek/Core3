@@ -5,12 +5,10 @@
  *      Author: Klivian
  */
 
-#ifndef SELECTDROIDEFFECTDELAYSUICALLBACK_H_
-#define SELECTDROIDEFFECTDELAYSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/components/droid/DroidEffectsModuleDataComponent.h"
-
 
 class SelectDroidEffectDelaySuiCallback : public SuiCallback, public Logger {
 
@@ -49,5 +47,3 @@ public:
 
 	}
 };
-
-#endif /* SELECTDROIDEFFECTDELAYSUICALLBACK_H_ */

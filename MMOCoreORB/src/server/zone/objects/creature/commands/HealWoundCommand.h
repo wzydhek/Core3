@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HEALWOUNDCOMMAND_H_
-#define HEALWOUNDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/pharmaceutical/WoundPack.h"
@@ -357,5 +356,3 @@ public:
 	}
 
 };
-
-#endif //HEALWOUNDCOMMAND_H_

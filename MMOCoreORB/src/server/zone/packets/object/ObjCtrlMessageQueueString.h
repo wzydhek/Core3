@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef OBJCTRLMESSAGEQUEUESTRING_H_
-#define OBJCTRLMESSAGEQUEUESTRING_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -18,6 +17,3 @@ public:
 			insertAscii(data.toCharArray());
 	}
 };
-
-
-#endif /* OBJCTRLMESSAGEQUEUESTRING_H_ */

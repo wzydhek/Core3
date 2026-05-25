@@ -5,11 +5,8 @@
  *      Author: victor
  */
 
-#ifndef AUCTIONEVENTSMAP_H_
-#define AUCTIONEVENTSMAP_H_
+#pragma once
 
 class AuctionEventsMap : public VectorMap<uint64, Reference<Task*> >, public Mutex {
 
 };
-
-#endif /* AUCTIONEVENTSMAP_H_ */

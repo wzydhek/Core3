@@ -3,12 +3,10 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef PLAYERCREATIONMANAGER_H_
-#define PLAYERCREATIONMANAGER_H_
+#pragma once
 
 #include "engine/lua/Lua.h"
 #include "server/zone/packets/charcreation/ClientCreateCharacterCallback.h"
-
 #include "ProfessionDefaultsInfo.h"
 #include "RacialCreationData.h"
 #include "HairStyleInfo.h"
@@ -156,5 +154,3 @@ public:
 }
 
 using namespace server::zone::managers::player::creation;
-
-#endif // PLAYERCREATIONMANAGER_H_

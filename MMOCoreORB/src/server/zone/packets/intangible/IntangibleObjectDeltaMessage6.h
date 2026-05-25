@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef INTANGIBLEOBJECTDELTAMESSAGE6_H_
-#define INTANGIBLEOBJECTDELTAMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/intangible/IntangibleObject.h"
@@ -21,5 +20,3 @@ IntangibleObjectDeltaMessage6(IntangibleObject* it) : DeltaMessage(it->getObject
 		// addAsciiUpdate(0x00, itemName); Unknown
 	}
 };
-
-#endif /*INTANGIBLEOBJECTDELTAMESSAGE6_H_*/

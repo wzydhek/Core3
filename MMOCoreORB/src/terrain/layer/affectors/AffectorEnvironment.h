@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORENVIRONMENT_H_
-#define AFFECTORENVIRONMENT_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 
@@ -58,7 +57,3 @@ public:
 		return informationHeader.isEnabled();
 	}
 };
-
-
-
-#endif /* AFFECTORENVIRONMENT_H_ */

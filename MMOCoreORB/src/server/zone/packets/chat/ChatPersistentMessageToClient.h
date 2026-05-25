@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATPERSISTENTMESSAGETOCLIENT_H_
-#define CHATPERSISTENTMESSAGETOCLIENT_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/chat/StringIdChatParameterVector.h"
@@ -143,5 +142,3 @@ public:
 		setCompression(true);
 	}
 };
-
-#endif /*CHATPERSISTENTMESSAGETOCLIENT_H_*/

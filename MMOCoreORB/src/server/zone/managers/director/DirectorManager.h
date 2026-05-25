@@ -5,14 +5,12 @@
  *      Author: victor
  */
 
-#ifndef DIRECTORMANAGER_H_
-#define DIRECTORMANAGER_H_
+#pragma once
 
 #include "DirectorSharedMemory.h"
 #include "server/zone/managers/director/QuestStatus.h"
 #include "server/zone/managers/director/ScreenPlayTask.h"
 #include "server/zone/managers/director/QuestVectorMap.h"
-
 #include "system/util/SynchronizedSortedVector.h"
 #include "system/util/SynchronizedHashTable.h"
 #include "system/util/SynchronizedVectorMap.h"
@@ -253,5 +251,3 @@ namespace server {
 }
 
 using namespace server::zone::managers::director;
-
-#endif /* DIRECTORMANAGER_H_ */

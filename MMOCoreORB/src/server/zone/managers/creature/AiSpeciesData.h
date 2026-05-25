@@ -1,6 +1,5 @@
 
-#ifndef AISPECIESDATA_H_
-#define AISPECIESDATA_H_
+#pragma once
 
 namespace server {
 namespace zone {
@@ -47,5 +46,3 @@ public:
 }
 }
 }
-
-#endif /* AISPECIESDATA_H_ */

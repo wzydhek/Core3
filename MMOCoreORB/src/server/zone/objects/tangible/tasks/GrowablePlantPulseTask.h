@@ -1,5 +1,4 @@
-#ifndef GROWABLEPLANTPULSETASK_H_
-#define GROWABLEPLANTPULSETASK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/misc/PlantObject.h"
 #include "server/zone/ZoneServer.h"
@@ -145,5 +144,3 @@ public:
 }
 
 using namespace server::zone::objects::tangible::tasks;
-
-#endif /* GROWABLEPLANTPULSETASK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETACCOUNTINFOCOMMAND_H_
-#define GETACCOUNTINFOCOMMAND_H_
+#pragma once
 
 #include "server/login/account/AccountManager.h"
 #include "server/zone/objects/player/sessions/sui/PlayerManagementSessionSuiCallback.h"
@@ -295,5 +294,3 @@ public:
 		creature->sendSystemMessage("Example: /getAccountInfo -i <ip address>");
 	}
 };
-
-#endif // GETACCOUNTINFOCOMMAND_H_

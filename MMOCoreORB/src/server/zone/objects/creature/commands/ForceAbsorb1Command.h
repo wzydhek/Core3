@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCEABSORB1COMMAND_H_
-#define FORCEABSORB1COMMAND_H_
+#pragma once
 
 class ForceAbsorb1Command : public JediQueueCommand {
 public:
@@ -40,5 +39,3 @@ public:
 		ghost->setForcePower(ghost->getForcePower() + param);
 	}
 };
-
-#endif //FORCEABSORB1COMMAND_H_

@@ -2,8 +2,7 @@
  * RemoveDisabledInvulnerableTask.h
  */
 
-#ifndef REMOVEDISABLEDINVULNERABLETASK_H_
-#define REMOVEDISABLEDINVULNERABLETASK_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 #include "templates/params/ship/ShipFlag.h"
@@ -56,5 +55,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::ship::ai::events;
-
-#endif /* REMOVEDISABLEDINVULNERABLETASK_H_ */

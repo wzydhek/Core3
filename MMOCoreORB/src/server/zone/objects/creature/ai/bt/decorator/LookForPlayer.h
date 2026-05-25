@@ -1,11 +1,9 @@
-#ifndef LOOKFORPLAYER_H_
-#define LOOKFORPLAYER_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "templates/params/OptionBitmask.h"
 #include "server/zone/objects/creature/ai/bt/decorator/Decorator.h"
 #include "server/zone/managers/collision/CollisionManager.h"
-
 #include <cassert>
 
 namespace server {
@@ -88,5 +86,3 @@ public:
 }
 }
 }
-
-#endif // LOOKFORPLAYER_H_

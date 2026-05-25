@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LIGHTENGINESCRAMBLE_H_
-#define LIGHTENGINESCRAMBLE_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //LIGHTENGINESCRAMBLE_H_

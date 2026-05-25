@@ -2,8 +2,8 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BUILDINGOBJECTMESSAGE3_H_
-#define BUILDINGOBJECTMESSAGE3_H_
+#pragma once
+
 /*
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/building/BuildingObject.h"
@@ -61,4 +61,3 @@ public:
 	}
 };
 */
-#endif /*BUILDINGOBJECTMESSAGE3_H_*/

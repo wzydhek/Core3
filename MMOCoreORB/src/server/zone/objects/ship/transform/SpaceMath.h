@@ -1,5 +1,4 @@
-#ifndef SPACEMATH_H_
-#define SPACEMATH_H_
+#pragma once
 
 namespace server {
 	namespace zone {
@@ -58,5 +57,3 @@ public:
 
 	static Quaternion rotationToQuaternion(const Vector3& rotation, bool precision = true);
 };
-
-#endif // SPACEMATH_H_

@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef CREATUREEMOTE_H_
-#define CREATUREEMOTE_H_
+#pragma once
 
 class CreatureEmote {
 public:
@@ -28,6 +27,3 @@ public:
 		WHAP     = 366
 	};
 };
-
-
-#endif /* CREATUREEMOTE_H_ */

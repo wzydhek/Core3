@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef TURRETCONTROLSUICALLBACK_H_
-#define TURRETCONTROLSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/gcw/GCWManager.h"
@@ -119,5 +118,3 @@ public:
 
 	}
 };
-
-#endif /* TURRETCONTROLSUICALLBACK_H_ */

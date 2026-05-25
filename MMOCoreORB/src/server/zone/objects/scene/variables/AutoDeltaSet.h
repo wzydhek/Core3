@@ -5,12 +5,10 @@
  *      Author: TheAnswer
  */
 
-#ifndef SRC_SERVER_ZONE_OBJECTS_SCENE_VARIABLES_AUTODELTASET_H_
-#define SRC_SERVER_ZONE_OBJECTS_SCENE_VARIABLES_AUTODELTASET_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "system/util/HashSet.h"
-
 #include "server/zone/packets/DeltaMessage.h"
 #include "engine/util/json_utils.h"
 
@@ -132,6 +130,3 @@ public:
 		return set.iterator();
 	}
 };
-
-
-#endif /* SRC_SERVER_ZONE_OBJECTS_SCENE_VARIABLES_AUTODELTASET_H_ */

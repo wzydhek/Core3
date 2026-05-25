@@ -5,9 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef CHATLEAVEROOMCALLBACK_H_
-#define CHATLEAVEROOMCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
@@ -54,6 +52,3 @@ public:
 	}
 
 };
-
-
-#endif /* CHATLEAVEROOMCALLBACK_H_ */

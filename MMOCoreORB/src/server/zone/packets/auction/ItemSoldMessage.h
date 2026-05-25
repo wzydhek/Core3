@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ITEMSOLDMESSAGE_H_
-#define ITEMSOLDMESSAGE_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -73,5 +72,3 @@ public:
 		return msg.toString();
 	}
 };
-
-#endif /*ITEMSOLDMESSAGE_H_*/

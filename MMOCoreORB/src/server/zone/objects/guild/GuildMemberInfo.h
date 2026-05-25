@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDMEMBERINFO_H_
-#define GUILDMEMBERINFO_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
@@ -124,6 +123,5 @@ namespace guild {
 }
 }
 }
-using namespace server::zone::objects::guild;
 
-#endif /* GUILDMEMBERINFO_H_ */
+using namespace server::zone::objects::guild;

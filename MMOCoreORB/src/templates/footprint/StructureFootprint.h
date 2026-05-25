@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef STRUCTUREFOOTPRINT_H_
-#define STRUCTUREFOOTPRINT_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 
@@ -127,5 +126,3 @@ public:
 		return colChunkSize;
 	}
 };
-
-#endif /* STRUCTUREFOOTPRINT_H_ */

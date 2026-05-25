@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FINDTARGETTASKLIST_H_
-#define FINDTARGETTASKLIST_H_
+#pragma once
 
 #include "engine/core/Task.h"
 
@@ -26,5 +25,3 @@ class FindTargetTaskList : public Vector<Reference<Task* > > {
 } // namespace server
 
 using namespace server::zone::objects::mission::bountyhunter::events;
-
-#endif /* FINDTARGETTASKLIST_H_ */

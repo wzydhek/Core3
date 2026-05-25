@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ENTERTICKETPURCHASEMODEMESSAGE_H_
-#define ENTERTICKETPURCHASEMODEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/managers/planet/PlanetTravelPoint.h"
@@ -18,5 +17,3 @@ public:
         insertByte(0);
     }
 };
-
-#endif /*ENTERTICKETPURCHASEMODEMESSAGE_H_*/

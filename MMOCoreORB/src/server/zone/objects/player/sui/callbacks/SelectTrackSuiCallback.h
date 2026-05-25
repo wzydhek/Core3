@@ -3,8 +3,7 @@
  *
  */
 
-#ifndef DROIDPLAYBACKSUICALLBACK_H
-#define DROIDPLAYBACKSUICALLBACK_H
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
@@ -84,5 +83,3 @@ public:
 		}
 	}
 };
-
-#endif /* DROIDPLAYBACKSUICALLBACK_H */

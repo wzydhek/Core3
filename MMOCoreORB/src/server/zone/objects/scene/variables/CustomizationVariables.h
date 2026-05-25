@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CUSTOMIZATIONVARIABLES_H_
-#define CUSTOMIZATIONVARIABLES_H_
+#pragma once
 
 #include "system/lang.h"
-
 #include "engine/util/json_utils.h"
 
 // #define DEBUG_CUSTOMIZATION_PARSING 1
@@ -61,5 +59,3 @@ public:
 	friend void to_json(nlohmann::json& j, const CustomizationVariables& vars);
 
 };
-
-#endif /*CUSTOMIZATIONVARIABLES_H_*/

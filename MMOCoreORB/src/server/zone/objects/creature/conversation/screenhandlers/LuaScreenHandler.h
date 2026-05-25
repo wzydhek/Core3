@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LUASCREENHANDLER_H_
-#define LUASCREENHANDLER_H_
+#pragma once
 
 #include "ScreenHandler.h"
 #include "engine/log/Logger.h"
@@ -43,7 +42,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::creature::conversation::screenhandlers;
-
-
-
-#endif /* LUASCREENHANDLER_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETBOOSTMORALECOMMAND_H_
-#define SETBOOSTMORALECOMMAND_H_
+#pragma once
 
 #include "SquadLeaderCommand.h"
 
@@ -59,5 +58,3 @@ public:
 	}
 
 };
-
-#endif //SETBOOSTMORALECOMMAND_H_

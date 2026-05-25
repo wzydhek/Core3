@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef ELEVATORUPMENUCOMPONENT_H_
-#define ELEVATORUPMENUCOMPONENT_H_
+#pragma once
 
 #include "ElevatorMenuComponent.h"
 
@@ -16,5 +15,3 @@ public:
 	virtual void fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const;
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 };
-
-#endif /* ELEVATORUPMENUCOMPONENT_H_ */

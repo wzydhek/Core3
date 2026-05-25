@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FACTIONRANKS_H_
-#define FACTIONRANKS_H_
+#pragma once
 
 #include "FactionRank.h"
 
@@ -30,6 +29,3 @@ public:
 		return ranks.size();
 	}
 };
-
-
-#endif /* FACTIONRANK_H_ */

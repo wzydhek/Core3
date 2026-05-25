@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LASTDITCHCOMMAND_H_
-#define LASTDITCHCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif //LASTDITCHCOMMAND_H_

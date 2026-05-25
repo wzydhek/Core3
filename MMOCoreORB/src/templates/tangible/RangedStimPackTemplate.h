@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef RANGEDSTIMPACKTEMPLATE_H_
-#define RANGEDSTIMPACKTEMPLATE_H_
+#pragma once
 
 #include "StimPackTemplate.h"
 
@@ -57,6 +56,3 @@ public:
 		return true;
 	}
 };
-
-
-#endif /* RANGEDSTIMPACKTEMPLATE_H_ */

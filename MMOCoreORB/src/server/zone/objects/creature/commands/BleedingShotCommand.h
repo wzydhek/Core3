@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BLEEDINGSHOTCOMMAND_H_
-#define BLEEDINGSHOTCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //BLEEDINGSHOTCOMMAND_H_

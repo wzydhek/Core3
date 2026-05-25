@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef AUCTIONCREATECOMMAND_H_
-#define AUCTIONCREATECOMMAND_H_
+#pragma once
 
 class AuctionCreateCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //AUCTIONCREATECOMMAND_H_

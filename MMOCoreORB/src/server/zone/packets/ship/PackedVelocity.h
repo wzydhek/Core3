@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef SRC_SERVER_ZONE_PACKETS_SHIP_PACKEDVELOCITY_H_
-#define SRC_SERVER_ZONE_PACKETS_SHIP_PACKEDVELOCITY_H_
+#pragma once
 
 #include "PackedUnitVector.h"
 
@@ -54,6 +53,3 @@ public:
 		return speed * inverseVelocityScale;
 	}
 };
-
-
-#endif /* SRC_SERVER_ZONE_PACKETS_SHIP_PACKEDVELOCITY_H_ */

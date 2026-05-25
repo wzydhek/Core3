@@ -2,11 +2,9 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef BASEDROIDMODULECOMPONENT_H_
-#define BASEDROIDMODULECOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "server/zone/objects/manufactureschematic/craftingvalues/CraftingValues.h"
@@ -157,6 +155,5 @@ public:
 } //objects
 } //zone
 } //server
-using namespace server::zone::objects::tangible::components::droid;
 
-#endif /*BASEDROIDMODULECOMPONENT_H_*/
+using namespace server::zone::objects::tangible::components::droid;

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GMCREATECLASSRESOURCECOMMAND_H_
-#define GMCREATECLASSRESOURCECOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/resource/ResourceManager.h"
 
@@ -30,5 +29,3 @@ public:
 	}
 
 };
-
-#endif //GMCREATECLASSRESOURCECOMMAND_H_

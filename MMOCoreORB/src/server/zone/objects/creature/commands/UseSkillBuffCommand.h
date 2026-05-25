@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef USESKILLBUFFCOMMAND_H_
-#define USESKILLBUFFCOMMAND_H_
+#pragma once
 
 class UseSkillBuffCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //USESKILLBUFFCOMMAND_H_

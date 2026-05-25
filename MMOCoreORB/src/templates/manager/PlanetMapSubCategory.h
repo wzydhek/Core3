@@ -2,8 +2,7 @@
  * PlanetMapSubCategory.h
  */
 
-#ifndef PLANETMAPSUBCATEGORY_H_
-#define PLANETMAPSUBCATEGORY_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 #include "server/zone/managers/planet/MapLocationType.h"
@@ -106,5 +105,3 @@ public:
 		return factionVisibleOnly;
 	}
 };
-
-#endif /* PLANETMAPSUBCATEGORY_H_ */

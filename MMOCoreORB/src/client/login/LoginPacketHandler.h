@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef LOGINPACKETHANDLER_H_
-#define LOGINPACKETHANDLER_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "ClientCore.h"
@@ -40,5 +39,3 @@ public:
 	void handleLoginClusterStatus(Message* pack);
 	void handleErrorMessage(Message* pack);
 };
-
-#endif /* LOGINPACKETHANDLER_H_ */

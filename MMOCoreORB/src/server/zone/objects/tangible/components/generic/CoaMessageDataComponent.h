@@ -1,6 +1,5 @@
 
-#ifndef COAMESSAGEDATACOMPONENT_H_
-#define COAMESSAGEDATACOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
@@ -51,6 +50,3 @@ private:
 		addSerializableVariable("number", &number);
 	}
 };
-
-
-#endif /* COAMESSAGEDATACOMPONENT_H_ */

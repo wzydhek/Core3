@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef TEACHCOMMAND_H_
-#define TEACHCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -46,5 +45,3 @@ public:
 	}
 
 };
-
-#endif //TEACHCOMMAND_H_

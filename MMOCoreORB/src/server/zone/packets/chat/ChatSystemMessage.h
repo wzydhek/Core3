@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATSYSTEMMESSAGE_H_
-#define CHATSYSTEMMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/chat/StringIdChatParameter.h"
@@ -49,5 +48,3 @@ public:
 		setCompression(true);
 	}
 };
-
-#endif /*CHATSYSTEMMESSAGE_H_*/

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef PLAYERSNEARYOU_H_
-#define PLAYERSNEARYOU_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -90,5 +89,3 @@ public:
 	}
 
 };
-
-#endif /*PLAYERSNEARYOU_H_*/

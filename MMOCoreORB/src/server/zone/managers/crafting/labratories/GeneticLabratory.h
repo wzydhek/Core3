@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef GENETICLABRATORY_H_
-#define GENETICLABRATORY_H_
+#pragma once
 
 #include "SharedLabratory.h"
 
@@ -61,5 +60,3 @@ protected:
 }
 
 using namespace server::zone::managers::crafting::labratories;
-
-#endif /* GENETICLABRATORY_H_ */

@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef MESHDATA_H_
-#define MESHDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -126,5 +125,3 @@ public:
 	friend class MeshAppearanceTemplate;
 
 };
-
-#endif /* MESHDATA_H_ */

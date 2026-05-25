@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLANETTRAVELPOINTLISTRESPONSE_H_
-#define PLANETTRAVELPOINTLISTRESPONSE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -113,5 +112,3 @@ public:
     }
 	
 };
-
-#endif /*PLANETTRAVELPOINTLISTRESPONSE_H_*/

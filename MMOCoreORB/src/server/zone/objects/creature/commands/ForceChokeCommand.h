@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCECHOKECOMMAND_H_
-#define FORCECHOKECOMMAND_H_
+#pragma once
 
 #include "ForcePowersQueueCommand.h"
 
@@ -38,5 +37,3 @@ public:
 	}
 
 };
-
-#endif //FORCECHOKECOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GALLOPSTOPCOMMAND_H_
-#define GALLOPSTOPCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -70,5 +69,3 @@ public:
 	}
 
 };
-
-#endif //GALLOPSTOPCOMMAND_H_

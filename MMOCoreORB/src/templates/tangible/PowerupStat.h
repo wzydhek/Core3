@@ -5,11 +5,9 @@
  *      Author: kyle
  */
 
-#ifndef POWERUPSTAT_H_
-#define POWERUPSTAT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
 
 class PowerupStat: public virtual Serializable {
@@ -98,5 +96,3 @@ public:
 		value = v;
 	}
 };
-
-#endif /* POWERUPSTAT_H_ */

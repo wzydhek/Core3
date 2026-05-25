@@ -2,19 +2,18 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SERVERCORE_H_
-#define SERVERCORE_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "system/lang/Function.h"
 #include "system/io/Pipe.h"
-
 #include "server/features/Features.h"
-
 #include "server/login/LoginServer.h"
+
 #ifdef WITH_SWGREALMS_API
-#include "server/login/SWGRealmsAPI.h"
+	#include "server/login/SWGRealmsAPI.h"
 #endif // WITH_SWGREALMS_API
+
 #include "server/ping/PingServer.h"
 
 namespace server {
@@ -141,5 +140,3 @@ public:
 	static int getSchemaVersion();
 #endif // !WITH_SWGREALMS_API
 };
-
-#endif /*SERVERCORE_H_*/

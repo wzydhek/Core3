@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ROAD_H_
-#define ROAD_H_
+#pragma once
 
 #include "../TemplateVariable.h"
 #include "Segment.h"
@@ -53,5 +52,3 @@ public:
 		// Logger::console.info(true) << "Road finished loading segments - Total Segments: " << sgmts.size();
 	}
 };
-
-#endif /* ROAD_H_ */

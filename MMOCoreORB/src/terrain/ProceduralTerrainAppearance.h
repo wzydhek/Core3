@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PROCEDURALTERRAINAPPEARANCE_H_
-#define PROCEDURALTERRAINAPPEARANCE_H_
+#pragma once
 
 #include "TemplateVariable.h"
 #include "TerrainAppearance.h"
@@ -129,5 +128,3 @@ public:
 	TerrainGenerator* removeTerrainModification(uint64 objectid);
 
 };
-
-#endif /* PROCEDURALTERRAINAPPEARANCE_H_ */

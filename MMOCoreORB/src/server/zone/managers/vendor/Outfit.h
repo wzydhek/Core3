@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef OUTFIT_H_
-#define OUTFIT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -58,5 +57,3 @@ public:
 	}
 
 };
-
-#endif /* OUTFIT_H_ */

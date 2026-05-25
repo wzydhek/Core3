@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UNACCEPTTRANSACTIONMESSAGE_H_
-#define UNACCEPTTRANSACTIONMESSAGE_H_
+#pragma once
 
 class UnAcceptTransactionMessage : public BaseMessage {
 public:
@@ -12,5 +11,3 @@ public:
 		insertInt(0xE81E4382);
 	}
 };
-
-#endif /*ACCEPTTRANSACTIONMESSAGE_H_*/

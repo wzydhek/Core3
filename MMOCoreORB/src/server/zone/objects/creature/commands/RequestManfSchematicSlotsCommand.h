@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTMANFSCHEMATICSLOTSCOMMAND_H_
-#define REQUESTMANFSCHEMATICSLOTSCOMMAND_H_
+#pragma once
 
 class RequestManfSchematicSlotsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTMANFSCHEMATICSLOTSCOMMAND_H_

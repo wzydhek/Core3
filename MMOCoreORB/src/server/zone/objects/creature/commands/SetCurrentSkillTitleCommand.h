@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETCURRENTSKILLTITLECOMMAND_H_
-#define SETCURRENTSKILLTITLECOMMAND_H_
+#pragma once
 
 class SetCurrentSkillTitleCommand : public QueueCommand {
 public:
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif //SETCURRENTSKILLTITLECOMMAND_H_

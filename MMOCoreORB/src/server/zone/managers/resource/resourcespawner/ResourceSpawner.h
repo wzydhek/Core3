@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef RESOURCESPAWNER_H_
-#define RESOURCESPAWNER_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/ZoneProcessServer.h"
@@ -18,7 +17,6 @@
 #include "server/zone/objects/transaction/TransactionLog.h"
 #include "resourcetree/ResourceTree.h"
 #include "resourcemap/ResourceMap.h"
-
 #include "resourcepool/MinimumPool.h"
 #include "resourcepool/FixedPool.h"
 #include "resourcepool/RandomPool.h"
@@ -166,5 +164,3 @@ private:
 	friend class ResourceManager;
 	friend class NativePool;
 };
-
-#endif /* RESOURCESPAWNER_H_ */

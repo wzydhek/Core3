@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BANDFLOURISHCOMMAND_H_
-#define BANDFLOURISHCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/DroidObject.h"
 #include "server/zone/objects/tangible/Instrument.h"
@@ -228,5 +227,3 @@ public:
 	}
 
 };
-
-#endif //BANDFLOURISHCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef CITYVOTINGMENUCOMPONENT_H_
-#define CITYVOTINGMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
 
@@ -15,5 +14,3 @@ public:
 	virtual void fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const;
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 };
-
-#endif /* CITYVOTINGMENUCOMPONENT_H_ */

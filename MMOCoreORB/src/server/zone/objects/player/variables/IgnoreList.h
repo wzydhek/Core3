@@ -5,17 +5,10 @@
  *      Author: victor
  */
 
-#ifndef IGNORELIST_H_
-#define IGNORELIST_H_
-
+#pragma once
 
 #include "PlayerList.h"
-
 
 class IgnoreList : public PlayerList<8> {
 
 };
-
-
-
-#endif /* IGNORELIST_H_ */

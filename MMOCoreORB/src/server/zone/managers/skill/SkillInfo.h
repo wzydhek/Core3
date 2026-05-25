@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef SKILLINFO_H_
-#define SKILLINFO_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 
@@ -151,6 +150,3 @@ public:
 		}
 	}
 };
-
-
-#endif /* SKILLINFO_H_ */

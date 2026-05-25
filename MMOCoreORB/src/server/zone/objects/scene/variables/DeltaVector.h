@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef DELTALIST_H_
-#define DELTALIST_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/packets/DeltaMessage.h"
@@ -283,6 +282,3 @@ public:
 }
 
 using namespace server::zone::objects::scene::variables;
-
-
-#endif /* DELTAVECTOR_H_ */

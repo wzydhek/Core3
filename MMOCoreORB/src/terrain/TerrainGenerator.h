@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TERRAINGENERATOR_H_
-#define TERRAINGENERATOR_H_
+#pragma once
 
 #include "TemplateVariable.h"
 #include "ShadersGroup.h"
@@ -82,6 +81,3 @@ public:
 	}
 
 };
-
-
-#endif /* TERRAINGENERATOR_H_ */

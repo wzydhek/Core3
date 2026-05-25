@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETPLAYERSTATECOMMAND_H_
-#define SETPLAYERSTATECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -77,5 +76,3 @@ public:
 	}
 
 };
-
-#endif //SETPLAYERSTATECOMMAND_H_

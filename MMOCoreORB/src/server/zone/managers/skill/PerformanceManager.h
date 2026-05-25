@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef PERFORMANCEMANAGER_H_
-#define PERFORMANCEMANAGER_H_
+#pragma once
 
 #include "Performance.h"
 #include "PerformEffect.h"
@@ -62,5 +61,3 @@ public:
 	void performanceMessageToDroidOwner(CreatureObject* droid, CreatureObject* target, const String& table, const String& text);
 
 };
-
-#endif /*PERFORMANCEMANAGER_H_*/

@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef BLUEPRINTENTRY_H_
-#define BLUEPRINTENTRY_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -173,5 +172,3 @@ private:
 	/// Adds members to be serialized
 	void addSerializableVariables();
 };
-
-#endif /* BLUEPRINTENTRY_H_ */

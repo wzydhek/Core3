@@ -5,13 +5,10 @@
  *      Author: victor
  */
 
-#ifndef DELTAFLOATVARIABLE_H_
-#define DELTAFLOATVARIABLE_H_
+#pragma once
 
 #include "DeltaBasicVariable.h"
-
 #include "server/zone/packets/DeltaMessage.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
 
 template<int BaselineName, uint8 Type, int DeltaID>
@@ -47,6 +44,3 @@ public:
 		msg->addFloatUpdate(DeltaID, object);
 	}
 };
-
-
-#endif /* DELTAFLOATVARIABLE_H_ */

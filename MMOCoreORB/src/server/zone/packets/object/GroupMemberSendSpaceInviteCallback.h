@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GROUPMEMBERSENDSPACEINVITECALLBACK_H_
-#define GROUPMEMBERSENDSPACEINVITECALLBACK_H_
+#pragma once
 
 #include "ObjectControllerMessageCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -51,5 +50,3 @@ public:
 		groupMember->sendMessage(inviteMsg);
 	}
 };
-
-#endif /* GROUPMEMBERSENDSPACEINVITECALLBACK_H_ */

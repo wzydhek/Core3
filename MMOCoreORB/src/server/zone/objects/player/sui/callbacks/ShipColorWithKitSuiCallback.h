@@ -4,8 +4,7 @@
  * Created on: 2/18/2026
  * Author: Fastburn
 */
-#ifndef SHIPCOLORWITHKITSUICALLBACK_H_
-#define SHIPCOLORWITHKITSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -58,5 +57,3 @@ public:
 		}
 	}
 };
-
-#endif /* SHIPCOLORWITHKITSUICALLBACK_H_ */

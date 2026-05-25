@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DENYSERVICECOMMAND_H_
-#define DENYSERVICECOMMAND_H_
+#pragma once
 
 class DenyServiceCommand : public QueueCommand {
 public:
@@ -66,5 +65,3 @@ public:
 	}
 
 };
-
-#endif //DENYSERVICECOMMAND_H_

@@ -5,9 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef CHATQUERYROOMCALLBACK_H_
-#define CHATQUERYROOMCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
@@ -40,6 +38,3 @@ public:
 	}
 
 };
-
-
-#endif /* CHATQUERYROOMCALLBACK_H_ */

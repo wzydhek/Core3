@@ -2,8 +2,7 @@
  * ModSortingHelper.h
  */
 
-#ifndef MODSORTINGHELPER_H_
-#define MODSORTINGHELPER_H_
+#pragma once
 
 /**
  * Rename for clarity/convenience
@@ -47,5 +46,3 @@ public:
 		}
 	}
 };
-
-#endif /* MODSORTINGHELPER_H_ */

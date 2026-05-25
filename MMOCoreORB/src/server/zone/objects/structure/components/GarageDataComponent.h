@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GARAGEDATACOMPONENT_H_
-#define GARAGEDATACOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 #include "system/util/SynchronizedSortedVector.h"
@@ -33,5 +32,3 @@ public:
 		notifiedPlayers.drop(oid);
 	}
 };
-
-#endif /* GARAGEDATACOMPONENT_H_ */

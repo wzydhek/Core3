@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef HAIRASSETDATA_H_
-#define HAIRASSETDATA_H_
+#pragma once
 
 #include "system/lang.h"
 #include "templates/datatables/DataTableRow.h"
@@ -62,6 +61,3 @@ public:
 		return skillModValue;
 	}
 };
-
-
-#endif /* HAIRASSETDATA_H_ */

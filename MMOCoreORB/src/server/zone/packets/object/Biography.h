@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BIOGRAPHY_H_
-#define BIOGRAPHY_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -19,5 +18,3 @@ public:
 	}
 
 };
-
-#endif /*BIOGRAPHY_H_*/

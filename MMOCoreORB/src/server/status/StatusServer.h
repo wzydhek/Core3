@@ -2,13 +2,10 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef STATUSSERVER_H_
-#define STATUSSERVER_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/ZoneServer.h"
-
 #include "conf/ConfigManager.h"
 
 class StatusHandler;
@@ -41,5 +38,3 @@ public:
 
 	bool testZone();
 };
-
-#endif /* STATUSSERVER_H_ */

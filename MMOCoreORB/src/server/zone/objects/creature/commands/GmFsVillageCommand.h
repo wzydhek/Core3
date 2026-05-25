@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GMFSVILLAGECOMMAND_H_
-#define GMFSVILLAGECOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/director/DirectorManager.h"
 #include "server/zone/managers/jedi/JediManager.h"
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif //GMFSVILLAGECOMMAND_H_

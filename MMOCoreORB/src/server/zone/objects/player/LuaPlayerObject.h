@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LUAPLAYEROBJECT_H_
-#define LUAPLAYEROBJECT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/intangible/LuaIntangibleObject.h"
@@ -128,5 +127,3 @@ namespace player {
 }
 
 using namespace server::zone::objects::player;
-
-#endif /* LUAPLAYEROBJECT_H_ */

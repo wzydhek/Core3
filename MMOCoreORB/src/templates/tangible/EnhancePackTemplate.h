@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ENHANCEPACKTEMPLATE_H_
-#define ENHANCEPACKTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -64,5 +63,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* ENHANCEPACKTEMPLATE_H_ */

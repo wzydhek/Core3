@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef CAMOTASK_H_
-#define CAMOTASK_H_
+#pragma once
 
 #include "server/chat/StringIdChatParameter.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -96,5 +95,3 @@ public:
 		}
 	}
 };
-
-#endif /* CAMOTASK_H_ */

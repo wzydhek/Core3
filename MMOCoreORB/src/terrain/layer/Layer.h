@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LAYER_H_
-#define LAYER_H_
+#pragma once
 
 #include "../TemplateVariable.h"
 #include "InformationHeader.h"
@@ -109,6 +108,3 @@ public:
 		return infoHeader.getDescription();
 	}
 };
-
-
-#endif /* LAYER_H_ */

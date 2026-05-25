@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef GUILDMAILTASK_H_
-#define GUILDMAILTASK_H_
+#pragma once
 
 class GuildMailTask : public Task {
 	ManagedReference<GuildObject*> guild;
@@ -50,6 +49,3 @@ public:
 		}
 	}
 };
-
-
-#endif /* GUILDMAILTASK_H_ */

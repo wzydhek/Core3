@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef SHAREDCELLOBJECTTEMPLATE_H_
-#define SHAREDCELLOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedObjectTemplate.h"
-
 
 class SharedCellObjectTemplate : public SharedObjectTemplate {
 protected:
@@ -72,6 +70,3 @@ public:
 
 
 };
-
-
-#endif /* SHAREDCELLOBJECTTEMPLATE_H_ */

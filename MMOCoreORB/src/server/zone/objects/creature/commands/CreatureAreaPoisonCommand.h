@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATUREAREAPOISONCOMMAND_H_
-#define CREATUREAREAPOISONCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif //CREATUREAREAPOISONCOMMAND_H_

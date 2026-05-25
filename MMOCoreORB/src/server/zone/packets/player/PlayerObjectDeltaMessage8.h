@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYEROBJECTDELTAMESSAGE8_H_
-#define PLAYEROBJECTDELTAMESSAGE8_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -66,5 +65,3 @@ public:
 		insertInt(0);
 	}*/
 };
-
-#endif /*PLAYEROBJECTDELTAMESSAGE8_H_*/

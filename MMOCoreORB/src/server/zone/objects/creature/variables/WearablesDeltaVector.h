@@ -5,13 +5,10 @@
  *      Author: victor
  */
 
-#ifndef WEARABLESDELTAVECTOR_H_
-#define WEARABLESDELTAVECTOR_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/tangible/wearables/ArmorObject.h"
@@ -239,6 +236,3 @@ public:
 		protectionArmorMap.put(hitLocation, armors);
 	}
 };
-
-
-#endif /* WEARABLESDELTAVECTOR_H_ */

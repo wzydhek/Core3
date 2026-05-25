@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef BUGCATEGORY_H_
-#define BUGCATEGORY_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -103,5 +102,3 @@ public:
 		unk2 = u2;
 	}
 };
-
-#endif /* BUGCATEGORY_H_ */

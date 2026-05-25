@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef VECTORPARAM_H_
-#define VECTORPARAM_H_
+#pragma once
 
 #include "templates/params/Param.h"
 
@@ -96,5 +95,3 @@ public:
 		}
 	}
 };
-
-#endif /* VECTORPARAM_H_ */

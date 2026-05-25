@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESOURCELISTFORSURVEYMESSAGE_H_
-#define RESOURCELISTFORSURVEYMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -46,4 +45,3 @@ public:
 	}
 
 };
-#endif /*RESOURCELISTFORSURVEYMESSAGE_H_*/

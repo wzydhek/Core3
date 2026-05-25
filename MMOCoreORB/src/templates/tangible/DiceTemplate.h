@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef DICETEMPLATE_H_
-#define DICETEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -74,5 +73,3 @@ public:
 	}
 
 };
-
-#endif /* DICETEMPLATE_H_ */

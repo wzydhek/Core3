@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef REGISTERVENDORSUICALLBACK_H_
-#define REGISTERVENDORSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/vendor/VendorManager.h"
@@ -45,5 +44,3 @@ public:
 		VendorManager::instance()->handleRegisterVendorCallback(player, vendor, planetMapCategoryName);
 	}
 };
-
-#endif /* REGISTERVENDORSUICALLBACK_H_ */

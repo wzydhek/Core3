@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DUMPZONEINFORMATIONCOMMAND_H_
-#define DUMPZONEINFORMATIONCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/cell/CellObject.h"
@@ -237,5 +236,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //DUMPZONEINFORMATIONCOMMAND_H_

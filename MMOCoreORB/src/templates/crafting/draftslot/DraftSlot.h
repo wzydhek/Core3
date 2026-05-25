@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DRAFTSLOT_H_
-#define DRAFTSLOT_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -129,5 +128,3 @@ public:
 		stringIdName = name;
     }
 };
-
-#endif /* DRAFTSLOT_H_ */

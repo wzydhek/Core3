@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef VENTRILOQUISMCOMMAND_H_
-#define VENTRILOQUISMCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
 
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif //VENTRILOQUISMCOMMAND_H_

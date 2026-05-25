@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ENRAGEPETSCOMMAND_H_
-#define ENRAGEPETSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/managers/creature/PetManager.h"
@@ -110,5 +109,3 @@ public:
 	}
 
 };
-
-#endif //ENRAGEPETSCOMMAND_H_

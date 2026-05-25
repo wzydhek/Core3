@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GROUPMEMBERSENDSPACEINVITEMESSAGE_H_
-#define GROUPMEMBERSENDSPACEINVITEMESSAGE_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -23,4 +22,3 @@ public:
 	}
 
 };
-#endif /*GROUPMEMBERSENDSPACEINVITEMESSAGE_H_*/

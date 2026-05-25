@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef WAYPOINTDATAPADMENUCOMPONENT_H_
-#define WAYPOINTDATAPADMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -31,6 +30,3 @@ public:
 	 */
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 };
-
-
-#endif /* WAYPOINTDATAPADMENUCOMPONENT_H_ */

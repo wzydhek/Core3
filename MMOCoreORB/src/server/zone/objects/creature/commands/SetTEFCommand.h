@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETTEFCOMMAND_H_
-#define SETTEFCOMMAND_H_
+#pragma once
 
 class SetTEFCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETTEFCOMMAND_H_

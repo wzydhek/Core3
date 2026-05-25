@@ -2,13 +2,11 @@
  * PobShipStatusSuiCallback.h
  */
 
-#ifndef POBSHIPSTATUSSUICALLBACK_H_
-#define POBSHIPSTATUSSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/Zone.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/ship/PobShipObject.h"
-
 
 class PobShipStatusSuiCallback : public SuiCallback {
 public:
@@ -42,5 +40,3 @@ public:
 		ShipManager::instance()->reportPobShipStatus(creature, pobShip, sceneO);
 	}
 };
-
-#endif /* POBSHIPSTATUSSUICALLBACK_H_ */

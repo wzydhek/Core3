@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORRIVER_H_
-#define AFFECTORRIVER_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "terrain/layer/affectors/AffectorProceduralRule.h"
@@ -33,7 +32,6 @@ public:
 		return y;
 	}
 };
-
 
 class AffectorRiver : public ProceduralRule<'ARIV'>, public AffectorProceduralRule {
 	Road road;
@@ -135,6 +133,3 @@ public:
 		iffStream->closeForm('DATA');
 	}
 };
-
-
-#endif /* AFFECTORRIVER_H_ */

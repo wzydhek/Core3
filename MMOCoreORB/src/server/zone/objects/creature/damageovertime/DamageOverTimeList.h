@@ -5,13 +5,10 @@
  *      Author: victor
  */
 
-#ifndef DAMAGEOVERTIMELIST_H_
-#define DAMAGEOVERTIMELIST_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
-
 #include "DamageOverTime.h"
 
 class DamageOverTimeList : private VectorMap<uint64, Vector<DamageOverTime>>, public Logger {
@@ -100,5 +97,3 @@ public:
 		return nextTick.isPast();
 	}
 };
-
-#endif /* DAMAGEOVERTIMELIST_H_ */

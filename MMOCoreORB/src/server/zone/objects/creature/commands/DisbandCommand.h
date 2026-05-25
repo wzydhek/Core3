@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DISBANDCOMMAND_H_
-#define DISBANDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/group/GroupObject.h"
 #include "server/zone/managers/group/GroupManager.h"
@@ -42,6 +41,3 @@ public:
 	}
 
 };
-
-#endif //DISBANDCOMMAND_H_
-

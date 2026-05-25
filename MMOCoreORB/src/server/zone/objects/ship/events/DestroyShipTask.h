@@ -1,5 +1,4 @@
-#ifndef DESTROYSHIPTASK_H_
-#define DESTROYSHIPTASK_H_
+#pragma once
 
 #include "server/zone/SpaceZone.h"
 #include "server/zone/objects/ship/ShipObject.h"
@@ -186,5 +185,3 @@ public:
 		}
 	}
 };
-
-#endif //DESTROYSHIPTASK_H_

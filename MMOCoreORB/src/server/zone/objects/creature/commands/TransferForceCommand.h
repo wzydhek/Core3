@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TRANSFERFORCECOMMAND_H_
-#define TRANSFERFORCECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/frs/FrsManager.h"
@@ -107,5 +106,3 @@ public:
 	}
 
 };
-
-#endif //TRANSFERFORCECOMMAND_H_

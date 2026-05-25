@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMPLETEQUESTCOMMAND_H_
-#define COMPLETEQUESTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -103,5 +102,3 @@ public:
 	}
 
 };
-
-#endif //COMPLETEQUESTCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESTARTCONVERSIONCOMMAND_H_
-#define RESTARTCONVERSIONCOMMAND_H_
+#pragma once
 
 class RestartConversionCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //RESTARTCONVERSIONCOMMAND_H_

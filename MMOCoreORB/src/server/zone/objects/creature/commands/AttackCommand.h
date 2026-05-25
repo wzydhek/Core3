@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ATTACKCOMMAND_H_
-#define ATTACKCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 		return doCombatAction(creature, target);
 	}
 };
-
-#endif // ATTACKCOMMAND_H_

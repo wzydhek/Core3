@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PLAYERINFOCOMMAND_H_
-#define PLAYERINFOCOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -177,6 +176,3 @@ public:
 		return 0;
 	}
 };
-
-
-#endif /* PLAYERINFOCOMMAND_H_ */

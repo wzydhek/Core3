@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PATHGRAPH_H_
-#define PATHGRAPH_H_
+#pragma once
 
 #include "templates/appearance/PathNode.h"
 #include "templates/IffTemplate.h"
@@ -110,6 +109,3 @@ public:
 	}
 
 };
-
-
-#endif /* PATHGRAPH_H_ */

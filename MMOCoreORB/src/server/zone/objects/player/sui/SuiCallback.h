@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef SUICALLBACK_H_
-#define SUICALLBACK_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "engine/core/LambdaFunction.h"
@@ -72,5 +71,3 @@ registerObserver(ObserverEventType::CREATUREREVIVED, new LambdaObserver(
 }
 
 using namespace server::zone::objects::player::sui;
-
-#endif /* SUICALLBACK_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DESPAWNCREATURETASK_H_
-#define DESPAWNCREATURETASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/Zone.h"
@@ -42,5 +41,3 @@ public:
 		agent->notifyDespawn(zone);
 	}
 };
-
-#endif /* DESPAWNCREATURETASK_H_ */

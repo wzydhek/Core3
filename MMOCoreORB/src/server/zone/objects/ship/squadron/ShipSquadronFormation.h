@@ -1,5 +1,4 @@
-#ifndef SHIPSQUADRONFORMATION_H_
-#define SHIPSQUADRONFORMATION_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -89,5 +88,3 @@ private:
 		return Vector3(x, 0.f, z);
 	}
 };
-
-#endif // SHIPSQUADRONFORMATION_H_

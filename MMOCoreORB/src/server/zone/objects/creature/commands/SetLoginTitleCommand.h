@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETLOGINTITLECOMMAND_H_
-#define SETLOGINTITLECOMMAND_H_
+#pragma once
 
 class SetLoginTitleCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETLOGINTITLECOMMAND_H_

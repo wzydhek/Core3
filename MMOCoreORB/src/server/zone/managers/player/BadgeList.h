@@ -1,5 +1,4 @@
-#ifndef _H_BADGELIST_
-#define _H_BADGELIST_
+#pragma once
 
 #include "server/zone/objects/player/badges/Badge.h"
 
@@ -44,4 +43,3 @@ public:
 	}
 
 };
-#endif /* _H_BADGELIST_ */

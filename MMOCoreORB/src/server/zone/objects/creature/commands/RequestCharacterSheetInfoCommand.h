@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTCHARACTERSHEETINFOCOMMAND_H_
-#define REQUESTCHARACTERSHEETINFOCOMMAND_H_
+#pragma once
 
 #include "server/zone/packets/player/CharacterSheetResponseMessage.h"
 
@@ -33,5 +32,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTCHARACTERSHEETINFOCOMMAND_H_

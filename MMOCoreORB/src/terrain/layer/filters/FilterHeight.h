@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FILTERHEIGHT_H_
-#define FILTERHEIGHT_H_
-
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "FilterProceduralRule.h"
@@ -73,5 +71,3 @@ public:
 	}
 
 };
-
-#endif /* FILTERHEIGHT_H_ */

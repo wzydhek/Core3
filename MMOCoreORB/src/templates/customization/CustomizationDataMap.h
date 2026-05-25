@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef CUSTOMIZATIONDATAMAP_H_
-#define CUSTOMIZATIONDATAMAP_H_
+#pragma once
 
 #include "templates/customization/CustomizationData.h"
 
@@ -19,5 +18,3 @@ public:
 	void parseFromIffStream(IffStream* iffStream) {
 	}
 };
-
-#endif /* CUSTOMIZATIONDATAMAP_H_ */

@@ -2,14 +2,11 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef POWERBOOSTCOMMAND_H_
-#define POWERBOOSTCOMMAND_H_
+#pragma once
 
 #include "templates/params/creature/CreatureAttribute.h"
 #include "server/zone/objects/creature/buffs/PowerBoostBuff.h"
-
 #include "server/zone/objects/player/events/ForceMeditateTask.h"
-
 
 class PowerBoostCommand : public QueueCommand {
 public:
@@ -81,5 +78,3 @@ public:
 	}
 
 };
-
-#endif //POWERBOOSTCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef GMREVIVECOMMAND_H_
-#define GMREVIVECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -294,5 +293,3 @@ public:
 		player->sendSystemMessage(ship->getDisplayedName() + " has been repaired.");
 	}
 };
-
-#endif //GMREVIVECOMMAND_H_

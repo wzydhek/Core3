@@ -1,5 +1,4 @@
-#ifndef TERMINALSPAWN_H_
-#define TERMINALSPAWN_H_
+#pragma once
 
 namespace server {
 namespace zone {
@@ -47,5 +46,3 @@ public:
 }
 }
 }
-
-#endif /* TERMINALSPAWN_H_ */

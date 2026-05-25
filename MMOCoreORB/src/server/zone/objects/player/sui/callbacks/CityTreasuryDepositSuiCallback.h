@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef CITYTREASURYDEPOSITSUICALLBACK_H_
-#define CITYTREASURYDEPOSITSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/region/CityRegion.h"
@@ -40,5 +39,3 @@ public:
 		cityManager->depositToCityTreasury(city, player, amount);
 	}
 };
-
-#endif /* CITYTREASURYDEPOSITSUICALLBACK_H_ */

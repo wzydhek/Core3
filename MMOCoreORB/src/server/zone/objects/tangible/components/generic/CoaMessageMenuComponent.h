@@ -1,6 +1,5 @@
 
-#ifndef COAMESSAGEMENUCOMPONENT_H_
-#define COAMESSAGEMENUCOMPONENT_H_
+#pragma once
 
 #include "../TangibleObjectMenuComponent.h"
 
@@ -26,6 +25,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* COAMESSAGEMENUCOMPONENT_H_ */

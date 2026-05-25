@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TERRAINMAP_H_
-#define TERRAINMAP_H_
-
+#pragma once
 
 #include "TemplateVariable.h"
 
@@ -43,7 +41,3 @@ public:
 		return rawMap;
 	}
 };
-
-
-
-#endif /* TERRAINMAP_H_ */

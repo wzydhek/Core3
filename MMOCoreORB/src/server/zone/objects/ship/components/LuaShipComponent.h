@@ -1,5 +1,4 @@
-#ifndef LUASHIPCOMPONENT_H_
-#define LUASHIPCOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/tangible/LuaTangibleObject.h"
@@ -35,5 +34,3 @@ private:
 } // namespace server
 
 using namespace server::zone::objects::ship::components;
-
-#endif /*LUASHIPCOMPONENT_H_ */

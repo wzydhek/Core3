@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BLINDATTACKCOMMAND_H_
-#define BLINDATTACKCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif //BLINDATTACKCOMMAND_H_

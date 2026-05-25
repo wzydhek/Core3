@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef KILLPLAYERCOMMAND_H_
-#define KILLPLAYERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -446,5 +445,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // KILLPLAYERCOMMAND_H_

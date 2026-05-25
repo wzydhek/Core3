@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SECRETSPAWNSPAMCOMMAND_H_
-#define SECRETSPAWNSPAMCOMMAND_H_
+#pragma once
 
 class SecretSpawnSpamCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SECRETSPAWNSPAMCOMMAND_H_

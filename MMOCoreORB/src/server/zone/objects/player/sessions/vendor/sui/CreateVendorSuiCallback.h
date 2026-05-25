@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef CREATEVENDORCALLBACK_H_
-#define CREATEVENDORCALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -46,5 +45,3 @@ public:
 
 	}
 };
-
-#endif /* CREATEVENDORCALLBACK_H_ */

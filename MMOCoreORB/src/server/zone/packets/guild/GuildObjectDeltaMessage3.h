@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDOBJECTDELTAMESSAGE3_H_
-#define GUILDOBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/guild/GuildObject.h"
@@ -55,5 +54,3 @@ public:
 		insertByte(0x03);
 	}
 };
-
-#endif /* GUILDOBJECTDELTAMESSAGE3_H_ */

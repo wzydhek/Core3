@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef STATEEFFECT_H_
-#define STATEEFFECT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -150,6 +149,3 @@ public:
 		this->stateStrength = stateStrength;
 	}
 };
-
-
-#endif /* STATEEFFECT_H_ */

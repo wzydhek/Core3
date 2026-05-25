@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RECONNECTTOTRANSFERSERVERCOMMAND_H_
-#define RECONNECTTOTRANSFERSERVERCOMMAND_H_
+#pragma once
 
 class ReconnectToTransferServerCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //RECONNECTTOTRANSFERSERVERCOMMAND_H_

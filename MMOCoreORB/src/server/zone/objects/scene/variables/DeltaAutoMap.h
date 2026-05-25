@@ -1,5 +1,4 @@
-#ifndef DELTAAUTOMAP_H_
-#define DELTAAUTOMAP_H_
+#pragma once
 
 #include "DeltaVectorMap.h"
 #include "server/zone/packets/DeltaMessage.h"
@@ -44,5 +43,3 @@ public:
 		}
 	}
 };
-
-#endif // DELTAAUTOMAP_H_

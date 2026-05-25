@@ -1,5 +1,4 @@
-#ifndef SAMPLEDNATASK_H_
-#define SAMPLEDNATASK_H_
+#pragma once
 
 #include "server/zone/managers/combat/CombatManager.h"
 #include "server/zone/managers/creature/CreatureManager.h"
@@ -259,4 +258,3 @@ public:
 		DnaManager::instance()->generateSample(creature,player,quality);
 	}
 };
-#endif //SAMPLEDNATASK_H_

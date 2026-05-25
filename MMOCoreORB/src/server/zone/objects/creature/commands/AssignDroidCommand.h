@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ASSIGNDROIDCOMMAND_H_
-#define ASSIGNDROIDCOMMAND_H_
+#pragma once
 
 class AssignDroidCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //ASSIGNDROIDCOMMAND_H_

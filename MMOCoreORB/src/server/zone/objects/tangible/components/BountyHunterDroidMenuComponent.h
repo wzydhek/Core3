@@ -5,8 +5,7 @@
  *      Author: loshult
  */
 
-#ifndef BOUNTYHUNTERDROIDMENUCOMPONENT_H_
-#define BOUNTYHUNTERDROIDMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 #include "server/zone/objects/mission/MissionObject.h"
@@ -99,5 +98,3 @@ private:
 	 */
 	MissionObject* getBountyHunterMission(CreatureObject* player) const;
 };
-
-#endif /* BOUNTYHUNTERDROIDMENUCOMPONENT_H_ */

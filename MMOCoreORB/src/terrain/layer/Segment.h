@@ -5,8 +5,7 @@
  *  Author: victor
  */
 
-#ifndef SEGMENT_H_
-#define SEGMENT_H_
+#pragma once
 
 #include "../TemplateVariable.h"
 
@@ -82,5 +81,3 @@ public:
 		return flatRoad;
 	}
 };
-
-#endif /* SEGMENT_H_ */

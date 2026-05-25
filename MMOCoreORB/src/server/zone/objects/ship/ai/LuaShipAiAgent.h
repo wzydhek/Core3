@@ -5,8 +5,7 @@
  *  Author: Hakry
  */
 
-#ifndef LUASHIPAIAGENT_H_
-#define LUASHIPAIAGENT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -73,5 +72,3 @@ private:
 } // namespace server
 
 using namespace server::zone::objects::ship::ai;
-
-#endif /* LUASHIPAIAGENT_H_ */

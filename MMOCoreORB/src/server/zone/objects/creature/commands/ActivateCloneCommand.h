@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ACTIVATECLONECOMMAND_H_
-#define ACTIVATECLONECOMMAND_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -43,5 +42,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // ACTIVATECLONECOMMAND_H_

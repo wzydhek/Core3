@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.*/
 
 
-#ifndef MANUFACTURESCHEMATICOBJECTMESSAGE9_H_
-#define MANUFACTURESCHEMATICOBJECTMESSAGE9_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 
@@ -16,5 +15,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*MANUFACTURESCHEMATICOBJECTMESSAGE9_H_*/

@@ -1,5 +1,4 @@
-#ifndef REACTIONFINEPAYMENTSUICALLBACK_H_
-#define REACTIONFINEPAYMENTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -84,5 +83,3 @@ public:
 
 	}
 };
-
-#endif /* REACTIONFINEPAYMENTSUICALLBACK_H_ */

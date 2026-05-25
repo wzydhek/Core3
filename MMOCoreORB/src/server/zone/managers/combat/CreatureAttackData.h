@@ -5,8 +5,7 @@
  *      Author: dannuic
  */
 
-#ifndef CREATUREATTACKDATA_H_
-#define CREATUREATTACKDATA_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/effect/StateEffect.h"
 #include "server/zone/objects/creature/commands/effect/DotEffect.h"
@@ -235,5 +234,3 @@ public:
 	bool changesDefenderPosture() const;
 	bool changesAttackerPosture() const;
 };
-
-#endif /* CREATUREATTACKDATA_H_ */

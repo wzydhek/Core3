@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef POWERUPSTATVECTOR_H_
-#define POWERUPSTATVECTOR_H_
+#pragma once
 
 #include "templates/tangible/PowerupStat.h"
 
@@ -16,5 +15,3 @@ public:
 
 	}
 };
-
-#endif /* POWERUPSTATVECTOR_H_ */

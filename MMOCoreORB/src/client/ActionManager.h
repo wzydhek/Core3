@@ -4,8 +4,7 @@
  * Registry and factory for actions using static self-registration
  */
 
-#ifndef ACTIONMANAGER_H_
-#define ACTIONMANAGER_H_
+#pragma once
 
 #include "system/lang.h"
 #include "ActionBase.h"
@@ -102,5 +101,3 @@ private:
 		return registry;
 	}
 };
-
-#endif /* ACTIONMANAGER_H_ */

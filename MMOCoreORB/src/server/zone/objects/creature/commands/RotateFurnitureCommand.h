@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ROTATEFURNITURECOMMAND_H_
-#define ROTATEFURNITURECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/components/EventPerkDataComponent.h"
@@ -217,5 +216,3 @@ public:
 	}
 
 };
-
-#endif //ROTATEFURNITURECOMMAND_H_

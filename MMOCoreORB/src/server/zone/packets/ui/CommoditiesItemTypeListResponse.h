@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef COMMODITIESITEMTYPELISTRESPONSE_H_
-#define COMMODITIESITEMTYPELISTRESPONSE_H_
+#pragma once
 
 class CommoditiesItemTypeListResponse : public BaseMessage {
 public:
@@ -39,5 +38,3 @@ public:
 		client->sendMessage(citlr);
 	}
 };
-
-#endif /* COMMODITIESITEMTYPELISTRESPONSE_H_ */

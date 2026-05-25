@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef CITYSPECIALIZATIONCONFIRMSUICALLBACK_H_
-#define CITYSPECIALIZATIONCONFIRMSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/CitySpecializationSession.h"
@@ -33,5 +32,3 @@ public:
 		session->acceptChoice();
 	}
 };
-
-#endif /* CITYSPECIALIZATIONCONFIRMSUICALLBACK_H_ */

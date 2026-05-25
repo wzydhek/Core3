@@ -2,9 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
+#pragma once
+
 #ifndef WITH_SWGREALMS_API
-#ifndef SERVERDATABASE_H_
-#define SERVERDATABASE_H_
 
 #include "engine/engine.h"
 
@@ -38,5 +38,4 @@ private:
 	void updateDatabaseSchema();
 };
 
-#endif /*SERVERDATABASE_H_*/
 #endif // !WITH_SWGREALMS_API

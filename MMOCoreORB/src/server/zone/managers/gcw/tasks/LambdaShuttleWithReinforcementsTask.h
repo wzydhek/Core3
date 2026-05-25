@@ -5,8 +5,7 @@
  * Author: loshult
  */
 
-#ifndef LAMBDASHUTTLEWITHREINFORCEMENTSTASK_H_
-#define LAMBDASHUTTLEWITHREINFORCEMENTSTASK_H_
+#pragma once
 
 #include "server/chat/ChatManager.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
@@ -523,5 +522,3 @@ public:
 		}
 	}
 };
-
-#endif /* LAMBDASHUTTLEWITHREINFORCEMENTSTASK_H_ */

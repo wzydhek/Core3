@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SPAWNSTATUSCOMMAND_H_
-#define SPAWNSTATUSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -29,5 +28,3 @@ public:
 	}
 
 };
-
-#endif //SPAWNSTATUSCOMMAND_H_

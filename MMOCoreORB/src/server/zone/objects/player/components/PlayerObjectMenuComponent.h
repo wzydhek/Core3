@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PLAYEROBJECTMENUCOMPONENT_H_
-#define PLAYEROBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
 
@@ -32,5 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-#endif /* PLAYEROBJECTMENUCOMPONENT_H_ */

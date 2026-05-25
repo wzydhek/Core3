@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GCWSTATUSCOMMAND_H_
-#define GCWSTATUSCOMMAND_H_
+#pragma once
 
 #include "server/zone/Zone.h"
 #include "server/zone/managers/gcw/GCWManager.h"
@@ -58,5 +57,3 @@ public:
 	}
 
 };
-
-#endif //GCWSTATUSCOMMAND_H_

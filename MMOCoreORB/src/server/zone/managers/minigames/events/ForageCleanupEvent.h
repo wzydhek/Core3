@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORAGECLEANUPEVENT_H_
-#define FORAGECLEANUPEVENT_H_
+#pragma once
 
 #include "server/zone/ZoneProcessServer.h"
 
@@ -32,5 +31,3 @@ public:
 }
 
 using namespace server::zone::managers::minigames::events;
-
-#endif /*FORAGECLEANUPEVENT_H_*/

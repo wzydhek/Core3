@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ENVIRONMENTDATA_H_
-#define ENVIRONMENTDATA_H_
+#pragma once
 
 class EnvironmentData : public TemplateVariable<'EFAM'> {
 	int environmentId;
@@ -38,5 +37,3 @@ public:
 	}
 
 };
-
-#endif /* ENVIRONMENTDATA_H_ */

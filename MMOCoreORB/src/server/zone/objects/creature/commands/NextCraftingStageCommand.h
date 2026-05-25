@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NEXTCRAFTINGSTAGECOMMAND_H_
-#define NEXTCRAFTINGSTAGECOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/player/sessions/TradeSession.h"
@@ -61,5 +60,3 @@ public:
 	}
 
 };
-
-#endif //NEXTCRAFTINGSTAGECOMMAND_H_

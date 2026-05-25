@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CONVERSATIONMANAGER_H_
-#define CONVERSATIONMANAGER_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/creature/conversation/ConversationObserver.h"
 
 namespace server {
@@ -50,5 +48,3 @@ public:
 }
 
 using namespace server::zone::managers::conversation;
-
-#endif /* CONVERSATIONMANAGER_H_ */

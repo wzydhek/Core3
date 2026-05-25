@@ -1,6 +1,5 @@
 
-#ifndef SCHEDULESHUTTLETASK_H_
-#define SCHEDULESHUTTLETASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/managers/planet/PlanetManager.h"
@@ -97,5 +96,3 @@ public:
 		}
 	}
 };
-
-#endif /* SCHEDULESHUTTLETASK_H_ */

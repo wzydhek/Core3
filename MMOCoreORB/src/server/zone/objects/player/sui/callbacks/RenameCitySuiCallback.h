@@ -5,15 +5,14 @@
  *      Author: root
  */
 
-#ifndef RENAMECITYSUICALLBACK_H_
-#define RENAMECITYSUICALLBACK_H_
+#pragma once
+
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/Zone.h"
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/managers/city/CityManager.h"
 #include "server/zone/managers/name/NameManager.h"
 #include "server/zone/managers/planet/PlanetManager.h"
-
 
 class RenameCitySuiCallback : public SuiCallback {
 	ManagedWeakReference<Zone*> zne;
@@ -115,8 +114,3 @@ public:
 		creature->sendSystemMessage("@city/city:name_changed"); // The city name has been successfully changed.");
 	}
 };
-
-
-
-
-#endif /* RENAMECITYSUICALLBACK_H_ */

@@ -3,8 +3,7 @@
 	 See file COPYING for copying conditions.
 */
 
-#ifndef DROID_H_
-#define DROID_H_
+#pragma once
 
 #include "server/zone/managers/ship/ShipManager.h"
 #include "server/zone/managers/ship/DroidCommandData.h"
@@ -225,6 +224,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // DROID_H_
-

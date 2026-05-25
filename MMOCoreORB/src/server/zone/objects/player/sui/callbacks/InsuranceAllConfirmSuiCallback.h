@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef INSURANCEALLCONFIRMSUICALLBACK_H_
-#define INSURANCEALLCONFIRMSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -64,7 +63,7 @@ public:
 		int j = 0;
 		bool finished = true;
 
-		TransactionLog trxBank(player, TrxCode::INSURANCESYSTEM, 100 * insurableItems.size()); // Actual cost is set below
+		TransactionLog trxBank(player, TrxCode::INSURANCESYSTEM, static_cast<uint32>(100 * insurableItems.size())); // Actual cost is set below
 
 		for (int i = 0; i < insurableItems.size(); ++i) {
 			SceneObject* obj = insurableItems.get(i);
@@ -113,5 +112,3 @@ public:
 		}
 	}
 };
-
-#endif /* INSURANCEALLCONFIRMSUICALLBACK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NAMESTRUCTURECOMMAND_H_
-#define NAMESTRUCTURECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -78,5 +77,3 @@ public:
 	}
 
 };
-
-#endif //NAMESTRUCTURECOMMAND_H_

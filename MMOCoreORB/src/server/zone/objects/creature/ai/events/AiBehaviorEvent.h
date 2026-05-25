@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AiBehaviorEvent_H_
-#define AiBehaviorEvent_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/managers/creature/AiMap.h"
@@ -147,7 +146,3 @@ public:
 }
 
 using namespace server::zone::objects::creature::events;
-
-
-
-#endif /* AiMoveEvent_H_ */

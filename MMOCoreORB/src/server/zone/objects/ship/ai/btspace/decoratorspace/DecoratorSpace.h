@@ -1,5 +1,4 @@
-#ifndef DECORATORSPACE_H_
-#define DECORATORSPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/btspace/BehaviorSpace.h"
 
@@ -132,5 +131,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif /* DECORATORSPACE_H_ */

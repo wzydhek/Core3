@@ -2,8 +2,7 @@
 // Created by g on 12/21/17.
 //
 
-#ifndef CORE3_SHIPCHASSISDATA_H
-#define CORE3_SHIPCHASSISDATA_H
+#pragma once
 
 #include "engine/engine.h"
 #include "ComponentSlots.h"
@@ -115,5 +114,3 @@ public:
 		return componentMap.get(Components::shipComponentSlotToString(slotIndex));
 	}
 };
-
-#endif //CORE3_SHIPCHASSISDATA_H

@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef WEARABLEOBJECTMENUCOMPONENT_H_
-#define WEARABLEOBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* WEARABLEOBJECTMENUCOMPONENT_H_ */

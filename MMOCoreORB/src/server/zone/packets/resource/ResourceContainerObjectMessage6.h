@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESOURCECONTAINEROBJECTMESSAGE6_H_
-#define RESOURCECONTAINEROBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/objects/resource/ResourceContainer.h"
 #include "server/zone/packets/BaseLineMessage.h"
@@ -23,5 +22,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*RESOURCECONTAINEROBJECTMESSAGE6_H_*/

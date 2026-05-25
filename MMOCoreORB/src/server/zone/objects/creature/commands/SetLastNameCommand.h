@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETLASTNAMECOMMAND_H_
-#define SETLASTNAMECOMMAND_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/objects/creature/commands/QueueCommand.h"
@@ -80,5 +79,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //SETLASTNAMECOMMAND_H_

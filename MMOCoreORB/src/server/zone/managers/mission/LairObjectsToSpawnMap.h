@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LAIROBJECTSTOSPAWNMAP_H_
-#define LAIROBJECTSTOSPAWNMAP_H_
+#pragma once
 
 #include "system/util/VectorMap.h"
 
@@ -61,5 +60,3 @@ public:
 		return lairs->get(System::random(lairs->size() - 1));
 	}
 };
-
-#endif /* LAIROBJECTSTOSPAWNMAP_H_ */

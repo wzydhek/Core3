@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DIVESHOTCOMMAND_H_
-#define DIVESHOTCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -35,5 +34,3 @@ public:
 	}
 
 };
-
-#endif //DIVESHOTCOMMAND_H_

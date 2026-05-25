@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FIREACIDSINGLE2COMMAND_H_
-#define FIREACIDSINGLE2COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif //FIREACIDSINGLE2COMMAND_H_

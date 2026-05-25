@@ -5,8 +5,7 @@
  *      Author: lordkator
  */
 
-#ifndef SERVERWHOCOMMAND_H_
-#define SERVERWHOCOMMAND_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -66,5 +65,3 @@ public:
 			player->sendSystemMessage("Syntax: /server who - Updates log/who.json and log/online-players.log");
 	}
 };
-
-#endif /* SERVERWHOCOMMAND_H_ */

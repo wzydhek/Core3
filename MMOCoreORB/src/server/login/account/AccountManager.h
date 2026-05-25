@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef ACCOUNTMANAGER_H_
-#define ACCOUNTMANAGER_H_
+#pragma once
 
 #include "server/login/account/Account.h"
 
@@ -101,5 +100,3 @@ namespace server {
 }
 
 using namespace server::login::account;
-
-#endif /* ACCOUNTMANAGER_H_ */

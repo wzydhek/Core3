@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BIDAUCTIONRESPONSEMESSAGE_H_
-#define BIDAUCTIONRESPONSEMESSAGE_H_
+#pragma once
 
 /*
  * Status codes
@@ -38,5 +37,3 @@ public:
 	}
 	
 };
-
-#endif /*BIDAUCTIONRESPONSEMESSAGE_H_*/

@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef LOGINSESSION_H_
-#define LOGINSESSION_H_
+#pragma once
 
 #include "system/lang.h"
 #include "engine/log/Logger.h"
@@ -211,6 +210,3 @@ public:
 
 	void sendMessage(BaseMessage* msg);
 };
-
-
-#endif /* LOGINSESSION_H_ */

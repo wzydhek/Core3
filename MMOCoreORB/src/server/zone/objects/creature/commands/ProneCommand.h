@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PRONECOMMAND_H_
-#define PRONECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/StandCommand.h"
 
@@ -66,5 +65,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //PRONECOMMAND_H_

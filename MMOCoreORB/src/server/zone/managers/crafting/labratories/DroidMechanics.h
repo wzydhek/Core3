@@ -1,5 +1,4 @@
-#ifndef DROID_MECHANICS_H
-#define DROID_MECHANICS_H
+#pragma once
 
 #include "server/zone/objects/creature/ai/DroidObject.h"
 
@@ -101,5 +100,3 @@ public:
 }
 
 using namespace server::zone::managers::crafting::labratories;
-
-#endif /* DROID_MECHANICS_H */

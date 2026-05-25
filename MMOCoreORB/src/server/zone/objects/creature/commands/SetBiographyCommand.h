@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETBIOGRAPHYCOMMAND_H_
-#define SETBIOGRAPHYCOMMAND_H_
+#pragma once
 
 class SetBiographyCommand : public QueueCommand {
 public:
@@ -31,5 +30,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // SETBIOGRAPHYCOMMAND_H_

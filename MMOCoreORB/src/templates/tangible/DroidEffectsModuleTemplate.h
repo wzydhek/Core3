@@ -3,8 +3,7 @@
  * 11/26/2014
  */
 
-#ifndef DROIDEFFECTSMODULETEMPLATE_H_
-#define DROIDEFFECTSMODULETEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -36,5 +35,3 @@ public:
 		 return true;
 	 }
 };
-
-#endif /*DROIDEFFECTSMODULETEMPLATE_H_*/

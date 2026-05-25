@@ -5,12 +5,10 @@
  *      Author: victor
  */
 
-#ifndef TEMPLATEMANAGER_H_
-#define TEMPLATEMANAGER_H_
+#pragma once
 
 #include "engine/util/ObjectFactory.h"
 #include "system/util/SynchronizedVectorMap.h"
-
 #include "templates/SharedObjectTemplate.h"
 #include "templates/footprint/StructureFootprint.h"
 #include "templates/slots/SlotId.h"
@@ -199,5 +197,3 @@ public:
 
 	friend class SharedObjectTemplate;
 };
-
-#endif /* TEMPLATEMANAGER_H_ */

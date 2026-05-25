@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STOPMUSICCOMMAND_H_
-#define STOPMUSICCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
@@ -38,5 +37,3 @@ public:
 	}
 
 };
-
-#endif //STOPMUSICCOMMAND_H_

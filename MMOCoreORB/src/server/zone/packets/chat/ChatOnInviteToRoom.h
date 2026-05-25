@@ -5,8 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef CHATONINVITETOROOM_H_
-#define CHATONINVITETOROOM_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -36,5 +35,3 @@ public:
 	}
 
 };
-
-#endif /*CHATONINVITETOROOM_H_*/

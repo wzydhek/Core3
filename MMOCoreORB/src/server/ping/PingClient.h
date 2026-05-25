@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PINGCLIENT_H_
-#define PINGCLIENT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -38,5 +37,3 @@ public:
 		BaseClientProxy::sendPacket(cast<BasePacket*>(msg));
 	}
 };
-
-#endif /* PINGCLIENT_H_ */

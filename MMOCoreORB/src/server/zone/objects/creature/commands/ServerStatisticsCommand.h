@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef SERVERSTATISTICSCOMMAND_H_
-#define SERVERSTATISTICSCOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/managers/statistics/StatisticsManager.h"
@@ -41,5 +40,3 @@ public:
 			player->sendSystemMessage("Syntax: /server statistics");
 	}
 };
-
-#endif /* SERVERSTATISTICSCOMMAND_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SUIFORCECLOSEPAGE_H_
-#define SUIFORCECLOSEPAGE_H_
+#pragma once
 
 class SuiForceClosePage : public BaseMessage {
 public:
@@ -15,5 +14,3 @@ public:
    }
 
 };
-
-#endif /*SUIFORCECLOSEPAGE_H_*/

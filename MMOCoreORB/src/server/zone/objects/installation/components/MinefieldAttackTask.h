@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef MINEFIELDATTACKTASK_H_
-#define MINEFIELDATTACKTASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/managers/objectcontroller/ObjectController.h"
@@ -164,5 +163,3 @@ public:
 		}
 	}
 };
-
-#endif /* MINEFIELDATTACKTASK_H_ */

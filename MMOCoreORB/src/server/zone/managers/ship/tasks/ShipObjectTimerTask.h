@@ -1,5 +1,4 @@
-#ifndef SHIPOBJECTTIMERTASK_H_
-#define SHIPOBJECTTIMERTASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
@@ -113,5 +112,3 @@ class ShipObjectTimerTask : public Task, public Logger {
 			return msg.toString();
 		}
 	};
-
-#endif // SHIPOBJECTTIMERTASK_H_

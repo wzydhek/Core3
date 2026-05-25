@@ -1,5 +1,4 @@
-#ifndef PACKEDQUATERNION_H_
-#define PACKEDQUATERNION_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -51,6 +50,3 @@ public:
 		return Quaternion(w * directionScaleInv, x * directionScaleInv, y * directionScaleInv, z * directionScaleInv);
 	}
 };
-
-
-#endif // PACKEDQUATERNION_H_

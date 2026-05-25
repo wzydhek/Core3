@@ -5,8 +5,7 @@
  * Author: Hakry
  */
 
-#ifndef DESTROYDISABLEDSHIPTASK_H_
-#define DESTROYDISABLEDSHIPTASK_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 #include "server/zone/objects/ship/events/DestroyShipTask.h"
@@ -79,5 +78,3 @@ public:
 		}
 	}
 };
-
-#endif /* DESTROYDISABLEDSHIPTASK_H_ */

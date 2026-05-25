@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PLAYERSPACEZONECOMPONENT_H_
-#define PLAYERSPACEZONECOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/SpaceZoneComponent.h"
 #include "server/zone/TreeEntry.h"
@@ -32,6 +31,3 @@ public:
 	void updateZoneWithParent(SceneObject* sceneObject, SceneObject* newParent, bool lightUpdate, bool sendPackets = true) const;
 
 };
-
-
-#endif /* PLAYERSPACEZONECOMPONENT_H_ */

@@ -1,5 +1,4 @@
-#ifndef XPPURCHASEMENUCOMPONENT_H_
-#define XPPURCHASEMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 
@@ -25,6 +24,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* XPPURCHASEMENUCOMPONENT_H_ */

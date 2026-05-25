@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LEAVEGROUPCOMMAND_H_
-#define LEAVEGROUPCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/group/GroupManager.h"
 #include "server/zone/objects/group/GroupObject.h"
@@ -37,6 +36,3 @@ public:
 	}
 
 };
-
-#endif //LEAVEGROUPCOMMAND_H_
-

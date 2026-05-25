@@ -1,5 +1,4 @@
-#ifndef PERFORMEFFECT_H_
-#define PERFORMEFFECT_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 
@@ -146,7 +145,3 @@ public:
 		}
 	}
 };
-
-
-
-#endif /* PERFORMEFFECT_H_ */

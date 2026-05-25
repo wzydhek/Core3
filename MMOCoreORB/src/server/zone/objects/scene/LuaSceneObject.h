@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LUASCENEOBJECT_H_
-#define LUASCENEOBJECT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -140,5 +139,3 @@ namespace scene {
 }
 
 using namespace server::zone::objects::scene;
-
-#endif /* LUASCENEOBJECT_H_ */

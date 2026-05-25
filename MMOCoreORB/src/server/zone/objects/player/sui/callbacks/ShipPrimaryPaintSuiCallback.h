@@ -5,8 +5,7 @@
  *      Author: Halyn
  */
 
-#ifndef SHIPPRIMARYPAINTSUICALLBACK_H_
-#define SHIPPRIMARYPAINTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/colorbox/SuiColorBox.h"
@@ -74,5 +73,3 @@ public:
 		creature->sendMessage(cbox->generateMessage());
 	}
 };
-
-#endif /* SHIPPRIMARYPAINTSUICALLBACK_H_ */

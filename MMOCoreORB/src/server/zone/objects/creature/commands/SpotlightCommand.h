@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SPOTLIGHTCOMMAND_H_
-#define SPOTLIGHTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
 
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif //SPOTLIGHTCOMMAND_H_

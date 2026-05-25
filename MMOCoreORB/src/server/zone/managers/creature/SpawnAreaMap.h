@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef SPAWNAREAMAP_H_
-#define SPAWNAREAMAP_H_
+#pragma once
 
 #include "server/zone/objects/region/SpawnArea.h"
 #include "server/zone/Zone.h"
@@ -51,6 +50,3 @@ public:
 		noSpawnAreas.add(area);
 	}
 };
-
-
-#endif /* SPAWNAREAMAP_H_ */

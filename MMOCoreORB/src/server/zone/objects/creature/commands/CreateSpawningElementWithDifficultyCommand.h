@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATESPAWNINGELEMENTWITHDIFFICULTYCOMMAND_H_
-#define CREATESPAWNINGELEMENTWITHDIFFICULTYCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 #include "server/zone/managers/gcw/tasks/LambdaShuttleWithReinforcementsTask.h"
@@ -141,5 +140,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // CREATESPAWNINGELEMENTWITHDIFFICULTYCOMMAND_H_

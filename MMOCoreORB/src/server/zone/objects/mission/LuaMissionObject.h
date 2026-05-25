@@ -5,8 +5,7 @@
  * Author: Hakry
 */
 
-#ifndef LUAMISSIONOBJECT_H_
-#define LUAMISSIONOBJECT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/intangible/LuaIntangibleObject.h"
@@ -59,5 +58,3 @@ namespace mission {
 }
 
 using namespace server::zone::objects::mission;
-
-#endif /* LUAMISSIONOBJECT_H_ */

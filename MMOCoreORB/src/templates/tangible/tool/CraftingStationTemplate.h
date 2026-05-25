@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef CRAFTINGSTATIONTEMPLATE_H_
-#define CRAFTINGSTATIONTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -41,5 +40,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* CRAFTINGSTATIONTEMPLATE_H_ */

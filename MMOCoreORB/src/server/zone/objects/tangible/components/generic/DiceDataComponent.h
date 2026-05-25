@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DICEDATACOMPONENT_H_
-#define DICEDATACOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
@@ -46,6 +45,3 @@ private:
 		addSerializableVariable("sides", &sides);
 	}
 };
-
-
-#endif /* DICEDATACOMPONENT_H_ */

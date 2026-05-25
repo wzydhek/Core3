@@ -5,8 +5,7 @@
  *      Author: loshult
  */
 
-#ifndef BOUNTYHUNTERDROID_H_
-#define BOUNTYHUNTERDROID_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/mission/MissionObject.h"
@@ -53,5 +52,3 @@ private:
 } // namespace server
 
 using namespace server::zone::objects::mission::bountyhunter;
-
-#endif /* BOUNTYHUNTERDROID_H_ */

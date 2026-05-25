@@ -1,5 +1,4 @@
-#ifndef DESTRUCTIBLEBUILDINGMENUCOMPONENT_H_
-#define DESTRUCTIBLEBUILDINGMENUCOMPONENT_H_
+#pragma once
 
 
 #include "engine/engine.h"
@@ -31,5 +30,3 @@ public:
 	virtual int sendSelfDestructMessage(BuildingObject* building, const String& message) const;
 
 };
-
-#endif /* DESTRUCTIBLEBUILDINGMENUCOMPONENT_H_ */

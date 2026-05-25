@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef ADBARKINGPHRASESUICALLBACK_H_
-#define ADBARKINGPHRASESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/vendor/VendorAdBarkingSession.h"
@@ -133,5 +132,3 @@ public:
 		session->setAnimation(animation);
 	}
 };
-
-#endif /* ADBARKINGPHRASESUICALLBACK_H_ */

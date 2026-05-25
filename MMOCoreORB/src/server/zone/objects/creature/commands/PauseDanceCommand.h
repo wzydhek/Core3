@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PAUSEDANCECOMMAND_H_
-#define PAUSEDANCECOMMAND_H_
+#pragma once
 
 class PauseDanceCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //PAUSEDANCECOMMAND_H_

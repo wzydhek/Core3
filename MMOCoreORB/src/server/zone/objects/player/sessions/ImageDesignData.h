@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef IMAGEDESIGNDATA_H_
-#define IMAGEDESIGNDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/variables/CustomizationVariables.h"
@@ -251,5 +250,3 @@ public:
 		return holoEmote;
 	}
 };
-
-#endif /* IMAGEDESIGNDATA_H_ */

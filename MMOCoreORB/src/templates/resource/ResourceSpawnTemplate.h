@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef RESOURCESPAWNTEMPLATE_H_
-#define RESOURCESPAWNTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/SharedResourceContainerObjectTemplate.h"
 
@@ -27,5 +26,3 @@ public:
 
 	}
 };
-
-#endif /* RESOURCESPAWNTEMPLATE_H_ */

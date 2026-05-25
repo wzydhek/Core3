@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef SKILLDATAFORM_H_
-#define SKILLDATAFORM_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 
@@ -67,5 +66,3 @@ public:
 		return entry->getKey();
 	}
 };
-
-#endif /* SKILLDATAFORM_H_ */

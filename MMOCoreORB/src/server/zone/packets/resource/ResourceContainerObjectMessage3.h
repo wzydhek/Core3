@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESOURCECONTAINEROBJECTMESSAGE3_H_
-#define RESOURCECONTAINEROBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/objects/resource/ResourceContainer.h"
 #include "server/zone/packets/tangible/TangibleObjectMessage3.h"
@@ -19,5 +18,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*RESOURCECONTAINEROBJECTMESSAGE3_H_*/

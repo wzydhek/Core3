@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RETREATCOMMAND_H_
-#define RETREATCOMMAND_H_
+#pragma once
 
 #include "SquadLeaderCommand.h"
 
@@ -150,5 +149,3 @@ public:
 	}
 
 };
-
-#endif //RETREATCOMMAND_H_

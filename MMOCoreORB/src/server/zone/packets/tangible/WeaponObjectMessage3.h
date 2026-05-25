@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef WEAPONOBJECTMESSAGE3_H_
-#define WEAPONOBJECTMESSAGE3_H_
+#pragma once
 
 #include "TangibleObjectMessage3.h"
-
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 
 class WeaponObjectMessage3 : public TangibleObjectMessage3 {
@@ -29,5 +27,3 @@ public:
 	}
 
 };
-
-#endif /*WEAPONOBJECTMESSAGE3_H_*/

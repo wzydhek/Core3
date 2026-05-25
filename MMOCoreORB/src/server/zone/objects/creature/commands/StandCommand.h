@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STANDCOMMAND_H_
-#define STANDCOMMAND_H_
+#pragma once
 
 class StandCommand : public QueueCommand {
 public:
@@ -68,6 +67,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //STANDCOMMAND_H_
-

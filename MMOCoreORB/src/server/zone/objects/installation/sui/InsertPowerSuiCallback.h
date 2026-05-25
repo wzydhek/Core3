@@ -5,9 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef INSERTPOWERSUICALLBACK_H_
-#define INSERTPOWERSUICALLBACK_H_
-
+#pragma once
 
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -69,5 +67,3 @@ public:
 	}
 
 };
-
-#endif /* INSERTPOWERSUICALLBACK_H_ */

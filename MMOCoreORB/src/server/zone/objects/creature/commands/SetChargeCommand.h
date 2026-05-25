@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETCHARGECOMMAND_H_
-#define SETCHARGECOMMAND_H_
+#pragma once
 
 class SetChargeCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETCHARGECOMMAND_H_

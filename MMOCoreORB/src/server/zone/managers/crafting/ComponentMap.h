@@ -5,17 +5,14 @@
  *      Author: swgemu
  */
 
-#ifndef COMPONENTMAP_H_
-#define COMPONENTMAP_H_
+#pragma once
 
 #include "engine/log/Logger.h"
 #include "engine/util/iffstream/IffStream.h"
 #include "engine/util/Singleton.h"
-
 #include "templates/manager/TemplateManager.h"
 #include "templates/datatables/DataTableIff.h"
 #include "templates/datatables/DataTableRow.h"
-
 #include "system/util/VectorMap.h"
 #include "system/lang/String.h"
 
@@ -237,5 +234,3 @@ public:
 		return visibleComponentMap.get(tempCRC).get(slotCRC);
 	}
 };
-
-#endif /* COMPONENTMAP_H_ */

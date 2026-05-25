@@ -1,8 +1,6 @@
-#ifndef SCENEOBJECT_H_
-#define SCENEOBJECT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/u3d/Coordinate.h"
 
 class ZoneClient;
@@ -314,5 +312,3 @@ public:
 		zone = nullptr;
 	}
 };
-
-#endif /*SCENEOBJECT_H_*/

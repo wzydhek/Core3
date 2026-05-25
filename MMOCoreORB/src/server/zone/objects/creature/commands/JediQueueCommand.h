@@ -5,9 +5,7 @@
  *      Author: valkyra
  */
 
-#ifndef JEDIQUEUECOMMAND_H_
-#define JEDIQUEUECOMMAND_H_
-
+#pragma once
 
 #include "server/zone/objects/creature/buffs/Buff.h"
 #include "QueueCommand.h"
@@ -349,6 +347,3 @@ public:
 		frsDarkForcePowerModifier = val;
 	}
 };
-
-
-#endif /* SRC_SERVER_ZONE_OBJECTS_CREATURE_COMMANDS_JEDIQUEUECOMMAND_H_ */

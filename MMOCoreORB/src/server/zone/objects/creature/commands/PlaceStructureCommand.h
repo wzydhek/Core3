@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLACESTRUCTURECOMMAND_H_
-#define PLACESTRUCTURECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/tangible/deed/structure/StructureDeed.h"
@@ -134,5 +133,3 @@ public:
 	}
 
 };
-
-#endif //PLACESTRUCTURECOMMAND_H_

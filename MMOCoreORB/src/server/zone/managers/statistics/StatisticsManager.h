@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STATISTICSMANAGER_H_
-#define STATISTICSMANAGER_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/mission/MissionTypes.h"
@@ -269,5 +268,3 @@ private:
 		creditsGeneratedFromMissionsSurvey = 0;
 	}
 };
-
-#endif /* STATISTICSMANAGER_H_ */

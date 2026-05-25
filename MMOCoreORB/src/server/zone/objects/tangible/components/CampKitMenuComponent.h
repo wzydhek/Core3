@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef CAMPKITMENUCOMPONENT_H_
-#define CAMPKITMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -33,6 +32,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* CAMPKITMENUCOMPONENT_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BROADCASTGALAXYCOMMAND_H_
-#define BROADCASTGALAXYCOMMAND_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/chat/ChatManager.h"
@@ -127,5 +126,3 @@ public:
 	}
 
 };
-
-#endif //BROADCASTGALAXYCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef PLACEDECORATIONCOMPONENT_H_
-#define PLACEDECORATIONCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/deed/components/PlaceStructureComponent.h"
 
@@ -15,5 +14,3 @@ public:
 	int placeStructure(StructureDeed* deed, CreatureObject* creature, float x, float y, int angle) const;
 
 };
-
-#endif /* PLACEDECORATIONCOMPONENT_H_ */

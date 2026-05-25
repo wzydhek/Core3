@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef MISSIONTERMINALTEMPLATE_H_
-#define MISSIONTERMINALTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -34,6 +33,3 @@ public:
 		return true;
 	}
 };
-
-
-#endif /* MISSIONTERMINALTEMPLATE_H_ */

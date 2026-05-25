@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef LAUNCHBROWSERMESSAGE_H_
-#define LAUNCHBROWSERMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -20,5 +19,3 @@ public:
    }
 
 };
-
-#endif /* LAUNCHBROWSERMESSAGE_H_ */

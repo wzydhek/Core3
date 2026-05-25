@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FILTERFRACTAL_H_
-#define FILTERFRACTAL_H_
-
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "FilterProceduralRule.h"
@@ -32,5 +30,3 @@ public:
 
 	float process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator, FilterRectangle* rect);
 };
-
-#endif /* FILTERFRACTAL_H_ */

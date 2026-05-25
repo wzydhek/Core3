@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef GENERICRESPONSE_H_
-#define GENERICRESPONSE_H_
+#pragma once
 
 #include "server/zone/packets/object/ObjectControllerMessage.h"
 
@@ -21,4 +20,3 @@ public:
 	}
 
 };
-#endif /* GENERICRESPONSE_H_ */

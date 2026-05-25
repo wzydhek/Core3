@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESCUECOMMAND_H_
-#define RESCUECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
 #include "server/zone/objects/tangible/threat/ThreatStates.h"
@@ -70,5 +69,3 @@ public:
 	}
 
 };
-
-#endif //RESCUECOMMAND_H_

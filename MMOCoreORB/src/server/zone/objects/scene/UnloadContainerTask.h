@@ -1,6 +1,5 @@
 
-#ifndef UNLOADCONTAINERTASK_H_
-#define UNLOADCONTAINERTASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -47,5 +46,3 @@ class UnloadContainerTask : public Task {
   }
  }
 }
-
-#endif /* UNLOADCONTAINERTASK_H_ */

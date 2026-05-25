@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SCENEOBJECTTYPE_H_
-#define SCENEOBJECTTYPE_H_
+#pragma once
 
 #include <system/lang/String.h>
 
@@ -404,5 +403,3 @@ public:
 public:
 	static const String typeToString(int gameObjectType);
 };
-
-#endif /* SCENEOBJECTTYPE_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESENDLOGINMESSAGETOALLCOMMAND_H_
-#define RESENDLOGINMESSAGETOALLCOMMAND_H_
+#pragma once
 
 class ResendLoginMessageToAllCommand : public QueueCommand {
 public:
@@ -30,5 +29,3 @@ public:
 	}
 
 };
-
-#endif //RESENDLOGINMESSAGETOALLCOMMAND_H_

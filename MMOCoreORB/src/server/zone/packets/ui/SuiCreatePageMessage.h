@@ -8,8 +8,7 @@
  * Manipulated and built heavily in SuiBoxImplementation
  */
 
-#ifndef SUICREATEPAGEMESSAGE_H_
-#define SUICREATEPAGEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/player/sui/SuiPageData.h"
@@ -319,5 +318,3 @@ public:
    }*/
 
 };
-
-#endif /*BADGESRESPONSEMESSAGE_H_*/

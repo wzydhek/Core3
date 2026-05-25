@@ -1,5 +1,4 @@
-#ifndef SECURITYREPAIRTASK_H_
-#define SECURITYREPAIRTASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 
@@ -98,5 +97,3 @@ public:
 		}
 	}
 };
-
-#endif /* SECURITYREPAIRTASK_H_ */

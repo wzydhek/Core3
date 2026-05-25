@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef THREATMATRIX_H_
-#define THREATMATRIX_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -64,5 +63,3 @@ public:
 }
 
 using namespace server::zone::objects::tangible::threat;
-
-#endif /* THREATMATRIX_H_ */

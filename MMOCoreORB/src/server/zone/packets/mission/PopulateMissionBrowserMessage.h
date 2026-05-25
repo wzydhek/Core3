@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef POPULATEMISSIONBROWSERMESSAGE_H_
-#define POPULATEMISSIONBROWSERMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -15,6 +14,3 @@ public:
 		insertInt(0); // list begin?
 	}
 };
-
-
-#endif /*POPULATEMISSIONBROWSERMESSAGE_H_*/

@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PARAMETERSMESSAGE_H_
-#define PARAMETERSMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
-
 #include "server/zone/packets/MessageCallback.h"
 
 class ParametersMessage : public BaseMessage {
@@ -38,5 +36,3 @@ public:
 
 	}
 };
-
-#endif /*PARAMETERSMESSAGE_H_*/

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYEROBJECTMESSAGE8_H_
-#define PLAYEROBJECTMESSAGE8_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -43,5 +42,3 @@ public:
 	}
 
 };
-
-#endif /*PLAYEROBJECTMESSAGE8_H_*/

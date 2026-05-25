@@ -5,12 +5,10 @@
  *      Author: victor
  */
 
-#ifndef COLLISIONMANAGER_H_
-#define COLLISIONMANAGER_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/CloseObjectsVector.h"
-
 #include "templates/appearance/AppearanceTemplate.h"
 
 class PathNode;
@@ -90,5 +88,3 @@ public:
 
 	static Vector3 getAxisAlignedVector(const Vector3& vector, const Matrix4& rotation);
 };
-
-#endif /* COLLISIONMANAGER_H_ */

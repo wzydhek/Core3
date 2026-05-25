@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CREATECLIENTPATHMESSAGE_H_
-#define CREATECLIENTPATHMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -102,5 +101,3 @@ public:
 		addCoordinate(position);
 	}
 };
-
-#endif /* CREATECLIENTPATHMESSAGE_H_ */

@@ -2,8 +2,7 @@
  * ForceCrystalMenuComponent.h
  */
 
-#ifndef FORCECRYSTALMENUCOMPONENT_H_
-#define FORCECRYSTALMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -14,6 +13,3 @@ public:
 	virtual void fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const;
 
 };
-
-
-#endif /* FORCECRYSTALMENUCOMPONENT_H_ */

@@ -5,8 +5,7 @@
  *      Author: chris.rush
  */
 
-#ifndef GUILDADDENEMYSUICALLBACK_H_
-#define GUILDADDENEMYSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -44,5 +43,3 @@ public:
 		}
 	}
 };
-
-#endif /* GUILDADDENEMYSUICALLBACK_H_ */

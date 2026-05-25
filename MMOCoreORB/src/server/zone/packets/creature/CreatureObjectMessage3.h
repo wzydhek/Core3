@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATUREOBJECTMESSAGE3_H_
-#define CREATUREOBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/tangible/TangibleObjectMessage3.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -29,5 +28,3 @@ public:
 	}
 
 };
-
-#endif /*CREATUREOBJECTMESSAGE3_H_*/

@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDSPONSOREDLISTSUICALLBACK_H_
-#define GUILDSPONSOREDLISTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
@@ -63,5 +62,3 @@ public:
 		guildManager->sendGuildSponsoredOptionsTo(player, guild, playerID, guildTerminal);
 	}
 };
-
-#endif /* GUILDSPONSOREDLISTSUICALLBACK_H_ */

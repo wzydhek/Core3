@@ -5,8 +5,4 @@
  *      Author: swgemu
  */
 
-#ifndef CREATEAUCTIONRESPONSEMESSAGE_H_
-#define CREATEAUCTIONRESPONSEMESSAGE_H_
-
-
-#endif /* CREATEAUCTIONRESPONSEMESSAGE_H_ */
+#pragma once

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FACTORYCRATEOBJECTMESSAGE3_H_
-#define FACTORYCRATEOBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/factorycrate/FactoryCrate.h"
@@ -47,5 +46,3 @@ public:
 	}
 
 };
-
-#endif /*FACTORYCRATEOBJECTMESSAGE3_H_*/

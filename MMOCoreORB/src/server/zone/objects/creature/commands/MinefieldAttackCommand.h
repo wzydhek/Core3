@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef MINEFIELDATTACKCOMMAND_H_
-#define MINEFIELDATTACKCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -29,10 +28,3 @@ public:
 	}
 
 };
-
-
-
-
-
-
-#endif /* MINEFIELDATTACKCOMMAND_H_ */

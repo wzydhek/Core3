@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BADGESRESPONSEMESSAGE_H_
-#define BADGESRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -42,5 +41,3 @@ public:
 	}
 
 };
-
-#endif /*BADGESRESPONSEMESSAGE_H_*/

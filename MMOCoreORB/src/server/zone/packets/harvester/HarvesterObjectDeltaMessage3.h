@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INTANGIBLEOBJECTDELTAMESSAGE3_H_
-#define INTANGIBLEOBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/installation/harvester/HarvesterObject.h"
@@ -23,6 +22,3 @@ public:
 	}	
 	
 };
-
-#endif /*INTANGIBLEOBJECTDELTAMESSAGE3_H_*/
-

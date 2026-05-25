@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef BOUNDARYRECTANGLE_H_
-#define BOUNDARYRECTANGLE_H_
-
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "Boundary.h"
@@ -261,5 +259,3 @@ public:
 		return y1;
 	}
 };
-
-#endif /* BOUNDARYRECTANGLE_H_ */

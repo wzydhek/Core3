@@ -1,5 +1,4 @@
-#ifndef SHIPPROJECTILE_H_
-#define SHIPPROJECTILE_H_
+#pragma once
 
 //#define SHIPPROJECTILE_DEBUG
 
@@ -7,8 +6,8 @@
 #include "server/zone/objects/ship/ShipProjectileData.h"
 
 #ifdef SHIPPROJECTILE_DEBUG
-#include "server/zone/packets/ui/CreateClientPathMessage.h"
-#include "server/zone/packets/chat/ChatSystemMessage.h"
+	#include "server/zone/packets/ui/CreateClientPathMessage.h"
+	#include "server/zone/packets/chat/ChatSystemMessage.h"
 #endif // SHIPPROJECTILE_DEBUG
 
 class ShipProjectile: public Object, public Logger {
@@ -223,5 +222,3 @@ public:
 	}
 #endif //SHIPPROJECTILE_DEBUG
 };
-
-#endif // SHIPPROJECTILE_H_

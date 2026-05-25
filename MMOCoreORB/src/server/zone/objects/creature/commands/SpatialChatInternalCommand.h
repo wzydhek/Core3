@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SPATIALCHATINTERNALCOMMAND_H_
-#define SPATIALCHATINTERNALCOMMAND_H_
+#pragma once
 
 class SpatialChatInternalCommand : public QueueCommand {
 public:
@@ -34,6 +33,3 @@ public:
 	}
 
 };
-
-#endif //SPATIALCHATINTERNALCOMMAND_H_
-

@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef CLIENTIDMESSAGECALLBACK_H_
-#define CLIENTIDMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/packets/MessageCallback.h"
@@ -15,11 +14,10 @@
 #include "server/login/account/Account.h"
 #include "server/login/objects/CharacterList.h"
 #include "server/login/account/AccountManager.h"
-
 #include "ClientPermissionsMessage.h"
 
 #ifdef WITH_SWGREALMS_API
-#include "server/login/SWGRealmsAPI.h"
+	#include "server/login/SWGRealmsAPI.h"
 #endif // WITH_SWGREALMS_API
 
 class ClientIdMessageCallback : public MessageCallback {
@@ -188,5 +186,3 @@ public:
 		return accountID;
 	}
 };
-
-#endif /* CLIENTIDMESSAGECALLBACK_H_ */

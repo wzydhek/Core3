@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETLOGINMESSAGECOMMAND_H_
-#define SETLOGINMESSAGECOMMAND_H_
+#pragma once
 
 class SetLoginMessageCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETLOGINMESSAGECOMMAND_H_

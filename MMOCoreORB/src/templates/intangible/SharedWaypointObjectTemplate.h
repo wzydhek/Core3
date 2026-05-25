@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDWAYPOINTOBJECTTEMPLATE_H_
-#define SHAREDWAYPOINTOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
@@ -65,6 +64,3 @@ public:
 	}
 
 };
-
-
-#endif /* SHAREDWAYPOINTOBJECTTEMPLATE_H_ */

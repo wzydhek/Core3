@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GROUPOBJECTMESSAGE3_H_
-#define GROUPOBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/group/GroupObject.h"
@@ -26,5 +25,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*GROUPOBJECTMESSAGE3_H_*/

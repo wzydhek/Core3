@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef DOTEFFECT_H_
-#define DOTEFFECT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -173,6 +172,3 @@ public:
 	}
 
 };
-
-
-#endif /* DOTEFFECT_H_ */

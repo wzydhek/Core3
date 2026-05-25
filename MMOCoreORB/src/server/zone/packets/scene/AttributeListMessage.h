@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ATTRIBUTELISTMESSAGE_H_
-#define ATTRIBUTELISTMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
 
 namespace server {
@@ -142,6 +140,3 @@ public:
 }
 
 using namespace server::zone::packets::scene;
-
-
-#endif /*ATTRIBUTELISTMESSAGE_H_*/

@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORSHADERCONSTANT_H_
-#define AFFECTORSHADERCONSTANT_H_
-
+#pragma once
 
 #include "../ProceduralRule.h"
 
@@ -50,5 +48,3 @@ public:
 		iffStream->closeChunk('DATA');
 	}
 };
-
-#endif /* AFFECTORSHADERCONSTANT_H_ */

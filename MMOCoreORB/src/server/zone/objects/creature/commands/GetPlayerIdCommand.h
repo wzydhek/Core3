@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETPLAYERIDCOMMAND_H_
-#define GETPLAYERIDCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/player/PlayerManager.h"
 
@@ -50,5 +49,3 @@ public:
 	}
 
 };
-
-#endif //GETPLAYERIDCOMMAND_H_

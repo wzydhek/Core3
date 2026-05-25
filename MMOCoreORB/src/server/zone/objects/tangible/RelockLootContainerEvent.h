@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef RELOCKLOOTCONTAINEREVENT_H_
-#define RELOCKLOOTCONTAINEREVENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/tangible/Container.h"
@@ -42,5 +41,3 @@ public:
 	}
 
 };
-
-#endif /* RELOCKLOOTCONTAINEREVENT_H_ */

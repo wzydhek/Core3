@@ -5,8 +5,7 @@
  *      Author: rafalski
  */
 
-#ifndef REPAIRTOOLSUICALLBACK_H_
-#define REPAIRTOOLSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/VehicleObject.h"
@@ -47,5 +46,3 @@ public:
 			itemToRepair->repair(player, repairTool);
 	}
 };
-
-#endif /* REPAIRTOOLSUICALLBACK_H_ */

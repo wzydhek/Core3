@@ -5,12 +5,10 @@
  *      Author: victor
  */
 
-#ifndef SHIPMANAGER_H_
-#define SHIPMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/ship/ShipComponentData.h"
 #include "server/zone/objects/ship/ShipProjectileData.h"
-
 #include "server/zone/objects/ship/ShipObject.h"
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 #include "server/zone/objects/ship/ComponentSlots.h"
@@ -239,5 +237,3 @@ public:
 } // namespace server
 
 using namespace server::zone::managers::ship;
-
-#endif /* SHIPMANAGER_H_ */

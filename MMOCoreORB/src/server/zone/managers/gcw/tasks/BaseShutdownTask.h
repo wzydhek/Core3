@@ -1,5 +1,4 @@
-#ifndef BASESHUTDOWNTASK_H_
-#define BASESHUTDOWNTASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
@@ -78,5 +77,3 @@ public:
 		player->sendMessage(suiMessageBox->generateMessage());
 	}
 };
-
-#endif /* BASESHUTDOWNTASK_H_ */

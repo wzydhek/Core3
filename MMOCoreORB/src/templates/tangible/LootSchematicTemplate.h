@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef LOOTSCHEMATICTEMPLATE_H_
-#define LOOTSCHEMATICTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -51,6 +50,3 @@ public:
 	}
 
 };
-
-
-#endif /* LOOTSCHEMATICTEMPLATE_H_ */

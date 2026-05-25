@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATUREOBJECTMESSAGE1_H_
-#define CREATUREOBJECTMESSAGE1_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -29,5 +28,3 @@ public:
 	}
 
 };
-
-#endif /*CREATUREOBJECTMESSAGE1_H_*/

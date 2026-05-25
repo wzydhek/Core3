@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ENDDUELCOMMAND_H_
-#define ENDDUELCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -85,5 +84,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // ENDDUELCOMMAND_H_

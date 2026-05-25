@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GOTOCOMMAND_H_
-#define GOTOCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/waypoint/WaypointObject.h"
 #include "server/zone/Zone.h"
@@ -193,5 +192,3 @@ private:
 		return planetOffset + fabs(origin.getX() - wp->getWorldPositionX()) + fabs(origin.getY() - wp->getWorldPositionY());
 	}
 };
-
-#endif //GOTOCOMMAND_H_

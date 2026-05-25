@@ -5,13 +5,10 @@
  *      Author: victor
  */
 
-#ifndef CREATEAUCTIONMESSAGECALLBACK_H_
-#define CREATEAUCTIONMESSAGECALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/auction/AuctionManager.h"
-
 
 class CreateAuctionMessageCallback : public MessageCallback {
 	uint64 objectID;
@@ -66,6 +63,3 @@ public:
 	}
 
 };
-
-
-#endif /* CREATEAUCTIONMESSAGECALLBACK_H_ */

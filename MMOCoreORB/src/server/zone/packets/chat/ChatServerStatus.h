@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CHATSERVERSTATUS_H_
-#define CHATSERVERSTATUS_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -21,5 +20,3 @@ public:
    }
 
 };
-
-#endif /* CHATSERVERSTATUS_H_ */

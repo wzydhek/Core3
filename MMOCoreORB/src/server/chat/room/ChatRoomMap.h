@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATROOMMAP_H_
-#define CHATROOMMAP_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/chat/room/ChatRoom.h"
 
 namespace server {
@@ -51,5 +49,3 @@ public:
 }
 
 using namespace server::chat::room;
-
-#endif /*CHATROOMMAP_H_*/

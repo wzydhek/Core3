@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SABERSLASH1COMMAND_H_
-#define SABERSLASH1COMMAND_H_
+#pragma once
 
 #include "JediCombatQueueCommand.h"
 
@@ -46,5 +45,3 @@ public:
 	}
 
 };
-
-#endif //SABERSLASH1COMMAND_H_

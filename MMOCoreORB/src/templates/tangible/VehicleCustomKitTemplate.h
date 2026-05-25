@@ -5,8 +5,7 @@
  *      Author: trick77
  */
 
-#ifndef VEHICLECUSTOMKITTEMPLATE_H_
-#define VEHICLECUSTOMKITTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif /* VEHICLECUSTOMKITTEMPLATE_H_ */

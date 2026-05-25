@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef SPAWNGROUP_H_
-#define SPAWNGROUP_H_
+#pragma once
 
 #include "LairSpawn.h"
 
@@ -92,5 +91,3 @@ public:
 }
 }
 }
-
-#endif /* SPAWNGROUP_H_ */

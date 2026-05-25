@@ -5,14 +5,11 @@
  *      Author: victor
  */
 
-#ifndef BADGES_H_
-#define BADGES_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "server/zone/managers/player/BadgeList.h"
-
 #include "Badge.h"
 
 class Badges : public Serializable, public ReadWriteLock {
@@ -235,5 +232,3 @@ public:
 		badgeTotal = value;
 	}
 };
-
-#endif /* BADGES_H_ */

@@ -8,8 +8,7 @@
  * \date 08.04.2010
  */
 
-#ifndef MEDITATETASK_H_
-#define MEDITATETASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/chat/StringIdChatParameter.h"
@@ -99,5 +98,3 @@ public:
 	}
 
 };
-
-#endif /* MEDITATETASK_H_ */

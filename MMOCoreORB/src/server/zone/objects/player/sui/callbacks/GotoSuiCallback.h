@@ -5,8 +5,7 @@
  *  Author: lordkator
  */
 
-#ifndef GOTOSUICALLBACK_H_
-#define GOTOSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -70,5 +69,3 @@ public:
 		    creature->switchZone(zoneName, wp->getPositionX(), wp->getPositionZ(), wp->getPositionY(), 0);
 	}
 };
-
-#endif /* GOTOSUICALLBACK_H_ */

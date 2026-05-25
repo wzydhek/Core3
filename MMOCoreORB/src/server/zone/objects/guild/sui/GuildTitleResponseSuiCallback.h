@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDMEMBERTITLESUICALLBACK_H_
-#define GUILDMEMBERTITLESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -42,5 +41,3 @@ public:
 		guildManager->setMemberTitle(player, target, title);
 	}
 };
-
-#endif /* GUILDMEMBERTITLESUICALLBACK_H_ */

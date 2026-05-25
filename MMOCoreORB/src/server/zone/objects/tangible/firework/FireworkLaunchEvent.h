@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FIREWORKLAUNCHEVENT_H_
-#define FIREWORKLAUNCHEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/tangible/firework/FireworkObject.h"
@@ -39,6 +38,3 @@ public:
 		this->player = nullptr;
 	}
 };
-
-
-#endif /* FIREWORKLAUNCHEVENT_H_ */

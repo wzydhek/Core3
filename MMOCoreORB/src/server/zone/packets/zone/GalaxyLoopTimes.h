@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef REQUESTGALAXYLOOPTIMES_H_
-#define REQUESTGALAXYLOOPTIMES_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/packets/MessageCallback.h"
@@ -40,5 +39,3 @@ public:
 		client->sendMessage(reply);*/
 	}
 };
-
-#endif

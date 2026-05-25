@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SOCIALINTERNALCOMMAND_H_
-#define SOCIALINTERNALCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/creature/PetManager.h"
 #include "server/zone/managers/reaction/ReactionManager.h"
@@ -133,5 +132,3 @@ public:
 	}
 
 };
-
-#endif //SOCIALINTERNALCOMMAND_H_

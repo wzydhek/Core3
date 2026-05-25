@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SEGOGGLESCOMMAND_H_
-#define SEGOGGLESCOMMAND_H_
+#pragma once
 
 class SeGogglesCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SEGOGGLESCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETPROTOTYPECOMMAND_H_
-#define GETPROTOTYPECOMMAND_H_
+#pragma once
 
 class GetPrototypeCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GETPROTOTYPECOMMAND_H_

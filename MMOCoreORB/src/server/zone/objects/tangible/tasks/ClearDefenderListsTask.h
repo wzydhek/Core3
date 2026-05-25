@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CLEARDEFENDERLISTSTASK_H_
-#define CLEARDEFENDERLISTSTASK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 
@@ -36,7 +35,3 @@ public:
 		tangibleObject->removeDefenders();
 	}
 };
-
-
-
-#endif /* CLEARDEFENDERLISTS_H_ */

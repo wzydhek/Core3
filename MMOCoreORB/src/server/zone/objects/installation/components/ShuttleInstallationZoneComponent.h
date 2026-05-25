@@ -5,11 +5,9 @@
  *      Author: TragD
  */
 
-#ifndef SHUTTLEINSTALLATIONZONECOMPONENT_H_
-#define SHUTTLEINSTALLATIONZONECOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/structure/components/StructureZoneComponent.h"
 
 namespace server {
@@ -33,5 +31,3 @@ public:
 	void notifyRemoveFromZone(SceneObject* sceneObject) const;
 	void destroyObjectFromWorld(SceneObject* sceneObject, bool sendSelfDestroy) const;
 };
-
-#endif /* SHUTTLEINSTALLATIONZONECOMPONENT_H_ */

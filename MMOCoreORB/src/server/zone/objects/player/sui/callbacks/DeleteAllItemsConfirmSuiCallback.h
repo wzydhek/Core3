@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef DELETEALLITEMSCONFIRMSUICALLBACK_H_
-#define DELETEALLITEMSCONFIRMSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/building/BuildingObject.h"
@@ -55,5 +54,3 @@ public:
 		creature->sendSystemMessage("@player_structure:items_deleted"); //All of the objects in your house have been deleted.
 	}
 };
-
-#endif /* DELETEALLITEMSCONFIRMSUICALLBACK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HARVESTEROBJECTMESSAGE6_H_
-#define HARVESTEROBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/installation/harvester/HarvesterObject.h"
@@ -20,5 +19,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*HARVESTEROBJECTMESSAGE6_H_*/

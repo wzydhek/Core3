@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCEWEAKEN1COMMAND_H_
-#define FORCEWEAKEN1COMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "ForcePowersQueueCommand.h"
@@ -59,5 +58,3 @@ public:
 	}
 
 };
-
-#endif //FORCEWEAKEN1COMMAND_H_

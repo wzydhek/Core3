@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ENVIRONMENTGROUP_H_
-#define ENVIRONMENTGROUP_H_
+#pragma once
 
 #include "EnvironmentData.h"
 
@@ -53,6 +52,3 @@ public:
 
 	}
 };
-
-
-#endif /* ENVIRONMENTGROUP_H_ */

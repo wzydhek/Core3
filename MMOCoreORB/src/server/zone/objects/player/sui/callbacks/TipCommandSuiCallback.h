@@ -5,8 +5,7 @@
  *      Author: Moncai
  */
 
-#ifndef TIPBANKSUICALLBACK_H_
-#define TIPBANKSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -103,5 +102,3 @@ public:
 				player->getFirstName());
 	}
 };
-
-#endif /* TIPBANKSUICALLBACK_H_ */

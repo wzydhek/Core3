@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DELTALONGVARIABLE_H_
-#define DELTALONGVARIABLE_H_
+#pragma once
 
 #include "DeltaBasicVariable.h"
 
@@ -33,7 +32,3 @@ public:
 		msg->addLongUpdate(DeltaID, object);
 	}
 };
-
-
-
-#endif /* DELTALONGVARIABLE_H_ */

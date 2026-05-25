@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef ADDBANNEDPLAYERCOMMAND_H_
-#define ADDBANNEDPLAYERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/login/account/Account.h"
@@ -92,5 +91,3 @@ public:
 	}
 
 };
-
-#endif //ADDBANNEDPLAYERCOMMAND_H_

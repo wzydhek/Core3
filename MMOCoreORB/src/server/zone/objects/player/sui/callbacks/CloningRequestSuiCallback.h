@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef CLONINGREQUESTSUICALLBACK_H_
-#define CLONINGREQUESTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -44,5 +43,3 @@ public:
 		playerManager->sendPlayerToCloner(player, listbox->getMenuObjectID(index), typeofdeath);
 	}
 };
-
-#endif /* CLONINGRequestSUICALLBACK_H_ */

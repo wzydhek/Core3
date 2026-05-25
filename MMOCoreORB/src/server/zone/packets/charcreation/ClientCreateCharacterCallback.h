@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef CLIENTCREATECHARACTERCALLBACK_H_
-#define CLIENTCREATECHARACTERCALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 
@@ -85,5 +84,3 @@ public:
 		return species;
 	}
 };
-
-#endif /* CLIENTCREATECHARACTERCALLBACK_H_ */

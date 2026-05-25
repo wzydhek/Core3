@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATROOMLIST_H_
-#define CHATROOMLIST_H_
+#pragma once
 
 #include "server/chat/room/ChatRoom.h"
 #include "server/zone/packets/MessageCallback.h"
@@ -95,5 +94,3 @@ public:
 }
 
 using namespace server::zone::packets::chat;
-
-#endif /*CHATROOMLIST_H_*/

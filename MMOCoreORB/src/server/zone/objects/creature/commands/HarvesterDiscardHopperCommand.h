@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HARVESTERDISCARDHOPPERCOMMAND_H_
-#define HARVESTERDISCARDHOPPERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -51,5 +50,3 @@ public:
 	}
 
 };
-
-#endif //HARVESTERDISCARDHOPPERCOMMAND_H_

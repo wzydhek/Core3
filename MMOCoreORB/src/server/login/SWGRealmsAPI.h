@@ -8,8 +8,7 @@
  * @created     : Fri Nov 29 10:04:14 UTC 2019
  */
 
-#ifndef _SWGREALMSAPI_H
-#define _SWGREALMSAPI_H
+#pragma once
 
 #ifdef WITH_SWGREALMS_API
 
@@ -590,5 +589,3 @@ namespace server {
 using namespace server::login;
 
 #endif // WITH_SWGREALMS_API
-
-#endif // _SWGREALMSAPI_H

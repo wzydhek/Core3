@@ -2,14 +2,13 @@
 			Copyright <SWGEmu>
 	See file COPYING for copying conditions.*/
 
-#ifndef GALAXY_H_
-#define GALAXY_H_
+#pragma once
 
 #include "engine/engine.h"
 
 // #define USE_RANDOM_EXTRA_PORTS
 #ifdef USE_RANDOM_EXTRA_PORTS
-#include "conf/ConfigManager.h"
+	#include "conf/ConfigManager.h"
 #endif // USE_RANDOM_EXTRA_PORTS
 
 class Galaxy {
@@ -171,5 +170,3 @@ public:
 		return toString();
 	}
 };
-
-#endif // GALAXY_H_

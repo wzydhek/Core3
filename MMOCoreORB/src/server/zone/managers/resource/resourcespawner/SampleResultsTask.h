@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef SAMPLERESULTSTASK_H_
-#define SAMPLERESULTSTASK_H_
+#pragma once
 
 #include "server/zone/objects/transaction/TransactionLog.h"
 
@@ -41,5 +40,3 @@ public:
 	}
 
 };
-
-#endif /* SAMPLERESULTSTASK_H_ */

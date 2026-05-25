@@ -1,6 +1,5 @@
 
-#ifndef LUACITYREGION_H_
-#define LUACITYREGION_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -37,5 +36,3 @@ namespace region {
 }
 
 using namespace server::zone::objects::region;
-
-#endif /* LUACITYREGION_H_ */

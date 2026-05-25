@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef RENAMEVENDORSUICALLBACK_H_
-#define RENAMEVENDORSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/vendor/VendorManager.h"
@@ -45,5 +44,3 @@ public:
 		VendorManager::instance()->handleRenameVendor(player, vendor, name);
 	}
 };
-
-#endif /* RENAMEVENDORSUICALLBACK_H_ */

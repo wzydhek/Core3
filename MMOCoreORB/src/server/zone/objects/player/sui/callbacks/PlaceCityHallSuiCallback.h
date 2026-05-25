@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef PLACECITYHALLSUICALLBACK_H_
-#define PLACECITYHALLSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -110,5 +109,3 @@ public:
 		}
 	}
 };
-
-#endif /* PLACECITYHALLSUICALLBACK_H_ */

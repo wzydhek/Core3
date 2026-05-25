@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETMATCHMAKINGPERSONALIDCOMMAND_H_
-#define SETMATCHMAKINGPERSONALIDCOMMAND_H_
+#pragma once
 
 class SetMatchMakingPersonalIdCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETMATCHMAKINGPERSONALIDCOMMAND_H_

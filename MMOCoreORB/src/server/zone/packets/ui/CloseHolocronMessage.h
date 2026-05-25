@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CLOSEHOLOCRONMESSAGE_H_
-#define CLOSEHOLOCRONMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -20,5 +19,3 @@ public:
    }
 
 };
-
-#endif /* CLOSEHOLOCRONMESSAGE_H_ */

@@ -1,5 +1,4 @@
-#ifndef LUASKILLMANAGER_H_
-#define LUASKILLMANAGER_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -32,5 +31,3 @@ namespace sui {
 }
 
 using namespace server::zone::managers::sui;
-
-#endif /* LUASKILLMANAGER_H_ */

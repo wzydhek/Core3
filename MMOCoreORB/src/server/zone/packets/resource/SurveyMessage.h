@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SURVEY_H_
-#define SURVEY_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -43,4 +42,3 @@ public:
 	}
 
 };
-#endif /*SURVEY_H_*/

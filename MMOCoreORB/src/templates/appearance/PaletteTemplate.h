@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PALETTETEMPLATE_H_
-#define PALETTETEMPLATE_H_
+#pragma once
 
 #include "templates/appearance/PaletteColor.h"
 
@@ -61,5 +60,3 @@ public:
 		return colors.size();
 	}
 };
-
-#endif /* PALLETEFILE_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDDRAFTSCHEMATICOBJECTTEMPLATE_H_
-#define SHAREDDRAFTSCHEMATICOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
@@ -70,6 +69,3 @@ public:
 		SharedIntangibleObjectTemplate::readObject(templateData);
 	}
 };
-
-
-#endif /* SHAREDDRAFTSCHEMATICOBJECTTEMPLATE_H_ */

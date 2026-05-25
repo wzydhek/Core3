@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef CRAFTINGCUSTOMIZATIONCALLBACK_H_
-#define CRAFTINGCUSTOMIZATIONCALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "ObjectControllerMessageCallback.h"
@@ -76,6 +75,3 @@ public:
 		session->customization(name, templateChoice, schematicCount, customizationString);
 	}
 };
-
-
-#endif /* CRAFTINGCUSTOMIZATIONCALLBACK_H_ */

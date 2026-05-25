@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BURSTRUNCOMMAND_H_
-#define BURSTRUNCOMMAND_H_
+#pragma once
 
 class BurstRunCommand : public QueueCommand {
 public:
@@ -34,5 +33,3 @@ public:
 	}
 
 };
-
-#endif //BURSTRUNCOMMAND_H_

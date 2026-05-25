@@ -5,12 +5,10 @@
  *      Author: victor
  */
 
-#ifndef WORLDCOORDINATES_H_
-#define WORLDCOORDINATES_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/cell/CellObject.h"
 
 namespace server {
@@ -143,6 +141,3 @@ public:
 		return toString();
 	}
 };
-
-
-#endif /* WORLDCOORDINATE_H_ */

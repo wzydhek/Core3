@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef FIXEDPOOL_H_
-#define FIXEDPOOL_H_
+#pragma once
 
 #include "ResourcePool.h"
 
@@ -70,5 +69,3 @@ private:
 
 	friend class ResourceSpawner;
 };
-
-#endif /* FIXEDPOOL_H_ */

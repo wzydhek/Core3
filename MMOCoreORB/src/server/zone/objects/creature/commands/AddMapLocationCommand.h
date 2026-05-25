@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ADDMAPLOCATIONCOMMAND_H_
-#define ADDMAPLOCATIONCOMMAND_H_
+#pragma once
 
 class AddMapLocationCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //ADDMAPLOCATIONCOMMAND_H_

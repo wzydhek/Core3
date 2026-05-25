@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BOOSTERON_H_
-#define BOOSTERON_H_
+#pragma once
 
 #include "QueueCommand.h"
 #include "server/zone/objects/ship/ComponentSlots.h"
@@ -74,5 +73,3 @@ public:
 	}
 
 };
-
-#endif //BOOSTERON_H_

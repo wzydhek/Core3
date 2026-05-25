@@ -5,8 +5,7 @@
  *      Author: loshult
  */
 
-#ifndef WILDCONTRABANDSCANTASK_H_
-#define WILDCONTRABANDSCANTASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/sessions/WildContrabandScanSession.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -30,5 +29,3 @@ public:
 		}
 	}
 };
-
-#endif /* WILDCONTRABANDSCANTASK_H_ */

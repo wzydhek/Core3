@@ -1,5 +1,4 @@
-#ifndef SHIPAIPATROLPATHFINDER_H_
-#define SHIPAIPATROLPATHFINDER_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/ship/ai/SpacePatrolPoint.h"
@@ -74,5 +73,3 @@ public:
 		return patrolPoints;
 	}
 };
-
-#endif // SHIPAIPATROLPATHFINDER_H_

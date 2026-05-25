@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CSSEARCHKNOWLEDGEBASECOMMAND_H_
-#define CSSEARCHKNOWLEDGEBASECOMMAND_H_
+#pragma once
 
 class CsSearchKnowledgeBaseCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CSSEARCHKNOWLEDGEBASECOMMAND_H_

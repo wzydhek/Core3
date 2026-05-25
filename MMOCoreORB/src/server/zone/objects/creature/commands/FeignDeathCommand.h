@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FEIGNDEATHCOMMAND_H_
-#define FEIGNDEATHCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -65,5 +64,3 @@ public:
 		creo->removeBuff(STRING_HASHCODE("private_feign_buff"));
 	}
 };
-
-#endif // FEIGNDEATHCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef UPDATEWARSTATUSTASK_H_
-#define UPDATEWARSTATUSTASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/guild/GuildObject.h"
@@ -76,6 +75,3 @@ public:
 		}
 	}
 };
-
-
-#endif /* UPDATEWARSTATUSTASK_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ENTERTAININGDATAMAP_H_
-#define ENTERTAININGDATAMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "EntertainingData.h"
@@ -14,5 +13,3 @@
 class EntertainingDataMap : public VectorMap<ManagedReference<CreatureObject*>, EntertainingData > {
 
 };
-
-#endif /* ENTERTAININGDATAMAP_H_ */

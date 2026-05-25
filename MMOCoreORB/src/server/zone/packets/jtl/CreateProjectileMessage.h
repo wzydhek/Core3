@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CREATEPROJECTICEMESSAGE_H_
-#define CREATEPROJECTICEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/packets/ship/PackedPosition.h"
@@ -289,5 +288,3 @@ public:
 		return "CreateProjectileMessage";
 	}
 };
-
-#endif /* CREATEPROJECTICEMESSAGE_H_ */

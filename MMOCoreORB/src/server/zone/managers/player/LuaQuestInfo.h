@@ -1,5 +1,4 @@
-#ifndef LUAQUESTINFO_H_
-#define LUAQUESTINFO_H_
+#pragma once
 
 #include "server/zone/managers/player/QuestInfo.h"
 #include "engine/lua/Lua.h"
@@ -38,6 +37,3 @@ namespace player {
 }
 
 using namespace server::zone::managers::player;
-
-
-#endif /* LUAQUESTINFO_H_ */

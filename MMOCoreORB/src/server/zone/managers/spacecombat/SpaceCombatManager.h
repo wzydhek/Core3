@@ -1,5 +1,4 @@
-#ifndef SPACECOMBATMANAGER_H_
-#define SPACECOMBATMANAGER_H_
+#pragma once
 
 #include "server/zone/managers/spacecombat/projectile/ShipProjectileMap.h"
 #include "server/zone/managers/spacecombat/projectile/ShipProjectile.h"
@@ -124,5 +123,3 @@ public:
 
 	void addCountermeasure(ShipObject* ship, ShipCountermeasure* counter);
 };
-
-#endif // SPACECOMBATMANAGER_H_

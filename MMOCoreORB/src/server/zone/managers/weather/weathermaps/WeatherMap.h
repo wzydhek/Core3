@@ -8,8 +8,7 @@
  * \date 2-10-12
  */
 
-#ifndef WEATHERMAP_H_
-#define WEATHERMAP_H_
+#pragma once
 
 #include "server/zone/objects/resource/simplexnoise/SimplexNoise.h"
 
@@ -173,6 +172,3 @@ private:
 		addSerializableVariable("endTime", &endTime);
 	}
 };
-
-
-#endif /* WEATHERMAP_H_ */

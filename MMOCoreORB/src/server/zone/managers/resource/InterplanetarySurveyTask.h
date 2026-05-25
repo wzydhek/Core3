@@ -5,8 +5,7 @@
  *      Author: washu
  */
 
-#ifndef INTERPLANETARYSURVERYTASK_H_
-#define INTERPLANETARYSURVERYTASK_H_
+#pragma once
 
 #include "server/ServerCore.h"
 #include "server/zone/managers/resource/ResourceManager.h"
@@ -131,5 +130,3 @@ public:
 	}
 
 };
-
-#endif /* INTERPLANETARYSURVERYTASK_H_ */

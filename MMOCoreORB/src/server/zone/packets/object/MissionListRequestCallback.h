@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef MISSIONLISTREQUESTCALLBACK_H_
-#define MISSIONLISTREQUESTCALLBACK_H_
+#pragma once
 
 #include "ObjectControllerMessageCallback.h"
 #include "server/zone/managers/mission/MissionManager.h"
@@ -65,6 +64,3 @@ public:
 	}
 
 };
-
-
-#endif /* MISSIONLISTREQUESTCALLBACK_H_ */

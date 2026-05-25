@@ -5,9 +5,7 @@
  *      Author: root
  */
 
-#ifndef POWERREGULATORSUICALLBACK_H_
-#define POWERREGULATORSUICALLBACK_H_
-
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/gcw/GCWManager.h"
@@ -46,9 +44,3 @@ public:
 		gcwMan->handlePowerRegulatorSwitch(player, powerRegulator, index);
 	}
 };
-
-
-
-
-
-#endif /* POWERREGULATORSUICALLBACK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef SHIPRECOVERYEVENT_H_
-#define SHIPRECOVERYEVENT_H_
+#pragma once
 
 #include "server/zone/objects/ship/ShipObject.h"
 #include "server/zone/Zone.h"
@@ -59,5 +58,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::ship::events;
-
-#endif /*SHIPRECOVERYEVENT_H_*/

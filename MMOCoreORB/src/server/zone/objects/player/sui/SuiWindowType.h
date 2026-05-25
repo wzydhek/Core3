@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SUIWINDOWTYPE_H_
-#define SUIWINDOWTYPE_H_
+#pragma once
 
 class SuiWindowType {
 public:
@@ -278,5 +277,3 @@ public:
 		DROID_CHIP_PROGRAMMING					= 1102,
 	};
 };
-
-#endif /*SuiWindowType_H_*/

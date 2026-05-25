@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef NONPLAYERCREATUREOBJECTTEMPLATE_H_
-#define NONPLAYERCREATUREOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 
@@ -28,5 +27,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* NONPLAYERCREATUREOBJECTTEMPLATE_H_ */

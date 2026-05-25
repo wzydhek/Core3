@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef VENDORINFOCOMMAND_H_
-#define VENDORINFOCOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -21,5 +20,3 @@ public:
 	}
 
 };
-
-#endif /* VENDORINFOCOMMAND_H_ */

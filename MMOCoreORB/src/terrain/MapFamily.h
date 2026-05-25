@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef MAPFAMILY_H_
-#define MAPFAMILY_H_
+#pragma once
 
 #include "TemplateVariable.h"
-
 #include "MapFractal.h"
 
 class MapFamily : public TemplateVariable<'MFAM'> {
@@ -47,6 +45,3 @@ public:
 		return var2;
 	}
 };
-
-
-#endif /* MAPFAMILY_H_ */

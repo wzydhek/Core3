@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef LOOTGROUPCOLLECTIONENTRY_H_
-#define LOOTGROUPCOLLECTIONENTRY_H_
+#pragma once
 
 #include "LootGroups.h"
 
@@ -56,6 +55,3 @@ public:
 		return &lootGroups;
 	}
 };
-
-
-#endif /* LOOTGROUPCOLLECTIONENTRY_H_ */

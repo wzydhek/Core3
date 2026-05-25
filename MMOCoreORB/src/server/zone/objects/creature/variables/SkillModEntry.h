@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SKILLMODENTRY_H_
-#define SKILLMODENTRY_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
@@ -80,5 +79,3 @@ public:
 		return true;
 	}
 };
-
-#endif /*SKILLMODENTRY_H_*/

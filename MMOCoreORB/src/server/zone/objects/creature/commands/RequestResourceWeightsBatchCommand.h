@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTRESOURCEWEIGHTSBATCHCOMMAND_H_
-#define REQUESTRESOURCEWEIGHTSBATCHCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/crafting/CraftingManager.h"
 
@@ -48,5 +47,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //REQUESTRESOURCEWEIGHTSBATCHCOMMAND_H_

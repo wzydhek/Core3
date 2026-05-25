@@ -5,14 +5,12 @@
  *      Author: Phoenix
  */
 
-#ifndef SPACECOMMTIMERTASK_H_
-#define SPACECOMMTIMERTASK_H_
+#pragma once
 
 #include "server/zone/Zone.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/packets/object/StopNpcConversation.h"
 #include "server/zone/objects/player/sessions/ConversationSession.h"
-
 
 class SpaceCommTimerTask : public Task, public Logger {
 	ManagedWeakReference<CreatureObject*> play;
@@ -46,5 +44,3 @@ public:
 		player->sendExecuteConsoleCommand("/conversationstop");
 	}
 };
-
-#endif /* SPACECOMMTIMERTASK_H_ */

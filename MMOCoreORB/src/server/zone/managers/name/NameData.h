@@ -1,5 +1,4 @@
-#ifndef NAMEDATA_H_
-#define NAMEDATA_H_
+#pragma once
 
 #include "server/zone/managers/name/NameRules.h"
 #include "server/zone/managers/name/NameUnique.h"
@@ -418,5 +417,3 @@ public:
 		return specialSyllables.contains(fragment);
 	}
 };
-
-#endif /*NAMEDATA_H_*/

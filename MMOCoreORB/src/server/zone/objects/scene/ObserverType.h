@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef OBSERVERTYPE_H_
-#define OBSERVERTYPE_H_
+#pragma once
 
 class ObserverType {
 public:
@@ -16,5 +15,3 @@ public:
 	const static int SCREENPLAY = 4;
 	const static int SPACE_SPAWN = 5;
 };
-
-#endif /* OBSERVERTYPE_H_ */

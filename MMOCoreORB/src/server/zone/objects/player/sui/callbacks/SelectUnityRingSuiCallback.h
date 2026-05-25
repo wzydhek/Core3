@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef SELECTUNITYRINGSUICALLBACK_H_
-#define SELECTUNITYRINGSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -43,6 +42,3 @@ public:
 
 	}
 };
-
-
-#endif /* SELECTUNITYRINGSUICALLBACK_H_ */

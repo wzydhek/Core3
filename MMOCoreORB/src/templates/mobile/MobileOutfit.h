@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef MOBILEOUTFIT_H_
-#define MOBILEOUTFIT_H_
+#pragma once
 
 class OutfitTangibleObject : public Object {
 	String objectTemplate;
@@ -97,5 +96,3 @@ public:
 	}
 
 };
-
-#endif /* MOBILEOUTFIT_H_ */

@@ -5,12 +5,9 @@
  *      Author: victor
  */
 
-#ifndef FILTERBITMAP_H_
-#define FILTERBITMAP_H_
-
+#pragma once
 
 #include "../ProceduralRule.h"
-
 #include "FilterProceduralRule.h"
 
 class TargaBitmap;
@@ -66,6 +63,3 @@ public:
 
 	float process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator, FilterRectangle* rect);
 };
-
-
-#endif /* FILTERBIT_H_ */

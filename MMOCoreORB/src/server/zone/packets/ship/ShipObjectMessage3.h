@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SHIPOBJECTMESSAGE3_H_
-#define SHIPOBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/tangible/TangibleObjectMessage3.h"
 #include "server/zone/objects/ship/ShipObject.h"
@@ -92,5 +91,3 @@ public:
 		return "";
 	}
 };
-
-#endif /*SHIPOBJECTMESSAGE3_H_*/

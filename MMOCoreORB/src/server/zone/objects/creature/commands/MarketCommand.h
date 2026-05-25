@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef MARKETCOMMAND_H_
-#define MARKETCOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/managers/auction/AuctionManager.h"
@@ -55,5 +54,3 @@ public:
 	}
 
 };
-
-#endif /* MARKETCOMMAND_H_ */

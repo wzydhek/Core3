@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef LAIRTEMPLATE_H_
-#define LAIRTEMPLATE_H_
+#pragma once
 
 #include "engine/lua/LuaObject.h"
 #include "templates/faction/Factions.h"
@@ -263,5 +262,3 @@ public:
 		return buildingType;
 	}
 };
-
-#endif /* LAIRTEMPLATE_H_ */

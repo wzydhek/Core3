@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCECOMMANDCOMMAND_H_
-#define FORCECOMMANDCOMMAND_H_
+#pragma once
 
 class ForceCommandCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //FORCECOMMANDCOMMAND_H_

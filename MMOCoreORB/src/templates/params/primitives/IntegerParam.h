@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef INTEGERPARAM_H_
-#define INTEGERPARAM_H_
+#pragma once
 
 #include "templates/params/TemplateBase.h"
 
@@ -78,6 +77,3 @@ public:
 	}
 
 };
-
-
-#endif /* INTEGERPARAM_H_ */

@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef VENDORZONECOMPONENT_H_
-#define VENDORZONECOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/GroundZoneComponent.h"
 #include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
@@ -41,5 +40,3 @@ public:
 		}
 	}
 };
-
-#endif /* VENDORZONECOMPONENT_H_ */

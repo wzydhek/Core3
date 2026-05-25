@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETMINIMUMSPAWNTIMECOMMAND_H_
-#define SETMINIMUMSPAWNTIMECOMMAND_H_
+#pragma once
 
 class SetMinimumSpawnTimeCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETMINIMUMSPAWNTIMECOMMAND_H_

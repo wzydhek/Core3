@@ -2,12 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STRINGIDPARAMETER_H_
-#define STRINGIDPARAMETER_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "StringId.h"
 
 namespace server {
@@ -158,4 +156,3 @@ public:
 }
 
 using namespace server::zone::objects::scene::variables;
-#endif /* STRINGIDPARAMETER_H_ */

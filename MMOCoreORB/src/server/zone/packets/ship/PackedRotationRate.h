@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef SRC_SERVER_ZONE_PACKETS_SHIP_PACKEDROTATIONRATE_H_
-#define SRC_SERVER_ZONE_PACKETS_SHIP_PACKEDROTATIONRATE_H_
+#pragma once
 
 float const PI_2 = 3.14159265358979323846f / 2.f;
 
@@ -42,5 +41,3 @@ public:
 		message->writeSignedByte(rate);
 	}
 };
-
-#endif /* SRC_SERVER_ZONE_PACKETS_SHIP_PACKEDROTATIONRATE_H_ */

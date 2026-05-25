@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef COMBATMANAGER_H_
-#define COMBATMANAGER_H_
+#pragma once
 
 //#define TOHIT_DEBUG
 
@@ -315,5 +314,3 @@ protected:
 		}
 	}
 };
-
-#endif /* COMBATMANAGER_H_ */

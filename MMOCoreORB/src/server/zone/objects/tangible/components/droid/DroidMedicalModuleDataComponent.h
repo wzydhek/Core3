@@ -2,8 +2,7 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DROIDMEDICALGMODULEDATACOMPONENT_H_
-#define DROIDMEDICALGMODULEDATACOMPONENT_H_
+#pragma once
 
 #include "BaseDroidModuleComponent.h"
 
@@ -46,6 +45,5 @@ public:
 } // objects
 } // zone
 } // server
-using namespace server::zone::objects::tangible::components::droid;
 
-#endif /* DROIDMEDICALGMODULEDATACOMPONENT_H_ */
+using namespace server::zone::objects::tangible::components::droid;

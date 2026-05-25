@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef VEHICLEDEEDTEMPLATE_H_
-#define VEHICLEDEEDTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/DeedTemplate.h"
 
@@ -34,6 +33,3 @@ public:
 		return controlDeviceObjectTemplate;
 	}
 };
-
-
-#endif /* VEHICLEDEEDTEMPLATE_H_ */

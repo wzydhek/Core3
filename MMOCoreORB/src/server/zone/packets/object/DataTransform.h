@@ -2,18 +2,15 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DATATRANSFORM_H_
-#define DATATRANSFORM_H_
+#pragma once
 
 #include "server/zone/Zone.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
-
 #include "server/zone/packets/object/ObjectControllerMessageCallback.h"
 #include "server/zone/packets/scene/LightUpdateTransformMessage.h"
 #include "server/zone/packets/scene/UpdateTransformMessage.h"
 #include "server/zone/packets/object/transform/Transform.h"
-
 #include "server/zone/managers/planet/PlanetManager.h"
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/managers/collision/CollisionManager.h"
@@ -456,5 +453,3 @@ public:
 		}
 	}
 };
-
-#endif // DATATRANSFORM_H_

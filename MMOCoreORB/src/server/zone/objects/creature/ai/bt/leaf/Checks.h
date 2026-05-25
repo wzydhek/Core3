@@ -1,5 +1,4 @@
-#ifndef CHECKS_H_
-#define CHECKS_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/Behavior.h"
 
@@ -327,5 +326,3 @@ template<> bool CheckHasHerdObserver::check(AiAgent* agent) const;
 }
 }
 }
-
-#endif // CHECKS_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OVERRIDEPADAWANTRIALSELIGIBILITYCOMMAND_H_
-#define OVERRIDEPADAWANTRIALSELIGIBILITYCOMMAND_H_
+#pragma once
 
 class OverridePadawanTrialsEligibilityCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //OVERRIDEPADAWANTRIALSELIGIBILITYCOMMAND_H_

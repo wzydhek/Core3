@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MAPLOCATIONTYPE_H_
-#define MAPLOCATIONTYPE_H_
+#pragma once
 
 class MapLocationType {
 public:
@@ -289,5 +288,3 @@ public:
 	}
 
 };
-
-#endif /*MapLocationType_H_*/

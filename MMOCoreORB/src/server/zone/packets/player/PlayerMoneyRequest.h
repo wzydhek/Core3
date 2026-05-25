@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PLAYERMONEYREQUEST_H_
-#define PLAYERMONEYREQUEST_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "PlayerMoneyResponseMessage.h"
@@ -32,6 +31,3 @@ public:
 	}
 
 };
-
-
-#endif /* PLAYERMONEYREQUEST_H_ */

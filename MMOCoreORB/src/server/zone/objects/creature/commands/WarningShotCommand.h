@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef WARNINGSHOTCOMMAND_H_
-#define WARNINGSHOTCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -93,5 +92,3 @@ public:
 		return result;
 	}
 };
-
-#endif // WARNINGSHOTCOMMAND_H_

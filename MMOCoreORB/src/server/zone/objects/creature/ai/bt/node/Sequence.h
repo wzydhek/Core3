@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef SEQUENCE_H_
-#define SEQUENCE_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/node/Composite.h"
 
@@ -52,5 +51,3 @@ public:
 }
 }
 }
-
-#endif /* SEQUENCE_H_ */

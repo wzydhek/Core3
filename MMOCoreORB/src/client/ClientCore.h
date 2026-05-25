@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLIENTCORE_H_
-#define CLIENTCORE_H_
+#pragma once
 
 #include "system/lang.h"
 #include "server/login/objects/GalaxyList.h"
@@ -204,5 +203,3 @@ public:
 private:
 	void saveStateToFile(const String& filename, class LoginSession* loginSession);
 };
-
-#endif /*CLIENTCORE_H_*/

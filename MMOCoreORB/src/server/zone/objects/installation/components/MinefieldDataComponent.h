@@ -5,8 +5,8 @@
  *      Author: root
  */
 
-#ifndef MINEFIELDDATACOMPONENT_H_
-#define MINEFIELDDATACOMPONENT_H_
+#pragma once
+
 #include "engine/engine.h"
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
@@ -119,5 +119,3 @@ private:
 		addSerializableVariable("mines", &mines);
 	}
 };
-
-#endif /* MINEFIELDDATACOMPONENT_H_ */

@@ -5,13 +5,11 @@
  *      Author: victor
  */
 
-#ifndef SCREENPLAYTASK_H_
-#define SCREENPLAYTASK_H_
+#pragma once
 
 #include "server/zone/managers/director/PersistentEvent.h"
 #include "server/ServerCore.h"
 #include "server/zone/ZoneServer.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
 
 namespace server {
@@ -73,5 +71,3 @@ public:
 } // namespace server
 
 using namespace server::zone::managers::director;
-
-#endif /* SCREENPLAYTASK_H_ */

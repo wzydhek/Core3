@@ -2,9 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GAMBLINGBET_H_
-#define GAMBLINGBET_H_
-
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -49,10 +47,3 @@ public:
 }
 }
 }
-
-
-#endif
-
-
-
-

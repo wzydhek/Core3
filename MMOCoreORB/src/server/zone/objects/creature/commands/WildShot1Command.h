@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef WILDSHOT1COMMAND_H_
-#define WILDSHOT1COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -27,5 +26,3 @@ public:
 	}
 
 };
-
-#endif //WILDSHOT1COMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef CAMOKITTEMPLATE_H_
-#define CAMOKITTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -37,5 +36,3 @@ public:
     }
 
 };
-
-#endif /* CAMOKITTEMPLATE_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef KILLCOMMAND_H_
-#define KILLCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/ship/events/DestroyShipTask.h"
@@ -370,5 +369,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // KILLCOMMAND_H_

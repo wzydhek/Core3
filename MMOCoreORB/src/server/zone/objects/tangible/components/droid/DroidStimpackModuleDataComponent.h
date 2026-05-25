@@ -2,8 +2,7 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DROIDSTIMPACKMODULEDATACOMPONENT_H_
-#define DROIDSTIMPACKMODULEDATACOMPONENT_H_
+#pragma once
 
 #include "BaseDroidModuleComponent.h"
 #include "server/zone/objects/tangible/pharmaceutical/StimPack.h"
@@ -75,5 +74,5 @@ public:
 } // objects
 } // zone
 } // server
+
 using namespace server::zone::objects::tangible::components::droid;
-#endif /* DROIDSTIMPACKMODULEDATACOMPONENT_H_ */

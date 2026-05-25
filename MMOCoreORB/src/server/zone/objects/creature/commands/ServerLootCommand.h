@@ -5,12 +5,10 @@
  *      Author: Smoki
  */
 
-#ifndef SERVERLOOTCOMMAND_H_
-#define SERVERLOOTCOMMAND_H_
+#pragma once
 
 #include <sstream>
 #include <iomanip>
-
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "server/zone/managers/loot/LootValues.h"
 #include "server/zone/managers/loot/LootManager.h"
@@ -972,5 +970,3 @@ public:
 		}
 	}
 };
-
-#endif /* SERVERLOOTCOMMAND_H_ */

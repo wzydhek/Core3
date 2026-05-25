@@ -5,8 +5,7 @@
  * Author: swgemu
  */
 
-#ifndef LAIRAGGROTASK_H_
-#define LAIRAGGROTASK_H_
+#pragma once
 
 #include "server/zone/managers/creature/LairObserver.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -44,5 +43,3 @@ public:
 		lairObserver->doAggro(lair, attacker, allAttack);
 	}
 };
-
-#endif /* LAIRAGGROTASK_H_ */

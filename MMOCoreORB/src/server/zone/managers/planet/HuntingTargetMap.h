@@ -5,8 +5,7 @@
  *      Author: dannuic
  */
 
-#ifndef HUNTINGTARGETMAP_H_
-#define HUNTINGTARGETMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "HuntingTargetEntry.h"
@@ -60,5 +59,3 @@ public:
 		return result;
 	}
 };
-
-#endif /* HUNTINGTARGETMAP_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETFORMUPCOMMAND_H_
-#define SETFORMUPCOMMAND_H_
+#pragma once
 
 #include "SquadLeaderCommand.h"
 
@@ -58,5 +57,3 @@ public:
 	}
 
 };
-
-#endif //SETFORMUPCOMMAND_H_

@@ -5,12 +5,10 @@
  *      Author: kyle
  */
 
-#ifndef DICEMENUCOMPONENT_H_
-#define DICEMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/components//TangibleObjectMenuComponent.h"
 #include "templates/tangible/DiceTemplate.h"
-
 
 class DiceMenuComponent : public TangibleObjectMenuComponent {
 public:
@@ -35,6 +33,3 @@ public:
 
 	void doRoll(CreatureObject* player, DiceTemplate* diceTemplate, int sides, const String& sidesText, int numRoll) const;
 };
-
-
-#endif /* DICEMENUCOMPONENT_H_ */

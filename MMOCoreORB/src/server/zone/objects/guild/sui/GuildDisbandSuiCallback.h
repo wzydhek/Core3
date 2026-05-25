@@ -5,9 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDDISBANDSUICALLBACK_H_
-#define GUILDDISBANDSUICALLBACK_H_
-
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
@@ -47,6 +45,3 @@ public:
 		guildManager->disbandGuild(player, guild);
 	}
 };
-
-
-#endif /* GUILDDISBANDSUICALLBACK_H_ */

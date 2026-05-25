@@ -6,8 +6,7 @@
  * Updated on: Thu Oct 13 08:16:00 PDT 2011 by lordkator - Fixes to make travel debugging easier and fixed dialog timing
  */
 
-#ifndef BOARDSHUTTLECOMMAND_H_
-#define BOARDSHUTTLECOMMAND_H_
+#pragma once
 
 #include "QueueCommand.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -388,5 +387,3 @@ private:
 		return position;
 	}
 };
-
-#endif //BOARDSHUTTLECOMMAND_H_

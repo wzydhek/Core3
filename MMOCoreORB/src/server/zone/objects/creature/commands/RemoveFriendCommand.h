@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REMOVEFRIENDCOMMAND_H_
-#define REMOVEFRIENDCOMMAND_H_
+#pragma once
 
 class RemoveFriendCommand : public QueueCommand {
 public:
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif //REMOVEFRIENDCOMMAND_H_

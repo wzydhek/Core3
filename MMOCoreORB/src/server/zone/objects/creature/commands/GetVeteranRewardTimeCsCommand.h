@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETVETERANREWARDTIMECSCOMMAND_H_
-#define GETVETERANREWARDTIMECSCOMMAND_H_
+#pragma once
 
 class GetVeteranRewardTimeCsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GETVETERANREWARDTIMECSCOMMAND_H_

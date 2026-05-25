@@ -1,5 +1,4 @@
-#ifndef SHIPAPPEARANCEDATA_H_
-#define SHIPAPPEARANCEDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/manager/DataArchiveStore.h"
@@ -89,5 +88,3 @@ public:
 		return appearanceMap.size();
 	}
 };
-
-#endif // SHIPAPPEARANCEDATA_H_

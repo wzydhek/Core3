@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef THREATMAPCLEAROBSERVERSTASK_H_
-#define THREATMAPCLEAROBSERVERSTASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
@@ -35,6 +34,3 @@ public:
 
 	}
 };
-
-
-#endif /* THREATMAPCLEAROBSERVERSTASK_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SCENEOBJECTFACTORY_H_
-#define SCENEOBJECTFACTORY_H_
+#pragma once
 
 #include "system/lang.h"
 
@@ -84,5 +83,3 @@ namespace server {
 }
 
 using namespace server::zone::managers::object;
-
-#endif /* SCENEOBJECTFACTORY_H_ */

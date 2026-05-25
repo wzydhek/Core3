@@ -5,14 +5,12 @@
  *      Author: Halyn
  */
 
-#ifndef REVERSEENGINEERINGSUICALLBACK_H_
-#define REVERSEENGINEERINGSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/ship/components/ShipComponent.h"
 #include "server/zone/objects/player/sui/callbacks/NameComponentSuiCallback.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
-
 
 class ReverseEngineeringSuiCallback : public SuiCallback {
 public:
@@ -51,5 +49,3 @@ public:
 		creature->sendMessage(inputBox->generateMessage());
 	}
 };
-
-#endif /* STRUCTURESTATUSSUICALLBACK_H_ */

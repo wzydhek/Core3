@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef LOGINPROCESSSERVERIMPLEMENTATION_H_
-#define LOGINPROCESSSERVERIMPLEMENTATION_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -40,5 +39,3 @@ namespace server {
 } // namespace server
 
 using namespace server::login;
-
-#endif /* LOGINPROCESSSERVERIMPLEMENTATION_H_ */

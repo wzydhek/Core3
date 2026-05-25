@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef MANTISDATABASE_H_
-#define MANTISDATABASE_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "system/lang/ref/UniqueReference.h"
@@ -42,5 +41,3 @@ public:
 		return tablePrefix;
 	}
 };
-
-#endif /* MANTISDATABASE_H_ */

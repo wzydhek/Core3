@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLACESTRUCTUREMODECOMMAND_H_
-#define PLACESTRUCTUREMODECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/packets/player/EnterStructurePlacementModeMessage.h"
@@ -110,5 +109,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //PLACESTRUCTUREMODECOMMAND_H_

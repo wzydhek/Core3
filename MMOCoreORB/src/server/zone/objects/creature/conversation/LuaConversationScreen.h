@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef LUACONVERSATIONSCREEN_H_
-#define LUACONVERSATIONSCREEN_H_
+#pragma once
 
 #include "ConversationScreen.h"
-
 #include "engine/engine.h"
 
 class LuaConversationScreen {
@@ -47,6 +45,3 @@ private:
 
 	static void setDialogText(StringIdParameter* param, lua_State* L, bool forceString = false);
 };
-
-
-#endif /* LUACONVERSATIONSCREEN_H_ */

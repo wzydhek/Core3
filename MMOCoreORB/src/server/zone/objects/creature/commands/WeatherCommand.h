@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef WEATHERCOMMAND_H_
-#define WEATHERCOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/managers/weather/WeatherManager.h"
@@ -87,5 +86,3 @@ public:
 	}
 
 };
-
-#endif /* WEATHERCOMMAND_H_ */

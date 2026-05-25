@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef MISSIONABORTCALLBACK_H_
-#define MISSIONABORTCALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "ObjectControllerMessageCallback.h"
@@ -73,5 +72,3 @@ public:
 		}
 	}
 };
-
-#endif /* MISSIONABORTCALLBACK_H_ */

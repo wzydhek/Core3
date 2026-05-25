@@ -1,5 +1,4 @@
-#ifndef ENCLAVECOUNCILRANKSUICALLBACK_H_
-#define ENCLAVECOUNCILRANKSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/frs/FrsManager.h"
@@ -33,5 +32,3 @@ public:
 
 	}
 };
-
-#endif /* ENCLAVECOUNCILRANKSUICALLBACK_H_ */

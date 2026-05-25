@@ -1,5 +1,4 @@
-#ifndef DELTAAUTOBITARRAY_H_
-#define DELTAAUTOBITARRAY_H_
+#pragma once
 
 #include "DeltaBitArray.h"
 #include "server/zone/packets/DeltaMessage.h"
@@ -63,5 +62,3 @@ public:
 		return message;
 	}
 };
-
-#endif // DELTAAUTOBITARRAY_H_

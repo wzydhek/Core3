@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef TREEDATABLOCK_H_
-#define TREEDATABLOCK_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -105,6 +104,3 @@ public:
 		return uncompressedSize;
 	}
 };
-
-
-#endif /* TREEDATABLOCK_H_ */

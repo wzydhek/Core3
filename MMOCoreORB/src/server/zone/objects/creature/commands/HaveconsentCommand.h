@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HAVECONSENTCOMMAND_H_
-#define HAVECONSENTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sui/callbacks/RevokeConsentSuiCallback.h"
@@ -60,5 +59,3 @@ public:
 	}
 
 };
-
-#endif //HAVECONSENTCOMMAND_H_

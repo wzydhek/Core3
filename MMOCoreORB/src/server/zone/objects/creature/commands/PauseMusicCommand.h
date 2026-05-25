@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PAUSEMUSICCOMMAND_H_
-#define PAUSEMUSICCOMMAND_H_
+#pragma once
 
 class PauseMusicCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //PAUSEMUSICCOMMAND_H_

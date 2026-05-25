@@ -5,8 +5,7 @@
  *      Author: Polonel
  */
 
-#ifndef IMAGEDESIGNCHANGEMESSAGECALLBACK_H_
-#define IMAGEDESIGNCHANGEMESSAGECALLBACK_H_
+#pragma once
 
 #include "ObjectControllerMessageCallback.h"
 #include "server/zone/objects/player/sessions/ImageDesignSession.h"
@@ -58,5 +57,3 @@ public:
 		session->updateImageDesign(player, designerID, targetID, tentID, type, imageDesignData);
 	}
 };
-
-#endif /* IMAGEDESIGNCHANGEMESSAGECALLBACK_H_ */

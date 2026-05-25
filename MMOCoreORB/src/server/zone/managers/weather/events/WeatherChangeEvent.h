@@ -2,9 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef WEATHERCHANGEEVENT_H_
-#define WEATHERCHANGEEVENT_H_
-
+#pragma once
 
 #include"server/zone/managers/weather/WeatherManager.h"
 
@@ -39,7 +37,4 @@ public:
 }
 }
 
-
 using namespace server::zone::managers::weather::events;
-
-#endif /* WEATHERCHANGEEVENT_H_ */

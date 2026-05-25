@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SNIPERSHOTCOMMAND_H_
-#define SNIPERSHOTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
@@ -63,5 +62,3 @@ public:
 	}
 
 };
-
-#endif //SNIPERSHOTCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HEALPETCOMMAND_H_
-#define HEALPETCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/pharmaceutical/StimPack.h"
@@ -236,5 +235,3 @@ public:
 	}
 
 };
-
-#endif //HEALPETCOMMAND_H_

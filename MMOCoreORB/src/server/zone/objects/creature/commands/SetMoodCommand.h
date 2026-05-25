@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETMOODCOMMAND_H_
-#define SETMOODCOMMAND_H_
+#pragma once
 
 class SetMoodCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETMOODCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SERVERCOMMAND_H_
-#define SERVERCOMMAND_H_
+#pragma once
 
 #include "WeatherCommand.h"
 #include "VendorInfoCommand.h"
@@ -70,5 +69,3 @@ public:
 	}
 
 };
-
-#endif //SERVERCOMMAND_H_

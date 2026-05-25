@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef DATATABLEROW_H_
-#define DATATABLEROW_H_
+#pragma once
 
 #include "templates/datatables/DataTableCell.h"
 
@@ -43,5 +42,3 @@ public:
 		cells.get(idx)->getValue(out);
 	}
 };
-
-#endif /* DATATABLEROW_H_ */

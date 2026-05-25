@@ -1,8 +1,6 @@
-#ifndef HEIGHTMAP_H_
-#define HEIGHTMAP_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "HeightMapPlane.h"
 
 class HeightMap : public ReadWriteLock, public Logger, public Object {
@@ -47,5 +45,3 @@ protected:
 
 	int getPlanePosition(float x, float y);
 };
-
-#endif /*HEIGHTMAP_H_*/

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TEMPLATECRCMAP_H_
-#define TEMPLATECRCMAP_H_
+#pragma once
 
 #include "templates/SharedObjectTemplate.h"
 #include "templates/TemplateReference.h"
@@ -32,5 +31,3 @@ public:
 		setNullValue("");
 	}
 };
-
-#endif /* TEMPLATECRCMAP_H_ */

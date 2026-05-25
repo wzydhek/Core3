@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.*/
 
 
-#ifndef RESOURCEHARVESTERACTIVATEPAGEMESSAGE_H_
-#define RESOURCEHARVESTERACTIVATEPAGEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -17,5 +16,3 @@ public:
 	}
 
 };
-
-#endif /* RESOURCEHARVESTERACTIVATEPAGEMESSAGE_H_ */

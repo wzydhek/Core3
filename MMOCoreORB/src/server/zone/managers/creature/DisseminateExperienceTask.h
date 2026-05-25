@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef DISSEMINATEEXPERIENCETASK_H_
-#define DISSEMINATEEXPERIENCETASK_H_
+#pragma once
 
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -39,5 +38,3 @@ public:
 		playerManager->disseminateExperience(strongRef, &copyThreatMap, &spawnedCreatures,lairZone);
 	}
 };
-
-#endif /* DISSEMINATEEXPERIENCETASK_H_ */

@@ -5,8 +5,7 @@
  *  	Author: Halyn
  */
 
-#ifndef NAMECOMPONENTSUICALLBACK_H_
-#define NAMECOMPONENTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -81,5 +80,3 @@ public:
 		object->setCustomObjectName(componentName, true);
 	}
 };
-
-#endif /* NAMECOMPONENTSUICALLBACK_H_ */

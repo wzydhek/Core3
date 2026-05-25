@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OPENWINGS_H_
-#define OPENWINGS_H_
+#pragma once
 
 #include "QueueCommand.h"
 
@@ -47,5 +46,3 @@ public:
 	}
 
 };
-
-#endif //OPENWINGS_H_

@@ -2,12 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GROUPMAP_H_
-#define GROUPMAP_H_
+#pragma once
 
 #include "system/lang.h"
 #include "system/util/HashTable.h"
-
 #include "GroupObject.h"
 
 class GroupMap : public HashTable<uint64, GroupObject*> {
@@ -21,5 +19,3 @@ public:
 	}
 
 };
-
-#endif /*GROUPMAP_H_*/

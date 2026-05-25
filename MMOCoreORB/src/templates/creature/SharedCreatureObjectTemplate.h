@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDCREATUREOBJECTTEMPLATE_H_
-#define SHAREDCREATUREOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "templates/params/VectorParam.h"
@@ -248,5 +247,3 @@ public:
 	}
 
 };
-
-#endif /* SHAREDCREATUREOBJECTTEMPLATE_H_ */

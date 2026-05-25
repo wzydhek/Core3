@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef DATASTORAGEUNITDATACOMPONENT_H_
-#define DATASTORAGEUNITDATACOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
@@ -44,6 +43,3 @@ private:
 		addSerializableVariable("id", &id);
 	}
 };
-
-
-#endif /* DATASTORAGEUNITDATACOMPONENT_H_ */

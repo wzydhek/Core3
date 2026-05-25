@@ -5,14 +5,12 @@
  * Author: Halyn
  */
 
-#ifndef SHIPSECONDARYPAINTSUICALLBACK_H_
-#define SHIPSECONDARYPAINTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/colorbox/SuiColorBox.h"
 #include "server/zone/objects/player/sui/callbacks/ShipColorWithKitSuiCallback.h"
 #include "server/zone/objects/tangible/tool/ShipPaintKit.h"
-
 
 class ShipSecondaryPaintSuiCallback : public SuiCallback {
 	ManagedWeakReference<ShipPaintKit*> customizationKit;
@@ -76,5 +74,3 @@ public:
 		creature->sendMessage(cbox->generateMessage());
 	}
 };
-
-#endif /* SHIPSECONDARYPAINTSUICALLBACK_H_ */

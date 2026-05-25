@@ -1,5 +1,4 @@
-#ifndef SHIPMISSILEDATA_H_
-#define SHIPMISSILEDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
@@ -282,5 +281,3 @@ public:
 		return counterDifficulty;
 	}
 };
-
-#endif //SHIPMISSILEDATA_H_

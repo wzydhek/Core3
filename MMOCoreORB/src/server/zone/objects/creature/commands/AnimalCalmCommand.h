@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ANIMALCALMCOMMAND_H_
-#define ANIMALCALMCOMMAND_H_
+#pragma once
 
 #include "ForcePowersQueueCommand.h"
 
@@ -80,5 +79,3 @@ public:
 		return result;
 	}
 };
-
-#endif //ANIMALCALMCOMMAND_H_

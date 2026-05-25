@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STOPBANDCOMMAND_H_
-#define STOPBANDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
 
@@ -74,5 +73,3 @@ public:
 	}
 
 };
-
-#endif //STOPBANDCOMMAND_H_

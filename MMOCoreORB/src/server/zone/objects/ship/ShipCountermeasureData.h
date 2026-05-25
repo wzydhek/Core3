@@ -1,5 +1,4 @@
-#ifndef SHIPCOUNTERMEASUREDATA_H_
-#define SHIPCOUNTERMEASUREDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
@@ -142,5 +141,3 @@ public:
 		return scatterAngle;
 	}
 };
-
-#endif //SHIPCOUNTERMEASUREDATA_H_

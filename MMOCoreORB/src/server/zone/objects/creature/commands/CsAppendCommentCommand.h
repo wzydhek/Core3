@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CSAPPENDCOMMENTCOMMAND_H_
-#define CSAPPENDCOMMENTCOMMAND_H_
+#pragma once
 
 class CsAppendCommentCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CSAPPENDCOMMENTCOMMAND_H_

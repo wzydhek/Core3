@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CONGENERICMESSAGE_H_
-#define CONGENERICMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -23,4 +22,3 @@ public:
    }
 
 };
-#endif /* CONGENERICMESSAGE_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATROOMMESSAGE_H_
-#define CHATROOMMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -26,5 +25,3 @@ public:
 	} 
 
 };
-
-#endif /*CHATROOMMESSAGE_H_*/

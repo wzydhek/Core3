@@ -1,5 +1,4 @@
-#ifndef UPDATEMISSILEMESSAGE_H_
-#define UPDATEMISSILEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/ship/ShipObject.h"
@@ -23,5 +22,3 @@ public:
 		insertInt(updateType);
 	}
 };
-
-#endif /* UPDATEMISSILEMESSAGE_H_ */

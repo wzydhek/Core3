@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CRIPPLINGSHOTCOMMAND_H_
-#define CRIPPLINGSHOTCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //CRIPPLINGSHOTCOMMAND_H_

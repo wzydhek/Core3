@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef INSTALLATIONOBJECTMENUCOMPONENT_H_
-#define INSTALLATIONOBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
@@ -16,5 +15,3 @@ public:
 	virtual void fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* creature) const;
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const;
 };
-
-#endif /* INSTALLATIONOBJECTMENUCOMPONENT_H_ */

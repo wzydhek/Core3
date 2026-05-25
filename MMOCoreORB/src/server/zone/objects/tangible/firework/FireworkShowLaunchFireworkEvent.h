@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FIREWORKSHOWLAUNCHFIREWORKEVENT_H_
-#define FIREWORKSHOWLAUNCHFIREWORKEVENT_H_
+#pragma once
 
 
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -83,6 +82,3 @@ public:
 		}
 	}
 };
-
-
-#endif /* FIREWORKSHOWLAUNCHFIREWORKEVENT_H_ */

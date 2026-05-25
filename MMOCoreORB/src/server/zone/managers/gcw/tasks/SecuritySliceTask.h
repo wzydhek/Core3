@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef SECURITYSLICETASK_H_
-#define SECURITYSLICETASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 
@@ -33,5 +32,3 @@ public:
 
 	}
 };
-
-#endif /* SECURITYSLICETASK_H_ */

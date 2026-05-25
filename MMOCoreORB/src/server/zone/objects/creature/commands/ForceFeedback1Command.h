@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCEFEEDBACK1COMMAND_H_
-#define FORCEFEEDBACK1COMMAND_H_
+#pragma once
 
 class ForceFeedback1Command : public JediQueueCommand {
 public:
@@ -21,5 +20,3 @@ public:
 	}
 
 };
-
-#endif //FORCEFEEDBACK1COMMAND_H_

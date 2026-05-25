@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORRADIALFARCONSTANT_H_
-#define AFFECTORRADIALFARCONSTANT_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 
@@ -53,5 +52,3 @@ public:
 		iffStream->closeChunk('DATA');
 	}
 };
-
-#endif /* AFFECTORRADIALFARCONSTANT_H_ */

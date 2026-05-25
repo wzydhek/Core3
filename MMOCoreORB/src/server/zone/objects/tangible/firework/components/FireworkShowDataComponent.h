@@ -1,5 +1,4 @@
-#ifndef FIREWORKSHOWDATACOMPONENT_H_
-#define FIREWORKSHOWDATACOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 #include "server/zone/objects/tangible/firework/FireworkObject.h"
@@ -122,7 +121,3 @@ public:
 		fireworkList.add(index2, temp);
 	}
 };
-
-
-
-#endif /* FIREWORKSHOWDATACOMPONENT_H_ */

@@ -5,8 +5,8 @@
  *      Author: victor
  */
 
-#ifndef MESSAGECALLBACKFACTORY_H_
-#define MESSAGECALLBACKFACTORY_H_
+#pragma once
+
 #include "engine/engine.h"
 
 namespace server {
@@ -120,5 +120,3 @@ protected:
 } // namespace server
 
 using namespace server::zone;
-
-#endif /* MESSAGECALLBACKFACTORY_H_ */

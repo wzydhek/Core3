@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SCENEOBJECTCOMPONENT_H_
-#define SCENEOBJECTCOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/params/creature/PlayerArrangement.h"
@@ -14,5 +13,3 @@
 class SceneObjectComponent : public virtual Object {
 
 };
-
-#endif /* SCENEOBJECTCOMPONENT_H_ */

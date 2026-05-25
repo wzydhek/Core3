@@ -1,5 +1,4 @@
-#ifndef TREE_SOCKET_H_
-#define TREE_SOCKET_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/Behavior.h"
 #include "server/zone/objects/creature/ai/bt/BehaviorTreeSlot.h"
@@ -68,5 +67,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // TREE_SOCKET_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MANUFACTURESCHEMATICOBJECTMESSAGE6_H_
-#define MANUFACTURESCHEMATICOBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 
@@ -20,5 +19,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*MANUFACTURESCHEMATICOBJECTMESSAGE6_H_*/

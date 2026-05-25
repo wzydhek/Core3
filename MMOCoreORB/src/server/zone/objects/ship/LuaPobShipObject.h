@@ -1,5 +1,4 @@
-#ifndef LUAPOBSHIPOBJECT_H_
-#define LUAPOBSHIPOBJECT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/tangible/LuaTangibleObject.h"
@@ -34,5 +33,3 @@ private:
 } // namespace server
 
 using namespace server::zone::objects::ship;
-
-#endif /*LUAPOBSHIPOBJECT_H_ */

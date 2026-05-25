@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GUILDRESPONSEMESSAGE_H_
-#define GUILDRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/guild/GuildObject.h"
@@ -30,5 +29,3 @@ public:
 	}
 	
 };
-
-#endif /*GUILDRESPONSEMESSAGE_H_*/

@@ -1,5 +1,4 @@
-#ifndef PERFORMBUFFTYPE_H_
-#define PERFORMBUFFTYPE_H_
+#pragma once
 
 class PerformanceBuffType {
 	public:
@@ -9,4 +8,3 @@ class PerformanceBuffType {
 			MUSIC_WILLPOWER = 3
 		};
 };
-#endif /*PERFORMBUFFTYPE_H_*/

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FINDTARGETTASK_H_
-#define FINDTARGETTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/mission/BountyMissionObjective.h"
@@ -377,5 +376,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::mission::bountyhunter::events;
-
-#endif /* FINDTARGETTASK_H_ */

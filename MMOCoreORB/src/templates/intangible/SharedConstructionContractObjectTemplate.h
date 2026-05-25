@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDCONSTRUCTIONCONTRACTOBJECTTEMPLATE_H_
-#define SHAREDCONSTRUCTIONCONTRACTOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
@@ -69,6 +68,3 @@ public:
 
 
 };
-
-
-#endif /* SHAREDCONSTRUCTIONCONTRACTOBJECTTEMPLATE_H_ */

@@ -6,8 +6,7 @@
  *  Updated on: Sun Oct 16 16:30:54 PDT 2011 by lordkator - resolve displayName on add in setObject()
  */
 
-#ifndef MAPLOCATIONENTRY_H_
-#define MAPLOCATIONENTRY_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -78,6 +77,3 @@ public:
 		icon = ico;
 	}
 };
-
-
-#endif /* MAPLOCATIONENTRY_H_ */

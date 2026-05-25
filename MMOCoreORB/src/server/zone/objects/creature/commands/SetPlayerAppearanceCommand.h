@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETPLAYERAPPEARANCECOMMAND_H_
-#define SETPLAYERAPPEARANCECOMMAND_H_
+#pragma once
 
 class SetPlayerAppearanceCommand : public QueueCommand {
 public:
@@ -87,5 +86,3 @@ public:
 	}
 
 };
-
-#endif //SETPLAYERAPPEARANCECOMMAND_H_

@@ -1,5 +1,4 @@
-#ifndef BASESHUTDOWNSUICALLBACK_H_
-#define BASESHUTDOWNSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/scene/SceneObjectType.h"
@@ -53,5 +52,3 @@ public:
 		gcwMan->abortShutdownSequence(building, player);
 	}
 };
-
-#endif /* BASESHUTDOWNSUICALLBACK_H_ */

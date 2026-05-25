@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CUREPOISONCOMMAND_H_
-#define CUREPOISONCOMMAND_H_
+#pragma once
 
 #include "CurePackCommand.h"
 
@@ -16,5 +15,3 @@ public:
 	}
 
 };
-
-#endif //CUREPOISONCOMMAND_H_

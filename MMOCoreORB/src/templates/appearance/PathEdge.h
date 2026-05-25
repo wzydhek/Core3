@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef PATHEDGE_H_
-#define PATHEDGE_H_
+#pragma once
 
 #include "engine/util/iffstream/IffStream.h"
 
@@ -53,5 +52,3 @@ public:
 
 
 };
-
-#endif /* PATHEDGE_H_ */

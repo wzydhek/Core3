@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BATTLEFIELDSTATUSCOMMAND_H_
-#define BATTLEFIELDSTATUSCOMMAND_H_
+#pragma once
 
 class BattlefieldStatusCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //BATTLEFIELDSTATUSCOMMAND_H_

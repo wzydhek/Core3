@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HEALENHANCECOMMAND_H_
-#define HEALENHANCECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/pharmaceutical/EnhancePack.h"
@@ -430,5 +429,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // HEALENHANCECOMMAND_H_

@@ -1,5 +1,4 @@
-#ifndef NAMERULES_H_
-#define NAMERULES_H_
+#pragma once
 
 #include "engine/lua/Lua.h"
 
@@ -151,5 +150,3 @@ public:
 		return specialChars;
 	}
 };
-
-#endif /*NAMERULES_H_*/

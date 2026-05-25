@@ -5,8 +5,8 @@
  *      Author: root
  */
 
-#ifndef SECURITYTERMINALDATACOMPONENT_H_
-#define SECURITYTERMINALDATACOMPONENT_H_
+#pragma once
+
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
 class SecurityTerminalDataComponent : public DataObjectComponent {
@@ -27,7 +27,3 @@ public:
 	}
 
 };
-
-
-
-#endif /* SECURITYTERMINALDATACOMPONENT_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef EXECUTEKNOWLEDGEBASEMESSAGECOMMAND_H_
-#define EXECUTEKNOWLEDGEBASEMESSAGECOMMAND_H_
+#pragma once
 
 class ExecuteKnowledgeBaseMessageCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //EXECUTEKNOWLEDGEBASEMESSAGECOMMAND_H_

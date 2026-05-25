@@ -2,13 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef TANGIBLEOBJECTDELTAMESSAGE3_H_
-#define TANGIBLEOBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
-
 #include "server/zone/objects/tangible/TangibleObject.h"
-
 #include "server/zone/objects/player/PlayerObject.h"
 
 class TangibleObjectDeltaMessage3 : public DeltaMessage {
@@ -64,5 +61,3 @@ public:
 		addIntUpdate(0x06, tano->getOptionsBitmask());
 	}
 };
-
-#endif /*TANGIBLEOBJECTDELTAMESSAGE3_H_*/

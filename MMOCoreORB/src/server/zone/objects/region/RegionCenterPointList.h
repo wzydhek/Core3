@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef REGIONCENTERPOINTLIST_H_
-#define REGIONCENTERPOINTLIST_H_
+#pragma once
 
 #include "RegionCenterPoint.h"
 #include "engine/engine.h"
@@ -18,5 +17,3 @@ public:
 		add(point);
 	}
 };
-
-#endif /* REGIONCENTERPOINTLIST_H_ */

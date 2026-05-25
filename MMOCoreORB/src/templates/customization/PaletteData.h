@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PALETTEDATA_H_
-#define PALETTEDATA_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 
@@ -121,5 +120,3 @@ public:
 		return name;
 	}
 };
-
-#endif /* PALETTEDATA_H_ */

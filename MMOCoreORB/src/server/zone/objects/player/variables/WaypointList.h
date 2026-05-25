@@ -2,12 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef WAYPOINTLIST_H_
-#define WAYPOINTLIST_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/scene/variables/DeltaVectorMap.h"
 #include "server/zone/objects/waypoint/WaypointObject.h"
 
@@ -130,6 +128,3 @@ public:
 		return nullptr;
 	}
 };
-
-
-#endif /* WAYPOINTLIST_H_ */

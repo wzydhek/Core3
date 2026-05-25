@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LOOTITEMTEMPLATE_H_
-#define LOOTITEMTEMPLATE_H_
+#pragma once
 
 #include "templates/LuaTemplate.h"
 #include "templates/crafting/AttributesMap.h"
@@ -328,5 +327,3 @@ public:
 		return &staticDotValues;
 	}
 };
-
-#endif /* LOOTITEMTEMPLATE_H_ */

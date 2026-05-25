@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef FACTIONMANAGER_H_
-#define FACTIONMANAGER_H_
+#pragma once
 
 #include "FactionMap.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -77,5 +76,3 @@ protected:
 	void loadFactionRanks();
 	void loadLuaConfig(String file);
 };
-
-#endif /* FACTIONMANAGER_H_ */

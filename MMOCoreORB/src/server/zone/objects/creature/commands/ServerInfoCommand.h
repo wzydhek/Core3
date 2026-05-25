@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef SERVERINFOCOMMAND_H_
-#define SERVERINFOCOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/ZoneServer.h"
@@ -51,5 +50,3 @@ public:
 			player->sendSystemMessage("Syntax: /server info");
 	}
 };
-
-#endif /* SERVERINFOCOMMAND_H_ */

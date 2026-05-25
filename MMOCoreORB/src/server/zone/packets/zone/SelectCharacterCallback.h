@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef SELECTCHARACTERCALLBACK_H_
-#define SELECTCHARACTERCALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/ZoneServer.h"
@@ -24,7 +23,7 @@
 #include "server/zone/packets/object/DataTransform.h"
 
 #ifdef WITH_SWGREALMS_API
-#include "server/login/SWGRealmsAPI.h"
+	#include "server/login/SWGRealmsAPI.h"
 #endif // WITH_SWGREALMS_API
 
 // #define DEBUG_SELECT_CHAR_CALLBACK
@@ -498,6 +497,3 @@ public:
 		}
 	}
 };
-
-
-#endif /* SELECTCHARACTERCALLBACK_H_ */

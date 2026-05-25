@@ -1,6 +1,5 @@
 
-#ifndef FLAGGAMEDATACOMPONENT_H_
-#define FLAGGAMEDATACOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 #include "server/zone/objects/tangible/eventperk/FlagGame.h"
@@ -85,6 +84,3 @@ public:
 		return true;
 	}
 };
-
-
-#endif /* FLAGGAMEDATACOMPONENT_H_ */

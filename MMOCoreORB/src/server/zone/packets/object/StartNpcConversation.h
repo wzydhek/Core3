@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STARTNPCCONVERSATION_H_
-#define STARTNPCCONVERSATION_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -16,4 +15,3 @@ public:
 		insertInt(crc); // Mobile CRC for JTL convos
 	}
 };
-#endif

@@ -2,17 +2,16 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OBJECTDATABASECORE_H_
-#define OBJECTDATABASECORE_H_
+#pragma once
 
 #include <ostream>
 #include <utility>
-
 #include "engine/engine.h"
 #include "server/zone/managers/object/ObjectManager.h"
 #include "system/util/SynchronizedHashTable.h"
+
 #ifndef WITH_SWGREALMS_API
-#include "server/db/ServerDatabase.h"
+	#include "server/db/ServerDatabase.h"
 #endif
 
 class ParsedObjectsHashTable : protected HashTable<uint64, int> {
@@ -48,7 +47,7 @@ protected:
 };
 
 #ifndef WITH_SWGREALMS_API
-class ServerDatabase;
+	class ServerDatabase;
 #endif
 
 class ODB3WorkerData {
@@ -141,5 +140,3 @@ public:
 	static void startBackIteratorTask2(ObjectDatabase* database, const String& fileName, int writerThreads);
 	static void dispatchPlayerTask(const Vector<VectorMapEntry<String, uint64>>& currentObjects, const String& fileName);
 };
-
-#endif /*OBJECTDATABASECORE_H_*/

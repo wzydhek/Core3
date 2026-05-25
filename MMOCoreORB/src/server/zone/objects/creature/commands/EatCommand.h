@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef EATCOMMAND_H_
-#define EATCOMMAND_H_
+#pragma once
 
 class EatCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //EATCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef EXTINGUISHFIRECOMMAND_H_
-#define EXTINGUISHFIRECOMMAND_H_
+#pragma once
 
 #include "CurePackCommand.h"
 
@@ -16,5 +15,3 @@ public:
 	}
 
 };
-
-#endif //EXTINGUISHFIRECOMMAND_H_

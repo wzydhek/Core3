@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef NEWBIETUTORIALENABLEHUDELEMENT_H_
-#define NEWBIETUTORIALENABLEHUDELEMENT_H_
+#pragma once
 
 /* Valid elements found:
  * radar
@@ -35,5 +34,3 @@ public:
    }
 
 };
-
-#endif /* NEWBIETUTORIALENABLEHUDELEMENT_H_ */

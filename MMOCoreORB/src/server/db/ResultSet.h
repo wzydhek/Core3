@@ -3,13 +3,10 @@ Copyright (C) 2007 <SWGEmu>. All rights reserved.
 Distribution of this file for usage outside of Core3 is prohibited.
 */
 
-#ifndef ENGINE_DB_MYSQL_RESULTSET_H_
-#define ENGINE_DB_MYSQL_RESULTSET_H_
+#pragma once
 
 #include <mysql.h>
-
 #include "system/lang/Long.h"
-
 #include "engine/db/ResultSet.h"
 
 namespace server {
@@ -80,5 +77,3 @@ namespace server {
     } // namespace mysql
   } // namespace db
 } // namespace engine
-
-#endif /*ENGINE_DB_MYSQL_RESULTSET_H_*/

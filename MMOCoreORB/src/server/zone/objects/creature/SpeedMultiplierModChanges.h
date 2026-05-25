@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef SPEEDMULTIPLIERMODCHANGES_H_
-#define SPEEDMULTIPLIERMODCHANGES_H_
+#pragma once
 
 #include "system/util/ArrayList.h"
-
 #include "engine/util/json_utils.h"
 
 class SpeedModChange {
@@ -71,5 +69,3 @@ public:
 class SpeedMultiplierModChanges : public ArrayList<SpeedModChange> {
 
 };
-
-#endif /* SPEEDMULTIPLIERMODCHANGES_H_ */

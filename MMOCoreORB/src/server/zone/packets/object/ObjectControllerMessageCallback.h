@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef OBJECTCONTROLLERMESSAGECALLBACK_H_
-#define OBJECTCONTROLLERMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/MessageCallbackFactory.h"
 #include "server/zone/packets/MessageCallback.h"
@@ -46,6 +45,3 @@ public:
 	}
 
 };
-
-
-#endif /* OBJECTCONTROLLERMESSAGECALLBACK_H_ */

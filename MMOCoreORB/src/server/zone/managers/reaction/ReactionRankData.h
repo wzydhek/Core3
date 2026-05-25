@@ -1,6 +1,5 @@
 
-#ifndef REACTIONRANKDATA_H_
-#define REACTIONRANKDATA_H_
+#pragma once
 
 namespace server {
 namespace zone {
@@ -37,5 +36,3 @@ public:
 }
 }
 }
-
-#endif /* REACTIONRANKDATA_H_ */

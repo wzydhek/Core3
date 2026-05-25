@@ -8,8 +8,7 @@
  *	By: Hakry
  */
 
-#ifndef THROWTRAPTASK_H_
-#define THROWTRAPTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/managers/combat/CombatManager.h"
@@ -285,5 +284,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /* THROWTRAPTASK_H_ */

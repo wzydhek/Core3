@@ -5,12 +5,9 @@
  *      Author: victor
  */
 
-#ifndef LUACONVERSATIONSESSION_H_
-#define LUACONVERSATIONSESSION_H_
-
+#pragma once
 
 #include "server/zone/objects/player/sessions/ConversationSession.h"
-
 #include "engine/engine.h"
 
 class LuaConversationSession {
@@ -33,7 +30,3 @@ private:
 	// The pointer to the 'real object' defined in object.cc
 	Reference<ConversationSession*> realObject;
 };
-
-
-
-#endif /* LUACONVERSATIONSESSION_H_ */

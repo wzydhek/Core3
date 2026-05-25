@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef WEAPONOBJECTMENUCOMPONENT_H_
-#define WEAPONOBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* WEAPONOBJECTMENUCOMPONENT_H_ */

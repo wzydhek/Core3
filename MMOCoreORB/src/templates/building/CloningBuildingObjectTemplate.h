@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CLONINGBUILDINGOBJECTTEMPLATE_H_
-#define CLONINGBUILDINGOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/building/SharedBuildingObjectTemplate.h"
 #include "templates/building/CloneSpawnPoint.h"
@@ -78,6 +77,3 @@ public:
 		return &spawningPoints;
 	}
 };
-
-
-#endif /* CLONINGBUILDINGOBJECT_H_ */

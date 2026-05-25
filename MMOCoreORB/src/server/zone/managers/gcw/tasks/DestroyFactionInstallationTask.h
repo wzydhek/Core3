@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef DESTROYFACTIONINSTALLATIONTASK_H_
-#define DESTROYFACTIONINSTALLATIONTASK_H_
+#pragma once
 
 #include "server/zone/Zone.h"
 #include "server/zone/objects/installation/InstallationObject.h"
@@ -32,5 +31,3 @@ public:
 	}
 
 };
-
-#endif /* DESTROYFACTIONINSTALLATIONTASK_H_ */

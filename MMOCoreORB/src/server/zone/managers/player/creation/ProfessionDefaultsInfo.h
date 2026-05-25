@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef PROFESSIONDEFAULTSINFO_H_
-#define PROFESSIONDEFAULTSINFO_H_
+#pragma once
 
 #include "server/zone/objects/creature/variables/Skill.h"
 #include "server/zone/managers/skill/SkillManager.h"
@@ -119,6 +118,3 @@ public:
 }
 
 using namespace server::zone::managers::player::creation;
-
-
-#endif /* PROFESSIONDEFAULTSINFO_H_ */

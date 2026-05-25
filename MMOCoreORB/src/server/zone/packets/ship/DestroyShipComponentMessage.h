@@ -1,5 +1,4 @@
-#ifndef DESTROYSHIPCOMPONENTMESSAGE_H
-#define DESTROYSHIPCOMPONENTMESSAGE_H
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/ship/ShipObject.h"
@@ -14,5 +13,3 @@ public:
 		insertFloat(scale);
 	}
 };
-
-#endif // DESTROYSHIPCOMPONENTMESSAGE_H

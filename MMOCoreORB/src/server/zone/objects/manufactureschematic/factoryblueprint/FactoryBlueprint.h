@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef FACTORYBLUEPRINT_H_
-#define FACTORYBLUEPRINT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "BlueprintEntry.h"
@@ -46,5 +45,3 @@ public:
 
 	friend void to_json(nlohmann::json& j, const FactoryBlueprint& p);
 };
-
-#endif /* FACTORYBLUEPRINT_H_ */

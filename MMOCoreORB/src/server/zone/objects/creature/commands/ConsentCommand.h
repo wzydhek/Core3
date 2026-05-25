@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CONSENTCOMMAND_H_
-#define CONSENTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -110,5 +109,3 @@ public:
 	}
 
 };
-
-#endif //CONSENTCOMMAND_H_

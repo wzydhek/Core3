@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FRSDATA_H_
-#define FRSDATA_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
 
 class FrsData : public Object {
@@ -73,5 +71,3 @@ public:
 		return true;
 	}
 };
-
-#endif /*FRSDATA_H_*/

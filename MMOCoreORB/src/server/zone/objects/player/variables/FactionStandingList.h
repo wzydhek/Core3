@@ -5,11 +5,9 @@
  *      Author: crush
  */
 
-#ifndef FACTIONSTANDINGLIST_H_
-#define FACTIONSTANDINGLIST_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
 
 class FactionStandingList : public Serializable {
@@ -171,5 +169,3 @@ public:
 			message->insertFloat(factions.get(i));
 	}
 };
-
-#endif /* FACTIONSTANDINGLIST_H_ */

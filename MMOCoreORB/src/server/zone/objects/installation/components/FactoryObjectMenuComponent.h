@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef FACTORYOBJECTMENUCOMPONENT_H_
-#define FACTORYOBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/installation/components/InstallationObjectMenuComponent.h"
@@ -16,6 +15,3 @@ public:
 	void fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* creature) const;
 	int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const;
 };
-
-
-#endif /* FACTORYOBJECTMENUCOMPONENT_H_ */

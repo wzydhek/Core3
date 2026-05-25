@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GUILDSTATUSCOMMAND_H_
-#define GUILDSTATUSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/ZoneServer.h"
@@ -99,5 +98,3 @@ public:
 	}
 
 };
-
-#endif //GUILDSTATUSCOMMAND_H_

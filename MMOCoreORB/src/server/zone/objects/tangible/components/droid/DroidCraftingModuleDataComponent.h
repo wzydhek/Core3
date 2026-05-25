@@ -2,8 +2,7 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DROIDCRAFTINGMODULEDATACOMPONENT_H_
-#define DROIDCRAFTINGMODULEDATACOMPONENT_H_
+#pragma once
 
 #include "BaseDroidModuleComponent.h"
 #include "server/zone/objects/tangible/tool/CraftingStation.h"
@@ -83,6 +82,5 @@ public:
 } // objects
 } // zone
 } // server
-using namespace server::zone::objects::tangible::components::droid;
 
-#endif /* DROIDCRAFTINGMODULEDATACOMPONENT_H_ */
+using namespace server::zone::objects::tangible::components::droid;

@@ -6,8 +6,7 @@
  *      Author: washu
  */
 
-#ifndef DNAMANAGER_H_
-#define DNAMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/ai/Creature.h"
@@ -82,5 +81,3 @@ protected:
 }
 
 using namespace server::zone::managers::creature;
-
-#endif /* DNAMANAGER_H_ */

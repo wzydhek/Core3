@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CONCEALCOMMAND_H_
-#define CONCEALCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "templates/tangible/CamoKitTemplate.h"
@@ -228,5 +227,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // CONCEALCOMMAND_H_

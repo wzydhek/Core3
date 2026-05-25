@@ -1,6 +1,5 @@
 
-#ifndef CALLPETTASK_H_
-#define CALLPETTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/intangible/ControlDevice.h"
@@ -32,5 +31,3 @@ public:
 		device->spawnObject(player);
 	}
 };
-
-#endif /* CALLPETTASK_H_ */

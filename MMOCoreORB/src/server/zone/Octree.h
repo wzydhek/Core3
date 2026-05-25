@@ -3,8 +3,7 @@ Copyright (C) 2007 <SWGEmu>. All rights reserved.
 Distribution of this file for usage outside of Core3 is prohibited.
 */
 
-#ifndef OCTREE_H_
-#define OCTREE_H_
+#pragma once
 
 #include "system/lang.h"
 #include "engine/log/Logger.h"
@@ -94,5 +93,3 @@ namespace server {
 	};
   } // namespace zone
 } // namespace server
-
-#endif /*OCTREE_H_*/

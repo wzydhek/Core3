@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLIENTCREATECHARACTERSUCCESS_H_
-#define CLIENTCREATECHARACTERSUCCESS_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -19,6 +18,3 @@ public:
 	}
 
 };
-
-
-#endif /*CLIENTCREATECHARACTERSUCCESS_H_*/

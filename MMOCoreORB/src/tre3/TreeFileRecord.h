@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef TREEFILERECORD_H_
-#define TREEFILERECORD_H_
+#pragma once
 
 #include "TreeDataBlock.h"
 
@@ -169,5 +168,3 @@ public:
 		treeFilePath = path;
 	}
 };
-
-#endif /* TREEFILERECORD_H_ */

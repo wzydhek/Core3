@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef VERIFYPLAYERNAMERESPONSEMESSAGE_H_
-#define VERIFYPLAYERNAMERESPONSEMESSAGE_H_
+#pragma once
 
 class VerifyPlayerNameResponseMessage : public BaseMessage {
 public:
@@ -18,4 +17,3 @@ public:
    }
 
 };
-#endif /* VERIFYPLAYERNAMERESPONSEMESSAGE_H_ */

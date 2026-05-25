@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FINDMYTRAINERCOMMAND_H_
-#define FINDMYTRAINERCOMMAND_H_
+#pragma once
 
 class FindMyTrainerCommand : public QueueCommand {
 public:
@@ -150,5 +149,3 @@ public:
 		ghost->setTrainerZoneName(zoneName); // For the waypoint.
 	}
 };
-
-#endif // FINDMYTRAINERCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MULTITARGETPISTOLSHOTCOMMAND_H_
-#define MULTITARGETPISTOLSHOTCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //MULTITARGETPISTOLSHOTCOMMAND_H_

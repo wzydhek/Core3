@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef SHIPFLAG_H_
-#define SHIPFLAG_H_
+#pragma once
 
 class ShipFlag {
 public:
@@ -35,5 +34,3 @@ public:
 	WAVE_ATTACK - Ships that are spawned for wave attacks during escort missions.
 	DISABLED_INVULNERABLE - Used to flag ships invulnerable for a brief period after being disabled.
 */
-
-#endif /* SHIPFLAG_H_ */

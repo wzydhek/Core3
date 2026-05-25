@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDMEMBEROPTIONSSUICALLBACK_H_
-#define GUILDMEMBEROPTIONSSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
@@ -80,5 +79,3 @@ public:
 		}
 	}
 };
-
-#endif /* GUILDMEMBEROPTIONSSUICALLBACK_H_ */

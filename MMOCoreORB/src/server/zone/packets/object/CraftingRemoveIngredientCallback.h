@@ -5,9 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef CRAFTINGREMOVEINGREDIENTCALLBACK_H_
-#define CRAFTINGREMOVEINGREDIENTCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "ObjectControllerMessageCallback.h"
@@ -75,6 +73,3 @@ public:
 		session->removeIngredient(tano, slot, counter);
 	}
 };
-
-
-#endif /* CRAFTINGREMOVEINGREDIENTCALLBACK_H_ */

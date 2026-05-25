@@ -5,11 +5,8 @@
  *      Author: TheAnswer
  */
 
-#ifndef INTERSECTIONRESULTS_H_
-#define INTERSECTIONRESULTS_H_
+#pragma once
 
 class IntersectionResults : public SortedVector<IntersectionResult> {
 
 };
-
-#endif /* INTERSECTIONRESULTS_H_ */

@@ -2,8 +2,8 @@
 // Created by vagrant on 9/2/17.
 //
 
-#ifndef CORE3_CREDITMANAGER_H
-#define CORE3_CREDITMANAGER_H
+#pragma once
+
 #include "engine/engine.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/credits/CreditObject.h"
@@ -20,5 +20,3 @@ public:
 	static bool verifyCashCredits(uint64 creatureID, int amount);
 	static Reference<CreditObject*> getCreditObject(uint64 creoID);
 };
-
-#endif //CORE3_CREDITMANAGER_H

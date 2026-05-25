@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STATCOMMAND_H_
-#define STATCOMMAND_H_
+#pragma once
 
 class StatCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //STATCOMMAND_H_

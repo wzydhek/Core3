@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef SURVERYDROIDMENUCOMPONENT_H_
-#define SURVERYDROIDMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -31,6 +30,3 @@ public:
 	 */
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 };
-
-#endif /* SURVERYDROIDMENUCOMPONENT_H_ */
-

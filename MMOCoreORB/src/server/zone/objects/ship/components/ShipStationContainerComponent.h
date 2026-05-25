@@ -9,8 +9,7 @@
  * the player's create message is sent before the proper load sequence completes.
  */
 
-#ifndef SHIPSTATIONCONTAINERCOMPONENT_H_
-#define SHIPSTATIONCONTAINERCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
@@ -22,5 +21,3 @@ public:
 
 	bool transferObject(SceneObject* sceneObject, SceneObject* object, int containmentType, bool notifyClient = false, bool allowOverflow = false, bool notifyRoot = true) const override;
 };
-
-#endif /* SHIPSTATIONCONTAINERCOMPONENT_H_ */

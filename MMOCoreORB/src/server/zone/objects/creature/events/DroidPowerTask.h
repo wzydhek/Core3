@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DROIDPOWERTASK_H_
-#define DROIDPOWERTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/DroidObject.h"
 
@@ -58,5 +57,3 @@ public:
 } // server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /*DROIDPOWERTASK_H_*/

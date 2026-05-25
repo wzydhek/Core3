@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLANETSAYCOMMAND_H_
-#define PLANETSAYCOMMAND_H_
+#pragma once
 
 #include "server/chat/ChatManager.h"
 
@@ -30,5 +29,3 @@ public:
 	}
 
 };
-
-#endif //PLANETSAYCOMMAND_H_

@@ -1,6 +1,5 @@
 
-#ifndef PETINCAPACITATIONRECOVERTASK_H_
-#define PETINCAPACITATIONRECOVERTASK_H_
+#pragma once
 
 #include "templates/params/creature/CreatureAttribute.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
@@ -99,5 +98,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /* PETINCAPACITATIONRECOVERTASK_H_ */

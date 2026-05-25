@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LISTENCOMMAND_H_
-#define LISTENCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/player/PlayerManager.h"
 
@@ -32,5 +31,3 @@ public:
 	}
 
 };
-
-#endif //LISTENCOMMAND_H_

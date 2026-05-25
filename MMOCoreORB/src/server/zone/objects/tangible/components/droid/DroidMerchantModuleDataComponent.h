@@ -2,8 +2,7 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DROIDMERCHANTODULEDATACOMPONENT_H_
-#define DROIDMERCHANTODULEDATACOMPONENT_H_
+#pragma once
 
 #include "BaseDroidModuleComponent.h"
 #include "server/zone/objects/waypoint/WaypointObject.h"
@@ -49,6 +48,5 @@ public:
 } // objects
 } // zone
 } // server
-using namespace server::zone::objects::tangible::components::droid;
 
-#endif /* DROIDMERCHANTODULEDATACOMPONENT_H_ */
+using namespace server::zone::objects::tangible::components::droid;

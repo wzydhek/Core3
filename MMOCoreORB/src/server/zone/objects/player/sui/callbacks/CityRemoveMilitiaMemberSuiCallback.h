@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CITYREMOVEMILITIAMEMBERSUICALLBACK_H_
-#define CITYREMOVEMILITIAMEMBERSUICALLBACK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -57,5 +56,3 @@ public:
 		session->cancelSession();
 	}
 };
-
-#endif /* CITYREMOVEMILITIAMEMBERSUICALLBACK_H_ */

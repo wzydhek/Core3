@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CONFIGMANAGER_H_
-#define CONFIGMANAGER_H_
+#pragma once
 
 // #define DEBUG_CONFIGMANAGER
 
@@ -861,5 +860,3 @@ namespace conf {
 }
 
 using namespace conf;
-
-#endif // #ifndef CONFIGMANAGER_H_

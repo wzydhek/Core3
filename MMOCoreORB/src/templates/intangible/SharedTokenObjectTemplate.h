@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDTOKENOBJECTTEMPLATE_H_
-#define SHAREDTOKENOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
@@ -65,5 +64,3 @@ public:
 	}
 
 };
-
-#endif /* SHAREDTOKENOBJECTTEMPLATE_H_ */

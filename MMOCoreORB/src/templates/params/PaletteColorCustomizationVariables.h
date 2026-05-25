@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef PALETTECOLORCUSTOMIZATIONVARIABLES_H_
-#define PALETTECOLORCUSTOMIZATIONVARIABLES_H_
+#pragma once
 
 #include "templates/params/PaletteColorCustomizationVariable.h"
 #include "templates/params/Param.h"
@@ -47,5 +46,3 @@ public:
 
 	void parseType1(IffStream* source);
 };
-
-#endif /* PALETTECOLORCUSTOMIZATIONVARIABLES_H_ */

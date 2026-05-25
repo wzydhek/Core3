@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STRUCTUREPAYUNCONDEMNMAINTENANCESUICALLBACK_H_
-#define STRUCTUREPAYUNCONDEMNMAINTENANCESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/credit/CreditManager.h"
@@ -66,5 +65,3 @@ public:
 		creature->sendSystemMessage(message);
 	}
 };
-
-#endif /* STRUCTUREPAYUNCONDEMNMAINTENANCESUICALLBACK_H_ */

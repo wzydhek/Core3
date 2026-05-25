@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef BEHAVIOR_H_
-#define BEHAVIOR_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/lua/LuaObject.h"
@@ -206,5 +205,3 @@ public:
 }
 }
 }
-
-#endif /* BEHAVIOR_H_ */

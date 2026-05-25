@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef IFFTEMPLATE_H_
-#define IFFTEMPLATE_H_
+#pragma once
 
 #include "engine/util/iffstream/IffStream.h"
 #include "templates/TemplateData.h"
@@ -19,5 +18,3 @@ public:
 
 	}
 };
-
-#endif /* IFFTEMPLATE_H_ */

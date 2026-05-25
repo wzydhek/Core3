@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATURESTATE_H_
-#define CREATURESTATE_H_
+#pragma once
 
 #include "templates/datatables/DataTableIff.h"
 #include "templates/datatables/DataTableRow.h"
@@ -127,5 +126,3 @@ public:
 		return name;
 	}
 };
-
-#endif /* CREATURESTATE_H_ */

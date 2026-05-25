@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ZONEPACKETHANDLER_H_
-#define ZONEPACKETHANDLER_H_
+#pragma once
 
 #include "engine/log/Logger.h"
 
@@ -39,5 +38,3 @@ public:
 		return unknownOpcodes;
 	}
 };
-
-#endif /* ZONEPACKETHANDLER_H_ */

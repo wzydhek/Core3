@@ -1,5 +1,4 @@
-#ifndef DECORATOR_H_
-#define DECORATOR_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/Behavior.h"
 
@@ -134,5 +133,3 @@ public:
 }
 }
 }
-
-#endif /* DECORATOR_H_ */

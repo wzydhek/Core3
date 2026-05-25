@@ -5,8 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef GROUPLOOTCHANGEDSUICALLBACK_H_
-#define GROUPLOOTCHANGEDSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -31,8 +30,3 @@ public:
 	}
 
 };
-
-
-
-
-#endif /* GROUPLOOTCHANGEDSUICALLBACK_H_ */

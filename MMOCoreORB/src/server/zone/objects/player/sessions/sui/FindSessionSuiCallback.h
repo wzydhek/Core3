@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef FINDSESSIONSUICALLBACK_H_
-#define FINDSESSIONSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/FindSession.h"
@@ -70,5 +69,3 @@ public:
 		session->findPlanetaryObject(mapCategory, mapSubCategory);
 	}
 };
-
-#endif /* FINDSESSIONSUICALLBACK_H_ */

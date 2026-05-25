@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATONLEAVEROOM_H_
-#define CHATONLEAVEROOM_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/chat/room/ChatRoom.h"
@@ -25,5 +24,3 @@ public:
 		insertInt(0); //Request ID. Always seen 0.
 	}
 };
-
-#endif /*CHATONLEAVEROOM_H_*/

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TENDCOMMAND_H_
-#define TENDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/ZoneServer.h"
@@ -295,5 +294,3 @@ public:
 	}
 
 };
-
-#endif /* TENDCOMMAND_H_ */

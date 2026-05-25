@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LAUNCHINTOSPACECOMMAND_H_
-#define LAUNCHINTOSPACECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/planet/PlanetManager.h"
@@ -150,5 +149,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // LAUNCHINTOSPACECOMMAND_H_

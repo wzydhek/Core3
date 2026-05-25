@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef JOINGAMECOMMAND_H_
-#define JOINGAMECOMMAND_H_
+#pragma once
 
 class JoinGameCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //JOINGAMECOMMAND_H_

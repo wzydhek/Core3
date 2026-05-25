@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FINDOBJECTCOMMAND_H_
-#define FINDOBJECTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/sui/callbacks/FindObjectSuiCallback.h"
@@ -141,5 +140,3 @@ public:
 	}
 
 };
-
-#endif //FINDOBJECTCOMMAND_H_

@@ -1,5 +1,4 @@
-#ifndef SHIPCOMPONENTATTRIBUTES_H_
-#define SHIPCOMPONENTATTRIBUTES_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -36,5 +35,3 @@ const Vector<String> ShipComponentAttributes::ATTRIBUTES = {
 	"ship_component_weapon_energy_per_shot", "energy_per_shot",
 	"ship_component_weapon_refire_rate", "refire_rate"
 };
-
-#endif // SHIPCOMPONENTATTRIBUTES_H_

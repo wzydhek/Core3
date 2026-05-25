@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SARLACCERUPTTASK_H_
-#define SARLACCERUPTTASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/Zone.h"
@@ -56,5 +55,3 @@ public:
 
 	}
 };
-
-#endif /* SARLACCERUPTTASK_H_ */

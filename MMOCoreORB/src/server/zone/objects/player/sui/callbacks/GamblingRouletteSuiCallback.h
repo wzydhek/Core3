@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef GAMBLINGROULETTESUICALLBACK_H_
-#define GAMBLINGROULETTESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/minigames/GamblingManager.h"
@@ -32,5 +31,3 @@ public:
 			manager->refreshRouletteMenu(player);
 	}
 };
-
-#endif /* GAMBLINGROULETTESUICALLBACK_H_ */

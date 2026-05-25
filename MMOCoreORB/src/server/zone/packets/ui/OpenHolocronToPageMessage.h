@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef OPENHOLOCRONTOPAGEMESSAGE_H_
-#define OPENHOLOCRONTOPAGEMESSAGE_H_
+#pragma once
 
 class OpenHolocronToPageMessage : public BaseMessage {
 public:
@@ -18,5 +17,3 @@ public:
 		insertShort(0x00);
    }
 };
-
-#endif /* OPENHOLOCRONTOPAGEMESSAGE_H_ */

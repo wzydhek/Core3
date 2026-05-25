@@ -1,6 +1,5 @@
 
-#ifndef EVENTPERKMENUCOMPONENT_H_
-#define EVENTPERKMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 
@@ -27,5 +26,3 @@ public:
 
 	virtual void destroyEventPerk(SceneObject* sceneObject) const;
 };
-
-#endif /* EVENTPERKMENUCOMPONENT_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTBADGESCOMMAND_H_
-#define REQUESTBADGESCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -42,5 +41,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTBADGESCOMMAND_H_

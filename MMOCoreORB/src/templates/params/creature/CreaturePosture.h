@@ -2,13 +2,11 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATUREPOSTURE_H_
-#define CREATUREPOSTURE_H_
+#pragma once
 
 #include "templates/datatables/DataTableIff.h"
 #include "templates/datatables/DataTableRow.h"
 #include "templates/manager/TemplateManager.h"
-
 #include "CreatureLocomotion.h"
 
 class CreatureMovementEntry : public Variable {
@@ -373,5 +371,3 @@ public:
 		return meleeDefenseMod.get(loc);
 	}
 };
-
-#endif /* CREATUREPOSTURE_H_ */

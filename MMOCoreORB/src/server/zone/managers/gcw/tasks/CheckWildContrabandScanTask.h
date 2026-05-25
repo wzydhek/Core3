@@ -5,8 +5,7 @@
  *      Author: Loshult
  */
 
-#ifndef CHECKWILDCONTRABANDSCANTASK_H_
-#define CHECKWILDCONTRABANDSCANTASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 #include "server/zone/Zone.h"
@@ -41,5 +40,3 @@ public:
 		strongRef->performCheckWildContrabandScanTask();
 	}
 };
-
-#endif /* CHECKWILDCONTRABANDSCANTASK_H_ */

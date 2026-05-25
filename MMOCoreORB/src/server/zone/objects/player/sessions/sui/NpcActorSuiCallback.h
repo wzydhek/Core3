@@ -1,6 +1,3 @@
-#ifndef NPCACTORSUICALLBACK_H_
-#define NPCACTORSUICALLBACK_H_
-
 /*
  * NpcActorSuiCallback.h
  *
@@ -8,6 +5,8 @@
  * By: Hakry
  *
 */
+
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -71,5 +70,3 @@ public:
 		player->dropActiveSession(SessionFacadeType::NPCACTORCREATION);
 	}
 };
-
-#endif /* #define NPCACTORSUICALLBACK_H_ */

@@ -1,5 +1,4 @@
-#ifndef REGEXDATA
-#define REGEXDATA
+#pragma once
 
 #include "engine/engine.h"
 #include <regex>
@@ -36,5 +35,3 @@ public:
 		return phrase;
 	}
 };
-
-#endif /* REGEXDATA */

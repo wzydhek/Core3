@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INTANGIBLEOBJECTDELTAMESSAGE3_H_
-#define INTANGIBLEOBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/intangible/IntangibleObject.h"
@@ -28,5 +27,3 @@ public:
 		addIntUpdate(0x04, value);
 	}
 };
-
-#endif /*INTANGIBLEOBJECTDELTAMESSAGE3_H_*/

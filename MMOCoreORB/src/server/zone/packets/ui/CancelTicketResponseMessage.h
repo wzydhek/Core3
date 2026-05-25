@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CANCELTICKETRESPONSEMESSAGE_H_
-#define CANCELTICKETRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -22,6 +21,3 @@ public:
    }
 
 };
-
-#endif /*CANCELTICKETRESPONSEMESSAGE_H_*/
-

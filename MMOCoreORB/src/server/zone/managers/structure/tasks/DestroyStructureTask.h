@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef DESTROYSTRUCTURETASK_H_
-#define DESTROYSTRUCTURETASK_H_
+#pragma once
 
 #include "server/zone/Zone.h"
 #include "server/zone/objects/structure/StructureObject.h"
@@ -127,6 +126,3 @@ public:
 		structureObject->destroyObjectFromDatabase(true);
 	}
 };
-
-#endif /* DESTROYSTRUCTURETASK_H_ */
-

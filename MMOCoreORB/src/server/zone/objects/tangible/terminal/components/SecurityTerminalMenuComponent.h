@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef SECURITYTERMINALMENUCOMPONENT_H_
-#define SECURITYTERMINALMENUCOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
@@ -37,6 +36,3 @@ public:
 
 
 };
-
-
-#endif /* SECURITYTERMINALMENUCOMPONENT_H_ */

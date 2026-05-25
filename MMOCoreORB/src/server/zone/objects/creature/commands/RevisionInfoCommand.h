@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef REVISIONINFOCOMMAND_H_
-#define REVISIONINFOCOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "conf/ConfigManager.h"
@@ -27,5 +26,3 @@ public:
 	}
 
 };
-
-#endif /* REVISIONINFOCOMMAND_H_ */

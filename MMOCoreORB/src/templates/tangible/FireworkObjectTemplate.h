@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef FIREWORKOBJECTTEMPLATE_H_
-#define FIREWORKOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -42,7 +41,3 @@ public:
 		return true;
 	}
 };
-
-
-
-#endif /* FIREWORKOBJECTTEMPLATE_ */

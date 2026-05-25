@@ -1,6 +1,5 @@
 
-#ifndef PETREPAIRCOMMAND_H_
-#define PETREPAIRCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/ai/DroidObject.h"
@@ -63,5 +62,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* PETREPAIRCOMMAND_H_ */

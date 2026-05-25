@@ -5,8 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef GROUPLOOTCOMMAND_H_
-#define GROUPLOOTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/group/GroupObject.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -92,5 +91,3 @@ public:
 	}
 
 };
-
-#endif /* GROUPLOOTCOMMAND_H_ */

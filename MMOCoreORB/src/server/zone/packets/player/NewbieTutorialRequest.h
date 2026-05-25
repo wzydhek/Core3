@@ -5,14 +5,14 @@
  *      Author: swgemu
  */
 
-#ifndef NEWBIETUTORIALREQUEST_H_
-#define NEWBIETUTORIALREQUEST_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/director/DirectorManager.h"
 #include "server/zone/Zone.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/building/TutorialBuildingObject.h"
+
 /* Valid action strings found:
  * openCharacterSheet
  * closeCharacterSheet
@@ -28,6 +28,7 @@
  * changeMouseMode
  * equipToolbar
  */
+
 class NewbieTutorialRequest : public BaseMessage {
 public:
    /**
@@ -58,6 +59,7 @@ public:
  * Sends clientReady on zone.
  * Echos string sent by NewbieTutorialRequest, when action is triggered.
  */
+
 class NewbieTutorialResponseCallback : public MessageCallback {
 	String response;
 public:
@@ -108,5 +110,3 @@ public:
 	}
 
 };
-
-#endif /* NEWBIETUTORIALREQUEST_H_ */

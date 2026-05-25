@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORROAD_H_
-#define AFFECTORROAD_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "../Road.h"
@@ -158,5 +157,3 @@ public:
 		return informationHeader.isEnabled();
 	}
 };
-
-#endif /* AFFECTORROAD_H_ */

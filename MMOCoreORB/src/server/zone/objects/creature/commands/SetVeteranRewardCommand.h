@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETVETERANREWARDCOMMAND_H_
-#define SETVETERANREWARDCOMMAND_H_
+#pragma once
 
 class SetVeteranRewardCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETVETERANREWARDCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TELEPORTTARGETCOMMAND_H_
-#define TELEPORTTARGETCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -100,5 +99,3 @@ public:
 	}
 
 };
-
-#endif //TELEPORTTARGETCOMMAND_H_

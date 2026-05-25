@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LAGREPORT_H_
-#define LAGREPORT_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/packets/MessageCallback.h"
@@ -70,5 +69,3 @@ public:
 		session->sendMessage(gameServer);
 	}
 };
-
-#endif /* LAGREPORT_H_ */

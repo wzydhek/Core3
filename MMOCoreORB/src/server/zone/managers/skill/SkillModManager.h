@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef SKILLMODMANAGER_H_
-#define SKILLMODMANAGER_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -102,5 +101,3 @@ public:
 }
 
 using namespace server::zone::managers::skill;
-
-#endif // SKILLMODMANAGER_H_

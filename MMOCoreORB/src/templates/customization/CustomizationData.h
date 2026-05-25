@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef CUSTOMIZATIONDATA_H_
-#define CUSTOMIZATIONDATA_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 
@@ -223,5 +222,3 @@ public:
 	}
 
 };
-
-#endif /* CUSTOMIZATIONDATA_H_ */

@@ -5,8 +5,7 @@
  *      Author: chris.rush
  */
 
-#ifndef THROWGRENADEMENUCOMPONENT_H_
-#define THROWGRENADEMENUCOMPONENT_H_
+#pragma once
 
 #include "WeaponObjectMenuComponent.h"
 
@@ -16,6 +15,3 @@ public:
 
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 };
-
-
-#endif /* THROWGRENADEMENUCOMPONENT_H_ */

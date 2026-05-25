@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REMOVEIGNORECOMMAND_H_
-#define REMOVEIGNORECOMMAND_H_
+#pragma once
 
 class RemoveIgnoreCommand : public QueueCommand {
 public:
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif //REMOVEIGNORECOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef WORLDSNAPSHOTIFF_H_
-#define WORLDSNAPSHOTIFF_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 #include "templates/snapshot/WorldSnapshotNode.h"
@@ -32,5 +31,3 @@ public:
 		return objectTemplateNameList.get(idx);
 	}
 };
-
-#endif /* WORLDSNAPSHOTIFF_H_ */

@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDSPONSORVERIFYSUICALLBACK_H_
-#define GUILDSPONSORVERIFYSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -60,5 +59,3 @@ public:
 		}
 	}
 };
-
-#endif /* GUILDSPONSORVERIFYSUICALLBACK_H_ */

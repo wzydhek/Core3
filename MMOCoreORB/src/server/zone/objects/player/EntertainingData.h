@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ENTERTAININGDATA_H_
-#define ENTERTAININGDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -72,5 +71,3 @@ public:
 		duration += incr;
 	}
 };
-
-#endif /* ENTERTAININGDATA_H_ */

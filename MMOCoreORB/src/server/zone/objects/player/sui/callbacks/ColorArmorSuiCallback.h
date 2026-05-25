@@ -6,11 +6,9 @@
  *		Credits: TA & Valk
  */
 
-#ifndef COLORARMORSUICALLBACK_H_
-#define COLORARMORSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
-
 
 class ColorArmorSuiCallback : public SuiCallback {
 public:
@@ -46,5 +44,3 @@ public:
 		}
 	}
 };
-
-#endif /* COLORARMORSUICALLBACK_H_ */

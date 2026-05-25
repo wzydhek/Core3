@@ -5,8 +5,7 @@
  *      Author: washu
  */
 
-#ifndef DNASAMPLERANGE_H_
-#define DNASAMPLERANGE_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -57,5 +56,3 @@ public:
 }
 
 using namespace server::zone::managers::creature;
-
-#endif /* DNASAMPLERANGE_H_ */

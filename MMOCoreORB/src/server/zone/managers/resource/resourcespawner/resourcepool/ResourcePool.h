@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef RESOURCEPOOL_H_
-#define RESOURCEPOOL_H_
+#pragma once
 
 #include "server/zone/objects/resource/ResourceSpawn.h"
 
@@ -160,5 +159,3 @@ private:
 
 	friend class ResourceSpawner;
 };
-
-#endif /* RESOURCEPOOL_H_ */

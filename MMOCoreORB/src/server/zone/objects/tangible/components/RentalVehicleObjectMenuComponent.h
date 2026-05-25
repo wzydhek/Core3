@@ -5,8 +5,7 @@
  *      Author: H
  */
 
-#ifndef RENTALVEHICLEOBJECTMENUCOMPONENT_H_
-#define RENTALVEHICLEOBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -31,5 +30,3 @@ public:
 	 */
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 };
-
-#endif /* RENTALVEHICLEOBJECTMENUCOMPONENT_H_ */

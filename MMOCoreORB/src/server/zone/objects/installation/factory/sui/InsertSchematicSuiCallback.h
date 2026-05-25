@@ -5,9 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef INSERTSCHEMATICSUICALLBACK_H_
-#define INSERTSCHEMATICSUICALLBACK_H_
-
+#pragma once
 
 #include "server/zone/objects/installation/factory/FactoryObject.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -97,5 +95,3 @@ public:
 		}
 	}
 };
-
-#endif /* INSERTSCHEMATICSUICALLBACK_H_ */

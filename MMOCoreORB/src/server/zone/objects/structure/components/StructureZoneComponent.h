@@ -5,11 +5,9 @@
  *      Author: TragD
  */
 
-#ifndef STRUCTUREZONECOMPONENT_H_
-#define STRUCTUREZONECOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/scene/components/GroundZoneComponent.h"
 
 namespace server {
@@ -38,5 +36,3 @@ public:
 	void notifyInsertToZone(SceneObject* sceneObject, Zone* zone) const;
 	void notifyRemoveFromZone(SceneObject* sceneObject) const;
 };
-
-#endif /* STRUCTUREZONECOMPONENT_H_ */

@@ -1,5 +1,4 @@
-#ifndef CRYSTALDATA_H_
-#define CRYSTALDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -153,5 +152,3 @@ public:
 	}
 
 };
-
-#endif /* CRYSTALDATA_H_ */

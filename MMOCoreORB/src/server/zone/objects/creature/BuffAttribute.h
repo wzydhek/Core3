@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BUFFATTRIBUTE_H_
-#define BUFFATTRIBUTE_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -150,6 +149,3 @@ public:
 		return name;
 	}
 };
-
-
-#endif /* BUFFATTRIBUTE_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BADGE_H_
-#define BADGE_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
@@ -79,4 +78,3 @@ private:
 	String music;
 	String typeString;
 };
-#endif /*BADGE_H_*/

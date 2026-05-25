@@ -1,9 +1,7 @@
-#ifndef QUESTTASKS_H_
-#define QUESTTASKS_H_
+#pragma once
 
 #include <system/lang/Integer.h>
 #include <system/util/Vector.h>
-
 #include "templates/datatables/DataTableIff.h"
 #include "templates/datatables/DataTableRow.h"
 
@@ -415,5 +413,3 @@ public:
 		return tasks.get(taskNumber);
 	}
 };
-
-#endif /* QUESTTASKS_H_ */

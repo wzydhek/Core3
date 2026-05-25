@@ -5,14 +5,12 @@
  *      Author: Kyle
  */
 
-#ifndef PLAYERMANAGERCOMMAND_H_
-#define PLAYERMANAGERCOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/ZoneServer.h"
 #include "server/chat/ChatManager.h"
 #include "server/zone/managers/player/PlayerManager.h"
-
 #include "server/zone/managers/collision/PathFinderManager.h"
 
 class PlayerManagerCommand {
@@ -402,5 +400,3 @@ public:
 		return msg.toString();
 	}
 };
-
-#endif /* PLAYERMANAGERCOMMAND_H_ */

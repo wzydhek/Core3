@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETPERFORMANCEBUFFTARGETCOMMAND_H_
-#define SETPERFORMANCEBUFFTARGETCOMMAND_H_
+#pragma once
 
 class SetPerformanceBuffTargetCommand : public QueueCommand {
 public:
@@ -63,5 +62,3 @@ public:
 	}
 
 };
-
-#endif //SETPERFORMANCEBUFFTARGETCOMMAND_H_

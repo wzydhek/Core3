@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef GROUPMEMBER_H_
-#define GROUPMEMBER_H_
+#pragma once
 
 #include "engine/util/json_utils.h"
 
@@ -97,5 +96,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* GROUPMEMBER_H_ */

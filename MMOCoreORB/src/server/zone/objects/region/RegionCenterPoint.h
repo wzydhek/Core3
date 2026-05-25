@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef REGIONCENTERPOINT_H_
-#define REGIONCENTERPOINT_H_
+#pragma once
 
 class RegionCenterPoint : public Object {
 public:
@@ -43,5 +42,3 @@ public:
 	}
 
 };
-
-#endif /* REGIONCENTERPOINT_H_ */

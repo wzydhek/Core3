@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef FLOATPARAM_H_
-#define FLOATPARAM_H_
+#pragma once
 
 #include "templates/params/TemplateBase.h"
 
@@ -111,6 +110,3 @@ public:
 		return max;
 	}
 };
-
-
-#endif /* FLOATPARAM_H_ */

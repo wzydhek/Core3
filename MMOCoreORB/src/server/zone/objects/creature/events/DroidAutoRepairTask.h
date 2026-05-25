@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DROIDAUTOREPAIRTASK_H_
-#define DROIDAUTOREPAIRTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/DroidObject.h"
 #include "server/zone/objects/tangible/components/droid/DroidAutoRepairModuleDataComponent.h"
@@ -116,5 +115,3 @@ private:
 } // server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /*DROIDAUTOREPAIRTASK_H_*/

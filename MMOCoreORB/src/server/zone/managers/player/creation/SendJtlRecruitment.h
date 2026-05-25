@@ -5,8 +5,7 @@
  *	Author: Hakry
  */
 
-#ifndef SENDJTLRECRUITMENT_H_
-#define SENDJTLRECRUITMENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/chat/ChatManager.h"
@@ -102,5 +101,3 @@ public:
 		chatManager->sendMail("@space/space_interaction:email_sender_1", subject, emailBody, playerName, &sellerBodyVector, &impWaypoints);
 	}
 };
-
-#endif // SENDJTLRECRUITMENT_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GROUPMANAGER_H_
-#define GROUPMANAGER_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -95,5 +94,3 @@ public:
 
 	void joinGroupEntertainingSession(CreatureObject* player);
 };
-
-#endif /*GROUPMANAGER_H_*/

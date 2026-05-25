@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TANGIBLEOBJECTMESSAGE3_H_
-#define TANGIBLEOBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
-
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/scene/variables/StringId.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -60,5 +58,3 @@ public:
 	}
 
 };
-
-#endif /*TANGIBLEOBJECTMESSAGE3_H_*/

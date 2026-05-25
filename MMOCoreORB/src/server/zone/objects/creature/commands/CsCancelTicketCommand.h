@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CSCANCELTICKETCOMMAND_H_
-#define CSCANCELTICKETCOMMAND_H_
+#pragma once
 
 class CsCancelTicketCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CSCANCELTICKETCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STRINGLIST_H_
-#define STRINGLIST_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -40,5 +39,3 @@ public:
 		return optionCount;
 	}
 };
-
-#endif

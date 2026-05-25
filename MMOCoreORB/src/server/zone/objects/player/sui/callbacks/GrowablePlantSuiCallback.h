@@ -1,5 +1,4 @@
-#ifndef GROWABLEPLANTSUICALLBACK_H_
-#define GROWABLEPLANTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -115,5 +114,3 @@ public:
 		resource->setQuantity(quantity - 25, true);
 	}
 };
-
-#endif /* GROWABLEPLANTSUICALLBACK_H_ */

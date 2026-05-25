@@ -1,6 +1,5 @@
 
-#ifndef PETTRANSFERCOMMAND_H_
-#define PETTRANSFERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -131,5 +130,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* PETTRANSFERCOMMAND_H_ */

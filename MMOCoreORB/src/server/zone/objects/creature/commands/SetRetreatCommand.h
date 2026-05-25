@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETRETREATCOMMAND_H_
-#define SETRETREATCOMMAND_H_
+#pragma once
 
 #include "SquadLeaderCommand.h"
 
@@ -60,5 +59,3 @@ public:
 	}
 
 };
-
-#endif //SETRETREATCOMMAND_H_

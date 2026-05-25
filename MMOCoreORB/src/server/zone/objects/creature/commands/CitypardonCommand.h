@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CITYPARDONCOMMAND_H_
-#define CITYPARDONCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -61,5 +60,3 @@ public:
 	}
 
 };
-
-#endif //CITYPARDONCOMMAND_H_

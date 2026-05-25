@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MOCKDIRECTORMANAGER_H_
-#define MOCKDIRECTORMANAGER_H_
+#pragma once
 
 #include "DirectorManager.h"
 
@@ -23,5 +22,3 @@ public:
 }
 
 using namespace server::zone::managers::director;
-
-#endif /* MOCKDIRECTORMANAGER_H_ */

@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef CREATEFACTORYOBJECTTASK_H_
-#define CREATEFACTORYOBJECTTASK_H_
+#pragma once
 
 #include "server/zone/objects/installation/factory/FactoryObject.h"
 
@@ -23,5 +22,3 @@ public:
 		factoryObject->createNewObject();
 	}
 };
-
-#endif /*CREATEFACTORYOBJECTTASK_H_*/

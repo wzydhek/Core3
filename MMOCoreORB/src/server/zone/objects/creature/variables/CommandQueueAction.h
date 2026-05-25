@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMMANDQUEUEACTION_H_
-#define COMMANDQUEUEACTION_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -110,5 +109,3 @@ public:
 	}
 
 };
-
-#endif /*COMMANDQUEUEACTION_H_*/

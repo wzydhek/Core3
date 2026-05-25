@@ -5,8 +5,7 @@
  *      Author: chris.rush
  */
 
-#ifndef HEAVYWEAPONQUEUECOMMAND_H_
-#define HEAVYWEAPONQUEUECOMMAND_H_
+#pragma once
 
 #include"server/zone/ZoneServer.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -61,5 +60,3 @@ public:
 	}
 
 };
-
-#endif /* HEAVYWEAPONQUEUECOMMAND_H_ */

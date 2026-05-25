@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDCREATEABBREVRESPONSESUICALLBACK_H_
-#define GUILDCREATEABBREVRESPONSESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
@@ -74,6 +73,3 @@ public:
 		player->sendMessage(suiBox->generateMessage());
 	}
 };
-
-
-#endif /* GUILDCREATEABBREVRESPONSESUICALLBACK_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDCOUNTINGOBJECTTEMPLATE_H_
-#define SHAREDCOUNTINGOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -68,6 +67,3 @@ public:
 		iffStream->closeForm('SCOU');
 	}
 };
-
-
-#endif /* SHAREDCOUNTINGOBJECTTEMPLATE_H_ */

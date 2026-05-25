@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef REPLACEFLASHSPEEDERSUICALLBACK_H_
-#define REPLACEFLASHSPEEDERSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/transaction/TransactionLog.h"
@@ -65,5 +64,3 @@ public:
 
 	}
 };
-
-#endif /* REPLACEFLASHSPEEDERSUICALLBACK_H_ */

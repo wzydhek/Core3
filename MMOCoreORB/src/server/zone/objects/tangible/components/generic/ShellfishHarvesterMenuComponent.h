@@ -5,8 +5,7 @@
  *      Author: TragD
  */
 
-#ifndef SHELLFISHHARVESTERMENUCOMPONENT_H_
-#define SHELLFISHHARVESTERMENUCOMPONENT_H_
+#pragma once
 
 #include "../TangibleObjectMenuComponent.h"
 
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* SHELLFISHHARVESTERMENUCOMPONENT_H_ */

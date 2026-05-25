@@ -4,8 +4,7 @@
  * @created     : Tuesday Mar 19, 2019 19:49:39 CET
  */
 
-#ifndef OBJECTDATABASECORESIGNALS_H
-#define OBJECTDATABASECORESIGNALS_H
+#pragma once
 
 #include "engine/engine.h"
 #include "system/lang/SignalException.h"
@@ -23,7 +22,3 @@ class ODB3SignalHandler {
 			return signal;
 		}
 };
-
-
-#endif /* end of include guard OBJECTDATABASECORESIGNALS_H */
-

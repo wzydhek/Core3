@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef SHUTTLEMAP_H_
-#define SHUTTLEMAP_H_
+#pragma once
 
 #include "server/zone/objects/building/tasks/ShuttleDepartureTask.h"
 #include "engine/engine.h"
@@ -18,5 +17,3 @@ public:
 		setNullValue(nullptr);
 	}
 };
-
-#endif /* SHUTTLEMAP_H_ */

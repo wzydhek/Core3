@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef SHUTDOWNSEQUENCETASK_H_
-#define SHUTDOWNSEQUENCETASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 
@@ -40,5 +39,3 @@ public:
 
 	}
 };
-
-#endif /* SHUTDOWNSEQUENCETASK_H_ */

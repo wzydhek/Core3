@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GMJEDISTATECOMMAND_H_
-#define GMJEDISTATECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -47,5 +46,3 @@ public:
 	}
 
 };
-
-#endif //GMJEDISTATECOMMAND_H_

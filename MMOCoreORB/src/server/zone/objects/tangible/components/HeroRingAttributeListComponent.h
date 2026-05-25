@@ -1,6 +1,5 @@
 
-#ifndef HERORINGATTIBUTELISTCOMPONENT_H_
-#define HERORINGATTIBUTELISTCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/AttributeListComponent.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -67,5 +66,3 @@ public:
 		return buffer.toString();
 	}
 };
-
-#endif /* HERORINGATTIBUTELISTCOMPONENT_H_ */

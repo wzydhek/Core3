@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CUSTOMIZEVEHICLECOMMAND_H_
-#define CUSTOMIZEVEHICLECOMMAND_H_
+#pragma once
 
 class CustomizeVehicleCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CUSTOMIZEVEHICLECOMMAND_H_

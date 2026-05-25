@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DELTABITARRAY_H_
-#define DELTABITARRAY_H_
+#pragma once
 
 #include "DeltaVector.h"
 #include "engine/engine.h"
@@ -73,6 +72,3 @@ public:
 		return size() * 8;
 	}
 };
-
-
-#endif /* DELTABITARRAY_H_ */

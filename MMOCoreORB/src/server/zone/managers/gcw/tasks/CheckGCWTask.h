@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef CHECKGCWTASK_H_
-#define CHECKGCWTASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 #include "server/zone/Zone.h"
@@ -41,5 +40,3 @@ public:
 		strongRef->performGCWTasks();
 	}
 };
-
-#endif /* CHECKGCWTASK_H_ */

@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef REMOVEDROIDSTRUCTURESUICALLBACK_H_
-#define REMOVEDROIDSTRUCTURESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/components/droid/DroidMaintenanceModuleDataComponent.h"
@@ -44,6 +43,3 @@ public:
 
 	}
 };
-
-
-#endif /* REMOVEDROIDSTRUCTURESUICALLBACK_H_ */

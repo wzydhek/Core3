@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SYSTEMMESSAGECOMMAND_H_
-#define SYSTEMMESSAGECOMMAND_H_
+#pragma once
 
 class SystemMessageCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SYSTEMMESSAGECOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TERRAINAPPEARANCE_H_
-#define TERRAINAPPEARANCE_H_
+#pragma once
 
 #include "system/lang/Object.h"
 #include "engine/util/iffstream/IffStream.h"
@@ -24,5 +23,3 @@ public:
 		return false;
 	}
 };
-
-#endif /* TERRAINAPPEARANCE_H_ */

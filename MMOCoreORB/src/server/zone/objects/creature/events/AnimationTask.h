@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ANIMATIONTASK_H_
-#define ANIMATIONTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -25,5 +24,3 @@ public:
 		creature->doAnimation(animation);
 	}
 };
-
-#endif /* ANIMATIONTASK_H_ */

@@ -1,6 +1,5 @@
 
-#ifndef GUILDUPDATEEVENT_H_
-#define GUILDUPDATEEVENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/guild/GuildObject.h"
@@ -54,5 +53,3 @@ public:
 }
 
 using namespace server::zone::objects::guild;
-
-#endif /* GUILDUPDATEEVENT_H_ */

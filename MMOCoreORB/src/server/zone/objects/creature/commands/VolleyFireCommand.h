@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef VOLLEYFIRECOMMAND_H_
-#define VOLLEYFIRECOMMAND_H_
+#pragma once
 
 #include "SquadLeaderCommand.h"
 #include "server/zone/managers/skill/SkillModManager.h"
@@ -104,5 +103,3 @@ public:
 	}
 
 };
-
-#endif //VOLLEYFIRECOMMAND_H_

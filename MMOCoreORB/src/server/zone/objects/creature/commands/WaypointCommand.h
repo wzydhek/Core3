@@ -3,8 +3,7 @@
 	See file COPYING for copying conditions.
 */
 
-#ifndef WAYPOINTCOMMAND_H_
-#define WAYPOINTCOMMAND_H_
+#pragma once
 
 // #define WAYPOINT_DEBUG
 
@@ -271,5 +270,3 @@ public:
 		}
 	}
 };
-
-#endif // WAYPOINTCOMMAND_H_

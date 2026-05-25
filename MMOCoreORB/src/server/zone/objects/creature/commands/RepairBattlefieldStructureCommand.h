@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REPAIRBATTLEFIELDSTRUCTURECOMMAND_H_
-#define REPAIRBATTLEFIELDSTRUCTURECOMMAND_H_
+#pragma once
 
 class RepairBattlefieldStructureCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //REPAIRBATTLEFIELDSTRUCTURECOMMAND_H_

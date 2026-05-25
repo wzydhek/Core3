@@ -1,8 +1,6 @@
-#ifndef IF_H_
-#define IF_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/decorator/Decorator.h"
-
 #include <cassert>
 
 namespace server {
@@ -37,5 +35,3 @@ public:
 }
 }
 }
-
-#endif // IF_H_

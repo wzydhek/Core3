@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef CRAFTINGTOOLTEMPLATE_H_
-#define CRAFTINGTOOLTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -63,5 +62,3 @@ public:
 	}
 
 };
-
-#endif /* CRAFTINGTOOLTEMPLATE_H_ */

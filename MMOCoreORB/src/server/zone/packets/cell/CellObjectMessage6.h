@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CELLOBJECTMESSAGE6_H_
-#define CELLOBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 
@@ -53,5 +52,3 @@ Pre-CU:
 		//System::out << msg.toString();
 	}
 };
-
-#endif /*CELLOBJECTMESSAGE6_H_*/

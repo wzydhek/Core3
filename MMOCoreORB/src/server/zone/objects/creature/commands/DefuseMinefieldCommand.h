@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DEFUSEMINEFIELDCOMMAND_H_
-#define DEFUSEMINEFIELDCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/gcw/tasks/DefuseMineTask.h"
 
@@ -78,5 +77,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // DEFUSEMINEFIELDCOMMAND_H_

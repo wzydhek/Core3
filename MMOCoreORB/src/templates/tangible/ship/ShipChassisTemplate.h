@@ -5,8 +5,7 @@
  *  Author: hakry
  */
 
-#ifndef SHIPCHASSISTEMPLATE_H_
-#define SHIPCHASSISTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/ship/ShipComponentTemplate.h"
 
@@ -81,5 +80,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* SHIPCHASSISTEMPLATE_H_ */

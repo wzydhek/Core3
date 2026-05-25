@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTSURVEYCOMMAND_H_
-#define REQUESTSURVEYCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/resource/resourcespawner/SampleTask.h"
 #include "server/zone/objects/player/sessions/survey/SurveySession.h"
@@ -67,5 +66,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTSURVEYCOMMAND_H_

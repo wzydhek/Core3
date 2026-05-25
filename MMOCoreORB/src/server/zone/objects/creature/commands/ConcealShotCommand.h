@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CONCEALSHOTCOMMAND_H_
-#define CONCEALSHOTCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -92,5 +91,3 @@ public:
 	}
 
 };
-
-#endif //CONCEALSHOTCOMMAND_H_

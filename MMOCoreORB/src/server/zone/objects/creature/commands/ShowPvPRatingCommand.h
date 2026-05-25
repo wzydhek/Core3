@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SHOWPVPRATINGCOMMAND_H_
-#define SHOWPVPRATINGCOMMAND_H_
+#pragma once
 
 class ShowPvPRatingCommand : public QueueCommand {
 public:
@@ -62,5 +61,3 @@ public:
 	}
 
 };
-
-#endif //SHOWPVPRATINGCOMMAND_H_

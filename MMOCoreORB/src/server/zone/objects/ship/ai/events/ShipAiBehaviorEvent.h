@@ -2,8 +2,7 @@
  * ShipAiBehaviorEvent.h
  */
 
-#ifndef SHIPAIBEHAVIOREVENT_H_
-#define SHIPAIBEHAVIOREVENT_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 #include "server/zone/managers/space/SpaceAiMap.h"
@@ -147,5 +146,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::ship::events;
-
-#endif /* SHIPAIBEHAVIOREVENT_H_ */

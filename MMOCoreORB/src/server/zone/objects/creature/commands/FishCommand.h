@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FISHCOMMAND_H_
-#define FISHCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/managers/minigames/FishingManager.h"
@@ -41,5 +40,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // FISHCOMMAND_H_

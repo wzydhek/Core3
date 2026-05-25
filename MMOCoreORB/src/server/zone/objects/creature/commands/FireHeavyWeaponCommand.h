@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FIREHEAVYWEAPONCOMMAND_H_
-#define FIREHEAVYWEAPONCOMMAND_H_
+#pragma once
 
 class FireHeavyWeaponCommand : public CombatQueueCommand {
 public:
@@ -95,5 +94,3 @@ public:
 	}
 
 };
-
-#endif //FIREHEAVYWEAPONCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OBJVARCOMMAND_H_
-#define OBJVARCOMMAND_H_
+#pragma once
 
 class ObjvarCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //OBJVARCOMMAND_H_

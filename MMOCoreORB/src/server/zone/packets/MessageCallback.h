@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef MESSAGECALLBACK_H_
-#define MESSAGECALLBACK_H_
+#pragma once
 
 #include "engine/core/Task.h"
 #include "engine/log/Logger.h"
@@ -67,6 +66,3 @@ namespace packets {
 }
 
 using namespace server::zone::packets;
-
-
-#endif /* MESSAGECALLBACK_H_ */

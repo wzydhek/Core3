@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef DAMAGEOVERTIME_H_
-#define DAMAGEOVERTIME_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
 
 namespace server {
@@ -161,5 +159,3 @@ public:
 		return secondaryStrength;
 	}
 };
-
-#endif /* DAMAGEOVERTIME_H_ */

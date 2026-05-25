@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DEACTIVATEQUESTCOMMAND_H_
-#define DEACTIVATEQUESTCOMMAND_H_
+#pragma once
 
 class DeactivateQuestCommand : public QueueCommand {
 public:
@@ -61,5 +60,3 @@ public:
 	}
 
 };
-
-#endif //DEACTIVATEQUESTCOMMAND_H_

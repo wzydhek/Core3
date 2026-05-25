@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCEKNOCKDOWN2COMMAND_H_
-#define FORCEKNOCKDOWN2COMMAND_H_
+#pragma once
 
 #include "ForcePowersQueueCommand.h"
 
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif //FORCEKNOCKDOWN2COMMAND_H_

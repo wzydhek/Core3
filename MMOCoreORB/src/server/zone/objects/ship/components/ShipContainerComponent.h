@@ -2,8 +2,7 @@
  * PobShipContainerComponent.h
  */
 
-#ifndef SHIPCONTAINERCOMPONENT_H_
-#define SHIPCONTAINERCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
@@ -16,5 +15,3 @@ public:
 	virtual bool checkContainerPermission(SceneObject* sceneObject, CreatureObject* creature, uint16 permission) const;
 	virtual bool transferObject(SceneObject* sceneObject, SceneObject* object, int containmentType, bool notifyClient = false, bool allowOverflow = false, bool notifyRoot = true) const;
 };
-
-#endif /* SHIPCONTAINERCOMPONENT_H_ */

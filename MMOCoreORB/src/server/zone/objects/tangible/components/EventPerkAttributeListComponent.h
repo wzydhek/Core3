@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef EVENTPERKATTRIBUTELISTCOMPONENT_H_
-#define EVENTPERKATTRIBUTELISTCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/AttributeListComponent.h"
 #include "server/zone/objects/tangible/components/EventPerkDataComponent.h"
@@ -57,5 +56,3 @@ public:
 		}
 	}
 };
-
-#endif /* EVENTPERKATTRIBUTELISTCOMPONENT_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef THROWGRENADECOMMAND_H_
-#define THROWGRENADECOMMAND_H_
+#pragma once
 
 #include "engine/core/TaskManager.h"
 
@@ -124,5 +123,3 @@ public:
 		return CombatManager::instance()->calculateWeaponAttackSpeed(object, grenade, speedMultiplier);
 	}
 };
-
-#endif // THROWGRENADECOMMAND_H_

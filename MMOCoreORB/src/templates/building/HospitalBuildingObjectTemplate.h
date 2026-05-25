@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef HOSPITALBUILDINGOBJECTTEMPLATE_H_
-#define HOSPITALBUILDINGOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/building/SharedBuildingObjectTemplate.h"
 
@@ -53,6 +52,3 @@ public:
 		return mindWoundRegenRate;
 	}
 };
-
-
-#endif /* HOSPITALBUILDINGOBJECTTEMPLATE_H_ */

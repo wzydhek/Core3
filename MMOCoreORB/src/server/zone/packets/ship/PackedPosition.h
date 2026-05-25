@@ -5,8 +5,7 @@
  *	  Author: TheAnswer
  */
 
-#ifndef PACKEDPOSITION_H_
-#define PACKEDPOSITION_H_
+#pragma once
 
 #include "PackedUnitVector.h"
 #include "engine/util/u3d/Vector3.h"
@@ -54,5 +53,3 @@ public:
 		return Vector3(x,y,z) * inversePositionScale;
 	}
 };
-
-#endif /* PACKEDPOSITION_H_ */

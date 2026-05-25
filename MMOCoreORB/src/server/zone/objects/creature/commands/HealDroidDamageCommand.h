@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HEALDROIDDAMAGECOMMAND_H_
-#define HEALDROIDDAMAGECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/ai/DroidObject.h"
@@ -222,5 +221,3 @@ public:
 	}
 
 };
-
-#endif //HEALDROIDDAMAGECOMMAND_H_

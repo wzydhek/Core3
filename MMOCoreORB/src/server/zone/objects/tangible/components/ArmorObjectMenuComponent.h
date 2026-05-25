@@ -6,9 +6,8 @@
  *		Credits: TA & Valk
  */
 
-#ifndef ARMOROBJECTMENUCOMPONENT_H_
-#define ARMOROBJECTMENUCOMPONENT_H_
- 
+#pragma once
+
 #include "WearableObjectMenuComponent.h"
 
 class ArmorObjectMenuComponent : public WearableObjectMenuComponent {
@@ -33,6 +32,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-#endif /* ARMOROBJECTMENUCOMPONENT_H_ */
-

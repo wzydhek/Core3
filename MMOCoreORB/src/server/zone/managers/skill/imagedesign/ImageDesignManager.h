@@ -5,8 +5,7 @@
  *      Author: Polonel
  */
 
-#ifndef IMAGEDESIGNMANAGER_H_
-#define IMAGEDESIGNMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/scene/variables/CustomizationVariables.h"
@@ -46,5 +45,3 @@ public:
 	static bool validateCustomizationString(CustomizationVariables* data, const String& appearanceFilename);
 	static bool validatePalette(PaletteColorCustomizationVariable* variable, int value);
 };
-
-#endif /* IMAGEDESIGNMANAGER_H_ */

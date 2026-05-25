@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STATICOBJECTMESSAGE6_H_
-#define STATICOBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
-
 #include "server/zone/objects/staticobject/StaticObject.h"
 
 class StaticObjectMessage6 : public BaseLineMessage {
@@ -23,5 +21,3 @@ public:
 	}
 	
 };
-
-#endif /*STATICOBJECTMESSAGE6_H_*/

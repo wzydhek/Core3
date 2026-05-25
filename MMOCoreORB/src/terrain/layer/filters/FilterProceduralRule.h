@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FILTERPROCEDURALRULE_H_
-#define FILTERPROCEDURALRULE_H_
+#pragma once
 
 #include "../InformationHeader.h"
 
@@ -85,6 +84,3 @@ public:
 	}
 
 };
-
-
-#endif /* FILTERPROCEDURALRULE_H_ */

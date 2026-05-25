@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef PETTRICKCOMMAND_H_
-#define PETTRICKCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -114,5 +113,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* PETTRICKCOMMAND_H_ */

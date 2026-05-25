@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETIGNORELISTCOMMAND_H_
-#define GETIGNORELISTCOMMAND_H_
+#pragma once
 
 class GetIgnoreListCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GETIGNORELISTCOMMAND_H_

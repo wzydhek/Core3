@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHANGEMUSICCOMMAND_H_
-#define CHANGEMUSICCOMMAND_H_
+#pragma once
 
 #include "StartMusicCommand.h"
 
@@ -107,5 +106,3 @@ public:
 	}
 
 };
-
-#endif //CHANGEMUSICCOMMAND_H_

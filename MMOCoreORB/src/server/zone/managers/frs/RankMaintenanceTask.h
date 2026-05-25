@@ -1,5 +1,4 @@
-#ifndef RANKMAINTENANCETASK_H_
-#define RANKMAINTENANCETASK_H_
+#pragma once
 
 #include "server/zone/managers/frs/FrsManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -72,5 +71,3 @@ public:
 }
 }
 }
-
-#endif /* RANKMAINTENANCETASK_H_ */

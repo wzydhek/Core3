@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef HOLOCRONMANAGER_H_
-#define HOLOCRONMANAGER_H_
+#pragma once
 
 #include "BugCategory.h"
 
@@ -58,5 +57,3 @@ namespace server {
 }
 
 using namespace server::zone::managers::holocron;
-
-#endif /* HOLOCRONMANAGER_H_ */

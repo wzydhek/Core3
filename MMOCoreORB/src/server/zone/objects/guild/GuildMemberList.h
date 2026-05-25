@@ -5,11 +5,9 @@
  *      Author: crush
  */
 
-#ifndef GUILDMEMBERLIST_H_
-#define GUILDMEMBERLIST_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "GuildMemberInfo.h"
 
 namespace server {
@@ -30,6 +28,3 @@ namespace server {
 }
 
 using namespace server::zone::objects::guild;
-
-
-#endif /* GUILDMEMBERLIST_H_ */

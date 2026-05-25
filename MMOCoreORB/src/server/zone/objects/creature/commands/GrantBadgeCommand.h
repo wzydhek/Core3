@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GRANTBADGECOMMAND_H_
-#define GRANTBADGECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -163,5 +162,3 @@ public:
 	}
 
 };
-
-#endif //GRANTBADGECOMMAND_H_

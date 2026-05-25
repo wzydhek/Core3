@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATONCONNECTAVATAR_H_
-#define CHATONCONNECTAVATAR_H_
+#pragma once
 
 //Mail - "You got mail"
 //ChatOnConnectAvatar
@@ -18,5 +17,3 @@ public:
 	} 
 	
 };
-
-#endif /*CHATONCONNECTAVATAR_H_*/

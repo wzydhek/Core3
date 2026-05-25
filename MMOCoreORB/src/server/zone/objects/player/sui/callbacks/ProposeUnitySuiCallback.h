@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef PROPOSEUNITYSUICALLBACK_H_
-#define PROPOSEUNITYSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -34,5 +33,3 @@ public:
 
 	}
 };
-
-#endif /* PROPOSEUNITYSUICALLBACK_H_ */

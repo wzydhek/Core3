@@ -2,17 +2,13 @@
 // Created by theanswer on 6/18/17.
 //
 
-#ifndef CORE3_PATHFINDCOMMAND_H
-#define CORE3_PATHFINDCOMMAND_H
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
-
 #include "server/zone/managers/collision/PathFinderManager.h"
 #include "server/zone/managers/collision/CollisionManager.h"
-
 #include "server/zone/packets/ui/CreateClientPathMessage.h"
 #include "server/zone/packets/ui/DestroyClientPathMessage.h"
 
@@ -83,5 +79,3 @@ public:
 		player->sendSystemMessage("Syntax: /server pathfind <x> <y>");
 	}
 };
-
-#endif //CORE3_PATHFINDCOMMAND_H

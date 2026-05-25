@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SUIEVENTNOTIFICATIONCALLBACK_H_
-#define SUIEVENTNOTIFICATIONCALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/sui/SuiManager.h"
@@ -48,6 +47,3 @@ public:
 		server->getSuiManager()->handleSuiEventNotification(pageId, playerCreature, eventIndex, &arguments);
 	}
 };
-
-
-#endif /* SUIEVENTNOTIFICATIONCALLBACK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETMAXIMUMSPAWNTIMECOMMAND_H_
-#define SETMAXIMUMSPAWNTIMECOMMAND_H_
+#pragma once
 
 class SetMaximumSpawnTimeCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETMAXIMUMSPAWNTIMECOMMAND_H_

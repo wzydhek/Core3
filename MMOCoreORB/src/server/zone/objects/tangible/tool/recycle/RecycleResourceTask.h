@@ -1,6 +1,5 @@
 
-#ifndef RECYCLERESOURCETASK_H_
-#define RECYCLERESOURCETASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/managers/resource/ResourceManager.h"
@@ -133,5 +132,3 @@ public:
 		TransferItemMiscCommand::doTransferItemMisc(player, insertedItem, inventory, -1, trx);
 	}
 };
-
-#endif /* RECYCLERESOURCETASK_H_ */

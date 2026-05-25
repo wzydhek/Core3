@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CITYINFOCOMMAND_H_
-#define CITYINFOCOMMAND_H_
+#pragma once
 
 class CityInfoCommand : public QueueCommand {
 public:
@@ -59,5 +58,3 @@ public:
 		creature->sendSystemMessage(syntax);
 	}
 };
-
-#endif //CITYINFOCOMMAND_H_

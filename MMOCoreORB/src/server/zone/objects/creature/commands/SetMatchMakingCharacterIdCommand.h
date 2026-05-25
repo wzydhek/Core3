@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETMATCHMAKINGCHARACTERIDCOMMAND_H_
-#define SETMATCHMAKINGCHARACTERIDCOMMAND_H_
+#pragma once
 
 class SetMatchMakingCharacterIdCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETMATCHMAKINGCHARACTERIDCOMMAND_H_

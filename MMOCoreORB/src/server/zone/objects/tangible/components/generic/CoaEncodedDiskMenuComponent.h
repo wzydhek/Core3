@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef COAENCODEDDISKMENUCOMPONENT_H_
-#define COAENCODEDDISKMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -34,6 +33,3 @@ private:
 
 	bool isDecoded(TangibleObject* disk) const;
 };
-
-
-#endif /* COAENCODEDDISKMENUCOMPONENT_H_ */

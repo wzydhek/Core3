@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FEATURES_H_
-#define FEATURES_H_
+#pragma once
 
 #include "system/lang.h"
 #include "system/util/HashTable.h"
@@ -27,5 +26,3 @@ public:
 
 }
 }
-
-#endif /* FEATURES_H_ */

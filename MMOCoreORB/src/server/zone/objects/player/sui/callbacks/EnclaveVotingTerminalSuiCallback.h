@@ -1,5 +1,4 @@
-#ifndef ENCLAVEVOTINGTERMINALSUICALLBACK_H_
-#define ENCLAVEVOTINGTERMINALSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/frs/FrsManager.h"
@@ -112,5 +111,3 @@ public:
 		}
 	}
 };
-
-#endif /* ENCLAVEVOTINGTERMINALSUICALLBACK_H_ */

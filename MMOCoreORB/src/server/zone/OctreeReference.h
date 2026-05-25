@@ -1,22 +1,16 @@
-#ifndef OCTREEREFERENCE_H_
-#define OCTREEREFERENCE_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/Octree.h"
 
 #ifdef WITH_STM
-class OctreeReference : public TransactionalReference<Octree*> {
+	class OctreeReference : public TransactionalReference<Octree*> {
 #else
-class OctreeReference : public Reference<server::zone::Octree*> {
+	class OctreeReference : public Reference<server::zone::Octree*> {
 #endif
-public:
-	bool toBinaryStream(ObjectOutputStream* stream);
-	bool parseFromBinaryStream(ObjectInputStream* stream);
+	public:
+		bool toBinaryStream(ObjectOutputStream* stream);
+		bool parseFromBinaryStream(ObjectInputStream* stream);
 
-	server::zone::Octree* operator=(server::zone::Octree* obj);
-};
-
-
-
-#endif /* OCTREEREFERENCE_H_ */
+		server::zone::Octree* operator=(server::zone::Octree* obj);
+	};

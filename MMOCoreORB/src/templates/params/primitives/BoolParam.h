@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef BOOLPARAM_H_
-#define BOOLPARAM_H_
+#pragma once
 
 #include "templates/params/TemplateBase.h"
 
@@ -57,6 +56,3 @@ public:
 		}*/
 	}
 };
-
-
-#endif /* BOOLPARAM_H_ */

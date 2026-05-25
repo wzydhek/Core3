@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ABORTTRADEMESSAGECALLBACK_H_
-#define ABORTTRADEMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -40,5 +39,3 @@ public:
 		playerMan->handleAbortTradeMessage(player);
 	}
 };
-
-#endif /* ABORTTRADEMESSAGECALLBACK_H_ */

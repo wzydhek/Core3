@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TANGIBLEOBJECTMENUCOMPONENT_H_
-#define TANGIBLEOBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
 #include "server/zone/managers/radial/RadialOptions.h"
@@ -33,6 +32,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* TANGIBLEOBJECTMENUCOMPONENT_H_ */

@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef CLOSELOTTERYCONTAINERCOMMAND_H_
-#define CLOSELOTTERYCONTAINERCOMMAND_H_
+#pragma once
 
 class CloseLotteryContainerCommand : public QueueCommand {
 public:
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif /* CLOSELOTTERYCONTAINERCOMMAND_H_ */

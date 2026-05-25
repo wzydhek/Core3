@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PEACECOMMAND_H_
-#define PEACECOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/combat/CombatManager.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif //PEACECOMMAND_H_

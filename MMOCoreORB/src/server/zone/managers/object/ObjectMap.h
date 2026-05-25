@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OBJECTMAP_H_
-#define OBJECTMAP_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -35,5 +34,3 @@ public:
 		return &objects;
 	}
 };
-
-#endif /*OBJECTMAP_H_*/

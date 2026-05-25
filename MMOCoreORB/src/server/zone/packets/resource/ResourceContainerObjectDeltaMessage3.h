@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESOURCECONTAINEROBJECTDELTAMESSAGE3_H_
-#define RESOURCECONTAINEROBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/objects/resource/ResourceContainer.h"
 #include "server/zone/packets/DeltaMessage.h"
@@ -37,5 +36,3 @@ public:
 	}
 	
 };
-
-#endif /*RESOURCECONTAINEROBJECTDELTAMESSAGE3_H_*/

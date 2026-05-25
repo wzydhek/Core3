@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DATABASECOMMAND_H_
-#define DATABASECOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "QueueCommand.h"
 
 class DatabaseCommand : public QueueCommand {
@@ -203,5 +201,3 @@ private:
 		creature->sendSystemMessage(msg.toString());
 	}
 };
-
-#endif //DATABASECOMMAND_H_

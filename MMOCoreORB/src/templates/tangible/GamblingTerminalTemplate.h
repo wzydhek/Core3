@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef GAMBLINGTERMINALTEMPLATE_H_
-#define GAMBLINGTERMINALTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -40,7 +39,3 @@ public:
 		return true;
 	}
 };
-
-
-
-#endif /* GAMBLINGTERMINALTEMPLATE_H_ */

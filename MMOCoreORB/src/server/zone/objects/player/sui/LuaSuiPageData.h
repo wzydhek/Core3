@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef LUASUIPAGEDATA_H_
-#define LUASUIPAGEDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/player/sui/SuiPageData.h"
@@ -43,5 +42,3 @@ public:
 private:
 	Reference<SuiPageData*> realObject;
 };
-
-#endif /* LUASUIPAGEDATA_H_ */

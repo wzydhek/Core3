@@ -5,8 +5,7 @@
  * Author: Hakry
  */
 
-#ifndef DESPAWNSHIPAGENTTASK_H_
-#define DESPAWNSHIPAGENTTASK_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 #include "server/zone/Zone.h"
@@ -42,5 +41,3 @@ public:
 		}
 	}
 };
-
-#endif /* DESPAWNSHIPAGENTTASK_H_ */

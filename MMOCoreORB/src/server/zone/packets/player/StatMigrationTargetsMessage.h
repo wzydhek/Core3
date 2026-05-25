@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STATMIGRATIONTARGETSMESSAGE_H_
-#define STATMIGRATIONTARGETSMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -44,5 +43,3 @@ public:
 	}
 
 };
-
-#endif /*STATMIGRATIONTARGETSMESSAGE_H_*/

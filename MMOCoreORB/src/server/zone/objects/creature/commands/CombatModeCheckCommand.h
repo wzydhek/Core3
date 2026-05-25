@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMBATMODECHECKCOMMAND_H_
-#define COMBATMODECHECKCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 
@@ -39,5 +38,3 @@ public:
 	}
 
 };
-
-#endif //COMBATMODECHECKCOMMAND_H_

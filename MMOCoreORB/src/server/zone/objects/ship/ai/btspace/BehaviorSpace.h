@@ -2,8 +2,7 @@
  * BehaviorSpace.h
  */
 
-#ifndef BEHAVIORSPACE_H_
-#define BEHAVIORSPACE_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/lua/LuaObject.h"
@@ -201,5 +200,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif /* BEHAVIORSPACE_H_ */

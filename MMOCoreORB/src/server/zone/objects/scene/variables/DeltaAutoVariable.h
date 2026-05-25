@@ -1,5 +1,4 @@
-#ifndef DELTAAUTOVARIABLE_H_
-#define DELTAAUTOVARIABLE_H_
+#pragma once
 
 #include "DeltaBasicVariable.h"
 #include "server/zone/packets/DeltaMessage.h"
@@ -53,5 +52,3 @@ public:
 		}
 	}
 };
-
-#endif // DELTAAUTOVARIABLE_H_

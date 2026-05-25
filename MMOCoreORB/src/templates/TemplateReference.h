@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef TEMPLATEREFERENCE_H_
-#define TEMPLATEREFERENCE_H_
+#pragma once
 
 #include "templates/manager/TemplateManager.h"
-
 #include "engine/util/json_utils.h"
 
 template<class O> class TemplateReference : public Reference<O> {
@@ -130,6 +128,3 @@ public:
 #endif
 	}
 };
-
-
-#endif /* TEMPLATEREFERENCE_H_ */

@@ -1,5 +1,4 @@
-#ifndef NAMEUNIQUE_H_
-#define NAMEUNIQUE_H_
+#pragma once
 
 class NameUnique : public Object {
 
@@ -37,5 +36,3 @@ public:
 		return type;
 	}
 };
-
-#endif /* NAMEUNIQUE_H_ */

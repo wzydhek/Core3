@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTSTATMIGRATIONSTARTCOMMAND_H_
-#define REQUESTSTATMIGRATIONSTARTCOMMAND_H_
+#pragma once
 
 class RequestStatMigrationStartCommand : public QueueCommand {
 public:
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTSTATMIGRATIONSTARTCOMMAND_H_

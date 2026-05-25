@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef POSTUREMESSAGE_H_
-#define POSTUREMESSAGE_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -14,5 +13,3 @@ public:
 		insertByte(0x01);
 	}
 };
-
-#endif /*POSTUREMESSAGE_H_*/

@@ -5,8 +5,7 @@
  *  Author: Hakry
  */
 
-#ifndef ShipAgentTemplate_H_
-#define ShipAgentTemplate_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/params/ship/ShipFlag.h"
@@ -242,5 +241,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::ship::ai;
-
-#endif /* ShipAgentTemplate_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ATTRIBUTESMAP_H_
-#define ATTRIBUTESMAP_H_
+#pragma once
 
 #include "ValuesClasses.h"
 #include "system/util/Vector.h"
@@ -168,5 +167,3 @@ public:
 		attributeValues.removeAll();
 	}
 };
-
-#endif /*ATTRIBUTESMAP_H_*/

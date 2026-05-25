@@ -5,8 +5,7 @@
  * Author: Hakry
  */
 
-#ifndef SPAWNLAIRMOBILETASK_H_
-#define SPAWNLAIRMOBILETASK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/LairObject.h"
 #include "server/zone/managers/creature/LairObserver.h"
@@ -58,5 +57,3 @@ public:
 		lairObserver->spawnLairMobile(lairObject, spawnNumber, mobileString, spawnPassive);
 	}
 };
-
-#endif /* SPAWNLAIRMOBILETASK_H_ */

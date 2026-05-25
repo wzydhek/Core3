@@ -4,8 +4,7 @@
  *      Author: gslomin
  */
 
-#ifndef CYLINDERVOLUME_H_
-#define CYLINDERVOLUME_H_
+#pragma once
 
 #include "BaseBoundingVolume.h"
 
@@ -25,5 +24,3 @@ public:
 	virtual osg::ref_ptr<osg::Node> draw() const;
 #endif
 };
-
-#endif /* CYLINDERVOLUME_H_ */

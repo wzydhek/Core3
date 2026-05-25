@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTRESOURCEWEIGHTSCOMMAND_H_
-#define REQUESTRESOURCEWEIGHTSCOMMAND_H_
+#pragma once
 
 class RequestResourceWeightsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTRESOURCEWEIGHTSCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef EJECTOBJECTEVENT_H_
-#define EJECTOBJECTEVENT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -54,6 +53,3 @@ public:
 		object->updateZone(true, true);
 	}
 };
-
-
-#endif /* EJECTOBJECTEVENT_H_ */

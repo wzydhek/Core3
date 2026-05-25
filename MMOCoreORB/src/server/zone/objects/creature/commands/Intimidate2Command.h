@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INTIMIDATE2COMMAND_H_
-#define INTIMIDATE2COMMAND_H_
+#pragma once
 
 #include "server/zone/packets/object/CombatSpam.h"
 #include "CombatQueueCommand.h"
@@ -48,5 +47,3 @@ public:
 	}
 
 };
-
-#endif //INTIMIDATE2COMMAND_H_

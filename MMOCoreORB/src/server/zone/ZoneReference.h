@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef ZONEREFERENCE_H_
-#define ZONEREFERENCE_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util//json_utils.h"
@@ -38,5 +37,3 @@ void to_json(nlohmann::json& j, const ZoneReference& p);
 }
 
 using namespace server::zone;
-
-#endif /* ZONEREFERENCE_H_ */

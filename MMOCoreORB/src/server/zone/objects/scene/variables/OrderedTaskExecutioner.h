@@ -6,8 +6,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef SRC_SERVER_ZONE_OBJECTS_SCENE_VARIABLES_ORDEREDTASKEXECUTIONER_H_
-#define SRC_SERVER_ZONE_OBJECTS_SCENE_VARIABLES_ORDEREDTASKEXECUTIONER_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -83,5 +82,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif /* SRC_SERVER_ZONE_OBJECTS_SCENE_VARIABLES_ORDEREDTASKEXECUTIONER_H_ */

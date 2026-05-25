@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TERRAINMAPS_H_
-#define TERRAINMAPS_H_
+#pragma once
 
 #include "TemplateVariable.h"
 #include "TerrainMap.h"
@@ -57,6 +56,3 @@ public:
 		seedMap.readObject(iffStream);
 	}
 };
-
-
-#endif /* TERRAINMAPS_H_ */

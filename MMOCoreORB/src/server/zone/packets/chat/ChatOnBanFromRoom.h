@@ -5,8 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef CHATONBANFROMROOM_H_
-#define CHATONBANFROMROOM_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -36,5 +35,3 @@ public:
 	}
 
 };
-
-#endif /*CHATONBANFROMROOM_H_*/

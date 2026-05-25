@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ESCAPEPOD_H_
-#define ESCAPEPOD_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 #include "server/zone/objects/ship/events/DestroyShipTask.h"
@@ -48,5 +47,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // ESCAPEPOD_H_

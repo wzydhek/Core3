@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TENDDAMAGECOMMAND_H_
-#define TENDDAMAGECOMMAND_H_
+#pragma once
 
 #include "TendCommand.h"
 
@@ -27,5 +26,3 @@ public:
 	}
 
 };
-
-#endif //TENDDAMAGECOMMAND_H_

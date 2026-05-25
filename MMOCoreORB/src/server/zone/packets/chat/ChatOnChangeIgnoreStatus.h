@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATONCHANGEIGNORESTATUS_H_
-#define CHATONCHANGEIGNORESTATUS_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif /*CHATONCHANGEIGNORESTATUS_H_*/

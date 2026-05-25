@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HYPERSPACE_H_
-#define HYPERSPACE_H_
+#pragma once
 
 #include "QueueCommand.h"
 #include "server/zone/managers/ship/ShipManager.h"
@@ -104,5 +103,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //HYPERSPACE_H_

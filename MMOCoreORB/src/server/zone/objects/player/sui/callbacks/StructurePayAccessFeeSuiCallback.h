@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef STRUCTUREPAYACCESSFEESUICALLBACK_H_
-#define STRUCTUREPAYACCESSFEESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/building/BuildingObject.h"
@@ -36,5 +35,3 @@ public:
 
 	}
 };
-
-#endif /* STRUCTUREPAYACCESSFEESUICALLBACK_H_ */

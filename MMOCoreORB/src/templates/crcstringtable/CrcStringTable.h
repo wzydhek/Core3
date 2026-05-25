@@ -1,5 +1,4 @@
-#ifndef CRCSTRINGTABLE_H_
-#define CRCSTRINGTABLE_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 
@@ -16,5 +15,3 @@ public:
 		return tableData;
 	}
 };
-
-#endif /* CRCSTRINGTABLE_H_ */

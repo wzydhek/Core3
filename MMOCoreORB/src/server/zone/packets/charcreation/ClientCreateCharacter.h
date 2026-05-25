@@ -3,8 +3,7 @@
 *	See file COPYING for copying conditions.
 */
 
-#ifndef CLIENTCREATECHARACTER_H_
-#define CLIENTCREATECHARACTER_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -52,5 +51,3 @@ public:
 			false  // skip tutorial
 		) {}
 };
-
-#endif /*CLIENTCREATECHARACTER_H_*/

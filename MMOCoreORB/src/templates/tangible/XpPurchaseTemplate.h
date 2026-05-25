@@ -1,5 +1,4 @@
-#ifndef XPPURCHASETEMPLATE_H
-#define XPPURCHASETEMPLATE_H
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -65,6 +64,3 @@ public:
 	}
 
 };
-
-
-#endif /* XPPURCHASETEMPLATE_H */

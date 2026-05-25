@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef COMPOSITE_H_
-#define COMPOSITE_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/Behavior.h"
 
@@ -116,5 +115,3 @@ public:
 }
 }
 }
-
-#endif /* COMPOSITE_H_ */

@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef PLACESTRUCTURECOMPONENT_H_
-#define PLACESTRUCTURECOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/SceneObjectComponent.h"
 
@@ -39,6 +38,3 @@ public:
 	virtual int placeStructure(StructureDeed* deed, CreatureObject* creature, float x, float y, int angle) const;
 	virtual int notifyStructurePlaced(StructureDeed* deed, CreatureObject* creature, StructureObject* structure) const;
 };
-
-
-#endif /* PLACESTRUCTURECOMPONENT_H_ */

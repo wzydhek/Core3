@@ -8,8 +8,7 @@
 	Created On: 2025-10-09
 */
 
-#ifndef SQUADRONOBSERVER_H_
-#define SQUADRONOBSERVER_H_
+#pragma once
 
 #include "server/zone/objects/ship/squadron/ShipSquadronData.h"
 #include "engine/util/Observer.h"
@@ -80,5 +79,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::ship::ai;
-
-#endif /* SQUADRONOBSERVER_H_ */

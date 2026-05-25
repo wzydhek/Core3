@@ -1,11 +1,9 @@
 
-#ifndef FINDOBJECTSUICALLBACK_H_
-#define FINDOBJECTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/objectcontroller/ObjectController.h"
-
 
 class FindObjectSuiCallback : public SuiCallback {
 
@@ -97,5 +95,3 @@ public:
 		}
 	}
 };
-
-#endif /* FINDOBJECTSUICALLBACK_H_ */

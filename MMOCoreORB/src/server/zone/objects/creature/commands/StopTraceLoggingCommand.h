@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STOPTRACELOGGINGCOMMAND_H_
-#define STOPTRACELOGGINGCOMMAND_H_
+#pragma once
 
 class StopTraceLoggingCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //STOPTRACELOGGINGCOMMAND_H_

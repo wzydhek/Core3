@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REVIVEPLAYERCOMMAND_H_
-#define REVIVEPLAYERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/pharmaceutical/RevivePack.h"
@@ -250,5 +249,3 @@ public:
 	}
 
 };
-
-#endif //REVIVEPLAYERCOMMAND_H_

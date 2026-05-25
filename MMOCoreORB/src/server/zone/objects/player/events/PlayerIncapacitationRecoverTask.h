@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PLAYERINCAPACITATIONRECOVERTASK_H_
-#define PLAYERINCAPACITATIONRECOVERTASK_H_
+#pragma once
 
 #include "templates/params/creature/CreatureAttribute.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -99,5 +98,3 @@ public:
 }
 
 using namespace server::zone::objects::player::events;
-
-#endif /* PLAYERINCAPACITATIONRECOVERTASK_H_ */

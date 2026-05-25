@@ -6,8 +6,7 @@
  *
  */
 
-#ifndef TURRETCONTAINERCOMPONENT_H_
-#define TURRETCONTAINERCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -37,5 +36,3 @@ public:
 	 */
 	int notifyObjectRemoved(SceneObject* sceneObject, SceneObject* object, SceneObject* destination) const;
 };
-
-#endif /* TURRETCONTAINERCOMPONENT_H_ */

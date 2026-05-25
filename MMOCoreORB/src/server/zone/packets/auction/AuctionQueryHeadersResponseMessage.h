@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef AUCTIONQUERYHEADERSRESPONSEMESSAGE_H_
-#define AUCTIONQUERYHEADERSRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/auction/AuctionItem.h"
@@ -156,5 +155,3 @@ public:
 	}
 
 };
-
-#endif /*AUCTIONQUERYHEADERSRESPONSEMESSAGE_H_*/

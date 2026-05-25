@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LAIROBJECTMESSAGE3_H_
-#define LAIROBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/tangible/TangibleObjectMessage3.h"
 
@@ -17,5 +16,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*LAIROBJECTMESSAGE3_H_*/

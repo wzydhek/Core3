@@ -5,12 +5,9 @@
  *      Author: oru
  */
 
-#ifndef STATUSHANDLER_H_
-#define STATUSHANDLER_H_
+#pragma once
 
 #include "StatusServer.h"
-
-
 
 class StatusHandler: public ServiceHandler {
 	StatusServer* statusServerRef;
@@ -46,8 +43,4 @@ public:
 
 };
 
-
 using namespace server::zone;
-
-
-#endif /* STATUSHANDLER_H_ */

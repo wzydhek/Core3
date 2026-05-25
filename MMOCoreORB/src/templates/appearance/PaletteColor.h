@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PALETTECOLOR_H_
-#define PALETTECOLOR_H_
+#pragma once
 
 class PaletteColor : public Object {
 	uint8 red;
@@ -57,5 +56,3 @@ public:
 		return blue;
 	}
 };
-
-#endif /* PALETTECOLOR_H_ */

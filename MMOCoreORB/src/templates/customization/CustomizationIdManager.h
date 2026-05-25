@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CUSTOMIZATIONIDMANAGER_H_
-#define CUSTOMIZATIONIDMANAGER_H_
+#pragma once
 
 #include "engine/log/Logger.h"
 #include "engine/util/Singleton.h"
@@ -48,5 +47,3 @@ public:
 		return allowBald.get(objectCRC);
 	}
 };
-
-#endif /* CUSTOMIZATIONIDMANAGER_H_ */

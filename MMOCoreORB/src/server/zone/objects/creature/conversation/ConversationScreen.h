@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CONVERSATIONSCREEN_H_
-#define CONVERSATIONSCREEN_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/chat/StringIdChatParameter.h"
@@ -376,5 +375,3 @@ public:
 }
 
 using namespace server::zone::objects::creature::conversation;
-
-#endif /* CONVERSATIONSCREEN_H_ */

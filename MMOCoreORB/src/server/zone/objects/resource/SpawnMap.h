@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef SPAWNMAP_H_
-#define SPAWNMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "SpawnDensityMap.h"
@@ -28,6 +27,3 @@ public:
 
 
 };
-
-
-#endif /* SPAWNMAP_H_ */

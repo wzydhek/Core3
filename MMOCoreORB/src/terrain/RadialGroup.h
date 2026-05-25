@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef RADIALGROUP_H_
-#define RADIALGROUP_H_
-
+#pragma once
 
 #include "TemplateVariable.h"
 #include "RadialFamily.h"
@@ -50,7 +48,3 @@ public:
 	}
 
 };
-
-
-
-#endif /* RADIALGROUP_H_ */

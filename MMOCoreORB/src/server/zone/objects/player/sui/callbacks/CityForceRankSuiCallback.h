@@ -1,6 +1,5 @@
 
-#ifndef CITYFORCERANKSUICALLBACK_H_
-#define CITYFORCERANKSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -64,5 +63,3 @@ public:
 			cityManager->contractCity(city);
 	}
 };
-
-#endif /* CITYFORCERANKSUICALLBACK_H_ */

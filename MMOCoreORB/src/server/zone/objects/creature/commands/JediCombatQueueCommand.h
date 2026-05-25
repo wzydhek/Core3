@@ -5,8 +5,7 @@
  *      Author: Greg Slomin
  */
 
-#ifndef JEDICOMBATQUEUECOMMAND_H_
-#define JEDICOMBATQUEUECOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -22,5 +21,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* JEDICOMBATQUEUECOMMAND_H_ */

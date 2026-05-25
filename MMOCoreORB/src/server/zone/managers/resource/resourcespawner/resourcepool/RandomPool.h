@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef RANDOMPOOL_H_
-#define RANDOMPOOL_H_
+#pragma once
 
 #include "ResourcePool.h"
 
@@ -80,5 +79,3 @@ private:
 
 	friend class ResourceSpawner;
 };
-
-#endif /* RANDOMPOOL_H_ */

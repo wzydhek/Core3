@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FLASHSPEEDERCOMMAND_H_
-#define FLASHSPEEDERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/objects/player/sui/callbacks/ReplaceFlashSpeederSuiCallback.h"
@@ -59,5 +58,3 @@ public:
 	}
 
 };
-
-#endif //FLASHSPEEDERCOMMAND_H_

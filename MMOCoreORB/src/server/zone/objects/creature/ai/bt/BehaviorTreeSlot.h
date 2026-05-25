@@ -1,5 +1,4 @@
-#ifndef BEHAVIOR_TREE_SLOT_H_
-#define BEHAVIOR_TREE_SLOT_H_
+#pragma once
 
 #include "system/io/ObjectInputStream.h"
 #include "system/io/ObjectOutputStream.h"
@@ -113,5 +112,3 @@ public:
 		 return true;
 	}
 };
-
-#endif // BEHAVIOR_TREE_SLOT_H_

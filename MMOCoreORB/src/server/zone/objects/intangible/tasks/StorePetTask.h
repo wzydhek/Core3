@@ -5,6 +5,8 @@
  *      Author: TheAnswer
  */
 
+#pragma once
+
 #include "engine/engine.h"
 
 namespace server {

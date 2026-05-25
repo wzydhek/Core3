@@ -5,14 +5,13 @@
  *      Author: victor
  */
 
-#ifndef ZONECLOSEOBJECTSVECTOR_H_
-#define ZONECLOSEOBJECTSVECTOR_H_
+#pragma once
 
 #include "system/util/SortedVector.h"
 #include "system/lang/ref/Reference.h"
 #include "system/thread/ReadWriteLock.h"
-
 #include "engine/core/ManagedReference.h"
+
 namespace server {
  namespace zone {
 class TreeEntry;
@@ -137,5 +136,3 @@ public:
 }
 
 using namespace server::zone;
-
-#endif /* ZONECLOSEOBJECTSVECTOR_H_ */

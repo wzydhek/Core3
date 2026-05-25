@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COLORLIGHTSCOMMAND_H_
-#define COLORLIGHTSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
 
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif //COLORLIGHTSCOMMAND_H_

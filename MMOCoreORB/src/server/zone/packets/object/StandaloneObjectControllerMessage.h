@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CORE3_STANDALONEOBJECTCONTROLLERMESSAGE_H
-#define CORE3_STANDALONEOBJECTCONTROLLERMESSAGE_H
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/service/proto/StandaloneBaseMessage.h"
 
 class StandaloneObjectControllerMessage : public StandaloneBaseMessage {
@@ -24,5 +22,3 @@ public:
 
 	}
 };
-
-#endif //CORE3_STANDALONEOBJECTCONTROLLERMESSAGE_H

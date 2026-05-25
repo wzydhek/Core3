@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TANGIBLEOBJECTMESSAGE7_H_
-#define TANGIBLEOBJECTMESSAGE7_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
-
 #include "server/zone/objects/tangible/TangibleObject.h"
 
 class TangibleObjectMessage7 : public BaseLineMessage {
@@ -20,4 +18,3 @@ public:
 	}
 
 };
-#endif /*TANGIBLEOBJECTMESSAGE7_H_*/

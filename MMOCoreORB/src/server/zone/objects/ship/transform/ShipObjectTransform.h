@@ -1,5 +1,4 @@
-#ifndef SHIPOBJECTTRANSFORM_H_
-#define SHIPOBJECTTRANSFORM_H_
+#pragma once
 
 namespace server {
 	namespace zone {
@@ -136,5 +135,3 @@ public:
 		return msg.toString();
 	}
 };
-
-#endif // SHIPOBJECTTRANSFORM_H_

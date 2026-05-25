@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DROIDSKILLMODTASK_H_
-#define DROIDSKILLMODTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/DroidObject.h"
 
@@ -65,5 +64,3 @@ public:
 } // server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /*DROIDSKILLMODTASK_H_*/

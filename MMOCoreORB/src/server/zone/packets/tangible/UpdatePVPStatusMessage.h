@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UPDATEPVPSTATUSMESSAGE_H_
-#define UPDATEPVPSTATUSMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -32,4 +31,3 @@ public:
 		insertLong(tano->getObjectID());
 	}
 };
-#endif /*UPDATEPVPSTATUSMESSAGE_H_*/

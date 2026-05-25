@@ -5,8 +5,7 @@
  *      Author: katherine
  */
 
-#ifndef SABERINVENTORYCONTAINERCOMPONENT_H_
-#define SABERINVENTORYCONTAINERCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
@@ -38,7 +37,3 @@ public:
 	virtual int notifyObjectRemoved(SceneObject* sceneObject, SceneObject* object, SceneObject* destination) const;
 
 };
-
-
-
-#endif /* SABERINVENTORYCONTAINERCOMPONENT_H_ */

@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef ACCOUNTMAP_H_
-#define ACCOUNTMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -26,6 +25,3 @@ namespace account {
 }
 }
 }
-
-
-#endif /* ACCOUNTMAP_H_ */

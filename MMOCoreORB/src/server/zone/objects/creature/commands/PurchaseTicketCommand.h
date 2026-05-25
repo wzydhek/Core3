@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PURCHASETICKETCOMMAND_H_
-#define PURCHASETICKETCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
@@ -318,5 +317,3 @@ public:
 	}
 
 };
-
-#endif //PURCHASETICKETCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ACCOUNTVERSIONMESSAGE_H_
-#define ACCOUNTVERSIONMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif /*ACCOUNTVERSIONMESSAGE_H_*/

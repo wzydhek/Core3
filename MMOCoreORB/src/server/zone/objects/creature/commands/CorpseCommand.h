@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CORPSECOMMAND_H_
-#define CORPSECOMMAND_H_
+#pragma once
 
 class CorpseCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CORPSECOMMAND_H_

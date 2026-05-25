@@ -5,8 +5,7 @@
  *      Author: oru
  */
 
-#ifndef REQUESTQUESTTIMERSANDCOUNTERSCOMMAND_H_
-#define REQUESTQUESTTIMERSANDCOUNTERSCOMMAND_H_
+#pragma once
 
 class RequestQuestTimersAndCountersCommand : public QueueCommand {
 public:
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif /* REQUESTQUESTTIMERSANDCOUNTERSCOMMAND_H_ */

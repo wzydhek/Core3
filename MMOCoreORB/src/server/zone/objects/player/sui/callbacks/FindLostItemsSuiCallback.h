@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef FINDLOSTITEMSSUICALLBACK_H_
-#define FINDLOSTITEMSSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/building/BuildingObject.h"
@@ -36,5 +35,3 @@ public:
 		StructureManager::instance()->moveFirstItemTo(creature, building);
 	}
 };
-
-#endif /* FINDLOSTITEMSSUICALLBACK_H_ */

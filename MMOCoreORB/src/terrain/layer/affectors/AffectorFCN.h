@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORFCN_H_
-#define AFFECTORFCN_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 
@@ -53,5 +52,3 @@ public:
 		iffStream->closeChunk('DATA');
 	}
 };
-
-#endif /* AFFECTORFCN_H_ */

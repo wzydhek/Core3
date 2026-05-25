@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DELIVERMISSIONSCREENHANDLER_H_
-#define DELIVERMISSIONSCREENHANDLER_H_
+#pragma once
 
 #include "ScreenHandler.h"
 #include "server/zone/objects/mission/MissionObject.h"
@@ -53,5 +52,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::creature::conversation::screenhandlers;
-
-#endif /* DELIVERMISSIONSCREENHANDLER_H_ */

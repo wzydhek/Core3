@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.*/
 
 
-#ifndef CELLOBJECTDELTAMESSAGE3_H_
-#define CELLOBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/cell/CellObject.h"
@@ -22,5 +21,3 @@ public:
 		addIntUpdate(5, cellNumber);
 	}
 };
-
-#endif /* CELLOBJECTDELTAMESSAGE3_H_ */

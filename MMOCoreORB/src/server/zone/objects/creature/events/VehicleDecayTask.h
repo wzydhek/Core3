@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef VEHICLEDECAYTASK_H_
-#define VEHICLEDECAYTASK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "templates/creature/VehicleObjectTemplate.h"
@@ -53,5 +52,3 @@ public:
 		vehicle->addPendingTask("decay", this, decayCycle * 1000);
 	}
 };
-
-#endif /*VEHICLEDECAYTASK_H_*/

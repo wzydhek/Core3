@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef BOUNDARYPOLYLINE_H_
-#define BOUNDARYPOLYLINE_H_
-
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "../affectors/AffectorRiver.h"
@@ -224,7 +222,3 @@ public:
 	}
 
 };
-
-
-
-#endif /* BOUNDARYPOLYLINE_H_ */

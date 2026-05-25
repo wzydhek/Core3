@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DOTPACKTEMPLATE_H_
-#define DOTPACKTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -105,5 +104,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* DOTPACKTEMPLATE_H_ */

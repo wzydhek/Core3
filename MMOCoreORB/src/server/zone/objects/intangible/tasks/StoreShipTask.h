@@ -2,8 +2,7 @@
  * StoreShipTask.h
  */
 
-#ifndef STORESHIPTASK_H_
-#define STORESHIPTASK_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -191,5 +190,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* STORESHIPTASK_H_ */

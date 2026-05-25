@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef MINEFIELDZONECOMPONENT_H_
-#define MINEFIELDZONECOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -19,6 +18,3 @@ public:
 	void notifyInsertToZone(SceneObject* sceneObject, Zone* zne) const;
 	void notifyDissapear(SceneObject* sceneObject, TreeEntry* entry) const;
 };
-
-
-#endif /* MINEFIELDZONECOMPONENT_H_ */

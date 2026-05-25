@@ -3,8 +3,7 @@
  * 11/10/2014
  */
 
-#ifndef DROIDCRAFTINGMODULETEMPLATE_H_
-#define DROIDCRAFTINGMODULETEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -47,5 +46,3 @@ public:
 		return true;
 	}
 };
-
-#endif /*DROIDCRAFTINGMODULETEMPLATE_H_*/

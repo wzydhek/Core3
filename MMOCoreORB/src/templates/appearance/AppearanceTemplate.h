@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef APPEARANCETEMPLATE_H_
-#define APPEARANCETEMPLATE_H_
+#pragma once
 
 #include "templates/collision/BoundingVolumeFactory.h"
 #include "templates/appearance/MeshData.h"
@@ -129,5 +128,3 @@ public:
 
 	virtual Vector <Reference<MeshData*>> getTransformedMeshData(const Matrix4& parentTransform) const = 0;
 };
-
-#endif /* APPEARANCETEMPLATE_H_ */

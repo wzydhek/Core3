@@ -1,5 +1,4 @@
-#ifndef LAIRREPOPULATETASK_H_
-#define LAIRREPOPULATETASK_H_
+#pragma once
 
 #include "server/zone/managers/creature/LairObserver.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -33,5 +32,3 @@ public:
 		strongObserver->repopulateLair(strongLair);
 	}
 };
-
-#endif /* LAIRREPOPULATETASK_H_ */

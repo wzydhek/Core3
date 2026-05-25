@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESETJEDICOMMAND_H_
-#define RESETJEDICOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -54,5 +53,3 @@ public:
 	}
 
 };
-
-#endif //RESETJEDICOMMAND_H_

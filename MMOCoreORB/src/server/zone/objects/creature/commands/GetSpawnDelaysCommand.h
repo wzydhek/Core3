@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETSPAWNDELAYSCOMMAND_H_
-#define GETSPAWNDELAYSCOMMAND_H_
+#pragma once
 
 class GetSpawnDelaysCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GETSPAWNDELAYSCOMMAND_H_

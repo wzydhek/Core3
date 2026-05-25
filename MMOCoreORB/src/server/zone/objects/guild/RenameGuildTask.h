@@ -1,6 +1,5 @@
 
-#ifndef RENAMEGUILDTASK_H_
-#define RENAMEGUILDTASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/guild/GuildObject.h"
@@ -36,6 +35,3 @@ public:
 		guildManager->renameGuild(guild);
 	}
 };
-
-
-#endif /* RENAMEGUILDTASK_H_ */

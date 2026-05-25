@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ACTIVEAREAEVENT_H_
-#define ACTIVEAREAEVENT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -61,5 +60,3 @@ namespace server {
 }
 
 using namespace server::zone::objects::area::events;
-
-#endif /* ACTIVEAREAEVENT_H_ */

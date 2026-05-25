@@ -6,8 +6,7 @@
  *
  */
 
-#ifndef NAMENPCACTORSUICALLBACK_H_
-#define NAMENPCACTORSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/NpcActorCreationSession.h"
@@ -56,5 +55,3 @@ public:
 		player->dropActiveSession(SessionFacadeType::NPCACTORCREATION);
 	}
 };
-
-#endif /* NAMENPCACTORSUICALLBACK_H_ */

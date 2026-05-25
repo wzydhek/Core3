@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LOOTCOMMAND_H_
-#define LOOTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -223,4 +222,3 @@ public:
 		return NOPICKUPITEMS;
 	}
 };
-#endif //LOOTCOMMAND_H_

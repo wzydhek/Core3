@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UNASSOCIATEDROIDCONTROLDEVICEWITHSHIPCOMMAND_H_
-#define UNASSOCIATEDROIDCONTROLDEVICEWITHSHIPCOMMAND_H_
+#pragma once
 
 class UnassociateDroidControlDeviceWithShipCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //UNASSOCIATEDROIDCONTROLDEVICEWITHSHIPCOMMAND_H_

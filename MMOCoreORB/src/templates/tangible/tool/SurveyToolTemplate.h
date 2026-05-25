@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef SURVEYTOOLTEMPLATE_H_
-#define SURVEYTOOLTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -51,5 +50,3 @@ public:
 		return sampleAnimation;
 	}
 };
-
-#endif /* SURVEYTOOLTEMPLATE_H_ */

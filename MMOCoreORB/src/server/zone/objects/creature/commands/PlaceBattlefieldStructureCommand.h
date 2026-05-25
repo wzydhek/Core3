@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLACEBATTLEFIELDSTRUCTURECOMMAND_H_
-#define PLACEBATTLEFIELDSTRUCTURECOMMAND_H_
+#pragma once
 
 class PlaceBattlefieldStructureCommand : public QueueCommand {
 public:
@@ -24,5 +23,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //PLACEBATTLEFIELDSTRUCTURECOMMAND_H_

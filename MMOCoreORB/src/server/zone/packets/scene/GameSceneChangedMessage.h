@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GAMESCENECHANGEDMESSAGE_H_
-#define GAMESCENECHANGEDMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -15,5 +14,3 @@ public:
 	}
 	
 };
-
-#endif /*GAMESCENECHANGEDMESSAGE_H_*/

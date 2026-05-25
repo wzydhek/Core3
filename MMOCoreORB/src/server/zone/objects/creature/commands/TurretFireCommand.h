@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef TURRETFIRECOMMAND_H_
-#define TURRETFIRECOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -25,5 +24,3 @@ public:
 		return 0;
 	}
 };
-
-#endif /* TURRETFIRECOMMAND_H_ */

@@ -2,8 +2,7 @@
  * InsertPilotIntoShipTask.h
  */
 
-#ifndef INSERTPILOTINTOSHIPTASK_H_
-#define INSERTPILOTINTOSHIPTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/SpaceZone.h"
@@ -83,5 +82,3 @@ public:
 		ship->addPlayerOnBoard(player);
 	}
 };
-
-#endif /* INSERTPILOTINTOSHIPTASK_H_ */

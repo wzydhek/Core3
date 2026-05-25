@@ -3,8 +3,7 @@
  *
  */
 
-#ifndef LOADSTIMPACKSUICALLBACK_H_
-#define LOADSTIMPACKSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -64,5 +63,3 @@ public:
 	}
 
 };
-
-#endif /* LOADSTIMPACKSUICALLBACK_H_ */

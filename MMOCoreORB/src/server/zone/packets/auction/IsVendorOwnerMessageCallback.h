@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef ISVENDOROWNERMESSAGECALLBACK_H_
-#define ISVENDOROWNERMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-
 #include "IsVendorOwnerResponseMessage.h"
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/Zone.h"
@@ -56,6 +54,3 @@ public:
 		client->sendMessage(msg);
 	}
 };
-
-
-#endif /* ISVENDOROWNERMESSAGECALLBACK_H_ */

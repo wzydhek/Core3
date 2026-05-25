@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STOPTARGETSPAWNERCOMMAND_H_
-#define STOPTARGETSPAWNERCOMMAND_H_
+#pragma once
 
 class StopTargetSpawnerCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //STOPTARGETSPAWNERCOMMAND_H_

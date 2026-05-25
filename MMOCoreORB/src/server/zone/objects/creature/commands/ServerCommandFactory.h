@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SERVERCOMMANDFACTORY_H_
-#define SERVERCOMMANDFACTORY_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -50,7 +49,3 @@ public:
 protected:
 	HashTable<KeyType, RunMethodFunc> methodFactory;
 };
-
-
-
-#endif /* SERVERCOMMANDFACTORY_H_ */

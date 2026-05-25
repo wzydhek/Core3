@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef ACCEPTAUCTIONRESPONSEMESSAGE_H_
-#define ACCEPTAUCTIONRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -20,5 +19,3 @@ public:
 		insertInt(errorCode);
 	}
 };
-
-#endif /* ACCEPTAUCTIONRESPONSEMESSAGE_H_ */

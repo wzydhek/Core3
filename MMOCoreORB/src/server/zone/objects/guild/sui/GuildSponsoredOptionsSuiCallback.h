@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDSPONSOREDOPTIONSSUICALLBACK_H_
-#define GUILDSPONSOREDOPTIONSSUICALLBACK_H_
+#pragma once
 
 class GuildSponsoredOptionsSuiCallback : public SuiCallback {
 public:
@@ -62,5 +61,3 @@ public:
 		}
 	}
 };
-
-#endif /* GUILDSPONSOREDOPTIONSSUICALLBACK_H_ */

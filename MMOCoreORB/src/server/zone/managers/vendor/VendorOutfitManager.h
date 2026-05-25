@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef VENDOROUTFITMANAGER_H_
-#define VENDOROUTFITMANAGER_H_
+#pragma once
 
 #include "Outfit.h"
 
@@ -53,5 +52,3 @@ public:
 }
 
 using namespace server::zone::managers::vendor;
-
-#endif /* VENDOROUTFITMANAGER_H_ */

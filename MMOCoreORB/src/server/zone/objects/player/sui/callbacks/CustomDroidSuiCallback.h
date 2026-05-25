@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef CUSTOMDROIDSUICALLBACK_H_
-#define CUSTOMDROIDSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -94,5 +93,3 @@ public:
 		}
 	}
 };
-
-#endif /* CUSTOMDROIDSUICALLBACK_H_ */

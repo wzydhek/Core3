@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef INFORMATIONHEADER_H_
-#define INFORMATIONHEADER_H_
+#pragma once
 
 #include "../TemplateVariable.h"
 
@@ -57,6 +56,3 @@ public:
 		return description;
 	}
 };
-
-
-#endif /* INFORMATIONHEADER_H_ */

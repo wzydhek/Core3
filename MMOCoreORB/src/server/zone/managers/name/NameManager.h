@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NAMEMANAGER_H_
-#define NAMEMANAGER_H_
+#pragma once
 
 #include "engine/core/ManagedReference.h"
 #include "server/zone/managers/name/NameData.h"
@@ -164,5 +163,3 @@ public:
 } // namespace server
 
 using namespace server::zone::managers::name;
-
-#endif /*NAMEMANAGER_H_*/

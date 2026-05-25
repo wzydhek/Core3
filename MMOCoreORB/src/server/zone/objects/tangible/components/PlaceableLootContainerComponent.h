@@ -5,8 +5,8 @@
  *      Author: root
  */
 
-#ifndef PLACEABLELOOTCONTAINERCOMPONENT_H_
-#define PLACEABLELOOTCONTAINERCOMPONENT_H_
+#pragma once
+
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
 class PlaceableLootContainerComponent: public ContainerComponent {
@@ -14,5 +14,3 @@ public:
 	bool checkContainerPermission(SceneObject* sceneObject, CreatureObject* creature, uint16 permission) const;
 	int canAddObject(SceneObject* sceneObject, SceneObject* object, int containmentType, String& errorDescription) const;
 };
-
-#endif /* PLACEABLELOOTCONTAINERCOMPONENT_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SHOWCOUNCILRANKCOMMAND_H_
-#define SHOWCOUNCILRANKCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sui/callbacks/EnclaveCouncilRankSuiCallback.h"
@@ -60,5 +59,3 @@ public:
 	}
 
 };
-
-#endif //SHOWCOUNCILRANKCOMMAND_H_

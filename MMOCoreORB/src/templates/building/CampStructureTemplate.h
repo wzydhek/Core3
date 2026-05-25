@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef CAMPSTRUCTURETEMPLATE_H_
-#define CAMPSTRUCTURETEMPLATE_H_
+#pragma once
 
 #include "templates/building/SharedBuildingObjectTemplate.h"
 
@@ -70,5 +69,3 @@ public:
 	}
 
 };
-
-#endif /* CAMPSTRUCTURETEMPLATE_H_ */

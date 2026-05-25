@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATEPROTOTYPECOMMAND_H_
-#define CREATEPROTOTYPECOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/player/sessions/TradeSession.h"
@@ -74,5 +73,3 @@ public:
 	}
 
 };
-
-#endif //CREATEPROTOTYPECOMMAND_H_

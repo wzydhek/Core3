@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESTARTCRAFTINGSESSIONCOMMAND_H_
-#define RESTARTCRAFTINGSESSIONCOMMAND_H_
+#pragma once
 
 class RestartCraftingSessionCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //RESTARTCRAFTINGSESSIONCOMMAND_H_

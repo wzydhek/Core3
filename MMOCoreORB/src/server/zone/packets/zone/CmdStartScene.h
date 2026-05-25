@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CMDSTARTSCENE_H_
-#define CMDSTARTSCENE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -43,5 +42,3 @@ public:
 	static void parse(Packet* pack) {
 	}
 }; // Class Start Scene
-
-#endif /*CMDSTARTSCENE_H_*/

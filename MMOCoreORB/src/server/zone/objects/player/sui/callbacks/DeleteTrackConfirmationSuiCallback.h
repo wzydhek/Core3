@@ -3,8 +3,7 @@
  *
  */
 
-#ifndef DELETETRACKCONFIRMATIONSUICALLBACK_H
-#define DELETETRACKCONFIRMATIONSUICALLBACK_H
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
@@ -41,5 +40,3 @@ public:
 		module->deleteTrack(player, track);
 	}
 };
-
-#endif /* DELETETRACKCONFIRMATIONSUICALLBACK_H */

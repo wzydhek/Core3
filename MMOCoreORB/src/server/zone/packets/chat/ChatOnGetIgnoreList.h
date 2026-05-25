@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATONGETIGNORELIST_H_
-#define CHATONGETIGNORELIST_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -28,5 +27,3 @@ public:
 		setCompression(true);
 	}
 };
-
-#endif /*CHATONGETIGNORELIST_H_*/

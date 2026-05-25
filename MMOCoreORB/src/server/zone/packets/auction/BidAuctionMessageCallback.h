@@ -5,13 +5,10 @@
  *      Author: victor
  */
 
-#ifndef BIDAUCTIONMESSAGECALLBACK_H_
-#define BIDAUCTIONMESSAGECALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/auction/AuctionManager.h"
-
 
 class BidAuctionMessageCallback : public MessageCallback {
 	uint64 objectid;
@@ -49,5 +46,3 @@ public:
 	}
 
 };
-
-#endif /* BIDAUCTIONMESSAGECALLBACK_H_ */

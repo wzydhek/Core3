@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DRAINFORCECOMMAND_H_
-#define DRAINFORCECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "CombatQueueCommand.h"
@@ -126,5 +125,3 @@ public:
 	}
 
 };
-
-#endif //DRAINFORCECOMMAND_H_

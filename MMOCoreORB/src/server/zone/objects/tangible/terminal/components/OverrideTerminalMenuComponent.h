@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef OVERRIDETERMINALMENUCOMPONENT_H_
-#define OVERRIDETERMINALMENUCOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
@@ -37,8 +36,3 @@ public:
 
 
 };
-
-
-
-
-#endif /* OVERRIDETERMINALMENUCOMPONENT_H_ */

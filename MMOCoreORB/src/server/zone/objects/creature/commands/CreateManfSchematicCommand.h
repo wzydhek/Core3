@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATEMANFSCHEMATICCOMMAND_H_
-#define CREATEMANFSCHEMATICCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/player/sessions/TradeSession.h"
@@ -63,5 +62,3 @@ public:
 	}
 
 };
-
-#endif //CREATEMANFSCHEMATICCOMMAND_H_

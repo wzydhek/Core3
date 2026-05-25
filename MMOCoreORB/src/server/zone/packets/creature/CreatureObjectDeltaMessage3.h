@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATUREOBJECTDELTAMESSAGE3_H_
-#define CREATUREOBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -66,5 +65,3 @@ public:
 
 	// 0x11 - Wounds update handled in CreatureObjectImplementation
 };
-
-#endif /*CREATUREOBJECTDELTAMESSAGE3_H_*/

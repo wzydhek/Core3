@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef CITYTREASURYWITHDRAWALREASONSUICALLBACK_H_
-#define CITYTREASURYWITHDRAWALREASONSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/CityTreasuryWithdrawalSession.h"
@@ -34,5 +33,3 @@ public:
 		session->sendTransferBox(reason);
 	}
 };
-
-#endif /* CITYTREASURYWITHDRAWALREASONSUICALLBACK_H_ */

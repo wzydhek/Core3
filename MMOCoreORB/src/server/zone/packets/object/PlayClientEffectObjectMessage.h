@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYCLIENTEFFECTOBJECTMESSAGE_H_
-#define PLAYCLIENTEFFECTOBJECTMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
 
 class PlayClientEffectObjectMessage : public BaseMessage {
@@ -20,5 +18,3 @@ public:
 	}
 
 };
-
-#endif /*PLAYCLIENTEFFECTOBJECTMESSAGE_H_*/

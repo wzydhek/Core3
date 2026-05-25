@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HOLOEMOTECOMMAND_H_
-#define HOLOEMOTECOMMAND_H_
+#pragma once
 
 class HoloEmoteCommand : public QueueCommand {
 public:
@@ -191,5 +190,3 @@ public:
 	}
 
 };
-
-#endif //HOLOEMOTECOMMAND_H_

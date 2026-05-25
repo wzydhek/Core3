@@ -5,8 +5,7 @@
  * Author: H
  */
 
-#ifndef PLAYERBITMASKS_H_
-#define PLAYERBITMASKS_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
@@ -117,5 +116,3 @@ public:
 		return res;
 	}
 };
-
-#endif /* PLAYERBITMASKS_H_ */

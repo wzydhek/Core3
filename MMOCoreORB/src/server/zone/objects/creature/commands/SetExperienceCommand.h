@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETEXPERIENCECOMMAND_H_
-#define SETEXPERIENCECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -73,5 +72,3 @@ public:
 	}
 
 };
-
-#endif //SETEXPERIENCECOMMAND_H_

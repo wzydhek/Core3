@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETMAPLOCATIONSCOMMAND_H_
-#define GETMAPLOCATIONSCOMMAND_H_
+#pragma once
 
 class GetMapLocationsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GETMAPLOCATIONSCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATUREOBJECTDELTAMESSAGE4_H_
-#define CREATUREOBJECTDELTAMESSAGE4_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 
@@ -78,5 +77,3 @@ public:
 		addFloatUpdate(0x0A, tScale); // turnScale
 	}
 };
-
-#endif /*CREATUREOBJECTDELTAMESSAGE4_H_*/

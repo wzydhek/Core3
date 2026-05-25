@@ -1,5 +1,4 @@
-#ifndef UPLINKTERMINALRESETTASK_H_
-#define UPLINKTERMINALRESETTASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 #include "server/zone/objects/building/components/DestructibleBuildingDataComponent.h"
@@ -31,5 +30,3 @@ public:
 		baseData->setState(DestructibleBuildingDataComponent::VULNERABLE);
 	}
 };
-
-#endif /* UPLINKTERMINALRESETTASK_H_ */

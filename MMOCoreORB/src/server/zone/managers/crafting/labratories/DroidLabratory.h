@@ -5,10 +5,10 @@
  *      Author: swgemu
  */
 
-#ifndef DROIDLABRATORY_H_
-#define DROIDLABRATORY_H_
+#pragma once
 
 #include "ResourceLabratory.h"
+
 namespace server {
 namespace zone {
 namespace managers {
@@ -27,7 +27,5 @@ public:
 }
 }
 }
+
 using namespace server::zone::managers::crafting::labratories;
-
-
-#endif /* DROIDLABRATORY_H_ */

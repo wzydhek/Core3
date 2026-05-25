@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DROIDPLAYBACKEVENT_H_
-#define DROIDPLAYBACKEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/DroidObject.h"
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
@@ -89,5 +88,3 @@ public:
 } // server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /*DROIDPLAYBACKEVENT_H_*/

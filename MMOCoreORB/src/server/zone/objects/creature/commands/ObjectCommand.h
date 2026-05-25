@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OBJECTCOMMAND_H_
-#define OBJECTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/loot/LootManager.h"
@@ -264,5 +263,3 @@ public:
 	}
 
 };
-
-#endif //OBJECTCOMMAND_H_

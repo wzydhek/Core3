@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef UNACCEPTTRANSACTIONMESSAGECALLBACK_H_
-#define UNACCEPTTRANSACTIONMESSAGECALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -36,6 +34,3 @@ public:
 	}
 
 };
-
-
-#endif /* UNUnAcceptTransactionMessageCallback_H_ */

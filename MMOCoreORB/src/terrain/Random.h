@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef RANDOM_H_
-#define RANDOM_H_
+#pragma once
 
 namespace trn {
 namespace ptat {
@@ -78,5 +77,3 @@ public:
 
 }
 }
-
-#endif /* RANDOM_H_ */

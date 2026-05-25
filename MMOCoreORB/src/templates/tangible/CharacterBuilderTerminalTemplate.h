@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CHARACTERBUILDTERTERMINALTEMPLATE_H_
-#define CHARACTERBUILDTERTERMINALTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "templates/tangible/CharacterBuilderMenuNode.h"
@@ -73,7 +72,3 @@ public:
         return villageBranchUnlocks;
     }
 };
-
-
-
-#endif /* CHARACTERBUILDTERTERMINALTEMPLATE_H_ */

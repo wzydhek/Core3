@@ -5,8 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef CHATQUERYROOMRESULTS_H_
-#define CHATQUERYROOMRESULTS_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/chat/room/ChatRoom.h"
@@ -96,5 +95,3 @@ public:
 	}
 
 };
-
-#endif /*CHATQUERYROOMRESULTS_H_*/

@@ -2,8 +2,7 @@
  * GamblingTerminalDataComponent.h
  */
 
-#ifndef GAMBLINGTERMINALDATACOMPONENT_H_
-#define GAMBLINGTERMINALDATACOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
@@ -75,6 +74,3 @@ public:
 		return true;
 	}
 };
-
-
-#endif /* GAMBLINGTERMINALDATACOMPONENT_H_ */

@@ -1,5 +1,4 @@
-#ifndef SIMPLEACTIONSSPACE_H_
-#define SIMPLEACTIONSSPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/btspace/BehaviorSpace.h"
 #include "server/zone/objects/ship/ai/btspace/BlackboardDataSpace.h"
@@ -417,5 +416,3 @@ class UpdateHomePosition : public BehaviorSpace {
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // SIMPLEACTIONSSPACE_H_

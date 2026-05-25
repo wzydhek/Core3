@@ -2,13 +2,11 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STRINGIDCHATPARAMETER_H_
-#define STRINGIDCHATPARAMETER_H_
+#pragma once
 
 #include "server/chat/ChatParameter.h"
 #include "server/zone/objects/scene/variables/StringIdParameter.h"
 #include "server/zone/objects/scene/variables/StringId.h"
-
 #include "engine/util/json_utils.h"
 
 namespace server {
@@ -233,5 +231,3 @@ public:
 }
 
 using namespace server::chat;
-
-#endif /* STRINGIDCHATPARAMETER_H_ */

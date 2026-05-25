@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HARVESTERRESOURCEDATAMESSAGE_H_
-#define HARVESTERRESOURCEDATAMESSAGE_H_
+#pragma once
 
 #include "server/zone/packets/object/ObjectControllerMessage.h"
 
@@ -61,6 +60,3 @@ public:
 if (list == nullptr)
 	System::out << "list was null!" << endl;
 */
-
-
-#endif /* HARVESTERRESOURCEDATAMESSAGE_H_ */

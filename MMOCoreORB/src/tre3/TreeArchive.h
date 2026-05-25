@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef TREEARCHIVE_H_
-#define TREEARCHIVE_H_
+#pragma once
 
 #include "TreeFile.h"
 #include "TreeDirectory.h"
@@ -121,5 +120,3 @@ public:
 		return files;
 	}
 };
-
-#endif /* TREEARCHIVE_H_ */

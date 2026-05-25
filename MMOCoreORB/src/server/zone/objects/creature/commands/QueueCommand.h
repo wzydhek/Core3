@@ -2,12 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef QUEUECOMMAND_H_
-#define QUEUECOMMAND_H_
-
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/ZoneProcessServer.h"
 
@@ -429,7 +426,3 @@ public:
 }
 
 using namespace server::zone::objects::creature::commands;
-
-#endif //SLASHCOMMAND_H_
-
-

@@ -1,5 +1,4 @@
-#ifndef GENETICS_H_
-#define GENETICS_H_
+#pragma once
 
 #include "server/zone/managers/creature/DnaManager.h"
 #include "server/zone/objects/tangible/component/dna/DnaComponent.h"
@@ -593,5 +592,3 @@ public:
 } // namespace server
 
 using namespace server::zone::managers::crafting::labratories;
-
-#endif /* GENETICS_H_ */

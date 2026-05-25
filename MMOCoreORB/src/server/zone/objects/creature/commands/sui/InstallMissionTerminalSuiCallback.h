@@ -5,8 +5,7 @@
  *      Author: TragD
  */
 
-#ifndef INSTALLMISSIONTERMINALCALLBACK_H_
-#define INSTALLMISSIONTERMINALCALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -125,5 +124,3 @@ public:
 		}
 	}
 };
-
-#endif /* INSTALLMISSIONTERMINALCALLBACK_H_ */

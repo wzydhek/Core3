@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PATROLPATHNODE_H_
-#define PATROLPATHNODE_H_
+#pragma once
 
 class PatrolPathNode : public Object {
 	String id, link;
@@ -98,5 +97,3 @@ public:
 	}
 
 };
-
-#endif /* PATROLPATHNODE_H_ */

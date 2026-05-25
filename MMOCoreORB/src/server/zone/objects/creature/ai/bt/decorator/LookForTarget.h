@@ -1,12 +1,10 @@
-#ifndef LOOKFORTARGET_H_
-#define LOOKFORTARGET_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "templates/params/OptionBitmask.h"
 #include "templates/params/creature/ObjectFlag.h"
 #include "server/zone/objects/creature/ai/bt/decorator/Decorator.h"
 #include "server/zone/managers/collision/CollisionManager.h"
-
 #include <cassert>
 
 namespace server {
@@ -113,5 +111,3 @@ public:
 }
 }
 }
-
-#endif // LOOKFORTARGET_H_

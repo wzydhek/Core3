@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef ZONECLIENTTHREAD_H_
-#define ZONECLIENTTHREAD_H_
+#pragma once
 
 #include "system/lang.h"
 
@@ -24,5 +23,3 @@ public:
 
 	void stop();
 };
-
-#endif /* ZONECLIENTTHREAD_H_ */

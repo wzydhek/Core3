@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MEDITATECOMMAND_H_
-#define MEDITATECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/events/MeditateTask.h"
@@ -61,5 +60,3 @@ public:
 	}
 
 };
-
-#endif //MEDITATECOMMAND_H_

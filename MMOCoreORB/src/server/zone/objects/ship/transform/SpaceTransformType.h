@@ -1,5 +1,4 @@
-#ifndef SPACETRANSFORMTYPE_H_
-#define SPACETRANSFORMTYPE_H_
+#pragma once
 
 namespace server {
 	namespace zone {
@@ -122,5 +121,3 @@ public:
 		return msg.toString();
 	}
 };
-
-#endif // SPACETRANSFORMTYPE_H_

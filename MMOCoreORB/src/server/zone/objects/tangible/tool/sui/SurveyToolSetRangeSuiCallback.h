@@ -5,9 +5,7 @@
  *      Author: crush
  */
 
-#ifndef SURVEYTOOLSETRANGECALLBACK_H_
-#define SURVEYTOOLSETRANGECALLBACK_H_
-
+#pragma once
 
 #include "server/zone/objects/tangible/tool/SurveyTool.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -38,5 +36,3 @@ public:
 		surveyTool->setRange(range);
 	}
 };
-
-#endif /* SURVEYTOOLSETRANGECALLBACK_H_ */

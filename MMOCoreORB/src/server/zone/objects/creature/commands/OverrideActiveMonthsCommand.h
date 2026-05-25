@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OVERRIDEACTIVEMONTHSCOMMAND_H_
-#define OVERRIDEACTIVEMONTHSCOMMAND_H_
+#pragma once
 
 class OverrideActiveMonthsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //OVERRIDEACTIVEMONTHSCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDMEMBERREMOVESUICALLBACK_H_
-#define GUILDMEMBERREMOVESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -38,5 +37,3 @@ public:
 		guildManager->kickMember(player, target);
 	}
 };
-
-#endif /* GUILDMEMBERREMOVESUICALLBACK_H_ */

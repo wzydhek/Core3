@@ -1,6 +1,4 @@
-#ifndef SHUTTLEBEACONSUICALLBACK_H_
-#define SHUTTLEBEACONSUICALLBACK_H_
-
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/eventperk/ShuttleBeacon.h"
@@ -40,5 +38,3 @@ public:
 		shuttleBeacon->spawnShuttle(player, index);
 	}
 };
-
-#endif /* SHUTTLEBEACONSUICALLBACK_H_ */

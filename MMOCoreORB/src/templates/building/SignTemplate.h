@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef SIGNTEMPLATE_H_
-#define SIGNTEMPLATE_H_
+#pragma once
 
 #include "templates/ChildObject.h"
 
@@ -54,5 +53,3 @@ public:
 	}
 
 };
-
-#endif /* SIGNTEMPLATE_H_ */

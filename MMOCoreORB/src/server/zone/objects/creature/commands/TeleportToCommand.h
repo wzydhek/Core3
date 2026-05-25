@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TELEPORTTOCOMMAND_H_
-#define TELEPORTTOCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/player/PlayerManager.h"
 
@@ -64,5 +63,3 @@ public:
 	}
 
 };
-
-#endif //TELEPORTTOCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef TURRETZONECOMPONENT_H_
-#define TURRETZONECOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -23,5 +22,3 @@ public:
 
 	void notifyPositionUpdate(SceneObject* sceneObject, TreeEntry* entry) const;
 };
-
-#endif /* TURRETZONECOMPONENT_H_ */

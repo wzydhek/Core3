@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ZONECLIENT_H_
-#define ZONECLIENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "client/zone/ZonePacketHandler.h"
@@ -115,5 +114,3 @@ public:
 		return packetCount.get();
 	}
 };
-
-#endif /* ZONECLIENT_H_ */

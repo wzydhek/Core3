@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ADDPOWERCOMMAND_H_
-#define ADDPOWERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/resource/ResourceManager.h"
@@ -81,5 +80,3 @@ public:
 	}
 
 };
-
-#endif //ADDPOWERCOMMAND_H_

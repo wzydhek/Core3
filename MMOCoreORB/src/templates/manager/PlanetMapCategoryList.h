@@ -5,11 +5,9 @@
  *      Author: polonel
  */
 
-#ifndef PLANETMAPCATEGORYLIST_H_
-#define PLANETMAPCATEGORYLIST_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "system/util/HashTable.h"
 
 class PlanetMapCategory;
@@ -44,5 +42,3 @@ public:
 		return HashTable<int, Reference<PlanetMapCategory*> >::put(key.hashCode(), value);
 	}
 };
-
-#endif /* PLANETMAPCATEGORYLIST_H_ */

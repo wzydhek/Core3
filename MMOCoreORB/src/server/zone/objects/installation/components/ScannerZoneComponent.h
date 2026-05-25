@@ -5,13 +5,11 @@
  *      Author: root
  */
 
-#ifndef SCANNERZONECOMPONENT_H_
-#define SCANNERZONECOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/TreeEntry.h"
-
 
 class ScannerZoneComponent : public GroundZoneComponent {
 
@@ -20,5 +18,3 @@ public:
 	void notifyPositionUpdate(SceneObject* sceneObject, TreeEntry* entry) const;
 
 };
-
-#endif /* SCANNERZONECOMPONENT_H_ */

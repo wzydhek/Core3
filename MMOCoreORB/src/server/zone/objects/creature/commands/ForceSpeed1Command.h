@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef FORCESPEED1COMMAND_H_
-#define FORCESPEED1COMMAND_H_
+#pragma once
 
 class ForceSpeed1Command : public JediQueueCommand {
 public:
@@ -23,5 +22,3 @@ public:
 	}
 
 };
-
-#endif //FORCESPEED1COMMAND_H_

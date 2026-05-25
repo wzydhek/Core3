@@ -5,8 +5,7 @@
  *      Author: chris.rush
  */
 
-#ifndef GUILDWARENEMYNAMESUICALLBACK_H_
-#define GUILDWARENEMYNAMESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -32,5 +31,3 @@ public:
 		server->getGuildManager()->declareWarByName(player, guildObject.get(), value);
 	}
 };
-
-#endif /* GUILDWARENEMYNAMESUICALLBACK_H_ */

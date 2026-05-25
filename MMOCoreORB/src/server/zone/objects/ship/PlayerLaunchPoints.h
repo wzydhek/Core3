@@ -1,5 +1,4 @@
-#ifndef PLAYERLAUNCHPOINTS_H_
-#define PLAYERLAUNCHPOINTS_H_
+#pragma once
 
 #include "system/lang/Object.h"
 #include "engine/util/u3d/Vector3.h"
@@ -68,5 +67,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* PLAYERLAUNCHPOINTS_H_ */

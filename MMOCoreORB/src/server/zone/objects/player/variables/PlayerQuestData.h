@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef PLAYERQUESTDATA_H_
-#define PLAYERQUESTDATA_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
 
 class PlayerQuestData : public Object {
@@ -312,6 +310,3 @@ public:
 		this->questCounter = questCounter;
 	}
 };
-
-
-#endif /* PLAYERQUESTDATA_H_ */

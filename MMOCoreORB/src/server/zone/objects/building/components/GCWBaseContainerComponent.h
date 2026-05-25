@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef GCWBASECONTAINERCOMPONENT_H_
-#define GCWBASECONTAINERCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -23,5 +22,3 @@ public:
 	bool checkPVEPermission(BuildingObject* building, CreatureObject* creature, uint16 permission, bool sendMessage) const;
 
 };
-
-#endif /* GCWBASECONTAINERCOMPONENT_H_ */

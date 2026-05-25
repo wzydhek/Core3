@@ -1,8 +1,6 @@
-#ifndef UNTILSUCCESSSPACE_H_
-#define UNTILSUCCESSSPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/btspace/decoratorspace/DecoratorSpace.h"
-
 #include <cassert>
 
 namespace server {
@@ -41,5 +39,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // UNTILSUCCESSSPACE_H_

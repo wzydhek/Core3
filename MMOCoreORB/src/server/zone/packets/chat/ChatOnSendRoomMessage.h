@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATONSENDROOMMESSAGE_H_
-#define CHATONSENDROOMMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -17,5 +16,3 @@ public:
 	}
 
 };
-
-#endif /*CHATONSENDROOMMESSAGE_H_*/

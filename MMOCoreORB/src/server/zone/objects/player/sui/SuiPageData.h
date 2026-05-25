@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef SUIPAGEDATA_H_
-#define SUIPAGEDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "SuiCommand.h"
@@ -109,5 +108,3 @@ private:
 	}
 
 };
-
-#endif /* SUIPAGEDATA_H_ */

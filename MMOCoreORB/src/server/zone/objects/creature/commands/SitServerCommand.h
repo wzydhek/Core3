@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SITSERVERCOMMAND_H_
-#define SITSERVERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/StandCommand.h"
 
@@ -99,6 +98,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //SITSERVERCOMMAND_H_
-

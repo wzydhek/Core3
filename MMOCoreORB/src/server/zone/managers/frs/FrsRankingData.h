@@ -1,5 +1,4 @@
-#ifndef FRSRANKINGDATA_H_
-#define FRSRANKINGDATA_H_
+#pragma once
 
 namespace server {
 namespace zone {
@@ -50,5 +49,3 @@ public:
 }
 }
 }
-
-#endif /* FRSRANKINGDATA_H_ */

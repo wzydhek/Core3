@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef HAIRSTYLEINFO_H_
-#define HAIRSTYLEINFO_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 
@@ -96,5 +95,3 @@ public:
 }
 
 using namespace server::zone::managers::player::creation;
-
-#endif /* HAIRSTYLEINFO_H_ */

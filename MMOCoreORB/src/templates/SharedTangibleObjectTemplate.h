@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef SHAREDTANGIBLEOBJECTTEMPLATE_H_
-#define SHAREDTANGIBLEOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/crafting/resourceweight/ResourceWeight.h"
-
 #include "templates/SharedObjectTemplate.h"
 
 class StructureFootprint;
@@ -227,7 +225,3 @@ public:
 		return true;
 	}
 };
-
-
-
-#endif /* SHAREDTANGIBLEOBJECTTEMPLATE_H_ */

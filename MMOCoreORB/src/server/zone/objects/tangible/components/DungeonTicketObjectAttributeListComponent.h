@@ -1,6 +1,5 @@
 
-#ifndef DUNGEONTICKETOBJECTATTIBUTELISTCOMPONENT_H_
-#define DUNGEONTICKETOBJECTATTIBUTELISTCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/AttributeListComponent.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif /* ATTIBUTELISTCOMPONENT_H_ */

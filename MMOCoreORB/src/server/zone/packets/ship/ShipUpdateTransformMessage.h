@@ -5,11 +5,9 @@
  *	  Author: TheAnswer
  */
 
-#ifndef SHIPUPDATETRANSFORMMESSAGE_H_
-#define SHIPUPDATETRANSFORMMESSAGE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ShipObject.h"
-
 #include "PackedVelocity.h"
 #include "PackedPosition.h"
 #include "PackedRotationRate.h"
@@ -115,5 +113,3 @@ public:
 		insertSignedByte((int8)(direction->getZ() * 127.f));
 	}
 };
-
-#endif /* SHIPUPDATETRANSFORMMESSAGE_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTSTATMIGRATIONDATACOMMAND_H_
-#define REQUESTSTATMIGRATIONDATACOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sessions/MigrateStatsSession.h"
 #include "server/zone/packets/player/StatMigrationTargetsMessage.h"
@@ -49,5 +48,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTSTATMIGRATIONDATACOMMAND_H_

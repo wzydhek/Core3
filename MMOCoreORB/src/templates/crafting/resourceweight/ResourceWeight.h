@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESOURCEWEIGHT_H_
-#define RESOURCEWEIGHT_H_
+#pragma once
 
 #include "system/lang.h"
 #include "engine/service/proto/BaseMessage.h"
@@ -209,5 +208,3 @@ public:
 	}
 
 };
-
-#endif /* RESOURCEWEIGHT_H_ */

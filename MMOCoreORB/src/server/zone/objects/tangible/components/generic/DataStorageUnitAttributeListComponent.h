@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef DATASTORAGEUNITATTRIBUTELISTCOMPONENT_H_
-#define DATASTORAGEUNITATTRIBUTELISTCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/components/generic/DataStorageUnitDataComponent.h"
 
@@ -43,5 +42,3 @@ public:
 	}
 
 };
-
-#endif /* DATASTORAGEUNITATTRIBUTELISTCOMPONENT_H_ */

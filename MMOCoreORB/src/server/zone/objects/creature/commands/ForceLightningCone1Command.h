@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCELIGHTNINGCONE1COMMAND_H_
-#define FORCELIGHTNINGCONE1COMMAND_H_
+#pragma once
 
 #include "ForcePowersQueueCommand.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif //FORCELIGHTNINGCONE1COMMAND_H_

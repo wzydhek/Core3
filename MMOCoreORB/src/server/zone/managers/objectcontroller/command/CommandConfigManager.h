@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMMANDCONFIGMANAGER_H_
-#define COMMANDCONFIGMANAGER_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -172,7 +171,3 @@ public:
 }
 
 using namespace server::zone::managers::objectcontroller::command;
-
-
-
-#endif /*SLASHCOMMANDCONFIGMANAGER_H_*/

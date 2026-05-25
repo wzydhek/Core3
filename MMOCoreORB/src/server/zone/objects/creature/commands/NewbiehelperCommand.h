@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NEWBIEHELPERCOMMAND_H_
-#define NEWBIEHELPERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 
@@ -35,5 +34,3 @@ public:
 	}
 
 };
-
-#endif //NEWBIEHELPERCOMMAND_H_

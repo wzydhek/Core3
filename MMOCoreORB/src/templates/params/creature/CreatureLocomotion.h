@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef CREATURELOCOMOTION_H_
-#define CREATURELOCOMOTION_H_
+#pragma once
 
 class CreatureLocomotion {
 public:
@@ -42,6 +41,3 @@ public:
 		FAST
 	};
 };
-
-
-#endif /* CREATURELOCOMOTION_H_ */

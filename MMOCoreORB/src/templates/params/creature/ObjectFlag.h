@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OBJECTFLAG_H_
-#define OBJECTFLAG_H_
+#pragma once
 
 class ObjectFlag {
 public:
@@ -48,5 +47,3 @@ public:
 		HERBIVORE				= 0x02
 	};
 };
-
-#endif /* OBJECTFLAG_H_ */

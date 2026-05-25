@@ -1,5 +1,4 @@
-#ifndef BLACKBOARDDATAMAPSPACE_H_
-#define BLACKBOARDDATAMAPSPACE_H_
+#pragma once
 
 #include "system/util/VectorMap.h"
 #include "BlackboardDataSpace.h"
@@ -41,5 +40,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // SHIPBLACKBOARDDATAMAP_H_

@@ -1,5 +1,4 @@
-#ifndef CHECKSSPACE_H_
-#define CHECKSSPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/btspace/BehaviorSpace.h"
 
@@ -131,5 +130,3 @@ template<> bool CheckWeapons::check(ShipAiAgent* agent) const;
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // CHECKSSPACE_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef VISIBILITYMANAGER_H_
-#define VISIBILITYMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -175,5 +174,3 @@ public:
 }
 
 using namespace server::zone::managers::visibility;
-
-#endif /* VISIBILITYMANAGER_H_ */

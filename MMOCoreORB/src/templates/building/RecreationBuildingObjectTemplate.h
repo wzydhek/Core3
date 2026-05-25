@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef RECREATIONBUILDINGOBJECTTEMPLATE_H_
-#define RECREATIONBUILDINGOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/building/SharedBuildingObjectTemplate.h"
 
@@ -53,6 +52,3 @@ public:
 		return mindWoundRegenRate;
 	}
 };
-
-
-#endif /* RECREATIONBUILDINGOBJECTTEMPLATE_H_ */

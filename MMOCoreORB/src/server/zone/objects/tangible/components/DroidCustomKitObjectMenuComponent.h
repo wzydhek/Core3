@@ -5,9 +5,8 @@
  *      Author: Klivian
  */
 
-#ifndef DROIDCUSTOMKITOBJECTMENUCOMPONENT_H_
-#define DROIDCUSTOMKITOBJECTMENUCOMPONENT_H_
- 
+#pragma once
+
 #include "TangibleObjectMenuComponent.h"
 
 class DroidCustomKitObjectMenuComponent : public TangibleObjectMenuComponent {
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-#endif /* DROIDCUSTOMKITOBJECTMENUCOMPONENT_H_ */
-

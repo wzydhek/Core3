@@ -5,15 +5,12 @@
  *      Author: victor
  */
 
-#ifndef MISSIONACCEPTCALLBACK_H_
-#define MISSIONACCEPTCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "ObjectControllerMessageCallback.h"
 #include "server/zone/managers/mission/MissionManager.h"
 #include "server/zone/objects/mission/MissionObject.h"
-
 
 class MissionAcceptCallback : public MessageCallback {
 	uint64 missionObjectID;
@@ -84,5 +81,3 @@ public:
 		player->sendMessage(mar);
 	}
 };
-
-#endif /* MISSIONACCEPTCALLBACK_H_ */

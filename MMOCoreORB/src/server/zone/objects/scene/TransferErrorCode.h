@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TRANSFERERRORCODES_H_
-#define TRANSFERERRORCODES_H_
+#pragma once
 
 class TransferErrorCode {
 public:
@@ -27,6 +26,3 @@ public:
 	const static int CANTADD = 14;
 	const static int NOTNEARBANK = 15;
 };
-
-
-#endif /* TRANSFERERRORCODES_H_ */

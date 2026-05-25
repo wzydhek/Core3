@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef SLICINGTOOLTEMPLATE_H_
-#define SLICINGTOOLTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -34,5 +33,3 @@ public:
 	}
 
 };
-
-#endif /* SLICINGTOOLTEMPLATE_H_ */

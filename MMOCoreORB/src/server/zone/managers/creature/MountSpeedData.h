@@ -1,6 +1,5 @@
 
-#ifndef MOUNTSPEEDDATA_H_
-#define MOUNTSPEEDDATA_H_
+#pragma once
 
 #include "templates/params/primitives/StringParam.h"
 
@@ -58,5 +57,3 @@ public:
 }
 }
 }
-
-#endif /* MOUNTSPEEDDATA_H_ */

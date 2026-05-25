@@ -1,9 +1,7 @@
 
-#ifndef PLANETMAPSUBCATEGORYLIST_H_
-#define PLANETMAPSUBCATEGORYLIST_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "system/util/HashTable.h"
 
 class PlanetMapSubCategory;
@@ -38,5 +36,3 @@ public:
 		return HashTable<int, Reference<PlanetMapSubCategory*>>::put(key.hashCode(), value);
 	}
 };
-
-#endif /* PLANETMAPSUBCATEGORYLIST_H_ */

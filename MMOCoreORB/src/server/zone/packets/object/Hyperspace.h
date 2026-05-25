@@ -2,8 +2,7 @@
 // Created by g on 12/20/17.
 //
 
-#ifndef CORE3_HYPERSPACE_H
-#define CORE3_HYPERSPACE_H
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -15,4 +14,3 @@ public:
 		insertLong(shpid);
 	}
 };
-#endif //CORE3_HYPERSPACE_H

@@ -1,5 +1,4 @@
-#ifndef SHIPMISSILE_H_
-#define SHIPMISSILE_H_
+#pragma once
 
 #include "ShipProjectile.h"
 #include "server/zone/objects/ship/ShipMissileData.h"
@@ -198,5 +197,3 @@ public:
 	}
 #endif //SHIPPROJECTILE_DEBUG
 };
-
-#endif // SHIPMISSILE_H_

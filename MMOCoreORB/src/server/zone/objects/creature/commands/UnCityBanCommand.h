@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UNCITYBANCOMMAND_H_
-#define UNCITYBANCOMMAND_H_
+#pragma once
 
 class UnCityBanCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //UNCITYBANCOMMAND_H_

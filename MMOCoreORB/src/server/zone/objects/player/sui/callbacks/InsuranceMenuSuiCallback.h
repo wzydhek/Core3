@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef INSURANCEMENUSUICALLBACK_H_
-#define INSURANCEMENUSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
@@ -151,5 +150,3 @@ public:
 		}
 	}
 };
-
-#endif /* GUILDMEMBEROPTIONSSUICALLBACK_H_ */

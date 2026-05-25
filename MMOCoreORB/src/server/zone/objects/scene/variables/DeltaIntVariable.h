@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DELTAINTVARIABLE_H_
-#define DELTAINTVARIABLE_H_
+#pragma once
 
 #include "DeltaBasicVariable.h"
 
@@ -33,6 +32,3 @@ public:
 		msg->addIntUpdate(DeltaID, object);
 	}
 };
-
-
-#endif /* DELTAINTVARIABLE_H_ */

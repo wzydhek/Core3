@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef EMOTE_H_
-#define EMOTE_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -19,5 +18,3 @@ public:
 	}
 
 };
-
-#endif /*EMOTE_H_*/

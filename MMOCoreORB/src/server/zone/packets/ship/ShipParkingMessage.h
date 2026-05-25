@@ -2,7 +2,4 @@
 // Created by g on 12/12/17.
 //
 
-#ifndef SHIPPARKINGMESSAGE_H
-#define SHIPPARKINGMESSAGE_H
-
-#endif //SHIPPARKINGMESSAGE_H
+#pragma once

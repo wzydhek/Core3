@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef FIREWORKSHOWMENUCOMPONENT_H_
-#define FIREWORKSHOWMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 #include "server/zone/objects/tangible/firework/FireworkObject.h"
@@ -43,6 +42,3 @@ public:
 	void showData(CreatureObject* player, FireworkObject* firework) const;
 
 };
-
-
-#endif /* FIREWORKSHOWMENUCOMPONENT_H_ */

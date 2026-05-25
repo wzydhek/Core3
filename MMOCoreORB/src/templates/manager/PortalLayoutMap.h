@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PORTALLAYOUTMAP_H_
-#define PORTALLAYOUTMAP_H_
+#pragma once
 
 #include "templates/appearance/PortalLayout.h"
 #include "templates/appearance/FloorMesh.h"
@@ -40,5 +39,3 @@ public:
 		setNullValue(nullptr);
 	}
 };
-
-#endif /* PORTALLAYOUTMAP_H_ */

@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef LISTGUILDSRESPONSESUICALLBACK_H_
-#define LISTGUILDSRESPONSESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/guild/GuildManager.h"
@@ -50,5 +49,3 @@ public:
 		guildManager->sendAdminGuildInfoTo(player, guild);
 	}
 };
-
-#endif /* LISTGUILDSRESPONSESUICALLBACK_H_ */

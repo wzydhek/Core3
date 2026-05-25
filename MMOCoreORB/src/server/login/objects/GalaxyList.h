@@ -2,15 +2,14 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GALAXYLIST_H_
-#define GALAXYLIST_H_
+#pragma once
 
 #include "server/db/ServerDatabase.h"
 #include "conf/ConfigManager.h"
 #include "Galaxy.h"
 
 #ifdef WITH_SWGREALMS_API
-#include "server/login/SWGRealmsAPI.h"
+	#include "server/login/SWGRealmsAPI.h"
 #endif
 
 class GalaxyList {
@@ -105,5 +104,3 @@ public:
 		return galaxies.size();
 	}
 };
-
-#endif /*GALAXYLIST_H_*/

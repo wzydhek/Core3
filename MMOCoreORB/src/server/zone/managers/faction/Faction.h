@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef FACTIONRELATIONSHIP_H_
-#define FACTIONRELATIONSHIP_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -103,6 +102,3 @@ public:
 		return adjustFactor;
 	}
 };
-
-
-#endif /* FACTIONRELATIONSHIP_H_ */

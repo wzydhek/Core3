@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef RESPAWNCREATURETASK_H_
-#define RESPAWNCREATURETASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/Zone.h"
@@ -34,6 +33,3 @@ public:
 		creature->respawn(zone, level);
 	}
 };
-
-
-#endif /* RESPAWNCREATURETASK_H_ */

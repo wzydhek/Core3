@@ -5,8 +5,7 @@
  * Author: Hakry
  */
 
-#ifndef DEFUSEMINETASK_H_
-#define DEFUSEMINETASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
@@ -83,5 +82,3 @@ public:
 		player->setPosture(CreaturePosture::UPRIGHT, true, true);
 	}
 };
-
-#endif /* DEFUSEMINETASK_H_ */

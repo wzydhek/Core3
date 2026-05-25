@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INSTALLMISSIONTERMINALCOMMAND_H_
-#define INSTALLMISSIONTERMINALCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/creature/commands/sui/InstallMissionTerminalSuiCallback.h"
@@ -60,5 +59,3 @@ public:
 	}
 
 };
-
-#endif //INSTALLMISSIONTERMINALCOMMAND_H_

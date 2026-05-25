@@ -5,12 +5,10 @@
  *      Author: da
  */
 
-#ifndef AIMAP_H_
-#define AIMAP_H_
+#pragma once
 
 #include "server/ServerCore.h"
 #include "system/util/VectorMap.h"
-
 #include "server/zone/objects/creature/ai/bt/Behavior.h"
 #include "server/zone/objects/creature/ai/bt/BehaviorTreeSlot.h"
 #include "templates/params/creature/ObjectFlag.h"
@@ -691,5 +689,3 @@ private:
 		return 0;
 	}
 };
-
-#endif /* AIMAP_H_ */

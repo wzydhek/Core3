@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETPERMISSIONCOMMAND_H_
-#define SETPERMISSIONCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -67,5 +66,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // SETPERMISSIONCOMMAND_H_

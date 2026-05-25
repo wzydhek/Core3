@@ -2,9 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GUILDVOTESUICALLBACK_H_
-#define GUILDVOTESUICALLBACK_H_
-
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
@@ -56,6 +54,3 @@ public:
 		guildManager->castVote(guild, player, candidateID);
 	}
 };
-
-
-#endif /* GUILDVOTESUICALLBACK_H_ */

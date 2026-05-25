@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BROADCASTAREACOMMAND_H_
-#define BROADCASTAREACOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -202,5 +201,3 @@ public:
 	}
 
 };
-
-#endif //BROADCASTAREACOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: loshult
  */
 
-#ifndef CONTRABANDSCANTASK_H_
-#define CONTRABANDSCANTASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/sessions/ContrabandScanSession.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -31,5 +30,3 @@ public:
 		}
 	}
 };
-
-#endif /* CONTRABANDSCANTASK_H_ */

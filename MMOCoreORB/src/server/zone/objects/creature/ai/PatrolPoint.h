@@ -2,13 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PATROLPOINT_H_
-#define PATROLPOINT_H_
+#pragma once
 
 #include "system/lang.h"
-
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/cell/CellObject.h"
 #include "server/zone/objects/scene/WorldCoordinates.h"
@@ -199,5 +196,3 @@ public:
 		return position.toString();
 	}
 };
-
-#endif /*PATROLPOINT_H_*/

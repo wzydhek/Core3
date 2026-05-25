@@ -9,6 +9,7 @@
  */
 
 #pragma once
+
 #include "server/zone/managers/crafting/CraftingManager.h"
 
 /**
@@ -93,5 +94,3 @@ public:
 		return index;
 	}
 };
-
-

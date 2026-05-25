@@ -1,5 +1,4 @@
-#ifndef LOOTATTRIBUTETYPE_H_
-#define LOOTATTRIBUTETYPE_H_
+#pragma once
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 
@@ -235,5 +234,3 @@ public:
 		return RandomType::STATIC;
 	}
 };
-
-#endif //LOOTATTRIBUTETYPE_H_

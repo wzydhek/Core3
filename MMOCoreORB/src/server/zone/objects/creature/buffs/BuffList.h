@@ -2,12 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BUFFLIST_H_
-#define BUFFLIST_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/creature/buffs/Buff.h"
 
 class BuffList : public Serializable {
@@ -98,6 +96,3 @@ public:
 		return false;
 	}
 };
-
-
-#endif /* BUFFLIST_H_ */

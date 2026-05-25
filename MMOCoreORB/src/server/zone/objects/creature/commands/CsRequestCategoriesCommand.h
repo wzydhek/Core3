@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CSREQUESTCATEGORIESCOMMAND_H_
-#define CSREQUESTCATEGORIESCOMMAND_H_
+#pragma once
 
 class CsRequestCategoriesCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CSREQUESTCATEGORIESCOMMAND_H_

@@ -2,8 +2,7 @@
  * SelectorSpace.h
  */
 
-#ifndef SELECTORSPACE_H_
-#define SELECTORSPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/btspace/nodespace/CompositeSpace.h"
 
@@ -46,5 +45,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif /* SELECTORSPACE_H_ */

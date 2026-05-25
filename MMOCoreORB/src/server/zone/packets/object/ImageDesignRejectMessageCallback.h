@@ -5,8 +5,7 @@
  *      Author: Polonel
  */
 
-#ifndef IMAGEDESIGNREJECTMESSAGECALLBACK_H_
-#define IMAGEDESIGNREJECTMESSAGECALLBACK_H_
+#pragma once
 
 #include "ObjectControllerMessageCallback.h"
 #include "server/zone/objects/player/sessions/ImageDesignSession.h"
@@ -52,6 +51,3 @@ public:
 		session->cancelImageDesign(designer, target, tent, type, data);
 	}
 };
-
-
-#endif /* IMAGEDESIGNREJECTMESSAGECALLBACK_H_ */

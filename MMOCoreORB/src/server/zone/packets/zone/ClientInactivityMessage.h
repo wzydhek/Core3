@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CLIENTINACTIVITYMESSAGE_H_
-#define CLIENTINACTIVITYMESSAGE_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 
@@ -33,5 +32,3 @@ public:
 		}
 	}
 };
-
-#endif

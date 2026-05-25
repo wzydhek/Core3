@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETOWNERCOMMAND_H_
-#define SETOWNERCOMMAND_H_
+#pragma once
 
 class SetOwnerCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SETOWNERCOMMAND_H_

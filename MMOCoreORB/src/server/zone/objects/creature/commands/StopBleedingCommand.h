@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STOPBLEEDINGCOMMAND_H_
-#define STOPBLEEDINGCOMMAND_H_
+#pragma once
 
 #include "ForceHealQueueCommand.h"
 
@@ -15,5 +14,3 @@ public:
 
 	}
 };
-
-#endif //STOPBLEEDINGCOMMAND_H_

@@ -1,5 +1,4 @@
-#ifndef SKILL_H_
-#define SKILL_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
@@ -357,5 +356,3 @@ private:
 
 	friend class server::zone::managers::skill::SkillManager;
 };
-
-#endif /* SKILL_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BOOSTEROFF_H_
-#define BOOSTEROFF_H_
+#pragma once
 
 #include "QueueCommand.h"
 
@@ -56,5 +55,3 @@ public:
 	}
 
 };
-
-#endif //BOOSTEROFF_H_

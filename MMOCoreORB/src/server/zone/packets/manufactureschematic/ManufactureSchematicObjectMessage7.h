@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef MANUFACTURESCHEMATICOBJECTMESSAGE7_H_
-#define MANUFACTURESCHEMATICOBJECTMESSAGE7_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 
@@ -15,5 +14,3 @@ public:
 	}
 
 };
-
-#endif /*MANUFACTURESCHEMATICOBJECTMESSAGE7_H_*/

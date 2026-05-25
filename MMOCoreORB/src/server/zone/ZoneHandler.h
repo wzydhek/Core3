@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ZONEHANDLER_H_
-#define ZONEHANDLER_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/ZoneClientSession.h"
@@ -112,5 +111,3 @@ namespace server {
 } // namespace server
 
 using namespace server::zone;
-
-#endif /* ZONEHANDLER_H_ */

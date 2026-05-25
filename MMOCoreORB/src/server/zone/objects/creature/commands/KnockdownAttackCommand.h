@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef KNOCKDOWNATTACKCOMMAND_H_
-#define KNOCKDOWNATTACKCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif //KNOCKDOWNATTACKCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SAMPLEDNACOMMAND_H_
-#define SAMPLEDNACOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/ai/Creature.h"
@@ -109,5 +108,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //SAMPLEDNACOMMAND_H_

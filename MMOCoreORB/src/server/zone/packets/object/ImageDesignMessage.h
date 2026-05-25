@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef IMAGEDESIGNMESSAGE_H_
-#define IMAGEDESIGNMESSAGE_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -98,5 +97,3 @@ public:
 };
 
 */
-
-#endif /*IMAGEDESIGNMESSAGE_H_*/

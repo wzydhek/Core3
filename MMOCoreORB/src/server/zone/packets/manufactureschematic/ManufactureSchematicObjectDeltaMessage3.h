@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.*/
 
 
-#ifndef MANUFACTURESCHEMATICOBJECTDELTAMESSAGE3_H_
-#define MANUFACTURESCHEMATICOBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 
@@ -56,5 +55,3 @@ public:
 		}
 	}
 };
-
-#endif /*MANUFACTURESCHEMATICOBJECTMESSAGE3_H_*/

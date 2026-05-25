@@ -2,8 +2,7 @@
  * LaunchShipTask.h
  */
 
-#ifndef LAUNCHSHIPTASK_H_
-#define LAUNCHSHIPTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/intangible/ShipControlDevice.h"
@@ -162,5 +161,3 @@ public:
 	}
 
 };
-
-#endif /* LAUNCHSHIPTASK_H_ */

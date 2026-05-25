@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYERMONEYRESPONSEMESSAGE_H_
-#define PLAYERMONEYRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -19,5 +18,3 @@ public:
 	}
 	
 };
-
-#endif /*PLAYERMONEYRESPONSEMESSAGE_H_*/

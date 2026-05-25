@@ -5,9 +5,8 @@
  *      Author: Klivian
  */
 
-#ifndef VEHICLECUSTOMKITOBJECTMENUCOMPONENT_H_
-#define VEHICLECUSTOMKITOBJECTMENUCOMPONENT_H_
- 
+#pragma once
+
 #include "TangibleObjectMenuComponent.h"
 
 class VehicleCustomKitObjectMenuComponent : public TangibleObjectMenuComponent {
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-#endif /* VEHICLECUSTOMKITOBJECTMENUCOMPONENT_H_ */
-

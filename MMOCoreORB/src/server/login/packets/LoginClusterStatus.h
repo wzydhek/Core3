@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LOGINCLUSTERSTATUS_H_
-#define LOGINCLUSTERSTATUS_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -62,5 +61,3 @@ public:
 }
 
 using namespace server::login::packets;
-
-#endif /*LOGINCLUSTERSTATUS_H_*/

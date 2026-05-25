@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TANGIBLEOBJECTDELTAMESSAGE6_H_
-#define TANGIBLEOBJECTDELTAMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
-
 #include "server/zone/objects/tangible/TangibleObject.h"
 
 class TangibleObjectDeltaMessage6 : public DeltaMessage {
@@ -19,6 +17,3 @@ public:
 	}
 
 };
-
-
-#endif /* TANGIBLEOBJECTDELTAMESSAGE6_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FACTIONRESPONSEMESSAGE_H_
-#define FACTIONRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -20,5 +19,3 @@ public:
 
 	}
 };
-
-#endif /*FACTIONRESPONSEMESSAGE_H_*/

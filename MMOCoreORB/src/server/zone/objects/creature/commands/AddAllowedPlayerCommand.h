@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ADDALLOWEDPLAYERCOMMAND_H_
-#define ADDALLOWEDPLAYERCOMMAND_H_
+#pragma once
 
 class AddAllowedPlayerCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //ADDALLOWEDPLAYERCOMMAND_H_

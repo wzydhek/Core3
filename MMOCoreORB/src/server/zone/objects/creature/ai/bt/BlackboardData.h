@@ -1,5 +1,4 @@
-#ifndef BLACKBOARDDATA_H_
-#define BLACKBOARDDATA_H_
+#pragma once
 
 #include <type_traits>
 #include <utility>
@@ -87,7 +86,6 @@ public:
 		swap(*this, in);
 	}
 
-
 	BlackboardData& operator=(BlackboardData in) {
 		swap(*this, in);
 		return *this;
@@ -109,8 +107,12 @@ public:
 	void set(T&& in) {
 		data.reset(new Data<BlackboardType<T>>(std::forward<T>(in)));
 	}
+
 	friend void swap(BlackboardData& a, BlackboardData& b);
+
 };
+
+
 inline void swap(BlackboardData& a, BlackboardData& b) {
 	using std::swap;
 	swap(a.data, b.data);
@@ -136,5 +138,3 @@ inline BlackboardData::BlackboardData(BlackboardData&& in) : BlackboardData() {
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // BLACKBOARDDATA_H_

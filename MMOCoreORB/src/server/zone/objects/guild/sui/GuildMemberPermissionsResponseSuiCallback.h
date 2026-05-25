@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDMEMBERPERMISSIONSRESPONSESUICALLBACK_H_
-#define GUILDMEMBERPERMISSIONSRESPONSESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
@@ -61,5 +60,3 @@ public:
 		guildManager->toggleGuildPermission(player, memberID, index, guildTerminal);
 	}
 };
-
-#endif /* GUILDMEMBERPERMISSIONSRESPONSESUICALLBACK_H_ */

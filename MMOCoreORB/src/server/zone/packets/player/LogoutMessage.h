@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef LOGOUTMESSAGE_H_
-#define LOGOUTMESSAGE_H_
+#pragma once
 
 class LogoutMessage : public BaseMessage {
 public:
@@ -18,4 +17,3 @@ public:
    }
 
 };
-#endif /* LOGOUTMESSAGE_H_ */

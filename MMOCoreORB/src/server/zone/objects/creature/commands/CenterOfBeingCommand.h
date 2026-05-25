@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CENTEROFBEINGCOMMAND_H_
-#define CENTEROFBEINGCOMMAND_H_
+#pragma once
 
 class CenterOfBeingCommand : public QueueCommand {
 public:
@@ -79,5 +78,3 @@ public:
 	}
 
 };
-
-#endif //CENTEROFBEINGCOMMAND_H_

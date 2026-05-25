@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RALLYCOMMAND_H_
-#define RALLYCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "SquadLeaderCommand.h"
@@ -164,5 +163,3 @@ public:
 	}
 
 };
-
-#endif //RALLYCOMMAND_H_

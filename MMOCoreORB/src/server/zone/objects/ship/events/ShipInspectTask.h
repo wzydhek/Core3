@@ -8,8 +8,7 @@
  *	Author: Hakry
  */
 
-#ifndef SHIPINSPECTTASK_H_
-#define SHIPINSPECTTASK_H_
+#pragma once
 
 #include "server/zone/objects/ship/ShipObject.h"
 
@@ -29,5 +28,3 @@ public:
 
 	void run();
 };
-
-#endif // SHIPINSPECTTASK_H_

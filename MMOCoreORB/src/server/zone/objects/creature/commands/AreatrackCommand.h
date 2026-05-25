@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef AREATRACKCOMMAND_H_
-#define AREATRACKCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/callbacks/AreaTrackSuiCallback.h"
 
@@ -71,5 +70,3 @@ public:
 	}
 
 };
-
-#endif //AREATRACKCOMMAND_H_

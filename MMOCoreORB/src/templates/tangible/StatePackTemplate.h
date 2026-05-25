@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef STATEPACKTEMPLATE_H_
-#define STATEPACKTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -43,5 +42,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* STATEPACKTEMPLATE_H_ */

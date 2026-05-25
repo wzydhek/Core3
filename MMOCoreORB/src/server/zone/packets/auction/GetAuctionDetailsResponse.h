@@ -1,5 +1,4 @@
-#ifndef GETAUCTIONDETAILSRESPONSEMESSAGE_H_
-#define GETAUCTIONDETAILSRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -20,5 +19,3 @@ public:
 			System::out << "Sending an GetAuctionDetailsResponse" << endl;
 	}
 };
-		
-#endif /*GETAUCTIONDETAILSRESPONSEMESSAGE_H_*/

@@ -16,8 +16,7 @@
 // 3. This notice may not be removed or altered from any source distribution.
 //
 
-#ifndef DETOURALLOCATOR_H
-#define DETOURALLOCATOR_H
+#pragma once
 
 #include <stddef.h>
 
@@ -57,5 +56,3 @@ void* dtAlloc(size_t size, dtAllocHint hint);
 ///  @param[in]		ptr		A pointer to a memory block previously allocated using #dtAlloc.
 /// @see dtAlloc
 void dtFree(void* ptr);
-
-#endif

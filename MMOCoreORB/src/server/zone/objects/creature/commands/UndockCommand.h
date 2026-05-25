@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UNDOCK_H_
-#define UNDOCK_H_
+#pragma once
 
 #include "SpaceQueueCommand.h"
 
@@ -36,5 +35,3 @@ public:
 	}
 
 };
-
-#endif //UNDOCK_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HARMLESSCOMMAND_H_
-#define HARMLESSCOMMAND_H_
+#pragma once
 
 class HarmlessCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //HARMLESSCOMMAND_H_

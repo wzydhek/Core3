@@ -1,6 +1,5 @@
 
-#ifndef LOTTERYDROIDPULSETASK_H_
-#define LOTTERYDROIDPULSETASK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/eventperk/LotteryDroid.h"
 #include "server/zone/objects/tangible/deed/eventperk/EventPerkDeed.h"
@@ -58,5 +57,3 @@ public:
 }
 
 using namespace server::zone::objects::tangible::tasks;
-
-#endif /* LOTTERYDROIDPULSETASK_H_ */

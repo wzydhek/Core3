@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SPACETERRAINAPPEARANCE_H_
-#define SPACETERRAINAPPEARANCE_H_
+#pragma once
 
 #include "TemplateVariable.h"
 #include "TerrainAppearance.h"
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif /* SPACETERRAINAPPEARANCE_H_ */

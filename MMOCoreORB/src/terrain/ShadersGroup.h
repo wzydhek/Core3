@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHADERSGROUP_H_
-#define SHADERSGROUP_H_
+#pragma once
 
 #include "TemplateVariable.h"
 #include "ShaderFamily.h"
@@ -54,5 +53,3 @@ public:
 	}
 
 };
-
-#endif /* SURFACEGROUP_H_ */

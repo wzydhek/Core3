@@ -5,9 +5,10 @@
  *      Author: root
  */
 
-#ifndef CREATURERANGEDATTACKCOMMAND_H_
-#define CREATURERANGEDATTACKCOMMAND_H_
+#pragma once
+
 #include "CombatQueueCommand.h"
+
 class CreatureRangedAttackCommand : public CombatQueueCommand {
 public:
 
@@ -32,9 +33,3 @@ public:
 		return doCombatAction(creature, target);
 	}
 };
-
-
-
-
-
-#endif /* CREATURERANGEDATTACKCOMMAND_H_ */

@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef FACTIONRELATIONSHIPMAP_H_
-#define FACTIONRELATIONSHIPMAP_H_
+#pragma once
 
 #include "Faction.h"
 
@@ -19,5 +18,3 @@ public:
 
 	Faction* getFaction(const String& factionName);
 };
-
-#endif /* FACTIONRELATIONSHIPMAP_H_ */

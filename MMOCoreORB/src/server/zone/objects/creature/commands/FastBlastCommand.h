@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FASTBLASTCOMMAND_H_
-#define FASTBLASTCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -28,5 +27,3 @@ public:
 		}
 
 	};
-
-#endif //FASTBLASTCOMMAND_H_

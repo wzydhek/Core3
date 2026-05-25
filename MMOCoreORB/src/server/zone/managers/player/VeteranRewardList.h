@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef VETERANREWARDLIST_H_
-#define VETERANREWARDLIST_H_
+#pragma once
 
 #include "VeteranReward.h"
 
@@ -18,5 +17,3 @@ public:
 	}
 
 };
-
-#endif /* VETERANREWARDLIST_H_ */

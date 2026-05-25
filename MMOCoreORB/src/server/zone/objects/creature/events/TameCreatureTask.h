@@ -1,6 +1,5 @@
 
-#ifndef TAMECREATURETASK_H_
-#define TAMECREATURETASK_H_
+#pragma once
 
 #include "server/zone/managers/combat/CombatManager.h"
 #include "server/zone/managers/creature/PetManager.h"
@@ -256,5 +255,3 @@ public:
 		creature->setMovementState(AiAgent::FOLLOWING);
 	}
 };
-
-#endif /* TAMECREATURETASK_H_ */

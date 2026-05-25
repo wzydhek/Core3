@@ -5,9 +5,7 @@
  *  Author: victor
  */
 
-#ifndef AIRECOVERYEVENT_H_
-#define AIRECOVERYEVENT_H_
-
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/managers/creature/AiMap.h"
@@ -67,6 +65,3 @@ public:
 }
 
 using namespace server::zone::objects::creature::events;
-
-
-#endif /* AIRECOVERYEVENT_H_ */

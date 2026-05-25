@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SPECIES_H_
-#define SPECIES_H_
+#pragma once
 
 namespace login {
 
@@ -31,5 +30,3 @@ const static char* Race[] = {
 };
 
 }
-
-#endif /*SPECIES_H_*/

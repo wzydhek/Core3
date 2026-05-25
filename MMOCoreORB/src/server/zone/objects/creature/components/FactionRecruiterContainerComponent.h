@@ -1,6 +1,5 @@
 
-#ifndef FACTIONRECRUITERCONTAINERCOMPONENT_H_
-#define FACTIONRECRUITERCONTAINERCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
@@ -12,5 +11,3 @@ public:
 	bool transferObject(SceneObject* sceneObject, SceneObject* object, int containmentType, bool notifyClient = false, bool allowOverflow = false, bool notifyRoot = true) const;
 
 };
-
-#endif /* FACTIONRECRUITERCONTAINERCOMPONENT_H_ */

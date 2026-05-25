@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef RECASTPOLYGON_H_
-#define RECASTPOLYGON_H_
+#pragma once
 
 enum SamplePolyAreas
 {
@@ -63,5 +62,3 @@ public:
 	int numVerts;
 	float hmin, hmax;
 };
-
-#endif /* RECASTPOLYGON_H_ */

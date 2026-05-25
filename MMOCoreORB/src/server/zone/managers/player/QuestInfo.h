@@ -1,5 +1,4 @@
-#ifndef QUESTINFO_H_
-#define QUESTINFO_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 
@@ -63,5 +62,3 @@ public:
 		row->getValue(11, sendSystemMessage);
 	}
 };
-
-#endif /* QUESTINFO_H_ */

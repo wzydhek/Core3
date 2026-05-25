@@ -5,8 +5,7 @@
  *      Author: oru
  */
 
-#ifndef OBJECTS_H_
-#define OBJECTS_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/ai/NonPlayerCreatureObject.h"
@@ -170,5 +169,3 @@
 #include "server/zone/objects/tangible/space/content_infrastructure/SpaceSpawner.h"
 #include "server/zone/objects/tangible/item/CreditChipObject.h"
 #include "server/zone/objects/tangible/misc/DroidProgrammingChip.h"
-
-#endif /* OBJECTS_H_ */

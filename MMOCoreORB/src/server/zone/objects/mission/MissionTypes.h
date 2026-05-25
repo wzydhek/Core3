@@ -1,6 +1,4 @@
-#ifndef MISSIONTYPES_H_
-#define MISSIONTYPES_H_
-
+#pragma once
 
 namespace MissionTypes {
 	enum {
@@ -18,5 +16,3 @@ namespace MissionTypes {
 		SURVEY = 0x19C9FAC1 // artisan
 	};
 }
-
-#endif

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SKILLMODLIST_H_
-#define SKILLMODLIST_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "SkillModEntry.h"
@@ -219,5 +218,3 @@ public:
 		return skill.toString();
 	}
 };
-
-#endif /*SKILLMODLIST_H_*/

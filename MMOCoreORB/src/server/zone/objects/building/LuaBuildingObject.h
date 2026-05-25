@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef LUABUILDINGOBJECT_H_
-#define LUABUILDINGOBJECT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/tangible/LuaTangibleObject.h"
 
 namespace server {
@@ -57,5 +55,3 @@ namespace building {
 }
 
 using namespace server::zone::objects::building;
-
-#endif /*LUABUILDINGOBJECT_H_*/

@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef COMPONENTSLOT_H_
-#define COMPONENTSLOT_H_
+#pragma once
 
 #include "IngredientSlot.h"
 #include "server/zone/managers/object/ObjectManager.h"
@@ -330,4 +329,3 @@ public:
 		return quant;
 	}
 };
-#endif /*COMPONENTSLOT_H_*/

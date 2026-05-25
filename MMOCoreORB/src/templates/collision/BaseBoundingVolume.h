@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef BASEBOUNDINGVOLUME_H_
-#define BASEBOUNDINGVOLUME_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -35,5 +34,3 @@ public:
 	
 	virtual void read(IffStream *iff);
 };
-
-#endif /* BASEBOUNDINGVOLUME_H_ */

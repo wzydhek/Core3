@@ -1,5 +1,4 @@
-#ifndef TRAVELCOUPONUSESUICALLBACK_H_
-#define TRAVELCOUPONUSESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
@@ -136,5 +135,3 @@ public:
 		player->sendMessage(suiBox->generateMessage());
 	}
 };
-
-#endif /* TRAVELCOUPONUSESUICALLBACK_H_ */

@@ -8,8 +8,7 @@
  * \date 6-01-10
  */
 
-#ifndef DRAFTSCHEMATICGROUP_H_
-#define DRAFTSCHEMATICGROUP_H_
+#pragma once
 
 #include "server/zone/objects/draftschematic/DraftSchematic.h"
 
@@ -40,5 +39,3 @@ public:
 		}
 	}
 };
-
-#endif /* DRAFTSCHEMATICGROUP_H_ */

@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef REMOVEDEFENSESUICALLBACK_H_
-#define REMOVEDEFENSESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/gcw/GCWManager.h"
@@ -43,5 +42,3 @@ public:
 
 	}
 };
-
-#endif /* REMOVEDEFENSESUICALLBACK_H_ */

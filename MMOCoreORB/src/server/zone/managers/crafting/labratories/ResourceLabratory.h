@@ -5,10 +5,10 @@
  *      Author: swgemu
  */
 
-#ifndef RESOURCELABRATORY_H_
-#define RESOURCELABRATORY_H_
+#pragma once
 
 #include "SharedLabratory.h"
+
 namespace server {
 namespace zone {
 namespace managers {
@@ -34,7 +34,5 @@ protected:
 }
 }
 }
+
 using namespace server::zone::managers::crafting::labratories;
-
-
-#endif /* RESOURCELABRATORY_H_ */

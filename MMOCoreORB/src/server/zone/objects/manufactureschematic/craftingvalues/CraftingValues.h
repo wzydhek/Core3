@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CRAFTINGVALUES_H_
-#define CRAFTINGVALUES_H_
+#pragma once
 
 #include "templates/crafting/AttributesMap.h"
 #include "engine/engine.h"
@@ -33,8 +32,6 @@ namespace server {
 }
 
 using namespace server::zone::objects::creature;
-
-
 
 namespace server {
  namespace zone {
@@ -266,5 +263,3 @@ public:
 }
 
 using namespace server::zone::objects::manufactureschematic::craftingvalues;
-
-#endif /*CRAFTINGVALUES_H_*/

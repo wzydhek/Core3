@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef NAMEVENDORCALLBACK_H_
-#define NAMEVENDORCALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/vendor/CreateVendorSession.h"
@@ -42,5 +41,3 @@ public:
 		session->createVendor(name);
 	}
 };
-
-#endif /* NAMEVENDORCALLBACK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ANIMALSCARECOMMAND_H_
-#define ANIMALSCARECOMMAND_H_
+#pragma once
 
 #include "ForcePowersQueueCommand.h"
 
@@ -92,5 +91,3 @@ public:
 		return result;
 	}
 };
-
-#endif //ANIMALSCARECOMMAND_H_

@@ -1,6 +1,5 @@
 
-#ifndef COAMESSAGEFRAGMENTSUICALLBACK_H_
-#define COAMESSAGEFRAGMENTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/components/generic/CoaMessageDataComponent.h"
@@ -151,6 +150,3 @@ public:
 		player->sendSystemMessage("@encoded_disk/message_fragment:sys_message_assembled"); // You successfully assemble the fragments into a single file.
 	}
 };
-
-
-#endif /* COAMESSAGEFRAGMENTSUICALLBACK_H_ */

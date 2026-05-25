@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CUREPACKTEMPLATE_H_
-#define CUREPACKTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -63,6 +62,3 @@ public:
 		return true;
 	}
 };
-
-
-#endif /* CUREPACKTEMPLATE_H_ */

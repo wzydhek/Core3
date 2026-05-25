@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef AUCTIONSAYCOMMAND_H_
-#define AUCTIONSAYCOMMAND_H_
+#pragma once
 
 #include "server/chat/ChatManager.h"
 
@@ -30,5 +29,3 @@ public:
 	}
 
 };
-
-#endif //AUCTIONSAYCOMMAND_H_

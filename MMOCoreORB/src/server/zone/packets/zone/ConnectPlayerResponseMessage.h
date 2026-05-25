@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CONNECTPLAYERRESPONSEMESSAGE_H_
-#define CONNECTPLAYERRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/packets/MessageCallback.h"
@@ -37,6 +36,3 @@ public:
 		client->sendMessage(cprm);
 	}
 };
-
-
-#endif /* CONNECTPLAYERRESPONSEMESSAGE_H_ */

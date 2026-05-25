@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FILTERSHADER_H_
-#define FILTERSHADER_H_
-
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "FilterProceduralRule.h"
@@ -47,5 +45,3 @@ public:
 		iffStream->closeChunk('DATA');
 	}
 };
-
-#endif /* FILTERSHADER_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATUREOBJECTDELTAMESSAGE1_H_
-#define CREATUREOBJECTDELTAMESSAGE1_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 
@@ -27,5 +26,3 @@ public:
 	}
 
 };
-
-#endif /*CREATUREOBJECTDELTAMESSAGE1_H_*/

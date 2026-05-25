@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYERDISCONNECTEVENT_H_
-#define PLAYERDISCONNECTEVENT_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 
@@ -59,5 +58,3 @@ public:
 }
 
 using namespace server::zone::objects::player::events;
-
-#endif /*PLAYERDISCONNECTEVENT_H_*/

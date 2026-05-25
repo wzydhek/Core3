@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REPORTCOMMAND_H_
-#define REPORTCOMMAND_H_
+#pragma once
 
 class ReportCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //REPORTCOMMAND_H_

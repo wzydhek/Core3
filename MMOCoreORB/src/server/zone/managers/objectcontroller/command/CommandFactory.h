@@ -5,8 +5,7 @@
  *      Author: dannuic
  */
 
-#ifndef COMMANDFACTORY_H_
-#define COMMANDFACTORY_H_
+#pragma once
 
 namespace server {
 namespace zone {
@@ -74,5 +73,3 @@ protected:
 } // namespace managers
 } // namespace zone
 } // namespace server
-
-#endif /* COMMANDFACTORY_H_ */

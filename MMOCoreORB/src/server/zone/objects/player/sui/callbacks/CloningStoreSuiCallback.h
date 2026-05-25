@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef CLONINGSTORESUICALLBACK_H_
-#define CLONINGSTORESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -123,5 +122,3 @@ public:
 
 	}
 };
-
-#endif /* CLONINGSTORESUICALLBACK_H_ */

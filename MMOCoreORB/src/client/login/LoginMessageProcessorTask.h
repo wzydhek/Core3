@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LOGINMESSAGEPROCESSORTASK_H_
-#define LOGINMESSAGEPROCESSORTASK_H_
+#pragma once
 
 #include "LoginPacketHandler.h"
 #include "ClientCore.h"
@@ -42,5 +41,3 @@ public:
 	}
 
 };
-
-#endif /*LOGINMESSAGEPROCESSORTASK_H_*/

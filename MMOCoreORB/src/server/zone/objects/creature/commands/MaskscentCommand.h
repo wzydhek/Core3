@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MASKSCENTCOMMAND_H_
-#define MASKSCENTCOMMAND_H_
+#pragma once
 
 class MaskscentCommand : public QueueCommand {
 public:
@@ -101,5 +100,3 @@ public:
 		return true;
 	}
 };
-
-#endif // MASKSCENTCOMMAND_H_

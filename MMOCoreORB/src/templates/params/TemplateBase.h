@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef TEMPLATEBASE_H_
-#define TEMPLATEBASE_H_
+#pragma once
 
 #include "templates/params/Param.h"
 
@@ -113,5 +112,3 @@ public:
 		//unknown = unk;
 	}
 };
-
-#endif /* TEMPLATEBASE_H_ */

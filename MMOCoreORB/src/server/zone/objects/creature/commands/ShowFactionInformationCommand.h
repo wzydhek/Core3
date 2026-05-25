@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SHOWFACTIONINFORMATIONCOMMAND_H_
-#define SHOWFACTIONINFORMATIONCOMMAND_H_
+#pragma once
 
 class ShowFactionInformationCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SHOWFACTIONINFORMATIONCOMMAND_H_

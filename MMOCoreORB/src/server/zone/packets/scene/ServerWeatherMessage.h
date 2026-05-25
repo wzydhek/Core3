@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SERVERWEATHERMESSAGE_H_
-#define SERVERWEATHERMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -22,5 +21,3 @@ public:
 	}
 
 };
-
-#endif /*SERVERWEATHERMESSAGE_H_*/

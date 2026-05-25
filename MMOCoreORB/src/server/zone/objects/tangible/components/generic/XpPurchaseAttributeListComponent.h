@@ -1,5 +1,4 @@
-#ifndef XPPURCHASEATTIBUTELISTCOMPONENT_H_
-#define XPPURCHASEATTIBUTELISTCOMPONENT_H_
+#pragma once
 
 #include "templates/tangible/XpPurchaseTemplate.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
@@ -41,5 +40,3 @@ public:
 	}
 
 };
-
-#endif /* XPPURCHASEATTIBUTELISTCOMPONENT_H_ */

@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef COMMANDEFFECT_H_
-#define COMMANDEFFECT_H_
+#pragma once
 
 class CommandEffect {
 public:
@@ -30,6 +29,3 @@ public:
 		ATTACKER_FORCE_PRONE
 	};
 };
-
-
-#endif /* COMMANDEFFECT_H_ */

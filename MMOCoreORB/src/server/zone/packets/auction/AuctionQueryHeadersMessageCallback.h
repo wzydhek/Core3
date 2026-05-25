@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AUCTIONQUERYHEADERSMESSAGECALLBACK_H_
-#define AUCTIONQUERYHEADERSMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/auction/AuctionManager.h"
@@ -65,5 +64,3 @@ public:
 			auctionManager->getData(player, locationType, vendorID, searchType, itemCategory, filterText, minPrice, maxPrice, includeEntranceFee, counter, offset);
 	}
 };
-
-#endif /* AUCTIONQUERYHEADERSMESSAGECALLBACK_H_ */

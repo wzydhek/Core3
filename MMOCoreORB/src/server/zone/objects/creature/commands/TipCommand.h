@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef TIPCOMMAND_H_
-#define TIPCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -225,5 +224,3 @@ public:
 	}
 
 };
-
-#endif //TIPCOMMAND_H_

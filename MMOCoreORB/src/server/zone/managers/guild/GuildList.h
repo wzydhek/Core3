@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDLIST_H_
-#define GUILDLIST_H_
+#pragma once
 
 #include "server/zone/objects/guild/GuildObject.h"
 
@@ -16,5 +15,3 @@ public:
 
 	}
 };
-
-#endif /* GUILDLIST_H_ */

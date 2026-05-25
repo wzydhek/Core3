@@ -2,8 +2,7 @@
  * InsertGroupMembertIntoShipTask.h
  */
 
-#ifndef INSERTGROUPMEMBERINTOSHIPTASK_H_
-#define INSERTGROUPMEMBERINTOSHIPTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/ship/ShipObject.h"
@@ -93,5 +92,3 @@ public:
 		}
 	}
 };
-
-#endif /* INSERTGROUPMEMBERINTOSHIPTASK_H_ */

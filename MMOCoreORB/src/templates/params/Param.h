@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef PARAM_H_
-#define PARAM_H_
+#pragma once
 
 #include "system/lang.h"
 #include "engine/util/iffstream/IffStream.h"
@@ -67,5 +66,3 @@ public:
 		return type == STRINGID;
 	}
 };
-
-#endif /* PARAM_H_ */

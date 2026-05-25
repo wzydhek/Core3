@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef REMOVEAGGROTASK_H_
-#define REMOVEAGGROTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -27,5 +26,3 @@ public:
 		threatMap->removeAggro(target, value);
 	}
 };
-
-#endif /* REMOVEAGGROTASK_H_ */

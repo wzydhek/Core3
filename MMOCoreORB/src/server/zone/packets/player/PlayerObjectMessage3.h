@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYEROBJECTMESSAGE3_H_
-#define PLAYEROBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/intangible/IntangibleObjectMessage3.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -44,5 +43,3 @@ public:
 	}
 
 };
-
-#endif /*PLAYEROBJECTMESSAGE3_H_*/

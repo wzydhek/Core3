@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef PALETTECOLORCUSTOMIZATIONVARIABLE_H_
-#define PALETTECOLORCUSTOMIZATIONVARIABLE_H_
+#pragma once
 
 #include "templates/params/RangedIntCustomizationVariable.h"
 
@@ -115,5 +114,3 @@ public:
 	}
 
 };
-
-#endif /* PALETTECOLORCUSTOMIZATIONVARIABLE_H_ */

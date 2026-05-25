@@ -1,6 +1,5 @@
 
-#ifndef PETCLEARPATROLPOINTSCOMMAND_H_
-#define PETCLEARPATROLPOINTSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
@@ -57,5 +56,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* PETCLEARPATROLPOINTSCOMMAND_H_ */

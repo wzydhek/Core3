@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SCREENHANDLER_H_
-#define SCREENHANDLER_H_
+#pragma once
 
 #include "server/zone/objects/creature/conversation/ConversationScreen.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -37,5 +36,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::creature::conversation::screenhandlers;
-
-#endif /* SCREENHANDLER_H_ */

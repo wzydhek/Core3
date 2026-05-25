@@ -1,6 +1,5 @@
 
-#ifndef EVENTPERKDEEDTEMPLATE_H_
-#define EVENTPERKDEEDTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/DeedTemplate.h"
 
@@ -60,6 +59,3 @@ public:
 	}
 
 };
-
-
-#endif /* EVENTPERKDEEDTEMPLATE_H_ */

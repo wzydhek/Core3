@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef COMPONENTMANAGER_H_
-#define COMPONENTMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/SceneObjectComponent.h"
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
@@ -53,6 +52,3 @@ public:
 		return components.size();
 	}
 };
-
-
-#endif /* COMPONENTMANAGER_H_ */

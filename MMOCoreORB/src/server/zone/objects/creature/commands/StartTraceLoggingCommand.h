@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STARTTRACELOGGINGCOMMAND_H_
-#define STARTTRACELOGGINGCOMMAND_H_
+#pragma once
 
 class StartTraceLoggingCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //STARTTRACELOGGINGCOMMAND_H_

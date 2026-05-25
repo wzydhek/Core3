@@ -16,12 +16,10 @@
 // 3. This notice may not be removed or altered from any source distribution.
 //
 
-#ifndef RECASTALLOC_H
-#define RECASTALLOC_H
+#pragma once
 
 #include <stddef.h>
 #include <stdint.h>
-
 #include "RecastAssert.h"
 
 /// Provides hint values to the memory allocator on how long the
@@ -359,5 +357,3 @@ private:
 	rcScopedDelete(const rcScopedDelete&);
 	rcScopedDelete& operator=(const rcScopedDelete&);
 };
-
-#endif

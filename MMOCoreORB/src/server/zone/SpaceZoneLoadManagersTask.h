@@ -5,11 +5,9 @@
  *      Author: oru
  */
 
-#ifndef SPACEZONELOADMANAGERSTASK_H_
-#define SPACEZONELOADMANAGERSTASK_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/SpaceZone.h"
 
 class SpaceZoneLoadManagersTask : public Task {
@@ -31,6 +29,3 @@ public:
 		zone->startManagers();
 	}
 };
-
-
-#endif /* ZONELOADMANAGERSTASK_H_ */

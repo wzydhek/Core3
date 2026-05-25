@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDREQUESTCALLBACK_H_
-#define GUILDREQUESTCALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -37,5 +36,3 @@ public:
 		client->sendMessage(msg);
 	}
 };
-
-#endif /* GUILDREQUESTCALLBACK_H_ */

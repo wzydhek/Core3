@@ -1,5 +1,4 @@
-#ifndef HERORINGMENUCOMPONENT_H_
-#define HERORINGMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -27,6 +26,3 @@ public:
 	virtual String getCooldownString(uint32 delta) const;
 
 };
-
-
-#endif /* HERORINGMENUCOMPONENT_H_ */

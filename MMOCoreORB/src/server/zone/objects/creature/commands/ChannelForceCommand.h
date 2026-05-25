@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHANNELFORCECOMMAND_H_
-#define CHANNELFORCECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/buffs/ChannelForceBuff.h"
 #include "templates/params/creature/CreatureAttribute.h"
@@ -105,5 +104,3 @@ public:
 	}
 
 };
-
-#endif //CHANNELFORCECOMMAND_H_

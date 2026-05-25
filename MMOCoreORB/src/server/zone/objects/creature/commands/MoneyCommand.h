@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MONEYCOMMAND_H_
-#define MONEYCOMMAND_H_
+#pragma once
 
 class MoneyCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //MONEYCOMMAND_H_

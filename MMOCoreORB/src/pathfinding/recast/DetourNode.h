@@ -16,8 +16,7 @@
 // 3. This notice may not be removed or altered from any source distribution.
 //
 
-#ifndef DETOURNODE_H
-#define DETOURNODE_H
+#pragma once
 
 #include "DetourNavMesh.h"
 
@@ -163,6 +162,3 @@ private:
 	const int m_capacity;
 	int m_size;
 };		
-
-
-#endif // DETOURNODE_H

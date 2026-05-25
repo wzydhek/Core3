@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FIRELIGHTNINGCONE1COMMAND_H_
-#define FIRELIGHTNINGCONE1COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -32,5 +31,3 @@ public:
 	}
 
 };
-
-#endif //FIRELIGHTNINGCONE1COMMAND_H_

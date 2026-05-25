@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLIENTPERMISSIONSMESSAGE_H_
-#define CLIENTPERMISSIONSMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -43,5 +42,3 @@ public:
 		insertBoolean(false);
 	}
 };
-
-#endif /*CLIENTPERMISSIONSMESSAGE_H_*/

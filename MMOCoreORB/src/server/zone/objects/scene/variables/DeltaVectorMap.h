@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DELTAVECTORMAP_H_
-#define DELTAVECTORMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
@@ -192,6 +191,3 @@ public:
 		vectorMap.setNullValue(val);
 	}
 };
-
-
-#endif /* DELTAVECTORMAP_H_ */

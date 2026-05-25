@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef SHIPUPDATETRANSFORMCOLLISIONMESSAGE_H_
-#define SHIPUPDATETRANSFORMCOLLISIONMESSAGE_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -47,5 +46,3 @@ public:
 		insertInt(scno->getMovementCounter());
 	}
 };
-
-#endif /* SHIPUPDATETRANSFORMCOLLISIONMESSAGE_H_ */

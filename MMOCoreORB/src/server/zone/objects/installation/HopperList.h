@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef HOPPERMAP_H_
-#define HOPPERMAP_H_
+#pragma once
 
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 #include "server/zone/objects/resource/ResourceContainer.h"
@@ -61,6 +60,3 @@ public:
 		}
 	}
 };
-
-
-#endif /* HOPPERMAP_H_ */

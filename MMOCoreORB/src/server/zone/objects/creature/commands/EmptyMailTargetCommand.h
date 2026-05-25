@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef EMPTYMAILTARGETCOMMAND_H_
-#define EMPTYMAILTARGETCOMMAND_H_
+#pragma once
 
 class EmptyMailTargetCommand : public QueueCommand {
 public:
@@ -58,5 +57,3 @@ public:
 	}
 
 };
-
-#endif //EMPTYMAILTARGETCOMMAND_H_

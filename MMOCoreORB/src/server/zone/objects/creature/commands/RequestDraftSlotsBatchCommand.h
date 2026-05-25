@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTDRAFTSLOTSBATCHCOMMAND_H_
-#define REQUESTDRAFTSLOTSBATCHCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/crafting/CraftingManager.h"
 
@@ -60,5 +59,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTDRAFTSLOTSBATCHCOMMAND_H_

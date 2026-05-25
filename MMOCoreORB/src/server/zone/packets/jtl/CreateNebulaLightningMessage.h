@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CREATENEBULALIGHTNINGMESSAGE_H_
-#define CREATENEBULALIGHTNINGMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "engine/util/u3d/Vector3.h"
@@ -29,5 +28,3 @@ public:
 		endPoint.toBinaryStream(this);
 	}
 };
-
-#endif /* CREATENEBULALIGHTNINGMESSAGE_H_ */

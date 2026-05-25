@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef TURRETDATACOMPONENT_H_
-#define TURRETDATACOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
@@ -188,5 +187,3 @@ private:
 		addSerializableVariable("mines", &mines);
 	}
 };
-
-#endif /* TURRETDATACOMPONENT_H_ */

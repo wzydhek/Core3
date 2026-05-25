@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef VETERANREWARD_H_
-#define VETERANREWARD_H_
+#pragma once
 
 class VeteranReward : public Object {
 
@@ -93,5 +92,3 @@ public:
 		return jtlReward;
 	}
 };
-
-#endif /* VETERANREWARD_H_ */

@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SERVERTIMEMESSAGE_H_
-#define SERVERTIMEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
-
 #include "server/zone/Zone.h"
 
 class ServerTimeMessage : public BaseMessage {
@@ -24,5 +22,3 @@ public:
 	}
 	
 };
-
-#endif /*SERVERTIMEMESSAGE_H_*/

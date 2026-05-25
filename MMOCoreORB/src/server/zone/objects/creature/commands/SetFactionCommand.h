@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETFACTIONCOMMAND_H_
-#define SETFACTIONCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -184,5 +183,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //SETFACTIONCOMMAND_H_

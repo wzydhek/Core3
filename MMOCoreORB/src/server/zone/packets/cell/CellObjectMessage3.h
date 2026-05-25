@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CELLOBJECTMESSAGE3_H_
-#define CELLOBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 
@@ -49,5 +48,3 @@ public:
 
 	}
 };
-
-#endif /*CELLOBJECTMESSAGE3_H_*/

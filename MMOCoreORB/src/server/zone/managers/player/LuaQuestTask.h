@@ -1,5 +1,4 @@
-#ifndef LUAQUESTTASK_H_
-#define LUAQUESTTASK_H_
+#pragma once
 
 #include "server/zone/managers/player/QuestTasks.h"
 #include "engine/lua/Lua.h"
@@ -72,6 +71,3 @@ namespace player {
 }
 
 using namespace server::zone::managers::player;
-
-
-#endif /* LUAQUESTTASK_H_ */

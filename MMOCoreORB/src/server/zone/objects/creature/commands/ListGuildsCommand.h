@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LISTGUILDSCOMMAND_H_
-#define LISTGUILDSCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 
@@ -36,5 +35,3 @@ public:
 	}
 
 };
-
-#endif //LISTGUILDSCOMMAND_H_

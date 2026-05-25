@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ITEMROTATELEFTCOMMAND_H_
-#define ITEMROTATELEFTCOMMAND_H_
+#pragma once
 
 class ItemrotateleftCommand : public QueueCommand {
 public:
@@ -27,5 +26,3 @@ public:
 	}
 
 };
-
-#endif //ITEMROTATELEFTCOMMAND_H_

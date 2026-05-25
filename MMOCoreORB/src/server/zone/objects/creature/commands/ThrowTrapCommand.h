@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef THROWTRAPCOMMAND_H_
-#define THROWTRAPCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/events/ThrowTrapTask.h"
 #include "templates/tangible/TrapTemplate.h"
@@ -141,5 +140,3 @@ public:
 		return defaultTime;
 	}
 };
-
-#endif // THROWTRAPCOMMAND_H_

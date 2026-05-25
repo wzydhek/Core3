@@ -5,11 +5,9 @@
  *      Author: TheAnswer
  */
 
-#ifndef CELLPROPERTY_H_
-#define CELLPROPERTY_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "templates/IffTemplate.h"
 #include "templates/collision/BaseBoundingVolume.h"
 #include "templates/appearance/FloorMesh.h"
@@ -129,5 +127,3 @@ public:
 	void loadVersion4(IffStream* iffStream);
 	void loadVersion5(IffStream* iffStream);
 };
-
-#endif /* CELLPROPERTY_H_ */

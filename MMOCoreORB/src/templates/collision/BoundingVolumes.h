@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef BOUNDINGVOLUMES_H_
-#define BOUNDINGVOLUMES_H_
+#pragma once
 
 #include "BoxVolume.h"
 #include "SphereVolume.h"
@@ -15,5 +14,3 @@
 #include "ComponentVolume.h"
 #include "CylinderVolume.h"
 #include "CollisionMeshVolume.h"
-
-#endif /* BOUNDINGVOLUMES_H_ */

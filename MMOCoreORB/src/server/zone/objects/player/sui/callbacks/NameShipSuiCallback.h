@@ -5,8 +5,7 @@
  *  Author: Hakry
  */
 
-#ifndef NAMESHIPSUICALLBACK_H_
-#define NAMESHIPSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -83,5 +82,3 @@ public:
 		shipDevice->setCustomObjectName(shipName, true);
 	}
 };
-
-#endif /* NAMESHIPSUICALLBACK_H_ */

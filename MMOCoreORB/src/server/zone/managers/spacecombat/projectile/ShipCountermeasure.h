@@ -1,5 +1,4 @@
-#ifndef SHIPCOUNTERMEASURE_H_
-#define SHIPCOUNTERMEASURE_H_
+#pragma once
 
 #include "ShipProjectile.h"
 #include "server/zone/objects/ship/ShipCountermeasureData.h"
@@ -85,5 +84,3 @@ public:
 	}
 #endif //SHIPPROJECTILE_DEBUG
 };
-
-#endif // SHIPCOUNTERMEASURE_H_

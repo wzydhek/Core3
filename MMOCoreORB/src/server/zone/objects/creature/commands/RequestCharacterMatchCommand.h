@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef REQUESTCHARACTERMATCHCOMMAND_H_
-#define REQUESTCHARACTERMATCHCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/packets/object/PlayersNearYou.h"
@@ -137,5 +136,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTCHARACTERMATCHCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef DROIDCUSTOMKITTEMPLATE_H_
-#define DROIDCUSTOMKITTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif /* DROIDCUSTOMKITTEMPLATE_H_ */

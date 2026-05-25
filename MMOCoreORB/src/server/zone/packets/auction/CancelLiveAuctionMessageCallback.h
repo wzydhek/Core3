@@ -5,12 +5,10 @@
  *      Author: polonel
  */
 
-#ifndef CANCELLIVEAUCTIONMESSAGECALLBACK_H_
-#define CANCELLIVEAUCTIONMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/auction/AuctionManager.h"
-
 
 class CancelLiveAuctionMessageCallback : public MessageCallback {
 	uint64 objectid;
@@ -41,5 +39,3 @@ public:
 	}
 
 };
-
-#endif /* CANCELLIVEAUCTIONMESSAGECALLBACK_H_ */

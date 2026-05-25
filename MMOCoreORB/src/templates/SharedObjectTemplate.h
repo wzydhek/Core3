@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef SHAREDOBJECTTEMPLATE_H_
-#define SHAREDOBJECTTEMPLATE_H_
+#pragma once
 
 #include "engine/lua/Lua.h"
-
 #include "templates/LuaTemplate.h"
 #include "templates/IffTemplate.h"
 #include "templates/ChildObject.h"
@@ -767,5 +765,3 @@ public:
 		return updatesNavMesh;
 	}
 };
-
-#endif /* SHAREDOBJECTTEMPLATE_H_ */

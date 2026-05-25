@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SHOWFLYTEXT_H_
-#define SHOWFLYTEXT_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -33,5 +32,3 @@ public:
 	}
 
 };
-
-#endif /*SHOWFLYTEXT_H_*/

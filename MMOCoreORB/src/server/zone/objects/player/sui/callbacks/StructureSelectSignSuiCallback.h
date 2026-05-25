@@ -5,14 +5,12 @@
  *      Author: Klivian
  */
 
-#ifndef STRUCTURESELECTSIGNSUICALLBACK_H_
-#define STRUCTURESELECTSIGNSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/structure/StructureObject.h"
 #include "server/zone/managers/structure/StructureManager.h"
-
 
 class StructureSelectSignSuiCallback : public SuiCallback {
 public:
@@ -52,5 +50,3 @@ public:
 		StructureManager::instance()->setSign(structure, creature, suiItem);
 	}
 };
-
-#endif /* STRUCTURESELECTSIGNSUICALLBACK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMMANDLIST_H_
-#define COMMANDLIST_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 
@@ -77,5 +76,3 @@ public:
 }
 
 using namespace server::zone::managers::objectcontroller::command;
-
-#endif /*SLASHCOMMANDLIST_H_*/

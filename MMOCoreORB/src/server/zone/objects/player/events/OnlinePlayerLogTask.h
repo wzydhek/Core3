@@ -5,9 +5,7 @@
 *      Author: lordkator
 */
 
-#ifndef ONLINEPLAYERLOGTASK_H_
-#define ONLINEPLAYERLOGTASK_H_
-
+#pragma once
 #include "server/ServerCore.h"
 #include "server/zone/managers/player/PlayerManager.h"
 
@@ -44,5 +42,3 @@ class OnlinePlayerLogTask : public Task {
 }
 
 using namespace server::zone::objects::player::events;
-
-#endif /* ONLINEPLAYERLOGTASK_H_ */

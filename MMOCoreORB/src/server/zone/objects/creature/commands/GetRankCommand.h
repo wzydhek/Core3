@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETRANKCOMMAND_H_
-#define GETRANKCOMMAND_H_
+#pragma once
 
 class GetRankCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GETRANKCOMMAND_H_

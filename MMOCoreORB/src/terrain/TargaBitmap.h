@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TARGABITMAP_H_
-#define TARGABITMAP_H_
+#pragma once
 
 class TargaHeader {
 public:
@@ -70,7 +69,6 @@ public:
 	virtual void clear() = 0;
 };
 
-
 class TargaBitmap {
 protected:
 	TargaHeader header;
@@ -93,6 +91,3 @@ public:
 
 	unsigned char getData(int offset) const;
 };
-
-
-#endif /* TARGABITMAP_H_ */

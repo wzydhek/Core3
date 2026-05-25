@@ -3,8 +3,7 @@
  *
  */
 
-#ifndef SELECTHARVESTSUICALLBACK_H_
-#define SELECTHARVESTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -54,5 +53,3 @@ public:
 	}
 
 };
-
-#endif /* SELECTHARVESTSUICALLBACK_H_ */

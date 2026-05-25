@@ -2,10 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATONDESTROYROOM_H_
-#define CHATONDESTROYROOM_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
+
 class ChatOnDestroyRoom : public BaseMessage {
 public:
 
@@ -32,6 +32,3 @@ public:
 	}
 
 };
-
-#endif /*CHATONDESTROYROOM_H_*/
-

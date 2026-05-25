@@ -5,16 +5,13 @@
  *      Author: Trick77
  */
 
-#ifndef CUSTOMVEHICLESUICALLBACK_H_
-#define CUSTOMVEHICLESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/player/sui/colorbox/SuiColorBox.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/callbacks/ColorWithKitSuiCallback.h"
-
-
 
 class CustomVehicleSuiCallback : public SuiCallback {
 	int numPalette;
@@ -91,5 +88,3 @@ public:
 		}
 	}
 };
-
-#endif /* CUSTOMVEHICLESUICALLBACK_H_ */

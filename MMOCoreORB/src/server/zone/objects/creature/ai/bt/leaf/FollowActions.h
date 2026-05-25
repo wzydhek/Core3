@@ -1,5 +1,4 @@
-#ifndef FOLLOWACTIONS_H_
-#define FOLLOWACTIONS_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/objects/creature/ai/bt/Behavior.h"
@@ -7,7 +6,6 @@
 #include "templates/params/creature/CreatureAttribute.h"
 #include "server/zone/managers/collision/CollisionManager.h"
 #include "server/zone/Zone.h"
-
 #include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
 #include "server/chat/ChatManager.h"
@@ -1148,5 +1146,3 @@ public:
 }
 }
 }
-
-#endif // FOLLOWACTIONS_H_

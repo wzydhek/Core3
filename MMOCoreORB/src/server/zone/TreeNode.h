@@ -3,8 +3,7 @@
  Distribution of this file for usage outside of Core3 is prohibited.
  */
 
-#ifndef ZONETREENODE_H_
-#define ZONETREENODE_H_
+#pragma once
 
 /*
  Quad tree interface
@@ -30,8 +29,8 @@
 #include "system/lang.h"
 
 //#ifdef WITH_STM
-#include "engine/stm/TransactionalReference.h"
-#include "engine/stm/TransactionalMemoryManager.h"
+	#include "engine/stm/TransactionalReference.h"
+	#include "engine/stm/TransactionalMemoryManager.h"
 //#endif
 
 /**
@@ -197,6 +196,3 @@ public:
 
 } // namespace server
 } // namespace zone
-
-
-#endif /*ZONETREENODE_H_*/

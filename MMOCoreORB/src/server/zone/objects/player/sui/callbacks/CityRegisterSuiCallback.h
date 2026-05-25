@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef CITYREGISTERSUICALLBACK_H_
-#define CITYREGISTERSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/city/CityManager.h"
@@ -56,5 +55,3 @@ public:
 		}
 	}
 };
-
-#endif /* CITYREGISTERSUICALLBACK_H_ */

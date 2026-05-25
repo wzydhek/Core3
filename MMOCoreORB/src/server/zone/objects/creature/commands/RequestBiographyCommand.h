@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTBIOGRAPHYCOMMAND_H_
-#define REQUESTBIOGRAPHYCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/packets/object/Biography.h"
@@ -49,5 +48,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTBIOGRAPHYCOMMAND_H_

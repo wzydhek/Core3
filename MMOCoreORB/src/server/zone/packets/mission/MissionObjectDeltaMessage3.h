@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MISSIONOBJECTDELTAMESSAGE3_H_
-#define MISSIONOBJECTDELTAMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/mission/MissionObject.h"
@@ -153,5 +152,3 @@ public:
 	}*/
 
 };
-
-#endif /*MISSIONOBJECTDELTAMESSAGE3_H_*/

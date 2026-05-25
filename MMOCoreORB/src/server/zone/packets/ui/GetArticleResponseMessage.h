@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETARTICLERESPONSEMESSAGE_H_
-#define GETARTICLERESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -27,6 +26,3 @@ public:
 	   insertUnicode(article);
    }
 };
-
-#endif /*GETARTICLERESPONSEMESSAGE_H__*/
-

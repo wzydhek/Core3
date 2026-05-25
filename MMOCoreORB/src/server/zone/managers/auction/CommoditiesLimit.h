@@ -5,11 +5,8 @@
  *      Author: kyle
  */
 
-#ifndef COMMODITIESLIMIT_H_
-#define COMMODITIESLIMIT_H_
+#pragma once
 
 class CommoditiesLimit : public VectorMap<uint64, Vector<ManagedWeakReference<AuctionItem*> > >, public ReadWriteLock {
 
 };
-
-#endif /* COMMODITIESLIMIT_H_ */

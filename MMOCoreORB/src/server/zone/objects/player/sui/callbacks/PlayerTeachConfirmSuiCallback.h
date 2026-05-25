@@ -5,8 +5,7 @@
  *      Author: katherine
  */
 
-#ifndef PLAYERTEACHCONFIRMSUICALLBACK_H_
-#define PLAYERTEACHCONFIRMSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/variables/Skill.h"
@@ -42,5 +41,3 @@ public:
 		playerManager->acceptTeachingOffer(teacher, student, skill.get());
 	}
 };
-
-#endif /* PLAYERTEACHCONFIRMSUICALLBACK_H_ */

@@ -5,8 +5,7 @@
  *	  Author: kyle
  */
 
-#ifndef DNASAMPLETEMPLATE_H_
-#define DNASAMPLETEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -284,5 +283,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* DNASAMPLETEMPLATE_H_ */

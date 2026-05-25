@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef WOOKIEEROARCOMMAND_H_
-#define WOOKIEEROARCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/combat/CombatManager.h"
 #include "CombatQueueCommand.h"
@@ -74,5 +73,3 @@ public:
 	}
 
 };
-
-#endif //WOOKIEEROARCOMMAND_H_

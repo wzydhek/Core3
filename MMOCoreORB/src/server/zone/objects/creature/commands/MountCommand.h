@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MOUNTCOMMAND_H_
-#define MOUNTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/objectcontroller/ObjectController.h"
@@ -191,5 +190,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //MOUNTCOMMAND_H_

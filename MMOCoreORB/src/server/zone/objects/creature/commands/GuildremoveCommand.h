@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GUILDREMOVECOMMAND_H_
-#define GUILDREMOVECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/guild/GuildManager.h"
@@ -81,5 +80,3 @@ public:
 	}
 
 };
-
-#endif //GUILDREMOVECOMMAND_H_

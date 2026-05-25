@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef DETAILVOLUME_H_
-#define DETAILVOLUME_H_
+#pragma once
 
 #include "CompositeVolume.h"
 
@@ -20,5 +19,3 @@ public:
 	virtual osg::ref_ptr<osg::Node> draw() const;
 #endif
 };
-
-#endif /* DETAILVOLUME_H_ */

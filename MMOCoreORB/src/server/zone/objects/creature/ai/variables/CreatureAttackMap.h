@@ -5,11 +5,9 @@
  *      Author: dannuic
  */
 
-#ifndef CREATUREATTACKMAP_H_
-#define CREATUREATTACKMAP_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
 
 class CreatureAttack {
@@ -80,5 +78,3 @@ public:
 		return System::random(size() - 1);
 	}
 };
-
-#endif /* CREATUREATTACKMAP_H_ */

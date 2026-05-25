@@ -5,12 +5,9 @@
  *      Author: victor
  */
 
-#ifndef SHAREDINTANGIBLEOBJECTTEMPLATE_H_
-#define SHAREDINTANGIBLEOBJECTTEMPLATE_H_
-
+#pragma once
 
 #include "templates/SharedObjectTemplate.h"
-
 
 class SharedIntangibleObjectTemplate : public SharedObjectTemplate {
 protected:
@@ -76,6 +73,3 @@ public:
 	}
 
 };
-
-
-#endif /* SHAREDINTANGIBLEOBJECTTEMPLATE_H_ */

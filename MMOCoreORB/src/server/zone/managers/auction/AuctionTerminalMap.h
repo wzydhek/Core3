@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef AUCTIONTERMINALMAP_H_
-#define AUCTIONTERMINALMAP_H_
+#pragma once
 
 #include "TerminalListVector.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -312,5 +311,3 @@ private:
 	}
 
 };
-
-#endif /* AUCTIONTERMINALMAP_H_ */

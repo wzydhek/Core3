@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MISSIONOBJECTMESSAGE6_H_
-#define MISSIONOBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 
@@ -24,5 +23,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*MISSIONOBJECTMESSAGE6_H_*/

@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef CREATURETEMPLATEREFERENCE_H_
-#define CREATURETEMPLATEREFERENCE_H_
+#pragma once
 
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/creature/ai/CreatureTemplate.h"
 
 class CreatureTemplateReference : public Reference<CreatureTemplate*> {
@@ -23,8 +21,3 @@ public:
 
 	friend void to_json(nlohmann::json& j, const CreatureTemplateReference& r);
 };
-
-
-
-
-#endif /* CREATURETEMPLATEREFERENCE_H_ */

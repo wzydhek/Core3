@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DISMOUNTANDSTORECOMMAND_H_
-#define DISMOUNTANDSTORECOMMAND_H_
+#pragma once
 
 class DismountandstoreCommand : public QueueCommand {
 public:
@@ -32,5 +31,3 @@ public:
 	}
 
 };
-
-#endif //DISMOUNTANDSTORECOMMAND_H_

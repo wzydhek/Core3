@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BUILDINGOBJECTMESSAGE6_H_
-#define BUILDINGOBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/packets/BaseLineMessage.h"
@@ -42,5 +41,3 @@ public:
 		//System::out << msg.toString();
 	}*/
 };
-
-#endif /*BUILDINGOBJECTMESSAGE6_H_*/

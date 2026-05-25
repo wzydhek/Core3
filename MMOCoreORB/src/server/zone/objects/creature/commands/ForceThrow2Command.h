@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCETHROW2COMMAND_H_
-#define FORCETHROW2COMMAND_H_
+#pragma once
 
 #include "ForcePowersQueueCommand.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif //FORCETHROW2COMMAND_H_

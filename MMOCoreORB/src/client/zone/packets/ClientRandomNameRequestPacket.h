@@ -4,8 +4,7 @@
  * Client-side packet to request random name from server
  */
 
-#ifndef CLIENTRANDOMNAMEREQUESTPACKET_H_
-#define CLIENTRANDOMNAMEREQUESTPACKET_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -19,5 +18,3 @@ public:
 		setCompression(false);
 	}
 };
-
-#endif /* CLIENTRANDOMNAMEREQUESTPACKET_H_ */

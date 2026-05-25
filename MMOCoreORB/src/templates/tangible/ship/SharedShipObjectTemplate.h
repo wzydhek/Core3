@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDSHIPOBJECTTEMPLATE_H_
-#define SHAREDSHIPOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "server/zone/objects/ship/ComponentSlots.h"
@@ -465,5 +464,3 @@ public:
 		iffStream->closeForm('SSHP');
 	}
 };
-
-#endif /* SHAREDSHIPOBJECTTEMPLATE_H_ */

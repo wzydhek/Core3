@@ -5,8 +5,7 @@
  *      Author: dannuic
  */
 
-#ifndef CREATURETEMPLATEMANAGER_H_
-#define CREATURETEMPLATEMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/CreatureTemplate.h"
 #include "server/zone/objects/creature/conversation/ConversationTemplate.h"
@@ -150,5 +149,3 @@ public:
 }
 
 using namespace server::zone::managers::creature;
-
-#endif /* CREATURETEMPLATEMANAGER_H_ */

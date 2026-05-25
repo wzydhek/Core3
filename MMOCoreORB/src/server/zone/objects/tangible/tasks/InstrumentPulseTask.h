@@ -1,6 +1,5 @@
 
-#ifndef INSTRUMENTPULSETASK_H_
-#define INSTRUMENTPULSETASK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/Instrument.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -45,5 +44,3 @@ public:
 }
 
 using namespace server::zone::objects::tangible::tasks;
-
-#endif /* INSTRUMENTPULSETASK_H_ */

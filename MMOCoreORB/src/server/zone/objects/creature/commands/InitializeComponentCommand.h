@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INITIALIZECOMPONENTCOMMAND_H_
-#define INITIALIZECOMPONENTCOMMAND_H_
+#pragma once
 
 class InitializeComponentCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //INITIALIZECOMPONENTCOMMAND_H_

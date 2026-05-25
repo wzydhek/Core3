@@ -1,6 +1,5 @@
 
-#ifndef LUASUILISTBOX_H_
-#define LUASUILISTBOX_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/player/sui/LuaSuiBox.h"
@@ -39,6 +38,3 @@ namespace listbox {
 }
 
 using namespace server::zone::objects::player::sui::listbox;
-
-
-#endif /* LUASUILISTBOX_H_ */

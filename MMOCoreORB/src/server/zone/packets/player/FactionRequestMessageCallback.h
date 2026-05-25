@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef FACTIONREQUESTMESSAGECALLBACK_H_
-#define FACTIONREQUESTMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "FactionResponseMessage.h"
@@ -35,5 +34,3 @@ public:
 		object->sendMessage(frm);
 	}
 };
-
-#endif /* FACTIONREQUESTMESSAGECALLBACK_H_ */

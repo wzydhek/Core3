@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INSURECOMMAND_H_
-#define INSURECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/sui/callbacks/InsuranceMenuSuiCallback.h"
@@ -94,5 +93,3 @@ public:
 	}
 
 };
-
-#endif //INSURECOMMAND_H_

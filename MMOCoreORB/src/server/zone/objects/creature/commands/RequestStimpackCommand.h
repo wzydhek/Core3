@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTSTIMPACKCOMMAND_H_
-#define REQUESTSTIMPACKCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/events/DroidStimpackTask.h"
@@ -127,5 +126,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTSTIMPACKCOMMAND_H_

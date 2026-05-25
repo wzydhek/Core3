@@ -5,8 +5,7 @@
  *      Author: chris.rush
  */
 
-#ifndef FIREHEAVYWEAPONMENUCOMPONENT_H_
-#define FIREHEAVYWEAPONMENUCOMPONENT_H_
+#pragma once
 
 #include "WeaponObjectMenuComponent.h"
 
@@ -16,5 +15,3 @@ public:
 
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 };
-
-#endif /* FIREHEAVYWEAPONMENUCOMPONENT_H_ */

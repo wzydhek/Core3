@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef QUICKHEALCOMMAND_H_
-#define QUICKHEALCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/ZoneServer.h"
@@ -170,5 +169,3 @@ public:
 	}
 
 };
-
-#endif //QUICKHEALCOMMAND_H_

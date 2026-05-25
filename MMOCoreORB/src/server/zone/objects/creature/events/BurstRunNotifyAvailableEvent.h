@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BURSTRUNNOTIFYAVAILABLEEVENT_H_
-#define BURSTRUNNOTIFYAVAILABLEEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif /*BURSTRUNNOTIFYAVAILABLEEVENT_H_*/

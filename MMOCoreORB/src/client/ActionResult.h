@@ -4,8 +4,7 @@
  * Base class and specialized result types for actions
  */
 
-#ifndef ACTIONRESULT_H_
-#define ACTIONRESULT_H_
+#pragma once
 
 #include "system/lang.h"
 
@@ -105,5 +104,3 @@ public:
 		characterName = name;
 	}
 };
-
-#endif /* ACTIONRESULT_H_ */

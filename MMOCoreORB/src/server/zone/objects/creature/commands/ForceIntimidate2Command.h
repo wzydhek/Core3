@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCEINTIMIDATE2COMMAND_H_
-#define FORCEINTIMIDATE2COMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "ForcePowersQueueCommand.h"
@@ -52,5 +51,3 @@ public:
 		return res;
 	}
 };
-
-#endif // FORCEINTIMIDATE2COMMAND_H_

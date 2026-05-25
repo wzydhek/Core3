@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SYNCHRONIZEDUILISTENCOMMAND_H_
-#define SYNCHRONIZEDUILISTENCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/ZoneServer.h"
@@ -52,5 +51,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // SYNCHRONIZEDUILISTENCOMMAND_H_

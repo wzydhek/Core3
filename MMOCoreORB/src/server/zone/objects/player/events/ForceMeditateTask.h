@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions. */
 
 
-#ifndef FORCEMEDITATETASK_H_
-#define FORCEMEDITATETASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -45,5 +44,3 @@ public:
 	}
 
 };
-
-#endif /* FORCEMEDITATETASK_H_ */

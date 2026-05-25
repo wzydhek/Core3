@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMPLETEMISSIONAFTERCERTAINTIMETASK_H_
-#define COMPLETEMISSIONAFTERCERTAINTIMETASK_H_
+#pragma once
 
 #include "server/zone/objects/mission/MissionObjective.h"
 
@@ -34,5 +33,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::mission::events;
-
-#endif /* COMPLETEMISSIONAFTERCERTAINTIMETASK_H_ */

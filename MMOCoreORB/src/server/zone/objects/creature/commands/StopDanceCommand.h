@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STOPDANCECOMMAND_H_
-#define STOPDANCECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif //STOPDANCECOMMAND_H_

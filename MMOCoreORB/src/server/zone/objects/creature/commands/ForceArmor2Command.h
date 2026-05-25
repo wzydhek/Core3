@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCEARMOR2COMMAND_H_
-#define FORCEARMOR2COMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -49,5 +48,3 @@ public:
 	}
 
 };
-
-#endif //FORCEARMOR2COMMAND_H_

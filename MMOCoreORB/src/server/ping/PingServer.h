@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PINGSERVER_H_
-#define PINGSERVER_H_
+#pragma once
 
 #include "PingClient.h"
 
@@ -30,5 +29,3 @@ public:
 	void printInfo();
 
 };
-
-#endif /*PINGSERVERSERVER_H_*/

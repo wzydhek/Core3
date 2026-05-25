@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef EDITBANKACCOUNTCOMMAND_H_
-#define EDITBANKACCOUNTCOMMAND_H_
+#pragma once
 
 class EditBankAccountCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //EDITBANKACCOUNTCOMMAND_H_

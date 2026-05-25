@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef RADIALOPTIONS_H_
-#define RADIALOPTIONS_H_
+#pragma once
 
 class RadialOptions {
 public:
@@ -248,5 +247,3 @@ public:
 		EQUIP_DROID_ON_SHIP
 	};
 };
-
-#endif /* RADIALOPTIONS_H_ */

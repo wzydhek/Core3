@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PETTRAININGSCREENHANDLER_H_
-#define PETTRAININGSCREENHANDLER_H_
+#pragma once
 
 #include "ScreenHandler.h"
 #include "engine/log/Logger.h"
@@ -56,5 +55,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::creature::conversation::screenhandlers;
-
-#endif /* PETTRAININGSCREENHANDLER_H_ */

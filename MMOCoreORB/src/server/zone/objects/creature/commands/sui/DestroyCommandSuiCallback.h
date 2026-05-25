@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef DESTROYCOMMANDSUICALLBACK_H_
-#define DESTROYCOMMANDSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -40,5 +39,3 @@ public:
 		creature->sendSystemMessage("The object has been successfully destroyed from the database.");
 	}
 };
-
-#endif /* DESTROYCOMMANDSUICALLBACK_H_ */

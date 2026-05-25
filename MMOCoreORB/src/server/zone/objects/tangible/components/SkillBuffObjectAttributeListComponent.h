@@ -1,12 +1,6 @@
-/*
- * SkillBuffObjectAttributeListComponent.h
- *
- *  Created on: 9/21/2013
- *      Author: Klivian
- */
+#pragma once
 
-#ifndef SKILLBUFFATTRIBUTELISTCOMPONENT_H_
-#define SKILLBUFFATTRIBUTELISTCOMPONENT_H_
+#pragma once
 
 #include "templates/tangible/SkillBuffTemplate.h"
 #include "server/zone/objects/scene/components/AttributeListComponent.h"
@@ -59,5 +53,3 @@ public:
 	}
 
 };
-
-#endif /* SKILLBUFFATTRIBUTELISTCOMPONENT_H_ */

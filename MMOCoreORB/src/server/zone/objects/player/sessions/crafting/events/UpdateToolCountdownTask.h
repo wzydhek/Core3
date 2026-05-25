@@ -3,8 +3,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UPDATETOOLCOUNTDOWNTASK_H_
-#define UPDATETOOLCOUNTDOWNTASK_H_
+#pragma once
 
 class UpdateToolCountdownTask : public Task {
 	ManagedWeakReference<TangibleObject* > craftTool;
@@ -43,5 +42,3 @@ public:
 		}
 	}
 };
-
-#endif /*UPDATETOOLCOUNTDOWNTASK_H_*/

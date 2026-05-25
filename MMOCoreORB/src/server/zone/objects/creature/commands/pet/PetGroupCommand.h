@@ -1,6 +1,5 @@
 
-#ifndef PETGROUPCOMMAND_H_
-#define PETGROUPCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
@@ -58,5 +57,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* PETGROUPCOMMAND_H_ */

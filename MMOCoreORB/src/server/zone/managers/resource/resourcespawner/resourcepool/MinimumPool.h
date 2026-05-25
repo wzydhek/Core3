@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef MINIMUMPOOL_H_
-#define MINIMUMPOOL_H_
+#pragma once
 
 #include "ResourcePool.h"
 
@@ -69,5 +68,3 @@ private:
 
 	friend class ResourceSpawner;
 };
-
-#endif /* MINIMUMPOOL_H_ */

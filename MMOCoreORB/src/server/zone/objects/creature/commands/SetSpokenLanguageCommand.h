@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETSPOKENLANGUAGECOMMAND_H_
-#define SETSPOKENLANGUAGECOMMAND_H_
+#pragma once
 
 class SetSpokenLanguageCommand : public QueueCommand {
 public:
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif //SETSPOKENLANGUAGECOMMAND_H_

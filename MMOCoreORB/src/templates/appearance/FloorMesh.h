@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FLOORMESH_H_
-#define FLOORMESH_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "templates/IffTemplate.h"
@@ -290,5 +289,3 @@ public:
 
 	friend class FloorMeshTriangleNode;
 };
-
-#endif /* FLOORMESH_H_ */

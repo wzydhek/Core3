@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REVOKEBADGECOMMAND_H_
-#define REVOKEBADGECOMMAND_H_
+#pragma once
 
 class RevokeBadgeCommand : public QueueCommand {
 public:
@@ -66,5 +65,3 @@ public:
 	}
 
 };
-
-#endif //REVOKEBADGECOMMAND_H_

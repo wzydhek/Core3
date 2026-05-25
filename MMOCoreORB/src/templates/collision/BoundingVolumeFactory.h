@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef BOUNDINGVOLUMEFACTORY_H_
-#define BOUNDINGVOLUMEFACTORY_H_
+#pragma once
 
 #include "engine/util/iffstream/IffStream.h"
 
@@ -17,5 +16,3 @@ public:
 	BoundingVolumeFactory() { }
 	static BaseBoundingVolume* getVolume(IffStream *iff);
 };
-
-#endif /* BOUNDINGVOLUMEFACTORY_H_ */

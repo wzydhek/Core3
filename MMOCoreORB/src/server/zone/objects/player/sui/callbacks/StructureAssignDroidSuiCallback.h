@@ -2,8 +2,7 @@
  * StructureAssignDroidSuiCallback.h
  */
 
-#ifndef STRUCTUREASSIGNDROIDSUICALLBACK_H_
-#define STRUCTUREASSIGNDROIDSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -65,5 +64,3 @@ public:
 		}
 	}
 };
-
-#endif /* STRUCTUREASSIGNDROIDSUICALLBACK_H_ */

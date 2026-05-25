@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CANCELCRAFTINGSESSIONCOMMAND_H_
-#define CANCELCRAFTINGSESSIONCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sessions/crafting/CraftingSession.h"
 
@@ -39,5 +38,3 @@ public:
 	}
 
 };
-
-#endif //CANCELCRAFTINGSESSIONCOMMAND_H_

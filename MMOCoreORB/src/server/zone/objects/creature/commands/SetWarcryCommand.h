@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETWARCRYCOMMAND_H_
-#define SETWARCRYCOMMAND_H_
+#pragma once
 
 class SetWarcryCommand : public QueueCommand {
 public:
@@ -61,5 +60,3 @@ public:
 	}
 
 };
-
-#endif //SETWARCRYCOMMAND_H_

@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef CITYHALLZONECOMPONENT_H_
-#define CITYHALLZONECOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/scene/components/GroundZoneComponent.h"
 
 namespace server {
@@ -36,7 +34,3 @@ class CityHallZoneComponent : public GroundZoneComponent {
 public:
 	void destroyObjectFromWorld(SceneObject* sceneObject, bool sendSelfDestroy) const;
 };
-
-
-
-#endif /* CITYHALLZONECOMPONENT_H_ */

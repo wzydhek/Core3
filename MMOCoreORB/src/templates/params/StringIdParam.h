@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef STRINGIDPARAM_H_
-#define STRINGIDPARAM_H_
+#pragma once
 
 #include "templates/params/TemplateBase.h"
 #include "templates/params/primitives/StringParam.h"
@@ -138,6 +137,3 @@ public:
 	}
 
 };
-
-
-#endif /* STRINGIDPARAM_H_ */

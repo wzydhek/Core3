@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLONECOMMAND_H_
-#define CLONECOMMAND_H_
+#pragma once
 
 class CloneCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CLONECOMMAND_H_

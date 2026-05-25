@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PATHFINDERMANAGER_H_
-#define PATHFINDERMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/scene/WorldCoordinates.h"
 #include "server/zone/objects/pathfinding/NavArea.h"
@@ -90,5 +89,3 @@ private:
 	dtQueryFilter m_spawnFilter;
 	ThreadLocal<dtNavMeshQuery*> m_navQuery;
 };
-
-#endif /* PATHFINDERMANAGER_H_ */

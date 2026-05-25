@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DISARMINGSHOT1COMMAND_H_
-#define DISARMINGSHOT1COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -25,5 +24,3 @@ public:
 		return doCombatAction(creature, target);
 	}
 };
-
-#endif //DISARMINGSHOT1COMMAND_H_

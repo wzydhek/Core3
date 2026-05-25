@@ -1,5 +1,4 @@
-#ifndef FIREWORKSHOWDELAYSELECTIONSUICALLBACK_H_
-#define FIREWORKSHOWDELAYSELECTIONSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/firework/components/FireworkShowMenuComponent.h"
@@ -48,5 +47,3 @@ public:
 
 	}
 };
-
-#endif /* FIREWORKSHOWDELAYSELECTIONSUICALLBACK_H_ */

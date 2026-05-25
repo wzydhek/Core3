@@ -5,14 +5,10 @@
  *      Author: oru
  */
 
-#ifndef STRINGIDCHATPARAMETERVECTOR_H_
-#define STRINGIDCHATPARAMETERVECTOR_H_
+#pragma once
 
 #include "StringIdChatParameter.h"
 
 class StringIdChatParameterVector : public Vector<StringIdChatParameter> {
 
 };
-
-
-#endif /* STRINGIDCHATPARAMETERVECTOR_H_ */

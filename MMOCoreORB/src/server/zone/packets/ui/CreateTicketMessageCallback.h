@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef CREATETICKETMESSAGECALLBACK_H_
-#define CREATETICKETMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/holocron/HolocronManager.h"
@@ -43,5 +42,3 @@ public:
 		holocronManager->submitTicket(client, ticketBody);
 	}
 };
-
-#endif /* CREATETICKETMESSAGECALLBACK_H_ */

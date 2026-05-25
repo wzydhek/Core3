@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef JTLSHIPLISTREQUESTCALLBACK_H_
-#define JTLSHIPLISTREQUESTCALLBACK_H_
+#pragma once
 
 #include "ObjectControllerMessageCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -47,6 +46,3 @@ public:
 		player->sendMessage(resp);
 	}
 };
-
-
-#endif /* JTLSHIPLISTREQUESTCALLBACK_H_ */

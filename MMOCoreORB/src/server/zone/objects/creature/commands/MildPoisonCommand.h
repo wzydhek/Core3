@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef MILDPOISONCOMMAND_H_
-#define MILDPOISONCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -31,6 +30,3 @@ public:
 	}
 
 };
-
-
-#endif /* MILDPOISONCOMMAND_H_ */

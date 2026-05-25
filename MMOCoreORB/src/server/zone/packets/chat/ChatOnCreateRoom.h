@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATONCREATEROOM_H_
-#define CHATONCREATEROOM_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/chat/room/ChatRoom.h"
@@ -101,5 +100,3 @@ public:
 	}
 
 };
-
-#endif /*CHATONCREATEROOM_H_*/

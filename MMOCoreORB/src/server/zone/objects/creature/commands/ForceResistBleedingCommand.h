@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCERESISTBLEEDINGCOMMAND_H_
-#define FORCERESISTBLEEDINGCOMMAND_H_
+#pragma once
 
 class ForceResistBleedingCommand : public JediQueueCommand {
 public:
@@ -23,5 +22,3 @@ public:
 	}
 
 };
-
-#endif //FORCERESISTBLEEDINGCOMMAND_H_

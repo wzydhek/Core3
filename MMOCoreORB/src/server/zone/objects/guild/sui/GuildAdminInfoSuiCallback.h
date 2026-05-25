@@ -1,6 +1,5 @@
 
-#ifndef GUILDADMININFOSUICALLBACK_H_
-#define GUILDADMININFOSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -41,5 +40,3 @@ public:
 		}
 	}
 };
-
-#endif /* GUILDADMININFOSUICALLBACK_H_ */

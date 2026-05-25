@@ -5,12 +5,10 @@
  *      Author: crush
  */
 
-#ifndef STRUCTUREPERMISSIONLIST_H_
-#define STRUCTUREPERMISSIONLIST_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/creature/CreatureObject.h"
 
 class StructurePermissionList : public Object {
@@ -130,5 +128,3 @@ public:
 
 	void migrateLists(ZoneServer* zoneServer, uint64 ownerObjectID);
 };
-
-#endif /* STRUCTUREPERMISSIONLIST_H_ */

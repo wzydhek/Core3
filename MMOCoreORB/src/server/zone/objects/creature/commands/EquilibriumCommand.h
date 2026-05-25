@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef EQUILIBRIUMCOMMAND_H_
-#define EQUILIBRIUMCOMMAND_H_
+#pragma once
 
 class EquilibriumCommand: public QueueCommand {
 public:
@@ -90,5 +89,3 @@ public:
 	}
 
 };
-
-#endif //EQUILIBRIUMCOMMAND_H_

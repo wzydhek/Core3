@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef COMMANDQUEUEACTIONVECTOR_H_
-#define COMMANDQUEUEACTIONVECTOR_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "CommandQueueAction.h"
@@ -69,6 +68,3 @@ public:
 		return TransactionalObjectCloner<CommandQueueActionVector>::clone(this);
 	}
 };
-
-
-#endif /* COMMANDQUEUEACTIONVECTOR_H_ */

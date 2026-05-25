@@ -9,8 +9,7 @@
  *
 */
 
-#ifndef INSPECT_H_
-#define INSPECT_H_
+#pragma once
 
 #include "SpaceQueueCommand.h"
 #include "server/zone/objects/ship/events/ShipInspectTask.h"
@@ -103,5 +102,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // INSPECT_H_

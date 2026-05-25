@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HEALDAMAGECOMMAND_H_
-#define HEALDAMAGECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/pharmaceutical/StimPack.h"
@@ -519,5 +518,3 @@ public:
 	}
 
 };
-
-#endif //HEALDAMAGECOMMAND_H_

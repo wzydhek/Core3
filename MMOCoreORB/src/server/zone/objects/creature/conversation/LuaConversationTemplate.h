@@ -5,12 +5,9 @@
  *      Author: victor
  */
 
-#ifndef LUACONVERSATIONTEMPLATE_H_
-#define LUACONVERSATIONTEMPLATE_H_
-
+#pragma once
 
 #include "ConversationTemplate.h"
-
 #include "engine/engine.h"
 
 class LuaConversationTemplate {
@@ -32,5 +29,3 @@ private:
 	// The pointer to the 'real object' defined in object.cc
 	Reference<ConversationTemplate*> realObject;
 };
-
-#endif /* LUACONVERSATIONTEMPLATE_H_ */

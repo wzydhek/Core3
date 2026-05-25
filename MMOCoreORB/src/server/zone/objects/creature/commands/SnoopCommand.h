@@ -2,14 +2,12 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef SNOOPCOMMAND_H_
-#define SNOOPCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
 #include "server/zone/managers/mission/MissionManager.h"
-
 #include "server/zone/managers/auction/AuctionManager.h"
 #include "server/zone/managers/auction/AuctionsMap.h"
 #include "server/zone/managers/director/ScreenPlayTask.h"
@@ -711,5 +709,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // SNOOPCOMMAND_H_

@@ -1,5 +1,4 @@
-#ifndef SPACEQUEUECOMMAND_H_
-#define SPACEQUEUECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 
@@ -64,5 +63,3 @@ public:
 		return distanceSqr <= Math::sqr(distance);
 	}
 };
-
-#endif // SPACEQUEUECOMMAND_H_

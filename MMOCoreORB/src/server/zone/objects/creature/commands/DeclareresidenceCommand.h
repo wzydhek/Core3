@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DECLARERESIDENCECOMMAND_H_
-#define DECLARERESIDENCECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/structure/StructureObject.h"
@@ -60,5 +59,3 @@ public:
 	}
 
 };
-
-#endif //DECLARERESIDENCECOMMAND_H_

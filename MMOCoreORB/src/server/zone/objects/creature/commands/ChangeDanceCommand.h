@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHANGEDANCECOMMAND_H_
-#define CHANGEDANCECOMMAND_H_
+#pragma once
 
 #include "StartDanceCommand.h"
 
@@ -60,5 +59,3 @@ public:
 	}
 
 };
-
-#endif //CHANGEDANCECOMMAND_H_

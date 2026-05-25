@@ -1,6 +1,5 @@
 
-#ifndef REMOVEEVENTPERKITEMTASK_H_
-#define REMOVEEVENTPERKITEMTASK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/tangible/eventperk/Jukebox.h"
@@ -47,5 +46,3 @@ public:
 }
 
 using namespace server::zone::objects::tangible::tasks;
-
-#endif /* REMOVEEVENTPERKITEMTASK_H_ */

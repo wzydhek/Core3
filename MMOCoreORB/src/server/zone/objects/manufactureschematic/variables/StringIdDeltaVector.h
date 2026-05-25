@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef STRINGIDDELTAVECTOR_H_
-#define STRINGIDDELTAVECTOR_H_
+#pragma once
 
 #include "server/zone/objects/scene/variables/StringId.h"
 #include "server/zone/objects/scene/variables/DeltaVector.h"
@@ -36,6 +35,3 @@ public:
 }
 
 using namespace server::zone::objects::manufactureschematic::variables;
-
-
-#endif /* STRINGIDDELTAVECTOR_H_ */

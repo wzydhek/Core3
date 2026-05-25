@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef DATATABLEIFF_H_
-#define DATATABLEIFF_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 
@@ -72,5 +71,3 @@ public:
 		return columns.size();
 	}
 };
-
-#endif /* DATATABLEIFF_H_ */

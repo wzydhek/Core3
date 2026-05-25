@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLIENTRANDOMNAMERESPONSE_H_
-#define CLIENTRANDOMNAMERESPONSE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -22,5 +21,3 @@ public:
 	}
 	
 };
-
-#endif /*CLIENTRANDOMNAMERESPONSE_H_*/

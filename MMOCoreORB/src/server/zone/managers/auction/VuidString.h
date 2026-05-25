@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef VUIDSTRING_H_
-#define VUIDSTRING_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -41,5 +40,3 @@ public:
 		return String::compareTo((String)str);
 	}
 };
-
-#endif /* VUIDSTRING_H_ */

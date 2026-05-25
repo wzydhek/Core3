@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef VOLLEYFIREATTACKCOMMAND_H_
-#define VOLLEYFIREATTACKCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -29,5 +28,3 @@ public:
 	}
 
 };
-
-#endif //VOLLEYFIREATTACKCOMMAND_H_

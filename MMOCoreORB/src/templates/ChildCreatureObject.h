@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef CHILDCREATUREOBJECT_H_
-#define CHILDCREATUREOBJECT_H_
+#pragma once
 
 #include "system/lang/Object.h"
 #include "engine/util/u3d/Vector3.h"
@@ -112,5 +111,3 @@ public:
 		return respawnTime;
 	}
 };
-
-#endif /* CHILDCREATUREOBJECT_H_ */

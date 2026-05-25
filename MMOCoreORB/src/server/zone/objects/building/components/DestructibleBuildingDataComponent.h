@@ -5,8 +5,7 @@
  *      Author: pete
  */
 
-#ifndef DESTRUCTIBLEBUILDINGDATACOMPONENT_H_
-#define DESTRUCTIBLEBUILDINGDATACOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/building/components/BuildingDataComponent.h"
@@ -392,8 +391,3 @@ private:
 	int writeObjectMembers(ObjectOutputStream* stream);
 	bool readObjectMember(ObjectInputStream* stream, const String& name);
 };
-
-
-
-
-#endif /* DESTRUCTIBLEBUILDINGDATACOMPONENT_H_ */

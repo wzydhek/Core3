@@ -1,5 +1,4 @@
-#ifndef JUKEBOXSONG_H_
-#define JUKEBOXSONG_H_
+#pragma once
 
 class JukeboxSong : public Object {
 
@@ -31,5 +30,3 @@ public:
 		return stringId;
 	}
 };
-
-#endif /* JUKEBOXSONG_H_ */

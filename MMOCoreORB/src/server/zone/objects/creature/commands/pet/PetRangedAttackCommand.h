@@ -1,6 +1,5 @@
 
-#ifndef PETRANGEDATTACKCOMMAND_H_
-#define PETRANGEDATTACKCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
@@ -58,5 +57,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* PETRANGEDATTACKCOMMAND_H_ */

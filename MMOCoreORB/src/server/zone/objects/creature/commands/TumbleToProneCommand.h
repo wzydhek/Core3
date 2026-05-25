@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TUMBLETOPRONECOMMAND_H_
-#define TUMBLETOPRONECOMMAND_H_
+#pragma once
 
 class TumbleToProneCommand : public QueueCommand {
 public:
@@ -57,5 +56,3 @@ public:
 	}
 
 };
-
-#endif //TUMBLETOPRONECOMMAND_H_

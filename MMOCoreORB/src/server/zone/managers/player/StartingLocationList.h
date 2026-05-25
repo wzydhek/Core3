@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef STARTINGLOCATIONLIST_H_
-#define STARTINGLOCATIONLIST_H_
+#pragma once
 
 #include "StartingLocation.h"
 #include "templates/datatables/DataTableIff.h"
@@ -45,6 +44,3 @@ public:
 			get(i).insertToMessage(msg);
 	}
 };
-
-
-#endif /* STARTINGLOCATIONLIST_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FACTORYCRATEOBJECTMESSAGE6_H_
-#define FACTORYCRATEOBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -33,5 +32,3 @@ public:
 	}
 	
 };
-
-#endif /*FACTORYCRATEOBJECTMESSAGE6_H_*/

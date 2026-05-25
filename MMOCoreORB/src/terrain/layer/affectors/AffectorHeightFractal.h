@@ -5,11 +5,11 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORHEIGHTFRACTAL_H_
-#define AFFECTORHEIGHTFRACTAL_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "AffectorProceduralRule.h"
+
 class TerrainGenerator;
 class MapFractal;
 
@@ -41,7 +41,3 @@ public:
 		return informationHeader.isEnabled();
 	}
 };
-
-
-
-#endif /* AFFECTORHEIGHTFRACTAL_H_ */

@@ -5,15 +5,11 @@
  *      Author: victor
  */
 
-#ifndef PATROLPOINTSVECTOR_H_
-#define PATROLPOINTSVECTOR_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "PatrolPoint.h"
 
 class PatrolPointsVector : public Vector<PatrolPoint> {
 
 };
-
-#endif /* PATROLPOINTSVECTOR_H_ */

@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef FACTORYOBJECTTEMPLATE_H_
-#define FACTORYOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/installation/SharedInstallationObjectTemplate.h"
 
@@ -43,5 +42,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* FACTORYOBJECTTEMPLATE_H_ */

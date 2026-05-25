@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDGUILDOBJECTTEMPLATE_H_
-#define SHAREDGUILDOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedUniverseObjectTemplate.h"
 
@@ -69,5 +68,3 @@ public:
 
 
 };
-
-#endif /* SHAREDGUILDOBJECTTEMPLATE_H_ */

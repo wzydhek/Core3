@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef KIPUPSHOTCOMMAND_H_
-#define KIPUPSHOTCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -35,5 +34,3 @@ public:
 	}
 
 };
-
-#endif //KIPUPSHOTCOMMAND_H_

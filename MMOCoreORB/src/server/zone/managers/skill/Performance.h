@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PERFORMANCE_H_
-#define PERFORMANCE_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 
@@ -205,7 +204,3 @@ public:
 	}
 
 };
-
-
-
-#endif /* PERFORMANCE_H_ */

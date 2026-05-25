@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESOURCECONTAINERTRANSFERCOMMAND_H_
-#define RESOURCECONTAINERTRANSFERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/resource/ResourceContainer.h"
@@ -50,5 +49,3 @@ public:
 	}
 
 };
-
-#endif //RESOURCECONTAINERTRANSFERCOMMAND_H_

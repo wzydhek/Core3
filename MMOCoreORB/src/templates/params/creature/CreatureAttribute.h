@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATUREATTRIBUTE_H_
-#define CREATUREATTRIBUTE_H_
+#pragma once
 
 #include "system/lang.h"
 
@@ -35,5 +34,3 @@ public:
 
 	static String getName(const uint8 attribute, bool initialCap = false);
 };
-
-#endif /* CREATUREATTRIBUTE_H_ */

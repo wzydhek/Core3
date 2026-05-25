@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETHUECOMMAND_H_
-#define SETHUECOMMAND_H_
+#pragma once
 
 class SetHueCommand : public QueueCommand {
 public:
@@ -47,5 +46,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // SETHUECOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TRANSFERITEMARMORCOMMAND_H_
-#define TRANSFERITEMARMORCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -157,6 +156,3 @@ public:
 	}
 
 };
-
-#endif //TRANSFERITEMARMORCOMMAND_H_
-

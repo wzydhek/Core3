@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef TREEFILE_H_
-#define TREEFILE_H_
+#pragma once
 
 #include "TreeFileRecord.h"
 #include "TreeDataBlock.h"
@@ -38,5 +37,3 @@ public:
 	void read(const String& path);
 	//void write(const String& filePath);
 };
-
-#endif /* TREEFILE_H_ */

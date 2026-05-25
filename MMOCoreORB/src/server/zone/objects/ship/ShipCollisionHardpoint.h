@@ -1,5 +1,4 @@
-#ifndef SHIPCOLLISIONHARDPOINT_H_
-#define SHIPCOLLISIONHARDPOINT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -157,5 +156,3 @@ public:
 		return msg.toString();
 	}
 };
-
-#endif // SHIPCOLLISIONHARDPOINT_H_

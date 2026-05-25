@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DIAGNOSECOMMAND_H_
-#define DIAGNOSECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -124,5 +123,3 @@ public:
 	}
 
 };
-
-#endif //DIAGNOSECOMMAND_H_

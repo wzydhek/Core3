@@ -2,8 +2,7 @@
 // Created by g on 1/1/18.
 //
 
-#ifndef DESTROYSHIPMESSAGE_H
-#define DESTROYSHIPMESSAGE_H
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -16,4 +15,3 @@ public:
 		insertFloat(scale);
 	}
 };
-#endif //DESTROYSHIPMESSAGE_H

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DELTASET_H_
-#define DELTASET_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/packets/DeltaMessage.h"
@@ -237,5 +236,3 @@ public:
 		return updateCounter;
 	}
 };
-
-#endif /* DELTASET_H_ */

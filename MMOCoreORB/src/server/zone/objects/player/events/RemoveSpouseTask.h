@@ -1,6 +1,5 @@
 
-#ifndef REMOVESPOUSETASK_H_
-#define REMOVESPOUSETASK_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 
@@ -25,5 +24,3 @@ public:
 		ghost->removeSpouse();
 	}
 };
-
-#endif /* REMOVESPOUSETASK_H_ */

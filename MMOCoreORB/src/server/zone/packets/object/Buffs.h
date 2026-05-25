@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BUFFS_H_
-#define BUFFS_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -38,5 +37,3 @@ public:
 		insertInt(buffcrc);
 	}
 };
-
-#endif /*BUFFS_H_*/

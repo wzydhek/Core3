@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GIVEMONEYMESSAGE_H_
-#define GIVEMONEYMESSAGE_H_
+#pragma once
 
 class GiveMoneyMessage : public BaseMessage {
 public:
@@ -13,5 +12,3 @@ public:
 		insertInt(money);
 	}
 };
-
-#endif /*GIVEMONEYMESSAGE_H_*/

@@ -2,12 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LOGINCLIENT_H_
-#define LOGINCLIENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/service/proto/packets/DisconnectMessage.h"
-
 #include "packets/ErrorMessage.h"
 
 namespace server {
@@ -113,5 +111,3 @@ namespace login {
 } // namespace server
 
 using namespace server::login;
-
-#endif /*LOGINCLIENT_H_*/

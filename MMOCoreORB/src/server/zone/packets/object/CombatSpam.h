@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMBATSPAM_H_
-#define COMBATSPAM_H_
+#pragma once
 
 #include "StandaloneObjectControllerMessage.h"
-
 #include "server/zone/objects/tangible/TangibleObject.h"
 
 class CombatSpam : public StandaloneObjectControllerMessage {
@@ -56,5 +54,3 @@ public:
 	}
 
 };
-
-#endif /*COMBATSPAM_H_*/

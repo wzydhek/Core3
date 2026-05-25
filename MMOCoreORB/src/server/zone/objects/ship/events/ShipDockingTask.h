@@ -1,5 +1,4 @@
-#ifndef SHIPDOCKINGTASK_H_
-#define SHIPDOCKINGTASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/ship/ShipObject.h"
@@ -132,5 +131,3 @@ private:
 
 	Vector3 getRotationAxis(const Vector3& axis);
 };
-
-#endif // SHIPDOCKINGTASK_H_

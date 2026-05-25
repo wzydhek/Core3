@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DROIDMERCHANTBARKERTASK_H_
-#define DROIDMERCHANTBARKERTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/DroidObject.h"
 #include "server/zone/objects/tangible/components/droid/DroidMerchantModuleDataComponent.h"
@@ -117,5 +116,3 @@ public:
 } // server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /*DROIDEFFECTSTASK_H_*/

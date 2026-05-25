@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NPCCONVERSATIONMESSAGE_H_
-#define NPCCONVERSATIONMESSAGE_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -44,5 +43,3 @@ public:
 		insertInt(offset, size);
 	}
 };
-
-#endif

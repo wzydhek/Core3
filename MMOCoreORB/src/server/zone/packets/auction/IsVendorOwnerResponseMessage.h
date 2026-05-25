@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ISVENDOROWNERRESPONSEMESSAGE_H_
-#define ISVENDOROWNERRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -79,5 +78,3 @@ public:
 	}
 
 };
-
-#endif /*ISVENDOROWNERRESPONSEMESSAGE_H_*/

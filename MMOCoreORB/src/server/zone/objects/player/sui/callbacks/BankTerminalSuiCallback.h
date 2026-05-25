@@ -5,8 +5,7 @@
  * by: zaphod
  */
 
-#ifndef BANKTERMINALSUICALLBACK_H_
-#define BANKTERMINALSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -52,5 +51,3 @@ public:
 		player->sendSystemMessage("@base_player:bank_success");
 	}
 };
-
-#endif /* BANKTERMINALSUICALLBACK_H_ */

@@ -8,8 +8,7 @@
  * \date 5-27-10
  */
 
-#ifndef MANUALPOOL_H_
-#define MANUALPOOL_H_
+#pragma once
 
 #include "ResourcePool.h"
 
@@ -68,5 +67,3 @@ private:
 
 	friend class ResourceSpawner;
 };
-
-#endif /* MANUALPOOL_H_ */

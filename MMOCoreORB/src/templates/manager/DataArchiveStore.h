@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DATAARCHIVESTORE_H_
-#define DATAARCHIVESTORE_H_
+#pragma once
 
 #include "engine/util/Singleton.h"
 #include "engine/log/Logger.h"
@@ -37,6 +36,3 @@ public:
 
 
 };
-
-
-#endif /* DATAARCHIVE_H_ */

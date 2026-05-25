@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RACES_H_
-#define RACES_H_
+#pragma once
 
 #include "system/lang.h"
 
@@ -224,5 +223,3 @@ public:
 	}
 
 };
-
-#endif /*RACES_H_*/

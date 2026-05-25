@@ -1,6 +1,5 @@
 
-#ifndef FORCEINTIMIDATETASK_H_
-#define FORCEINTIMIDATETASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/managers/combat/CreatureAttackData.h"
@@ -42,5 +41,3 @@ public:
 		}
 	}
 };
-
-#endif /* FORCEINTIMIDATETASK_H_ */

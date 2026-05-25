@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DETONATEDROIDCOMMAND_H_
-#define DETONATEDROIDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/components/droid/DroidDetonationModuleDataComponent.h"
@@ -97,5 +96,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //DETONATEDROIDCOMMAND_H_

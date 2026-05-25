@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef RANGEDINTCUSTOMIZATIONVARIABLE_H_
-#define RANGEDINTCUSTOMIZATIONVARIABLE_H_
+#pragma once
 
 #include "templates/params/Param.h"
 #include "templates/params/primitives/StringParam.h"
@@ -113,6 +112,3 @@ public:
 	}
 
 };
-
-
-#endif /* RANGEDINTCUSTOMIZATIONVARIABLE_H_ */

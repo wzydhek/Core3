@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETOBJVARSCOMMAND_H_
-#define GETOBJVARSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/chat/ChatManager.h"
@@ -431,5 +430,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // GETOBJVARSCOMMAND_H_

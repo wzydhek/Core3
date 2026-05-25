@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ARMOROBJECTTEMPLATE_H_
-#define ARMOROBJECTTEMPLATE_H_
-
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -214,6 +212,3 @@ public:
 		return true;
 	}
 };
-
-
-#endif /* ARMOROBJECTTEMPLATE_H_ */

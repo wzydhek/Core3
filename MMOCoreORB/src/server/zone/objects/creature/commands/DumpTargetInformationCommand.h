@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DUMPTARGETINFORMATIONCOMMAND_H_
-#define DUMPTARGETINFORMATIONCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -142,5 +141,3 @@ public:
 	}
 
 };
-
-#endif //DUMPTARGETINFORMATIONCOMMAND_H_

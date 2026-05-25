@@ -5,9 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef OPENLOTTERYWINDOW_H_
-#define OPENLOTTERYWINDOW_H_
-
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -19,6 +17,3 @@ public:
 	}
 
 };
-
-
-#endif /* OPENLOTTERYWINDOW_H_ */

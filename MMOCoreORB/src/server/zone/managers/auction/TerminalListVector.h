@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef TERMINALLISTVECTOR_H_
-#define TERMINALLISTVECTOR_H_
+#pragma once
 
 class TerminalItemList : public SortedVector<ManagedReference<AuctionItem*> >, public ReadWriteLock {
 protected:
@@ -67,5 +66,3 @@ class TerminalGalaxyList : public VectorMap<String, Reference<TerminalPlanetList
 class TerminalListVector : public SortedVector<Reference<TerminalItemList*> > {
 
 };
-
-#endif /* TERMINALLISTVECTOR_H_ */

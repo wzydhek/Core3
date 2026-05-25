@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef AUCTIONTERMINALDATACOMPONENT_H_
-#define AUCTIONTERMINALDATACOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 #include "server/zone/managers/auction/AuctionManager.h"
@@ -81,6 +80,3 @@ private:
 		addSerializableVariable("uid", &uid);
 	}
 };
-
-
-#endif /* AUCTIONTERMINALDATACOMPONENT_H_ */

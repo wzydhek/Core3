@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCERESISTPOISONCOMMAND_H_
-#define FORCERESISTPOISONCOMMAND_H_
+#pragma once
 
 class ForceResistPoisonCommand : public JediQueueCommand {
 public:
@@ -23,5 +22,3 @@ public:
 	}
 
 };
-
-#endif //FORCERESISTPOISONCOMMAND_H_

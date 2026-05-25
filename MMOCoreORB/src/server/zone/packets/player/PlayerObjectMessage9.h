@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYEROBJECTMESSAGE9_H_
-#define PLAYEROBJECTMESSAGE9_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -68,5 +67,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*PLAYEROBJECTMESSAGE9_H_*/

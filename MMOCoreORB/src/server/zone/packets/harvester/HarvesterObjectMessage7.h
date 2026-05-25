@@ -1,5 +1,4 @@
-#ifndef HARVESTEROBJECTMESSAGE7_H_
-#define HARVESTEROBJECTMESSAGE7_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/installation/InstallationObject.h"
@@ -102,5 +101,3 @@ public:
 		hopperList->insertToMessage(this);
 	}
 };
-
-#endif /*HARVESTEROBJECTMESSAGE7_H_*/

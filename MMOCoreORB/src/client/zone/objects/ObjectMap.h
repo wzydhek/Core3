@@ -1,5 +1,4 @@
-#ifndef OBJECTMAP_H_
-#define OBJECTMAP_H_
+#pragma once
 
 #include "client/zone/objects/scene/SceneObject.h"
 
@@ -16,5 +15,3 @@ public:
 	}
 
 };
-
-#endif /*OBJECTMAP_H_*/

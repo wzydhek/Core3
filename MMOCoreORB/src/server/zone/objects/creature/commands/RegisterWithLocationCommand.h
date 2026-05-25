@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REGISTERWITHLOCATIONCOMMAND_H_
-#define REGISTERWITHLOCATIONCOMMAND_H_
+#pragma once
 
 #include "templates/building/SharedBuildingObjectTemplate.h"
 
@@ -126,5 +125,3 @@ public:
 	}
 
 };
-
-#endif //REGISTERWITHLOCATIONCOMMAND_H_

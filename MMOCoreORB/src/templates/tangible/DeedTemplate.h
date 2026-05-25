@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef DEEDTEMPLATE_H_
-#define DEEDTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -32,5 +31,3 @@ public:
 		return generatedObjectTemplate;
 	}
 };
-
-#endif /* DEEDTEMPLATE_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef CREATUREOBJECTDELTAMESSAGE6_H_
-#define CREATUREOBJECTDELTAMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/tangible/TangibleObjectDeltaMessage6.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -72,5 +71,3 @@ public:
 		insertAscii(creo->getAlternateAppearance());
 	}
 };
-
-#endif /*CREATUREOBJECTDELTAMESSAGE6_H_*/

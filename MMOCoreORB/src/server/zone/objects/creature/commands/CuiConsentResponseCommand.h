@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CUICONSENTRESPONSECOMMAND_H_
-#define CUICONSENTRESPONSECOMMAND_H_
+#pragma once
 
 class CuiConsentResponseCommand : public QueueCommand {
 public:
@@ -27,5 +26,3 @@ public:
 	}
 
 };
-
-#endif //CUICONSENTRESPONSECOMMAND_H_

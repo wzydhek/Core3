@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef TREEDIRECTORY_H_
-#define TREEDIRECTORY_H_
+#pragma once
 
 #include "TreeFileRecord.h"
 
@@ -58,5 +57,3 @@ public:
 	    return -1;
 	}
 };
-
-#endif /* TREEDIRECTORY_H_ */

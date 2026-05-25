@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SHOWSPAWNREGIONCOMMAND_H_
-#define SHOWSPAWNREGIONCOMMAND_H_
+#pragma once
 
 class ShowSpawnRegionCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SHOWSPAWNREGIONCOMMAND_H_

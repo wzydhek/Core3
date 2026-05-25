@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef OPENLOTTERYCONTAINERCOMMAND_H_
-#define OPENLOTTERYCONTAINERCOMMAND_H_
+#pragma once
 
 class OpenLotteryContainerCommand : public QueueCommand {
 public:
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif /* OPENLOTTERYCONTAINERCOMMAND_H_ */

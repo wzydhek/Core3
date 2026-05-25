@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESOURCECONTAINERSPLITCOMMAND_H_
-#define RESOURCECONTAINERSPLITCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/resource/ResourceContainer.h"
@@ -59,5 +58,3 @@ public:
 	}
 
 };
-
-#endif //RESOURCECONTAINERSPLITCOMMAND_H_

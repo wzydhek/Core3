@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef CONTAINERTEMPLATE_H_
-#define CONTAINERTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -34,5 +33,3 @@ public:
 	}
 
 };
-
-#endif /* CONTAINERTEMPLATE_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef BOUNDARYPOLYGON_H_
-#define BOUNDARYPOLYGON_H_
+#pragma once
 
 #if defined (__clang__) && (__clang_major__ >= 18)
 	#pragma clang diagnostic push
@@ -341,5 +340,3 @@ public:
 #if defined (__clang__) && (__clang_major__ >= 18)
 	#pragma clang diagnostic pop
 #endif
-
-#endif /* BOUNDARYPOLYGON_H_ */

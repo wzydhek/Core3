@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef FLOURISHCOMMAND_H_
-#define FLOURISHCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sessions/EntertainingSession.h"
 
@@ -78,5 +77,3 @@ public:
 	}
 
 };
-
-#endif //FLOURISHCOMMAND_H_

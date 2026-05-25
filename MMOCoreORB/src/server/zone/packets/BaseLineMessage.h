@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef BASELINEMESSAGE_H_
-#define BASELINEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/scene/variables/StringId.h"
@@ -52,5 +51,3 @@ public:
 	}
 
 };
-
-#endif /*BASELINEMESSAGE_H_*/

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef COMMANDQUEUEENQUEUE_H_
-#define COMMANDQUEUEENQUEUE_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/packets/MessageCallback.h"
@@ -40,5 +39,3 @@ public:
 
 	const char* getTaskName();
 };
-
-#endif /*COMMANDQUEUEENQUEUE_H_*/

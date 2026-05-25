@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AWARDREWARDTASK_H_
-#define AWARDREWARDTASK_H_
+#pragma once
 
 #include "server/zone/objects/mission/MissionObjective.h"
 
@@ -31,6 +30,3 @@ public:
 		objective->removeMissionFromPlayer();
 	}
 };
-
-
-#endif /* AWARDREWARDTASK_H_ */

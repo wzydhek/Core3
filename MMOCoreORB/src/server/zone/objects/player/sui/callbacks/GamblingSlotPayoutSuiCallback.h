@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef GAMBLINGSLOTPAYOUTSUICALLBACK_H_
-#define GAMBLINGSLOTPAYOUTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/minigames/GamblingManager.h"
@@ -24,5 +23,3 @@ public:
 		player->sendMessage(suiBox->generateCloseMessage());
 	}
 };
-
-#endif /* GAMBLINGSLOTSUICALLBACK_H_ */

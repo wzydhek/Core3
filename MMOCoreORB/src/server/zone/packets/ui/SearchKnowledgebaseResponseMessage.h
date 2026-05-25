@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SEARCHKNOWLEDGEBASERESPONSEMESSAGE_H_
-#define SEARCHKNOWLEDGEBASERESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -50,6 +49,3 @@ public:
 
 
 };
-
-#endif /*SEARCHKNOWLEDGEBASERESPONSEMESSAGE_H_*/
-

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TRANSFERITEMCOMMAND_H_
-#define TRANSFERITEMCOMMAND_H_
+#pragma once
 
 class TransferItemCommand : public QueueCommand {
 public:
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //TRANSFERITEMCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef SHUTTLEDEPARTURETASK_H_
-#define SHUTTLEDEPARTURETASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "engine/engine.h"
@@ -155,5 +154,3 @@ public:
 		shuttleType = type;
 	}
 };
-
-#endif /* SHUTTLEDEPARTURETASK_H_ */

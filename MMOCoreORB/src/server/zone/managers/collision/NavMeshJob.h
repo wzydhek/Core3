@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef NAVMESHJOB_H_
-#define NAVMESHJOB_H_
+#pragma once
 
 #include "server/zone/objects/pathfinding/NavArea.h"
 #include "engine/util/u3d/AABB.h"
@@ -65,4 +64,3 @@ public:
 	void addArea(const AABB& area);
 
 };
-#endif

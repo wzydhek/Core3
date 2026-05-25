@@ -1,5 +1,4 @@
-#ifndef SAMPLEDEEDTASK_H_
-#define SAMPLEDEEDTASK_H_
+#pragma once
 
 #include "server/zone/managers/creature/DnaManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -144,4 +143,3 @@ public:
 		DnaManager::instance()->generationalSample(deed, player, newQuality);
 	}
 };
-#endif // SAMPLEDEEDTASK_H_

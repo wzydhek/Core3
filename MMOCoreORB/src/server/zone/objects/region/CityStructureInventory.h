@@ -5,14 +5,10 @@
  *      Author: victor
  */
 
-#ifndef CITYSTRUCTUREINVENTORY_H_
-#define CITYSTRUCTUREINVENTORY_H_
+#pragma once
 
 #include "engine/engine.h"
 
 class CityStructureInventory : public VectorMap<byte, SortedVector<ManagedReference<SceneObject* > > > {
 
 };
-
-
-#endif /* CITYSTRUCTUREINVENTORY_H_ */

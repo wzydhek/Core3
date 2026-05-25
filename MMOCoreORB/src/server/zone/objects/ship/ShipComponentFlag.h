@@ -4,8 +4,7 @@
  * Author: H
  */
 
-#ifndef SHIPCOMPONENTFLAG_H
-#define SHIPCOMPONENTFLAG_H
+#pragma once
 
 namespace ShipComponentFlag {
 	enum {
@@ -19,4 +18,3 @@ namespace ShipComponentFlag {
 		DISABLED_NEEDS_POWER	= 0x0080
 	};
 }
-#endif //SHIPCOMPONENTFLAG_H

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef REMOVENOSPAWNAREATASK_H_
-#define REMOVENOSPAWNAREATASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/area/ActiveArea.h"
@@ -35,8 +34,3 @@ public:
 		strongArea->destroyObjectFromWorld(true);
 	}
 };
-
-
-
-
-#endif /* REMOVENOSPAWNAREATASK_H_ */

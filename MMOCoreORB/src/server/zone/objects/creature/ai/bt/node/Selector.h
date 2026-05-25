@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef SELECTOR_H_
-#define SELECTOR_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/node/Composite.h"
 
@@ -52,5 +51,3 @@ public:
 }
 }
 }
-
-#endif /* SELECTOR_H_ */

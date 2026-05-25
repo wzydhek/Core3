@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef DRAFTSCHEMATICOBJECTTEMPLATE_H_
-#define DRAFTSCHEMATICOBJECTTEMPLATE_H_
+#pragma once
 
 #include "SharedDraftSchematicObjectTemplate.h"
 #include "templates/SharedTangibleObjectTemplate.h"
@@ -216,6 +215,3 @@ public:
 	}
 
 };
-
-
-#endif /* DRAFTSCHEMATICOBJECTTEMPLATE_H_ */

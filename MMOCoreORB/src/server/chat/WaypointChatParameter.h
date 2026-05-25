@@ -5,11 +5,9 @@
  *      Author: crush
  */
 
-#ifndef WAYPOINTCHATPARAMETER_H_
-#define WAYPOINTCHATPARAMETER_H_
+#pragma once
 
 #include "server/chat/ChatParameter.h"
-
 #include "engine/util/json_utils.h"
 
 namespace server {
@@ -146,6 +144,3 @@ public:
 }
 
 using namespace server::chat;
-
-
-#endif /* WAYPOINTCHATPARAMETER_H_ */

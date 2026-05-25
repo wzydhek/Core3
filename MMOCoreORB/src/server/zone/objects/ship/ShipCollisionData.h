@@ -1,5 +1,4 @@
-#ifndef SHIPCOLLISIONDATA_H_
-#define SHIPCOLLISIONDATA_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/ship/ComponentSlots.h"
@@ -190,5 +189,3 @@ public:
 		return msg.toString();
 	}
 };
-
-#endif // SHIPCOLLISIONDATA_H_

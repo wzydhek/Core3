@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef WORLDSNAPSHOTNODE_H_
-#define WORLDSNAPSHOTNODE_H_
+#pragma once
 
 #include "engine/util/u3d/Quaternion.h"
 #include "engine/util/iffstream/IffStream.h"
@@ -147,5 +146,3 @@ public:
 		return &childNodes.get(idx);
 	}
 };
-
-#endif /* WORLDSNAPSHOTNODE_H_ */

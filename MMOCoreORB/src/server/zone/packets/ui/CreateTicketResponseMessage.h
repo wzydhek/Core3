@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CREATETICKETRESPONSEMESSAGE_H_
-#define CREATETICKETRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -19,5 +18,3 @@ public:
 		insertInt(unknown);
    }
 };
-
-#endif /* CREATETICKETRESPONSEMESSAGE_H_ */

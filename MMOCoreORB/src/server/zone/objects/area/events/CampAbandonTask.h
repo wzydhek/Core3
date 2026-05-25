@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CAMPABANDONTASK_H_
-#define CAMPABANDONTASK_H_
+#pragma once
 
 #include "server/zone/objects/area/CampSiteActiveArea.h"
 
@@ -37,5 +36,3 @@ public:
 }
 }
 }
-
-#endif /* CAMPABANDONTASK_H_ */

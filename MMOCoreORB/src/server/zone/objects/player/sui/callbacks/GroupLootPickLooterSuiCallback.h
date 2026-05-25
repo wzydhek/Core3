@@ -5,12 +5,10 @@
  *      Author: Anakis
  */
 
-#ifndef GROUPLOOTPICKLOOTERSUICALLBACK_H_
-#define GROUPLOOTPICKLOOTERSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
-
 
 class GroupLootPickLooterSuiCallback : public SuiCallback {
 public:
@@ -59,6 +57,3 @@ public:
 	}
 
 };
-
-
-#endif /* GROUPLOOTPICKLOOTERSUICALLBACK_H_ */

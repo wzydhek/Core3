@@ -1,8 +1,6 @@
-#ifndef NOTSPACE_H_
-#define NOTSPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/btspace/decoratorspace/DecoratorSpace.h"
-
 #include <cassert>
 
 namespace server {
@@ -43,5 +41,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // NOTSPACE_H_

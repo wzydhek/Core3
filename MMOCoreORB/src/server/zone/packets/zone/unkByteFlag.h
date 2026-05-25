@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UNKBYTEFLAG_H_
-#define UNKBYTEFLAG_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -21,5 +20,3 @@ public:
 	}
 	
 };
-
-#endif /*UNKBYTEFLAG_H_*/

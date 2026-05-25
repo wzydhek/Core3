@@ -2,8 +2,7 @@
 // Created by g on 12/31/17.
 //
 
-#ifndef CORE3_COMPONENTSLOTS_H
-#define CORE3_COMPONENTSLOTS_H
+#pragma once
 
 #include "engine/engine.h"
 
@@ -58,5 +57,3 @@ public:
 		}
 	}
 };
-
-#endif //CORE3_COMPONENTSLOTS_H

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NPCCONVERSATIONSTARTCOMMAND_H_
-#define NPCCONVERSATIONSTARTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/ship/ai/SpaceStationObject.h"
@@ -117,5 +116,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // NPCCONVERSATIONSTARTCOMMAND_H_

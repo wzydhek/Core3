@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CSCONNECTPLAYERCOMMAND_H_
-#define CSCONNECTPLAYERCOMMAND_H_
+#pragma once
 
 class CsConnectPlayerCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CSCONNECTPLAYERCOMMAND_H_

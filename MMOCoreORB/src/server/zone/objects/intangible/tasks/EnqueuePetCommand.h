@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef ENQUEUEPETCOMMAND_H_
-#define ENQUEUEPETCOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -33,6 +32,3 @@ public:
 		pet->enqueueCommand(commandCRC, 0, target, arguments, priority);
 	}
 };
-
-
-#endif /* ENQUEUEPETCOMMAND_H_ */

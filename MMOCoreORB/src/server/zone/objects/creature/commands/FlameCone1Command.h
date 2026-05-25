@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FLAMECONE1COMMAND_H_
-#define FLAMECONE1COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -31,4 +30,3 @@ public:
 		return doCombatAction(creature, target);
 	}
 };
-#endif //FLAMECONE1COMMAND_H_

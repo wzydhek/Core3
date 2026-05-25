@@ -5,8 +5,7 @@
  *  Author: victor
  */
 
-#ifndef HEIGHTDATA_H_
-#define HEIGHTDATA_H_
+#pragma once
 
 #include "../TemplateVariable.h"
 #include "Segment.h"
@@ -31,5 +30,3 @@ public:
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);
 	void findNearestHeight(float& baseValue, Vector3 worldPosition, Vector3 roadStart, Vector3 roadCenter, float direction);
 };
-
-#endif /* HEIGHTDATA_H_ */

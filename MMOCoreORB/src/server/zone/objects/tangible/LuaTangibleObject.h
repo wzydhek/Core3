@@ -5,11 +5,9 @@
  *      Author: xyborn
  */
 
-#ifndef LUATANGIBLEOBJECT_H_
-#define LUATANGIBLEOBJECT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/scene/LuaSceneObject.h"
 
 namespace server {
@@ -79,6 +77,3 @@ namespace tangible {
 }
 
 using namespace server::zone::objects::tangible;
-
-
-#endif /* LUATANGIBLEOBJECT_H_ */

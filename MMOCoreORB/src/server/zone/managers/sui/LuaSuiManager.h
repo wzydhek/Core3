@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef LUASUIMANAGER_H_
-#define LUASUIMANAGER_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -41,5 +40,3 @@ namespace sui {
 }
 
 using namespace server::zone::managers::sui;
-
-#endif /* LUASUIMANAGER_H_ */

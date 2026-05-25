@@ -1,8 +1,6 @@
-#ifndef ALWAYSSUCCEED_H_ 
-#define ALWAYSSUCCEED_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/decorator/Decorator.h"
-
 #include <cassert>
 
 namespace server {
@@ -45,5 +43,3 @@ public:
 }
 }
 }
-
-#endif // ALWAYSSUCCEED_H_

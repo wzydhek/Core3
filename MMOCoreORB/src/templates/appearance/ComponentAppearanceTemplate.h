@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef COMPONENTAPPEARANCETEMPLATE_H_
-#define COMPONENTAPPEARANCETEMPLATE_H_
+#pragma once
 
 #include "templates/appearance/AppearanceTemplate.h"
 #include "templates/manager/TemplateManager.h"
@@ -189,5 +188,3 @@ public:
 	}
 
 };
-
-#endif /* COMPONENTAPPEARANCETEMPLATE_H_ */

@@ -2,8 +2,7 @@
  * CompositeSpace.h
  */
 
-#ifndef COMPOSITESPACE_H_
-#define COMPOSITESPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/btspace/BehaviorSpace.h"
 
@@ -113,5 +112,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif /* COMPOSITESPACE_H_ */

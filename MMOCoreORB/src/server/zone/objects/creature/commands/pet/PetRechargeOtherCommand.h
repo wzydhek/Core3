@@ -1,6 +1,5 @@
 
-#ifndef PETRECHARGEOTHERCOMMAND_H_
-#define PETRECHARGEOTHERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/ai/DroidObject.h"
@@ -58,5 +57,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* PETRECHARGEOTHERCOMMAND_H_ */

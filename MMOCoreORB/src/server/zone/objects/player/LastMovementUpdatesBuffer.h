@@ -5,12 +5,8 @@
  *      Author: victor
  */
 
-#ifndef LASTMOVEMENTUPDATESBUFFER_H_
-#define LASTMOVEMENTUPDATESBUFFER_H_
+#pragma once
 
 class LastMovementUpdatesBuffer : public Vector<Reference<MessageCallback*> > {
 
 };
-
-
-#endif /* LASTMOVEMENTUPDATESBUFFER_H_ */

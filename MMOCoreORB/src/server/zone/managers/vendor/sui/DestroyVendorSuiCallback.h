@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef DESTROYVENDORSUICALLBACK_H_
-#define DESTROYVENDORSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/vendor/VendorManager.h"
@@ -51,5 +50,3 @@ public:
 		VendorManager::instance()->destroyVendor(vendor);
 	}
 };
-
-#endif /* DESTROYVENDORSUICALLBACK_H_ */

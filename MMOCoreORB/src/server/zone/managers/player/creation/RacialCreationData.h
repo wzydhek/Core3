@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef RACIALCREATIONDATA_H_
-#define RACIALCREATIONDATA_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 
@@ -111,5 +110,3 @@ public:
 }
 
 using namespace server::zone::managers::player::creation;
-
-#endif /* RACIALCREATIONDATA_H_ */

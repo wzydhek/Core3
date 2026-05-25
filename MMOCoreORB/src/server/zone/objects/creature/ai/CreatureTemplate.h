@@ -5,8 +5,7 @@
  *      Author: dannuic
  */
 
-#ifndef CREATURETEMPLATE_H_
-#define CREATURETEMPLATE_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/creature/ai/variables/CreatureAttackMap.h"
@@ -520,5 +519,3 @@ public:
 }
 
 using namespace server::zone::objects::creature::ai;
-
-#endif /* CREATURETEMPLATE_H_ */

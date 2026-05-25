@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef CITIZENLIST_H_
-#define CITIZENLIST_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "system/util/SynchronizedSortedVector.h"
@@ -17,6 +16,3 @@ public:
 		setNoDuplicateInsertPlan();
 	}
 };
-
-
-#endif /* CITIZENLIST_H_ */

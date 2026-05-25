@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ANONCOMMAND_H_
-#define ANONCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 
@@ -34,5 +33,3 @@ public:
 	}
 
 };
-
-#endif //ANONCOMMAND_H_

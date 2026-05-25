@@ -5,11 +5,9 @@
  *      Author: xyborn
  */
 
-#ifndef LUAACIVEAREA_H_
-#define LUAACIVEAREA_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/scene/LuaSceneObject.h"
 
 namespace server {
@@ -78,6 +76,3 @@ namespace area {
 }
 
 using namespace server::zone::objects::area;
-
-
-#endif /* LUAACIVEAREA_H_ */

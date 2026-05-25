@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HEALBATTLEFATIGUESELF2COMMAND_H_
-#define HEALBATTLEFATIGUESELF2COMMAND_H_
+#pragma once
 
 #include "ForceHealQueueCommand.h"
 
@@ -15,5 +14,3 @@ public:
 
 	}
 };
-
-#endif //HEALBATTLEFATIGUESELF2COMMAND_H_

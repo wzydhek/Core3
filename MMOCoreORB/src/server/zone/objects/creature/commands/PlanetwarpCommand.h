@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLANETWARPCOMMAND_H_
-#define PLANETWARPCOMMAND_H_
+#pragma once
 
 class PlanetwarpCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //PLANETWARPCOMMAND_H_

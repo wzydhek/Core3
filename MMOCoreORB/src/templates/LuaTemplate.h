@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef LUATEMPLATE_H_
-#define LUATEMPLATE_H_
+#pragma once
 
 #include "templates/TemplateData.h"
 #include "engine/lua/LuaObject.h"
@@ -19,5 +18,3 @@ public:
 
 	}
 };
-
-#endif /* LUATEMPLATE_H_ */

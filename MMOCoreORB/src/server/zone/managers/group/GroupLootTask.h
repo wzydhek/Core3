@@ -5,8 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef GROUPLOOTTASK_H_
-#define GROUPLOOTTASK_H_
+#pragma once
 
 #include "server/chat/StringIdChatParameter.h"
 #include "server/zone/objects/group/GroupObject.h"
@@ -237,5 +236,3 @@ public:
 	}
 
 };
-
-#endif /* GROUPLOOTTASK_H_ */

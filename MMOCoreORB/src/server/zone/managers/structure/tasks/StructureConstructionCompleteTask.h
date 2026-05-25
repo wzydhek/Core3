@@ -6,8 +6,7 @@
  */
 
 
-#ifndef STRUCTURECONSTRUCTIONCOMPLETETASK_H_
-#define STRUCTURECONSTRUCTIONCOMPLETETASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/sessions/PlaceStructureSession.h"
@@ -36,5 +35,3 @@ public:
 		session->completeSession();
 	}
 };
-
-#endif /*STRUCTURECONSTRUCTIONCOMPLETETASK_H_*/

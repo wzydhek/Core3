@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef DELETEALLITEMSSUICALLBACK_H_
-#define DELETEALLITEMSSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -35,5 +34,3 @@ public:
 		}
 	}
 };
-
-#endif /* DELETEALLITEMSSUICALLBACK_H_ */

@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef LUACREATUREOBJECT_H_
-#define LUACREATUREOBJECT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/tangible/LuaTangibleObject.h"
 
 namespace server {
@@ -157,6 +155,3 @@ namespace creature {
 }
 
 using namespace server::zone::objects::creature;
-
-
-#endif /* LUACREATUREOBJECT_H_ */

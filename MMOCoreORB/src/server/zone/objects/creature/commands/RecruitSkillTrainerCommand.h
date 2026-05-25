@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RECRUITSKILLTRAINERCOMMAND_H_
-#define RECRUITSKILLTRAINERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 #include "server/zone/objects/creature/commands/sui/RecruitSkillTrainerSuiCallback.h"
@@ -88,5 +87,3 @@ public:
 	}
 
 };
-
-#endif //RECRUITSKILLTRAINERCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TARGETUPDATE_H_
-#define TARGETUPDATE_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -73,5 +72,3 @@ public:
 		ship->setShipTargetID(targetID, true);
 	}
 };
-
-#endif /* TARGETUPDATE_H_ */

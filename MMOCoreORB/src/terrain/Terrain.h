@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TERRAIN_H_
-#define TERRAIN_H_
+#pragma once
 
 const static char* TerrainNames[] = {
     "terrain/corellia.trn", // 0
@@ -62,5 +61,3 @@ public:
 	}
 
 };
-
-#endif /*TERRAIN_H_*/

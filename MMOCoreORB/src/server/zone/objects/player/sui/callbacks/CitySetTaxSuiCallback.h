@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CITYSETTAXSUICALLBACK_H_
-#define CITYSETTAXSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -53,5 +52,3 @@ public:
 		cityManager->setTax(city, player, taxSelected, value);
 	}
 };
-
-#endif /* CITYSETTAXSUICALLBACK_H_ */

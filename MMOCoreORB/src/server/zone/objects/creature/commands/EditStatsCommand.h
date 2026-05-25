@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef EDITSTATSCOMMAND_H_
-#define EDITSTATSCOMMAND_H_
+#pragma once
 
 class EditStatsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //EDITSTATSCOMMAND_H_

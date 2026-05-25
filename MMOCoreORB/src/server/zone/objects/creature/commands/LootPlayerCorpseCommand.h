@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LOOTPLAYERCORPSECOMMAND_H_
-#define LOOTPLAYERCORPSECOMMAND_H_
+#pragma once
 
 class LootPlayerCorpseCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //LOOTPLAYERCORPSECOMMAND_H_

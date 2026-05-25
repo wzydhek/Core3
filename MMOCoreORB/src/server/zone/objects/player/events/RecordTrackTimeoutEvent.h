@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef RECORDTRACKTIMEOUTEVENT_H
-#define RECORDTRACKTIMEOUTEVENT_H
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
@@ -30,6 +29,5 @@ public:
 }
 }
 }
-using namespace server::zone::objects::player::events;
 
-#endif /* RECORDTRACKTIMEOUTEVENT_H */
+using namespace server::zone::objects::player::events;

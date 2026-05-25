@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GRANTPADAWANTRIALSELIGIBILITYCOMMAND_H_
-#define GRANTPADAWANTRIALSELIGIBILITYCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -43,5 +42,3 @@ public:
 	}
 
 };
-
-#endif //GRANTPADAWANTRIALSELIGIBILITYCOMMAND_H_

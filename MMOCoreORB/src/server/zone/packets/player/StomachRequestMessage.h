@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef STOMACHREQUESTMESSAGE_H_
-#define STOMACHREQUESTMESSAGE_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/packets/player/PlayerObjectDeltaMessage9.h"
@@ -37,6 +36,3 @@ public:
 	}
 
 };
-
-
-#endif /* STOMACHREQUESTMESSAGE_H_ */

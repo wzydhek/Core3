@@ -5,8 +5,7 @@
  *      Author: katherine
  */
 
-#ifndef ROBEOBJECTMENUCOMPONENT_H_
-#define ROBEOBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* ROBEOBJECTMENUCOMPONENT_H_ */

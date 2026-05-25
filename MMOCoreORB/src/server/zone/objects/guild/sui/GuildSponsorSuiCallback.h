@@ -5,9 +5,7 @@
  *      Author: crush
  */
 
-#ifndef GUILDSPONSORSUICALLBACK_H_
-#define GUILDSPONSORSUICALLBACK_H_
-
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
@@ -45,6 +43,3 @@ public:
 		guildManager->sponsorPlayer(player, playerName);
 	}
 };
-
-
-#endif /* GUILDSPONSORSUICALLBACK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UPDATENEARESTMISSIONFORGROUPTASK_H_
-#define UPDATENEARESTMISSIONFORGROUPTASK_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -44,5 +43,3 @@ private:
 } // namespace server
 
 using namespace server::zone::objects::group::tasks;
-
-#endif /* UPDATENEARESTMISSIONFORGROUPTASK_H_ */

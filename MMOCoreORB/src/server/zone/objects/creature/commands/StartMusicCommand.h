@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef STARTMUSICCOMMAND_H_
-#define STARTMUSICCOMMAND_H_
+#pragma once
 
 #include "server/zone/ZoneProcessServer.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -131,5 +130,3 @@ public:
 	}
 
 };
-
-#endif //STARTMUSICCOMMAND_H_

@@ -5,8 +5,8 @@
  *      Author: root
  */
 
-#ifndef GUILDTRANSFERLEADERSHIPSUICALLBACK_H_
-#define GUILDTRANSFERLEADERSHIPSUICALLBACK_H_
+#pragma once
+
 //#include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -36,7 +36,3 @@ public:
 	}
 
 };
-
-
-
-#endif /* GUILDTRANSFERLEADERSHIPSUICALLBACK_H_ */

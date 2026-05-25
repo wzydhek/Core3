@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef USERECONDRONECOMMAND_H_
-#define USERECONDRONECOMMAND_H_
+#pragma once
 
 class UseReconDroneCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //USERECONDRONECOMMAND_H_

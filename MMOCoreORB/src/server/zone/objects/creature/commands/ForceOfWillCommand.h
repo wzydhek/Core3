@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCEOFWILLCOMMAND_H_
-#define FORCEOFWILLCOMMAND_H_
+#pragma once
 
 #include "templates/params/creature/CreatureAttribute.h"
 #include "server/zone/objects/creature/buffs/Buff.h"
@@ -111,5 +110,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //FORCEOFWILLCOMMAND_H_

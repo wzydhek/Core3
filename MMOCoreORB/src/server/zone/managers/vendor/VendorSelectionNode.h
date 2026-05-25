@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef VENDORSELECTIONNODE_H_
-#define VENDORSELECTIONNODE_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 
@@ -165,5 +164,3 @@ public:
 	}
 
 };
-
-#endif /* VENDORSELECTIONNODE_H_ */

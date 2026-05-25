@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FISHINGEVENT_H_
-#define FISHINGEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/ZoneProcessServer.h"
@@ -79,5 +78,3 @@ public:
 } // namespace server
 
 using namespace server::zone::managers::minigames::events;
-
-#endif /* FISHINGEVENT_H_ */

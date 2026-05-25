@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GETFRIENDLISTCOMMAND_H_
-#define GETFRIENDLISTCOMMAND_H_
+#pragma once
 
 class GetFriendListCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GETFRIENDLISTCOMMAND_H_

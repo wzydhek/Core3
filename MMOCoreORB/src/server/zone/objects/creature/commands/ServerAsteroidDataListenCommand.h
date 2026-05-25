@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SERVERASTEROIDDATALISTEN_H_
-#define SERVERASTEROIDDATALISTEN_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //SERVERASTEROIDDATALISTEN_H_

@@ -1,5 +1,4 @@
-#ifndef XPPURCHASESUICALLBACK_H
-#define XPPURCHASESUICALLBACK_H
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/skill/SkillManager.h"
@@ -127,5 +126,3 @@ public:
 		}
 	}
 };
-
-#endif /* XPPURCHASESUICALLBACK_H */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DESPAWNLAIRONPLAYERDISAPPEAR_H_
-#define DESPAWNLAIRONPLAYERDISAPPEAR_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -30,5 +29,3 @@ public:
 }
 
 using namespace server::zone::objects::tangible;
-
-#endif /* DESPAWNLAIRONPLAYERDISAPPEAR_H_ */

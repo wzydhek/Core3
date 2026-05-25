@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SAMPLECOMMAND_H_
-#define SAMPLECOMMAND_H_
+#pragma once
 
 class SampleCommand : public QueueCommand {
 public:
@@ -30,5 +29,3 @@ public:
 	}
 
 };
-
-#endif //SAMPLECOMMAND_H_

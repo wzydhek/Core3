@@ -5,9 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef LOTTERYWINDOWCALLBACK_H_
-#define LOTTERYWINDOWCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/objects/player/sessions/LootLotterySession.h"
@@ -90,6 +88,3 @@ public:
 			session->addPlayerSelections(player, ballot);
 	}
 };
-
-
-#endif /* LOTTERYWINDOWCALLBACK_H_ */

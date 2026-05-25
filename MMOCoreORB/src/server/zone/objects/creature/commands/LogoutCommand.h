@@ -8,8 +8,7 @@
  *  Updated on: Sat Oct  8 11:00:07 EDT 2011 by lordkator
  */
 
-#ifndef LOGOUTCOMMAND_H_
-#define LOGOUTCOMMAND_H_
+#pragma once
 
 class LogoutCommand : public QueueCommand {
 public:
@@ -30,5 +29,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //LOGOUTCOMMAND_H_

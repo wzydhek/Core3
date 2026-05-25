@@ -4,12 +4,9 @@
  *  Created on: Nov 18, 2010
  *      Author: oru
  */
-
-#ifndef ZONELOADMANAGERSTASK_H_
-#define ZONELOADMANAGERSTASK_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/Zone.h"
 
 class ZoneLoadManagersTask : public Task {
@@ -31,6 +28,3 @@ public:
 		zone->startManagers();
 	}
 };
-
-
-#endif /* ZONELOADMANAGERSTASK_H_ */

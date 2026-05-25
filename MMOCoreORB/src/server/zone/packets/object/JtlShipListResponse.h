@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef JTLSHIPLISTRESPONSE_H_
-#define JTLSHIPLISTRESPONSE_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -90,5 +89,3 @@ public:
 		}
 	}
 };
-
-#endif /* JTLSHIPLISTRESPONSE_H_ */

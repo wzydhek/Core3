@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REVOKESKILLCOMMAND_H_
-#define REVOKESKILLCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/skill/SkillManager.h"
 
@@ -51,5 +50,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // REVOKESKILLCOMMAND_H_

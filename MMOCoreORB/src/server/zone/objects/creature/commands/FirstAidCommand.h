@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FIRSTAIDCOMMAND_H_
-#define FIRSTAIDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -149,5 +148,3 @@ public:
 	}
 
 };
-
-#endif //FIRSTAIDCOMMAND_H_

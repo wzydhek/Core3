@@ -4,8 +4,7 @@
 
 #include "QueueCommand.h"
 
-#ifndef UNSTICKCOMMAND_H_
-#define UNSTICKCOMMAND_H_
+#pragma once
 
 class UnstickCommand : public QueueCommand {
 public:
@@ -45,6 +44,3 @@ string/en/cmd_err.stf	9	unstick_request_cancelled	Unstick request was cancelled
 	}
 
 };
-
-#endif //UNSTICKCOMMAND_H_
-

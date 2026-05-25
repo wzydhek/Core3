@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ADDITEMMESSAGE_H_
-#define ADDITEMMESSAGE_H_
+#pragma once
 
 class AddItemMessage : public BaseMessage {
 public:
@@ -13,5 +12,3 @@ public:
 		insertLong(itemID);
 	}
 };
-
-#endif /*ADDITEMMESSAGE_H_*/

@@ -1,5 +1,4 @@
-#ifndef SHIPTARGETVECTOR_H_
-#define SHIPTARGETVECTOR_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -86,5 +85,3 @@ private:
 		return msg.toString();
 	}
 };
-
-#endif // SHIPTARGETVECTOR_H_

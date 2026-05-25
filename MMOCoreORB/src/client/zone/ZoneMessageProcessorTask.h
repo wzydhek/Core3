@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ZONEMESSAGEPROCESSORTASK_H_
-#define ZONEMESSAGEPROCESSORTASK_H_
+#pragma once
 
 #include "ZonePacketHandler.h"
 #include "ClientCore.h"
@@ -44,5 +43,3 @@ public:
 		message = nullptr;
 	}
 };
-
-#endif /*LOGINMESSAGEPROCESSORTASK_H_*/

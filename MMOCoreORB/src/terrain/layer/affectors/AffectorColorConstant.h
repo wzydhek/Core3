@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORCOLORCONSTANT_H_
-#define AFFECTORCOLORCONSTANT_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "AffectorProceduralRule.h"
@@ -52,6 +51,3 @@ public:
 		iffStream->closeChunk('DATA');
 	}
 };
-
-
-#endif /* AFFECTORCOLORCONSTANT_H_ */

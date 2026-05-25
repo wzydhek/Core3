@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTWAYPOINTATPOSITIONCOMMAND_H_
-#define REQUESTWAYPOINTATPOSITIONCOMMAND_H_
+#pragma once
 
 class RequestWaypointAtPositionCommand : public QueueCommand {
 public:
@@ -66,5 +65,3 @@ public:
 	}
 
 };
-
-#endif //REQUESTWAYPOINTATPOSITIONCOMMAND_H_

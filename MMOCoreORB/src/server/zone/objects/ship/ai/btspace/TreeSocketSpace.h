@@ -1,5 +1,4 @@
-#ifndef TREESOCKETSPACE_H_
-#define TREESOCKETSPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/btspace/BehaviorSpace.h"
 #include "server/zone/objects/ship/ai/btspace/BehaviorTreeSlotSpace.h"
@@ -68,5 +67,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // TREESOCKETSPACE_H_

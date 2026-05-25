@@ -5,9 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef CRAFTINGADDINGREDIENTCALLBACK_H_
-#define CRAFTINGADDINGREDIENTCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "ObjectControllerMessageCallback.h"
@@ -77,6 +75,3 @@ public:
 		session->addIngredient(tano, slot, counter);
 	}
 };
-
-
-#endif /* CRAFTINGADDINGREDIENTCALLBACK_H_ */

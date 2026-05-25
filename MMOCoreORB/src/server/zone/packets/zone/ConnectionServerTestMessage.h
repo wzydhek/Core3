@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CONNECTIONSERVERTESTMESSAGE_H_
-#define CONNECTIONSERVERTESTMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -20,8 +19,3 @@ public:
    }
 
 };
-
-#endif /*CONNECTIONSERVERTESTMESSAGE_H__*/
-
-
-

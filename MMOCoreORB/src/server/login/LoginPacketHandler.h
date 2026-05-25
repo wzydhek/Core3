@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LOGINPACKETHANDLER_H_
-#define LOGINPACKETHANDLER_H_
+#pragma once
 
 #include "LoginClient.h"
 
@@ -42,5 +41,3 @@ namespace login {
 }
 
 using namespace server::login;
-
-#endif /*LOGINPACKETHANDLER_H_*/

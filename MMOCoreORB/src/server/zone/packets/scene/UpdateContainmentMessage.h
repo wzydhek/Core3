@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UPDATECONTAINMENTMESSAGE_H_
-#define UPDATECONTAINMENTMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
 
 class UpdateContainmentMessage : public BaseMessage {
@@ -42,5 +40,3 @@ public:
 	}
 
 };
-
-#endif /*UPDATECONTAINMENTMESSAGE_H_*/

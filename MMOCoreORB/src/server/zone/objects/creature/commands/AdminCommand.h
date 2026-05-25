@@ -1,5 +1,4 @@
-#ifndef ADMINCOMMAND_H_
-#define ADMINCOMMAND_H_
+#pragma once
 
 #include "QueueCommand.h"
 
@@ -13,6 +12,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif
-

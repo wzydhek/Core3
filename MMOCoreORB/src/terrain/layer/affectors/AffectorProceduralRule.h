@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORPROCEDURALRULE_H_
-#define AFFECTORPROCEDURALRULE_H_
+#pragma once
 
 class TerrainGenerator;
 
@@ -49,5 +48,3 @@ public:
 	}
 
 };
-
-#endif /* AFFECTORPROCEDURALRULE_H_ */

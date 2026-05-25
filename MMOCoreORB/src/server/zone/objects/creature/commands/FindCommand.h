@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef FINDCOMMAND_H_
-#define FINDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/sessions/FindSession.h"
 
@@ -89,5 +88,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // FINDCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INSERTITEMINTOSHIPCOMPONENTSLOTCOMMAND_H_
-#define INSERTITEMINTOSHIPCOMPONENTSLOTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/ship/components/ShipComponent.h"
 
@@ -168,5 +167,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //INSERTITEMINTOSHIPCOMPONENTSLOTCOMMAND_H_

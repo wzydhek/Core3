@@ -1,5 +1,4 @@
-#ifndef SUIUPDATEPAGEMESSAGE_H_
-#define SUIUPDATEPAGEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/player/sui/SuiPageData.h"
@@ -16,5 +15,3 @@ public:
 		setCompression(true);
 	}
 };
-
-#endif

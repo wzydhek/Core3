@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef EXTRACTOBJECTCOMMAND_H_
-#define EXTRACTOBJECTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/factorycrate/FactoryCrate.h"
@@ -52,5 +51,3 @@ public:
 	}
 
 };
-
-#endif //EXTRACTOBJECTCOMMAND_H_

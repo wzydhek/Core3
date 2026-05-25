@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CMDSCENEREADY_H_
-#define CMDSCENEREADY_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -20,5 +19,3 @@ public:
 	}
 
 };
-
-#endif /*CMDSCENEREADY_H_*/

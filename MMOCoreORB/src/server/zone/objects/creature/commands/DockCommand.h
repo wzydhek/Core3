@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DOCK_H_
-#define DOCK_H_
+#pragma once
 
 #include "SpaceQueueCommand.h"
 #include "server/zone/objects/ship/events/ShipDockingTask.h"
@@ -105,5 +104,3 @@ private:
 		target->setOptionBit(OptionBitmask::DOCKING, true);
 	}
 };
-
-#endif //DOCK_H_

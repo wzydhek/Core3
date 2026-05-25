@@ -5,13 +5,11 @@
  *      Author: TheAnswer
  */
 
-#ifndef SRC_SERVER_ZONE_MANAGERS_TERRAIN_TERRAINCACHE_H_
-#define SRC_SERVER_ZONE_MANAGERS_TERRAIN_TERRAINCACHE_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/lru/SynchronizedLRUCache.h"
 #include "engine/util/u3d/BasicQuadTree.h"
-
 #include "system/lang/Pair.h"
 
 class TerrainManager;
@@ -58,5 +56,3 @@ public:
 		return evictCount;
 	}
 };
-
-#endif /* SRC_SERVER_ZONE_MANAGERS_TERRAIN_TERRAINCACHE_H_ */

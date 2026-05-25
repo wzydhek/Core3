@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef SENDMAILTASK_H_
-#define SENDMAILTASK_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/chat/PersistentMessage.h"
@@ -36,6 +34,3 @@ public:
 			mail->sendTo(receiver, false);
 	}
 };
-
-
-#endif /* SENDMAILTASK_H_ */

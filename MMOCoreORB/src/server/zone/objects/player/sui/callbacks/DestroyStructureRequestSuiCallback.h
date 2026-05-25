@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef DESTROYSTRUCTUREREQUESTSUICALLBACK_H_
-#define DESTROYSTRUCTUREREQUESTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/DestroyStructureSession.h"
@@ -32,5 +31,3 @@ public:
 		session->sendDestroyCode();
 	}
 };
-
-#endif /* DESTROYSTRUCTUREREQUESTSUICALLBACK_H_ */

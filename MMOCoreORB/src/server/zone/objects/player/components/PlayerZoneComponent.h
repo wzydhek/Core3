@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PLAYERZONECOMPONENT_H_
-#define PLAYERZONECOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/GroundZoneComponent.h"
 
@@ -44,6 +43,3 @@ public:
 	void updateZoneWithParent(SceneObject* sceneObject, SceneObject* newParent, bool lightUpdate, bool sendPackets = true) const;
 
 };
-
-
-#endif /* PLAYERZONECOMPONENT_H_ */

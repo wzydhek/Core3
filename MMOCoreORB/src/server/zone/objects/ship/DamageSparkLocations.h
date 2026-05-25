@@ -1,5 +1,4 @@
-#ifndef DAMAGESPARKLOCATIONS_H_
-#define DAMAGESPARKLOCATIONS_H_
+#pragma once
 
 #include "system/lang/Object.h"
 #include "engine/util/u3d/Vector3.h"
@@ -61,5 +60,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* DAMAGESPARKLOCATIONS_H_ */

@@ -1,5 +1,4 @@
-#ifndef FIREWORKSHOWREORDERSHOWSUICALLBACK_H_
-#define FIREWORKSHOWREORDERSHOWSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/firework/components/FireworkShowMenuComponent.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -67,5 +66,3 @@ public:
 		}
 	}
 };
-
-#endif /* FIREWORKSHOWREORDERSHOWSUICALLBACK_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORS_H_
-#define AFFECTORS_H_
+#pragma once
 
 #include "affectors/AffectorProceduralRule.h"
 #include "affectors/AffectorColorConstant.h"
@@ -28,7 +27,3 @@
 #include "affectors/AffectorRoad.h"
 #include "affectors/AffectorShaderConstant.h"
 #include "affectors/AffectorShaderReplace.h"
-
-
-
-#endif /* AFFECTORS_H_ */

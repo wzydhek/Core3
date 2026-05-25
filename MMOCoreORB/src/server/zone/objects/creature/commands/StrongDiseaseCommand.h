@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef STRONGDISEASECOMMAND_H_
-#define STRONGDISEASECOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif /* STRONGDISEASECOMMAND_H_ */

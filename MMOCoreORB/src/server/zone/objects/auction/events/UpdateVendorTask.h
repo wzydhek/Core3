@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef UPDATEVENDORTASK_H_
-#define UPDATEVENDORTASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -59,5 +58,3 @@ public:
 }
 
 using namespace server::zone::objects::auction::events;
-
-#endif /* UPDATEVENDORTASK_H_ */

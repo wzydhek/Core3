@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DECLAREOVERTCOMMAND_H_
-#define DECLAREOVERTCOMMAND_H_
+#pragma once
 
 class DeclareOvertCommand : public QueueCommand {
 public:
@@ -74,5 +73,3 @@ public:
 		return result ? SUCCESS : GENERALERROR;
 	}
 };
-
-#endif //DECLAREOVERTCOMMAND_H_

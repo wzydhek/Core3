@@ -1,5 +1,4 @@
-#ifndef SECURITYPATROLSPAWN_H_
-#define SECURITYPATROLSPAWN_H_
+#pragma once
 
 #include "system/lang/Object.h"
 #include "engine/util/u3d/Vector3.h"
@@ -71,5 +70,3 @@ public:
 		return faction;
 	}
 };
-
-#endif /* SECURITYPATROLSPAWN_H_ */

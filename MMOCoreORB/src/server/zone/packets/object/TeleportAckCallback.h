@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TELEPORTACKCALLBACK_H_
-#define TELEPORTACKCALLBACK_H_
+#pragma once
 
 class TeleportAckCallback : public MessageCallback {
 	uint32 movementCounter;
@@ -36,5 +35,3 @@ public:
 		ghost->setTeleporting(false);
 	}
 };
-
-#endif /* TELEPORTACKCALLBACK_H_ */

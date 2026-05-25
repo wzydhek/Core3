@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef EMBOLDENPETSCOMMAND_H_
-#define EMBOLDENPETSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/managers/creature/PetManager.h"
@@ -109,5 +108,3 @@ public:
 	}
 
 };
-
-#endif //EMBOLDENPETSCOMMAND_H_

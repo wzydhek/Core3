@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GIVEVENDORMAINTCOMMAND_H_
-#define GIVEVENDORMAINTCOMMAND_H_
+#pragma once
 
 class GivevendormaintCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GIVEVENDORMAINTCOMMAND_H_

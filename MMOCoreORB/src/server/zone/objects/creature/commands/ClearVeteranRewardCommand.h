@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLEARVETERANREWARDCOMMAND_H_
-#define CLEARVETERANREWARDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -79,5 +78,3 @@ public:
 	}
 
 };
-
-#endif //CLEARVETERANREWARDCOMMAND_H_

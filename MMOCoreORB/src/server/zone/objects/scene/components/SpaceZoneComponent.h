@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SPACEZONECOMPONENT_H_
-#define SPACEZONECOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "SceneObjectComponent.h"
@@ -65,5 +64,3 @@ public:
 
 	static void removeAllObjectsFromCOV(CloseObjectsVector* closeobjects, SortedVector<ManagedReference<TreeEntry*>>& closeSceneObjects, SceneObject* sceneObject, SceneObject* vectorOwner);
 };
-
-#endif /* SPACEZONECOMPONENT_H_ */

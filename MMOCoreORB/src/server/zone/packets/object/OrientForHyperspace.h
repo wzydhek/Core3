@@ -2,10 +2,9 @@
 // Created by g on 12/20/17.
 //
 
-#ifndef CORE3_ORIENTFORHYPERSPACE_H
-#define CORE3_ORIENTFORHYPERSPACE_H
-#include "ObjectControllerMessage.h"
+#pragma once
 
+#include "ObjectControllerMessage.h"
 
 class OrientForHyperspaceMessage : public ObjectControllerMessage {
 public:
@@ -19,4 +18,3 @@ public:
 		insertFloat(y);
 	}
 };
-#endif //CORE3_ORIENTFORHYPERSPACE_H

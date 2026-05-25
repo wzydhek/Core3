@@ -5,9 +5,9 @@
  *      Author: swgemu
  */
 
-#ifndef UNKZONE_H_
-#define UNKZONE_H_
-//test
+#pragma once
+
+ // test
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -24,4 +24,3 @@ public:
 	}
 
 };
-#endif /* UNKZONE_H_ */

@@ -5,12 +5,10 @@
  *      Author: theanswer
  */
 
-#ifndef CMDSCENEREADYCALLBACK_H_
-#define CMDSCENEREADYCALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
-
 #include "CmdSceneReady.h"
 
 class CmdSceneReadyCallback : public MessageCallback {
@@ -37,7 +35,3 @@ public:
 		}
 	}
 };
-
-
-
-#endif /* CMDSCENEREADYCALLBACK_H_ */

@@ -5,8 +5,7 @@
  *      Author: trick77
  */
 
-#ifndef REVOKECONSENTSUICALLBACK_H_
-#define REVOKECONSENTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -48,5 +47,3 @@ public:
 		}
 	}
 };
-
-#endif /* REVOKECONSENTSUICALLBACK_H_ */

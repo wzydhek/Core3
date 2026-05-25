@@ -2,15 +2,14 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHARACTERLIST_H_
-#define CHARACTERLIST_H_
+#pragma once
 
 #include "server/db/ServerDatabase.h"
 #include "../objects/GalaxyList.h"
 #include "CharacterListEntry.h"
 
 #ifdef WITH_SWGREALMS_API
-#include "server/login/SWGRealmsAPI.h"
+	#include "server/login/SWGRealmsAPI.h"
 #endif
 
 class CharacterList : public Vector<CharacterListEntry> {
@@ -136,5 +135,3 @@ public:
 #endif // WITH_SWGREALMS_API
 	}
 };
-
-#endif /*CHARACTERLIST_H_*/

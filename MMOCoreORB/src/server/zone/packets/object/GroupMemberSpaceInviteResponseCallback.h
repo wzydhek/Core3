@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GROUPMEMBERSPACEINVITERESPONSECALLBACK_H_
-#define GROUPMEMBERSPACEINVITERESPONSECALLBACK_H_
+#pragma once
 
 #include "ObjectControllerMessageCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -54,6 +53,3 @@ public:
 		pilot->sendMessage(responseMsg);
 	}
 };
-
-
-#endif /* GROUPMEMBERSPACEINVITERESPONSECALLBACK_H_ */

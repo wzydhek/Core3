@@ -5,8 +5,7 @@
  *      Author: Valkyra
  */
 
-#ifndef LIGHTSABEROBJECTMENUCOMPONENT_H_
-#define LIGHTSABEROBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* LIGHTSABEROBJECTMENUCOMPONENT_H_ */

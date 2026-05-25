@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UPDATETRANSFORMMESSAGE_H_
-#define UPDATETRANSFORMMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -68,5 +66,3 @@ public:
 		scno->setPosition(x, y, z);
 	}
 };
-
-#endif /*UPDATETRANSFORMMESSAGE_H_*/

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PISTOLMELEEDEFENSE1COMMAND_H_
-#define PISTOLMELEEDEFENSE1COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //PISTOLMELEEDEFENSE1COMMAND_H_

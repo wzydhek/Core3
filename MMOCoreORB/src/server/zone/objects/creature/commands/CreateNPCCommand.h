@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATENPCCOMMAND_H_
-#define CREATENPCCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/director/DirectorManager.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
@@ -174,5 +173,3 @@ public:
 	}
 
 };
-
-#endif //CREATENPCCOMMAND_H_

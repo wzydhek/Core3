@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CITYADDMILITIAMEMBERSUICALLBACK_H_
-#define CITYADDMILITIAMEMBERSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -52,5 +51,3 @@ public:
 		cityManager->addMilitiaMember(city, player, playerName);
 	}
 };
-
-#endif /* CITYADDMILITIAMEMBERSUICALLBACK_H_ */

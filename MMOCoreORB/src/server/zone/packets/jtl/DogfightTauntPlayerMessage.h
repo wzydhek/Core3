@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef DOGFIGHTTAUNTPLAYERMESSAGE_H_
-#define DOGFIGHTTAUNTPLAYERMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -23,4 +22,3 @@ public:
    }
 
 };
-#endif /* DOGFIGHTTAUNTPLAYERMESSAGE_H_ */

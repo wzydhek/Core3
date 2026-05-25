@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GROUPOBJECTMESSAGE6_H_
-#define GROUPOBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/group/GroupObject.h"
@@ -70,5 +69,3 @@ public:
 		}
 	}
 };
-
-#endif /*GROUPOBJECTMESSAGE6_H_*/

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef BUFFCRC_H_
-#define BUFFCRC_H_
+#pragma once
 
 class BuffCRC {
 public:
@@ -246,6 +245,3 @@ public:
 		return buffCRC;
 	}
 };
-
-
-#endif /* BUFFCRC_H_ */

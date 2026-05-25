@@ -2,8 +2,7 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DROIDPLAYBACKMODULEDATACOMPONENT_H_
-#define DROIDPLAYBACKMODULEDATACOMPONENT_H_
+#pragma once
 
 #include "BaseDroidModuleComponent.h"
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackObserver.h"
@@ -110,6 +109,5 @@ private:
 } // objects
 } // zone
 } // server
-using namespace server::zone::objects::tangible::components::droid;
 
-#endif /* DROIDPLAYBACKMODULEDATACOMPONENT_H_ */
+using namespace server::zone::objects::tangible::components::droid;

@@ -1,6 +1,5 @@
 
-#ifndef PETTHROWCOMMAND_H_
-#define PETTHROWCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/creature/ai/DroidObject.h"
@@ -231,5 +230,3 @@ public:
 		return GENERALERROR;
 	}
 };
-
-#endif /* PETTHROWCOMMAND_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef THREATMAP_H_
-#define THREATMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "ThreatMatrix.h"
@@ -246,5 +245,3 @@ private:
 }
 
 using namespace server::zone::objects::tangible::threat;
-
-#endif /* THREATMAP_H_ */

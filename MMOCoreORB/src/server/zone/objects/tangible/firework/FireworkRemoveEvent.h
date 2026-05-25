@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FIREWORKREMOVEEVENT_H_
-#define FIREWORKREMOVEEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/staticobject/StaticObject.h"
@@ -34,6 +33,3 @@ public:
 		player = nullptr;
 	}
 };
-
-
-#endif /* FIREWORKREMOVEEVENT_H_ */

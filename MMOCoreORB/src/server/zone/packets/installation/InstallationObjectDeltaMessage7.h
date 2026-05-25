@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INSTALLATIONOBJECTDELTAMESSAGE7_H_
-#define INSTALLATIONOBJECTDELTAMESSAGE7_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/installation/InstallationObject.h"
@@ -76,5 +75,3 @@ public:
 	}*/
 
 };
-
-#endif /* INSTALLATIONOBJECTDELTAMESSAGE7_H_ */

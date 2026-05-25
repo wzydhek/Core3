@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef NATIVEPOOL_H_
-#define NATIVEPOOL_H_
+#pragma once
 
 #include "ResourcePool.h"
 
@@ -80,5 +79,3 @@ public:
 
 	friend class ResourceSpawner;
 };
-
-#endif /* NATIVEPOOL_H_ */

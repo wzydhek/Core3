@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BOOSTMORALECOMMAND_H_
-#define BOOSTMORALECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/group/GroupObject.h"
 #include "server/chat/ChatManager.h"
@@ -154,5 +153,3 @@ public:
 	}
 
 };
-
-#endif //BOOSTMORALECOMMAND_H_

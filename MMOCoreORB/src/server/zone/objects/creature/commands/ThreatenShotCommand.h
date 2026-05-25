@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef THREATENSHOTCOMMAND_H_
-#define THREATENSHOTCOMMAND_H_
+#pragma once
 
 class ThreatenShotCommand : public CombatQueueCommand {
 public:
@@ -81,5 +80,3 @@ public:
 		return result;
 	}
 };
-
-#endif // THREATENSHOTCOMMAND_H_

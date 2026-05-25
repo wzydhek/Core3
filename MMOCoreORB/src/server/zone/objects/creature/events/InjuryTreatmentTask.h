@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef INJURYTREATMENTTASK_H_
-#define INJURYTREATMENTTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -30,5 +29,3 @@ public:
 		creature->sendSystemMessage(message);
 	}
 };
-
-#endif /* INJURYTREATMENTTASK_H_ */

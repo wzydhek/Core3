@@ -2,12 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ZONEPACKETHANDLER_H_
-#define ZONEPACKETHANDLER_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "MessageCallbackFactory.h"
-
 #include "packets/MessageCallback.h"
 #include "packets/object/ObjectControllerMessageCallback.h"
 
@@ -41,5 +39,3 @@ namespace zone {
 }
 
 using namespace server::zone;
-
-#endif /*ZONEPACKETHANDLER_H_*/

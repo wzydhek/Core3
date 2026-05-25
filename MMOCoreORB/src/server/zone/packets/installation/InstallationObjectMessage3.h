@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INSTALLATIONOBJECTMESSAGE3_H_
-#define INSTALLATIONOBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/packets/tangible/TangibleObjectMessage3.h"
@@ -43,4 +42,3 @@ public:
 		setSize();
 	}
 };
-#endif /*INSTALLATIONOBJECTMESSAGE3_H_*/

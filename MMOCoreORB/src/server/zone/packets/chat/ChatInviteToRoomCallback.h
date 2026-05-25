@@ -5,9 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef CHATINVITETOROOMCALLBACK_H_
-#define CHATINVITETOROOMCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
@@ -47,6 +45,3 @@ public:
 	}
 
 };
-
-
-#endif /* CHATINVITETOROOMCALLBACK_H_ */

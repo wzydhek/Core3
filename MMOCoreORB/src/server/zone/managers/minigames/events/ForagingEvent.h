@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORAGINGEVENT_H_
-#define FORAGINGEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/managers/minigames/ForageManager.h"
@@ -46,5 +45,3 @@ public:
 }
 
 using namespace server::zone::managers::minigames::events;
-
-#endif /*FORAGINGEVENT_H_*/

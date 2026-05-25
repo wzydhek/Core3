@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef STRUCTURETERMINALMENUCOMPONENT_H_
-#define STRUCTURETERMINALMENUCOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
@@ -16,5 +15,3 @@ public:
 	void fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* creature) const;
 	int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* creature, byte selectedID) const;
 };
-
-#endif /* STRUCTURETERMINALMENUCOMPONENT_H_ */

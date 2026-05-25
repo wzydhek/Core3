@@ -4,8 +4,7 @@
 Members in this module are wrappers around the standard math library
 */
 
-#ifndef DETOURMATH_H
-#define DETOURMATH_H
+#pragma once
 
 #include <math.h>
 // This include is required because libstdc++ has problems with isfinite
@@ -28,6 +27,4 @@ inline bool dtMathIsfinite(float x) { return std::isfinite(x); }
 
 #if defined (__clang__) && (__clang_major__ >= 18)
 	#pragma clang diagnostic pop
-#endif
-
 #endif

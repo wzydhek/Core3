@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef STRUCTUREDEEDTEMPLATE_H_
-#define STRUCTUREDEEDTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/DeedTemplate.h"
 
@@ -28,5 +27,3 @@ public:
 		return placementComponent;
 	}
 };
-
-#endif /* STRUCTUREDEEDTEMPLATE_H_ */

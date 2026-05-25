@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef INSTRUMENTOBJECTTEMPLATE_H_
-#define INSTRUMENTOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -32,6 +31,3 @@ public:
 		return true;
 	}
 };
-
-
-#endif /* INSTRUMENTOBJECTTEMPLATE_H_ */

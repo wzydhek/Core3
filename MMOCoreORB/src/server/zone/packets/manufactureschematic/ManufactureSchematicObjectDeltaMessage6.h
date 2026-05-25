@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.*/
 
 
-#ifndef MANUFACTURESCHEMATICOBJECTDELTAMESSAGE6_H_
-#define MANUFACTURESCHEMATICOBJECTDELTAMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 
@@ -18,5 +17,3 @@ public:
 		addByteUpdate(5, slotNumber);
 	}
 };
-
-#endif /*MANUFACTURESCHEMATICOBJECTMESSAGE6_H_*/

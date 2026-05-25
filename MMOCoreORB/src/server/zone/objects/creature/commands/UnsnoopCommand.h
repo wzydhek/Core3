@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UNSNOOPCOMMAND_H_
-#define UNSNOOPCOMMAND_H_
+#pragma once
 
 class UnsnoopCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //UNSNOOPCOMMAND_H_

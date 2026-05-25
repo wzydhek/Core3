@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GENERATECRAFTEDITEMCOMMAND_H_
-#define GENERATECRAFTEDITEMCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/manufactureschematic/ManufactureSchematic.h"
@@ -206,5 +205,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //GENERATECRAFTEDITEMCOMMAND_H_

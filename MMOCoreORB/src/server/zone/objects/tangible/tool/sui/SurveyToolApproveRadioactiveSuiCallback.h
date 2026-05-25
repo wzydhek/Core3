@@ -5,9 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef SURVEYTOOLAPPROVERADIOACTIVECALLBACK_H_
-#define SURVEYTOOLAPPROVERADIOACTIVECALLBACK_H_
-
+#pragma once
 
 #include "server/zone/objects/tangible/tool/SurveyTool.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -33,5 +31,3 @@ public:
 		surveyTool->consentRadioactiveSample(player);
 	}
 };
-
-#endif /* SURVEYTOOLAPPROVERADIOACTIVECALLBACK_H_ */

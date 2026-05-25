@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef ZONE_H_
-#define ZONE_H_
+#pragma once
 
 #include "ZoneClient.h"
 #include "client/zone/ZoneClientThread.h"
@@ -238,5 +237,3 @@ public:
 
 	JSONSerializationType collectStats();
 };
-
-#endif /* ZONE_H_ */

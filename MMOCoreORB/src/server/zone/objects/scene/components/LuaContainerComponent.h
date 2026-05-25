@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef LUACONTAINERCOMPONENT_H_
-#define LUACONTAINERCOMPONENT_H_
+#pragma once
 
 #include "ContainerComponent.h"
 
@@ -28,7 +27,6 @@ namespace server {
 
 using namespace server::zone::objects::scene;
 using namespace server::zone::objects::creature;
-
 
 class LuaContainerComponent : public ContainerComponent {
 	String luaClassName;
@@ -81,5 +79,3 @@ public:
 	virtual int notifyObjectRemoved(SceneObject* sceneObject, SceneObject* object, SceneObject* destination) const;
 
 };
-
-#endif /* LUACONTAINERCOMPONENT_H_ */

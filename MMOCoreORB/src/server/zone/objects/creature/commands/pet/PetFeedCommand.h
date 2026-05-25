@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef PETFEEDCOMMAND_H_
-#define PETFEEDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/commands/QueueCommand.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -155,5 +154,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* PETFEEDCOMMAND_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef OBJECTMENUSELECT_H_
-#define OBJECTMENUSELECT_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 
@@ -33,5 +32,3 @@ public:
 		}
 	}
 };
-
-#endif /* OBJECTMENUSELECT_H_ */

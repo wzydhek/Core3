@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATONGETFRIENDSLIST_H_
-#define CHATONGETFRIENDSLIST_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -32,5 +31,3 @@ public:
 	}
 
 };
-
-#endif /*CHATONGETFRIENDSLIST_H_*/

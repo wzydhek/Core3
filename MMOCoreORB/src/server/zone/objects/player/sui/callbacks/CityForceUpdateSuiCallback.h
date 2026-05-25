@@ -1,6 +1,5 @@
 
-#ifndef CITYFORCEUPDATESUICALLBACK_H_
-#define CITYFORCEUPDATESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
@@ -61,5 +60,3 @@ public:
 		player->sendMessage(box->generateMessage());
 	}
 };
-
-#endif /* CITYFORCEUPDATESUICALLBACK_H_ */

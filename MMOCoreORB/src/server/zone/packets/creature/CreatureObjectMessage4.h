@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATUREOBJECTMESSAGE4_H_
-#define CREATUREOBJECTMESSAGE4_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -65,5 +64,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*CREATUREOBJECTMESSAGE4_H_*/

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CONTAINERPERMISSIONS_H_
-#define CONTAINERPERMISSIONS_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -109,5 +108,3 @@ void to_json(nlohmann::json& k, const server::zone::objects::scene::variables::C
 } // namespace server
 
 using namespace server::zone::objects::scene::variables;
-
-#endif /* CONTAINERPERMISSIONS_H_ */

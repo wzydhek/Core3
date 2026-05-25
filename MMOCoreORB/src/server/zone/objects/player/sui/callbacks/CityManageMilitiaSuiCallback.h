@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef CITYMANAGEMILITIASUICALLBACK_H_
-#define CITYMANAGEMILITIASUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -38,5 +37,3 @@ public:
 
 	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };
-
-#endif /* CITYMANAGEMILITIASUICALLBACK_H_ */

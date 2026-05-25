@@ -5,8 +5,7 @@
  *  Author: Hakry
  */
 
-#ifndef SPACESPAWNGROUP_H_
-#define SPACESPAWNGROUP_H_
+#pragma once
 
 #include "SpaceSpawn.h"
 
@@ -85,5 +84,3 @@ public:
 } // namespace managers
 } // namespace zone
 } // namespace server
-
-#endif /* SPACESPAWNGROUP_H_ */

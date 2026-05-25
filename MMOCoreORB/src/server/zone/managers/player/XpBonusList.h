@@ -1,7 +1,5 @@
-#ifndef XPBONUSLIST_H_
-#define XPBONUSLIST_H_
+#pragma once
 
 class XpBonusList : public VectorMap<String, VectorMap<String, int> > {
 
 };
-#endif // XPBONUSLIST_H_

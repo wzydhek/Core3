@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CSGETCOMMENTSCOMMAND_H_
-#define CSGETCOMMENTSCOMMAND_H_
+#pragma once
 
 class CsGetCommentsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CSGETCOMMENTSCOMMAND_H_

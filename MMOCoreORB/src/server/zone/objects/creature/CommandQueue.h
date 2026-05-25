@@ -9,8 +9,7 @@
 * Author: Hakry
 */
 
-#ifndef COMMANDQUEUE_H_
-#define COMMANDQUEUE_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/creature/variables/CommandQueueActionVector.h"
@@ -105,5 +104,3 @@ class CommandQueueTask : public Task, public Logger {
 		}
 	}
 };
-
-#endif /* COMMANDQUEUE_H_ */

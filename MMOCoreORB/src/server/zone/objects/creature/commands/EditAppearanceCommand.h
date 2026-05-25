@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef EDITAPPEARANCECOMMAND_H_
-#define EDITAPPEARANCECOMMAND_H_
+#pragma once
 
 class EditAppearanceCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //EDITAPPEARANCECOMMAND_H_

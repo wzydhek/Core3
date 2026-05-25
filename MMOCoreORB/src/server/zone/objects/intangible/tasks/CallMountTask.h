@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef CALLMOUNTTASK_H_
-#define CALLMOUNTTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/intangible/ControlDevice.h"
@@ -43,5 +42,3 @@ public:
 		device->spawnObject(player);
 	}
 };
-
-#endif /* CALLMOUNTTASK_H_ */

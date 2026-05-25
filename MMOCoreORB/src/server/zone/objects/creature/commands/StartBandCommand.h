@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STARTBANDCOMMAND_H_
-#define STARTBANDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
-
 #include "StartMusicCommand.h"
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
 
@@ -193,5 +191,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //STARTBANDCOMMAND_H_

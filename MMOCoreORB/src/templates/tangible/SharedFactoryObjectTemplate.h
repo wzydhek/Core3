@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDFACTORYOBJECTTEMPLATE_H_
-#define SHAREDFACTORYOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -71,6 +70,3 @@ public:
 		iffStream->closeForm('SFOT');
 	}
 };
-
-
-#endif /* SHAREDFACTORYOBJECTTEMPLATE_H_ */

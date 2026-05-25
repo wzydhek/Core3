@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SCENEOBJECTCREATEMESSAGE_H_
-#define SCENEOBJECTCREATEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
 
 class SceneObjectCreateMessage : public BaseMessage {
@@ -62,5 +60,3 @@ public:
 		scno->setPosition(x, z, y);
 	}
 };
-
-#endif /*SCENEOBJECTCREATEMESSAGE_H_*/

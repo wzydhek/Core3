@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef POWERBOOSTBUFFDURATIONEVENT_H_
-#define POWERBOOSTBUFFDURATIONEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/buffs/Buff.h"
@@ -51,5 +50,3 @@ namespace server {
 }
 
 using namespace server::zone::objects::creature::buffs;
-
-#endif /* POWERBOOSTBUFFDURATIONEVENT_H_ */

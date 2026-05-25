@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef APPLYPOISONCOMMAND_H_
-#define APPLYPOISONCOMMAND_H_
+#pragma once
 
 #include "DotPackCommand.h"
 
@@ -15,5 +14,3 @@ public:
 	}
 
 };
-
-#endif //APPLYPOISONCOMMAND_H_

@@ -1,6 +1,5 @@
 
-#ifndef CITYTOGGLEZONINGSUICALLBACK_H_
-#define CITYTOGGLEZONINGSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -57,5 +56,3 @@ public:
 		cityManager->toggleZoningEnabled(city, player);
 	}
 };
-
-#endif /* CITYTOGGLEZONINGSUICALLBACK_H_ */

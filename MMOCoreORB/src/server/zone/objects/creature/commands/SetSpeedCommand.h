@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETSPEEDCOMMAND_H_
-#define SETSPEEDCOMMAND_H_
+#pragma once
 
 class SetSpeedCommand : public QueueCommand {
 public:
@@ -111,5 +110,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // SETSPEEDCOMMAND_H_

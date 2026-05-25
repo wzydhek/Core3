@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PAWITHDRAWCOMMAND_H_
-#define PAWITHDRAWCOMMAND_H_
+#pragma once
 
 class PaWithdrawCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //PAWITHDRAWCOMMAND_H_

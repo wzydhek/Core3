@@ -5,11 +5,9 @@
  *      Author: Halyn
  */
 
-#ifndef SHIPTEXTURESUICALLBACK_H_
-#define SHIPTEXTURESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
-
 
 class ShipTextureSuiCallback : public SuiCallback {
 public:
@@ -68,5 +66,3 @@ public:
 		}
 	}
 };
-
-#endif /* SHIPTEXTURESUICALLBACK_H_ */

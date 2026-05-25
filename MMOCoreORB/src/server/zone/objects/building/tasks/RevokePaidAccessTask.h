@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef REVOKEPAIDACCESSTASK_H_
-#define REVOKEPAIDACCESSTASK_H_
+#pragma once
 
 #include "server/zone/objects/building/BuildingObject.h"
 #include "engine/engine.h"
@@ -30,5 +29,3 @@ public:
 		strongRef->updatePaidAccessList();
 	}
 };
-
-#endif /* REVOKEPAIDACCESSTASK_H_ */

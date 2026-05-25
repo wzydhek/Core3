@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef VENDORMANAGER_H_
-#define VENDORMANAGER_H_
+#pragma once
 
 #include "VendorSelectionNode.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -84,5 +83,3 @@ public:
 }
 
 using namespace server::zone::managers::vendor;
-
-#endif /* VENDORMANAGER_H_ */

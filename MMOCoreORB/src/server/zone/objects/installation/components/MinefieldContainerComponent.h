@@ -5,8 +5,8 @@
  *      Author: root
  */
 
-#ifndef MINEFIELDCONTAINERCOMPONENT_H_
-#define MINEFIELDCONTAINERCOMPONENT_H_
+#pragma once
+
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -35,5 +35,3 @@ public:
 	 */
 	int notifyObjectRemoved(SceneObject* sceneObject, SceneObject* object, SceneObject* destination) const;
 };
-
-#endif /* MINEFIELDCONTAINERCOMPONENT_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TENDWOUNDSTOOLCOMMAND_H_
-#define TENDWOUNDSTOOLCOMMAND_H_
+#pragma once
 
 class TendWoundsToolCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //TENDWOUNDSTOOLCOMMAND_H_

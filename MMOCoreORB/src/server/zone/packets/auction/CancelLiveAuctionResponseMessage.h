@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CANCELLIVEAUCTIONRESPONSEMESSAGE_H_
-#define CANCELLIVEAUCTIONRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -32,5 +31,3 @@ public:
 	}
 
 };
-
-#endif /* CANCELLIVEAUCTIONRESPONSEMESSAGE_H_ */

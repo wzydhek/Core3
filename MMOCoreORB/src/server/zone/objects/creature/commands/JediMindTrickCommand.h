@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef JEDIMINDTRICKCOMMAND_H_
-#define JEDIMINDTRICKCOMMAND_H_
+#pragma once
 
 #include "ForcePowersQueueCommand.h"
 #include "server/zone/objects/creature/events/JediMindTrickRemovalTask.h"
@@ -108,5 +107,3 @@ public:
 	}
 
 };
-
-#endif //JEDIMINDTRICKCOMMAND_H_

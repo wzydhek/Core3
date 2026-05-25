@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef LUAOBJECTMENURESPONSE_H_
-#define LUAOBJECTMENURESPONSE_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
@@ -42,6 +41,3 @@ namespace object {
 }
 }
 }
-
-
-#endif /* LUAOBJECTMENURESPONSE_H_ */

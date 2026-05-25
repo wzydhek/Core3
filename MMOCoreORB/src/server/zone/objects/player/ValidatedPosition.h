@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef VALIDATEDPOSITION_H_
-#define VALIDATEDPOSITION_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
 
 namespace server {
@@ -91,5 +89,3 @@ private:
 	}
 
 };
-
-#endif /* VALIDATEDPOSITION_H_ */

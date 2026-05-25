@@ -1,5 +1,4 @@
-#ifndef SHIPDELTAVECTOR_H_
-#define SHIPDELTAVECTOR_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -110,5 +109,3 @@ public:
 		return deltaVector.size();
 	}
 };
-
-#endif // SHIPDELTAVECTOR_H_

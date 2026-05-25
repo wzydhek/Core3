@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STRINGID_H_
-#define STRINGID_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
 
 namespace server {
@@ -136,4 +134,3 @@ void to_json(nlohmann::json& k, const server::zone::objects::scene::variables::S
 }
 
 using namespace server::zone::objects::scene::variables;
-#endif /* STRINGID_H_ */

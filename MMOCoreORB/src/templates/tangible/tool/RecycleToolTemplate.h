@@ -1,5 +1,4 @@
-#ifndef RECYCLETOOLTEMPLATE_H_
-#define RECYCLETOOLTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/ContainerTemplate.h"
 
@@ -42,5 +41,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* RECYCLETOOLTEMPLATE_H_ */

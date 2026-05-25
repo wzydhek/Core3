@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef CLONINGTERMINALMENUCOMPONENT_H_
-#define CLONINGTERMINALMENUCOMPONENT_H_
+#pragma once
 
 #include "TangibleObjectMenuComponent.h"
 
@@ -34,6 +33,3 @@ public:
 	// Check if player has cloning coupon in their inventory
 	virtual bool hasCloningCoupon(CreatureObject* object) const;
 };
-
-
-#endif /* CloningTerminalMENUCOMPONENT_H_ */

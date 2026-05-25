@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef BITMAPFAMILY_H_
-#define BITMAPFAMILY_H_
+#pragma once
 
 #include "TemplateVariable.h"
 #include "TargaBitmap.h"
@@ -65,5 +64,3 @@ public:
 		return file;
 	}
 };
-
-#endif /* BITMAPFAMILY_H_ */

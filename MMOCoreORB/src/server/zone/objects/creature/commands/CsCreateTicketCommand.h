@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CSCREATETICKETCOMMAND_H_
-#define CSCREATETICKETCOMMAND_H_
+#pragma once
 
 class CsCreateTicketCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CSCREATETICKETCOMMAND_H_

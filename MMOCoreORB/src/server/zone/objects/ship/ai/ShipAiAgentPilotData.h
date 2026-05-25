@@ -1,5 +1,4 @@
-#ifndef SHIPAIAGENTPILOTDATA_H_
-#define SHIPAIAGENTPILOTDATA_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -130,5 +129,3 @@ public:
 		return engineRollAccel;
 	}
 };
-
-#endif // SHIPAIAGENTPILOTDATA_H_

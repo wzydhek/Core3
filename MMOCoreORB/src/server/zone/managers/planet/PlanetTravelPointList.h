@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef PLANETTRAVELPOINTLIST_H_
-#define PLANETTRAVELPOINTLIST_H_
+#pragma once
 
 #include "PlanetTravelPoint.h"
 
@@ -158,5 +157,3 @@ public:
 		unlock();
 	}
 };
-
-#endif /* PLANETTRAVELPOINTLIST_H_ */

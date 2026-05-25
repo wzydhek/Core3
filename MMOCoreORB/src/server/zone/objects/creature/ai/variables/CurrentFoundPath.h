@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CURRENTFOUNDPATH_H_
-#define CURRENTFOUNDPATH_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -15,6 +14,3 @@
 class CurrentFoundPath : public Vector<WorldCoordinates> {
 
 };
-
-
-#endif /* CURRENTFOUNDPATH_H_ */

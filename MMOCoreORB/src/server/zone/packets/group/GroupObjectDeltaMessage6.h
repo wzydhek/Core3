@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GROUPOBJECTDELTAMESSAGE6_H_
-#define GROUPOBJECTDELTAMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/group/GroupObject.h"
@@ -178,5 +177,3 @@ public:
 		insertInt(rule);
 	}
 };
-
-#endif /*GROUPOBJECTDELTAMESSAGE6_H_*/

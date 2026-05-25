@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GMFORCERANKCOMMAND_H_
-#define GMFORCERANKCOMMAND_H_
+#pragma once
 
 class GmForceRankCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //GMFORCERANKCOMMAND_H_

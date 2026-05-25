@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef MESHAPPEARANCETEMPLATE_H_
-#define MESHAPPEARANCETEMPLATE_H_
+#pragma once
 
 #include "templates/appearance/AppearanceTemplate.h"
 #include "templates/appearance/MeshData.h"
@@ -96,5 +95,3 @@ public:
 		return newMeshes;
 	}
 };
-
-#endif /* MESHAPPEARANCETEMPLATE_H_ */

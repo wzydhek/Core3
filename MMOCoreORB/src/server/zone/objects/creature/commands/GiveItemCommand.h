@@ -2,13 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GIVEITEMCOMMAND_H_
-#define GIVEITEMCOMMAND_H_
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/creature/PetManager.h"
 #include "server/zone/objects/tangible/pharmaceutical/StimPack.h"
-
 #include "server/zone/objects/tangible/attachment/Attachment.h"
 #include "server/zone/objects/tangible/wearables/WearableObject.h"
 #include "server/zone/objects/tangible/components/vendor/VendorDataComponent.h"
@@ -321,5 +318,3 @@ public:
 		return true;
 	}
 };
-
-#endif //GIVEITEMCOMMAND_H_

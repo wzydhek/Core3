@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REPAIRSHIPCOMPONENTINSLOTCOMMAND_H_
-#define REPAIRSHIPCOMPONENTINSLOTCOMMAND_H_
+#pragma once
 
 class RepairShipComponentInSlotCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //REPAIRSHIPCOMPONENTINSLOTCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYERARRANGEMENT_H_
-#define PLAYERARRANGEMENT_H_
+#pragma once
 
 class PlayerArrangement {
 public:
@@ -31,5 +30,3 @@ public:
 		SHIP_GUNNER7_POB	= 24,
 	};
 };
-
-#endif /* PLAYERARRANGEMENT_H_ */

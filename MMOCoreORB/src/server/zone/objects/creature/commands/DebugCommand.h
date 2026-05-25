@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef DEBUGCOMMAND_H_
-#define DEBUGCOMMAND_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -61,5 +60,3 @@ public:
 	}
 
 };
-
-#endif /* DEBUGCOMMAND_H_ */

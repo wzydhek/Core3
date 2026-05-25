@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BROADCASTCOMMAND_H_
-#define BROADCASTCOMMAND_H_
+#pragma once
 
 class BroadcastCommand : public QueueCommand {
 public:
@@ -124,5 +123,3 @@ public:
 	}
 
 };
-
-#endif //BROADCASTCOMMAND_H_

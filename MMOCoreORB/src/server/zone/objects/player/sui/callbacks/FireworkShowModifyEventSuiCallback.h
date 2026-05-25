@@ -1,5 +1,4 @@
-#ifndef FIREWORKSHOWMODIFYEVENTSUICALLBACK_H_
-#define FIREWORKSHOWMODIFYEVENTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/ZoneServer.h"
@@ -67,5 +66,3 @@ public:
 
 	}
 };
-
-#endif /* FIREWORKSHOWMODIFYEVENTSUICALLBACK_H_ */

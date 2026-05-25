@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DISMISSGROUPMEMBERCOMMAND_H_
-#define DISMISSGROUPMEMBERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/group/GroupObject.h"
@@ -78,6 +77,3 @@ public:
 	}
 
 };
-
-#endif //DISMISSGROUPMEMBERCOMMAND_H_
-

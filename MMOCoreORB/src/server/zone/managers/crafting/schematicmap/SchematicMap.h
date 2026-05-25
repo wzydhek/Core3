@@ -8,16 +8,12 @@
  * \date 6-01-10
  */
 
-#ifndef SCHEMATICMAP_H_
-#define SCHEMATICMAP_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
-
 #include "server/zone/objects/draftschematic/DraftSchematic.h"
-
 #include "server/zone/managers/object/ObjectManager.h"
 #include "server/zone/objects/player/PlayerObject.h"
-
 #include "DraftSchematicGroup.h"
 
 class SchematicMap : public Singleton<SchematicMap>, public Lua {
@@ -56,5 +52,3 @@ private:
 	void loadDraftSchematicFile(String file);
 	void buildSchematicGroups();
 };
-
-#endif /* SCHEMATICMAP_H_ */

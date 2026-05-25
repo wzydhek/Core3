@@ -5,8 +5,7 @@
  *      Author: washu
  */
 
-#ifndef DROIDCOMPONENTTEMPLATE_H_
-#define DROIDCOMPONENTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -30,5 +29,3 @@ public:
 	}
 
 };
-
-#endif /* DROIDCOMPONENTTEMPLATE_H_ */

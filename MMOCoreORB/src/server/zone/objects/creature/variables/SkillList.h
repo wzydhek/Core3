@@ -2,12 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SKILLBOXLIST_H_
-#define SKILLBOXLIST_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 
 class Skill;
@@ -32,5 +30,3 @@ public:
 
 	friend void to_json(nlohmann::json& j, const SkillList& s);
 };
-
-#endif /*SKILLBOXLIST_H_*/

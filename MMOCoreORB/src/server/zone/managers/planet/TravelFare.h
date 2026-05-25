@@ -5,10 +5,8 @@
  *      Author: Itac
  */
 
-#ifndef TRAVELFARE_H_
-#define TRAVELFARE_H_
+#pragma once
 
 class TravelFare : public VectorMap<String, VectorMap<String, int> > {
 
 };
-#endif //TRAVELFARE_H_

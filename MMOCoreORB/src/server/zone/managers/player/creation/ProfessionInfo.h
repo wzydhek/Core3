@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef PROFESSIONINFO_H_
-#define PROFESSIONINFO_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 
@@ -141,5 +140,3 @@ public:
 }
 
 using namespace server::zone::managers::player::creation;
-
-#endif /* PROFESSIONINFO_H_ */

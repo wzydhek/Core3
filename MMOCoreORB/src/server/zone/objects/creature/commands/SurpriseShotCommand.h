@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SURPRISESHOTCOMMAND_H_
-#define SURPRISESHOTCOMMAND_H_
+#pragma once
 
 class SurpriseShotCommand : public CombatQueueCommand {
 public:
@@ -48,5 +47,3 @@ public:
 	}
 
 };
-
-#endif //SURPRISESHOTCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef CHARACTERBUILDERMENUNODE_H_
-#define CHARACTERBUILDERMENUNODE_H_
+#pragma once
 
 #include "engine/lua/LuaObject.h"
 
@@ -124,5 +123,3 @@ public:
 		return childNodes.get(index);
 	}
 };
-
-#endif /* CHARACTERBUILDERMENUNODE_H_ */

@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef BOXVOLUME_H_
-#define BOXVOLUME_H_
+#pragma once
 
 #include "BaseBoundingVolume.h"
 
@@ -30,5 +29,3 @@ public:
 #endif
 
 };
-
-#endif

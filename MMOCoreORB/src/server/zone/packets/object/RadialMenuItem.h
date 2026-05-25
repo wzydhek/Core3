@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RADIALMENUITEM_H_
-#define RADIALMENUITEM_H_
+#pragma once
 
 /**
  * Please see Radial in the wiki for a list of client side radial id's.
@@ -158,5 +157,3 @@ public:
 		return itemIndex;
 	}
 };
-
-#endif /* RADIALMENUITEM_H_ */

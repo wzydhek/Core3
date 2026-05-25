@@ -2,12 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef METRICS_H_
-#define METRICS_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/core/MetricsManager.h"
-
 #include "conf/ConfigManager.h"
 
 namespace server {
@@ -102,5 +100,3 @@ namespace metrics {
 } // namespace server
 
 using namespace server::metrics;
-
-#endif // METRICS_H_

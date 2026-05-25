@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef DELETECHARACTERSTASK_H_
-#define DELETECHARACTERSTASK_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/ZoneClientSession.h"
@@ -177,5 +176,3 @@ public:
 		deletedCharacters.removeAll(250, 250);
 	}
 };
-
-#endif /* DELETECHARACTERSTASK_H_ */

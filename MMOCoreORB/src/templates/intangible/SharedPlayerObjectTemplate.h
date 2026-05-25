@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDPLAYEROBJECTTEMPLATE_H_
-#define SHAREDPLAYEROBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
@@ -117,5 +116,3 @@ public:
 	}
 
 };
-
-#endif /* SHAREDPLAYEROBJECTTEMPLATE_H_ */

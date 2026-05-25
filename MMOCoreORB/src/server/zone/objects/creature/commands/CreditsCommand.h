@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREDITSCOMMAND_H_
-#define CREDITSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/transaction/TransactionLog.h"
@@ -117,5 +116,3 @@ public:
 	}
 
 };
-
-#endif //CREDITSCOMMAND_H_

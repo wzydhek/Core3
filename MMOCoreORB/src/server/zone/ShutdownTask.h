@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHUTDOWNTASK_H_
-#define SHUTDOWNTASK_H_
+#pragma once
 
 #include "server/ServerCore.h"
 #include "server/zone/ZoneServer.h"
@@ -53,5 +52,3 @@ public:
 		}
 	}
 };
-
-#endif /* SHUTDOWNTASK_H_ */

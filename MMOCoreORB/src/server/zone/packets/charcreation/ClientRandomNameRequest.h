@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef CLIENTRANDOMNAMEREQUEST_H_
-#define CLIENTRANDOMNAMEREQUEST_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "ClientRandomNameResponse.h"
@@ -59,6 +58,3 @@ public:
 		client->sendMessage(msg);
 	}
 };
-
-
-#endif /* CLIENTRANDOMNAMEREQUEST_H_ */

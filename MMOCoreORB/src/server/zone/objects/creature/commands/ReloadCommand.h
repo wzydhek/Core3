@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RELOADCOMMAND_H_
-#define RELOADCOMMAND_H_
+#pragma once
 
 class ReloadCommand : public QueueCommand {
 public:
@@ -27,5 +26,3 @@ public:
 	}
 
 };
-
-#endif //RELOADCOMMAND_H_

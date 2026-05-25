@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STOPNPCCONVERSATION_H_
-#define STOPNPCCONVERSATION_H_
+#pragma once
 
 class StopNpcConversation : public ObjectControllerMessage {
 public:
@@ -11,5 +10,3 @@ public:
 		insertLong(npcID);
 	}
 };
-
-#endif

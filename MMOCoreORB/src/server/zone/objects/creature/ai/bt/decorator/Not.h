@@ -1,8 +1,6 @@
-#ifndef NOT_H_
-#define NOT_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/bt/decorator/Decorator.h"
-
 #include <cassert>
 
 namespace server {
@@ -45,5 +43,3 @@ public:
 }
 }
 }
-
-#endif // NOT_H_

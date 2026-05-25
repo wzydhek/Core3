@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef CLEARTHREATSTATETASK_H_
-#define CLEARTHREATSTATETASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -28,5 +27,3 @@ public:
 		threatMap->clearThreatState(target, state);
 	}
 };
-
-#endif /* CLEARTHREATSTATETASK_H_ */

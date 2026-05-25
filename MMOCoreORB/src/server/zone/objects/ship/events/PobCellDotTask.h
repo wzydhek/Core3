@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef POBCELLDOTTASK_H_
-#define POBCELLDOTTASK_H_
+#pragma once
 
 #include "server/zone/objects/ship/PobShipObject.h"
 #include "server/zone/Zone.h"
@@ -70,5 +69,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::ship;
-
-#endif // POBCELLDOTTASK_H_

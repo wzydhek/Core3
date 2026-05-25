@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef HUNTINGTARGETENTRY_H_
-#define HUNTINGTARGETENTRY_H_
+#pragma once
 
 class HuntingTargetEntry : public Object {
 private:
@@ -41,5 +40,3 @@ public:
 		return 0;
 	}
 };
-
-#endif /* HUNTINGTARGETENTRY_H_ */

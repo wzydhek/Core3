@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STRUCTURESTATUSCOMMAND_H_
-#define STRUCTURESTATUSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/structure/StructureManager.h"
@@ -94,5 +93,3 @@ public:
 	}
 
 };
-
-#endif //STRUCTURESTATUSCOMMAND_H_

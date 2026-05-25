@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STRINGANIMATION_H_
-#define STRINGANIMATION_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -16,5 +15,3 @@ public:
 	}
 
 };
-
-#endif /*STRINGANIMATION_H_*/

@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef MEDIUMDISEASECOMMAND_H_
-#define MEDIUMDISEASECOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif /* MEDIUMDISEASECOMMAND_H_ */

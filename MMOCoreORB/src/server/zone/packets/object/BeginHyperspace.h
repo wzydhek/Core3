@@ -2,11 +2,9 @@
 // Created by g on 12/20/17.
 //
 
-#ifndef CORE3_BEGINHYPERSPACE_H
-#define CORE3_BEGINHYPERSPACE_H
+#pragma once
 
 #include "ObjectControllerMessage.h"
-
 
 class BeginHyperspaceMessage : public ObjectControllerMessage {
 public:
@@ -17,5 +15,3 @@ public:
 		insertFloat(y);
 	}
 };
-
-#endif //CORE3_BEGINHYPERSPACE_H

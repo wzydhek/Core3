@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDMISSIONDATAOBJECTTEMPLATE_H_
-#define SHAREDMISSIONDATAOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
@@ -66,6 +65,3 @@ public:
 
 
 };
-
-
-#endif /* SHAREDMISSIONDATAOBJECTTEMPLATE_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORCOLORRAMPFRACTAL_H_
-#define AFFECTORCOLORRAMPFRACTAL_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 
@@ -54,8 +53,3 @@ public:
 		iffStream->closeForm('DATA');
 	}
 };
-
-
-
-
-#endif /* AFFECTORCOLORRAMPFRACTAL_H_ */

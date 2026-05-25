@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETNAMECOMMAND_H_
-#define SETNAMECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -78,5 +77,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // SETNAMECOMMAND_H_

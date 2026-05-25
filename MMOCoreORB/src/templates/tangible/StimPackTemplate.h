@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef STIMPACKTEMPLATE_H_
-#define STIMPACKTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -72,5 +71,3 @@ public:
 		return attributes;
 	}
 };
-
-#endif

@@ -1,6 +1,5 @@
 
-#ifndef EMOTEREACTIONFINE_H_
-#define EMOTEREACTIONFINE_H_
+#pragma once
 
 namespace server {
 namespace zone {
@@ -77,5 +76,3 @@ public:
 }
 }
 }
-
-#endif /* EMOTEREACTIONFINE_H_ */

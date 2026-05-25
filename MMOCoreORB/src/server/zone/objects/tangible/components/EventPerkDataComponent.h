@@ -1,6 +1,5 @@
 
-#ifndef EVENTPERKDATACOMPONENT_H_
-#define EVENTPERKDATACOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 #include "server/zone/objects/tangible/deed/eventperk/EventPerkDeed.h"
@@ -114,6 +113,3 @@ public:
 		return true;
 	}
 };
-
-
-#endif /* EVENTPERKDATACOMPONENT_H_ */

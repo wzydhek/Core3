@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef PERMISSIONLISTCREATEMESSAGE_H_
-#define PERMISSIONLISTCREATEMESSAGE_H_
+#pragma once
 
 class PermissionListCreateMessage : public BaseMessage {
 	Vector<String> nameList;
@@ -40,5 +39,3 @@ public:
 	}
 
 };
-
-#endif /* PERMISSIONLISTCREATEMESSAGE_H_ */

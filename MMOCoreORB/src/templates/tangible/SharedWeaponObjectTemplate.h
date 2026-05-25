@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDWEAPONOBJECTTEMPLATE_H_
-#define SHAREDWEAPONOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -405,5 +404,3 @@ public:
 		this->weaponType = weaponType;
 	}
 };
-
-#endif /* SHAREDWEAPONOBJECTTEMPLATE_H_ */

@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef MAPLOCATIONTABLE_H_
-#define MAPLOCATIONTABLE_H_
+#pragma once
 
 #include "MapLocationEntry.h"
-
 
 namespace server {
 namespace zone {
@@ -65,5 +63,3 @@ public:
 		return locations.size();
 	}
 };
-
-#endif /* MAPLOCATIONTABLE_H_ */

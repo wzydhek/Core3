@@ -2,8 +2,7 @@
  				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef RESOURCESLOT_H_
-#define RESOURCESLOT_H_
+#pragma once
 
 #include "IngredientSlot.h"
 #include "server/zone/objects/resource/ResourceSpawn.h"
@@ -198,4 +197,3 @@ public:
 	}
 
 };
-#endif /*RESOURCESLOT_H_*/

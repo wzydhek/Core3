@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYCLIENTEFFECTLOC_H_
-#define PLAYCLIENTEFFECTLOC_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -37,4 +36,3 @@ public:
 		insertAscii(label);
 	}
 };
-#endif /*PLAYCLIENTEFFECTLOC_H_*/

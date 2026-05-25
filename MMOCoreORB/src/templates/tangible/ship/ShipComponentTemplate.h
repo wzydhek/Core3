@@ -1,5 +1,4 @@
-#ifndef SHIPCOMPONENTOBJECTTEMPLATE_H_
-#define SHIPCOMPONENTOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -79,5 +78,3 @@ public:
 		return componentDataName.get();
 	}
 };
-
-#endif /* SHIPCOMPONENTOBJECTTEMPLATE_H_ */

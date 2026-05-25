@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SHOWDANCEVISUALSCOMMAND_H_
-#define SHOWDANCEVISUALSCOMMAND_H_
+#pragma once
 
 class ShowDanceVisualsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SHOWDANCEVISUALSCOMMAND_H_

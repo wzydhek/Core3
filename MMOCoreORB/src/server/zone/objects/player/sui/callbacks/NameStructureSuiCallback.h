@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef NAMESTRUCTURESUICALLBACK_H_
-#define NAMESTRUCTURESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -38,5 +37,3 @@ public:
 		creature->executeObjectControllerAction(0xC367B461, obj->getObjectID(), name); //nameStructure
 	}
 };
-
-#endif /* NAMESTRUCTURESUICALLBACK_H_ */

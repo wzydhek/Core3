@@ -2,8 +2,7 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DROIDARMORMODULEDATACOMPONENT_H_
-#define DROIDARMORMODULEDATACOMPONENT_H_
+#pragma once
 
 #include "BaseDroidModuleComponent.h"
 
@@ -51,6 +50,5 @@ public:
 } // objects
 } // zone
 } // server
-using namespace server::zone::objects::tangible::components::droid;
 
-#endif /* DROIDARMORMODULEDATACOMPONENT_H_ */
+using namespace server::zone::objects::tangible::components::droid;

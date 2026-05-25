@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MAKESURVEYCOMMAND_H_
-#define MAKESURVEYCOMMAND_H_
+#pragma once
 
 class MakeSurveyCommand : public QueueCommand {
 public:
@@ -25,6 +24,3 @@ public:
 	}
 
 };
-
-#endif //MAKESURVEYCOMMAND_H_
-

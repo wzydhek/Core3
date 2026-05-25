@@ -5,14 +5,9 @@
  *      Author: victor
  */
 
-#ifndef BOUNDARIES_H_
-#define BOUNDARIES_H_
+#pragma once
 
 #include "boundaries/BoundaryCircle.h"
 #include "boundaries/BoundaryPolyline.h"
 #include "boundaries/BoundaryPolygon.h"
 #include "boundaries/BoundaryRectangle.h"
-
-
-
-#endif /* BOUNDARIES_H_ */

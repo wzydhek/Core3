@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DROIDCOMMANDNOTIFYAVAILABLEEVENT_H_
-#define DROIDCOMMANDNOTIFYAVAILABLEEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -28,5 +27,3 @@ public:
 	}
 
 };
-
-#endif /*DROIDCOMMANDNOTIFYAVAILABLEEVENT_H_*/

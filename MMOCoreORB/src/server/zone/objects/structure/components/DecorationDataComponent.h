@@ -5,8 +5,8 @@
  *      Author: root
  */
 
-#ifndef DECORATIONDATACOMPONENT_H_
-#define DECORATIONDATACOMPONENT_H_
+#pragma once
+
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
 class DecorationDataComponent : public DataObjectComponent {
@@ -27,9 +27,3 @@ public:
 	}
 
 };
-
-
-
-
-
-#endif /* DECORATIONDATACOMPONENT_H_ */

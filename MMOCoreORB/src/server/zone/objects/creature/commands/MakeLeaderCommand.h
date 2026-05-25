@@ -2,15 +2,13 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MAKELEADERCOMMAND_H_
-#define MAKELEADERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/group/GroupObject.h"
 #include "server/zone/managers/group/GroupManager.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/chat/ChatManager.h"
-
 
 class MakeLeaderCommand : public QueueCommand {
 public:
@@ -95,6 +93,3 @@ public:
 	}
 
 };
-
-#endif //MAKELEADERCOMMAND_H_
-

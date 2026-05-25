@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STARTINGLOCATIONLISTMESSAGE_H_
-#define STARTINGLOCATIONLISTMESSAGE_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -15,6 +14,3 @@ public:
 		//Populate with PlayerManager::sendStartingLocationListTo()
 	}
 };
-
-#endif /*STARTINGLOCATIONLISTMESSAGE_H_*/
-

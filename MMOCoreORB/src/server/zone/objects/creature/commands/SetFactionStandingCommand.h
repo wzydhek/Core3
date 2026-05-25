@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETFACTIONSTANDINGCOMMAND_H_
-#define SETFACTIONSTANDINGCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/faction/FactionManager.h"
@@ -103,5 +102,3 @@ public:
 	}
 
 };
-
-#endif //SETFACTIONSTANDINGCOMMAND_H_

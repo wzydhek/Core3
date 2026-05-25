@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef TICKETSELECTIONSUICALLBACK_H_
-#define TICKETSELECTIONSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -39,5 +38,3 @@ public:
 		player->executeObjectControllerAction(0x5DCD41A2, ticketID, "");
 	}
 };
-
-#endif /* TICKETSELECTIONSUICALLBACK_H_ */

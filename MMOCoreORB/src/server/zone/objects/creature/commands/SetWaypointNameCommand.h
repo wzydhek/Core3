@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SETWAYPOINTNAMECOMMAND_H_
-#define SETWAYPOINTNAMECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -58,5 +57,3 @@ public:
 	}
 
 };
-
-#endif //SETWAYPOINTNAMECOMMAND_H_

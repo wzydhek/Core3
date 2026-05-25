@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef OBSERVEREVENTTYPES_H_
-#define OBSERVEREVENTTYPES_H_
+#pragma once
 
 class ObserverEventType {
 public:
@@ -116,5 +115,3 @@ public:
 		HERD,						// ManagedObject arg1 = AiAgent, long arg2 = 0
 	};
 };
-
-#endif /* OBSERVEREVENTTYPES_H_ */

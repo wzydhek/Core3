@@ -1,5 +1,4 @@
-#ifndef VALIDMOUNTSCALERANGE_H_
-#define VALIDMOUNTSCALERANGE_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 #include "templates/params/primitives/StringParam.h"
@@ -48,5 +47,3 @@ public:
 	}
 
 };
-
-#endif /* VALIDMOUNTSCALERANGE_H_ */

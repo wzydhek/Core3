@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ROLLSHOTCOMMAND_H_
-#define ROLLSHOTCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -35,5 +34,3 @@ public:
 	}
 
 };
-
-#endif //ROLLSHOTCOMMAND_H_

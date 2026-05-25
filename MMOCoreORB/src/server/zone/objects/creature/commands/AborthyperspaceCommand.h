@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ABORTHYPERSPACE_H_
-#define ABORTHYPERSPACE_H_
+#pragma once
 
 #include "QueueCommand.h"
 
@@ -46,5 +45,3 @@ public:
 	}
 
 };
-
-#endif //ABORTHYPERSPACE_H_

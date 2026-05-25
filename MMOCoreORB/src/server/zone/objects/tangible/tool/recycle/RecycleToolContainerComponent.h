@@ -1,6 +1,5 @@
 
-#ifndef RECYCLETOOLCONTAINERCOMPONENT_H_
-#define RECYCLETOOLCONTAINERCOMPONENT_H_
+#pragma once
 
 #include "RecycleResourceTask.h"
 #include "server/zone/objects/scene/components/ContainerComponent.h"
@@ -48,5 +47,3 @@ public:
 		return ContainerComponent::canAddObject(sceneObject, object, containmentType, errorDescription);
 	}
 };
-
-#endif /* RECYCLETOOLCONTAINERCOMPONENT_H_ */

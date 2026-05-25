@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CUSTOMIZEDROIDCOMMAND_H_
-#define CUSTOMIZEDROIDCOMMAND_H_
+#pragma once
 
 class CustomizeDroidCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CUSTOMIZEDROIDCOMMAND_H_

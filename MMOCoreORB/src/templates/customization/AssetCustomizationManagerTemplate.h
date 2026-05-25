@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ASSETCUSTOMIZATIONMANAGERTEMPLATE_H_
-#define ASSETCUSTOMIZATIONMANAGERTEMPLATE_H_
+#pragma once
 
 #include "engine/util/Singleton.h"
 #include "templates/IffTemplate.h"
@@ -90,5 +89,3 @@ private:
 	void* getCustomizationVariablesFromMap(uint16 key, uint64 a2, bool skipSharedOwner, VectorMap<String, Reference<CustomizationVariable*> >& result);
 
 };
-
-#endif /* ASSETCUSTOMIZATIONMANAGER_H_ */

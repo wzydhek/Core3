@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LUASTRINGIDCHATPARAMETER_H_
-#define LUASTRINGIDCHATPARAMETER_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/chat/StringIdChatParameter.h"
@@ -35,5 +34,3 @@ public:
 }
 
 using namespace server::chat;
-
-#endif /* LUASTRINGIDCHATPARAMETER_H_ */

@@ -3,13 +3,10 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef SPACEPATROLPOINT_H_
-#define SPACEPATROLPOINT_H_
+#pragma once
 
 #include "system/lang.h"
-
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/scene/WorldCoordinates.h"
 
@@ -203,5 +200,3 @@ public:
 		return msg.toString();
 	}
 };
-
-#endif /*SPACEPATROLPOINT_H_*/

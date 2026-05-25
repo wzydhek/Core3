@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SITONOBJECT_H_
-#define SITONOBJECT_H_
+#pragma once
 
 #include "ObjectControllerMessage.h"
 
@@ -19,5 +18,3 @@ public:
 	}
 	
 };
-
-#endif /*SITONOBJECT_H_*/

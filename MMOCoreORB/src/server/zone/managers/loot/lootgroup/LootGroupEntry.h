@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef LOOTGROUPENTRY_H_
-#define LOOTGROUPENTRY_H_
+#pragma once
 
 class LootGroupEntry : public Object {
 	String templateName;
@@ -62,6 +61,3 @@ public:
 		return lootChance;
 	}
 };
-
-
-#endif /* LOOTGROUPENTRY_H_ */

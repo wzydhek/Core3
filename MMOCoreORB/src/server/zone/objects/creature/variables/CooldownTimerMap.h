@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef COOLDOWNTIMERMAP_H_
-#define COOLDOWNTIMERMAP_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "engine/util/json_utils.h"
 
 class CooldownTimer : public Variable {
@@ -196,6 +194,3 @@ public:
 
 
 };
-
-
-#endif /* COOLDOWNTIMERMAP_H_ */

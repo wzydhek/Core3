@@ -10,8 +10,7 @@
  *  Updated on: Sat Oct  8 11:00:07 EDT 2011 by lordkator
  */
 
-#ifndef LOGOUTSERVERCOMMAND_H_
-#define LOGOUTSERVERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/events/LogoutTask.h"
 
@@ -55,5 +54,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* LOGOUTSERVERCOMMAND_H_ */

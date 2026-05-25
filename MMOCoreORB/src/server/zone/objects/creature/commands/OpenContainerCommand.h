@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef OPENCONTAINERCOMMAND_H_
-#define OPENCONTAINERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/Container.h"
@@ -126,5 +125,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // OPENCONTAINERCOMMAND_H_

@@ -10,8 +10,7 @@
  *
  */
 
-#ifndef AREATRACKTASK_H_
-#define AREATRACKTASK_H_
+#pragma once
 
 class AreaTrackTask: public Task {
 	ManagedReference<CreatureObject*> player;
@@ -191,5 +190,3 @@ public:
 		return result;
 	}
 };
-
-#endif /* AREATRACKTASK_H_ */

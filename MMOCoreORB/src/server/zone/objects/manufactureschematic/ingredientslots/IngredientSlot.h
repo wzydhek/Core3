@@ -3,8 +3,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INGREDIENTSLOT_H_
-#define INGREDIENTSLOT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 
@@ -198,4 +197,3 @@ public:
 
 
 };
-#endif /*INGREDIENTSLOT_H_*/

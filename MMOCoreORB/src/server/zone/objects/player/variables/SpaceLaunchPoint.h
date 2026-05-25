@@ -5,8 +5,7 @@
  *	Author: H
  */
 
-#ifndef SPACELAUNCHPOINT_H_
-#define SPACELAUNCHPOINT_H_
+#pragma once
 
 #include "engine/util/json_utils.h"
 
@@ -92,5 +91,3 @@ public:
 		return location;
 	}
 };
-
-#endif /* SPACELAUNCHPOINT_H_ */

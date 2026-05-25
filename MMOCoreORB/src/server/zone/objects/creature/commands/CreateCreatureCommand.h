@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CREATECREATURECOMMAND_H_
-#define CREATECREATURECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/Zone.h"
@@ -300,5 +299,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //CREATECREATURECOMMAND_H_

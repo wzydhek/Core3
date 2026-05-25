@@ -5,14 +5,9 @@
  *      Author: TheAnswer
  */
 
-#ifndef SRC_SERVER_ZONE_ACTIVEAREASVECTOR_H_
-#define SRC_SERVER_ZONE_ACTIVEAREASVECTOR_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "server/zone/objects/area/ActiveArea.h"
 
 typedef SortedVector<ActiveArea*> ActiveAreasVector;
-
-
-#endif /* SRC_SERVER_ZONE_ACTIVEAREASVECTOR_H_ */

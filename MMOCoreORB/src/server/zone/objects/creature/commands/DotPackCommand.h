@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DOTPACKCOMMAND_H_
-#define DOTPACKCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/building/BuildingObject.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -468,5 +467,3 @@ public:
 	}
 
 };
-
-#endif /* DOTPACKCOMMAND_H_ */

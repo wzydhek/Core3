@@ -5,8 +5,7 @@
  *      Author: gslomin
  */
 
-#ifndef COMPONENTVOLUME_H_
-#define COMPONENTVOLUME_H_
+#pragma once
 
 #include "CompositeVolume.h"
 
@@ -16,5 +15,3 @@ public:
 	ComponentVolume() { }
 	virtual void read(IffStream *iff);
 };
-
-#endif /* COMPONENTVOLUME_H_ */

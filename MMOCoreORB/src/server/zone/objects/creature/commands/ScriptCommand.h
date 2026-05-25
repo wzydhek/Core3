@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SCRIPTCOMMAND_H_
-#define SCRIPTCOMMAND_H_
+#pragma once
 
 class ScriptCommand : public QueueCommand {
 public:
@@ -227,5 +226,3 @@ public:
 	}
 
 };
-
-#endif //SCRIPTCOMMAND_H_

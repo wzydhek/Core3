@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef VISIBILITYDECAYTASK_H_
-#define VISIBILITYDECAYTASK_H_
+#pragma once
 
 #include "server/zone/managers/visibility/VisibilityManager.h"
 
@@ -31,5 +30,3 @@ public:
 }
 
 using namespace server::zone::managers::visibility::tasks;
-
-#endif /* VISIBILITYDECAYTASK_H_ */

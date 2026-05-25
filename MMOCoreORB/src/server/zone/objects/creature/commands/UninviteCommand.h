@@ -2,14 +2,11 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UNINVITECOMMAND_H_
-#define UNINVITECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/chat/StringIdChatParameter.h"
 #include "server/zone/objects/creature/CreatureObject.h"
-
-
 
 class UninviteCommand : public QueueCommand {
 public:
@@ -59,6 +56,3 @@ public:
 	}
 
 };
-
-#endif //UNINVITECOMMAND_H_
-

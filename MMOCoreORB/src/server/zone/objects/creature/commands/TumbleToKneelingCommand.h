@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TUMBLETOKNEELINGCOMMAND_H_
-#define TUMBLETOKNEELINGCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/buffs/StateBuff.h"
 
@@ -59,5 +58,3 @@ public:
 	}
 
 };
-
-#endif //TUMBLETOKNEELINGCOMMAND_H_

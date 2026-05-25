@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef DROIDDEEDTEMPLATE_H_
-#define DROIDDEEDTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/DeedTemplate.h"
 
@@ -43,6 +42,3 @@ public:
 		return species;
 	}
 };
-
-
-#endif /* DROIDDEEDTEMPLATE_H_ */

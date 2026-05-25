@@ -1,5 +1,4 @@
-#ifndef SPACECOLLISIONRESULT_H_
-#define SPACECOLLISIONRESULT_H_
+#pragma once
 
 //#define SPACECOLLISION_DEBUG
 
@@ -8,7 +7,7 @@
 #include "server/zone/managers/spacecombat/projectile/ShipProjectile.h"
 
 #ifdef SPACECOLLISION_DEBUG
-#include "server/zone/packets/ui/CreateClientPathMessage.h"
+	#include "server/zone/packets/ui/CreateClientPathMessage.h"
 #endif // SPACECOLLISION_DEBUG
 
 class SpaceCollisionEntry {
@@ -256,5 +255,3 @@ public:
 	}
 #endif // SPACECOLLISION_DEBUG
 };
-
-#endif // SPACECOLLISIONRESULT_H_

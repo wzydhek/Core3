@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CUSTOMIZATIONVARIABLE_H_
-#define CUSTOMIZATIONVARIABLE_H_
+#pragma once
 
 #include "system/lang.h"
 
@@ -20,5 +19,3 @@ public:
 
 	}
 };
-
-#endif /* CUSTOMIZATIONVARIABLE_H_ */

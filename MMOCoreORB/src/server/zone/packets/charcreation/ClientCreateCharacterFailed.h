@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLIENTCREATECHARACTERFAILED_H_
-#define CLIENTCREATECHARACTERFAILED_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -25,5 +24,3 @@ public:
 		setCompression(false);
 	}
 };
-
-#endif /*CLIENTCREATECHARACTERFAILED_H_*/

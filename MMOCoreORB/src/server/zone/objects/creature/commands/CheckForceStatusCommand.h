@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHECKFORCESTATUSCOMMAND_H_
-#define CHECKFORCESTATUSCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/jedi/JediManager.h"
 
@@ -29,5 +28,3 @@ public:
 	}
 
 };
-
-#endif //CHECKFORCESTATUSCOMMAND_H_

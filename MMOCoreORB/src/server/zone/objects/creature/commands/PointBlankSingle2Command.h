@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef POINTBLANKSINGLE2COMMAND_H_
-#define POINTBLANKSINGLE2COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif //POINTBLANKSINGLE2COMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATONSENDPERSISTENTMESSAGE_H_
-#define CHATONSENDPERSISTENTMESSAGE_H_
+#pragma once
 
 //Mail
 
@@ -21,5 +20,3 @@ public:
 	} 
 	
 };
-
-#endif /*CHATONSENDPERSISTENTMESSAGE_H_*/

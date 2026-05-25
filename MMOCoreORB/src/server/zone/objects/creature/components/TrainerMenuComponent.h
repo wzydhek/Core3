@@ -5,8 +5,7 @@
  *      Author: TragD
  */
 
-#ifndef TRAINERMENUCOMPONENT_H_
-#define TRAINERMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* TRAINERMENUCOMPONENT_H_ */

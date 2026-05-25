@@ -5,8 +5,7 @@
  *      Author: polonel
  */
 
-#ifndef PLAYERMANAGEMENTSESSIONSUICALLBACK_H_
-#define PLAYERMANAGEMENTSESSIONSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/admin/PlayerManagementSession.h"
@@ -282,5 +281,3 @@ public:
 		session->completeBan();
 	}
 };
-
-#endif /* PLAYERMANAGEMENTSESSIONSUICALLBACK_H_ */

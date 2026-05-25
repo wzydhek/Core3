@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HARVESTCORPSECOMMAND_H_
-#define HARVESTCORPSECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/ai/Creature.h"
@@ -108,5 +107,3 @@ public:
 	}
 
 };
-
-#endif //HARVESTCORPSECOMMAND_H_

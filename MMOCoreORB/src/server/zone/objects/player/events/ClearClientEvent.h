@@ -5,8 +5,7 @@
  *      Author: oru
  */
 
-#ifndef CLEARCLIENTEVENT_H_
-#define CLEARCLIENTEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -32,6 +31,3 @@ public:
 
 
 };
-
-
-#endif /* CLEARCLIENTEVENT_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FILTERS_H_
-#define FILTERS_H_
+#pragma once
 
 #include "filters/FilterBitmap.h"
 #include "filters/FilterDirection.h"
@@ -14,5 +13,3 @@
 #include "filters/FilterHeight.h"
 #include "filters/FilterShader.h"
 #include "filters/FilterSlope.h"
-
-#endif /* FILTERS_H_ */

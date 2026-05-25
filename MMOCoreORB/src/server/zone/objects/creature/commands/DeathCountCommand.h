@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DEATHCOUNTCOMMAND_H_
-#define DEATHCOUNTCOMMAND_H_
+#pragma once
 
 class DeathCountCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //DEATHCOUNTCOMMAND_H_

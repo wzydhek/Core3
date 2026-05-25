@@ -1,6 +1,5 @@
 
-#ifndef MILKCREATURETASK_H_
-#define MILKCREATURETASK_H_
+#pragma once
 
 #include "server/zone/managers/resource/ResourceManager.h"
 #include "server/zone/managers/combat/CombatManager.h"
@@ -147,5 +146,3 @@ public:
 		clearStationary();
 	}
 };
-
-#endif /* MILKCREATURETASK_H_ */

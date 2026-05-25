@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef VITALIZECOMMAND_H_
-#define VITALIZECOMMAND_H_
+#pragma once
 
 class VitalizeCommand : public QueueCommand {
 public:
@@ -67,5 +66,3 @@ public:
 	}
 
 };
-
-#endif //VITALIZECOMMAND_H_

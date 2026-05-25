@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CONSUMABLETEMPLATE_H_
-#define CONSUMABLETEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -194,6 +193,3 @@ public:
 	}
 
 };
-
-
-#endif /* CONSUMABLETEMPLATE_H_ */

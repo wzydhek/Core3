@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef MEDIUMPOISONCOMMAND_H_
-#define MEDIUMPOISONCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif /* MEDIUMPOISONCOMMAND_H_ */

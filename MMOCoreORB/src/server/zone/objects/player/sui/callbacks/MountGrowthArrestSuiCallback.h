@@ -1,6 +1,5 @@
 
-#ifndef MOUNTGROWTHARRESTSUICALLBACK_H_
-#define MOUNTGROWTHARRESTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/intangible/PetControlDevice.h"
@@ -58,5 +57,3 @@ public:
 
 	}
 };
-
-#endif /* MOUNTGROWTHARRESTSUICALLBACK_H_ */

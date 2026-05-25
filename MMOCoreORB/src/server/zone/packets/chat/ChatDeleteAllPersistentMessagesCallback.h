@@ -1,6 +1,4 @@
-#ifndef CHATDELETEALLPERSISTENTMESSAGESCALLBACK_H_
-#define CHATDELETEALLPERSISTENTMESSAGESCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 
@@ -52,6 +50,3 @@ public:
 	}
 
 };
-
-
-#endif /* CHATDELETEALLPERSISTENTMESSAGESCALLBACK_H_ */

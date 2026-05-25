@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LAUNCHFIREWORKCOMMAND_H_
-#define LAUNCHFIREWORKCOMMAND_H_
+#pragma once
 
 class LaunchFireworkCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //LAUNCHFIREWORKCOMMAND_H_

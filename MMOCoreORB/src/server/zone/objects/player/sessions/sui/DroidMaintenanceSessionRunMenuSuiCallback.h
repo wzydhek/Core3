@@ -3,8 +3,7 @@
  *
  */
 
-#ifndef DROIDMAINTSESSIONRUNMENUSUICALLBACK_H_
-#define DROIDMAINTSESSIONRUNMENUSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/DroidMaintenanceSession.h"
@@ -78,5 +77,3 @@ public:
 
 	}
 };
-
-#endif /* DROIDMAINTSESSIONRUNMENUSUICALLBACK_H_ */

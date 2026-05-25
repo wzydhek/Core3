@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HEALMINDCOMMAND_H_
-#define HEALMINDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/collision/CollisionManager.h"
@@ -178,5 +177,3 @@ public:
 	}
 
 };
-
-#endif //HEALMINDCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef ADDITEMMESSAGECALLBACK_H_
-#define ADDITEMMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/player/PlayerManager.h"
@@ -46,5 +45,3 @@ public:
 		playerMan->handleAddItemToTradeWindow(player, id);
 	}
 };
-
-#endif /* ADDITEMMESSAGECALLBACK_H_ */

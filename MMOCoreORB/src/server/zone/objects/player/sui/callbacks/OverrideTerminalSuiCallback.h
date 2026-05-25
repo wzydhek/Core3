@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef OVERRIDETERMINALSUICALLBACK_H_
-#define OVERRIDETERMINALSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/managers/gcw/GCWManager.h"
@@ -43,10 +42,3 @@ public:
 		gcwMan->processDNASample(player, overrideTerminal, index);
 	}
 };
-
-
-
-
-
-
-#endif /* OVERRIDETERMINALSUICALLBACK_H_ */

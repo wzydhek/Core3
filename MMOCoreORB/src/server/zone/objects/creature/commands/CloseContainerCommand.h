@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLOSECONTAINERCOMMAND_H_
-#define CLOSECONTAINERCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -55,5 +54,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // CLOSECONTAINERCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef REPAIRTOOLTEMPLATE_H_
-#define REPAIRTOOLTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -57,5 +56,3 @@ public:
 	}
 
 };
-
-#endif /* REPAIRTOOLTEMPLATE_H_ */

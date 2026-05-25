@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SPICEDOWNERANIMATIONTASK_H_
-#define SPICEDOWNERANIMATIONTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -51,5 +50,3 @@ public:
 } // server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /*SPICEDOWNERANIMATIONTASK_H_*/

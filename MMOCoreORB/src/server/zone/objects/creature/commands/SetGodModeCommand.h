@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef SETGODMODECOMMAND_H_
-#define SETGODMODECOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/objectcontroller/ObjectController.h"
 
@@ -99,5 +98,3 @@ public:
 	}
 
 };
-
-#endif //SETGODMODECOMMAND_H_

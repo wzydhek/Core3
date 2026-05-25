@@ -1,5 +1,4 @@
-#ifndef FIREWORKSHOWADDEVENTSUICALLBACK_H_
-#define FIREWORKSHOWADDEVENTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/firework/components/FireworkShowMenuComponent.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -87,5 +86,3 @@ public:
 		showMenu->addEvent(player, fireworkShow.castTo<FireworkObject*>());
 	}
 };
-
-#endif /* FIREWORKSHOWADDEVENTSUICALLBACK_H_ */

@@ -1,5 +1,4 @@
-#ifndef SELECTPERFORMANCESUICALLBACK_H
-#define SELECTPERFORMANCESUICALLBACK_H
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -55,5 +54,3 @@ public:
 		}
 	}
 };
-
-#endif /* SELECTPERFORMANCESUICALLBACK_H */

@@ -1,6 +1,5 @@
 
-#ifndef SURRENDERPILOTSUICALLBACK_H_
-#define SURRENDERPILOTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "templates/faction/Factions.h"
@@ -63,5 +62,3 @@ public:
 		ghost->addWaypoint(waypoint, false, true);
 	}
 };
-
-#endif /* SURRENDERPILOTSUICALLBACK_H_ */

@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef SHAREDLABRATORY_H_
-#define SHAREDLABRATORY_H_
+#pragma once
 
 #include "server/zone/objects/manufactureschematic/ManufactureSchematic.h"
 #include "server/zone/objects/manufactureschematic/craftingvalues/CraftingValues.h"
@@ -42,6 +41,5 @@ protected:
 }
 }
 }
-using namespace server::zone::managers::crafting::labratories;
 
-#endif /* SHAREDLABRATORY_H_ */
+using namespace server::zone::managers::crafting::labratories;

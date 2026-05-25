@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NPCCOMMAND_H_
-#define NPCCOMMAND_H_
+#pragma once
 
 class NpcCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //NPCCOMMAND_H_

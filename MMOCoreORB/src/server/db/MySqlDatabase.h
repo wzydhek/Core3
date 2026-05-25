@@ -3,17 +3,12 @@ Copyright (C) 2007 <SWGEmu>. All rights reserved.
 Distribution of this file for usage outside of Core3 is prohibited.
 */
 
-#ifndef MYSQLDATABASE_H_
-#define MYSQLDATABASE_H_
+#pragma once
 
 #include "system/lang.h"
-
 #include <mysql.h>
-
 #include "engine/log/Logger.h"
-
 #include "engine/db/Database.h"
-
 #include "Statement.h"
 #include "ResultSet.h"
 
@@ -86,5 +81,3 @@ namespace server {
     } // namespace mysql
   } // namespace db
 } // namespace engine
-
-#endif /*MYSQLDATABASE_H_*/

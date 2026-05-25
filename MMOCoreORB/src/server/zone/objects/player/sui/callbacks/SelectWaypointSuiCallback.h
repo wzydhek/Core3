@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef SELECTWAYPOINTEFFECTSUICALLBACK_H_
-#define SELECTWAYPOINTEFFECTSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/components/droid/DroidMerchantModuleDataComponent.h"
@@ -46,6 +45,3 @@ public:
 		}
 	}
 };
-
-
-#endif /* SELECTDROIDEFFECTSUICALLBACK_H_ */

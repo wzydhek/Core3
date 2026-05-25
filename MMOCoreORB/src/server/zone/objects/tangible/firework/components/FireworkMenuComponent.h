@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef FIREWORKMENUCOMPONENT_H_
-#define FIREWORKMENUCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 
@@ -32,6 +31,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-
-#endif /* FIREWORKMENUCOMPONENT_H_ */

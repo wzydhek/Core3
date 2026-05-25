@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef BOUNDARYCIRCLE_H_
-#define BOUNDARYCIRCLE_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 #include "Boundary.h"
@@ -113,6 +112,3 @@ public:
 		return centerY + radius;
 	}
 };
-
-
-#endif /* BOUNDARYCIRCLE_H_ */

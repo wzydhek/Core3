@@ -1,5 +1,4 @@
-#ifndef LOOTVALUES_H_
-#define LOOTVALUES_H_
+#pragma once
 
 #include "server/zone/objects/manufactureschematic/craftingvalues/CraftingValues.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
@@ -7,7 +6,7 @@
 #include "templates/LootItemTemplate.h"
 
 #ifndef LOOTVALUES_DEBUG
-//#define LOOTVALUES_DEBUG
+	//#define LOOTVALUES_DEBUG
 #endif // LOOTVALUES_DEBUG
 
 class LootValues: public CraftingValues, public LootAttributeType {
@@ -204,5 +203,3 @@ public:
 	}
 #endif // LOOTVALUES_DEBUG
 };
-
-#endif // LOOTVALUES_H_

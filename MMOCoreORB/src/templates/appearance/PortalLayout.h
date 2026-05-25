@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PORTALLAYOUT_H_
-#define PORTALLAYOUT_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 #include "templates/appearance/CellProperty.h"
@@ -113,5 +112,3 @@ public:
 
 	static uint32 loadCRC(IffStream* iffStream);
 };
-
-#endif /* PORTALLAYOUT_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef COMBATQUEUECOMMAND_H_
-#define COMBATQUEUECOMMAND_H_
+#pragma once
 
 #include"server/zone/ZoneServer.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -886,5 +885,3 @@ public:
 		return frsDarkMaxDamageModifier;
 	}
 };
-
-#endif /* COMBATQUEUECOMMAND_H_ */

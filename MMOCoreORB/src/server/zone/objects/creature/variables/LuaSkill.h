@@ -1,5 +1,4 @@
-#ifndef LUASKILL_H_
-#define LUASKILL_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/creature/variables/Skill.h"
@@ -36,6 +35,3 @@ namespace variables {
 }
 
 using namespace server::zone::objects::creature::variables;
-
-
-#endif /* LUASKILL_H_ */

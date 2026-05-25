@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef BUFFTYPE_H_
-#define BUFFTYPE_H_
+#pragma once
 
 #include "../BuffAttribute.h"
 #include "BuffCRC.h"
@@ -26,6 +25,3 @@ public:
 		TRAP
 	};
 };
-
-
-#endif /* BUFFTYPE_H_ */

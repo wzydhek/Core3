@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GAMBLINGEVENT_H_
-#define GAMBLINGEVENT_H_
+#pragma once
 
 #include "server/zone/ZoneProcessServer.h"
 
@@ -44,5 +43,3 @@ public:
 } // namespace server
 
 using namespace server::zone::managers::minigames::events;
-
-#endif /* GAMBLINGEVENT_H_ */

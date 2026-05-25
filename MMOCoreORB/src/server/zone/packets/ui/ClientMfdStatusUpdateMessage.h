@@ -5,8 +5,8 @@
  *      Author: swgemu
  */
 
-#ifndef CLIENTMFDSTATUSUPDATEMESSAGE_H_
-#define CLIENTMFDSTATUSUPDATEMESSAGE_H_
+#pragma once
+
 #include "server/zone/Zone.h"
 
 class ClientMfdStatusUpdateMessage : public BaseMessage {
@@ -47,4 +47,3 @@ public:
 		insertFloat(cr->getWorldPositionY()); //y
 	}
 };
-#endif /* CLIENTMFDSTATUSUPDATEMESSAGE_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCESHIELD1COMMAND_H_
-#define FORCESHIELD1COMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -49,5 +48,3 @@ public:
 	}
 
 };
-
-#endif //FORCESHIELD1COMMAND_H_

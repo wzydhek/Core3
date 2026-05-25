@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HARVESTERGETRESOURCEDATACOMMAND_H_
-#define HARVESTERGETRESOURCEDATACOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/packets/harvester/HarvesterResourceDataMessage.h"
@@ -54,5 +53,3 @@ public:
 	}
 
 };
-
-#endif //HARVESTERGETRESOURCEDATACOMMAND_H_

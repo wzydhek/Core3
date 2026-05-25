@@ -3,8 +3,7 @@
  *
  */
 
-#ifndef DROIDMAINTSESSIONPAYUSUICALLBACK_H_
-#define DROIDMAINTSESSIONPAYUSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/DroidMaintenanceSession.h"
@@ -42,5 +41,3 @@ public:
 		session->sendMaintanceRunBox();
 	}
 };
-
-#endif /* DROIDMAINTSESSIONPAYUSUICALLBACK_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef GETMAPLOCATIONSCALLBACK_H_
-#define GETMAPLOCATIONSCALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/Zone.h"
@@ -38,5 +37,3 @@ public:
 			zone->sendMapLocationsTo(object);
 	}
 };
-
-#endif /* GETMAPLOCATIONSCALLBACK_H_ */

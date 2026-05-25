@@ -5,6 +5,8 @@
  *      Author: victor
  */
 
+#pragma once
+
 #include "ObjectMenuResponse.h"
 #include "server/zone/managers/radial/RadialManager.h"
 

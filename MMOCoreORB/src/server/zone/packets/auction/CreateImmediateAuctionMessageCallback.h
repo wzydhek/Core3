@@ -5,12 +5,10 @@
  *      Author: victor
  */
 
-#ifndef CREATEIMMEDIATEAUCTIONMESSAGECALLBACK_H_
-#define CREATEIMMEDIATEAUCTIONMESSAGECALLBACK_H_
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/zone/managers/auction/AuctionManager.h"
-
 
 class CreateImmediateAuctionMessageCallback : public MessageCallback {
 	uint64 objectID;
@@ -61,5 +59,3 @@ public:
 	}
 
 };
-
-#endif /* CREATEIMMEDIATEAUCTIONMESSAGECALLBACK_H_ */

@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef RADIALFAMILY_H_
-#define RADIALFAMILY_H_
-
+#pragma once
 
 #include "TemplateVariable.h"
 
@@ -75,6 +73,3 @@ public:
 		iffStream->closeChunk('RFAM');
 	}
 };
-
-
-#endif /* RADIALFAMILY_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef DETAILAPPEARANCETEMPLATE_H_
-#define DETAILAPPEARANCETEMPLATE_H_
+#pragma once
 
 #include "templates/appearance/AppearanceTemplate.h"
 
@@ -57,5 +56,3 @@ public:
 	}
 
 };
-
-#endif /* DETAILAPPEARANCETEMPLATE_H_ */

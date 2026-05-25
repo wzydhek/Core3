@@ -5,8 +5,7 @@
  *      Author: xyborn
  */
 
-#ifndef CITYUPDATEEVENT_H_
-#define CITYUPDATEEVENT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -47,5 +46,3 @@ namespace server {
 }
 
 using namespace server::zone::objects::region::events;
-
-#endif /* CITYUPDATEEVENT_H_ */

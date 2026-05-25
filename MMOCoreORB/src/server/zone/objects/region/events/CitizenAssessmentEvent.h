@@ -1,5 +1,4 @@
-#ifndef CITIZENASSESSMENTEVENT_H_
-#define CITIZENASSESSMENTEVENT_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 
@@ -22,5 +21,3 @@ public:
 
 	void run();
 };
-
-#endif /* CITIZENASSESSMENTEVENT_H_ */

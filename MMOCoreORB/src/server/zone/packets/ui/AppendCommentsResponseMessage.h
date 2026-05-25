@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef APPENDCOMMENTSRESPONSEMESSAGE_H_
-#define APPENDCOMMENTSRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -22,6 +21,3 @@ public:
    }
 
 };
-
-#endif /*APPENDCOMMENTSRESPONSEMESSAGE_H_*/
-

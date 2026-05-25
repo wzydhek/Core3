@@ -3,8 +3,7 @@
 		See file COPYING for copying conditions.
 */
 
-#ifndef SKILLMANAGER_H_
-#define SKILLMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/player/variables/Ability.h"
 #include "server/zone/objects/creature/variables/Skill.h"
@@ -151,5 +150,3 @@ public:
 }
 
 using namespace server::zone::managers::skill;
-
-#endif // SKILLMANAGER_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TOGGLEAWAYFROMKEYBOARDCOMMAND_H_
-#define TOGGLEAWAYFROMKEYBOARDCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/player/PlayerObject.h"
 
@@ -35,5 +34,3 @@ public:
 	}
 
 };
-
-#endif //TOGGLEAWAYFROMKEYBOARDCOMMAND_H_

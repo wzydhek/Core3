@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SYNCHRONIZEDUISTOPLISTENINGCOMMAND_H_
-#define SYNCHRONIZEDUISTOPLISTENINGCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -45,5 +44,3 @@ public:
 	}
 
 };
-
-#endif //SYNCHRONIZEDUISTOPLISTENINGCOMMAND_H_

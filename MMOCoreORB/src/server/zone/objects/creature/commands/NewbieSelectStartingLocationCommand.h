@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NEWBIESELECTSTARTINGLOCATIONCOMMAND_H_
-#define NEWBIESELECTSTARTINGLOCATIONCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/player/StartingLocation.h"
@@ -89,5 +88,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // NEWBIESELECTSTARTINGLOCATIONCOMMAND_H_

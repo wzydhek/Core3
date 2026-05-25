@@ -5,8 +5,7 @@
  *  Author: H
  */
 
-#ifndef SHIPDEEDTEMPLATE_H_
-#define SHIPDEEDTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/DeedTemplate.h"
 
@@ -44,5 +43,3 @@ public:
 		return true;
 	}
 };
-
-#endif /* SHIPDEEDTEMPLATE_H_ */

@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef LOOTKITOBJECTTEMPLATE_H_
-#define LOOTKITOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -102,6 +101,3 @@ public:
 	}
 
 };
-
-
-#endif /* LOOTKITOBJECTTEMPLATE_H_ */

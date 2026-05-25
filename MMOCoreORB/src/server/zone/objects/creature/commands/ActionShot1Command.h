@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ACTIONSHOT1COMMAND_H_
-#define ACTIONSHOT1COMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -26,6 +25,3 @@ public:
 	}
 
 };
-
-#endif //ACTIONSHOT1COMMAND_H_
-

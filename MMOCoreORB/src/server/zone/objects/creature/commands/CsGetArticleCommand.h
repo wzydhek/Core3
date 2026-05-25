@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CSGETARTICLECOMMAND_H_
-#define CSGETARTICLECOMMAND_H_
+#pragma once
 
 class CsGetArticleCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CSGETARTICLECOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: washu
  */
 
-#ifndef PETDEEDTEMPLATE_H_
-#define PETDEEDTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/DeedTemplate.h"
 
@@ -39,6 +38,3 @@ public:
 	}
 
 };
-
-
-#endif /* PETDEEDTEMPLATE_H_ */

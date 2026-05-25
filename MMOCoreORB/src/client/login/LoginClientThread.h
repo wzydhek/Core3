@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef LOGINCLIENTTHREAD_H_
-#define LOGINCLIENTTHREAD_H_
+#pragma once
 
 #include "LoginClient.h"
 
@@ -36,5 +35,3 @@ public:
 		client->stop();
 	}
 };
-
-#endif /* LOGINCLIENTTHREAD_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INSTALLSHIPCOMPONENTCOMMAND_H_
-#define INSTALLSHIPCOMPONENTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/ship/ShipObject.h"
 
@@ -213,5 +212,3 @@ public:
 	}
 
 };
-
-#endif //INSTALLSHIPCOMPONENTCOMMAND_H_

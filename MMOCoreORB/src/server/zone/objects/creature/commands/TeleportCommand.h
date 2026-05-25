@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TELEPORTCOMMAND_H_
-#define TELEPORTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/ship/ShipObject.h"
 #include "server/zone/objects/intangible/ShipControlDevice.h"
@@ -122,5 +121,3 @@ public:
 	}
 
 };
-
-#endif //TELEPORTCOMMAND_H_

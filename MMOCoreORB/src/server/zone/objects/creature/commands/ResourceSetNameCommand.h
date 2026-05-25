@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESOURCESETNAMECOMMAND_H_
-#define RESOURCESETNAMECOMMAND_H_
+#pragma once
 
 class ResourceSetNameCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //RESOURCESETNAMECOMMAND_H_

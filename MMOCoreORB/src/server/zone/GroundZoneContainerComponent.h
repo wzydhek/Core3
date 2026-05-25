@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef GROUNDZONECONTAINERCOMPONENT_H_
-#define GROUNDZONECONTAINERCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
@@ -74,5 +73,3 @@ public:
 	//virtual int notifyObjectRemoved(SceneObject* sceneObject, SceneObject* object);
 
 };
-
-#endif /* GROUNDZONECONTAINERCOMPONENT_H_ */

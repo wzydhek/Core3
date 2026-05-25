@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DUELCOMMAND_H_
-#define DUELCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/combat/CombatManager.h"
@@ -83,5 +82,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // DUELCOMMAND_H_

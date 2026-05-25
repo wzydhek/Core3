@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCEWEAKENDEBUFFDURATIONEVENT_H_
-#define FORCEWEAKENDEBUFFDURATIONEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/buffs/Buff.h"
@@ -48,5 +47,3 @@ namespace server {
 }
 
 using namespace server::zone::objects::creature::buffs;
-
-#endif /* FORCEWEAKENDEBUFFDURATIONEVENT_H_ */

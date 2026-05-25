@@ -5,8 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef LOOTLOTTERYBALLOT_H_
-#define LOOTLOTTERYBALLOT_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "system/util/Vector.h"
@@ -34,5 +33,3 @@ public:
      }
 
 };
-
-#endif /* LOOTLOTTERYBALLOT_H_ */

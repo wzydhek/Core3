@@ -1,5 +1,5 @@
-#ifndef FACTIONS_H_
-#define FACTIONS_H_
+#pragma once
+
 namespace Factions {
 	enum {
 		FACTIONNEUTRAL = 0,
@@ -7,4 +7,3 @@ namespace Factions {
 		FACTIONREBEL = 0x16148850
 	};
 }
-#endif

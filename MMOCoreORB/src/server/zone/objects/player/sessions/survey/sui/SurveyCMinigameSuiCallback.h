@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef SURVEYCMINIGAMESUICALLBACK_H_
-#define SURVEYCMINIGAMESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sessions/survey/SurveySession.h"
@@ -42,5 +41,3 @@ public:
 		session->surveyCnodeMinigame(value);
 	}
 };
-
-#endif /* SURVEYMINIGAMESUICALLBACK_H_ */

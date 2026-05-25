@@ -5,8 +5,7 @@
  *      Author: Valkyra
  */
 
-#ifndef FORCEPOWERSQUEUECOMMAND_H_
-#define FORCEPOWERSQUEUECOMMAND_H_
+#pragma once
 
 #include"server/zone/ZoneServer.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -125,5 +124,3 @@ public:
 	}
 
 };
-
-#endif /* FORCEPOWERSQUEUECOMMAND_H_ */

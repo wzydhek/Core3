@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DROIDHARVESTTASK_H_
-#define DROIDHARVESTTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/DroidObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -135,5 +134,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /*DROIDHARVESTTASK_H_*/

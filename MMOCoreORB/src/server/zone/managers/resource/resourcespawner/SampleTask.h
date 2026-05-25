@@ -8,8 +8,7 @@
  * \date 5-03-10
  */
 
-#ifndef SAMPLETASK_H_
-#define SAMPLETASK_H_
+#pragma once
 
 #include "server/zone/objects/tangible/tool/SurveyTool.h"
 #include "server/zone/objects/player/sessions/survey/SurveySession.h"
@@ -56,5 +55,3 @@ public:
 	}
 
 };
-
-#endif /* SAMPLETASK_H_ */

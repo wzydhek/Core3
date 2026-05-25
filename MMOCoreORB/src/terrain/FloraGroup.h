@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FLORAGROUP_H_
-#define FLORAGROUP_H_
-
+#pragma once
 
 #include "TemplateVariable.h"
 #include "FloraFamily.h"
@@ -49,6 +47,3 @@ public:
 		}
 	}
 };
-
-
-#endif /* FLORAGROUP_H_ */

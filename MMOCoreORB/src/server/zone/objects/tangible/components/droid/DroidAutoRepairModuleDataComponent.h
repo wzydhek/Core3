@@ -2,8 +2,7 @@
  * 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef DROIDAUTOREPAIRMODULEDATACOMPONENT_H_
-#define DROIDAUTOREPAIRMODULEDATACOMPONENT_H_
+#pragma once
 
 #include "BaseDroidModuleComponent.h"
 
@@ -47,6 +46,5 @@ public:
 } // objects
 } // zone
 } // server
-using namespace server::zone::objects::tangible::components::droid;
 
-#endif /* DROIDAUTOREPAIRMODULEDATACOMPONENT_H_ */
+using namespace server::zone::objects::tangible::components::droid;

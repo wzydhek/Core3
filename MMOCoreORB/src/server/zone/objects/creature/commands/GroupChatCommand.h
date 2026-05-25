@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GROUPCHATCOMMAND_H_
-#define GROUPCHATCOMMAND_H_
+#pragma once
 
 #include "server/chat/ChatManager.h"
 
@@ -30,6 +29,3 @@ public:
 	}
 
 };
-
-#endif //GROUPCHATCOMMAND_H_
-

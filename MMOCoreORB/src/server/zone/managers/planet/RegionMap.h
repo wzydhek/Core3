@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef REGIONMAP_H_
-#define REGIONMAP_H_
+#pragma once
 
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/objects/region/Region.h"
@@ -140,6 +139,3 @@ public:
 		return regions.size();
 	}
 };
-
-
-#endif /* REGIONMAP_H_ */

@@ -5,8 +5,7 @@
  *      Author: kyle
  */
 
-#ifndef CREATUREHABITATTEMPLATE_H_
-#define CREATUREHABITATTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif /* CREATUREHABITATTEMPLATE_H_ */

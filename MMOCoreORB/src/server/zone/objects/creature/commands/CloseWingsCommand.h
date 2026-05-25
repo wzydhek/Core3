@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CLOSEWINGS_H_
-#define CLOSEWINGS_H_
+#pragma once
 
 #include "QueueCommand.h"
 
@@ -47,5 +46,3 @@ public:
 	}
 
 };
-
-#endif //CLOSEWINGS_H_

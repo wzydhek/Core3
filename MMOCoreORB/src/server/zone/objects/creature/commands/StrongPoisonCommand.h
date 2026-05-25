@@ -5,8 +5,7 @@
  *      Author: da
  */
 
-#ifndef STRONGPOISONCOMMAND_H_
-#define STRONGPOISONCOMMAND_H_
+#pragma once
 
 #include "CombatQueueCommand.h"
 
@@ -31,5 +30,3 @@ public:
 	}
 
 };
-
-#endif /* STRONGPOISONCOMMAND_H_ */

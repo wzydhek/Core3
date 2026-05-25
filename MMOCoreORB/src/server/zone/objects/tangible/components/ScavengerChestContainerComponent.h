@@ -1,5 +1,5 @@
-#ifndef SCAVENGERCHESTCONTAINERCOMPONENT_H_
-#define SCAVENGERCHESTCONTAINERCOMPONENT_H_
+#pragma once
+
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
 class ScavengerChestContainerComponent: public ContainerComponent {
@@ -8,5 +8,3 @@ public:
 	int notifyObjectRemoved(SceneObject* container, SceneObject*, SceneObject* destination) const;
 	int canAddObject(SceneObject* sceneObject, SceneObject* object, int containmentType, String& errorDescription) const;
 };
-
-#endif /* SCAVENGERCHESTCONTAINERCOMPONENT_H_ */

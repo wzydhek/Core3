@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions. */
 
-#ifndef CREATESPAWNINGELEMENTCOMMAND_H_
-#define CREATESPAWNINGELEMENTCOMMAND_H_
+#pragma once
 
 #include "templates/manager/TemplateManager.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -190,5 +189,3 @@ public:
 	}
 
 };
-
-#endif //CREATESPAWNINGELEMENTCOMMAND_H_

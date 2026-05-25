@@ -5,9 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORHEIGHTTERRACE_H_
-#define AFFECTORHEIGHTTERRACE_H_
-
+#pragma once
 
 #include "../ProceduralRule.h"
 
@@ -77,5 +75,3 @@ public:
 		return informationHeader.isEnabled();
 	}
 };
-
-#endif /* AFFECTORHEIGHTTERRACE_H_ */

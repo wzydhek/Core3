@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LOOTLOTTERYTIMEOUTTASKTASK_H_
-#define LOOTLOTTERYTIMEOUTTASKTASK_H_
+#pragma once
 
 #include "server/zone/objects/player/sessions/LootLotterySession.h"
 
@@ -36,5 +35,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::group::tasks;
-
-#endif /* LOOTLOTTERYTIMEOUTTASK_H_ */

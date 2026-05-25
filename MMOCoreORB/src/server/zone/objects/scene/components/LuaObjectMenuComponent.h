@@ -5,8 +5,7 @@
  *      Author: Elvaron
  */
 
-#ifndef LUAOBJECTMENUCOMPONENT_H_
-#define LUAOBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "ObjectMenuComponent.h"
 
@@ -36,7 +35,6 @@ using namespace server::zone::objects::scene;
 using namespace server::zone::objects::creature;
 using namespace server::zone::packets::object;
 
-
 class LuaObjectMenuComponent : public ObjectMenuComponent {
 	String luaClassName;
 
@@ -63,5 +61,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-#endif /* LUAOBJECTMENUCOMPONENT_H_ */

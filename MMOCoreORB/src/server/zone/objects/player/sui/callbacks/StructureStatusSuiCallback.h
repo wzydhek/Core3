@@ -5,13 +5,11 @@
  *      Author: crush
  */
 
-#ifndef STRUCTURESTATUSSUICALLBACK_H_
-#define STRUCTURESTATUSSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/structure/StructureObject.h"
 #include "server/zone/managers/gcw/GCWManager.h"
-
 
 class StructureStatusSuiCallback : public SuiCallback {
 public:
@@ -51,5 +49,3 @@ public:
 		StructureManager::instance()->reportStructureStatus(creature, structure, obj);
 	}
 };
-
-#endif /* STRUCTURESTATUSSUICALLBACK_H_ */

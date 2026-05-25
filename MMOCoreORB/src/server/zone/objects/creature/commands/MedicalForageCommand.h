@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MEDICALFORAGECOMMAND_H_
-#define MEDICALFORAGECOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/minigames/ForageManager.h"
 
@@ -37,5 +36,3 @@ public:
 	}
 
 };
-
-#endif //MEDICALFORAGECOMMAND_H_

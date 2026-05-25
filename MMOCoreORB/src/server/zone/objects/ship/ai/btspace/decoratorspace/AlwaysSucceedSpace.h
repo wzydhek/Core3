@@ -1,8 +1,6 @@
-#ifndef ALWAYSSUCCEEDSPACE_H_
-#define ALWAYSSUCCEEDSPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/btspace/decoratorspace/DecoratorSpace.h"
-
 #include <cassert>
 
 namespace server {
@@ -43,5 +41,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // ALWAYSSUCCEEDSPACE_H_

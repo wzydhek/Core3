@@ -2,11 +2,9 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SCENEOBJECTCLOSEMESSAGE_H_
-#define SCENEOBJECTCLOSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
 
 class SceneObjectCloseMessage : public BaseMessage {
@@ -33,5 +31,3 @@ public:
 	}
 
 };
-
-#endif /*SCENEOBJECTCLOSEMESSAGE_H_*/

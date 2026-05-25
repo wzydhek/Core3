@@ -2,8 +2,7 @@
  * InsertAstromechIntoShipTask.h
  */
 
-#ifndef INSERTASTROMECHINTOSHIPTASK_H_
-#define INSERTASTROMECHINTOSHIPTASK_H_
+#pragma once
 
 #include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/objects/intangible/tasks/PetControlDeviceStoreTask.h"
@@ -70,5 +69,3 @@ public:
 		droidObject->switchZone(shipZone->getZoneName(), 0,0,0, ship->getObjectID(), false, PlayerArrangement::RIDER);
 	}
 };
-
-#endif /* INSERTASTROMECHINTOSHIPTASK_H_ */

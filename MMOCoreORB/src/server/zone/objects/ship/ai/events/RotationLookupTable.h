@@ -1,5 +1,4 @@
-#ifndef ROTATIONLOOKUPTABLE_H_
-#define ROTATIONLOOKUPTABLE_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/packets/ship/PackedQuaternion.h"
@@ -36,5 +35,3 @@ public:
 
 	Quaternion getDirection(float yaw, float pitch, float roll);
 };
-
-#endif // ROTATIONLOOKUPTABLE_H_

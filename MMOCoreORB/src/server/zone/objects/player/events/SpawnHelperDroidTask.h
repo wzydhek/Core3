@@ -10,8 +10,7 @@
  *
  */
 
-#ifndef SPAWNHELPERDROIDTASK_H_
-#define SPAWNHELPERDROIDTASK_H_
+#pragma once
 
 #include "server/zone/ZoneServer.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -134,5 +133,3 @@ public:
 		controlDevice->callObject(playerCreo);
 	}
 };
-
-#endif /* SPAWNHELPERDROIDTASK_H_ */

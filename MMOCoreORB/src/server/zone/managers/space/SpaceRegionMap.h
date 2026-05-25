@@ -5,8 +5,7 @@
  *	Author: victor
  */
 
-#ifndef SPACEREGIONMAP_H_
-#define SPACEREGIONMAP_H_
+#pragma once
 
 #include "server/zone/objects/region/space/SpaceRegion.h"
 
@@ -79,5 +78,3 @@ public:
 		return regions.size();
 	}
 };
-
-#endif /* SPACEREGIONMAP_H_ */

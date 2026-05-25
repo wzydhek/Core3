@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CSDISCONNECTPLAYERCOMMAND_H_
-#define CSDISCONNECTPLAYERCOMMAND_H_
+#pragma once
 
 class CsDisconnectPlayerCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //CSDISCONNECTPLAYERCOMMAND_H_

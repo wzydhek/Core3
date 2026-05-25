@@ -5,8 +5,7 @@
  *      Author: theanswer
  */
 
-#ifndef LOGINCLIENT_H_
-#define LOGINCLIENT_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -93,5 +92,3 @@ public:
 		return packetCount.get();
 	}
 };
-
-#endif /* LOGINCLIENT_H_ */

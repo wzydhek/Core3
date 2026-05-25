@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef FORCEHEALQUEUECOMMAND_H_
-#define FORCEHEALQUEUECOMMAND_H_
+#pragma once
 
 #include "JediQueueCommand.h"
 
@@ -174,5 +173,3 @@ public:
 	}
 
 };
-
-#endif /* FORCEHEALQUEUECOMMAND_H_ */

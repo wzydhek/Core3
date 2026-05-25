@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DELEGATEFACTIONPOINTSCOMMAND_H_
-#define DELEGATEFACTIONPOINTSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/managers/faction/FactionManager.h"
@@ -182,5 +181,3 @@ public:
 	}
 
 };
-
-#endif //DELEGATEFACTIONPOINTSCOMMAND_H_

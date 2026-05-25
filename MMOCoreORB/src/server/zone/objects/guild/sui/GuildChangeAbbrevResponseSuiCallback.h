@@ -1,6 +1,5 @@
 
-#ifndef GUILDCHANGEABBREVRESPONSESUICALLBACK_H_
-#define GUILDCHANGEABBREVRESPONSESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
@@ -62,6 +61,3 @@ public:
 		player->sendMessage(suiBox->generateMessage());
 	}
 };
-
-
-#endif /* GUILDCHANGEABBREVRESPONSESUICALLBACK_H_ */

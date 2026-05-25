@@ -2,13 +2,11 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DECLINECOMMAND_H_
-#define DECLINECOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/chat/StringIdChatParameter.h"
-
 
 class DeclineCommand : public QueueCommand {
 public:
@@ -48,6 +46,3 @@ public:
 	}
 
 };
-
-#endif //DECLINECOMMAND_H_
-

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef TURRETFIRETASK_H_
-#define TURRETFIRETASK_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "server/zone/objects/installation/TurretObject.h"
@@ -193,5 +192,3 @@ public:
 		weakTerminal = terminal;
 	}
 };
-
-#endif /* TURRETFIRETASK_H_ */

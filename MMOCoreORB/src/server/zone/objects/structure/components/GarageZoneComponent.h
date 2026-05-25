@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GARAGEZONECOMPONENT_H_
-#define GARAGEZONECOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/structure/components/StructureZoneComponent.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -14,5 +13,3 @@ public:
 	void notifyPositionUpdate(SceneObject* sceneObject, TreeEntry* entry) const;
 	void notifyDissapear(SceneObject* sceneObject, TreeEntry* entry) const;
 };
-
-#endif /* GARAGEZONECOMPONENT_H_ */

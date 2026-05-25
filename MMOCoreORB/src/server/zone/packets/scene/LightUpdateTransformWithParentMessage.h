@@ -2,13 +2,10 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LIGHTUPDATETRANSFORMWITHPARENTMESSAGE_H_
-#define LIGHTUPDATETRANSFORMWITHPARENTMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
-
 #include "server/zone/objects/scene/SceneObject.h"
-
 #include "LightUpdateTransformMessage.h"
 
 class LightUpdateTransformWithParentMessage : public UNRELIABLE_LIGHT_BASE_CLASS {
@@ -72,6 +69,3 @@ public:
 	}
 
 };
-
-
-#endif /*LIGHTUPDATETRANSFORMWITHPARENTMESSAGE_H_*/

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef UPDATECELLPERMISSIONSMESSAGE_H_
-#define UPDATECELLPERMISSIONSMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -17,5 +16,3 @@ public:
         insertLong(coId);
 	}
 };
-
-#endif /*UPDATECELLPERMISSIONSMESSAGE_H_*/

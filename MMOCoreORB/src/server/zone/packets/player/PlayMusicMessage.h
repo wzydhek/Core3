@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PLAYMUSICMESSAGE_H_
-#define PLAYMUSICMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -23,5 +22,3 @@ public:
 	}
 	
 };
-
-#endif /*PLAYMUSICMESSAGE_H_*/

@@ -5,8 +5,7 @@
  *  Author: kyle
  */
 
-#ifndef TRAPTEMPLATE_H_
-#define TRAPTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
@@ -144,5 +143,3 @@ public:
 		return areaOfEffect;
 	}
 };
-
-#endif /* TRAPTEMPLATE_H_ */

@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef DEBUGTRANSFORMMESSAGE_H_
-#define DEBUGTRANSFORMMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -27,4 +26,3 @@ public:
    }
 
 };
-#endif /* DEBUGTRANSFORMMESSAGE_H_ */

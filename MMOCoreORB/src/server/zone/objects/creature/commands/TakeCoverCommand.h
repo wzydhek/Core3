@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TAKECOVERCOMMAND_H_
-#define TAKECOVERCOMMAND_H_
+#pragma once
 
 #include "QueueCommand.h"
 
@@ -59,5 +58,3 @@ public:
 	}
 
 };
-
-#endif //TAKECOVERCOMMAND_H_

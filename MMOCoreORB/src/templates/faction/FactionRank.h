@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef FACTIONRANK_H_
-#define FACTIONRANK_H_
+#pragma once
 
 #include "templates/datatables/DataTableRow.h"
 
@@ -83,5 +82,3 @@ public:
 	}
 
 };
-
-#endif /* FACTIONRANK_H_ */

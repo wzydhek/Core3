@@ -5,8 +5,7 @@
  *      Author: Klivian
  */
 
-#ifndef CONFIRMDIVORCESUICALLBACK_H_
-#define CONFIRMDIVORCESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 
@@ -31,5 +30,3 @@ public:
 
 	}
 };
-
-#endif /* CONFIRMDIVORCESUICALLBACK_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PENDINGTASKSMAP_H_
-#define PENDINGTASKSMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -72,5 +71,3 @@ public:
 
 	Reference<Task*> popNextOrderedTask();
 };
-
-#endif /* PENDINGTASKSMAP_H_ */

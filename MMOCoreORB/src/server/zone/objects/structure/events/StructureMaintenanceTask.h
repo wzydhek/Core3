@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef STRUCTUREMAINTENANCETASK_H_
-#define STRUCTUREMAINTENANCETASK_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -66,5 +65,3 @@ private:
 }
 
 using namespace server::zone::objects::structure::events;
-
-#endif /* STRUCTUREMAINTENANCETASK_H_ */

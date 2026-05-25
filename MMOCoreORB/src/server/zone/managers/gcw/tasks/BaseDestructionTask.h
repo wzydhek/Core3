@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef BASEDESTRUCTIONTASK_H_
-#define BASEDESTRUCTIONTASK_H_
+#pragma once
 
 #include "server/zone/managers/gcw/GCWManager.h"
 
@@ -37,5 +36,3 @@ public:
 		return countDown;
 	}
 };
-
-#endif /* BASEDESTRUCTIONTASK_H_ */

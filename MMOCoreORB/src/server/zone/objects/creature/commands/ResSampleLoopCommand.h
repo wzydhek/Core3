@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef RESSAMPLELOOPCOMMAND_H_
-#define RESSAMPLELOOPCOMMAND_H_
+#pragma once
 
 class ResSampleLoopCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //RESSAMPLELOOPCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef BERSERK1COMMAND_H_
-#define BERSERK1COMMAND_H_
+#pragma once
 
 #include "templates/params/creature/CreatureAttribute.h"
 
@@ -68,5 +67,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //BERSERK1COMMAND_H_

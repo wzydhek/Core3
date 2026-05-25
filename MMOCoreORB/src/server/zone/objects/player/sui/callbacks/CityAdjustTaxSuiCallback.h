@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef CITYADJUSTTAXSUICALLBACK_H_
-#define CITYADJUSTTAXSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -59,5 +58,3 @@ public:
 		cityManager->promptSetTax(city, player, taxSelected, listbox->getUsingObject().get());
 	}
 };
-
-#endif /* CITYADJUSTTAXSUICALLBACK_H_ */

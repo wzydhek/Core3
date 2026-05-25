@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDJEDIMANAGERTEMPLATE_H_
-#define SHAREDJEDIMANAGERTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedUniverseObjectTemplate.h"
 
@@ -68,5 +67,3 @@ public:
 	}
 
 };
-
-#endif /* SHAREDJEDIMANAGERTEMPLATE_H_ */

@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef CONTAINERCOMPONENT_H_
-#define CONTAINERCOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "SceneObjectComponent.h"
 
 namespace server {
@@ -86,5 +84,3 @@ public:
 	 */
 	virtual int notifyObjectRemoved(SceneObject* sceneObject, SceneObject* object, SceneObject* destination) const;
 };
-
-#endif /* CONTAINERCOMPONENT_H_ */

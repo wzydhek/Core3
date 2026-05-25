@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHATONRECEIVEROOMINVITATION_H_
-#define CHATONRECEIVEROOMINVITATION_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -20,5 +19,3 @@ public:
 	}
 
 };
-
-#endif /*CHATONRECEIVEROOMINVITATION_H_*/

@@ -1,5 +1,4 @@
-#ifndef FOLLOWACTIONSSPACE_H_
-#define FOLLOWACTIONSSPACE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 #include "server/zone/objects/ship/ai/btspace/BehaviorSpace.h"
@@ -10,7 +9,6 @@
 #include "server/zone/managers/spacecollision/SpaceCollisionManager.h"
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
 #include "server/zone/objects/ship/ShipComponentFlag.h"
-
 
 namespace server {
 namespace zone {
@@ -449,5 +447,3 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
-
-#endif // FOLLOWACTIONSSPACE_H_

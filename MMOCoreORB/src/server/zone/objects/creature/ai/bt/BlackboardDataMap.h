@@ -1,5 +1,4 @@
-#ifndef BLACKBOARDDATAMAP_H_
-#define BLACKBOARDDATAMAP_H_
+#pragma once
 
 #include "system/util/VectorMap.h"
 #include "BlackboardData.h"
@@ -40,5 +39,3 @@ public:
 }
 }
 }
-
-#endif // BLACKBOARDDATAMAP_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef APPLYDISEASECOMMAND_H_
-#define APPLYDISEASECOMMAND_H_
+#pragma once
 
 #include "DotPackCommand.h"
 
@@ -15,5 +14,3 @@ public:
 	}
 
 };
-
-#endif //APPLYDISEASECOMMAND_H_

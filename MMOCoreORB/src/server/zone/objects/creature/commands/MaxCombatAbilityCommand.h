@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MAXCOMBATABILITYCOMMAND_H_
-#define MAXCOMBATABILITYCOMMAND_H_
+#pragma once
 
 class MaxCombatAbilityCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //MAXCOMBATABILITYCOMMAND_H_

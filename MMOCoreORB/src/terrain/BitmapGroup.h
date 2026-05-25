@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef BITMAPGROUP_H_
-#define BITMAPGROUP_H_
+#pragma once
 
 #include "BitmapFamily.h"
 #include "TargaBitmap.h"
@@ -57,6 +56,3 @@ public:
 	}
 
 };
-
-
-#endif /* BITMAPGROUP_H_ */

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef BASICRANGEDINTCUSTOMIZATIONVARIABLE_H_
-#define BASICRANGEDINTCUSTOMIZATIONVARIABLE_H_
+#pragma once
 
 #include "templates/params/RangedIntCustomizationVariable.h"
 
@@ -34,6 +33,3 @@ public:
 		return defaultValue;
 	}
 };
-
-
-#endif /* BASICRANGEDINTCUSTOMIZATIONVARIABLE_H_ */

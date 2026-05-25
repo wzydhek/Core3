@@ -5,8 +5,7 @@
  *      Author: chris.rush
  */
 
-#ifndef CITYMAYORALVOTESUICALLBACK_H_
-#define CITYMAYORALVOTESUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
@@ -63,5 +62,3 @@ public:
 		cityManager->castMayoralVote(city, player, oid);
 	}
 };
-
-#endif /* CITYMAYORALVOTESUICALLBACK_H_ */

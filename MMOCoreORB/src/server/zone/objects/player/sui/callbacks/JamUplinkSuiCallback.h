@@ -5,8 +5,7 @@
  *      Author: root
  */
 
-#ifndef JAMUPLINKSUICALLBACK_H_
-#define JAMUPLINKSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/scene/SceneObjectType.h"
@@ -73,9 +72,3 @@ public:
 		gcwMan->verifyUplinkBand(player, building, index, uplinkTerm);
 	}
 };
-
-
-
-
-
-#endif /* JAMUPLINKSUICALLBACK_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MISSIONOBJECTMESSAGE3_H_
-#define MISSIONOBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/mission/MissionObject.h"
@@ -15,7 +14,6 @@
  * Variables past #4 must be set to 0, and filled in later with the delta.
  * Talk to Ramsey for more details.
  */
-
 
 class MissionObjectMessage3 : public BaseLineMessage {
 
@@ -110,5 +108,3 @@ public:
 	}
 
 };
-
-#endif /*MISSIONOBJECTMESSAGE3_H_*/

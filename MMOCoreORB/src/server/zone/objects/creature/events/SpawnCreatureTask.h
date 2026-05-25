@@ -5,8 +5,7 @@
  *      Author: Miztah
  */
 
-#ifndef SPAWNCREATURETASK_H_
-#define SPAWNCREATURETASK_H_
+#pragma once
 
 #include "server/zone/Zone.h"
 #include "server/ServerCore.h"
@@ -56,6 +55,3 @@ public:
 		}
 	}
 };
-
-
-#endif /* SPAWNCREATURETASK_H_ */

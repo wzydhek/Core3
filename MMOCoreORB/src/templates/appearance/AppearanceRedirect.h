@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef APPEARANCEREDIRECT_H_
-#define APPEARANCEREDIRECT_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 
@@ -35,6 +34,3 @@ public:
 		return redirectFile;
 	}
 };
-
-
-#endif /* APPEARANCEREDIRECT_H_ */

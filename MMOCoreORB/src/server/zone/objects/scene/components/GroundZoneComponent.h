@@ -5,11 +5,9 @@
  *      Author: victor
  */
 
-#ifndef ZONECOMPONENT_H_
-#define ZONECOMPONENT_H_
+#pragma once
 
 #include "engine/engine.h"
-
 #include "SceneObjectComponent.h"
 
 namespace server {
@@ -110,6 +108,3 @@ public:
 										SortedVector<ManagedReference<TreeEntry *> > &closeSceneObjects,
 										SceneObject *sceneObject, SceneObject *vectorOwner);
 };
-
-
-#endif /* ZONECOMPONENT_H_ */

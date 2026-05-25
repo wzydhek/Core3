@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHANNELFORCEBUFFTICKEVENT_H_
-#define CHANNELFORCEBUFFTICKEVENT_H_
+#pragma once
 
 #include "server/zone/objects/creature/buffs/ChannelForceBuff.h"
 
@@ -42,5 +41,3 @@ public:
 }
 
 using namespace server::zone::objects::creature::buffs;
-
-#endif /* */

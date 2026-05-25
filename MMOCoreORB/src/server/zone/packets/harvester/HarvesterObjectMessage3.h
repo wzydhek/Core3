@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HARVESTEROBJECTMESSAGE3_H_
-#define HARVESTEROBJECTMESSAGE3_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/installation/harvester/HarvesterObject.h"
@@ -58,5 +57,3 @@ This could be short, int, int. I dont know.
 
 	}
 };
-
-#endif /*HARVESTEROBJECTMESSAGE3_H_*/

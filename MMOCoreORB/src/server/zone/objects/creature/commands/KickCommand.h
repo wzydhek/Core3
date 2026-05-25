@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef KICKCOMMAND_H_
-#define KICKCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -78,5 +77,3 @@ public:
 	}
 
 };
-
-#endif //KICKCOMMAND_H_

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef PROPOSEUNITYEXPIREDTASK_H_
-#define PROPOSEUNITYEXPIREDTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/sessions/ProposeUnitySession.h"
@@ -52,5 +51,3 @@ public:
 } // server
 
 using namespace server::zone::objects::creature::events;
-
-#endif /*PROPOSEUNITYEXPIREDTASK_H_*/

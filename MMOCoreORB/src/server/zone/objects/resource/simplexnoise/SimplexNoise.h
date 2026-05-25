@@ -33,8 +33,7 @@
  * on some platforms. A templatized version of SimplexNoise could be useful.
  */
 
-#ifndef SIMPLEXNOISE_H_
-#define SIMPLEXNOISE_H_
+#pragma once
 
 class SimplexNoise {
 
@@ -65,5 +64,3 @@ class SimplexNoise {
     static float  grad( int hash, float x, float y, float z, float t );
 
 };
-
-#endif /*SIMPLEXNOISE_H_*/

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef OBJECTMENUCOMPONENT_H_
-#define OBJECTMENUCOMPONENT_H_
+#pragma once
 
 #include "SceneObjectComponent.h"
 
@@ -36,7 +35,6 @@ using namespace server::zone::objects::scene;
 using namespace server::zone::objects::creature;
 using namespace server::zone::packets::object;
 
-
 class ObjectMenuComponent : public SceneObjectComponent, public Logger {
 public:
 
@@ -59,5 +57,3 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
-
-#endif /* OBJECTMENUCOMPONENT_H_ */

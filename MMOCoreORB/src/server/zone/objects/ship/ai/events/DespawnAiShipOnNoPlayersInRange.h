@@ -2,8 +2,7 @@
  * DespawnAiShipOnNoPlayersInRange.h
  */
 
-#ifndef DESPAWNAISHIPONNOPLAYERSINRANGE_H_
-#define DESPAWNAISHIPONNOPLAYERSINRANGE_H_
+#pragma once
 
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 
@@ -65,5 +64,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::ship::ai::events;
-
-#endif /* DESPAWNAISHIPONNOPLAYERSINRANGE_H_ */

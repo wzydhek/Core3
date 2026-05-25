@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef ISFLATTENEDTHEATERMESSAGE_H_
-#define ISFLATTENEDTHEATERMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 
@@ -21,4 +20,3 @@ public:
    }
 
 };
-#endif /* ISFLATTENEDTHEATERMESSAGE_H_ */

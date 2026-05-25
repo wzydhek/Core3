@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef SKILLCOMMAND_H_
-#define SKILLCOMMAND_H_
+#pragma once
 
 class SkillCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //SKILLCOMMAND_H_

@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDBUILDINGOBJECTTEMPLATE_H_
-#define SHAREDBUILDINGOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/SharedStructureObjectTemplate.h"
 #include "templates/ChildCreatureObject.h"
@@ -118,5 +117,3 @@ public:
 		return &securitySpawns.get(idx);
 	}
 };
-
-#endif /* SHAREDBUILDINGOBJECTTEMPLATE_H_ */

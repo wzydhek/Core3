@@ -1,6 +1,5 @@
 
-#ifndef STORESPAWNEDCHILDRENTASK_H_
-#define STORESPAWNEDCHILDRENTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/intangible/ControlDevice.h"
@@ -80,5 +79,3 @@ public:
 		}
 	}
 };
-
-#endif /* STORESPAWNEDCHILDRENTASK_H_ */

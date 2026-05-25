@@ -2,9 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ITEMMOVEBACKCOMMAND_H_
-#define ITEMMOVEBACKCOMMAND_H_
-
+#pragma once
 
 class ItemmovebackCommand : public QueueCommand {
 public:
@@ -28,5 +26,3 @@ public:
 	}
 
 };
-
-#endif //ITEMMOVEBACKCOMMAND_H_

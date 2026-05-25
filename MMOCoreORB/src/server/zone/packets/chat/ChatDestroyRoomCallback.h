@@ -5,9 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef CHATDESTROYROOMCALLBACK_H_
-#define CHATDESTROYROOMCALLBACK_H_
-
+#pragma once
 
 #include "server/zone/packets/MessageCallback.h"
 #include "server/chat/ChatManager.h"
@@ -39,6 +37,3 @@ public:
 	}
 
 };
-
-
-#endif /* CHATDESTROYROOMCALLBACK_H_ */

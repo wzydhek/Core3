@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PROCEDURALRULE_H_
-#define PROCEDURALRULE_H_
+#pragma once
 
 #include "../TemplateVariable.h"
 #include "InformationHeader.h"
@@ -26,5 +25,3 @@ public:
 	}
 
 };
-
-#endif /* PROCEDURALRULE_H_ */

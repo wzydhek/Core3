@@ -5,15 +5,13 @@
  *      Author: victor
  */
 
-#ifndef TEMPLATEVARIABLE_H_
-#define TEMPLATEVARIABLE_H_
+#pragma once
 
 #include "engine/util/iffstream/IffStream.h"
 
 template <int version> struct Version {
    enum { value = version };
 };
-
 
 template <int formType> struct FormType {
    enum { value =  formType};
@@ -50,6 +48,3 @@ public:
 
 	}
 };
-
-
-#endif /* TEMPLATEVARIABLE_H_ */

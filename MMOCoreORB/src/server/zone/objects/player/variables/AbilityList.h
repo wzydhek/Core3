@@ -5,12 +5,10 @@
  *      Author: victor
  */
 
-#ifndef ABILITYLIST_H_
-#define ABILITYLIST_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 
 class Ability;
@@ -59,4 +57,3 @@ class AbilityListMigrator : public DeltaVector<Ability*> {
 			return true;
 		}
 	};
-#endif /* ABILITYLIST_H_ */

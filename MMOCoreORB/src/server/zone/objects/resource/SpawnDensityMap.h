@@ -8,12 +8,10 @@
  * \date 5-03-10
  */
 
-#ifndef SPAWNDENSITYMAP_H_
-#define SPAWNDENSITYMAP_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "simplexnoise/SimplexNoise.h"
 
 /*
@@ -167,6 +165,3 @@ private:
 		addSerializableVariable("maxY", &maxY);
 	}
 };
-
-
-#endif /* SPAWNDENSITYMAP_H_ */

@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GUILDOBJECTMESSAGE6_H_
-#define GUILDOBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 
@@ -17,6 +16,3 @@ public:
 		setSize();
 	}
 };
-
-
-#endif /*GUILDOBJECTMESSAGE6_H_*/

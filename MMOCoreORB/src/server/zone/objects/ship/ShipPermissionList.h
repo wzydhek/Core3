@@ -2,12 +2,10 @@
  * ShipPermissionList.h
  */
 
-#ifndef SHIPPERMISSIONLIST_H_
-#define SHIPPERMISSIONLIST_H_
+#pragma once
 
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
-
 #include "server/zone/objects/creature/CreatureObject.h"
 
 class ShipPermissionList : public Object {
@@ -127,5 +125,3 @@ public:
 
 	void migrateLists(ZoneServer* zoneServer, uint64 ownerObjectID);
 };
-
-#endif /* SHIPPERMISSIONLIST_H_ */

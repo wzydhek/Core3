@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef JEDIMANAGER_H_
-#define JEDIMANAGER_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
@@ -153,5 +152,3 @@ public:
 }
 
 using namespace server::zone::managers::jedi;
-
-#endif /* JEDIMANAGER_H_ */

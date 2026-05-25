@@ -5,8 +5,7 @@
  *      Author: TragD
  */
 
-#ifndef RECRUITSKILLTRAINERCALLBACK_H_
-#define RECRUITSKILLTRAINERCALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/Zone.h"
@@ -192,5 +191,3 @@ public:
 		}
 	}
 };
-
-#endif /* RECRUITSKILLTRAINERCALLBACK_H_ */

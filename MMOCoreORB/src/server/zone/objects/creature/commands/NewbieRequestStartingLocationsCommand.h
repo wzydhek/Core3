@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NEWBIEREQUESTSTARTINGLOCATIONSCOMMAND_H_
-#define NEWBIEREQUESTSTARTINGLOCATIONSCOMMAND_H_
+#pragma once
 
 class NewbieRequestStartingLocationsCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //NEWBIEREQUESTSTARTINGLOCATIONSCOMMAND_H_

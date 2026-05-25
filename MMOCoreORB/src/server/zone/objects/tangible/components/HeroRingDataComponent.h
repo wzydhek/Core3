@@ -1,6 +1,5 @@
 
-#ifndef HERORINGDATACOMPONENT_H_
-#define HERORINGDATACOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
@@ -40,6 +39,3 @@ private:
 		addSerializableVariable("charges", &charges);
 	}
 };
-
-
-#endif /* HERORINGDATACOMPONENT_H_ */

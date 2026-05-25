@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDUNIVERSEOBJECTTEMPLATE_H_
-#define SHAREDUNIVERSEOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/SharedObjectTemplate.h"
 
@@ -70,6 +69,3 @@ public:
 	}
 
 };
-
-
-#endif /* SHAREDUNIVERSEOBJECTTEMPLATE_H_ */

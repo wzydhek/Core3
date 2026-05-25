@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef AFFECTORNONCOLLIDEFLORACONSTANT_H_
-#define AFFECTORNONCOLLIDEFLORACONSTANT_H_
+#pragma once
 
 #include "../ProceduralRule.h"
 
@@ -53,6 +52,3 @@ public:
 		iffStream->closeChunk('DATA');
 	}
 };
-
-
-#endif /* AFFECTORNONCOLLIDEFLORACONSTANT_H_ */

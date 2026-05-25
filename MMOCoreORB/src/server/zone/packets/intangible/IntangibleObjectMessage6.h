@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef INTANGIBLEOBJECTMESSAGE6_H_
-#define INTANGIBLEOBJECTMESSAGE6_H_
+#pragma once
 
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/intangible/IntangibleObject.h"
@@ -21,5 +20,3 @@ public:
 		setSize();
 	}
 };
-
-#endif /*INTANGIBLEOBJECTMESSAGE6_H_*/

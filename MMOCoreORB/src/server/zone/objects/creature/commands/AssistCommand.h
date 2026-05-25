@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef ASSISTCOMMAND_H_
-#define ASSISTCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -51,5 +50,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // ASSISTCOMMAND_H_

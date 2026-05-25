@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef CHARACTERSHEETRESPONSEMESSAGE_H_
-#define CHARACTERSHEETRESPONSEMESSAGE_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
@@ -73,5 +72,3 @@ public:
 	}
 
 };
-
-#endif /*CHARACTERSHEETRESPONSEMESSAGE_H_*/

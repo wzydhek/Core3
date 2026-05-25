@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef GRANTZONINGRIGHTSCOMMAND_H_
-#define GRANTZONINGRIGHTSCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 
@@ -69,5 +68,3 @@ public:
 	}
 
 };
-
-#endif //GRANTZONINGRIGHTSCOMMAND_H_

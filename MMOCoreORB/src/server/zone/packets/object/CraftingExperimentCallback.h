@@ -5,8 +5,7 @@
  *      Author: Kyle
  */
 
-#ifndef CRAFTINGEXPERIMENTCALLBACK_H_
-#define CRAFTINGEXPERIMENTCALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "ObjectControllerMessageCallback.h"
@@ -90,6 +89,3 @@ public:
 		session->experiment(numRowsAttempted, expString, clientCounter);
 	}
 };
-
-
-#endif /* CRAFTINGEXPERIMENTCALLBACK_H_ */

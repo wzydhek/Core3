@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef STARTCITYSPAWNERCOMMAND_H_
-#define STARTCITYSPAWNERCOMMAND_H_
+#pragma once
 
 class StartCitySpawnerCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //STARTCITYSPAWNERCOMMAND_H_

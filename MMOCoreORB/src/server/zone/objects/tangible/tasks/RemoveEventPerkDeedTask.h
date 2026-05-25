@@ -1,6 +1,5 @@
 
-#ifndef REMOVEEVENTPERKDEEDTASK_H_
-#define REMOVEEVENTPERKDEEDTASK_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -72,5 +71,3 @@ public:
 } // namespace server
 
 using namespace server::zone::objects::tangible::tasks;
-
-#endif /* REMOVEEVENTPERKDEEDTASK_H_ */

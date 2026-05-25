@@ -5,8 +5,7 @@
  *      Author: TheAnswer
  */
 
-#ifndef SPACEZONECONTAINERCOMPONENT_H_
-#define SPACEZONECONTAINERCOMPONENT_H_
+#pragma once
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 #include "server/zone/SpaceZone.h"
@@ -39,5 +38,3 @@ public:
 
 	virtual bool removeObject(SceneObject* sceneObject, SceneObject* object, SceneObject* destination, bool notifyClient, bool nullifyParent) const;
 };
-
-#endif /* SpaceZoneContainerCOMPONENT_H_ */

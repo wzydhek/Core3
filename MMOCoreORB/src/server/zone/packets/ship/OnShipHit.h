@@ -2,8 +2,8 @@
 // Created by vagrant on 8/23/17.
 //
 
-#ifndef ONSHIPHIT_H
-#define ONSHIPHIT_H
+#pragma once
+
 #include "server/zone/packets/object/ObjectControllerMessage.h"
 #include "server/zone/objects/ship/ShipObject.h"
 
@@ -20,4 +20,3 @@ public:
 		writeFloat(oldPercent);
 	}
 };
-#endif //ONSHIPHIT_H

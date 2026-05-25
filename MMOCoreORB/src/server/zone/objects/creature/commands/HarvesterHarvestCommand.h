@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef HARVESTERHARVESTCOMMAND_H_
-#define HARVESTERHARVESTCOMMAND_H_
+#pragma once
 
 class HarvesterHarvestCommand : public QueueCommand {
 public:
@@ -25,5 +24,3 @@ public:
 	}
 
 };
-
-#endif //HARVESTERHARVESTCOMMAND_H_

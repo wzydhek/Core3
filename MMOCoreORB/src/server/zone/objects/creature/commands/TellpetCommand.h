@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TELLPETCOMMAND_H_
-#define TELLPETCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/objects/player/PlayerObject.h"
@@ -47,5 +46,3 @@ public:
 	}
 
 };
-
-#endif //TELLPETCOMMAND_H_

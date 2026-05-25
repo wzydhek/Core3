@@ -5,11 +5,9 @@
  *      Author: crush
  */
 
-#ifndef RESOURCEDEEDSUICALLBACK_H_
-#define RESOURCEDEEDSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
-
 
 class ResourceDeedSuiCallback : public SuiCallback {
 	String nodeName;
@@ -106,5 +104,3 @@ public:
 		creature->sendMessage(listBox->generateMessage());
 	}
 };
-
-#endif /* RESOURCEDEEDSUICALLBACK_H_ */

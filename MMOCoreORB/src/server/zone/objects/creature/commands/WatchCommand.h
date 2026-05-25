@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef WATCHCOMMAND_H_
-#define WATCHCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/player/PlayerManager.h"
 
@@ -32,5 +31,3 @@ public:
 	}
 
 };
-
-#endif //WATCHCOMMAND_H_

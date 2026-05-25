@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef SHAREDINSTALLATIONOBJECTTEMPLATE_H_
-#define SHAREDINSTALLATIONOBJECTTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/SharedStructureObjectTemplate.h"
 
@@ -174,6 +173,3 @@ public:
 		return factionString;
 	}
 };
-
-
-#endif /* SHAREDINSTALLATIONOBJECTTEMPLATE_H_ */

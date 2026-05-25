@@ -5,13 +5,11 @@
  *      Author: Kyle
  */
 
-#ifndef AREATRACKSUICALLBACK_H_
-#define AREATRACKSUICALLBACK_H_
+#pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/player/events/AreaTrackTask.h"
 #include "server/zone/packets/object/Emote.h"
-
 
 class AreaTrackSuiCallback : public SuiCallback {
 	String nodeName;
@@ -52,5 +50,3 @@ public:
 		}
 	}
 };
-
-#endif /* AREATRACKSUICALLBACK_H_ */

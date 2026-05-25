@@ -5,8 +5,7 @@
  *  Author: Hakry
  */
 
-#ifndef SPACESPAWN_H_
-#define SPACESPAWN_H_
+#pragma once
 
 #include "engine/engine.h"
 
@@ -161,5 +160,3 @@ class SpaceSpawn : public Object {
 } // server
 
 using namespace server::zone::managers::ship;
-
-#endif /* SPACESPAWN_H_ */

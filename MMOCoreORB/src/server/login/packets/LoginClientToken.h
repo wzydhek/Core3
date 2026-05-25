@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef LOGINCLIENTTOKEN_H_
-#define LOGINCLIENTTOKEN_H_
+#pragma once
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/login/account/Account.h"
@@ -62,4 +61,3 @@ public:
 } // namespace server
 
 using namespace server::login::packets;
-#endif /*LOGINCLIENTTOKEN_H_*/

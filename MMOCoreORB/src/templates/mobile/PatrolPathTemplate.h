@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef PATROLPATHTEMPLATE_H_
-#define PATROLPATHTEMPLATE_H_
+#pragma once
 
 #include "templates/mobile/PatrolPathNode.h"
 
@@ -46,5 +45,3 @@ public:
 		}
 	}
 };
-
-#endif /* PATROLPATHTEMPLATE_H_ */

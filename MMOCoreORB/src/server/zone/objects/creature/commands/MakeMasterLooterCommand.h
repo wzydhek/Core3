@@ -5,8 +5,7 @@
  *      Author: Anakis
  */
 
-#ifndef MAKEMASTERLOOTERCOMMAND_H_
-#define MAKEMASTERLOOTERCOMMAND_H_
+#pragma once
 
 class MakeMasterLooterCommand : public QueueCommand {
 public:
@@ -55,8 +54,3 @@ public:
 	}
 
 };
-
-
-
-
-#endif /* MAKEMASTERLOOTERCOMMAND_H_ */

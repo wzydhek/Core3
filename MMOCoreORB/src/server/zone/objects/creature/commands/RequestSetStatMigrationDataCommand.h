@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef REQUESTSETSTATMIGRATIONDATACOMMAND_H_
-#define REQUESTSETSTATMIGRATIONDATACOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/sessions/MigrateStatsSession.h"
@@ -97,5 +96,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif //REQUESTSETSTATMIGRATIONDATACOMMAND_H_

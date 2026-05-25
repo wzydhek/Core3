@@ -5,8 +5,7 @@
  *      Author: Halyn
  */
 
-#ifndef NAVICOMPUTERDEEDTEMPLATE_H_
-#define NAVICOMPUTERDEEDTEMPLATE_H_
+#pragma once
 
 #include "templates/tangible/DeedTemplate.h"
 
@@ -37,6 +36,3 @@ public:
 		return datapadObjectTemplate;
 	}
 };
-
-
-#endif /* NAVICOMPUTERDEEDTEMPLATE_H_ */

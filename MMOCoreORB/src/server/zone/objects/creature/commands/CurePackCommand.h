@@ -5,8 +5,7 @@
  *      Author: victor
  */
 
-#ifndef CUREPACKCOMMAND_H_
-#define CUREPACKCOMMAND_H_
+#pragma once
 
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/tangible/pharmaceutical/CurePack.h"
@@ -431,5 +430,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif /* CURESTATECOMMAND_H_ */

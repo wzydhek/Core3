@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef JOINCOMMAND_H_
-#define JOINCOMMAND_H_
+#pragma once
 
 #include "server/zone/managers/group/GroupManager.h"
 
@@ -39,5 +38,3 @@ public:
 		return SUCCESS;
 	}
 };
-
-#endif // JOINCOMMAND_H_

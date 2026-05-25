@@ -5,8 +5,7 @@
  *      Author: crush
  */
 
-#ifndef SLOTDESCRIPTOR_H_
-#define SLOTDESCRIPTOR_H_
+#pragma once
 
 #include "templates/IffTemplate.h"
 
@@ -50,5 +49,3 @@ public:
 		return &slots;
 	}
 };
-
-#endif /* SLOTDESCRIPTOR_H_ */
