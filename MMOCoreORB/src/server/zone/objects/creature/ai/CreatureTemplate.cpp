@@ -66,7 +66,7 @@ CreatureTemplate::CreatureTemplate() {
 
 	primaryWeapon = "";
 	secondaryWeapon = "";
-	thrownWeapon = "",
+	thrownWeapon = "";
 
 	templates.removeAll();
 

@@ -9,7 +9,7 @@
 #include "server/zone/managers/creature/CreatureTemplateManager.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
 
-ConversationObserverImplementation::ConversationObserverImplementation(uint32 convoTemplateCRC) {
+ConversationObserverImplementation::ConversationObserverImplementation(unsigned int convoTemplateCRC) {
 	conversationTemplateCRC = convoTemplateCRC;
 }
 

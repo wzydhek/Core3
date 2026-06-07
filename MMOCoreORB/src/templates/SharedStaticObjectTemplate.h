@@ -51,7 +51,7 @@ public:
 		iffStream->openForm(derv);
 
 		try {
-			parseFileData(iffStream);
+			//parseFileData(iffStream);
 		} catch (Exception& e) {
 			String msg;
 			msg += "exception caught parsing file data ->";

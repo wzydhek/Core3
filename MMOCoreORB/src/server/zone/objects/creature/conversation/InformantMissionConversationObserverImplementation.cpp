@@ -4,7 +4,7 @@
 
 #include "server/zone/objects/creature/conversation/InformantMissionConversationObserver.h"
 
-InformantMissionConversationObserverImplementation::InformantMissionConversationObserverImplementation(uint32 convoTemplateCRC) :
+InformantMissionConversationObserverImplementation::InformantMissionConversationObserverImplementation(unsigned int convoTemplateCRC) :
 	ConversationObserverImplementation(convoTemplateCRC) {
 	//Register screen handler.
 	registerScreenHandler(InformantMissionScreenHandler::STARTSCREENHANDLERID, &informantMissionScreenHandler);
