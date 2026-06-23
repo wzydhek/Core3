@@ -110,7 +110,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>engine3.lib;pthreadVC2.lib;luaWin64Debug.lib;libdb53d.lib;zlibWin64Debug.lib;libmysql.lib;libcrypto_static.lib;libssl_static.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug\;$(SolutionDir)libs\pthreads\lib\x64\;$(SolutionDir)libs\lua\lib\;$(SolutionDir)libs\db\lib\;$(SolutionDir)libs\zlib\lib\;$(SolutionDir)libs\mysql\lib\;$(SolutionDir)libs\openssl\lib\;$(CoreLibraryDependencies)</AdditionalLibraryDirectories>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <PreBuildEvent>
       <Command>core3idlc.bat</Command>
@@ -140,7 +140,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>engine3.lib;pthreadVC2.lib;luaWin64Debug.lib;libdb53d.lib;zlibWin64Debug.lib;libmysql.lib;libcrypto_static.lib;libssl_static.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug\;$(SolutionDir)libs\pthreads\lib\x64\;$(SolutionDir)libs\lua\lib\;$(SolutionDir)libs\db\lib\;$(SolutionDir)libs\zlib\lib\;$(SolutionDir)libs\mysql\lib\;$(SolutionDir)libs\openssl\lib\;$(CoreLibraryDependencies)</AdditionalLibraryDirectories>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <PreBuildEvent>
       <Command>core3idlc.bat</Command>
@@ -173,7 +172,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>engine3.lib;pthreadVC2.lib;luaWin64Debug.lib;libdb53d.lib;zlibWin64Debug.lib;libmysql.lib;libcrypto_static.lib;libssl_static.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug\;$(SolutionDir)libs\pthreads\lib\x64\;$(SolutionDir)libs\lua\lib\;$(SolutionDir)libs\db\lib\;$(SolutionDir)libs\zlib\lib\;$(SolutionDir)libs\mysql\lib\;$(SolutionDir)libs\openssl\lib\;$(CoreLibraryDependencies)</AdditionalLibraryDirectories>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <PreBuildEvent>
       <Command>core3idlc.bat</Command>
@@ -203,7 +202,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>engine3.lib;pthreadVC2.lib;luaWin64Debug.lib;libdb53d.lib;zlibWin64Debug.lib;libmysql.lib;libcrypto_static.lib;libssl_static.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug\;$(SolutionDir)libs\pthreads\lib\x64\;$(SolutionDir)libs\lua\lib\;$(SolutionDir)libs\db\lib\;$(SolutionDir)libs\zlib\lib\;$(SolutionDir)libs\mysql\lib\;$(SolutionDir)libs\openssl\lib\;$(CoreLibraryDependencies)</AdditionalLibraryDirectories>
-      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
     </Link>
     <PreBuildEvent>
       <Command>core3idlc.bat</Command>

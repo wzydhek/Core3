@@ -524,6 +524,10 @@
     <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\thread\Thread.cpp" />
     <ClCompile Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\system\util\PriorityQueue.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedObject.idl" />
+    <None Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedService.idl" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

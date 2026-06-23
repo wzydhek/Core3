@@ -21,6 +21,6 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		return 0;
+		return SUCCESS;
 	}
 };

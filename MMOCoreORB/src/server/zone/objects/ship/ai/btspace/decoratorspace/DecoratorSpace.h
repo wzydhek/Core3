@@ -60,7 +60,7 @@ public:
 	}
 
 	virtual void setChild(Reference<BehaviorSpace*> newChild) {
-		assert(child != this);
+		assert(newChild != this);
 
 		child = newChild;
 	}

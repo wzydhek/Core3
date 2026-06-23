@@ -568,7 +568,6 @@ void CommandConfigManager::registerCommands3() {
 	commandFactory.registerCommand<SetMoodCommand>(String("setMood").toLowerCase());
 	commandFactory.registerCommand<SetMoodInternalCommand>(String("setMoodInternal").toLowerCase());
 	commandFactory.registerCommand<SetNameCommand>(String("setName").toLowerCase());
-	commandFactory.registerCommand<SetNameCommand>(String("setName").toLowerCase());
 	commandFactory.registerCommand<SetOwnerCommand>(String("setOwner").toLowerCase());
 	commandFactory.registerCommand<SetPerformanceBuffTargetCommand>(String("setPerformanceBuffTarget").toLowerCase());
 	commandFactory.registerCommand<SetpermissionCommand>(String("setpermission").toLowerCase());

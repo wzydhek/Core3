@@ -21,9 +21,7 @@ public:
 		if (!checkInvalidLocomotions(creature))
 			return INVALIDLOCOMOTION;
 
-		int dmg = doCombatAction(creature, target);
-
-		return dmg;
+		return doCombatAction(creature, target);
 	}
 
 };

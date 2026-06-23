@@ -1648,4 +1648,12 @@
       <Filter>src\engine\util\u3d</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedObject.idl">
+      <Filter>src\engine\core</Filter>
+    </None>
+    <None Include="..\MMOCoreORB\utils\engine3\MMOEngine\src\engine\core\ManagedService.idl">
+      <Filter>src\engine\core</Filter>
+    </None>
+  </ItemGroup>
 </Project>

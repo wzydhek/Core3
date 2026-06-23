@@ -298,7 +298,6 @@ void CommandConfigManager::registerCommands4() {
 	commandFactory.registerCommand<DisableTargetCommand>(String("disableTarget").toLowerCase());
 	commandFactory.registerCommand<DestroyTargetCommand>(String("destroyTarget").toLowerCase());
 	commandFactory.registerCommand<SendFormObjectDataCommand>(String("sendFormObjectData").toLowerCase());
-	commandFactory.registerCommand<WaypointCommand>(String("waypoint").toLowerCase());
 	commandFactory.registerCommand<InspacerepairCommand>(String("inspacerepair").toLowerCase());
 	commandFactory.registerCommand<LightEngineScrambleCommand>(String("lightEngineScramble").toLowerCase());
 	commandFactory.registerCommand<HyperspaceCommand>(String("hyperspace").toLowerCase());

@@ -599,7 +599,6 @@ void CommandConfigManager::registerCommands2() {
 	commandFactory.registerCommand<FeignDeathCommand>(String("feignDeath").toLowerCase());
 	commandFactory.registerCommand<FindCommand>(String("find").toLowerCase());
 	commandFactory.registerCommand<FindFriendCommand>(String("findFriend").toLowerCase());
-	commandFactory.registerCommand<FindFriendCommand>(String("findFriend").toLowerCase());
 	commandFactory.registerCommand<FindMyTrainerCommand>(String("findMyTrainer").toLowerCase());
 	commandFactory.registerCommand<FindObjectCommand>(String("findObject").toLowerCase());
 	commandFactory.registerCommand<FindPlayerCommand>(String("findPlayer").toLowerCase());
