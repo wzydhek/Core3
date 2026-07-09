@@ -13,20 +13,7 @@ class CompleteMissionObjectiveTask : public Task {
 	ManagedReference<MissionObjective*> objective;
 
 public:
-	CompleteMissionObjectiveTask(MissionObjective* missionObjective) {
-		objective = missionObjective;
-	}
+	CompleteMissionObjectiveTask(MissionObjective* missionObjective);
 
-	void run() {
-		Locker locker(objective);
-
-		if (objective->getPlayerOwner() == nullptr)
-			return;
-
-		objective->awardReward();
-
-		objective->awardFactionPoints();
-
-		objective->removeMissionFromPlayer();
-	}
+	void run();
 };

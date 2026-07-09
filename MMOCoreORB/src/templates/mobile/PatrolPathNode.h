@@ -7,6 +7,9 @@
 
 #pragma once
 
+#include "templates/LuaTemplate.h"
+#include "engine/util/u3d/Vector3.h"
+
 class PatrolPathNode : public Object {
 	String id, link;
 	Vector3 position;
@@ -16,84 +19,32 @@ class PatrolPathNode : public Object {
 	uint32 pause;
 
 public:
-	PatrolPathNode() {
-		cellid = 0;
-		pause = 0;
-	}
+	PatrolPathNode();
 
-	PatrolPathNode(const PatrolPathNode& node) : Object() {
-		id = node.id;
-		link = node.link;
-		position = node.position;
-		cellid = node.cellid;
-		command = node.command;
-		arguments = node.arguments;
-		pause = node.pause;
-	}
+	PatrolPathNode(const PatrolPathNode& node);
 
-	PatrolPathNode& operator=(const PatrolPathNode& node) {
-		if (this == &node)
-			return *this;
+	PatrolPathNode& operator=(const PatrolPathNode& node);
 
-		id = node.id;
-		link = node.link;
-		position = node.position;
-		cellid = node.cellid;
-		command = node.command;
-		arguments = node.arguments;
-		pause = node.pause;
+	void readObject(LuaObject* luaObject);
 
-		return *this;
-	}
+	String getArguments() const;
 
-	void readObject(LuaObject* luaObject) {
-		id = luaObject->getStringField("id");
-		link = luaObject->getStringField("link");
-		position.set(luaObject->getFloatField("x"), luaObject->getFloatField("z"), luaObject->getFloatField("y"));
-		cellid = luaObject->getIntField("cellid");
-		pause = luaObject->getIntField("pause");
-		command = luaObject->getStringField("command");
-		arguments = luaObject->getStringField("arguments");
-	}
+	uint32 getCellid() const;
 
-	String getArguments() const {
-		return arguments;
-	}
+	String getCommand() const;
 
-	uint32 getCellid() const {
-		return cellid;
-	}
+	String getId() const;
 
-	String getCommand() const {
-		return command;
-	}
+	Vector3 getPosition() const;
 
-	String getId() const {
-		return id;
-	}
+	void setArguments(const String& arguments);
 
-	Vector3 getPosition() const {
-		return position;
-	}
+	void setCellid(uint32 cellid);
 
-	void setArguments(const String& arguments) {
-		this->arguments = arguments;
-	}
+	void setCommand(const String& command);
 
-	void setCellid(uint32 cellid) {
-		this->cellid = cellid;
-	}
+	void setId(String id);
 
-	void setCommand(const String& command) {
-		this->command = command;
-	}
-
-	void setId(String id) {
-		this->id = id;
-	}
-
-	void setPosition(Vector3 position) {
-		this->position = position;
-	}
+	void setPosition(Vector3 position);
 
 };

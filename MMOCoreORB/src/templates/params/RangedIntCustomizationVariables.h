@@ -17,27 +17,13 @@ protected:
 
 
 public:
-	RangedIntCustomizationVariables() : Param() {
-	}
+	RangedIntCustomizationVariables();
 
-	~RangedIntCustomizationVariables() {
-		/*QMap<QString, PaletteColorCustomizationVariable*>::const_iterator i;
-
-		for (i = variables.constBegin(); i != variables.constEnd(); ++i)
-			delete i.value();*/
-
-		for (int i = 0; i < variables.size(); ++i)
-			delete variables.get(i);
-
-		//std::cout << "DELETING RangedIntCustomizationVariables\n";
-	}
+	~RangedIntCustomizationVariables();
 
 	String toString() const;
 
-	void toString(String& str) {
-		//std::cout << "entering void toString(QString& str)\n";
-		//str = test;
-	}
+	void toString(String& str);
 
 	bool parse(Chunk* source);
 

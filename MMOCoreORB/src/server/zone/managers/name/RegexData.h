@@ -11,27 +11,13 @@ protected:
 	int type;
 
 public:
-	RegexData(String filter, int filterType) {
-		regexEntry = new std::regex(filter.toCharArray(), std::regex_constants::icase);
+	RegexData(String filter, int filterType);
 
-		type = filterType;
-		phrase = filter;
-	}
+	~RegexData();
 
-	~RegexData() {
-		delete regexEntry;
-		regexEntry = nullptr;
-	}
+	std::regex* getRegexEntry() const;
 
-	std::regex* getRegexEntry() const {
-		return regexEntry;
-	}
+	int getFilterType() const;
 
-	int getFilterType() const {
-		return type;
-	}
-
-	String getRegexPhrase() const {
-		return phrase;
-	}
+	String getRegexPhrase() const;
 };

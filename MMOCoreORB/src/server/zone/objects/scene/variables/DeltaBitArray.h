@@ -12,63 +12,19 @@
 
 class DeltaBitArray : public DeltaVector<byte> {
 public:
-	DeltaBitArray() : DeltaVector<byte>(1, 1) {
-	}
+	DeltaBitArray();
 
-	DeltaBitArray(int initsize, int incr) : DeltaVector<byte>(initsize, incr) {
-	}
+	DeltaBitArray(int initsize, int incr);
 
-	DeltaBitArray(const DeltaBitArray& v) : DeltaVector<byte>(v) {
-	}
+	DeltaBitArray(const DeltaBitArray& v);
 
-	DeltaBitArray& operator=(const DeltaBitArray& v) {
-		if (this == &v)
-			return *this;
+	DeltaBitArray& operator=(const DeltaBitArray& v);
 
-		DeltaVector<byte>::operator =(v);
+	void setBit(uint32 bitIndex, byte value);
 
-		return *this;
-	}
+	bool getBitValue(uint32 bitIndex) const;
 
-	void setBit(uint32 bitIndex, byte value) {
-		int vectorIndex = bitIndex / 8;
-		byte vectorBitIndex = 1 << (bitIndex % 8);
+	void clearBit(int bitIndex);
 
-		while (size() <= vectorIndex)
-			add(0);
-
-		byte currentVal = get(vectorIndex);
-
-		if (value) {
-			if (!(currentVal & vectorBitIndex)) {
-				currentVal |= vectorBitIndex;
-			}
-		} else {
-			if (currentVal & vectorBitIndex) {
-				currentVal &= ~vectorBitIndex;
-			}
-		}
-
-		set(vectorIndex, currentVal);
-	}
-
-	bool getBitValue(uint32 bitIndex) const {
-		int vectorIndex = bitIndex / 8;
-		byte vectorBitIndex = 1 << (bitIndex % 8);
-
-		if (vectorIndex >= size())
-			return false;
-
-		byte val = get(vectorIndex);
-
-		return val & vectorBitIndex;
-	}
-
-	void clearBit(int bitIndex) {
-		setBit(bitIndex, 0);
-	}
-
-	int bitCount() const {
-		return size() * 8;
-	}
+	int bitCount() const;
 };

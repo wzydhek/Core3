@@ -20,29 +20,15 @@ public:
 	};
 
 public:
-	ElevatorTerminalTemplate() {
-		movementType = UPONLY;
-	}
+	ElevatorTerminalTemplate();
 
-	~ElevatorTerminalTemplate() {
+	~ElevatorTerminalTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	byte getMovementType();
 
-		movementType = templateData->getByteField("movementType");
-    }
+	bool isMovingUp();
 
-	inline byte getMovementType() {
-		return movementType;
-	}
-
-	inline bool isMovingUp() {
-		return (movementType == UPONLY || movementType == UPANDDOWN);
-	}
-
-	inline bool isMovingDown() {
-		return (movementType == DOWNONLY || movementType == UPANDDOWN);
-	}
+	bool isMovingDown();
 };

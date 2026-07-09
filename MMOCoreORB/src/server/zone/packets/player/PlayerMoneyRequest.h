@@ -8,26 +8,13 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "PlayerMoneyResponseMessage.h"
 
 class PlayerMoneyRequestMessageCallback : public MessageCallback {
 public:
-	PlayerMoneyRequestMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server) {
+	PlayerMoneyRequestMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		PlayerMoneyResponseMessage* reply = new  PlayerMoneyResponseMessage(player);
-		client->sendMessage(reply);
-	}
+	void run();
 
 };

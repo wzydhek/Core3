@@ -11,7 +11,5 @@ public:
 
 	void readObject(IffStream* iffStream);
 
-	VectorMap<uint32, String> getTableData() {
-		return tableData;
-	}
+	VectorMap<uint32, String> getTableData();
 };

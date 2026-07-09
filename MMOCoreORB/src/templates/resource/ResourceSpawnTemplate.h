@@ -13,16 +13,9 @@ class ResourceSpawnTemplate : public SharedResourceContainerObjectTemplate {
 private:
 
 public:
-	ResourceSpawnTemplate() {
+	ResourceSpawnTemplate();
 
-	}
+	~ResourceSpawnTemplate();
 
-	~ResourceSpawnTemplate() {
-
-	}
-
-	void readObject(LuaObject* templateData) {
-		SharedObjectTemplate::readObject(templateData);
-
-	}
+	void readObject(LuaObject* templateData);
 };

@@ -13,18 +13,7 @@ class ZoneLoadManagersTask : public Task {
 	ManagedReference<ZoneServer*> zoneServer;
 	ManagedReference<Zone*> zone;
 public:
-	ZoneLoadManagersTask(ZoneServer* server, Zone* zone) {
-		this->zone = zone;
-		zoneServer = server;
-	}
+	ZoneLoadManagersTask(ZoneServer* server, Zone* zone);
 
-	void run() {
-		if (zone == nullptr)
-			return;
-
-		if (zone->hasManagersStarted())
-			return;
-
-		zone->startManagers();
-	}
+	void run();
 };

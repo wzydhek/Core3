@@ -14,16 +14,7 @@ class PositionUpdateTask : public Task {
 	ManagedReference<SceneObject*> object;
 	ManagedReference<TreeEntry*> entry;
 public:
-	PositionUpdateTask(SceneObject* obj, TreeEntry* ent) {
-		object = obj;
-		entry = ent;
-	}
+	PositionUpdateTask(SceneObject* obj, TreeEntry* ent);
 
-	void run() {
-		Locker locker(object);
-
-		Locker clocker(entry, object);
-
-		object->notifyObservers(ObserverEventType::OBJECTINRANGEMOVED, entry);
-	}
+	void run();
 };

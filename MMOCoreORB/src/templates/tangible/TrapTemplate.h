@@ -30,116 +30,43 @@ protected:
 	bool areaOfEffect;
 
 public:
-	TrapTemplate() {
-		skillRequired = 0;
-		healthCost = 0;
-		actionCost = 0;
-		mindCost = 0;
-		poolToDamage = 0;
-		maxRange = 0;
-		minDamage = 0;
-		maxDamage = 0;
-		duration = 0;
-		state = 0;
-		animation = "";
-		successMessage = "";
-		failMessage = "";
-		startSpam = "";
-		stopSpam = "";
-		defenseMod = "";
-		areaOfEffect = false;
-	}
+	TrapTemplate();
 
-	~TrapTemplate() {
-	}
+	~TrapTemplate();
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	void readObject(LuaObject* templateData);
 
-		skillRequired = templateData->getIntField("skillRequired");
-		healthCost = templateData->getIntField("healthCost");
-		actionCost = templateData->getIntField("actionCost");
-		mindCost = templateData->getIntField("mindCost");
-		maxRange = templateData->getFloatField("maxRange");
-		poolToDamage= templateData->getShortField("poolToDamage");
-		minDamage = templateData->getFloatField("minDamage");
-		maxDamage = templateData->getFloatField("maxDamage");
-		duration = templateData->getIntField("duration");
-		state = templateData->getLongField("state");
-		animation = templateData->getStringField("animation");
-		successMessage = templateData->getStringField("successMessage");
-		failMessage = templateData->getStringField("failMessage");
-		startSpam = templateData->getStringField("startSpam");
-		stopSpam = templateData->getStringField("stopSpam");
-		defenseMod = templateData->getStringField("defenseMod");
-		areaOfEffect = templateData->getBooleanField("areaOfEffect");
-	}
+	int getActionCost();
 
-	int getActionCost() {
-		return actionCost;
-	}
+	int getDuration();
 
-	int getDuration() {
-		return duration;
-	}
+	const String& getAnimation();
 
-	const String& getAnimation() {
-		return animation;
-	}
+	const String& getSuccessMessage();
 
-	const String& getSuccessMessage() {
-		return successMessage;
-	}
+	const String& getFailMessage();
 
-	const String& getFailMessage() {
-		return failMessage;
-	}
+	const String& getStartSpam();
 
-	const String& getStartSpam() {
-		return startSpam;
-	}
+	const String& getStopSpam();
 
-	const String& getStopSpam() {
-		return stopSpam;
-	}
+	const String& getDefenseMod();
 
-	const String& getDefenseMod() {
-		return defenseMod;
-	}
+	int getHealthCost();
 
-	int getHealthCost() {
-		return healthCost;
-	}
+	float getMaxDamage();
 
-	float getMaxDamage() {
-		return maxDamage;
-	}
+	float getMaxRange();
 
-	float getMaxRange() {
-		return maxRange;
-	}
+	float getMinDamage();
 
-	float getMinDamage() {
-		return minDamage;
-	}
+	int getMindCost();
 
-	int getMindCost() {
-		return mindCost;
-	}
+	int getSkillRequired();
 
-	int getSkillRequired() {
-		return skillRequired;
-	}
+	short getPoolToDamage();
 
-	short getPoolToDamage() {
-		return poolToDamage;
-	}
+	uint64 getState();
 
-	uint64 getState() {
-		return state;
-	}
-
-	bool isAoeTrap() {
-		return areaOfEffect;
-	}
+	bool isAoeTrap();
 };

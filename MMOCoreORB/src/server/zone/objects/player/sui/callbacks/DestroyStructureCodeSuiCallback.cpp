@@ -1,0 +1,28 @@
+#include "DestroyStructureCodeSuiCallback.h"
+
+DestroyStructureCodeSuiCallback::DestroyStructureCodeSuiCallback(ZoneServer* serv) : SuiCallback(serv) {
+}
+
+void DestroyStructureCodeSuiCallback::run(CreatureObject* player, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args) {
+	bool cancelPressed = (eventIndex == 1);
+
+	ManagedReference<DestroyStructureSession*> session = player->getActiveSession(SessionFacadeType::DESTROYSTRUCTURE).castTo<DestroyStructureSession*>();
+
+	if (session == nullptr)
+		return;
+
+	if (cancelPressed) {
+		session->cancelSession();
+		return;
+	}
+
+	uint32 inputtedCode = Integer::valueOf(args->get(0).toString());
+
+	if (!session->isDestroyCode(inputtedCode)) {
+		player->sendSystemMessage("@player_structure:incorrect_destroy_code"); // You have entered an incorrect code. You will have to issue the /destroyStructure again if you wish to continue.
+		session->cancelSession();
+		return;
+	}
+
+	session->destroyStructure();
+}

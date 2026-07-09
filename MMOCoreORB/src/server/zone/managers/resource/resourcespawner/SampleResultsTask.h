@@ -11,6 +11,8 @@
 #pragma once
 
 #include "server/zone/objects/transaction/TransactionLog.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "ResourceSpawner.h"
 
 class ResourceSpawner;
 
@@ -23,20 +25,8 @@ protected:
 	String resname;
 
 public:
-	SampleResultsTask(ManagedReference<CreatureObject*> play, const ResourceSpawner* spawner, float d, String rname) {
-		playerCreature = play;
-		resourceSpawner = spawner;
-		density = d;
-		resname = rname;
-	}
+	SampleResultsTask(ManagedReference<CreatureObject*> play, const ResourceSpawner* spawner, float d, String rname);
 
-	void run() {
-		Locker locker(playerCreature);
-
-		TransactionLog trx(TrxCode::HARVESTED, playerCreature);
-		resourceSpawner->sendSampleResults(trx, playerCreature, density, resname);
-		playerCreature->removePendingTask("sampleresults");
-		trx.commit();
-	}
+	void run();
 
 };

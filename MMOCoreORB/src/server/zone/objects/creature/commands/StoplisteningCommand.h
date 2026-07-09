@@ -4,33 +4,14 @@
 
 #pragma once
 
-#include "server/zone/managers/player/PlayerManager.h"
+#include "QueueCommand.h"
 
 class StoplisteningCommand : public QueueCommand {
 public:
 
-	StoplisteningCommand(const String& name, ZoneProcessServer* server)
-		: QueueCommand(name, server) {
+	StoplisteningCommand(const String& name, ZoneProcessServer* server);
 
-	}
-
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		if (!creature->isListening())
-			return GENERALERROR;
-
-		ManagedReference<PlayerManager*> playerManager = server->getPlayerManager();
-
-		if (playerManager != nullptr)
-			playerManager->stopListen(creature, target);
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };
+

@@ -8,36 +8,16 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/managers/player/PlayerManager.h"
-#include "server/zone/packets/ui/VerifyPlayerNameResponseMessage.h"
 
 class VerifyPlayerNameCallback : public MessageCallback {
 	UnicodeString name;
 	uint64 playerID;
 
 public:
-	VerifyPlayerNameCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), playerID(0) {
-
-	}
+	VerifyPlayerNameCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
 
-	void parse(Message* message) {
-		message->parseUnicode(name);
-		playerID = message->parseLong();
-	}
+	void parse(Message* message);
 
-	void run() {
-		ManagedReference<CreatureObject*> playerCreature = client->getPlayer();
-
-		if (playerCreature == nullptr)
-			return;
-
-		ManagedReference<PlayerManager*> playerManager = server->getPlayerManager();
-		bool success = playerManager->existsName(name.toString());
-
-		VerifyPlayerNameResponseMessage* vpnrm = new VerifyPlayerNameResponseMessage(success);
-		playerCreature->sendMessage(vpnrm);
-	}
+	void run();
 };

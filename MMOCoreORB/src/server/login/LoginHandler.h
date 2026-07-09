@@ -17,27 +17,13 @@ namespace server {
 		int maxConnections;
 
 	public:
-		LoginSessionMap(int maxconn = 10000) : HashTable<uint64, Reference<LoginClient*> >((int) (maxconn * 1.25f)) {
-			maxConnections = maxconn;
-		}
+		LoginSessionMap(int maxconn = 10000);
 
-		bool add(LoginClient* client) {
-			if (HashTable<uint64, Reference<LoginClient*> >::put(client->getSession()->getNetworkID(), client) == nullptr) {
-				return true;
-			} else
-				return false;
-		}
+		bool add(LoginClient* client);
 
-		bool remove(LoginClient* client) {
-			if (HashTable<uint64, Reference<LoginClient*> >::remove(client->getSession()->getNetworkID()) != nullptr) {
-				return true;
-			} else
-				return false;
-		}
+		bool remove(LoginClient* client);
 
-		LoginClient* get(uint64 id) {
-			return HashTable<uint64, Reference<LoginClient*> >::get(id);
-		}
+		LoginClient* get(uint64 id);
 
 	};
 
@@ -47,54 +33,23 @@ namespace server {
 		LoginSessionMap clients;
 
 	public:
-		LoginHandler() {
-		}
+		LoginHandler();
 
-		void initialize() {
-			server->initialize();
-		}
+		void initialize();
 
-		ServiceClient* createConnection(Socket* sock, SocketAddress& addr) {
-			LoginClient* client =  server->createConnection(sock, addr);
+		ServiceClient* createConnection(Socket* sock, SocketAddress& addr);
 
-			clients.add(client);
+		bool deleteConnection(ServiceClient* session);
 
-			return client->getSession();
-		}
+		void handleMessage(ServiceClient* session, Packet* message);
 
-		bool deleteConnection(ServiceClient* session) {
-			Reference<LoginClient*> client = getClient(session);
+		void processMessage(Message* message);
 
-			if (client != nullptr) {
-				client->disconnect();
+		bool handleError(ServiceClient* client, Exception& e);
 
-				clients.remove(client);
-			}
+		void setLoginSerrver(LoginServer* server);
 
-			return false;
-		}
-
-		void handleMessage(ServiceClient* session, Packet* message) {
-			Reference<LoginClient*> client = getClient(session);
-
-			server->handleMessage(client, message);
-		}
-
-		void processMessage(Message* message) {
-			return server->processMessage(message);
-		}
-
-		bool handleError(ServiceClient* client, Exception& e) {
-			return server->handleError(client, e);
-		}
-
-		void setLoginSerrver(LoginServer* server) {
-			this->server = server;
-		}
-
-		LoginClient* getClient(ServiceClient* session) {
-			return clients.get(session->getNetworkID());
-		}
+		LoginClient* getClient(ServiceClient* session);
 	};
 
   } // namespace login

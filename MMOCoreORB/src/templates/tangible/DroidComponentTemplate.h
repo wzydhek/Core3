@@ -12,20 +12,12 @@
 class DroidComponentTemplate : public SharedTangibleObjectTemplate {
 
 public:
-	DroidComponentTemplate() {
+	DroidComponentTemplate();
 
-	}
+	~DroidComponentTemplate();
 
-	~DroidComponentTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
-
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
-    }
-
-	bool isDroidComponentTemplate() {
-		return true;
-	}
+	bool isDroidComponentTemplate();
 
 };

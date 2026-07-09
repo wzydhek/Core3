@@ -1,5 +1,6 @@
 #pragma once
 
+#include "system/lang/String.h"
 #include <system/lang/Integer.h>
 #include <system/util/Vector.h>
 #include "templates/datatables/DataTableIff.h"
@@ -7,11 +8,9 @@
 
 class UnknownDatatableException : public sys::lang::Exception {
 public:
-	UnknownDatatableException() : Exception() {
-	}
+	UnknownDatatableException();
 
-	UnknownDatatableException(const String& msg) : Exception(msg) {
-	}
+	UnknownDatatableException(const String& msg);
 };
 
 class QuestTask : public Object  {
@@ -62,330 +61,93 @@ protected:
 
 
 public:
-	QuestTask() {
-		isVisible = true;
-		showSystemMessages = false;
-		allowRepeats = false;
-		experienceAmount = 0;
-		factionAmount = 0;
-		bankCredits = 0;
-		locationX = 0;
-		locationY = 0;
-		locationZ = 0;
-		radius = 0;
-		minTime = 0;
-		maxTime = 0;
-		count = 0;
-		minDistance = 0;
-		maxDistance = 0;
-		rewardCredits = 0;
-		lootItemsRequired = 0;
-		lootDropPercent = 0;
-	}
+	QuestTask();
 
-	void parseDataTableRow(const DataTableRow* row, const DataTableIff& dTable) {
-		int columnCount = dTable.getTotalColumns();
-		for (int i = 0; i < columnCount; i++) {
-			String columnName = dTable.getColumnNameByIndex(i);
-			if (columnName == "PREREQUISITE_TASKS") {
-				String temp;
-				row->getValue(i, temp);
-				while (temp.contains(",")) {
-					auto next = temp.subString(0, temp.indexOf(","));
-					prerequisiteTasks.add(Integer::valueOf(next));
-					temp = temp.subString(temp.indexOf(",") + 1);
-				}
-				if (temp != "") {
-					prerequisiteTasks.add(Integer::valueOf(temp));
-				}
-			} else if (columnName == "EXCLUSION_TASKS") {
-				String temp;
-				row->getValue(i, temp);
-				while (temp.contains(",")) {
-					auto next = temp.subString(0, temp.indexOf(","));
-					exclusionTasks.add(Integer::valueOf(next));
-					temp = temp.subString(temp.indexOf(",") + 1);
-				}
-				if (temp != "") {
-					exclusionTasks.add(Integer::valueOf(temp));
-				}
-			} else if (columnName == "ATTACH_SCRIPT") {
-				row->getValue(i, attachScript);
-			} else if (columnName == "JOURNAL_ENTRY_TITLE") {
-				row->getValue(i, journalEntryTitle);
-			} else if (columnName == "JOURNAL_ENTRY_DESCRIPTION") {
-				row->getValue(i, journalEntryDescription);
-			} else if (columnName == "TASKS_ON_COMPLETE") {
-				String temp;
-				row->getValue(i, temp);
-				while (temp.contains(",")) {
-					auto next = temp.subString(0, temp.indexOf(","));
-					tasksOnComplete.add(Integer::valueOf(next));
-					temp = temp.subString(temp.indexOf(",") + 1);
-				}
-				if (temp != "") {
-					tasksOnComplete.add(Integer::valueOf(temp));
-				}
-			} else if (columnName == "TASKS_ON_FAIL") {
-				String temp;
-				row->getValue(i, temp);
-				while (temp.contains(",")) {
-					auto next = temp.subString(0, temp.indexOf(","));
-					tasksOnFail.add(Integer::valueOf(next));
-					temp = temp.subString(temp.indexOf(",") + 1);
-				}
-				if (temp != "") {
-					tasksOnFail.add(Integer::valueOf(temp));
-				}
-			} else if (columnName == "TASK_NAME") {
-				row->getValue(i, taskName);
-			} else if (columnName == "IS_VISIBLE") {
-				row->getValue(i, isVisible);
-			} else if (columnName == "SHOW_SYSTEM_MESSAGES") {
-				row->getValue(i, showSystemMessages);
-			} else if (columnName == "ALLOW_REPEATS") {
-				row->getValue(i, allowRepeats);
-			} else if (columnName == "MUSIC_ON_ACTIVATE") {
-				row->getValue(i, musicOnActivate);
-			} else if (columnName == "TARGET") {
-				row->getValue(i, target);
-			} else if (columnName == "PARAMETER") {
-				row->getValue(i, parameter);
-			} else if (columnName == "GRANT_QUEST_ON_COMPLETE") {
-				row->getValue(i, grantQuestOnComplete);
-			} else if (columnName == "GRANT_QUEST_ON_FAIL") {
-				row->getValue(i, grantQuestOnFail);
-			} else if (columnName == "EXPERIENCE_TYPE") {
-				row->getValue(i, experienceType);
-			} else if (columnName == "EXPERIENCE_AMOUNT") {
-				row->getValue(i, experienceAmount);
-			} else if (columnName == "FACTION_NAME") {
-				row->getValue(i, factionName);
-			} else if (columnName == "FACTION_AMOUNT") {
-				row->getValue(i, factionAmount);
-			} else if (columnName == "BANK_CREDITS") {
-				row->getValue(i, bankCredits);
-			} else if (columnName == "ITEM") {
-				row->getValue(i, item);
-			} else if (columnName == "PLANET_NAME") {
-				row->getValue(i, planetName);
-			} else if (columnName == "LOCATION_X") {
-				String temp;
-				row->getValue(i, temp);
-				locationX = Integer::valueOf(temp);
-			} else if (columnName == "LOCATION_Y") {
-				String temp;
-				row->getValue(i, temp);
-				locationY = Integer::valueOf(temp);
-			} else if (columnName == "LOCATION_Z") {
-				String temp;
-				row->getValue(i, temp);
-				locationZ = Integer::valueOf(temp);
-			} else if (columnName == "RADIUS") {
-				String temp;
-				row->getValue(i, temp);
-				radius = Integer::valueOf(temp);
-			} else if (columnName == "SIGNAL_NAME") {
-				row->getValue(i, signalName);
-			} else if (columnName == "MIN_TIME") {
-				row->getValue(i, minTime);
-			} else if (columnName == "MAX_TIME") {
-				row->getValue(i, maxTime);
-			} else if (columnName == "CREATURE_TYPE") {
-				row->getValue(i, creatureType);
-			} else if (columnName == "TARGET_SERVER_TEMPLATE") {
-				row->getValue(i, targetServerTemplate);
-			} else if (columnName == "SOCIAL_GROUP") {
-				row->getValue(i, socialGroup);
-			} else if (columnName == "COUNT") {
-				row->getValue(i, count);
-			} else if (columnName == "REQUIRED_REGION") {
-				row->getValue(i, requiredRegion);
-			} else if (columnName == "MIN_DISTANCE") {
-				row->getValue(i, minDistance);
-			} else if (columnName == "MAX_DISTANCE") {
-				row->getValue(i, maxDistance);
-			} else if (columnName == "DIRECTION") {
-				row->getValue(i, direction);
-			} else if (columnName == "REWARD_CREDITS") {
-				row->getValue(i, rewardCredits);
-			} else if (columnName == "LOOT_ITEM_NAME") {
-				row->getValue(i, lootItemName);
-			} else if (columnName == "LOOT_ITEMS_REQUIRED") {
-				row->getValue(i, lootItemsRequired);
-			} else if (columnName == "LOOT_DROP_PERCENT") {
-				row->getValue(i, lootDropPercent);
-			}
-		}
-	}
+	void parseDataTableRow(const DataTableRow* row, const DataTableIff& dTable);
 
-	const Vector<int> getPrerequisiteTasks() const {
-		return prerequisiteTasks;
-	}
+	const Vector<int> getPrerequisiteTasks() const;
 
-	const Vector<int> getExclusionTasks() const {
-		return exclusionTasks;
-	}
+	const Vector<int> getExclusionTasks() const;
 
-	const String getAttachScript() const {
-		return attachScript;
-	}
+	const String getAttachScript() const;
 
-	const String getJournalEntryTitle() const {
-		return journalEntryTitle;
-	}
+	const String getJournalEntryTitle() const;
 
-	const String getJournalEntryDescription() const {
-		return journalEntryDescription;
-	}
+	const String getJournalEntryDescription() const;
 
-	const Vector<int> getTasksOnComplete() const {
-		return tasksOnComplete;
-	}
+	const Vector<int> getTasksOnComplete() const;
 
-	const Vector<int> getTasksOnFail() const {
-		return tasksOnFail;
-	}
+	const Vector<int> getTasksOnFail() const;
 
-	const String getTaskName() const {
-		return taskName;
-	}
+	const String getTaskName() const;
 
-	bool getIsVisible() const {
-		return isVisible;
-	}
+	bool getIsVisible() const;
 
-	bool getShowSystemMessages() const {
-		return showSystemMessages;
-	}
+	bool getShowSystemMessages() const;
 
-	bool getAllowRepeats() const {
-		return allowRepeats;
-	}
+	bool getAllowRepeats() const;
 
-	const String getMusicOnActivate() const {
-		return musicOnActivate;
-	}
+	const String getMusicOnActivate() const;
 
-	const String getTarget() const {
-		return target;
-	}
+	const String getTarget() const;
 
-	const String getParameter() const {
-		return parameter;
-	}
+	const String getParameter() const;
 
-	const String getGrantQuestOnComplete() const {
-		return grantQuestOnComplete;
-	}
+	const String getGrantQuestOnComplete() const;
 
-	const String getGrantQuestOnFail() const {
-		return grantQuestOnFail;
-	}
+	const String getGrantQuestOnFail() const;
 
-	const String getExperienceType() const {
-		return experienceType;
-	}
+	const String getExperienceType() const;
 
-	int getExperienceAmount() const {
-		return experienceAmount;
-	}
+	int getExperienceAmount() const;
 
-	const String getFactionName() const {
-		return factionName;
-	}
+	const String getFactionName() const;
 
-	int getFactionAmount() const {
-		return factionAmount;
-	}
+	int getFactionAmount() const;
 
-	int getBankCredits() const {
-		return bankCredits;
-	}
+	int getBankCredits() const;
 
-	const String getItem() const {
-		return item;
-	}
+	const String getItem() const;
 
-	const String getPlanetName() const {
-		return planetName;
-	}
+	const String getPlanetName() const;
 
-	float getLocationX() const {
-		return locationX;
-	}
+	float getLocationX() const;
 
-	float getLocationY() const {
-		return locationY;
-	}
+	float getLocationY() const;
 
-	float getLocationZ() const {
-		return locationZ;
-	}
+	float getLocationZ() const;
 
-	float getRadius() const {
-		return radius;
-	}
+	float getRadius() const;
 
-	const String getSignalName() const {
-		return signalName;
-	}
+	const String getSignalName() const;
 
-	int getMinTime() const {
-		return minTime;
-	}
+	int getMinTime() const;
 
-	int getMaxTime() const {
-		return maxTime;
-	}
+	int getMaxTime() const;
 
-	const String getCreatureType() const {
-		return creatureType;
-	}
+	const String getCreatureType() const;
 
-	const String getTargetServerTemplate() const {
-		return targetServerTemplate;
-	}
+	const String getTargetServerTemplate() const;
 
-	const String getSocialGroup() const {
-		return socialGroup;
-	}
+	const String getSocialGroup() const;
 
-	const String getRequiredRegion() const {
-		return requiredRegion;
-	}
+	const String getRequiredRegion() const;
 
-	int getCount() const {
-		return count;
-	}
+	int getCount() const;
 
-	int getMinDistance() const {
-		return minDistance;
-	}
+	int getMinDistance() const;
 
-	int getMaxDistance() const {
-		return maxDistance;
-	}
+	int getMaxDistance() const;
 
-	const String getDirection() const {
-		return direction;
-	}
+	const String getDirection() const;
 
-	int getRewardCredits() const {
-		return rewardCredits;
-	}
+	int getRewardCredits() const;
 
-	const String getLootItemName() const {
-		return lootItemName;
-	}
+	const String getLootItemName() const;
 
-	int getLootItemsRequired() const {
-		return lootItemsRequired;
-	}
+	int getLootItemsRequired() const;
 
-	int getLootDropPercent() const {
-		return lootDropPercent;
-	}
+	int getLootDropPercent() const;
 };
 
 class QuestTasks : public Object {
@@ -393,23 +155,11 @@ class QuestTasks : public Object {
 protected:
 	Vector<QuestTask*> tasks;
 public:
-	QuestTasks() {
-	}
-	void parseDataTable(const DataTableIff& dTable) {
-		for (int i = 0; i < dTable.getTotalRows(); ++i) {
-			const DataTableRow* row = dTable.getRow(i);
+	QuestTasks();
 
-			QuestTask* task = new QuestTask();
-			task->parseDataTableRow(row, dTable);
-			tasks.add(task);
-		}
-	}
+	void parseDataTable(const DataTableIff& dTable);
 
-	int getNumberOfTasks() {
-		return tasks.size();
-	}
+	int getNumberOfTasks();
 
-	QuestTask* getTask(int taskNumber) {
-		return tasks.get(taskNumber);
-	}
+	QuestTask* getTask(int taskNumber);
 };

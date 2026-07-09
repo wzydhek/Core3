@@ -25,43 +25,23 @@ class ScreenPlayTask : public Task {
 	Reference<PersistentEvent*> persistentEvent;
 public:
 
-	ScreenPlayTask(SceneObject* scno, const String& key, const String& playName, const String& arguments) {
-		obj = scno;
-		taskKey = key;
-		screenPlay = playName;
-		args = arguments;
-		persistentEvent = nullptr;
-	}
+	ScreenPlayTask(SceneObject* scno, const String& key, const String& playName, const String& arguments);
 
 	void run();
 
-	ManagedReference<SceneObject*> getSceneObject() {
-		return obj.get();
-	}
+	ManagedReference<SceneObject*> getSceneObject();
 
-	const String& getTaskKey() const {
-		return taskKey;
-	}
+	const String& getTaskKey() const;
 
-	const String& getScreenPlay() const {
-		return screenPlay;
-	}
+	const String& getScreenPlay() const;
 
-	const String& getArgs() const {
-		return args;
-	}
+	const String& getArgs() const;
 
-	void setPersistentEvent(PersistentEvent* persistentEvent) {
-		this->persistentEvent = persistentEvent;
-	}
+	void setPersistentEvent(PersistentEvent* persistentEvent);
 
-	Reference<PersistentEvent*>& getPersistentEvent() {
-		return persistentEvent;
-	}
+	Reference<PersistentEvent*>& getPersistentEvent();
 
-	const Reference<PersistentEvent*>& getPersistentEvent() const {
-		return persistentEvent;
-	}
+	const Reference<PersistentEvent*>& getPersistentEvent() const;
 
 };
 

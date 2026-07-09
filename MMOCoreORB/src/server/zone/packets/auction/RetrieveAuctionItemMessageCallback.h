@@ -8,35 +8,16 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/zone/managers/auction/AuctionManager.h"
 
 class RetrieveAuctionItemMessageCallback : public MessageCallback {
 	uint64 objectid;
 	uint64 bazaarid;
 
 public:
-	RetrieveAuctionItemMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-			MessageCallback(client, server), objectid(0), bazaarid(0) {
+	RetrieveAuctionItemMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		objectid = message->parseLong(); // object for sale
-		bazaarid = message->parseLong(); // bazaar
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		Locker locker(player);
-
-		AuctionManager* auctionManager = server->getZoneServer()->getAuctionManager();
-
-		if (auctionManager != nullptr)
-			auctionManager->retrieveItem(player, objectid, bazaarid);
-	}
+	void run();
 
 };

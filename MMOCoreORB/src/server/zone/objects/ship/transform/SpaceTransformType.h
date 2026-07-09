@@ -44,49 +44,23 @@ protected:
 	int transformType;
 
 public:
-	SpaceTransformType() {
-		rotationDamp = Vector3(1.f, 1.f, 1.f);
-		rotationRate = Vector3(1.f, 1.f, 0.5f);
-
-		throttleMin = 0.f;
-		throttleMax = 1.f;
-
-		transformType = NONE;
-	}
+	SpaceTransformType();
 
 	SpaceTransformType(ShipObject* ship, int type = AUTO);
 
 	void initializeType(ShipObject* ship, int type = AUTO);
 
-	void setTransformType(int type) {
-		if (transformType == type) {
-			return;
-		}
+	void setTransformType(int type);
 
-		transformType = type;
-		setThrottleRate();
-		setRotationRate();
-	}
+	const Vector3& getRotationRate() const;
 
-	const Vector3& getRotationRate() const {
-		return rotationRate;
-	}
+	float getThrottleMin() const;
 
-	float getThrottleMin() const {
-		return throttleMin;
-	}
+	float getThrottleMid() const;
 
-	float getThrottleMid() const {
-		return (throttleMax + throttleMin) * 0.5f;
-	}
+	float getThrottleMax() const;
 
-	float getThrottleMax() const {
-		return throttleMax;
-	}
-
-	int getTransformType() const {
-		return transformType;
-	}
+	int getTransformType() const;
 
 private:
 	void setThrottleRate();
@@ -96,28 +70,5 @@ private:
 	void setRotationDamp(float radius);
 
 public:
-	String toDebugString(bool includePrivate = false) const {
-		String typeStr = "NONE";
-
-		if (transformType == SLOW) {
-			typeStr = "SLOW";
-		} else if (transformType == AUTO) {
-			typeStr = "AUTO";
-		} else if (transformType == FAST) {
-			typeStr = "FAST";
-		} else if (transformType == DOCK) {
-			typeStr = "DOCK";
-		} else if (transformType == FORM) {
-			typeStr = "FORM";
-		}
-
-		StringBuffer msg;
-		msg << "SpaceTransformType: " << typeStr << endl
-			<< "  throttleMin:      " << throttleMin << endl
-			<< "  throttleMax:      " << throttleMax << endl
-			<< "  rotationRate:     " << rotationRate.toString() << endl;
-
-
-		return msg.toString();
-	}
+	String toDebugString(bool includePrivate = false) const;
 };

@@ -20,33 +20,19 @@ protected:
 	float speed;
 
 public:
-	ShipSquadronDataEntry() : Object() {
-		speed = 0.f;
-	}
+	ShipSquadronDataEntry();
 
-	const Vector3& getFormation() const {
-		return formation;
-	}
+	const Vector3& getFormation() const;
 
-	const Vector3& getPosition() const {
-		return position;
-	}
+	const Vector3& getPosition() const;
 
-	float getSpeed() const {
-		return speed;
-	}
+	float getSpeed() const;
 
-	void setFormation(const Vector3& value) {
-		formation = value;
-	}
+	void setFormation(const Vector3& value);
 
-	void setPosition(const Vector3& value) {
-		position = value;
-	}
+	void setPosition(const Vector3& value);
 
-	void setSpeed(float value) {
-		speed = value;
-	}
+	void setSpeed(float value);
 };
 
 class ShipSquadronData : public Object, public Logger {
@@ -59,34 +45,21 @@ protected:
 	int formationType;
 
 public:
-	ShipSquadronData() : Object() {
-		formationRadius = 0.f;
-		formationType = 0;
-	}
+	ShipSquadronData();
 
 	ShipSquadronData(ShipObject* ship);
 
 	~ShipSquadronData();
 
-	int size() const {
-		return squadronData.size();
-	}
+	int size() const;
 
-	int getFormationType() const {
-		return formationType;
-	}
+	int getFormationType() const;
 
-	float getFormationRadius() const {
-		return formationRadius;
-	}
+	float getFormationRadius() const;
 
-	void setFormationType(int value) {
-		formationType = value;
-	}
+	void setFormationType(int value);
 
-	void setFormationRadius(float value) {
-		formationRadius = value;
-	}
+	void setFormationRadius(float value);
 
 	void add(ShipObject* ship);
 

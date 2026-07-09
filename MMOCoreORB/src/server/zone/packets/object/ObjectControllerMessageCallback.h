@@ -18,11 +18,7 @@ class ObjectControllerMessageCallback : public MessageCallback {
 
 	Reference<MessageCallback*> objectControllerCallback;
 public:
-	ObjectControllerMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), priority(0), type(0), objectID(0) {
-
-		objectControllerCallback = nullptr;
-	}
+	ObjectControllerMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
 	static UniqueReference<MessageCallbackFactory<MessageCallback* (ObjectControllerMessageCallback*), uint32>*> objectMessageControllerFactory;
 
@@ -32,16 +28,10 @@ public:
 
 	void run();
 
-	inline uint32 getPriority() const {
-		return priority;
-	}
+	uint32 getPriority() const;
 
-	inline uint32 getType() const {
-		return type;
-	}
+	uint32 getType() const;
 
-	inline uint64 getObjectID() const {
-		return objectID;
-	}
+	uint64 getObjectID() const;
 
 };

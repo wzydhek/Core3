@@ -37,18 +37,9 @@ public:
 		return comp;
 	}
 
-	DataObjectComponent* getDataObjectComponent(const String& name) {
-		return dataObjectFactory.createObject(name);
-	}
+	DataObjectComponent* getDataObjectComponent(const String& name);
 
-	void putComponent(const String& name, SceneObjectComponent* component) {
-		Locker locker(this);
+	void putComponent(const String& name, SceneObjectComponent* component);
 
-		if (component != nullptr)
-			components.put(name, component);
-	}
-
-	int size() {
-		return components.size();
-	}
+	int size();
 };

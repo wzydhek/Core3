@@ -18,65 +18,24 @@ class ShipChassisTemplate : public ShipComponentTemplate {
 	bool pob;
 
 public:
-	ShipChassisTemplate() {
-		chassisDeed = "";
-		certificationRequired = "";
+	ShipChassisTemplate();
 
-		dealerFee = 0;
-		pob = false;
-	}
+	~ShipChassisTemplate();
 
-	~ShipChassisTemplate() {
-	}
-
-	void readObject(LuaObject* templateData) {
-		ShipComponentTemplate::readObject(templateData);
-
-		chassisDeed = templateData->getStringField("chassisDeed");
-		certificationRequired = templateData->getStringField("certificationRequired");
-
-		auto skillTable = templateData->getObjectField("skillRequired");
-
-		if (skillTable.isValidTable()) {
-			for (int i = 1; i <= skillTable.getTableSize(); ++i) {
-				auto skillString = skillTable.getStringAt(i);
-
-				skillsRequired.add(skillString);
-			}
-		}
-
-		skillTable.pop();
-
-		dealerFee = templateData->getIntField("dealerFee");
-		pob = templateData->getBooleanField("pob");
-	}
+	void readObject(LuaObject* templateData);
 
 	// Accessors
-	inline String getChassisDeed() {
-		return chassisDeed;
-	}
+	String getChassisDeed();
 
-	inline String getCertificationsRequired() {
-		return certificationRequired;
-	}
+	String getCertificationsRequired();
 
-	inline int getTotalSkillsRequired() {
-		return skillsRequired.size();
-	}
+	int getTotalSkillsRequired();
 
-	inline String getSkillRequired(int index) {
-		return skillsRequired.get(index);
-	}
+	String getSkillRequired(int index);
 
-	inline int getDealerFee() {
-		return dealerFee;
-	}
+	int getDealerFee();
 
-	inline bool isPob() {
-		return pob;
-	}
+	bool isPob();
 
-	bool isShipChassisTemplate() {
-		return true;
-	}
+	bool isShipChassisTemplate();
 };

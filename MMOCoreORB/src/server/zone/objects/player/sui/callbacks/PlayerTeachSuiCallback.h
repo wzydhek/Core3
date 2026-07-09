@@ -8,41 +8,12 @@
 #pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class PlayerTeachSuiCallback : public SuiCallback {
 
 public:
-	PlayerTeachSuiCallback(ZoneServer* serv) : SuiCallback(serv) {
-	}
+	PlayerTeachSuiCallback(ZoneServer* serv);
 
-	void run(CreatureObject* teacher, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!sui->isListBox() || cancelPressed || args->size() <= 0)
-			return;
-
-		int index = Integer::valueOf(args->get(0).toString());
-
-		if (index == -1)
-			return;
-
-		SuiListBox* listBox = cast<SuiListBox*>(sui);
-
-		if (listBox->getMenuSize() <= index || index < 0)
-			return;
-
-		ManagedReference<SceneObject*> usingObject = listBox->getUsingObject().get();
-
-		if (usingObject == nullptr || !usingObject->isCreatureObject())
-			return;
-
-		CreatureObject* student = cast<CreatureObject*>(usingObject.get());
-
-		Locker _lock(student, teacher);
-
-		Skill* skill = SkillManager::instance()->getSkill(listBox->getMenuObjectID(index));
-
-		PlayerManager* playerManager = server->getPlayerManager();
-		playerManager->offerTeaching(teacher, student, skill);
-	}
+	void run(CreatureObject* teacher, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args);
 };

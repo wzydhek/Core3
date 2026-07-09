@@ -49,158 +49,64 @@ class Performance {
 
 public:
 
-	inline bool isDance() {
-		return type == PerformanceType::DANCE;
-	}
+	bool isDance();
 
-	inline bool isMusic() {
-		return type == PerformanceType::MUSIC;
-	}
+	bool isMusic();
 
-	inline String& getName() {
-		return performanceName;
-	}
+	String& getName();
 
-	inline String& getRequiredSong() {
-		return requiredSong;
-	}
+	String& getRequiredSong();
 
-	inline String& getRequiredInstrument() {
-		return requiredInstrument;
-	}
+	String& getRequiredInstrument();
 
-	inline String& getRequiredDance() {
-		return requiredDance;
-	}
+	String& getRequiredDance();
 
-	inline String& getRequiredSkillMod() {
-		return requiredSkillMod;
-	}
+	String& getRequiredSkillMod();
 
-	inline String& getMainloop() {
-		return mainloop;
-	}
+	String& getMainloop();
 
-	inline String& getFlourish1() {
-		return requiredDance;
-	}
+	String& getFlourish1();
 
-	inline String& getFlourish2() {
-		return requiredDance;
-	}
+	String& getFlourish2();
 
-	inline String& getFlourish3() {
-		return flourish3;
-	}
+	String& getFlourish3();
 
-	inline String& getFlourish4() {
-		return flourish4;
-	}
+	String& getFlourish4();
 
-	inline String& getFlourish5() {
-		return flourish5;
-	}
+	String& getFlourish5();
 
-	inline String& getFlourish6() {
-		return flourish6;
-	}
+	String& getFlourish6();
 
-	inline String& getFlourish7() {
-		return flourish7;
-	}
+	String& getFlourish7();
 
-	inline String& getFlourish8() {
-		return flourish8;
-	}
+	String& getFlourish8();
 
-	inline String& getIntro() {
-		return intro;
-	}
+	String& getIntro();
 
-	inline String& getOutro() {
-		return outro;
-	}
+	String& getOutro();
 
-	inline int getInstrumentAudioId() {
-		return instrumentAudioId;
-	}
-	inline int getDanceVisualId() {
-		return danceVisualId;
-	}
+	int getInstrumentAudioId();
 
-	inline int getActionPointsPerLoop() {
-		return actionPointsPerLoop;
-	}
+	int getDanceVisualId();
 
-	inline int getType() {
-		return type;
-	}
+	int getActionPointsPerLoop();
 
-	inline int getBaseXp() {
-		return baseXp;
-	}
+	int getType();
 
-	inline int getFlourishXpMod() {
-		return flourishXpMod;
-	}
+	int getBaseXp();
 
-	inline int getHealMindWound() {
-		return healMindWound;
-	}
+	int getFlourishXpMod();
 
-	inline int getHealShockWound() {
-		return healShockWound;
-	}
+	int getHealMindWound();
 
-	inline int getRequiredSkillModValue() {
-		return requiredSkillModValue;
-	}
+	int getHealShockWound();
 
-	inline float getLoopDuration() {
-		return loopDuration;
-	}
+	int getRequiredSkillModValue();
 
-	inline int getPerformanceIndex() {
-		return performanceIndex;
-	}
+	float getLoopDuration();
 
-	void parseDataTableRow(int idx, DataTableRow* row) {
-		performanceIndex = idx;
-		row->getValue(0, performanceName);
-		row->getValue(1, instrumentAudioId);
-		row->getValue(2, requiredSong);
-		row->getValue(3, requiredInstrument);
-		row->getValue(4, requiredDance);
-		row->getValue(5, danceVisualId);
-		row->getValue(6, actionPointsPerLoop);
-		row->getValue(7, loopDuration);
+	int getPerformanceIndex();
 
-		uint32 typeHex;
-		row->getValue(8, typeHex);
-
-		if ((int)typeHex == PerformanceType::MUSIC)	{
-			type = PerformanceType::MUSIC;
-		} else if ((int)typeHex == PerformanceType::DANCE) {
-			type = PerformanceType::DANCE;
-		}
-
-		row->getValue(9, baseXp);
-		row->getValue(10, flourishXpMod);
-		row->getValue(11, healMindWound);
-		row->getValue(12, healShockWound);
-		row->getValue(13, requiredSkillMod);
-		row->getValue(14, requiredSkillModValue);
-		row->getValue(15, mainloop);
-		row->getValue(16, flourish1);
-		row->getValue(17, flourish2);
-		row->getValue(18, flourish3);
-		row->getValue(19, flourish4);
-		row->getValue(20, flourish5);
-		row->getValue(21, flourish6);
-		row->getValue(22, flourish7);
-		row->getValue(23, flourish8);
-		row->getValue(24, intro);
-		row->getValue(25, outro);
-	}
+	void parseDataTableRow(int idx, DataTableRow* row);
 
 };

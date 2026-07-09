@@ -19,6 +19,12 @@
 #include "server/zone/managers/stringid/StringIdManager.h"
 #include "server/zone/objects/transaction/TransactionLog.h"
 
+StructureMaintenanceTask::StructureMaintenanceTask(StructureObject* structure) : Task(), Logger("StructureMaintenanceTask") {
+	structureObject = structure;
+
+	setCustomTaskQueue("slowQueue");
+}
+
 void StructureMaintenanceTask::run() {
 	ManagedReference<StructureObject*> strongRef = structureObject.get();
 
@@ -280,4 +286,8 @@ bool StructureMaintenanceTask::shouldBuildingBeDestroyed(StructureObject* struct
 	}
 
 	return true;
+}
+
+const Time& StructureMaintenanceTask::getNextExecutionTime() const {
+	return Task::getNextExecutionTime();
 }

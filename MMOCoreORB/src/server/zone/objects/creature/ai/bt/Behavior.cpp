@@ -35,7 +35,68 @@ bool getAiAgentDebugVerbose() {
 
 using namespace server::zone::objects::creature::ai::bt;
 
+Behavior::Behavior(const Behavior& b) : Object(), className(b.className), id(b.id), parent(b.parent) {
+}
+
 Behavior::Behavior(const String& className, const uint32 id, const LuaObject& args) : Object(), className(className), id(id), parent() {
+}
+
+Behavior& Behavior::operator=(const Behavior& b) {
+	if (this == &b)
+		return *this;
+
+	className = b.className;
+	id = b.id;
+	parent = b.parent;
+
+	return *this;
+}
+
+Behavior::~Behavior() {
+}
+
+String Behavior::print() const {
+	return className;
+}
+
+bool Behavior::isComposite() const {
+	return false;
+}
+
+bool Behavior::isDecorator() const {
+	return false;
+}
+
+bool Behavior::isSocket() const {
+	return false;
+}
+
+void Behavior::setParent(Behavior* parent_) {
+	assert(parent_ != nullptr);
+	assert(parent_->isComposite() || parent_->isDecorator());
+	parent = parent_;
+}
+
+uint32 Behavior::getID() const {
+	return id;
+}
+
+Behavior* Behavior::getParent() const {
+	return parent.get();
+}
+
+Behavior* Behavior::getChild(uint32) const {
+	return NULL;
+}
+
+bool Behavior::hasChild(Behavior*) const {
+	return false;
+}
+
+Vector<const Behavior*> Behavior::getRecursiveChildList() const {
+	Vector<const Behavior*> retVal;
+	retVal.add(this);
+	return retVal;
 }
 
 bool Behavior::checkConditions(AiAgent* agent) const {

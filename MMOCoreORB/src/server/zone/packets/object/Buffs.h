@@ -5,6 +5,8 @@
 #pragma once
 
 #include "ObjectControllerMessage.h"
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class AddBuffMessage : public ObjectControllerMessage {
 public:
@@ -15,12 +17,7 @@ public:
 	 * @param duration {float} The duration of the buff in seconds.
 	 * @return {AddBuffMessage} The add buff message..
 	 */
-	AddBuffMessage(SceneObject* player, uint32 buffcrc, float duration)
-			: ObjectControllerMessage(player->getObjectID(), 0x1B, 0x229, false) {
-
-		insertInt(buffcrc);
-		insertFloat(duration);
-	}
+	AddBuffMessage(SceneObject* player, uint32 buffcrc, float duration);
 };
 
 class RemoveBuffMessage : public ObjectControllerMessage {
@@ -31,9 +28,5 @@ public:
 	 * @param buffcrc {uint32} The crc of the buff to remove.
 	 * @return {RemoveBuffMessage} The remove buff message.
 	 */
-	RemoveBuffMessage(CreatureObject* player, uint32 buffcrc)
-			: ObjectControllerMessage(player->getObjectID(), 0x1B, 0x22A, false) {
-
-		insertInt(buffcrc);
-	}
+	RemoveBuffMessage(CreatureObject* player, uint32 buffcrc);
 };

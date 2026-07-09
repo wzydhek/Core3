@@ -15,45 +15,23 @@ protected:
 	unsigned int suiBoxID;
 
 public:
-	TurretControlTerminalDataComponent() {
-		turretIndex = -1;
-		suiBoxID = -1;
-		addSerializableVariables();
-	}
+	TurretControlTerminalDataComponent();
 
-	virtual ~TurretControlTerminalDataComponent() {
+	virtual ~TurretControlTerminalDataComponent();
 
-	}
+	void writeJSON(nlohmann::json& j) const;
 
-	void writeJSON(nlohmann::json& j) const {
-		DataObjectComponent::writeJSON(j);
+	bool isTurretControlTerminalData();
 
-		SERIALIZE_JSON_MEMBER(turretIndex);
-	}
+	int getTurrteIndex() const;
 
-	bool isTurretControlTerminalData() {
-		return true;
-	}
+	void setTurretIndex(int indx);
 
-	int getTurrteIndex() const {
-		return turretIndex;
-	}
+	void setSuiBoxID(unsigned int id);
 
-	void setTurretIndex(int indx){
-		turretIndex = indx;
-	}
-
-	void setSuiBoxID(unsigned int id){
-		suiBoxID = id;
-	}
-
-	unsigned int getSuiBoxID() const {
-		return suiBoxID;
-	}
+	unsigned int getSuiBoxID() const;
 
 
 private:
-	void addSerializableVariables(){
-		addSerializableVariable("turretIndex",&turretIndex);
-	}
+	void addSerializableVariables();
 };

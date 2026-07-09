@@ -14,55 +14,23 @@ protected:
 	int verts[3];
 
 public:
-	MeshTriangle() {
-		verts[0] = 0;
-		verts[1] = 1;
-		verts[2] = 2;
-	}
+	MeshTriangle();
 
-	MeshTriangle(int a, int b, int c) {
-		verts[0] = a;
-		verts[1] = b;
-		verts[2] = c;
-	}
+	MeshTriangle(int a, int b, int c);
 
-	MeshTriangle(const MeshTriangle& mesh) {
-		verts[0] = mesh.verts[0];
-		verts[1] = mesh.verts[1];
-		verts[2] = mesh.verts[2];
-	}
+	MeshTriangle(const MeshTriangle& mesh);
 
-	MeshTriangle& operator=(const MeshTriangle& mesh) {
-		if (this == &mesh) {
-			return *this;
-		}
+	MeshTriangle& operator=(const MeshTriangle& mesh);
 
-		verts[0] = mesh.verts[0];
-		verts[1] = mesh.verts[1];
-		verts[2] = mesh.verts[2];
+	const int* getVerts() const;
 
-		return *this;
-	}
+	const int* getVerts();
 
-	const int* getVerts() const {
-		return verts;
-	}
+	void set(uint8 index, uint32 value);
 
-	const int* getVerts() {
-		return verts;
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	void set(uint8 index, uint32 value) {
-		verts[index] = value;
-	}
-
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return false;
-	}
-
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		return false;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
 	friend class MeshData;
 
@@ -75,52 +43,27 @@ protected:
 	Vector <MeshTriangle> triangles;
 
 public:
-	MeshData() {
+	MeshData();
 
-	}
-
-	MeshData(const MeshData& data) : Object() {
-		vertices = data.vertices;
-		triangles = data.triangles;
-	}
+	MeshData(const MeshData& data);
 
 	void readObject(IffStream* iffStream);
 
-	Vector <Vector3>* getVerts() {
-		return &vertices;
-	}
+	Vector<Vector3>* getVerts();
 
-	const Vector <Vector3>* getVerts() const {
-		return &vertices;
-	}
+	const Vector<Vector3>* getVerts() const;
 
-	Vector <MeshTriangle>* getTriangles() {
-		return &triangles;
-	}
+	Vector<MeshTriangle>* getTriangles();
 
-	static Reference<MeshData*> makeCopyNegateZ(const MeshData* mesh, const Matrix4& parentTransform) {
-		Reference < MeshData * > newData = new MeshData(*mesh);
-		for (auto& vert : newData->vertices) {
-			vert.setZ(-vert.getZ());
-			vert = vert * parentTransform;
-		}
-		return newData;
-	}
+	static Reference<MeshData*> makeCopyNegateZ(const MeshData* mesh, const Matrix4& parentTransform);
 
-	void transformMeshData(const Matrix4& transform) {
-		for (int i = 0; i < vertices.size(); i++) {
-			Vector3& vert = vertices.get(i);
-			vert = Vector3(vert.getX(), vert.getY(), vert.getZ()) * transform;
-		}
-	}
+	void transformMeshData(const Matrix4& transform);
 
 	Vector <MeshTriangle>* getMeshWithinBounds(AABB& bounds) const;
 
 	AABB buildAABB() const;
 
-	const Vector <MeshTriangle>* getTriangles() const {
-		return &triangles;
-	}
+	const Vector<MeshTriangle>* getTriangles() const;
 
 	friend class MeshAppearanceTemplate;
 

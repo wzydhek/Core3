@@ -103,3 +103,13 @@ void DroidMedicalModuleDataComponent::unloadSkillMods(CreatureObject* player) {
 	//player->removeSkillMod(SkillModManager::DROID,"private_medical_rating",true);
 }
 
+bool DroidMedicalModuleDataComponent::skillsByRange() {
+	return true;
+}
+int DroidMedicalModuleDataComponent::getBatteryDrain() {
+	return 0;
+}
+
+bool DroidMedicalModuleDataComponent::isStackable() {
+	return true;
+}

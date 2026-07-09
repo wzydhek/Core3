@@ -115,31 +115,19 @@ public:
 
 	void updateXpLimits(PlayerObject* ghost);
 
-	Skill* getSkill(const String& skillName) const {
-		return skillMap.get(skillName.hashCode()).get();
-	}
+	Skill* getSkill(const String& skillName) const;
 
-	Skill* getSkill(uint32 hashCode) const {
-		return skillMap.get(hashCode).get();
-	}
+	Skill* getSkill(uint32 hashCode) const;
 
-	Ability* getAbility(const String& abilityName) const {
-		return abilityMap.get(abilityName).get();
-	}
+	Ability* getAbility(const String& abilityName) const;
 
-	PerformanceManager* getPerformanceManager() {
-		return performanceManager;
-	}
+	PerformanceManager* getPerformanceManager();
 
-	inline bool isApprenticeshipEnabled() const {
-		return apprenticeshipEnabled;
-	}
+	bool isApprenticeshipEnabled() const;
 
 	void removeSkillRelatedMissions(CreatureObject* creature, Skill* skill);
 
-	int getDroidProgramSize(uint32 programHash) {
-		return droidProgramSizes.get(programHash);
-	}
+	int getDroidProgramSize(uint32 programHash);
 
 	void getPlayerDroidCommands(PlayerObject* ghost, Vector<String>& playerDroidCommands);
 };

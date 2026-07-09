@@ -17,18 +17,7 @@ class SecuritySliceTask : public Task {
 
 public:
 
-	SecuritySliceTask(GCWManager* gcwMan, TangibleObject* term, CreatureObject* player) {
-		gcwManager = gcwMan;
-		terminal = term;
-		creature = player;
-	}
+	SecuritySliceTask(GCWManager* gcwMan, TangibleObject* term, CreatureObject* player);
 
-	void run() {
-
-		if (terminal == nullptr || gcwManager == nullptr  )
-			return;
-
-		gcwManager->completeSecuritySlice(creature, terminal);
-
-	}
+	void run();
 };

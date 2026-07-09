@@ -81,24 +81,16 @@ public:
 	TreeNode(float minx, float miny, float maxx, float maxy, TreeNode *parent);
 	~TreeNode();
 
-	Object* clone() {
-		return ObjectCloner<TreeNode>::clone(this);
-	}
+	Object* clone();
 
-	Object* clone(void* object) {
-		return TransactionalObjectCloner<TreeNode>::clone(this);
-	}
+	Object* clone(void* object);
 
-	void free() {
-		TransactionalMemoryManager::instance()->destroy(this);
-	}
+	void free();
 
 	// Add a object to this node
 	void addObject(TreeEntry *obj);
 
-	TreeEntry* getObject(int index) {
-		return objects.get(index);
-	}
+	TreeEntry* getObject(int index);
 
 	// Remove a object by GUID
 	void removeObject(TreeEntry *obj);
@@ -114,38 +106,18 @@ public:
 	// Check if this node makes any sense to exist
 	void check();
 
-	bool validateNode() const {
-		if (nodeType == OCTREE_NODE) {
-			if (minX > maxX || minY > maxY || minZ > maxZ) {
-				return false;
-			}
-		} else if (minX > maxX || minY > maxY) {
-			return false;
-		}
-
-		return true;
-	}
+	bool validateNode() const;
 
 	// Check if this node has any associated objects
-	inline bool isEmpty() const {
-		return objects.isEmpty();
-	}
+	bool isEmpty() const;
 
 	// Check if this node has children nodes
-	inline bool hasSubNodes() const {
-		return nwNode != nullptr || neNode != nullptr || swNode != nullptr || seNode != nullptr || nwNode2 != nullptr || neNode2 != nullptr || swNode2 != nullptr || seNode2 != nullptr;
-	}
+	bool hasSubNodes() const;
 
 	// Test if the point is inside this node
-	inline bool testInside(float x, float y, float z) const {
-		// Logger::console.info(true) << "TreeNode - testInside --- Using X: " << x << " Z: " << z << " Y: " << y << " minX: " << minX << " maxX: " << maxX << " minZ: " << minZ << " maxZ: " << maxZ << " minY: " << minY << " maxY: " << maxY;
+	bool testInside(float x, float y, float z) const;
 
-		return ((x > minX) && (x < maxX) && (y > minY) && (y < maxY) && (z > minZ) && (z < maxZ));
-	}
-
-	inline bool testInside(float x, float y) const {
-		return ((x > minX) && (x < maxX) && (y > minY) && (y < maxY));
-	}
+	bool testInside(float x, float y) const;
 
 	// Test if the object is inside this quad tree node
 	bool testInsideQuadTree(TreeEntry* obj) const;
@@ -155,37 +127,19 @@ public:
 
 	void setBoundingSphere();
 
-	inline float squaredDistanceToCenter(float x, float y, float z) const {
-		float dx = x - centerX;
-		float dy = y - centerY;
-		float dz = z - centerZ;
+	float squaredDistanceToCenter(float x, float y, float z) const;
 
-		return dx*dx + dy*dy + dz*dz;
-	}
+	bool testInRangeTop(float z, float range) const;
 
-	inline bool testInRangeTop(float z, float range) const {
-		return (z + range) >= dividerZ;
-	}
+	bool testInRangeBottom(float z, float range) const;
 
-	inline bool testInRangeBottom(float z, float range) const {
-		return (z - range) <= dividerZ;
-	}
+	bool testInRangeNorth(float y, float range) const;
 
-	inline bool testInRangeNorth(float y, float range) const {
-		return (y + range) >= dividerY;
-	}
+	bool testInRangeSouth(float y, float range) const;
 
-	inline bool testInRangeSouth(float y, float range) const {
-		return (y - range) <= dividerY;
-	}
+	bool testInRangeEast(float x, float range) const;
 
-	inline bool testInRangeEast(float x, float range) const {
-		return (x + range) >= dividerX;
-	}
-
-	inline bool testInRangeWest(float x, float range) const {
-		return (x - range) <= dividerX;
-	}
+	bool testInRangeWest(float x, float range) const;
 
 	String toStringData();
 

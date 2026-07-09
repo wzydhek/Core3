@@ -15,30 +15,15 @@ class DroidDeedTemplate : public DeedTemplate {
 	int species;
 
 public:
-	DroidDeedTemplate() : species(0) {
+	DroidDeedTemplate();
 
-	}
+	~DroidDeedTemplate();
 
-	~DroidDeedTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
+	const String& getControlDeviceObjectTemplate() const;
 
-	void readObject(LuaObject* templateData) {
-		DeedTemplate::readObject(templateData);
-		controlDeviceObjectTemplate = templateData->getStringField("controlDeviceObjectTemplate");
-		mobileTemplate = templateData->getStringField("mobileTemplate");
-		species = templateData->getIntField("species");
-	}
+	const String& getMobileTemplate() const;
 
-	const String& getControlDeviceObjectTemplate() const {
-		return controlDeviceObjectTemplate;
-	}
-
-	const String& getMobileTemplate() const {
-		return mobileTemplate;
-	}
-
-	int getSpecies() const {
-		return species;
-	}
+	int getSpecies() const;
 };

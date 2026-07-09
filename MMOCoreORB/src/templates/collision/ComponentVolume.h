@@ -11,7 +11,9 @@
 
 class ComponentVolume : public CompositeVolume {
 public:
-	bool isComponentVolume() { return true; }
-	ComponentVolume() { }
+	bool isComponentVolume();
+
+	ComponentVolume();
+
 	virtual void read(IffStream *iff);
 };

@@ -14,48 +14,22 @@ class StringIdParamData {
 	StringParam file;
 	StringParam stringId;
 public:
-	StringIdParamData(const String& File, const String& id) {
-		file = File;
-		stringId = id;
-	}
+	StringIdParamData(const String& File, const String& id);
 
-	StringIdParamData(const StringParam& File, const StringParam& id) {
-		file = File;
-		stringId = id;
-	}
+	StringIdParamData(const StringParam& File, const StringParam& id);
 
-	StringIdParamData(const StringParam& fullString) {
-		String str = fullString.get();
+	StringIdParamData(const StringParam& fullString);
 
-		int idx = str.indexOf(":");
-
-		if (idx != -1) {
-			file = str.subString(1, idx);
-			stringId = str.subString(idx + 1);
-		}
-	}
-
-	StringIdParamData() {
-		file = "";
-		stringId = "";
-	}
+	StringIdParamData();
 
 
-	bool operator< (const StringIdParamData& val) const {
-		return false;
-	}
+	bool operator<(const StringIdParamData& val) const;
 
-	bool operator> (const StringIdParamData& val) const {
-		return false;
-	}
+	bool operator>(const StringIdParamData& val) const;
 
-	StringIdParamData& operator+= (const StringIdParamData& val) {
-		return *this;
-	}
+	StringIdParamData& operator+=(const StringIdParamData& val);
 
-	StringIdParamData& operator-= (const StringIdParamData& val) {
-		return *this;
-	}
+	StringIdParamData& operator-=(const StringIdParamData& val);
 
 
 	friend class StringIdParam;
@@ -64,76 +38,20 @@ public:
 class StringIdParam : public TemplateBase<StringIdParamData> {
 
 public:
-	StringIdParam(const String& str) :  TemplateBase<StringIdParamData>(StringIdParamData(str)) {
-		setType(STRINGID);
-	}
+	StringIdParam(const String& str);
 
-	StringIdParam() : TemplateBase<StringIdParamData>(StringIdParamData("", "")) {
-		setType(STRINGID);
-	}
+	StringIdParam();
 
-	~StringIdParam() {
-	}
+	~StringIdParam();
 
-	String toString() const {
-		return getFullString();
-	}
+	String toString() const;
 
-	virtual bool parse(Chunk* source) {
-		int readCase = source->readByte();
+	virtual bool parse(Chunk* source);
 
-		if (readCase != 1) {
-			//create(StringIdParamData());
-			return false;
-		}
+	StringIdParam& operator=(const String& str);
 
-		StringParam stfFile;
-		stfFile.parse(source);
+	StringIdParam& operator=(const StringIdParamData& custom);
 
-		StringParam stringId;
-		stringId.parse(source);
-
-		create(StringIdParamData(stfFile, stringId));
-
-		return true;
-	}
-
-	StringIdParam& operator=(const String& str) {
-		create(StringIdParamData(str));
-
-		return *this;
-	}
-
-	/*operator String() const {
-		String file = get().file.get();
-		//std::cout << "testFile:[" << file.toStdString() << "]\n";
-
-		String stringId = get().stringId.get();
-		//std::cout << "testStringId:[" << stringId.toStdString() << "]\n";
-
-		if (stringId.isEmpty())
-			return file;
-
-		else return "@" + file + ":" + stringId + "";
-	}*/
-
-	StringIdParam& operator= (const StringIdParamData& custom) {
-		create(custom);
-
-		return *this;
-	}
-
-	String getFullString() const {
-		String file = get().file.get();
-		//std::cout << "testFile:[" << file.toStdString() << "]\n";
-
-		String stringId = get().stringId.get();
-		//std::cout << "testStringId:[" << stringId.toStdString() << "]\n";
-
-		if (stringId.isEmpty())
-			return get().file.toString();
-
-		else return "@" + file + ":" + stringId;
-	}
+	String getFullString() const;
 
 };

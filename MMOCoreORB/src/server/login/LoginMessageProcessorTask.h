@@ -15,32 +15,11 @@ namespace server {
 			LoginPacketHandler* packetHandler;
 
 		public:
-			LoginMessageProcessorTask(Message* msg, LoginPacketHandler* handler) {
-				message = msg;
+			LoginMessageProcessorTask(Message* msg, LoginPacketHandler* handler);
 
-				packetHandler = handler;
-			}
+			~LoginMessageProcessorTask();
 
-			~LoginMessageProcessorTask() {
-			}
-
-			void run() {
-				static Logger logger("LoginMessageProcessorTask", Logger::INFO);
-
-				try {
-					message->reset();
-
-					packetHandler->handleMessage(message);
-				} catch (const PacketIndexOutOfBoundsException& e) {
-					logger.error() << e.getMessage();
-
-					logger.debug() << "incorrect packet - " << *message;
-				} catch (const Exception& e) {
-					logger.error() << e.getMessage();
-
-					logger.debug() << "incorrect packet - " << *message;
-				}
-			}
+			void run();
 
 		};
 

@@ -684,6 +684,641 @@ bool ConfigManager::setStringFromFile(const String& name, const String& fileName
 	return false;
 }
 
+void ConfigManager::incrementConfigVersion() {
+	configVersion.increment();
+}
+
+String ConfigManager::withAccount(const String& name, unsigned int accountID) const {
+	if (accountID == 0) {
+		return name;
+	}
+
+	StringBuffer acctFlag;
+	acctFlag << "Core3.AccountFlags." << accountID << "." << name;
+
+	return acctFlag.toString();
+}
+
+uint64 ConfigManager::getConfigDataAgeMs() const {
+	return configStartTime.elapsedMs();
+}
+
+int ConfigManager::getConfigVersion() {
+	return configVersion.get();
+}
+
+Logger::LogLevel ConfigManager::getLogLevel(const String& name, Logger::LogLevel defaultValue, unsigned int accountID) {
+	return static_cast<Logger::LogLevel>(getInt(name, (int)defaultValue, accountID));
+}
+
+// Legacy getters
+bool ConfigManager::getMakeLogin() {
+	return getBool("Core3.MakeLogin", true);
+}
+
+bool ConfigManager::getMakeZone() {
+	return getBool("Core3.MakeZone", true);
+	;
+}
+
+bool ConfigManager::getMakePing() {
+	return getBool("Core3.MakePing", true);
+}
+
+bool ConfigManager::getMakeStatus() {
+	return getBool("Core3.MakeStatus", true);
+}
+
+bool ConfigManager::getDumpObjFiles() {
+	return getBool("Core3.DumpObjFiles", true);
+}
+
+bool ConfigManager::shouldUnloadContainers() {
+	// Use cached value as this is called often
+	static uint32 cachedVersion = 0;
+	static bool cachedUnloadContainers;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedUnloadContainers = getBool("Core3.UnloadContainers", true);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedUnloadContainers;
+}
+
+bool ConfigManager::shouldUseMetrics() {
+	// On Basilisk this is called 400/s
+	static uint32 cachedVersion = 0;
+	static bool cachedUseMetrics;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedUseMetrics = getBool("Core3.UseMetrics", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedUseMetrics;
+}
+
+bool ConfigManager::getPvpMode() {
+	// Use cached value as this is a hot item called in:
+	//   CreatureObjectImplementation::isAttackableBy
+	//   CreatureObjectImplementation::isAggressiveTo
+	static uint32 cachedVersion = 0;
+	static bool cachedPvpMode;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedPvpMode = getBool("Core3.PvpMode", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedPvpMode;
+}
+
+bool ConfigManager::setPvpMode(bool val) {
+	return setBool("Core3.PvpMode", val);
+}
+
+const String& ConfigManager::getORBNamingDirectoryAddress() {
+	return getString("Core3.ORB", "");
+}
+
+uint16 ConfigManager::getORBNamingDirectoryPort() {
+	return getInt("Core3.ORBPort", 44419);
+}
+
+const String& ConfigManager::getDBHost() {
+	return getString("Core3.DBHost", "127.0.0.1");
+}
+
+bool ConfigManager::isProgressMonitorActivated() {
+	// Use cached value as this a hot item called in lots of loops
+	static uint32 cachedVersion = 0;
+	static bool cachedProgressMonitors;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedProgressMonitors = getBool("Core3.ProgressMonitors", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedProgressMonitors;
+}
+
+bool ConfigManager::includeFactionPetsForMissionDifficulty() {
+	// Use cached value as this a hot item called in lots of loops
+	static uint32 cachedVersion = 0;
+	static bool cachedValue;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedValue = getBool("Core3.MissionManager.IncludeFactionPets", true);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedValue;
+}
+
+int ConfigManager::getDBPort() {
+	return getInt("Core3.DBPort", 3306);
+}
+
+const String& ConfigManager::getDBName() {
+	return getString("Core3.DBName", "swgemu");
+}
+
+const String& ConfigManager::getDBUser() {
+	return getString("Core3.DBUser", "root");
+}
+
+const String& ConfigManager::getDBPass() {
+	return getString("Core3.DBPass", "Gemeni1");
+}
+
+const String& ConfigManager::getDBSecret() {
+	return getString("Core3.DBSecret", "swgemusecret");
+}
+
+const String& ConfigManager::getMantisHost() {
+	return getString("Core3.MantisHost", "127.0.0.1");
+}
+
+int ConfigManager::getMantisPort() {
+	return getInt("Core3.MantisPort", 3306);
+}
+
+const String& ConfigManager::getLatestTre() {
+	return getString("Core3.TreManager.LatestTre", "default_patch.tre");
+}
+
+const Vector<String>& ConfigManager::getTreFiles() {
+	return getStringVector("Core3.TreFiles");
+}
+
+const String& ConfigManager::getMantisName() {
+	return getString("Core3.MantisName", "swgemu");
+}
+
+const String& ConfigManager::getMantisUser() {
+	return getString("Core3.MantisUser", "root");
+}
+
+const String& ConfigManager::getMantisPass() {
+	return getString("Core3.MantisPass", "Gemeni1");
+}
+
+const String& ConfigManager::getMantisPrefix() {
+	return getString("Core3.MantisPrfx", "");
+}
+
+const String& ConfigManager::getMessageOfTheDay() {
+	return getString("Core3.MOTD", "Welcome to SWGEmu!");
+}
+
+const String& ConfigManager::getRevision() {
+	return getString("Core3.Revision", "");
+}
+
+const String& ConfigManager::getMetricsHost() {
+	return getString("Core3.MetricsHost", "127.0.0.1");
+}
+
+const String& ConfigManager::getMetricsPrefix() {
+	return getString("Core3.MetricsPrefix", "");
+}
+
+int ConfigManager::getMetricsPort() {
+	return getInt("Core3.MetricsPort", 8125);
+}
+
+const String& ConfigManager::getTrePath() {
+	return getString("Core3.TrePath", "tre");
+}
+
+uint16 ConfigManager::getLoginPort() {
+	return getInt("Core3.LoginPort", 44453);
+}
+
+uint16 ConfigManager::getStatusPort() {
+	return getInt("Core3.StatusPort", 44455);
+}
+
+uint16 ConfigManager::getPingPort() {
+	return getInt("Core3.PingPort", 44462);
+}
+
+const String& ConfigManager::getLoginRequiredVersion() {
+	return getString("Core3.LoginRequiredVersion", "20050408-18:00");
+}
+
+int ConfigManager::getLoginProcessingThreads() {
+	return getInt("Core3.LoginProcessingThreads", 1);
+}
+
+int ConfigManager::getLoginAllowedConnections() {
+	return getInt("Core3.LoginAllowedConnections", 30);
+}
+
+int ConfigManager::getStatusAllowedConnections() {
+	return getInt("Core3.StatusAllowedConnections", 100);
+}
+
+int ConfigManager::getPingAllowedConnections() {
+	return getInt("Core3.PingAllowedConnections", 3000);
+}
+
+int ConfigManager::getStatusInterval() {
+	return getInt("Core3.StatusInterval", 60);
+}
+
+int ConfigManager::getAutoReg() {
+	return getBool("Core3.AutoReg", true);
+}
+
+int ConfigManager::getZoneProcessingThreads() {
+	return getInt("Core3.ZoneProcessingThreads", 10);
+}
+
+int ConfigManager::getZoneAllowedConnections() {
+	return getInt("Core3.ZoneAllowedConnections", 300);
+}
+
+int ConfigManager::getZoneGalaxyID() {
+	return getInt("Core3.ZoneGalaxyID", 2);
+}
+
+int ConfigManager::getZoneServerPort() {
+	return getInt("Core3.ZoneServerPort", 0);
+}
+
+const SortedVector<String>& ConfigManager::getEnabledZones() {
+	return getSortedStringVector("Core3.ZonesEnabled");
+}
+
+const SortedVector<String>& ConfigManager::getEnabledSpaceZones() {
+	return getSortedStringVector("Core3.SpaceZonesEnabled");
+}
+
+int ConfigManager::getPurgeDeletedCharacters() {
+	return getInt("Core3.PurgeDeletedCharacters", 10); // In minutes
+}
+
+int ConfigManager::getMaxNavMeshJobs() {
+	return getInt("Core3.MaxNavMeshJobs", 6);
+}
+
+int ConfigManager::getMaxAuctionSearchJobs() {
+	return getInt("Core3.MaxAuctionSearchJobs", 1);
+}
+
+const String& ConfigManager::getLogFile() {
+	return getString("Core3.LogFile", "log/core3.log");
+}
+
+int ConfigManager::getLogFileLevel() {
+	return getInt("Core3.LogFileLevel", Logger::INFO);
+}
+
+int ConfigManager::getRotateLogSizeMB() {
+	return getInt("Core3.RotateLogSizeMB", 100);
+}
+
+bool ConfigManager::getRotateLogAtStart() {
+	return getBool("Core3.RotateLogAtStart", false);
+}
+
+void ConfigManager::setProgressMonitors(bool val) {
+	setBool("Core3.ProgressMonitors", val);
+}
+
+const String& ConfigManager::getTermsOfService() {
+	return getString("Core3.TermsOfService", "");
+}
+
+int ConfigManager::getTermsOfServiceVersion() {
+	return getInt("Core3.TermsOfServiceVersion", 0);
+}
+
+bool ConfigManager::getJsonLogOutput() {
+	return getBool("Core3.LogJSON", false);
+}
+
+bool ConfigManager::getSyncLogOutput() {
+	return getBool("Core3.LogSync", false);
+}
+
+bool ConfigManager::getLuaLogJSON() {
+	return getBool("Core3.LuaLogJSON", false);
+}
+
+bool ConfigManager::getPathfinderLogJSON() {
+	return getBool("Core3.PathfinderLogJSON", false);
+}
+
+int ConfigManager::getCleanupMailCount() {
+	return getInt("Core3.CleanupMailCount", 25000);
+}
+
+int ConfigManager::getRESTPort() {
+	return getInt("Core3.RESTServerPort", 0);
+}
+
+const String& ConfigManager::getInactiveAccountTitle() {
+	return getString("Core3.InactiveAccountTitle", "Account Disabled");
+}
+
+const String& ConfigManager::getInactiveAccountText() {
+	return getString("Core3.InactiveAccountText", "The server administrators have disabled your account.");
+}
+
+bool ConfigManager::getCharacterBuilderEnabled() {
+	return getBool("Core3.CharacterBuilderEnabled", false);
+}
+
+int ConfigManager::getPlayerLogLevel() {
+	return getInt("Core3.PlayerLogLevel", Logger::INFO);
+}
+
+int ConfigManager::getMaxLogLines() {
+	return getInt("Core3.MaxLogLines", 1000000);
+}
+
+int ConfigManager::getSessionStatsSeconds() {
+	static uint32 cachedVersion = 0;
+	static int cachedSessionStatsSeconds;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedSessionStatsSeconds = getInt("Core3.SessionStatsSeconds", 1800);
+#ifndef WITH_DEV_MODE
+		if (cachedSessionStatsSeconds < 300) {
+			cachedSessionStatsSeconds = 300;
+		} else if (cachedSessionStatsSeconds > 3600) {
+			cachedSessionStatsSeconds = 3600;
+		}
+#endif // !WITH_DEV_MODE
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedSessionStatsSeconds;
+}
+
+int ConfigManager::getOnlineLogSeconds() {
+	return getInt("Core3.OnlineLogSeconds", 300);
+}
+
+int ConfigManager::getOnlineLogSize() {
+	static uint32 cachedVersion = 0;
+	static int cachedOnlineLogSize;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedOnlineLogSize = getInt("Core3.OnlineLogSize", 100000000);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedOnlineLogSize;
+}
+
+String ConfigManager::getNoTradeMessage() {
+	static uint32 cachedVersion = 0;
+	static String cachedNoTradeMessage;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedNoTradeMessage = getString("Core3.TangibleObject.NoTradeMessage", "");
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedNoTradeMessage;
+}
+
+String ConfigManager::getForceNoTradeMessage() {
+	static uint32 cachedVersion = 0;
+	static String cachedForceNoTradeMessage;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedForceNoTradeMessage = getString("Core3.TangibleObject.ForceNoTradeMessage", "");
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedForceNoTradeMessage;
+}
+
+String ConfigManager::getForceNoTradeADKMessage() {
+	static uint32 cachedVersion = 0;
+	static String cachedForceNoTradeADKMessage;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedForceNoTradeADKMessage = getString("Core3.TangibleObject.ForceNoTradeADKMessage", "");
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedForceNoTradeADKMessage;
+}
+
+uint32 ConfigManager::getAiAgentConsoleThrottle() {
+	static uint32 cachedVersion = 0;
+	static uint32 cachedValue;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+#ifdef DEBUG_AI
+		cachedValue = getInt("Core3.AiAgent.ConsoleThrottle", 1);
+#else  // !DEBUG_AI
+		cachedValue = getInt("Core3.AiAgent.ConsoleThrottle", 100);
+#endif // DEBUG_AI
+		if (cachedVersion <= 0) {
+			cachedVersion = 1;
+		}
+
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedValue;
+}
+
+#ifdef DEBUG_AI
+bool ConfigManager::getAiAgentLoadTesting() {
+	static uint32 cachedVersion = 0;
+	static bool cachedAiAgentLoadTesting;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedAiAgentLoadTesting = getBool("Core3.AiAgent.AiAgentLoadTesting", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedAiAgentLoadTesting;
+}
+#endif // DEBUG_AI
+
+bool ConfigManager::isPvpBroadcastChannelEnabled() {
+	static uint32 cachedVersion = 0;
+	static bool cachedPvpBroadcastChannel;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedPvpBroadcastChannel = getBool("Core3.ChatManager.PvpBroadcastChannel", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedPvpBroadcastChannel;
+}
+
+bool ConfigManager::useCovertOvertSystem() {
+	static uint32 cachedVersion = 0;
+	static bool cachedCovertOvertSystem;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedCovertOvertSystem = getBool("Core3.GCWManager.useCovertOvertSystem", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedCovertOvertSystem;
+}
+
+bool ConfigManager::getLoginEnableSessionId() {
+	static uint32 cachedVersion = 0;
+	static bool cachedEnableSessionId;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedEnableSessionId = getBool("Core3.Login.EnableSessionId", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedEnableSessionId;
+}
+
+int ConfigManager::getMinLairSpawnInterval() {
+	static uint32 cachedVersion = 0;
+	static int cachedMinSpawnDelay;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedMinSpawnDelay = getInt("Core3.Regions.minimumLairSpawnInterval", 5000);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedMinSpawnDelay;
+}
+
+int ConfigManager::getMinSpaceSpawnInterval() {
+	static uint32 cachedVersion = 0;
+	static int cachedMinSpaceSpawnDelay;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedMinSpaceSpawnDelay = getInt("Core3.Regions.minimumSpaceSpawnInterval", 5000);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedMinSpaceSpawnDelay;
+}
+
+bool ConfigManager::disableWorldSpawns() {
+	static uint32 cachedVersion = 0;
+	static bool cachedDisableWorldSpawns;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedDisableWorldSpawns = getBool("Core3.Regions.DisableWorldSpawns", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedDisableWorldSpawns;
+}
+
+bool ConfigManager::disableSpaceSpawns() {
+	static uint32 cachedVersion = 0;
+	static bool cachedDisableSpaceSpawns;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedDisableSpaceSpawns = getBool("Core3.Regions.DisableSpaceSpawns", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedDisableSpaceSpawns;
+}
+
+float ConfigManager::getSpawnCheckRange() {
+	static uint32 cachedVersion = 0;
+	static float cachedSpawnRange;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedSpawnRange = getFloat("Core3.Regions.spawnCheckRange", 64.f);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedSpawnRange;
+}
+
+float ConfigManager::getSpaceSpawnCheckRange() {
+	static uint32 cachedVersion = 0;
+	static float cachedSpaceSpawnRange;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedSpaceSpawnRange = getFloat("Core3.Regions.spaceSpawnCheckRange", 1024.f);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedSpaceSpawnRange;
+}
+
+bool ConfigManager::getLootDebugAttributes() {
+	static uint32 cachedVersion = 0;
+	static bool cachedValue;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedValue = getBool("Core3.LootManager.DebugAttributes", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedValue;
+}
+
+/*
+
+	JTL Configs
+
+*/
+
+bool ConfigManager::isJtlEnabled() {
+	static uint32 cachedVersion = 0;
+	static bool cachedJtlEnabled;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedJtlEnabled = getBool("Core3.JTL.JTLEnabled", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedJtlEnabled;
+}
+
+bool ConfigManager::launchFromDevice() {
+	static uint32 cachedVersion = 0;
+	static bool cachedLaunchFromDevice;
+
+	if (configVersion.get() > cachedVersion) {
+		Locker guard(&mutex);
+		cachedLaunchFromDevice = getBool("Core3.JTL.LaunchFromDevice", false);
+		cachedVersion = configVersion.get();
+	}
+
+	return cachedLaunchFromDevice;
+}
+
 /*
 ** ConfigDataItem
 */
@@ -789,3 +1424,130 @@ void ConfigDataItem::getAsJSON(JSONSerializationType& jsonData) {
 
 	jsonData = asString;
 }
+
+bool ConfigDataItem::getBool() const {
+	usageCounter.increment();
+	return asBool;
+}
+
+float ConfigDataItem::getFloat() const {
+	usageCounter.increment();
+	return (float)asNumber;
+}
+
+int ConfigDataItem::getInt() const {
+	usageCounter.increment();
+	return (int)asNumber;
+}
+
+const String& ConfigDataItem::getString() const {
+	usageCounter.increment();
+	return asString;
+}
+
+const Vector<String>& ConfigDataItem::getStringVector() {
+	Locker guard(&mutex);
+
+	if (asStringVector == nullptr) {
+		asStringVector = new Vector<String>();
+
+		if (asStringVector == nullptr)
+			throw Exception("Failed to allocate Vector<String> in getStringVector()");
+
+		if (asVector == nullptr) {
+			asStringVector->add(getString());
+		} else {
+			for (int i = 0; i < asVector->size(); i++) {
+				ConfigDataItem* curItem = asVector->get(i);
+
+				if (curItem == nullptr)
+					continue;
+
+				asStringVector->add(curItem->getString());
+			}
+		}
+	}
+
+	return *asStringVector;
+}
+
+const SortedVector<String>& ConfigDataItem::getSortedStringVector() {
+	Locker guard(&mutex);
+
+	if (asSortedStringVector == nullptr) {
+		asSortedStringVector = new SortedVector<String>();
+		auto entries = getStringVector();
+
+		for (int i = 0; i < entries.size(); i++) {
+			asSortedStringVector->add(entries.get(i));
+		}
+	}
+
+	return *asSortedStringVector;
+}
+
+const Vector<int>& ConfigDataItem::getIntVector() {
+	Locker guard(&mutex);
+
+	if (asIntVector == nullptr) {
+		asIntVector = new Vector<int>();
+
+		if (asIntVector == nullptr)
+			throw Exception("Failed to allocate Vector<int> in getIntVector()");
+
+		if (asVector == nullptr) {
+			asIntVector->add(getInt());
+		} else {
+			for (int i = 0; i < asVector->size(); i++) {
+				ConfigDataItem* curItem = asVector->get(i);
+
+				if (curItem == nullptr)
+					continue;
+
+				asIntVector->add(curItem->getInt());
+			}
+		}
+	}
+
+	return *asIntVector;
+}
+
+String ConfigDataItem::toString() {
+	Locker guard(&mutex);
+
+	usageCounter.increment();
+
+	if (asVector == nullptr)
+		return String(asString);
+
+	const Vector<String>& elements = getStringVector();
+
+	StringBuffer buf;
+
+	buf << asString << " = {";
+
+	for (int i = 0; i < elements.size(); ++i) {
+		buf << (i == 0 ? " " : ", ") << elements.get(i);
+	}
+
+	buf << " }";
+
+	return buf.toString();
+}
+
+int ConfigDataItem::getUsageCounter() const {
+	return usageCounter;
+}
+
+int ConfigDataItem::resetUsageCounter() {
+	int prevCount = usageCounter.get(std::memory_order_acquire);
+	usageCounter.set(0, std::memory_order_release);
+
+	return prevCount;
+}
+
+#ifdef DEBUG_CONFIGMANAGER
+void ConfigDataItem::setDebugTag(const String& tag) {
+	debugTag = tag;
+}
+#endif // DEBUG_CONFIGMANAGER

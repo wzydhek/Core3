@@ -22,20 +22,9 @@ class ForagingEvent : public Task {
 	String zoneName;
 
 public:
-	ForagingEvent(CreatureObject* player, int type, float playerX, float playerY, const String& planet) : Task() {
-		this->player = player;
-		this->forageType = type;
-		this->forageX = playerX;
-		this->forageY = playerY;
-		this->zoneName = planet;
-	}
+	ForagingEvent(CreatureObject* player, int type, float playerX, float playerY, const String& planet);
 
-	void run() {
-		ManagedReference<ForageManager*> forageManager = player->getZoneProcessServer()->getForageManager();
-
-		if (forageManager != nullptr)
-			forageManager->finishForaging(player, forageType, forageX, forageY, zoneName);
-	}
+	void run();
 };
 
 }

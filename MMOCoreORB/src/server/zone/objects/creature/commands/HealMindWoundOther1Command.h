@@ -8,8 +8,6 @@
 
 class HealMindWoundOther1Command : public ForceHealQueueCommand {
 public:
-	HealMindWoundOther1Command(const String& name, ZoneProcessServer* server)
-		: ForceHealQueueCommand(name, server) {
-	}
+	HealMindWoundOther1Command(const String& name, ZoneProcessServer* server);
 
 };

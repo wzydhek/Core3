@@ -1,6 +1,14 @@
 #include "ScreenPlayTask.h"
 #include "server/zone/managers/director/DirectorManager.h"
 
+ScreenPlayTask::ScreenPlayTask(SceneObject* scno, const String& key, const String& playName, const String& arguments) {
+	obj = scno;
+	taskKey = key;
+	screenPlay = playName;
+	args = arguments;
+	persistentEvent = nullptr;
+}
+
 void ScreenPlayTask::run() {
 	ZoneServer* zoneServer = ServerCore::getZoneServer();
 
@@ -24,4 +32,32 @@ void ScreenPlayTask::run() {
 	}
 
 	setTaskName(String("ScreenPlayTask " + screenPlay + ":" + taskKey + ":" + args).toCharArray());
+}
+
+ManagedReference<SceneObject*> ScreenPlayTask::getSceneObject() {
+	return obj.get();
+}
+
+const String& ScreenPlayTask::getTaskKey() const {
+	return taskKey;
+}
+
+const String& ScreenPlayTask::getScreenPlay() const {
+	return screenPlay;
+}
+
+const String& ScreenPlayTask::getArgs() const {
+	return args;
+}
+
+void ScreenPlayTask::setPersistentEvent(PersistentEvent* persistentEvent) {
+	this->persistentEvent = persistentEvent;
+}
+
+Reference<PersistentEvent*>& ScreenPlayTask::getPersistentEvent() {
+	return persistentEvent;
+}
+
+const Reference<PersistentEvent*>& ScreenPlayTask::getPersistentEvent() const {
+	return persistentEvent;
 }

@@ -4,28 +4,12 @@
 
 #pragma once
 
-#include "server/zone/managers/skill/SkillManager.h"
+#include "QueueCommand.h"
 
 class SurrenderSkillCommand : public QueueCommand {
 public:
-	SurrenderSkillCommand(const String& name, ZoneProcessServer* server) : QueueCommand(name, server) {
-	}
+	SurrenderSkillCommand(const String& name, ZoneProcessServer* server);
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		SkillManager* skillManager = SkillManager::instance();
-
-		if (skillManager == nullptr) {
-			return GENERALERROR;
-		}
-
-		skillManager->surrenderSkill(arguments.toString(), creature, true);
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 };
+

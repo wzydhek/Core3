@@ -14,28 +14,20 @@
 
 class PortalLayoutMap : public HashTable<String, Reference<PortalLayout*> > {
 public:
-	PortalLayoutMap() {
-		setNullValue(nullptr);
-	}
+	PortalLayoutMap();
 };
 
 class FloorMeshMap : public HashTable<String, Reference<FloorMesh*> > {
 public:
-	FloorMeshMap() {
-		setNullValue(nullptr);
-	}
+	FloorMeshMap();
 };
 
 class AppearanceMap : public HashTable<String, Reference<AppearanceTemplate*> > {
 public:
-	AppearanceMap() {
-		setNullValue(nullptr);
-	}
+	AppearanceMap();
 };
 
 class InteriorMap : public HashTable<String, Reference<InteriorLayoutTemplate*> > {
 public:
-	InteriorMap() {
-		setNullValue(nullptr);
-	}
+	InteriorMap();
 };

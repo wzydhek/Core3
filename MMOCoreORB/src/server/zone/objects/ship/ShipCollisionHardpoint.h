@@ -1,6 +1,7 @@
 #pragma once
 
 #include "engine/engine.h"
+#include "templates/appearance/AppearanceTemplate.h"
 
 class ShipCollisionHardpoint : public Object {
 protected:
@@ -20,139 +21,55 @@ protected:
 	bool targetable;
 
 public:
-	ShipCollisionHardpoint() {
-		appearance = nullptr;
-		rotation = nullptr;
+	ShipCollisionHardpoint();
 
-		volumeType = -1;
-		radius = -1.f;
-		slot = -1;
+	ShipCollisionHardpoint(const String& componentNameValue, const String& hardpointNameValue);
 
-		targetable = false;
-	}
+	void setAppearanceTemplate(const AppearanceTemplate* value);
 
-	ShipCollisionHardpoint(const String& componentNameValue, const String& hardpointNameValue) : ShipCollisionHardpoint() {
-		componentName = componentNameValue;
-		hardpointName = hardpointNameValue;
-	}
+	void setComponentName(const String& value);
 
-	void setAppearanceTemplate(const AppearanceTemplate* value) {
-		appearance = value;
-	}
+	void setHardpointName(const String& value);
 
-	void setComponentName(const String& value) {
-		componentName = value;
-	}
+	void setPosition(const Vector3& value);
 
-	void setHardpointName(const String& value) {
-		hardpointName = value;
-	}
+	void setSphere(const Sphere& value);
 
-	void setPosition(const Vector3& value) {
-		position = value;
-	}
+	void setBox(const AABB& value);
 
-	void setSphere(const Sphere& value) {
-		sphere = value;
-	}
+	void setRotation(Matrix4* value);
 
-	void setBox(const AABB& value) {
-		box = value;
-	}
+	void setVolumeType(int value);
 
-	void setRotation(Matrix4* value) {
-		rotation = value;
-	}
+	void setRadius(float value);
 
-	void setVolumeType(int value) {
-		volumeType = value;
-	}
+	void setSlot(int value);
 
-	void setRadius(float value) {
-		radius = value;
-	}
+	void setTargetable(bool value);
 
-	void setSlot(int value) {
-		slot = value;
-	}
+	const AppearanceTemplate* getAppearanceTemplate() const;
 
-	void setTargetable(bool value) {
-		targetable = value;
-	}
+	const String& getComponentName() const;
 
-	const AppearanceTemplate* getAppearanceTemplate() const {
-		return appearance;
-	}
+	const String& getHardpointName() const;
 
-	const String& getComponentName() const {
-		return componentName;
-	}
+	const Vector3& getPosition() const;
 
-	const String& getHardpointName() const {
-		return hardpointName;
-	}
+	const Sphere& getSphere() const;
 
-	const Vector3& getPosition() const {
-		return position;
-	}
+	const AABB& getBox() const;
 
-	const Sphere& getSphere() const {
-		return sphere;
-	}
+	const Matrix4* getRotation() const;
 
-	const AABB& getBox() const {
-		return box;
-	}
+	int getVolumeType() const;
 
-	const Matrix4* getRotation() const {
-		return rotation.get();
-	}
+	float getRadius() const;
 
-	int getVolumeType() const {
-		return volumeType;
-	}
+	int getSlot() const;
 
-	float getRadius() const {
-		return radius;
-	}
+	bool isTargetable() const;
 
-	int getSlot() const {
-		return slot;
-	}
+	String toDebugString() const;
 
-	bool isTargetable() const {
-		return targetable;
-	}
-
-	String toDebugString() const {
-		StringBuffer msg;
-
-		msg
-		<< " appearanceName: " << (appearance ? appearance->getFileName() : "") << endl
-		<< " componentName:  " << componentName << endl
-		<< " hardpointName:  " << hardpointName << endl
-		<< " position:       " << position.toString() << endl
-		<< " rotation:       " << matrixToDebugString() << endl
-		<< " sphere:         " << sphere.getCenter().toString() << ", " << sphere.getRadius() << endl
-		<< " box:            " << box.getMinBound()->toString() << ", " << box.getMaxBound()->toString() << endl
-		<< " volumeType:     " << volumeType << endl
-		<< " slot:           " << Components::shipComponentSlotToString(slot) << endl
-		<< " targetable:     " << targetable << endl
-		<< "--------------------------------" << endl;
-
-		return msg.toString();
-	}
-
-	String matrixToDebugString() const {
-		const Matrix4& matrix = rotation ? *rotation : Matrix4();
-		StringBuffer msg;
-
-		msg << endl
-		<< " " << matrix[0][0] << " " << matrix[0][1] << " " << matrix[0][2] << " " << matrix[0][3] << endl
-		<< " " << matrix[1][0] << " " << matrix[1][1] << " " << matrix[1][2] << " " << matrix[1][3] << endl
-		<< " " << matrix[2][0] << " " << matrix[2][1] << " " << matrix[2][2] << " " << matrix[2][3] << endl
-		<< " " << matrix[3][0] << " " << matrix[3][1] << " " << matrix[3][2] << " " << matrix[3][3];
-
-		return msg.toString();
-	}
+	String matrixToDebugString() const;
 };

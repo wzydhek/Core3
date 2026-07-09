@@ -11,6 +11,10 @@
 
 UniqueReference<MessageCallbackFactory<MessageCallback* (ObjectControllerMessageCallback*), uint32>*> ObjectControllerMessageCallback::objectMessageControllerFactory;
 
+ObjectControllerMessageCallback::ObjectControllerMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) : MessageCallback(client, server), priority(0), type(0), objectID(0) {
+	objectControllerCallback = nullptr;
+}
+
 void ObjectControllerMessageCallback::parse(Message* message) {
 	// StringBuffer msg;
 	// msg << "Object controller message Start -- Offset: " << message->getOffset();
@@ -83,4 +87,16 @@ const char* ObjectControllerMessageCallback::getTaskName() {
 	} else {
 		return Task::getTaskName();
 	}
+}
+
+uint32 ObjectControllerMessageCallback::getPriority() const {
+	return priority;
+}
+
+uint32 ObjectControllerMessageCallback::getType() const {
+	return type;
+}
+
+uint64 ObjectControllerMessageCallback::getObjectID() const {
+	return objectID;
 }

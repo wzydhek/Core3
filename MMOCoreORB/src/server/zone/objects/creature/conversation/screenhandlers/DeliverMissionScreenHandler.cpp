@@ -176,3 +176,11 @@ ConversationScreen* DeliverMissionScreenHandler::handleScreen(CreatureObject* co
 	}
 	return conversationScreen;
 }
+
+bool DeliverMissionScreenHandler::toBinaryStream(ObjectOutputStream* stream) {
+	return true;
+}
+
+bool DeliverMissionScreenHandler::parseFromBinaryStream(ObjectInputStream* stream) {
+	return true;
+}

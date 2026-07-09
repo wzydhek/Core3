@@ -88,6 +88,7 @@
 #include "server/zone/objects/transaction/TransactionLog.h"
 #include "server/chat/ChatManager.h"
 #include "server/zone/objects/intangible/tasks/PetControlDeviceStoreTask.h"
+#include "server/zone/objects/creature/commands/effect/CommandEffect.h"
 
 // #define DEBUG
 // #define DEBUG_AI_WEAPONS

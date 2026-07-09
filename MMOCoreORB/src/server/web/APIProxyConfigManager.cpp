@@ -19,7 +19,10 @@
 namespace server {
  namespace web3 {
 
-void APIProxyConfigManager::handleGET(APIRequest& apiRequest) {
+APIProxyConfigManager::APIProxyConfigManager() : BaseAPIProxy("ConfigManager") {
+ }
+
+ void APIProxyConfigManager::handleGET(APIRequest& apiRequest) {
 	auto key = apiRequest.getPathFieldString("key").replaceAll("/", ".");
 
 	JSONSerializationType found;

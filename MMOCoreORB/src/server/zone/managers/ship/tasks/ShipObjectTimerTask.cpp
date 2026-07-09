@@ -113,3 +113,59 @@ void ShipObjectTimerTask::updateVectors() {
 bool ShipObjectTimerTask::isShipValid(ShipObject* ship) const {
 	return ship != nullptr && ship->isShipLaunched() && ship->getTimerTaskCrc() == taskCrc;
 }
+
+uint32 ShipObjectTimerTask::getTaskCrc() const {
+	return taskCrc;
+}
+
+void ShipObjectTimerTask::updateTimers() {
+	uint64 timeNow = System::getMiliTime();
+	iterator = (iterator + 1) % ITERATOR_MAX;
+
+	deltas.set(MIN, timeNow - timers.get(MIN));
+	timers.set(MIN, timeNow);
+	priority = MIN;
+
+	if ((iterator % ITERATOR_MID) == 0) {
+		deltas.set(MID, timeNow - timers.get(MID));
+		timers.set(MID, timeNow);
+		priority = MID;
+	}
+
+	if ((iterator % ITERATOR_MAX) == 0) {
+		deltas.set(MAX, timeNow - timers.get(MAX));
+		timers.set(MAX, timeNow);
+		priority = MAX;
+	}
+}
+
+uint32 ShipObjectTimerTask::getDeltaTime(int index) const {
+	return deltas.get(index);
+}
+
+bool ShipObjectTimerTask::getAsyncPriority(int iteratorMax, int index) const {
+	return (index % iteratorMax) == iterator;
+}
+
+uint32 ShipObjectTimerTask::getScheduleInterval() {
+	uint64 latency = (System::getMiliTime() - startTime) % TIME_MIN;
+	uint32 interval = TIME_MIN - latency;
+
+	return Math::clamp((uint32)(SCHEDULE_MIN), interval, (uint32)(SCHEDULE_MAX));
+}
+
+String ShipObjectTimerTask::toDebugString(const String& message) const {
+	StringBuffer msg;
+
+	msg << message << endl
+		<< "iterator:    " << iterator << endl
+		<< "deltaMin:    " << deltas.get(MIN) << endl
+		<< "deltaMid:    " << deltas.get(MID) << endl
+		<< "deltaMax:    " << deltas.get(MAX) << endl
+		<< "shipVector:  " << shipVector.size() << endl
+		<< "agentVector: " << agentVector.size() << endl
+		<< "queueVector: " << queueVector.size() << endl
+		<< "totalTime:   " << (System::getMiliTime() - startTime);
+
+	return msg.toString();
+}

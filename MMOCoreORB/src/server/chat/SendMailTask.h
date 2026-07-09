@@ -17,20 +17,7 @@ class SendMailTask : public Task {
 	ManagedReference<PersistentMessage*> mail;
 	UnicodeString senderName;
 public:
-	SendMailTask(CreatureObject* receiver, PersistentMessage* mail, const UnicodeString& sender) {
-		this->receiver = receiver;
-		this->mail = mail;
-		senderName = sender;
-	}
+	SendMailTask(CreatureObject* receiver, PersistentMessage* mail, const UnicodeString& sender);
 
-	void run() final {
-		Locker locker(receiver);
-
-		PlayerObject* ghost = receiver->getPlayerObject();
-
-		ghost->addPersistentMessage(mail->getObjectID());
-
-		if (receiver->isOnline())
-			mail->sendTo(receiver, false);
-	}
+	void run() final;
 };

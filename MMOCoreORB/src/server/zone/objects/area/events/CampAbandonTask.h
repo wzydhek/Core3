@@ -17,17 +17,9 @@ class CampAbandonTask: public Task {
 
 
 public:
-	CampAbandonTask(CampSiteActiveArea* camp) {
-		campSite = camp;
-	}
+	CampAbandonTask(CampSiteActiveArea* camp);
 
-	void run() {
-		if (campSite == nullptr)
-			return;
-
-		Locker locker(campSite);
-		campSite->abandonCamp();
-	}
+	void run();
 };
 
 
@@ -36,3 +28,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::area::events;

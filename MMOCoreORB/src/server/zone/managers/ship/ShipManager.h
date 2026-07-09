@@ -99,69 +99,35 @@ public:
 	static int includeFile(lua_State* L);
 	static int addShipSpawnGroup(lua_State* L);
 
-	bool hyperspaceLocationExists(const String& name) const {
-		return hyperspaceLocations.contains(name) && hyperspaceZones.contains(name);
-	}
+	bool hyperspaceLocationExists(const String& name) const;
 
-	const Vector3& getHyperspaceLocation(const String& name) const {
-		return hyperspaceLocations.get(name);
-	}
+	const Vector3& getHyperspaceLocation(const String& name) const;
 
-	const String& getHyperspaceZone(const String& name) const {
-		return hyperspaceZones.get(name);
-	}
+	const String& getHyperspaceZone(const String& name) const;
 
-	const ShipComponentData* getShipComponent(const String& name) const {
-		return shipComponents.get(name.hashCode());
-	}
+	const ShipComponentData* getShipComponent(const String& name) const;
 
-	const ShipComponentData* getShipComponent(uint32 hash) const {
-		return shipComponents.get(hash);
-	}
+	const ShipComponentData* getShipComponent(uint32 hash) const;
 
-	const ShipComponentData* getShipComponentFromTemplate(const String& templateName) const {
-		return shipComponentTemplateNames.get(templateName);
-	}
+	const ShipComponentData* getShipComponentFromTemplate(const String& templateName) const;
 
-	const ShipProjectileData* getProjectileData(uint32 hash) const {
-		return shipProjectileData.get(hash);
-	}
+	const ShipProjectileData* getProjectileData(uint32 hash) const;
 
-	const ShipChassisData* getChassisData(const String& shipName) const {
-		return chassisData.get(shipName);
-	}
+	const ShipChassisData* getChassisData(const String& shipName) const;
 
-	const ShipAppearanceData* getAppearanceData(const String& shipName) const {
-		return shipAppearanceData.get(shipName);
-	}
+	const ShipAppearanceData* getAppearanceData(const String& shipName) const;
 
-	const ShipTurretData* getShipTurretData(const String& shipName, uint32 slot) const {
-		return turretData.get(shipName).get(slot);
-	}
+	const ShipTurretData* getShipTurretData(const String& shipName, uint32 slot) const;
 
-	const ShipCollisionData* getCollisionData(ShipObject* ship) {
-		if (ship == nullptr) {
-			return nullptr;
-		}
+	const ShipCollisionData* getCollisionData(ShipObject* ship);
 
-		return shipCollisionData.get(ship->getServerObjectCRC());
-	}
+	const ShipMissileData* getMissileData(uint32 ammoType) const;
 
-	const ShipMissileData* getMissileData(uint32 ammoType) const {
-		return missileData.get(ammoType);
-	}
+	const ShipCountermeasureData* getCountermeasureData(uint32 ammoType) const;
 
-	const ShipCountermeasureData* getCountermeasureData(uint32 ammoType) const {
-		return countermeasureData.get(ammoType);
-	}
+	const ShipAiAgentPilotData* getPilotData(const String& pilotType) const;
 
-	const ShipAiAgentPilotData* getPilotData(const String& pilotType) const {
-		return pilotData.get(pilotType);
-	}
-
-	ShipUniqueIdMap* getShipUniqueIdMap() {
-		return &shipUniqueIdMap;
-	}
+	ShipUniqueIdMap* getShipUniqueIdMap();
 
 private:
 	int loadShipSpawnGroups();
@@ -214,21 +180,15 @@ public:
 
 	void reDeedShip(CreatureObject* creature, ShipControlDevice* shipDevice);
 
-	HashTableIterator<uint32, Reference<SpaceSpawnGroup*>> spawnGroupIterator() {
-		return spawnGroupMap.iterator();
-	}
+	HashTableIterator<uint32, Reference<SpaceSpawnGroup*>> spawnGroupIterator();
 
-	SpaceSpawnGroup* getSpaceSpawnGroup(uint32 crc) {
-		return spawnGroupMap.get(crc);
-	}
+	SpaceSpawnGroup* getSpaceSpawnGroup(uint32 crc);
 
 	uint16 setShipUniqueID(ShipObject* ship);
 
 	void dropShipUniqueID(ShipObject* ship);
 
-	DroidCommandData* getDroidCommandData(uint32 hashCode) const {
-		return DroidCommands.get(hashCode);
-	}
+	DroidCommandData* getDroidCommandData(uint32 hashCode) const;
 };
 
 } // namespace ship

@@ -4,37 +4,14 @@
 
 #pragma once
 
-#include "server/zone/objects/player/sessions/crafting/CraftingSession.h"
+#include "QueueCommand.h"
 
 class CancelCraftingSessionCommand : public QueueCommand {
 public:
 
-	CancelCraftingSessionCommand(const String& name, ZoneProcessServer* server)
-		: QueueCommand(name, server) {
+	CancelCraftingSessionCommand(const String& name, ZoneProcessServer* server);
 
-	}
-
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		if(!creature->isPlayerCreature())
-			return INVALIDTARGET;
-
-		Reference<CraftingSession*> session = creature->getActiveSession(SessionFacadeType::CRAFTING).castTo<CraftingSession*>();
-
-		if(session == nullptr) {
-			return GENERALERROR;
-		}
-
-		Locker locker(session);
-		session->cancelSessionCommand();
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };
+

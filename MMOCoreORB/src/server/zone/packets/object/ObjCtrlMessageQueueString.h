@@ -8,12 +8,9 @@
 #pragma once
 
 #include "ObjectControllerMessage.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 class ObjCtrlMessageQueueString : public ObjectControllerMessage {
 public:
-	ObjCtrlMessageQueueString(SceneObject* creo, const String& data, uint32 type)
-			: ObjectControllerMessage(creo->getObjectID(), 0x1B, type, false) {
-
-			insertAscii(data.toCharArray());
-	}
+	ObjCtrlMessageQueueString(SceneObject* creo, const String& data, uint32 type);
 };

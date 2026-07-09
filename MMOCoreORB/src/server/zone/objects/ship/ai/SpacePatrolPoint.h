@@ -21,182 +21,74 @@ class SpacePatrolPoint : public Serializable {
 	Quaternion direction;
 
 public:
-	SpacePatrolPoint() {
-		reached = true;
-		evadePoint = false;
+	SpacePatrolPoint();
 
-		addSerializableVariables();
-	}
+	SpacePatrolPoint(const Vector3& pos);
 
-	SpacePatrolPoint(const Vector3& pos) : position(pos, nullptr) {
-		reached = false;
-		evadePoint = false;
-
-		addSerializableVariables();
-	}
-
-	SpacePatrolPoint(const SpacePatrolPoint& point) : Object(), Serializable() {
-		position = point.position;
-		direction = point.direction;
-		reached = point.reached;
-		evadePoint = point.evadePoint;
-
-		addSerializableVariables();
-	}
+	SpacePatrolPoint(const SpacePatrolPoint& point);
 
 #ifdef CXX11_COMPILER
-	SpacePatrolPoint(SpacePatrolPoint&& point) : Object(), Serializable(), position(std::move(point.position)), reached(point.reached), evadePoint(point.evadePoint), estimatedTimeOfArrival(point.estimatedTimeOfArrival) {
-		addSerializableVariables();
-	}
+	SpacePatrolPoint(SpacePatrolPoint&& point);
 #endif
 
-	SpacePatrolPoint& operator=(const SpacePatrolPoint& p) {
-		if (this == &p)
-			return *this;
-
-		position = p.position;
-		reached = p.reached;
-		evadePoint = p.evadePoint;
-		direction = p.direction;
-		estimatedTimeOfArrival = p.estimatedTimeOfArrival;
-
-		return *this;
-	}
+	SpacePatrolPoint& operator=(const SpacePatrolPoint& p);
 
 #ifdef CXX11_COMPILER
-	SpacePatrolPoint& operator=(SpacePatrolPoint&& p) {
-		if (this == &p)
-			return *this;
-
-		position = std::move(p.position);
-		reached = p.reached;
-		evadePoint = p.evadePoint;
-		direction = p.direction;
-		estimatedTimeOfArrival = p.estimatedTimeOfArrival;
-
-		return *this;
-	}
+	SpacePatrolPoint& operator=(SpacePatrolPoint&& p);
 #endif
 
-	inline bool operator != (const Vector3& location) const {
-		return position.getX() != location.getX() || position.getZ() != location.getZ() || position.getY() != location.getY();
-	}
+	bool operator!=(const Vector3& location) const;
 
-	inline void addSerializableVariables() {
-		addSerializableVariable("position", &position);
-		addSerializableVariable("reached", &reached);
-		addSerializableVariable("evadePoint", &evadePoint);
-		addSerializableVariable("direction", &direction);
-		addSerializableVariable("estimatedTimeOfArrival", &estimatedTimeOfArrival);
-	}
+	void addSerializableVariables();
 
-	friend void to_json(nlohmann::json& j, const SpacePatrolPoint& p) {
-		j["position"] = p.position;
-		j["reached"] = p.reached;
-		j["evadePoint"] = p.evadePoint;
-		j["direction"] = p.direction;
-		j["estimatedTimeOfArrival"] = p.estimatedTimeOfArrival;
-	}
+	friend void to_json(nlohmann::json& j, const SpacePatrolPoint& p);
 
-	Vector3 getWorldPosition() {
-		return position.getWorldPosition();
-	}
+	Vector3 getWorldPosition();
 
-	virtual bool isInRange(SceneObject* obj, float range) {
-		Vector3 thisWorldPos = getWorldPosition();
-		Vector3 objWorldPos = obj->getWorldPosition();
+	virtual bool isInRange(SceneObject* obj, float range);
 
-		return thisWorldPos.squaredDistanceTo(objWorldPos) <= (range * range);
-	}
+	bool isInRange(SpacePatrolPoint* obj, float range);
 
-	bool isInRange(SpacePatrolPoint* obj, float range) {
-		Vector3 thisWorldPos = getWorldPosition();
-		Vector3 objWorldPos = obj->getWorldPosition();
-
-		return thisWorldPos.squaredDistanceTo(objWorldPos) <= (range * range);
-	}
-
-	inline const WorldCoordinates& getCoordinates() const {
-		return position;
-	}
+	const WorldCoordinates& getCoordinates() const;
 
 	//getters
-	inline float getPositionX() const {
-		return position.getX();
-	}
+	float getPositionX() const;
 
-	inline float getPositionY() const {
-		return position.getY();
-	}
+	float getPositionY() const;
 
-	inline float getPositionZ() const {
-		return position.getZ();
-	}
+	float getPositionZ() const;
 
-	inline Quaternion getDirection() const {
-		return direction;
-	}
+	Quaternion getDirection() const;
 
-	inline Time* getEstimatedTimeOfArrival() {
-		return &estimatedTimeOfArrival;
-	}
+	Time* getEstimatedTimeOfArrival();
 
-	inline bool isReached() const {
-		return reached;
-	}
+	bool isReached() const;
 
-	inline bool isEvadePoint() const {
-		return evadePoint;
-	}
+	bool isEvadePoint() const;
 
-	inline bool isPastTimeOfArrival() {
-		return estimatedTimeOfArrival.isPast() || estimatedTimeOfArrival.isPresent();
-	}
+	bool isPastTimeOfArrival();
 
 	//setters
-	inline void setPosition(float x, float z, float y) {
-		position.setCoordinates(Vector3(x, y, z));
-	}
+	void setPosition(float x, float z, float y);
 
-	inline void setPositionX(float x) {
-		position.setX(x);
-	}
+	void setPositionX(float x);
 
-	inline void setPositionZ(float z) {
-		position.setZ(z);
-	}
+	void setPositionZ(float z);
 
-	inline void setPositionY(float y) {
-		position.setY(y);
-	}
+	void setPositionY(float y);
 
-	inline void setCell(CellObject* cell) {
-		position.setCell(cell);
-	}
+	void setCell(CellObject* cell);
 
-	inline void setDirection(float fw, float fx, float fy, float fz) {
-		direction.set(fw, fx, fy, fz);
-	}
+	void setDirection(float fw, float fx, float fy, float fz);
 
-	inline void setReached(bool value) {
-		reached = value;
-	}
+	void setReached(bool value);
 
-	inline void setEvadePoint(bool value) {
-		evadePoint = value;
-	}
+	void setEvadePoint(bool value);
 
-	inline void addEstimatedTimeOfArrival(uint32 mili) {
-		estimatedTimeOfArrival.updateToCurrentTime();
-		estimatedTimeOfArrival.addMiliTime(mili);
-	}
+	void addEstimatedTimeOfArrival(uint32 mili);
 
 	/**
 	 * Returns the string representation of the vector in (x, y, z) format plus the cellID.
 	 */
-	inline String toString() const {
-		StringBuffer msg;
-		msg << position.toString() << " isReached: " << (reached ? "true" : "false") << " isEvadePoint: " << (evadePoint ? "true" : "false");
-		return msg.toString();
-	}
+	String toString() const;
 };

@@ -4,34 +4,14 @@
 
 #pragma once
 
-#include "server/zone/managers/guild/GuildManager.h"
+#include "QueueCommand.h"
 
 class ListGuildsCommand : public QueueCommand {
 public:
 
-	ListGuildsCommand(const String& name, ZoneProcessServer* server)
-		: QueueCommand(name, server) {
+	ListGuildsCommand(const String& name, ZoneProcessServer* server);
 
-	}
-
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		if (!creature->isPlayerCreature())
-			return INVALIDPARAMETERS;
-
-		CreatureObject* player = cast<CreatureObject*>(creature);
-
-		ManagedReference<GuildManager*> guildManager = server->getZoneServer()->getGuildManager();
-
-		guildManager->sendGuildListTo(player, arguments.toString());
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };
+

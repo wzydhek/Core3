@@ -18,154 +18,49 @@ class FactionStandingList : public Serializable {
 	//int huttPoints; //Disabled
 
 public:
-	FactionStandingList() {
-		factions.setAllowOverwriteInsertPlan();
-		factions.setNullValue(0.f);
+	FactionStandingList();
 
-		rebelPoints = 0;
-		imperialPoints = 0;
+	FactionStandingList(const FactionStandingList& f);
 
-		addSerializableVariables();
-	}
+	FactionStandingList& operator=(const FactionStandingList& f);
 
-	FactionStandingList(const FactionStandingList& f) : Object(), Serializable() {
-		factions.setAllowOverwriteInsertPlan();
-		factions.setNullValue(0.f);
+	void addSerializableVariables();
 
-		factionRank = f.factionRank;
-		rebelPoints = f.rebelPoints;
-		imperialPoints = f.imperialPoints;
-		factions = f.factions;
+	friend void to_json(nlohmann::json& j, const FactionStandingList& l);
 
-		addSerializableVariables();
-	}
+	float get(const String& faction) const;
 
-	FactionStandingList& operator=(const FactionStandingList& f) {
-		if (this == &f)
-			return *this;
+	int size() const;
 
-		factionRank = f.factionRank;
-		rebelPoints = f.rebelPoints;
-		imperialPoints = f.imperialPoints;
-		factions = f.factions;
+	void put(const String& faction, float amount);
 
-		return *this;
-	}
+	float getFactionStanding(const String& faction) const;
 
-	void addSerializableVariables() {
-		addSerializableVariable("factionRank", &factionRank);
-		addSerializableVariable("rebelPoints", &rebelPoints);
-		addSerializableVariable("imperialPoints", &imperialPoints);
-		addSerializableVariable("factions", &factions);
-	}
+	bool contains(const String& faction) const;
 
-	friend void to_json(nlohmann::json& j, const FactionStandingList& l) {
-		j["factionRank"] = l.factionRank;
-		j["rebelPoints"] = l.rebelPoints;
-		j["imperialPoints"] = l.imperialPoints;
-		j["factions"] = l.factions.getMapUnsafe();
-	}
+	bool isPvpFaction(const String& faction) const;
 
-	float get(const String& faction) const {
-		return getFactionStanding(faction);
-	}
+	const String& getFactionRank() const;
 
-	int size() const {
-		return factions.size();
-	}
+	void setRebelPoints(int amount);
 
-	void put(const String& faction, float amount) {
-		if (faction == "imperial")
-			setImperialPoints(amount);
-		else if (faction == "rebel")
-			setRebelPoints(amount);
-		else
-			factions.put(faction, amount);
-	}
+	void setImperialPoints(int amount);
 
-	float getFactionStanding(const String& faction) const {
-		if (faction == "imperial")
-			return getImperialPoints();
-		else if (faction == "rebel")
-			return getRebelPoints();
-		else
-			return factions.get(faction);
-	}
+	void increaseRebelPoints(int amount);
 
-	bool contains(const String& faction) const {
-		if (faction == "imperial" || faction == "rebel")
-			return true;
-		else
-			return factions.contains(faction);
-	}
+	void decreaseRebelPoints(int amount);
 
-	bool isPvpFaction(const String& faction) const {
-		return faction == "imperial" || faction == "rebel";
-	}
+	void increaseImperialPoints(int amount);
 
-	const String& getFactionRank() const {
-		return factionRank;
-	}
+	void decreaseImperialPoints(int amount);
 
-	void setRebelPoints(int amount) {
-		rebelPoints = amount;
-	}
+	void setFactionRank(const String& rank);
 
-	void setImperialPoints(int amount) {
-		imperialPoints = amount;
-	}
+	int getImperialPoints() const;
 
-	void increaseRebelPoints(int amount) {
-		rebelPoints += amount;
-	}
+	int getRebelPoints() const;
 
-	void decreaseRebelPoints(int amount) {
-		rebelPoints -= amount;
-	}
+	int getHuttPoints() const;
 
-	void increaseImperialPoints(int amount) {
-		imperialPoints += amount;
-	}
-
-	void decreaseImperialPoints(int amount) {
-		imperialPoints -= amount;
-	}
-
-	void setFactionRank(const String& rank) {
-		factionRank = rank;
-	}
-
-	int getImperialPoints() const {
-		return imperialPoints;
-	}
-
-	int getRebelPoints() const {
-		return rebelPoints;
-	}
-
-	int getHuttPoints() const {
-		return 0;
-	}
-
-	void insertToMessage(BaseMessage* message) const {
-		message->insertAscii(factionRank);
-		message->insertInt(rebelPoints);
-		message->insertInt(imperialPoints);
-		message->insertInt(0); //Hutt Points;
-
-		int listSize = factions.size();
-
-		message->insertInt(listSize);
-
-		for (int i = 0; i < listSize; ++i) {
-			auto key = factions.getKey(i);
-
-			message->insertAscii(key);
-		}
-
-		message->insertInt(listSize);
-
-		for (int i = 0; i < listSize; ++i)
-			message->insertFloat(factions.get(i));
-	}
+	void insertToMessage(BaseMessage* message) const;
 };

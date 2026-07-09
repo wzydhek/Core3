@@ -11,6 +11,9 @@
 #include "server/zone/ActiveAreaOctree.h"
 #include "server/zone/objects/building/BuildingObject.h"
 
+SpaceZoneContainerComponent::SpaceZoneContainerComponent() {
+	setLoggingName("SpaceZoneContainerComponent");
+}
 
 bool SpaceZoneContainerComponent::insertActiveArea(Zone* newZone, ActiveArea* activeArea) const {
 	if (newZone == nullptr || activeArea == nullptr) {

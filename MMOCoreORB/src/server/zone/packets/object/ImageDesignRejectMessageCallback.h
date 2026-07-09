@@ -8,7 +8,7 @@
 #pragma once
 
 #include "ObjectControllerMessageCallback.h"
-#include "server/zone/objects/player/sessions/ImageDesignSession.h"
+#include "server/zone/objects/player/sessions/ImageDesignData.h"
 
 class ImageDesignRejectMessageCallback : public MessageCallback {
 	uint64 designer;
@@ -21,33 +21,9 @@ class ImageDesignRejectMessageCallback : public MessageCallback {
 	ObjectControllerMessageCallback* objectControllerMain;
 
 public:
-	ImageDesignRejectMessageCallback(ObjectControllerMessageCallback* objectControllerCallback) :
-			MessageCallback(objectControllerCallback->getClient(), objectControllerCallback->getServer()),
-			designer(0), target(0), tent(0), type(0), objectControllerMain(objectControllerCallback) {
-	}
+	ImageDesignRejectMessageCallback(ObjectControllerMessageCallback* objectControllerCallback);
 
-	void parse(Message* message) {
-		message->shiftOffset(4);//?
-		designer = message->parseLong();
-		target = message->parseLong();
-		tent = message->parseLong();
-		type = message->parseByte();
+	void parse(Message* message);
 
-		data.parse(message);
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		ManagedReference<Facade*> facade = player->getActiveSession(SessionFacadeType::IMAGEDESIGN);
-		ManagedReference<ImageDesignSession*> session = dynamic_cast<ImageDesignSession*>(facade.get());
-
-		if (session == nullptr)
-			return;
-
-		session->cancelImageDesign(designer, target, tent, type, data);
-	}
+	void run();
 };

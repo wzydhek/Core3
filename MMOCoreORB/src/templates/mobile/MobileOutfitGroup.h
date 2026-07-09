@@ -8,44 +8,19 @@
 #pragma once
 
 #include "templates/mobile/MobileOutfit.h"
+#include "templates/LuaTemplate.h"
 
 class MobileOutfitGroup : public Object {
 	Vector<MobileOutfit> outfits;
 public:
-	MobileOutfitGroup() {
+	MobileOutfitGroup();
 
-	}
+	MobileOutfitGroup(const MobileOutfitGroup& o);
 
-	MobileOutfitGroup(const MobileOutfitGroup& o) : Object() {
-		outfits = o.outfits;
-	}
+	MobileOutfitGroup& operator=(const MobileOutfitGroup& o);
 
-	MobileOutfitGroup& operator=(const MobileOutfitGroup& o) {
-		if (this == &o)
-			return *this;
+	void readObject(LuaObject* luaObject);
 
-		outfits = o.outfits;
-
-		return *this;
-	}
-
-	void readObject(LuaObject* luaObject) {
-		//LuaObject outfit = templateData->getObjectField("outfit");
-
-		for (int i = 1; i <= luaObject->getTableSize(); ++i) {
-			LuaObject obj = luaObject->getObjectAt(i);
-
-			MobileOutfit outfit;
-			outfit.readObject(&obj);
-
-			outfits.add(outfit);
-
-			obj.pop();
-		}
-	}
-
-	Vector<MobileOutfit>* getOutfits() {
-		return &outfits;
-	}
+	Vector<MobileOutfit>* getOutfits();
 
 };

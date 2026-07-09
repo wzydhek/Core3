@@ -125,391 +125,169 @@ public:
 
 	void readObject(LuaObject* templateData);
 
-	inline float getKinetic() const {
-		if (isSpecialProtection(SharedWeaponObjectTemplate::KINETIC))
-			return kinetic - 100;
-		else
-			return kinetic;
-	}
-
-	inline float getEnergy() const {
-		if (isSpecialProtection(SharedWeaponObjectTemplate::ENERGY))
-			return energy - 100;
-		else
-			return energy;
-	}
-
-	inline float getElectricity() const {
-		if (isSpecialProtection(SharedWeaponObjectTemplate::ELECTRICITY))
-			return electricity - 100;
-		else
-			return electricity;
-	}
-
-	inline float getStun() const {
-		if (isSpecialProtection(SharedWeaponObjectTemplate::STUN))
-			return stun - 100;
-		else
-			return stun;
-	}
-
-	inline float getBlast() const {
-		if (isSpecialProtection(SharedWeaponObjectTemplate::BLAST))
-			return blast - 100;
-		else
-			return blast;
-	}
-
-	inline float getHeat() const {
-		if (isSpecialProtection(SharedWeaponObjectTemplate::HEAT))
-			return heat - 100;
-		else
-			return heat;
-	}
-
-	inline float getCold() const {
-		if (isSpecialProtection(SharedWeaponObjectTemplate::COLD))
-			return cold - 100;
-		else
-			return cold;
-	}
-
-	inline float getAcid() const {
-		if (isSpecialProtection(SharedWeaponObjectTemplate::ACID))
-			return acid - 100;
-		else
-			return acid;
-	}
-
-	inline float getLightSaber() const {
-		if (isSpecialProtection(SharedWeaponObjectTemplate::LIGHTSABER))
-			return lightSaber - 100;
-		else
-			return lightSaber;
-	}
-
-	inline bool isStalker() const {
-		return creatureBitmask & ObjectFlag::STALKER;
-	}
-
-	inline bool isBaby() const {
-		return creatureBitmask & ObjectFlag::BABY;
-	}
-
-	inline bool isKiller() const {
-		return creatureBitmask & ObjectFlag::KILLER;
-	}
-
-	inline bool isHealer() const {
-		return creatureBitmask & ObjectFlag::HEALER;
-	}
-
-	inline bool isPack() const {
-		return creatureBitmask & ObjectFlag::PACK;
-	}
-
-	inline bool isHerd() const {
-		return creatureBitmask & ObjectFlag::HERD;
-	}
-
-	inline float getTame() const {
-		return tamingChance;
-	}
-
-	inline const String& getMeatType() const {
-		return meatType;
-	}
-
-	inline const String& getBoneType() const {
-		return boneType;
-	}
-
-	inline const String& getHideType() const {
-		return hideType;
-	}
-
-	inline const String& getMilkType() const {
-		return milkType;
-	}
-
-	inline const String& getCustomName() const {
-		return customName;
-	}
-
-	inline float getMilk() const {
-		return milk;
-	}
-
-	inline float getHideMax() const {
-		return hideAmount;
-	}
-
-	inline float getBoneMax() const {
-		return boneAmount;
-	}
-
-	inline float getMeatMax() const {
-		return meatAmount;
-	}
-
-	inline unsigned int getFerocity() const {
-		return ferocity;
-	}
-
-	inline unsigned int getArmor() const {
-		return armor;
-	}
-
-	inline const String& getObjectName() const {
-		return objectName;
-	}
-
-	inline uint32 getPlanetMapCategory() const {
-		return planetMapCategory;
-	}
-
-	inline String getPlanetMapCategoryName() const {
-		return mapCategoryName;
-	}
-
-	inline uint32 getPlanetMapSubCategory() const {
-		return planetMapSubCategory;
-	}
-
-	inline String getPlanetMapSubCategoryName() const {
-		return mapSubCategoryName;
-	}
-
-	inline int getRandomNameType() const {
-		return randomNameType;
-	}
-
-	inline int getMobType() const {
-		return mobType;
-	}
-
-	inline bool getRandomNameTag() const {
-		return randomNameTag;
-	}
-
-	inline const String& getSocialGroup() const {
-		return socialGroup;
-	}
-
-	inline uint32 getConversationTemplate() const {
-		return conversationTemplate;
-	}
-
-	inline uint32 getOptionsBitmask() const {
-		return optionsBitmask;
-	}
-
-	inline uint64 getCustomAiMap() {
-		return customAiMap;
-	}
-
-	inline const String& getFaction() const {
-		return faction;
-	}
-
-	inline int getLevel() const {
-		return level;
-	}
-
-	inline float getChanceHit() const {
-		return chanceHit;
-	}
-
-	inline float getScale() const {
-		return scale;
-	}
-
-	inline int getDamageMin() const {
-		return damageMin;
-	}
-
-	inline int getDamageMax() const {
-		return damageMax;
-	}
-
-	inline float getAttackSpeed() const {
-		return attackSpeed;
-	}
-
-	inline float getSpecialDamageMult() const {
-		return specialDamageMult;
-	}
-
-	inline int getRange() const {
-		return range;
-	}
-
-	inline int getBaseXp() const {
-		return baseXp;
-	}
-
-	inline int getBaseHAM() const {
-		return baseHAM;
-	}
-
-	inline int getBaseHAMmax() const {
-		return baseHAMmax;
-	}
-
-	inline int getRandomHue() const {
-		int randHue = System::random(hues.size() - 1);
-		return hues.get(randHue);
-	}
-
-	inline int getHueCount() const {
-		return hues.size();
-	}
-
-	inline int getTotalHues() const {
-		return hues.size();
-	}
-
-	inline int getAggroRadius() const {
-		return aggroRadius;
-	}
-
-	inline uint32 getPvpBitmask() const {
-		return pvpBitmask;
-	}
-
-	inline uint32 getCreatureBitmask() const {
-		return creatureBitmask;
-	}
-
-	inline uint32 getDiet() const {
-		return diet;
-	}
-
-	inline bool isTauntable() const {
-		return tauntable;
-	}
-
-	inline int getLightsaberColor() const {
-		return lightsaberColor;
-	}
-
-	inline const Vector<String>& getTemplates() const {
-		return templates;
-	}
-
-	inline const LootGroupCollection* getLootGroups() const {
-		return &lootgroups;
-	}
-
-	inline const String& getPrimaryWeapon() const {
-		return primaryWeapon;
-	}
-
-	inline const String& getSecondaryWeapon() const {
-		return secondaryWeapon;
-	}
-
-	inline const String& getThrownWeapon() const {
-		return thrownWeapon;
-	}
-
-	inline const CreatureAttackMap* getPrimaryAttacks() const {
-		return primaryAttacks;
-	}
-
-	inline const CreatureAttackMap* getSecondaryAttacks() const {
-		return secondaryAttacks;
-	}
-
-	inline const String& getPatrolPathTemplate() const {
-		return patrolPathTemplate;
-	}
-
-	void setTemplateName(const String& t) {
-		templateName = t;
-	}
-
-	inline const String& getTemplateName() const {
-		return templateName;
-	}
-
-	inline String& getTemplateName() {
-		return templateName;
-	}
-
-	inline bool hasPatrolPathTemplate() const {
-		return !patrolPathTemplate.isEmpty();
-	}
-
-	inline const String& getOutfit() const {
-		return outfit;
-	}
-
-	inline const String& getAiTemplate() const {
-		return aiTemplate;
-	}
-
-	inline const String& getDefaultWeapon() const {
-		return defaultWeapon;
-	}
-
-	inline const String& getDefaultAttack() const {
-		return defaultAttack;
-	}
-
-	inline const String& getControlDeviceTemplate() const {
-		return controlDeviceTemplate;
-	}
-
-	inline const String& getContainerComponentTemplate() const {
-		return containerComponentTemplate;
-	}
-
-	inline const String& getReactionStf() const {
-		return reactionStf;
-	}
-
-	inline const String& getPersonalityStf() const {
-		return personalityStf;
-	}
-
-	inline const String& getHealerType() const {
-		return healerType;
-	}
-
-	inline bool isSpecialProtection(int resistType) const {
-		switch (resistType) {
-		case SharedWeaponObjectTemplate::KINETIC:
-			return kinetic > 100;
-			break;
-		case SharedWeaponObjectTemplate::ENERGY:
-			return energy > 100;
-			break;
-		case SharedWeaponObjectTemplate::ELECTRICITY:
-			return electricity > 100;
-			break;
-		case SharedWeaponObjectTemplate::STUN:
-			return stun > 100;
-			break;
-		case SharedWeaponObjectTemplate::BLAST:
-			return blast > 100;
-			break;
-		case SharedWeaponObjectTemplate::HEAT:
-			return heat > 100;
-			break;
-		case SharedWeaponObjectTemplate::COLD:
-			return cold > 100;
-			break;
-		case SharedWeaponObjectTemplate::ACID:
-			return acid > 100;
-			break;
-		case SharedWeaponObjectTemplate::LIGHTSABER:
-			return lightSaber > 100;
-			break;
-		}
-
-		return false;
-	}
+	float getKinetic() const;
+
+	float getEnergy() const;
+
+	float getElectricity() const;
+
+	float getStun() const;
+
+	float getBlast() const;
+
+	float getHeat() const;
+
+	float getCold() const;
+
+	float getAcid() const;
+
+	float getLightSaber() const;
+
+	bool isStalker() const;
+
+	bool isBaby() const;
+
+	bool isKiller() const;
+
+	bool isHealer() const;
+
+	bool isPack() const;
+
+	bool isHerd() const;
+
+	float getTame() const;
+
+	const String& getMeatType() const;
+
+	const String& getBoneType() const;
+
+	const String& getHideType() const;
+
+	const String& getMilkType() const;
+
+	const String& getCustomName() const;
+
+	float getMilk() const;
+
+	float getHideMax() const;
+
+	float getBoneMax() const;
+
+	float getMeatMax() const;
+
+	unsigned int getFerocity() const;
+
+	unsigned int getArmor() const;
+
+	const String& getObjectName() const;
+
+	uint32 getPlanetMapCategory() const;
+
+	String getPlanetMapCategoryName() const;
+
+	uint32 getPlanetMapSubCategory() const;
+
+	String getPlanetMapSubCategoryName() const;
+
+	int getRandomNameType() const;
+
+	int getMobType() const;
+
+	bool getRandomNameTag() const;
+
+	const String& getSocialGroup() const;
+
+	uint32 getConversationTemplate() const;
+
+	uint32 getOptionsBitmask() const;
+
+	uint64 getCustomAiMap();
+
+	const String& getFaction() const;
+
+	int getLevel() const;
+
+	float getChanceHit() const;
+
+	float getScale() const;
+
+	int getDamageMin() const;
+
+	int getDamageMax() const;
+
+	float getAttackSpeed() const;
+
+	float getSpecialDamageMult() const;
+
+	int getRange() const;
+
+	int getBaseXp() const;
+
+	int getBaseHAM() const;
+
+	int getBaseHAMmax() const;
+
+	int getRandomHue() const;
+
+	int getHueCount() const;
+
+	int getTotalHues() const;
+
+	int getAggroRadius() const;
+
+	uint32 getPvpBitmask() const;
+
+	uint32 getCreatureBitmask() const;
+
+	uint32 getDiet() const;
+
+	bool isTauntable() const;
+
+	int getLightsaberColor() const;
+
+	const Vector<String>& getTemplates() const;
+
+	const LootGroupCollection* getLootGroups() const;
+
+	const String& getPrimaryWeapon() const;
+
+	const String& getSecondaryWeapon() const;
+
+	const String& getThrownWeapon() const;
+
+	const CreatureAttackMap* getPrimaryAttacks() const;
+
+	const CreatureAttackMap* getSecondaryAttacks() const;
+
+	const String& getPatrolPathTemplate() const;
+
+	void setTemplateName(const String& t);
+
+	const String& getTemplateName() const;
+
+	String& getTemplateName();
+
+	bool hasPatrolPathTemplate() const;
+
+	const String& getOutfit() const;
+
+	const String& getAiTemplate() const;
+
+	const String& getDefaultWeapon() const;
+
+	const String& getDefaultAttack() const;
+
+	const String& getControlDeviceTemplate() const;
+
+	const String& getContainerComponentTemplate() const;
+
+	const String& getReactionStf() const;
+
+	const String& getPersonalityStf() const;
+
+	const String& getHealerType() const;
+
+	bool isSpecialProtection(int resistType) const;
 };
 
 }

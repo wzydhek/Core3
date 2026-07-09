@@ -9,30 +9,18 @@
 
 class ParametersMessage : public BaseMessage {
 public:
-	ParametersMessage() : BaseMessage(7) {
-		insertShort(0x02);
-		insertInt(0x487652DA);
-		insertInt(0x00000384);
-	}
+	ParametersMessage();
 
-	static void parse(Packet* pack) {
-		uint16 ackSequence = pack->parseShort();
-	}
+	static void parse(Packet* pack);
 
 };
 
 class ParametersMessageCallback : public MessageCallback {
 	uint16 ackSequence;
 public:
-	ParametersMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), ackSequence(0) {
-	}
+	ParametersMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	void parse(Message* msg) {
-		ackSequence = msg->parseShort();
-	}
+	void parse(Message* msg);
 
-	void execute() {
-
-	}
+	void execute();
 };

@@ -21,11 +21,7 @@ public:
 
 	void readObject(DataTableIff* table);
 
-	const FactionRank& getRank(int index) {
-		return ranks.get(index);
-	}
+	const FactionRank& getRank(int index);
 
-	int getCount() {
-		return ranks.size();
-	}
+	int getCount();
 };

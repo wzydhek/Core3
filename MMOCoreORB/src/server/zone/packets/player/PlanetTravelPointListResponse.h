@@ -17,16 +17,7 @@ class TravelPoint {
 	uint8 starport;
 	
 public:
-	TravelPoint(const String& Name, float x, float z, float y, uint32 tax, uint8 starport) {
-		name = Name;
-		
-		positionX = x;
-		positionY = y;
-		positionZ = z;
-		
-		this->tax = tax;
-		this->starport = starport;
-	}
+	TravelPoint(const String& Name, float x, float z, float y, uint32 tax, uint8 starport);
 	
 	friend class PlanetTravelPointListResponse;
 };
@@ -35,80 +26,22 @@ class PlanetTravelPointListResponse : public BaseMessage {
 	Vector<TravelPoint*> travelPoints;
 	
 public:
-	PlanetTravelPointListResponse() : BaseMessage() {
-		insertShort(0x06);
-		insertInt(0x4D32541F); //PlanetTravelPointListResponse
+	PlanetTravelPointListResponse();
 
-		insertAscii("naboo");
-	}
-
-	PlanetTravelPointListResponse(const String& planet) : BaseMessage() {
-		insertShort(0x06);
-		insertInt(0x4D32541F);  //PlanetTravelPointListResponse
-        insertAscii(planet);
-
-        setCompression(true);
-	}
+	PlanetTravelPointListResponse(const String& planet);
 	
-	~PlanetTravelPointListResponse() {
-		while (travelPoints.size() > 0) {
-			TravelPoint* point = travelPoints.remove(0);
-
-			delete point;
-		}
-	}
+	~PlanetTravelPointListResponse();
     
-    void addPoint(const String& name, float x, float z, float y, uint32 tax, uint8 starport) {
-    	travelPoints.add(new TravelPoint(name, x, z, y, tax, starport));
-    }
+    void addPoint(const String& name, float x, float z, float y, uint32 tax, uint8 starport);
     
-    void generateMessage() {
-    	insertNames();
-    	insertCoords();
-    	insertTax();
-    	insertStarport();
-    }
+    void generateMessage();
     
-    void insertNames() {
-    	insertInt(travelPoints.size());
-        	
-    	for (int i = 0; i < travelPoints.size(); ++i) {
-    		TravelPoint* point = travelPoints.get(i);
-    		
-    		insertAscii(point->name);
-    	}
-    }
+    void insertNames();
     
-    void insertCoords() {
-    	insertInt(travelPoints.size());
-
-    	for (int i = 0; i < travelPoints.size(); ++i) {
-    		TravelPoint* point = travelPoints.get(i);
-
-    		insertFloat(point->positionX);
-    		insertFloat(point->positionZ);
-    		insertFloat(point->positionY);
-    	}
-    }
+    void insertCoords();
     
-    void insertTax() {
-    	insertInt(travelPoints.size());
-
-    	for (int i = 0; i < travelPoints.size(); ++i) {
-    		TravelPoint* point = travelPoints.get(i);
-
-    		insertInt(point->tax);
-    	}
-    }
+    void insertTax();
     
-    void insertStarport() {
-    	insertInt(travelPoints.size());
-
-    	for (int i = 0; i < travelPoints.size(); ++i) {
-    		TravelPoint* point = travelPoints.get(i);
-
-    		insertByte(point->starport);
-    	}
-    }
+    void insertStarport();
 	
 };

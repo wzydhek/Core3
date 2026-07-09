@@ -14,31 +14,13 @@ public:
 	Vector<int> craftingTabsSupported;
 
 public:
-	FactoryObjectTemplate() {
+	FactoryObjectTemplate();
 
-	}
+	~FactoryObjectTemplate();
 
-	~FactoryObjectTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
+	Vector<int> getCraftingTabsSupported();
 
-	void readObject(LuaObject* templateData) {
-		SharedInstallationObjectTemplate::readObject(templateData);
-
-		LuaObject craftingTabsSupportedList = templateData->getObjectField("craftingTabsSupported");
-
-		for (int i = 1; i < craftingTabsSupportedList.getTableSize() + 1; ++i)
-			craftingTabsSupported.add(craftingTabsSupportedList.getIntAt(i));
-
-		craftingTabsSupportedList.pop();
-	}
-
-	Vector<int> getCraftingTabsSupported()
-	{
-	    return craftingTabsSupported;
-	}
-
-	bool isFactoryObjectTemplate() {
-		return true;
-	}
+	bool isFactoryObjectTemplate();
 };

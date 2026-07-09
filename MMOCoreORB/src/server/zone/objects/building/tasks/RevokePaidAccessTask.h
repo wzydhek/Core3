@@ -13,19 +13,7 @@
 class RevokePaidAccessTask : public Task {
 	ManagedWeakReference<BuildingObject*> building;
 public:
-	RevokePaidAccessTask(BuildingObject* build) : Task() {
-		building = build;
-	}
+	RevokePaidAccessTask(BuildingObject* build);
 
-	void run() {
-
-		ManagedReference<BuildingObject*> strongRef = building;
-
-		if (strongRef == nullptr) {
-			return;
-		}
-
-		Locker _lock(strongRef);
-		strongRef->updatePaidAccessList();
-	}
+	void run();
 };

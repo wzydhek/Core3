@@ -9,6 +9,38 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/ZoneServer.h"
 
+ValidatedPosition::ValidatedPosition() {
+	parent = 0;
+
+	addSerVariables();
+}
+
+ValidatedPosition::ValidatedPosition(const Vector3& pos) {
+	parent = 0;
+	point = pos;
+
+	addSerVariables();
+}
+
+ValidatedPosition::ValidatedPosition(const ValidatedPosition& a) : Object(), Serializable() {
+	point = a.point;
+	parent = a.parent;
+
+	addSerVariables();
+}
+
+ValidatedPosition& ValidatedPosition::operator=(const ValidatedPosition& a) {
+	point = a.point;
+	parent = a.parent;
+
+	return *this;
+}
+
+void to_json(nlohmann::json& j, const ValidatedPosition& pos) {
+	j["point"] = pos.point;
+	j["parent"] = pos.parent;
+}
+
 void ValidatedPosition::update(SceneObject* object) {
 	point = object->getPosition();
 
@@ -54,4 +86,29 @@ Vector3 ValidatedPosition::getWorldPosition(ZoneServer* zoneServer) {
 	float worldZ = root->getPositionZ() + localZ;
 
 	return Vector3(worldX, worldY, worldZ);
+}
+
+uint64 ValidatedPosition::getParent() const {
+	return parent;
+}
+
+const Vector3& ValidatedPosition::getPosition() const {
+	return point;
+}
+
+void ValidatedPosition::setParent(uint64 par) {
+	parent = par;
+}
+
+void ValidatedPosition::setPosition(const Vector3& pos) {
+	point = pos;
+}
+
+void ValidatedPosition::setPosition(float x, float z, float y) {
+	point.set(x, z, y);
+}
+
+void ValidatedPosition::addSerVariables() {
+	addSerializableVariable("point", &point);
+	addSerializableVariable("parent", &parent);
 }

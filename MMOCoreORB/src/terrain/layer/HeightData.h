@@ -16,15 +16,9 @@ class HeightData : public TemplateVariable<'HDTA'> {
 	Vector<Segment*> segments;
 
 public:
-	HeightData() : IffTemplateVariable() {
-	}
+	HeightData();
 
-	~HeightData() {
-		for (int i = 0; i < segments.size(); ++i)
-			delete segments.get(i);
-
-		segments.removeAll();
-	}
+	~HeightData();
 
 	void parseFromIffStream(engine::util::IffStream* iffStream);
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);

@@ -8,9 +8,5 @@
 
 class HyperspaceMessage : public BaseMessage {
 public:
-	HyperspaceMessage(uint64 shpid, int operand) : BaseMessage() {
-		insertShort(operand);
-		insertInt(0xCBF88482);  // Opcode
-		insertLong(shpid);
-	}
+	HyperspaceMessage(uint64 shpid, int operand);
 };

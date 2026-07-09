@@ -12,47 +12,29 @@
 class DetailAppearanceTemplate : public AppearanceTemplate {
 	const AppearanceTemplate* firstMesh;
 public:
-	virtual uint32 getType() const {
-		return 'DTAL';
-	}
+	virtual uint32 getType() const;
 
-	DetailAppearanceTemplate() {
-		firstMesh = nullptr;
-	}
+	DetailAppearanceTemplate();
 
-	~DetailAppearanceTemplate() {
-	}
+	~DetailAppearanceTemplate();
 
-	void readObject(IffStream* templateData) {
-		parse(templateData);
-	}
+	void readObject(IffStream* templateData);
 
 	void parse(IffStream* iffStream);
 
-	virtual bool testCollide(const Sphere& testsphere) const {
-		return firstMesh->testCollide(testsphere);
-	}
+	virtual bool testCollide(const Sphere& testsphere) const;
 
 	/**
 	 * Checks for intersection against ray, stops on any intersection
 	 * @return intersectionDistance, triangle which it intersects
 	 */
-	virtual bool intersects(const Ray& ray, float distance, float& intersectionDistance, Triangle*& triangle, bool checkPrimitives = false) const {
-		return firstMesh->intersects(ray, distance, intersectionDistance, triangle, checkPrimitives);
-	}
+	virtual bool intersects(const Ray& ray, float distance, float& intersectionDistance, Triangle*& triangle, bool checkPrimitives = false) const;
 
 	/**
 	 * Checks for all intersections
 	 */
-	virtual int intersects(const Ray& ray, float maxDistance, SortedVector<IntersectionResult>& result) const {
-		return firstMesh->intersects(ray, maxDistance, result);
-	}
+	virtual int intersects(const Ray& ray, float maxDistance, SortedVector<IntersectionResult>& result) const;
 
-	virtual Vector<Reference<MeshData* > > getTransformedMeshData(const Matrix4& parentTransform) const {
-		Vector<Reference<MeshData* > > meshes;
-		if(firstMesh != nullptr)
-			meshes.addAll(firstMesh->getTransformedMeshData(parentTransform));
-		return meshes;
-	}
+	virtual Vector<Reference<MeshData*>> getTransformedMeshData(const Matrix4& parentTransform) const;
 
 };

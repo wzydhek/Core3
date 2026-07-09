@@ -11,6 +11,20 @@
 #include "ResourceMap.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 
+TypeResourceMap::TypeResourceMap() {
+}
+
+TypeResourceMap::~TypeResourceMap() {
+}
+
+ZoneResourceMap::ZoneResourceMap() {
+	setNoDuplicateInsertPlan();
+	setNullValue(nullptr);
+}
+
+ZoneResourceMap::~ZoneResourceMap() {
+}
+
 ResourceMap::ResourceMap() {
 	setNoDuplicateInsertPlan();
 	setNullValue(nullptr);
@@ -153,4 +167,29 @@ void ResourceMap::getAttributeSubset(ResourceMap& subMap, const String& attribut
 				subMap.add(spawn->getName().toLowerCase(), spawn);
 		}
 	}
+}
+
+/**
+ * Get's the density value of resource at given point
+ * \param zoneid ID of zone being requesting
+ * \return ZoneResourceMap* value of the zoneid requested
+ */
+ZoneResourceMap* ResourceMap::getZoneResourceList(String zoneName) {
+	if (zoneResourceMap.contains(zoneName))
+		return zoneResourceMap.get(zoneName);
+	else
+		return nullptr;
+}
+
+/**
+ * Checks to see if the type resource map contains the specified type or not.
+ * @param typeName The type to check. For example, "aluminum_phrik".
+ * @return Returns true if the map contains the type.
+ */
+bool ResourceMap::containsType(const String& typeName) {
+	return typeResourceMap.contains(typeName);
+}
+
+bool ResourceMap::containsSpawn(const String& spawnName) {
+	return contains(spawnName.toLowerCase());
 }

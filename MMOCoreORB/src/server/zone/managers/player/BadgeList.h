@@ -23,23 +23,17 @@ public:
 	 * Get a badge by name
          * returns nullptr if the name wasn't found
 	 */
-	inline const Badge* get(const String& name) const {
-		return names.get(name);
-	}
+	const Badge* get(const String& name) const;
 
 	/*
          * Get a badge by index
 	 * return nullptre if the name wasn't found
 	 */
-	inline const Badge* get(unsigned int idx) const {
-		return badges.get(idx);
-	}
+	const Badge* get(unsigned int idx) const;
 
 	/*
 	 * Returns the (idx, Badge*) vector map
 	 */
-	inline const VectorMap<unsigned int, const Badge*>* getMap() const {
-		return &badges;
-	}
+	const VectorMap<unsigned int, const Badge*>* getMap() const;
 
 };

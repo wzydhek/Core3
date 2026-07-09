@@ -1,0 +1,63 @@
+#include "LookForPlayer.h"
+
+LookForPlayer::LookForPlayer(const String& className, const uint32 id, const LuaObject& args) : Decorator(className, id, args) {
+}
+
+LookForPlayer::LookForPlayer(const LookForPlayer& b) : Decorator(b) {
+}
+
+LookForPlayer& LookForPlayer::operator=(const LookForPlayer& b) {
+	if (this == &b)
+		return *this;
+	Behavior::operator=(b);
+	return *this;
+}
+
+Behavior::Status LookForPlayer::execute(AiAgent* agent, unsigned int startIdx) const {
+	if ((agent->getOptionsBitmask() & OptionBitmask::AIENABLED) == 0 || agent->isDead() || agent->isIncapacitated())
+		return FAILURE;
+
+	assert(child != nullptr);
+
+	// Get player targets we want to apply our child tree to
+	CloseObjectsVector* vec = (CloseObjectsVector*)agent->getCloseObjects();
+	if (vec == nullptr)
+		return FAILURE;
+
+	SortedVector<TreeEntry*> closeObjects;
+	vec->safeCopyReceiversTo(closeObjects, CloseObjectsVector::PLAYERTYPE);
+
+	// Shuffle closeobjects to randomize target checks
+	std::shuffle(closeObjects.begin(), closeObjects.end(), *System::getMTRand());
+
+	for (int i = 0; i < closeObjects.size(); ++i) {
+		ManagedReference<SceneObject*> sceneTarget = static_cast<SceneObject*>(closeObjects.get(i));
+		if (isInvalidTarget(sceneTarget->asCreatureObject(), agent))
+			continue;
+
+		agent->writeBlackboard("targetProspect", sceneTarget);
+
+		Behavior::Status result = child->doAction(agent);
+		if (result != FAILURE) {
+			return result;
+		}
+	}
+
+	return FAILURE;
+}
+
+bool LookForPlayer::isInvalidTarget(CreatureObject* target, AiAgent* agent) const {
+	if (target == nullptr || target->isDead() || target->isFeigningDeath() || target->isInvisible())
+		return true;
+
+	SceneObject* agentParent = agent->getParent().get();
+	SceneObject* targetParent = target->getParent().get();
+
+	uint64 agentParentID = agentParent != nullptr ? agentParent->getObjectID() : 0;
+	uint64 targetParentID = targetParent != nullptr ? targetParent->getObjectID() : 0;
+
+	if (agentParentID != targetParentID && !CollisionManager::checkLineOfSight(agent, target))
+		return true;
+
+	return false;
+}

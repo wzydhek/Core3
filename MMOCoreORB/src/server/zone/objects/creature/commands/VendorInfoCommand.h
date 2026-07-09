@@ -8,15 +8,10 @@
 #pragma once
 
 #include "engine/engine.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class VendorInfoCommand {
 public:
-	static int executeCommand(CreatureObject* creature, uint64 target, const UnicodeString& arguments) {
-		if (!creature->isPlayerCreature())
-			return 1;
-
-
-		return 0;
-	}
+	static int executeCommand(CreatureObject* creature, uint64 target, const UnicodeString& arguments);
 
 };

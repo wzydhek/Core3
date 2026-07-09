@@ -16,14 +16,9 @@ class CompleteMissionAfterCertainTimeTask : public Task {
 	ManagedReference<MissionObjective*> objective;
 
 public:
-	CompleteMissionAfterCertainTimeTask(MissionObjective* objective) {
-		this->objective = objective;
-	}
+	CompleteMissionAfterCertainTimeTask(MissionObjective* objective);
 
-	void run() {
-		//Complete mission.
-		objective->complete();
-	}
+	void run();
 };
 
 } // namespace events

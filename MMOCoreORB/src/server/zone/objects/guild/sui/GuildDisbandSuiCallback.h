@@ -10,38 +10,12 @@
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/sui/SuiBox.h"
 
 class GuildDisbandSuiCallback : public SuiCallback {
 public:
-	GuildDisbandSuiCallback(ZoneServer* server)
-		: SuiCallback(server) {
-	}
+	GuildDisbandSuiCallback(ZoneServer* server);
 
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!suiBox->isMessageBox() || cancelPressed)
-			return;
-
-		ManagedReference<GuildManager*> guildManager = server->getGuildManager();
-
-		ManagedReference<SceneObject*> obj = suiBox->getUsingObject().get();
-
-		if (obj == nullptr || !obj->isTerminal())
-			return;
-
-		Terminal* terminal = cast<Terminal*>( obj.get());
-
-		if (!terminal->isGuildTerminal())
-			return;
-
-		ManagedReference<GuildObject*> guild = player->getGuildObject().get();
-
-		if (guild == nullptr)
-			return;
-
-		Locker guildLocker(guild, player);
-
-		guildManager->disbandGuild(player, guild);
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

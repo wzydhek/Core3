@@ -8,45 +8,22 @@ protected:
 	SerializableString faction;
 	int number;
 public:
-	CoaMessageDataComponent() {
-		number = 1;
-		addSerializableVariables();
-	}
+	CoaMessageDataComponent();
 
-	virtual ~CoaMessageDataComponent() {
+	virtual ~CoaMessageDataComponent();
 
-	}
+	void writeJSON(nlohmann::json& j) const;
 
-	void writeJSON(nlohmann::json& j) const {
-		DataObjectComponent::writeJSON(j);
+	void setFaction(String side);
 
-		SERIALIZE_JSON_MEMBER(faction);
-		SERIALIZE_JSON_MEMBER(number);
-	}
+	void setNumber(int num);
 
-	void setFaction(String side) {
-		faction = side;
-	}
+	String getFaction();
 
-	void setNumber(int num) {
-		number = num;
-	}
+	int getNumber();
 
-	String getFaction() {
-		return faction;
-	}
-
-	int getNumber() {
-		return number;
-	}
-
-	bool isCoaMessageData() {
-		return true;
-	}
+	bool isCoaMessageData();
 
 private:
-	void addSerializableVariables() {
-		addSerializableVariable("faction", &faction);
-		addSerializableVariable("number", &number);
-	}
+	void addSerializableVariables();
 };

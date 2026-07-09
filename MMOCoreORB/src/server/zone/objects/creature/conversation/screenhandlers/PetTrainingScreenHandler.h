@@ -38,13 +38,9 @@ public:
 
 	ConversationScreen* handleScreen(CreatureObject* conversingPlayer, SceneObject* conversingNPC, int selectedOption, ConversationScreen* conversationScreen);
 
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return true;
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		return true;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
 
 } // namespace screenhandlers

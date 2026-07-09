@@ -8,6 +8,33 @@
 #include "PortalLayout.h"
 #include "engine/util/u3d/AStarAlgorithm.h"
 
+PortalGeometry::PortalGeometry() : geometry(new MeshData()), boundingBox(Vector3(0, 0, 0), Vector3(0, 0, 0)) {
+	}
+
+MeshData* PortalGeometry::getGeometry() {
+	return geometry;
+}
+
+const MeshData* PortalGeometry::getGeometry() const {
+	return geometry;
+}
+
+const AABB& PortalGeometry::getBoundingBox() const {
+	return boundingBox;
+}
+
+void PortalGeometry::setBoundingBox(const AABB& aabb) {
+	boundingBox = aabb;
+}
+
+const PathGraph* PortalLayout::getPathGraph() const {
+	return pathGraph;
+}
+
+void PortalLayout::readObject(IffStream* templateData) {
+	parse(templateData);
+}
+
 void PortalLayout::readPortalGeometry0003(IffStream *iff, int numPortals) {
 	portalGeometry.removeAll(numPortals);
 
@@ -366,4 +393,45 @@ uint32 PortalLayout::loadCRC(IffStream* iffStream) {
 	}
 
 	return crc;
+}
+
+int PortalLayout::getCellTotalNumber() const {
+	// exclude the outside cell
+	return Math::max(0, cellProperties.size() - 1);
+}
+
+int PortalLayout::getFloorMeshNumber() const {
+	return cellProperties.size();
+}
+
+const FloorMesh* PortalLayout::getFloorMesh(int cellIndex) const {
+	return cellProperties.get(cellIndex)->getFloorMesh();
+}
+
+FloorMesh* PortalLayout::getFloorMesh(int cellIndex) {
+	return cellProperties.get(cellIndex)->getFloorMesh();
+}
+
+const AppearanceTemplate* PortalLayout::getAppearanceTemplate(int cellIndex) const {
+	return cellProperties.get(cellIndex)->getAppearanceTemplate();
+}
+
+const Vector<Reference<CellProperty*>>& PortalLayout::getCellProperties() const {
+	return cellProperties;
+}
+
+const CellProperty* PortalLayout::getCellProperty(int cellIndex) const {
+	return cellProperties.get(cellIndex);
+}
+
+int PortalLayout::getAppearanceTemplatesSize() const {
+	return cellProperties.size();
+}
+
+const MeshData* PortalLayout::getPortalGeometry(int idx) const {
+	return portalGeometry.get(idx)->getGeometry();
+}
+
+const AABB& PortalLayout::getPortalBounds(int idx) const {
+	return portalGeometry.get(idx)->getBoundingBox();
 }

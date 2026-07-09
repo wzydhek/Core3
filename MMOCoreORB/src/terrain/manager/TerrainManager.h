@@ -33,14 +33,12 @@ public:
 
 	bool initialize(const String& terrainFile);
 
-	inline bool getWaterHeight(float x, float y, float& waterHeight) const {
-		return terrainData->getWater(x, y, waterHeight);
-	}
+	bool getWaterHeight(float x, float y, float& waterHeight) const;
 
 	/**
-	 *  	|--------------- | x1,y1
+	 *  	|----------------| x1,y1
 	 *  	|----------------| <- stepping
-	 *	|----------------|
+	 *		|----------------|
 	 *  	|----------------|
 	 *x0,y0 |----------------|
 	 */
@@ -58,49 +56,23 @@ public:
 
 	virtual float getHeight(float x, float y);
 
-	float getMin() const {
-		if (terrainData) {
-			return terrainData->getSize() / 2 * -1;
-		} else {
-			return -256;
-		}
-	}
+	float getMin() const;
 
-	float getMax() const {
-		if (terrainData) {
-			return terrainData->getSize() / 2;
-		} else {
-			return 256;
-		}
-	}
+	float getMax() const;
 
-	float getSize() const {
-		return terrainData->getSize();
-	}
+	float getSize() const;
 
-	int getCacheHitCount() const {
-		return heightCache->getHitCount();
-	}
+	int getCacheHitCount() const;
 
-	int getCacheMissCount() const {
-		return heightCache->getMissCount();
-	}
+	int getCacheMissCount() const;
 
-	int getCacheClearCount() const {
-		return heightCache->getClearCount();
-	}
+	int getCacheClearCount() const;
 
-	int getCacheClearHeightsCount() const {
-		return heightCache->getClearHeightsCount();
-	}
+	int getCacheClearHeightsCount() const;
 
-	int getCachedValuesCount() const {
-		return heightCache->getSize();
-	}
+	int getCachedValuesCount() const;
 
-	int getCacheEvictCount() const {
-		return heightCache->getEvictCount();
-	}
+	int getCacheEvictCount() const;
 };
 
 #ifdef COMPILE_CORE3_TESTS

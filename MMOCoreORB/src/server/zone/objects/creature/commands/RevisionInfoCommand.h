@@ -8,21 +8,10 @@
 #pragma once
 
 #include "engine/engine.h"
-#include "conf/ConfigManager.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class RevisionInfoCommand {
 public:
-	static int executeCommand(CreatureObject* creature, uint64 target, const UnicodeString& arguments) {
-		if (!creature->isPlayerCreature())
-			return 1;
-
-		ManagedReference<CreatureObject*> player = cast<CreatureObject*>(creature);
-		ConfigManager* configManager = ConfigManager::instance();
-
-		player->sendSystemMessage("Server Information");
-		player->sendSystemMessage(configManager->getRevision());
-
-		return 0;
-	}
+	static int executeCommand(CreatureObject* creature, uint64 target, const UnicodeString& arguments);
 
 };

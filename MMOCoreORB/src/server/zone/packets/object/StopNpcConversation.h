@@ -4,9 +4,10 @@
 
 #pragma once
 
+#include "ObjectControllerMessage.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+
 class StopNpcConversation : public ObjectControllerMessage {
 public:
-	StopNpcConversation(CreatureObject* creo, uint64 npcID) : ObjectControllerMessage(creo->getObjectID(), 0x0B, 0xDE, false) {
-		insertLong(npcID);
-	}
+	StopNpcConversation(CreatureObject* creo, uint64 npcID);
 };

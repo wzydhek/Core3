@@ -1,5 +1,12 @@
 #include "BoxVolume.h"
 
+BoxVolume::BoxVolume() : bbox(Vector3(), Vector3()) {
+}
+
+const AABB& BoxVolume::getBoundingBox() const {
+	return bbox;
+}
+
 void BoxVolume::read(IffStream *iff) {
 	iff->openForm('EXBX');
 	iff->openForm('0001');
@@ -22,6 +29,11 @@ void BoxVolume::read(IffStream *iff) {
 	iff->closeForm('0001');
 	iff->closeForm('EXBX');
 }
+
+bool BoxVolume::isBoundingBox() const {
+	return true;
+}
+
 #ifdef OSG_RENDERER
 osg::ref_ptr<osg::Node> BoxVolume::draw() const {
 	Vector3 boxCenter = bbox.center();

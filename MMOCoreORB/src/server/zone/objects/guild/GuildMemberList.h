@@ -18,9 +18,7 @@ namespace server {
 	class GuildMemberList : public VectorMap<uint64, GuildMemberInfo> {
 		public:
 
-		GuildMemberList() {
-			setNoDuplicateInsertPlan();
-		}
+		GuildMemberList();
 	};
    }
   }

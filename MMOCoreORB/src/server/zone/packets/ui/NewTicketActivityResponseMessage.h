@@ -7,35 +7,21 @@
 
 #pragma once
 
+#include "engine/service/proto/BaseMessage.h"
+#include "../MessageCallback.h"
+
 class NewTicketActivityResponseMessage : public BaseMessage {
 public:
-   NewTicketActivityResponseMessage(byte flag, uint32 ticketid) : BaseMessage() {
-		insertShort(0x03);
-		insertInt(0x6EA42D80);  // CRC
-
-
-		insertByte(flag); //??
-		insertInt(ticketid); //Probably the ticket id.
-
-
-   }
+	NewTicketActivityResponseMessage(byte flag, uint32 ticketid);
 
 };
 
 class NewTicketActivityMessageCalback : public MessageCallback {
 	int ticketID;
 public:
-	NewTicketActivityMessageCalback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), ticketID(0) {
+	NewTicketActivityMessageCalback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		ticketID = message->parseInt();
-	}
-
-	void run() {
-		NewTicketActivityResponseMessage* ntar = new NewTicketActivityResponseMessage(0, ticketID);
-		client->sendMessage(ntar);
-	}
+	void run();
 };

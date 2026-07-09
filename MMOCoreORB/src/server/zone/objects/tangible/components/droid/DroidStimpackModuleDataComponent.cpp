@@ -481,3 +481,7 @@ void DroidStimpackModuleDataComponent::handleInsertStimpack(CreatureObject* play
 int DroidStimpackModuleDataComponent::getBatteryDrain() {
 	return 0;
 }
+
+bool DroidStimpackModuleDataComponent::isStackable() {
+	return true;
+}

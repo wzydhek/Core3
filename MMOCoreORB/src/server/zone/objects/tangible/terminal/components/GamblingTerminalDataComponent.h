@@ -13,64 +13,39 @@ protected:
 	SerializableString game;
 
 public:
-	GamblingTerminalDataComponent() {
-		bank = 0;
-		game = "default";
-		addSerializableVariable("bank", &bank);
-		addSerializableVariable("game", &game);
-	}
+	GamblingTerminalDataComponent();
 
-	virtual ~GamblingTerminalDataComponent() {
+	virtual ~GamblingTerminalDataComponent();
 
-	}
-
-	void writeJSON(nlohmann::json& j) const {
-		DataObjectComponent::writeJSON(j);
-
-		SERIALIZE_JSON_MEMBER(bank)
-		SERIALIZE_JSON_MEMBER(game);
-	}
+	void writeJSON(nlohmann::json& j) const;
 
 	/**
 	 * Set the game for this terminal
 	 */
-	void setGame(String g) {
-		game = g;
-	}
+	void setGame(String g);
 
 	/**
 	 * Get the game for this terminal
 	 */
-	String getGame() {
-		return game;
-	}
+	String getGame();
 
 	/**
 	 * Get the bank for this terminal
 	 */
-	uint64 getBank() {
-		return bank;
-	}
+	uint64 getBank();
 
 	/**
 	 * Remove money form this games bank
 	 */
-	void deductFromBank(uint64 amount) {
-		if (amount < bank)
-			bank -= amount;
-	}
+	void deductFromBank(uint64 amount);
 
 	/**
 	 * Add money to this games bank
 	 */
-	void addToBank(uint64 amount) {
-		bank += amount;
-	}
+	void addToBank(uint64 amount);
 
 	/**
 	 * Is this a gambling terminal data component
 	 */
-	bool isGamblingTerminalData() {
-		return true;
-	}
+	bool isGamblingTerminalData();
 };

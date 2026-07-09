@@ -17,47 +17,15 @@ class FilterDirection : public FilterProceduralRule {
 	float max; // +24h
 
 public:
-	FilterDirection()  : FilterProceduralRule(3, 'FDIR'), minDegree(0), min(0), maxDegree(0), max(0) {
-		filterType = 0;
-	}
+	FilterDirection();
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		uint32 version = iffStream->getNextFormType();
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-		iffStream->openForm(version);
+	void setMinDegree(float deg);
 
-		switch (version) {
-		case '0000':
-			parseFromIffStream(iffStream, Version<'0000'>());
-			break;
-		default:
-			System::out << "unknown FilterDirection version 0x" << hex << version << endl;
-			break;
-		}
+	void setMaxDegree(float deg);
 
-		iffStream->closeForm(version);
-	}
-
-	void setMinDegree(float deg) {
-		minDegree = deg;
-
-		if (-M_PI >= minDegree) {
-			minDegree = -M_PI;
-		}
-
-		min = minDegree * 1 / (2 * M_PI);
-	}
-
-	void setMaxDegree(float deg) {
-		maxDegree = deg;
-
-		if (deg >= M_PI) {
-			maxDegree = M_PI;
-		}
-
-		max = maxDegree * 1 / (2 * M_PI);
-	}
-/*
+	/*
 	//Disabled in the server(only need height) because cant filter by direction and have affectors that affect height in this layer or sublayers(soe format rule apparently)
 	float process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator, FilterRectangle* rect) {
 		//double v6[2];
@@ -92,22 +60,5 @@ public:
 	}
 	*/
 
-	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>) {
-		informationHeader.readObject(iffStream);
-
-		iffStream->openChunk('DATA');
-
-		minDegree = iffStream->getFloat();
-		setMinDegree(minDegree);
-
-		//setMinAngle(M_PI * minDegree * 0.005555555690079927);
-
-		maxDegree = iffStream->getFloat();
-		setMaxDegree(maxDegree);
-
-		featheringType = iffStream->getInt();
-		featheringAmount = iffStream->getFloat();
-
-		iffStream->closeChunk('DATA');
-	}
+	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>);
 };

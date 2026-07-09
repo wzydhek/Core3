@@ -12,26 +12,7 @@ class RenameGuildTask : public Task {
 	ManagedWeakReference<GuildObject*> guildObject;
 
 public:
-	RenameGuildTask(ZoneServer* zserv, GuildObject* guildObj) : Task() {
-		guildObject = guildObj;
+	RenameGuildTask(ZoneServer* zserv, GuildObject* guildObj);
 
-		server = zserv;
-	}
-
-	void run() {
-		ManagedReference<GuildObject*> guild = guildObject.get();
-
-		if (guild == nullptr || !guild->isRenamePending())
-			return;
-
-		Locker locker(guild);
-
-		ManagedReference<GuildManager*> guildManager = server->getGuildManager();
-		if (guildManager == nullptr) {
-			guild->resetRename();
-			return;
-		}
-
-		guildManager->renameGuild(guild);
-	}
+	void run();
 };

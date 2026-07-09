@@ -604,3 +604,38 @@ bool DroidPlaybackModuleDataComponent::parseFromBinaryStream(ObjectInputStream* 
 
 	return true;
 }
+
+bool DroidPlaybackModuleDataComponent::isStackable() {
+	return true;
+}
+
+bool DroidPlaybackModuleDataComponent::isPlayingMusic() {
+	return performanceIndex > 0;
+}
+
+int DroidPlaybackModuleDataComponent::getPerformanceIndex() {
+	return performanceIndex;
+}
+
+bool DroidPlaybackModuleDataComponent::isRecording() {
+	return currentlyRecording;
+}
+
+int DroidPlaybackModuleDataComponent::getTotalTracks() {
+	return trackList.size();
+}
+
+int DroidPlaybackModuleDataComponent::getTrackPerformanceIndex(int index) {
+	return trackList.get(index);
+}
+
+void DroidPlaybackModuleDataComponent::writeJSON(nlohmann::json& j) const {
+	BaseDroidModuleComponent::writeJSON(j);
+
+	SERIALIZE_JSON_MEMBER(currentlyRecording);
+	SERIALIZE_JSON_MEMBER(recordingTrack);
+	SERIALIZE_JSON_MEMBER(recordingPerformanceIndex);
+	SERIALIZE_JSON_MEMBER(totalTracks);
+	SERIALIZE_JSON_MEMBER(trackList);
+	SERIALIZE_JSON_MEMBER(observer);
+}

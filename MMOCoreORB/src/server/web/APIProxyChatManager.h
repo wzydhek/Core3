@@ -18,8 +18,7 @@ namespace server {
 
 	class APIProxyChatManager : public BaseAPIProxy {
 	public:
-		APIProxyChatManager() : BaseAPIProxy("ChatManager")  {
-		}
+		APIProxyChatManager();
 
 		server::chat::ChatManager *getChatManager() const;
 		void handle(APIRequest& apiRequest);

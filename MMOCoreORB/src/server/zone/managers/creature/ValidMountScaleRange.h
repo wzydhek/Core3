@@ -11,39 +11,18 @@ protected:
 	float validScaleMax;
 
 public:
-	ValidMountScaleRange() {
-		saddleCapacity = 0;
-		validScaleMin = 1;
-		validScaleMax = 1;
-	}
+	ValidMountScaleRange();
 
-	~ValidMountScaleRange() {
-	}
+	~ValidMountScaleRange();
 
-	void parseDataTableRow(DataTableRow* row) {
-		String filename;
-		row->getValue(0, filename);
-		appearanceFilename.setValue(filename);
+	void parseDataTableRow(DataTableRow* row);
 
-		row->getValue(1, saddleCapacity);
-		row->getValue(2, validScaleMin);
-		row->getValue(3, validScaleMax);
-	}
+	String getAppearanceFilename() const;
 
-	inline String getAppearanceFilename() const {
-		return appearanceFilename;
-	}
+	int getSaddleCapacity();
 
-	inline int getSaddleCapacity() {
-		return saddleCapacity;
-	}
+	float getValidScaleMin();
 
-	inline float getValidScaleMin() {
-		return validScaleMin;
-	}
-
-	inline float getValidScaleMax() {
-		return validScaleMax;
-	}
+	float getValidScaleMax();
 
 };

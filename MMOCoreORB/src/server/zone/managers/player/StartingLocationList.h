@@ -13,34 +13,11 @@
 class StartingLocationList : public SortedVector<StartingLocation> {
 
 public:
-	StartingLocationList() : SortedVector<StartingLocation>() {
-	}
+	StartingLocationList();
 
-	inline int getTotalLocations() {
-		return size();
-	}
+	int getTotalLocations();
 
-	void parseFromIffStream(IffStream* iffStream) {
-		DataTableIff dtiff;
-		dtiff.readObject(iffStream);
+	void parseFromIffStream(IffStream* iffStream);
 
-		for (int i = 0; i < dtiff.getTotalRows(); ++i) {
-			DataTableRow* row = dtiff.getRow(i);
-
-			if (row == nullptr)
-				continue;
-
-			StartingLocation loc;
-			loc.parseFromDataTableRow(row);
-
-			add(loc);
-		}
-	}
-
-	void insertToMessage(Message* msg) {
-		msg->insertInt(size());
-
-		for (int i = 0; i < size(); ++i)
-			get(i).insertToMessage(msg);
-	}
+	void insertToMessage(Message* msg);
 };

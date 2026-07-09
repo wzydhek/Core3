@@ -36,15 +36,9 @@ protected:
 	ManagedWeakReference<StructureObject*> structureObject;
 
 public:
-	inline const Time& getNextExecutionTime() const {
-		return Task::getNextExecutionTime();
-	}
+	const Time& getNextExecutionTime() const;
 
-	StructureMaintenanceTask(StructureObject* structure) : Task(), Logger("StructureMaintenanceTask") {
-		structureObject = structure;
-
-		setCustomTaskQueue("slowQueue");
-	}
+	StructureMaintenanceTask(StructureObject* structure);
 
 	void run();
 

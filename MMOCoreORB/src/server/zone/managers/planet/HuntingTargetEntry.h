@@ -7,36 +7,22 @@
 
 #pragma once
 
+#include "system/lang/Object.h"
+#include "system/lang/String.h"
+
 class HuntingTargetEntry : public Object {
 private:
 	String templatePrimary;
 	String templateSecondary;
 
 public:
-	HuntingTargetEntry() {
-		templatePrimary = "";
-		templateSecondary = "";
-	}
+	HuntingTargetEntry();
 
-	HuntingTargetEntry(const String& temp1, const String& temp2) {
-		templatePrimary = temp1;
-		templateSecondary = temp2;
-	}
+	HuntingTargetEntry(const String& temp1, const String& temp2);
 
-	String getPrimary() {
-		return templatePrimary;
-	}
+	String getPrimary();
 
-	String getSecondary() {
-		return templateSecondary;
-	}
+	String getSecondary();
 
-	int compareTo(const HuntingTargetEntry& entry) const {
-		if (templatePrimary.hashCode() < entry.templatePrimary.hashCode())
-			return 1;
-		else if (templatePrimary.hashCode() > entry.templatePrimary.hashCode())
-			return -1;
-
-		return 0;
-	}
+	int compareTo(const HuntingTargetEntry& entry) const;
 };

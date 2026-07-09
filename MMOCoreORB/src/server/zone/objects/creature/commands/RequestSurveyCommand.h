@@ -4,16 +4,12 @@
 
 #pragma once
 
-#include "server/zone/managers/resource/resourcespawner/SampleTask.h"
-#include "server/zone/objects/player/sessions/survey/SurveySession.h"
+#include "QueueCommand.h"
 
 class RequestSurveyCommand : public QueueCommand {
 public:
 
-	RequestSurveyCommand(const String& name, ZoneProcessServer* server)
-		: QueueCommand(name, server) {
-
-	}
+	RequestSurveyCommand(const String& name, ZoneProcessServer* server);
 
 	/**
 	 * Regardless of what is entered as arguments in the client, the client
@@ -22,47 +18,7 @@ public:
 	 * used during the current play session.
 	 */
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		if (creature->isPlayerCreature()) {
-
-			Reference<Task*> sampletask = creature->getPendingTask("sample");
-			Reference<Task*> surveytask = creature->getPendingTask("survey");
-
-			if(surveytask != nullptr)
-				return SUCCESS;
-
-			if (sampletask != nullptr) {
-				SampleTask* sampleTask = cast<SampleTask*>( sampletask.get());
-
-				if (sampleTask != nullptr) {
-					if (!sampleTask->isCancelled()) {
-						creature->sendSystemMessage("@survey:survey_sample");
-
-						return SUCCESS;
-					}
-				}
-			}
-
-			ManagedReference<SurveySession*> session = creature->getActiveSession(SessionFacadeType::SURVEY).castTo<SurveySession*>();
-
-			if(session == nullptr) {
-				creature->sendSystemMessage("@ui:survey_notool");
-				return GENERALERROR;
-			}
-
-			session->setActiveSurveyTool(session->getOpenSurveyTool().get());
-			session->startSurvey(arguments.toString());
-		}
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };
+

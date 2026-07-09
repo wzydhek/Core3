@@ -12,6 +12,20 @@ using namespace server::zone::objects::ship::ai::btspace;
 
 BehaviorSpace::BehaviorSpace(const String& className, const uint32 id, const LuaObject& args) : Object(), className(className), id(id), parent() {}
 
+BehaviorSpace::BehaviorSpace(const BehaviorSpace& b) : Object(), className(b.className), id(b.id), parent(b.parent) {
+}
+
+BehaviorSpace& BehaviorSpace::operator=(const BehaviorSpace& b) {
+	if (this == &b)
+		return *this;
+
+	className = b.className;
+	id = b.id;
+	parent = b.parent;
+
+	return *this;
+}
+
 bool BehaviorSpace::checkConditions(ShipAiAgent* agent) const {
 	if (agent == nullptr)
 		return false;
@@ -89,4 +103,51 @@ BehaviorSpace::Status BehaviorSpace::doAction(ShipAiAgent* agent) const {
 	//			value; the parent will deal with the next action based on the
 	//			type of parent.
 	return result;
+}
+
+BehaviorSpace::~BehaviorSpace() {
+}
+
+String BehaviorSpace::print() const {
+	return className;
+}
+
+bool BehaviorSpace::isCompositeSpace() const {
+	return false;
+}
+
+bool BehaviorSpace::isDecoratorSpace() const {
+	return false;
+}
+
+bool BehaviorSpace::isSocketSpace() const {
+	return false;
+}
+
+void BehaviorSpace::setParent(BehaviorSpace* parent_) {
+	assert(parent_ != nullptr);
+	assert(parent_->isCompositeSpace() || parent_->isDecoratorSpace());
+	parent = parent_;
+}
+
+uint32 BehaviorSpace::getID() const {
+	return id;
+}
+
+BehaviorSpace* BehaviorSpace::getParent() const {
+	return parent.get();
+}
+
+BehaviorSpace* BehaviorSpace::getChild(uint32) const {
+	return NULL;
+}
+
+bool BehaviorSpace::hasChild(BehaviorSpace*) const {
+	return false;
+}
+
+Vector<const BehaviorSpace*> BehaviorSpace::getRecursiveChildList() const {
+	Vector<const BehaviorSpace*> retVal;
+	retVal.add(this);
+	return retVal;
 }

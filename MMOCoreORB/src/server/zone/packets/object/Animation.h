@@ -5,13 +5,10 @@
 #pragma once
 
 #include "ObjectControllerMessage.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class Animation : public ObjectControllerMessage {
 public:
-	Animation(CreatureObject* creo, const String& anim) 
-			: ObjectControllerMessage(creo->getObjectID(), 0x1B, 0xF2, false) {
-				
-			insertAscii(anim.toCharArray());
-	}
+	Animation(CreatureObject* creo, const String& anim);
 
 };

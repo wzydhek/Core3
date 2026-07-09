@@ -66,134 +66,61 @@ public:
 	};
 
 public:
-	IngredientSlot(){
-		requiredQuantity = 0;
+	IngredientSlot();
 
-		identical = false;
-		optional = false;
+	IngredientSlot(const IngredientSlot& slot);
 
-		clientSlotType = 0;
+	~IngredientSlot();
 
-		setLogging(false);
-	}
+	Object* clone();
 
-	IngredientSlot(const IngredientSlot& slot) : Object(), Serializable(), Logger() {
-		slotName = slot.slotName;
-		requiredQuantity = slot.requiredQuantity;
-		identical = slot.identical;
-		optional = slot.optional;
-		contentType = slot.contentType;
+	Object* clone(void* object);
 
-		clientSlotType = slot.clientSlotType;
+	int getClientSlotType();
 
-		setLogging(false);
-	}
+	void setOptional(bool value);
 
-	~IngredientSlot(){
-		//info("Deleting Slot type " + String::valueOf(slottype));
-	}
+	bool isOptional();
 
-	Object* clone() {
-		return ObjectCloner<IngredientSlot>::clone(this);
-	}
+	void setIdentical(bool value);
 
-	Object* clone(void* object) {
-		return TransactionalObjectCloner<IngredientSlot>::clone(this);
-	}
+	bool requiresIdentical();
 
-	int getClientSlotType() {
-		return clientSlotType;
-	}
+	void setContentType(const String& value);
 
-	void setOptional(bool value) {
-		optional = value;
-	}
+	void setQuantityNeeded(int value);
 
-	bool isOptional() {
-		return optional == true;
-	}
+	int getQuantityNeeded();
 
-	void setIdentical(bool value) {
-		identical = value;
-	}
+	virtual bool add(CreatureObject* player, SceneObject* satchel, ManagedReference<TangibleObject*> tano);
 
-	bool requiresIdentical() {
-		return identical == true;
-	}
+	bool removeAll(CreatureObject* player);
 
-	void setContentType(const String& value) {
-		contentType = value;
-	}
+	virtual bool returnToParents(CreatureObject* player);
 
-	void setQuantityNeeded(int value) {
-		requiredQuantity = value;
-	}
+	void setSlotName(const String& name);
 
-	int getQuantityNeeded() {
-		return requiredQuantity;
-	}
+	const String& getSlotName();
 
-	virtual bool add(CreatureObject* player, SceneObject* satchel, ManagedReference<TangibleObject*> tano) {
-		return false;
-	}
+	virtual bool isFull();
 
-	inline bool removeAll(CreatureObject* player) {
-		return returnToParents(player);
-	}
+	virtual bool isEmpty();
 
-	virtual bool returnToParents(CreatureObject* player) {
-		return false;
-	}
+	virtual int size();
 
-	void setSlotName(const String& name) {
-		slotName = name;
-	}
+	virtual void print();
 
-	const String& getSlotName() {
-		return slotName;
-	}
+	virtual int getSlotQuantity();
 
-	virtual bool isFull() {
-		return false;
-	}
+	virtual bool isResourceSlot();
 
-	virtual bool isEmpty() {
-		return true;
-	}
+	virtual bool isComponentSlot();
 
-	virtual inline int size() {
-		return 0;
-	}
+	virtual Vector<uint64> getOIDVector();
 
-	virtual void print(){
-	}
+	virtual Vector<int> getQuantityVector();
 
-	virtual int getSlotQuantity() {
-		return -1;
-	}
-
-	virtual bool isResourceSlot() {
-		return false;
-	}
-
-	virtual bool isComponentSlot() {
-		return false;
-	}
-
-
-	virtual Vector<uint64> getOIDVector() {
-		Vector<uint64> oid;
-		return oid;
-	}
-
-	virtual Vector<int> getQuantityVector() {
-		Vector<int> quantities;
-		return quantities;
-	}
-
-	virtual SceneObject* getFactoryIngredient() {
-		return nullptr;
-	}
+	virtual SceneObject* getFactoryIngredient();
 
 
 };

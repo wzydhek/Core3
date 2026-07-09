@@ -6,7 +6,9 @@
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 
 using namespace server::zone::objects::ship::ai::btspace;
-using namespace server::zone::objects::ship::ai::btspace::nodespace;
+
+SelectorSpace::SelectorSpace(const String& className, const uint32 id, const LuaObject& args) : CompositeSpace(className, id, args) {
+}
 
 BehaviorSpace::Status SelectorSpace::execute(ShipAiAgent* agent, unsigned int startIdx) const {
 	// loop through children and return SUCCESS on first one that succeeded
@@ -25,6 +27,9 @@ BehaviorSpace::Status SelectorSpace::execute(ShipAiAgent* agent, unsigned int st
 
 	// We made it all the way through the list without a success
 	return FAILURE;
+}
+
+ParallelSelectorSpace::ParallelSelectorSpace(const String& className, const uint32 id, const LuaObject& args) : CompositeSpace(className, id, args) {
 }
 
 BehaviorSpace::Status ParallelSelectorSpace::execute(ShipAiAgent* agent, unsigned int startIdx) const {
@@ -48,6 +53,9 @@ BehaviorSpace::Status ParallelSelectorSpace::execute(ShipAiAgent* agent, unsigne
 	}
 
 	return finalResult;
+}
+
+RandomSelectorSpace::RandomSelectorSpace(const String& className, const uint32 id, const LuaObject& args) : CompositeSpace(className, id, args) {
 }
 
 BehaviorSpace::Status RandomSelectorSpace::execute(ShipAiAgent* agent, unsigned int startIdx) const {

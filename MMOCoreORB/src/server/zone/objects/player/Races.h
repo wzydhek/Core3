@@ -159,67 +159,20 @@ static unsigned int attributeLimits[10][19] = {
 
 class Races {
 public:
-	inline const static char* getRace(int raceid) {
-		if (raceid < 0 || raceid > 19)
-			return "";
+	const static char* getRace(int raceid);
 
-		return RaceStrs[raceid];
-	}
+	static int getSpeciesID(int raceid);
 
-	inline static int getSpeciesID(int raceid) {
-		if (raceid < 0 || raceid > 19)
-			return 0;
+	const static char* getSpecies(int raceid);
 
-		return TemplateSpecies[raceid];
-	}
+	const static char* getGender(int raceid);
 
-	inline const static char* getSpecies(int raceid) {
-		if (raceid < 0 || raceid > 19)
-			return "";
+	static uint32 getRaceCRC(int raceid);
 
-		return Species[raceid];
-	}
+	static const char* getCompleteRace(uint32 sharedRaceCRC);
 
-	inline const static char* getGender(int raceid) {
-		if (raceid < 0 || raceid > 19)
-			return "";
+	static int getRaceID(const String& name);
 
-		return Gender[raceid];
-	}
-
-	inline static uint32 getRaceCRC(int raceid) {
-		if (raceid < 0 || raceid > 19)
-			return 0;
-
-		return SharedRace[raceid];
-	}
-
-	inline static const char* getCompleteRace(uint32 sharedRaceCRC) {
-		int race = -1;
-		for (int i = 0; i < 20; ++i) {
-			if (SharedRace[i] == sharedRaceCRC) {
-				race = i;
-				break;
-			}
-		}
-
-		if (race == -1)
-			return "";
-		else
-			return CCRaceStrs[race];
-	}
-
-	inline static int getRaceID(const String& name) {
-    	for (int i = 0; i < 20; i++) {
-        	if (strcmp(name.toCharArray(), CCRaceStrs[i]) == 0)
-            	return i;
-    	}
-
-    	return 0;
-	}
-
-	inline static unsigned int * getAttribLimits(int raceid) {
-		return attributeLimits[raceid % 10];
-	}
+	static unsigned int* getAttribLimits(int raceid);
 
 };

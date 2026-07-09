@@ -254,3 +254,27 @@ int ShipAgentTemplateManager::addSpacePatrolPoints(lua_State* L) {
 
 	return 0;
 }
+
+int ShipAgentTemplateManager::size() {
+	return hashTable.size();
+}
+
+HashTableIterator<uint32, Reference<ShipAgentTemplate*>> ShipAgentTemplateManager::iterator() {
+	return hashTable.iterator();
+}
+
+ShipAgentTemplate* ShipAgentTemplateManager::getTemplate(uint32 crc) {
+	return hashTable.get(crc);
+}
+
+ShipAgentTemplate* ShipAgentTemplateManager::getTemplate(const String& ascii) {
+	return hashTable.get(ascii.hashCode());
+}
+
+SpacePatrolPoint ShipAgentTemplateManager::getSpacePatrolPoint(uint32 zoneHash, uint32 pointHash) {
+	return spacePatrolPoints.get(zoneHash).get(pointHash);
+}
+
+bool ShipAgentTemplateManager::hasSpacePatrolPoint(uint32 zoneHash, uint32 pointHash) {
+	return spacePatrolPoints.get(zoneHash).get(pointHash) != Vector3(0.f, 0.f, 0.f);
+}

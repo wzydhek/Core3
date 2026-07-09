@@ -1,5 +1,12 @@
 #include "ComponentVolume.h"
 
+ComponentVolume::ComponentVolume() {
+}
+
+bool ComponentVolume::isComponentVolume() {
+	return true;
+}
+
 void ComponentVolume::read(IffStream* iff) {
 	iff->openForm('0000');
 	iff->openForm('CPST');

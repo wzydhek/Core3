@@ -393,3 +393,258 @@ bool QueueCommand::checkCooldown(CreatureObject* creo) const {
 
 	return false;
 }
+
+String QueueCommand::getSyntax() const {
+	return String("");
+}
+
+void QueueCommand::addInvalidLocomotion(int l) {
+	invalidLocomotion.add(l);
+}
+
+bool QueueCommand::checkDistance(SceneObject* source, SceneObject* target, float range) const {
+	return (source->getWorldPosition().distanceTo(target->getWorldPosition()) - source->getTemplateRadius() - target->getTemplateRadius() <= range);
+}
+
+bool QueueCommand::checkStateMask(CreatureObject* creature) const {
+	return (creature->getStateBitmask() & stateMask) == 0;
+}
+
+bool QueueCommand::checkSpaceStates(CreatureObject* creature) const {
+	return (creature->isPilotingShip() || creature->isInShipStation());
+}
+
+float QueueCommand::getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
+	// TODO: modify this value by skill, probably need to specify which skill affects what in luas
+	return defaultTime;
+}
+
+void QueueCommand::setStateMask(uint64 mask) {
+	stateMask = mask;
+}
+
+void QueueCommand::setDefaultTime(float time) {
+	defaultTime = time;
+}
+
+void QueueCommand::setTargetType(int num) {
+	targetType = num;
+}
+
+void QueueCommand::setDisabled(bool state) {
+	disabled = state;
+}
+
+void QueueCommand::setDisabled(int state) {
+	if (state == 0)
+		disabled = false;
+	else
+		disabled = true;
+}
+
+void QueueCommand::setAddToCombatQueue(bool state) {
+	addToQueue = state;
+}
+
+void QueueCommand::setAddToCombatQueue(int state) {
+	if (state == 0)
+		addToQueue = false;
+	else
+		addToQueue = true;
+}
+
+void QueueCommand::setCommandGroup(int val) {
+	commandGroup = val;
+}
+
+void QueueCommand::setMaxRange(float r) {
+	maxRangeToTarget = (int)r;
+}
+
+void QueueCommand::setCharacterAbility(const String& ability) {
+	characterAbility = ability;
+
+	if (ability == "admin") {
+		admin = true;
+
+		// Allow config to potentially override admin cmd cooldown
+		if (cooldown == 0) {
+			setCooldown(0);
+		}
+	}
+}
+
+void QueueCommand::setDefaultPriority(const String& priority) {
+	if (priority == "immediate")
+		defaultPriority = IMMEDIATE;
+	else if (priority == "normal")
+		defaultPriority = NORMAL;
+	else if (priority == "front")
+		defaultPriority = FRONT;
+	else
+		System::out << "Setting unknown priority " << priority << endl;
+}
+
+void QueueCommand::setDefaultPriority(const int priority) {
+	if (priority < 0 || priority > 2)
+		System::out << "Setting unknown priority " << priority << endl;
+	else
+		defaultPriority = priority;
+}
+
+uint64 QueueCommand::getStateMask() const {
+	return stateMask;
+}
+
+bool QueueCommand::requiresAdmin() const {
+	return admin;
+}
+
+int QueueCommand::getTargetType() const {
+	return targetType;
+}
+
+String QueueCommand::getName() const {
+	return name;
+}
+
+uint32 QueueCommand::getNameCRC() const {
+	return nameCRC;
+}
+
+float QueueCommand::getMaxRange() const {
+	return maxRangeToTarget;
+}
+
+const String& QueueCommand::getQueueCommandName() const {
+	return name;
+}
+
+const String& QueueCommand::getCharacterAbility() const {
+	return characterAbility;
+}
+
+float QueueCommand::getDefaultTime() const {
+	return defaultTime;
+}
+
+int QueueCommand::getDefaultPriority() const {
+	return defaultPriority;
+}
+
+bool QueueCommand::isDisabled() const {
+	return disabled;
+}
+
+bool QueueCommand::addToCombatQueue() const {
+	return addToQueue;
+}
+
+bool QueueCommand::isCombatCommand() const {
+	return false;
+}
+
+bool QueueCommand::isForceHealCommand() const {
+	return false;
+}
+
+bool QueueCommand::isJediQueueCommand() const {
+	return false;
+}
+
+bool QueueCommand::isJediCombatCommand() const {
+	return false;
+}
+
+bool QueueCommand::isJediCommand() const {
+	return (isForceHealCommand() || isJediQueueCommand() || isJediCombatCommand());
+}
+
+int QueueCommand::getSkillModSize() const {
+	return skillMods.size();
+}
+
+int QueueCommand::getSkillMod(int index, String& skillMod) const {
+	skillMod = skillMods.elementAt(index).getKey();
+	return skillMods.elementAt(index).getValue();
+}
+
+int QueueCommand::getCommandGroup() const {
+	return commandGroup;
+}
+
+void QueueCommand::addSkillMod(const String& skillMod, const int value) {
+	skillMods.put(skillMod, value);
+}
+
+bool QueueCommand::isWearingArmor(CreatureObject* creo) const {
+	for (int i = 0; i < creo->getSlottedObjectsSize(); ++i) {
+		SceneObject* item = creo->getSlottedObject(i);
+		if (item != nullptr && item->isArmorObject())
+			return true;
+	}
+
+	return false;
+}
+
+void QueueCommand::setCooldownString(String msg) {
+	cooldownString = msg;
+}
+
+String QueueCommand::getCooldownString() const {
+	return cooldownString;
+}
+
+void QueueCommand::setCooldownName(String name) {
+	cooldownName = name;
+}
+
+String QueueCommand::getCooldownName() const {
+	return cooldownName;
+}
+
+void QueueCommand::setCooldown(int cooldownMili) {
+	cooldown = Math::max(0, ConfigManager::instance()->getInt("Core3.CommandCooldown." + name, cooldownMili));
+
+	if (cooldown > 0 && cooldownName.isEmpty()) {
+		cooldownName = "command_" + name;
+	}
+
+	if (cooldownMili == 0 && cooldown > 0) {
+		info(true) << "setCooldown(" << cooldownMili << "): cooldown=" << cooldown << "; cooldownName=" << cooldownName;
+	}
+}
+
+int QueueCommand::getCooldown() const {
+	return cooldown;
+}
+
+void QueueCommand::handleBuff(SceneObject* creature, ManagedObject* object, int64 param) const {
+}
+
+String QueueCommand::toStringData() const {
+	StringBuffer buf;
+	buf << "QueueCommand(" << name << ", nameCRC=" << nameCRC << ", stateMask=" << stateMask << ", targetType=" << targetType << ", maxRangeToTarget=" << maxRangeToTarget << ", disabled=" << disabled << ", addToQueue=" << addToQueue << ", admin=" << admin << ", cooldown=" << cooldown << ", cooldownString=\""
+		<< cooldownString << "\""
+		<< ", defaultTime=" << defaultTime << ", characterAbility=" << characterAbility << ", defaultPriority=" << defaultPriority << ", commandGroup=" << commandGroup << ", invalidLocomotion=[";
+
+	for (int i = 0; i < invalidLocomotion.size(); ++i) {
+		if (i) {
+			buf << ", ";
+		}
+		buf << invalidLocomotion.get(i);
+	}
+
+	buf << "], skillMods=[";
+
+	for (int i = 0; i < skillMods.size(); ++i) {
+		if (i) {
+			buf << ", ";
+		}
+		buf << skillMods.get(i);
+	}
+
+	buf << "])";
+
+	return buf.toString();
+}

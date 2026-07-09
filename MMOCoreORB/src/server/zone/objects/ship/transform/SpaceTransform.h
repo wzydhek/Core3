@@ -11,59 +11,27 @@ protected:
 	float speed;
 
 public:
-	SpaceTransform() : Object() {
-		speed = 0.f;
-	}
+	SpaceTransform();
 
-	void setPosition(const Vector3& value) {
-		position = value;
-	}
+	void setPosition(const Vector3& value);
 
-	void setRotation(const Vector3& value) {
-		rotation = value;
-	}
+	void setRotation(const Vector3& value);
 
-	void setYprDelta(const Vector3& value) {
-		yprDelta = value;
-	}
+	void setYprDelta(const Vector3& value);
 
-	void setVelocity(const Vector3& value) {
-		velocity = value;
-	}
+	void setVelocity(const Vector3& value);
 
-	void setSpeed(float value) {
-		speed = value;
-	}
+	void setSpeed(float value);
 
-	const Vector3& getPosition() const {
-		return position;
-	}
+	const Vector3& getPosition() const;
 
-	const Vector3& getRotation() const {
-		return rotation;
-	}
+	const Vector3& getRotation() const;
 
-	const Vector3& getYprDelta() const {
-		return yprDelta;
-	}
+	const Vector3& getYprDelta() const;
 
-	const Vector3& getVelocity() const {
-		return velocity;
-	}
+	const Vector3& getVelocity() const;
 
-	float getSpeed() const {
-		return speed;
-	}
+	float getSpeed() const;
 
-	String toDebugString() const {
-		StringBuffer msg;
-		msg << "SpaceTransform: " << endl
-			<< "  position: " << position.toString() << endl
-			<< "  rotation: " << rotation.toString() << endl
-			<< "  yprDelta: " << yprDelta.toString() << endl
-			<< "  velocity: " << velocity.toString() << endl
-			<< "  speed:    " << speed;
-
-		return msg.toString();
-	}
+	String toDebugString() const;
 };

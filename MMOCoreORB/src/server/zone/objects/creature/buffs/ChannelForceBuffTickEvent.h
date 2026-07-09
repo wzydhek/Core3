@@ -16,21 +16,9 @@ class ChannelForceBuffTickEvent : public Task {
 	ManagedWeakReference<ChannelForceBuff*> buffObject;
 
 public:
-	ChannelForceBuffTickEvent(ChannelForceBuff* buff) : Task() {
-		buffObject = buff;
-	}
+	ChannelForceBuffTickEvent(ChannelForceBuff* buff);
 
-	void run() {
-		ManagedReference<ChannelForceBuff*> buff = buffObject.get();
-
-		if (buff == nullptr)
-			return;
-
-		Locker locker(buff);
-
-		buff->doHamTick();
-
-	}
+	void run();
 
 };
 

@@ -14,41 +14,11 @@ class Road : public TemplateVariable<'ROAD'> {
 	Vector<Segment*> sgmts;
 
 public:
-	Road() : IffTemplateVariable() {
-	}
+	Road();
 
-	~Road() {
-		for (int i = 0; i < sgmts.size(); ++i)
-			delete sgmts.get(i);
-	}
+	~Road();
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		uint32 version = iffStream->getNextFormType();
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-		iffStream->openForm(version);
-
-		switch (version) {
-			case '0001':
-				parseFromIffStream(iffStream, Version<'0001'>());
-				break;
-			default:
-				System::out << "unknown Road version " << version << endl;
-				break;
-		}
-
-		iffStream->closeForm(version);
-	}
-
-	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>) {
-		int number = iffStream->getSubChunksNumber();
-
-		for (int i = 0; i < number; i++) {
-			Segment* sgmt = new Segment();
-			sgmt->readObject(iffStream);
-
-			sgmts.add(sgmt);
-		}
-
-		// Logger::console.info(true) << "Road finished loading segments - Total Segments: " << sgmts.size();
-	}
+	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);
 };

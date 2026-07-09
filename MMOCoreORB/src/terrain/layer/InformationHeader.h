@@ -14,45 +14,15 @@ class InformationHeader : public TemplateVariable<'IHDR'> {
 	String description;
 
 public:
-	InformationHeader() : IffTemplateVariable(), var1(0) {
+	InformationHeader();
 
-	}
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		uint32 version = iffStream->getNextFormType();
+	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);
 
-		iffStream->openForm(version);
+	bool isEnabled() const;
 
-		switch (version) {
-		case '0001':
-			parseFromIffStream(iffStream, Version<'0001'>());
-			break;
-		default:
-			System::out << "unknown InformationHeader version " << version << endl;
-			break;
-		}
+	String& getDescription();
 
-		iffStream->closeForm(version);
-	}
-
-	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>) {
-		iffStream->openChunk('DATA');
-
-		var1 = iffStream->getInt();
-		iffStream->getString(description);
-
-		iffStream->closeChunk('DATA');
-	}
-
-	inline bool isEnabled() const {
-		return var1 != 0;
-	}
-
-	inline String& getDescription() {
-		return description;
-	}
-
-	inline const String& getDescription() const {
-		return description;
-	}
+	const String& getDescription() const;
 };

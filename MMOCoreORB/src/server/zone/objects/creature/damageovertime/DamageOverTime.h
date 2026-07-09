@@ -56,106 +56,60 @@ public:
 	uint32 initDot(CreatureObject* victim, CreatureObject* attacker);
 	float reduceTick(float reduction);
 
-	void expireTick() {
-		expires.updateToCurrentTime();
-	}
+	void expireTick();
 
 	void multiplyDuration(float multiplier);
 
 	// damage methods
-	inline uint32 doBleedingTick(CreatureObject* victim, CreatureObject* attacker);
-	inline uint32 doFireTick(CreatureObject* victim, CreatureObject* attacker);
-	inline uint32 doPoisonTick(CreatureObject* victim, CreatureObject* attacker);
-	inline uint32 doDiseaseTick(CreatureObject* victim, CreatureObject* attacker);
-	inline uint32 doForceChokeTick(CreatureObject* victim, CreatureObject* attacker);
+	uint32 doBleedingTick(CreatureObject* victim, CreatureObject* attacker);
+	uint32 doFireTick(CreatureObject* victim, CreatureObject* attacker);
+	uint32 doPoisonTick(CreatureObject* victim, CreatureObject* attacker);
+	uint32 doDiseaseTick(CreatureObject* victim, CreatureObject* attacker);
+	uint32 doForceChokeTick(CreatureObject* victim, CreatureObject* attacker);
 
 	// Setters
-	inline void setAttackerID(uint64 value) {
-		attackerID = value;
-	}
+	void setAttackerID(uint64 value);
 
-	inline void setType(uint64 value) {
-		type = value;
-	}
+	void setType(uint64 value);
 
-	inline void setAttribute(uint8 value) {
-		attribute = value;
-	}
+	void setAttribute(uint8 value);
 
-	inline void setStrength(uint32 value) {
-		strength = value;
-	}
+	void setStrength(uint32 value);
 
-	inline void setDuration(uint32 seconds) {
-		duration = seconds;
-	}
+	void setDuration(uint32 seconds);
 
-	inline void setExpires(const Time& time) {
-		expires = time;
-	}
+	void setExpires(const Time& time);
 
-	inline void setNextTick(const Time& tick) {
-		nextTick = tick;
-	}
+	void setNextTick(const Time& tick);
 
-	inline void setSecondaryStrength(int str) {
-		secondaryStrength = str;
-	}
+	void setSecondaryStrength(int str);
 
 	// Getters
-	inline uint64 getAttackerID() {
-		return attackerID;
-	}
+	uint64 getAttackerID();
 
-	inline uint64 getType() {
-		return type;
-	}
+	uint64 getType();
 
-	inline uint8 getAttribute() {
-		return attribute;
-	}
+	uint8 getAttribute();
 
-	inline uint32 getStrength() {
-		return strength;
-	}
+	uint32 getStrength();
 
-	inline uint32 getDuration() {
-		return duration;
-	}
+	uint32 getDuration();
 
-	inline bool isActivated() {
-		return !expires.isPast();
-	}
+	bool isActivated();
 
-	inline bool isPast() {
-		return expires.isPast();
-	}
+	bool isPast();
 
-	inline bool isFuture() {
-		return expires.isFuture();
-	}
+	bool isFuture();
 
-	inline bool isPresent() {
-		return expires.isPresent();
-	}
+	bool isPresent();
 
-	inline bool nextTickPast() {
-		return nextTick.isPast();
-	}
+	bool nextTickPast();
 
-	inline Time getApplied() {
-		return applied;
-	}
+	Time getApplied();
 
-	inline Time getNextTick() {
-		return nextTick;
-	}
+	Time getNextTick();
 
-	inline Time getExpires() {
-		return expires;
-	}
+	Time getExpires();
 
-	inline int getSecondaryStrength() {
-		return secondaryStrength;
-	}
+	int getSecondaryStrength();
 };

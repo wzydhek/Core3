@@ -8,6 +8,37 @@
 #include "engine/engine.h"
 #include "TargaBitmap.h"
 
+TargaHeader::TargaHeader() {
+	idlength = 0;
+	colourmaptype = 0;
+	datatypecode = 0;
+	colourmaporigin = 0;
+	colourmaplength = 0;
+	colourmapdepth = 0;
+	x_origin = 0;
+	y_origin = 0;
+	width = 0;
+	height = 0;
+	bitsperpixel = 0;
+	imagedescriptor = 0;
+}
+
+void TargaHeader::readData(ObjectInputStream* fileReader) {
+	// header
+	idlength = fileReader->readByte();
+	colourmaptype = fileReader->readByte();
+	datatypecode = fileReader->readByte();
+	colourmaporigin = fileReader->readShort();
+	colourmaplength = fileReader->readShort();
+	colourmapdepth = fileReader->readByte();
+	x_origin = fileReader->readSignedShort();
+	y_origin = fileReader->readSignedShort();
+	width = fileReader->readShort();
+	height = fileReader->readShort();
+	bitsperpixel = fileReader->readByte();
+	imagedescriptor = fileReader->readByte();
+}
+
 class TargaBlackPixel : public TargaPixel {
 public:
 	unsigned char val;
@@ -141,4 +172,12 @@ unsigned char TargaBitmap::getData(int offset) const {
 		throw Exception("pixelData[" + String::valueOf(offset) + "] is not a TargaBlackPixel");
 
 	return tbp->val;
+}
+
+int TargaBitmap::getWidth() const {
+	return header.width;
+}
+
+int TargaBitmap::getHeight() const {
+	return header.height;
 }

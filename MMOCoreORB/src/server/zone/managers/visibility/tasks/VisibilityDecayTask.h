@@ -14,13 +14,9 @@ namespace tasks {
 
 class VisibilityDecayTask : public Task {
 public:
-	VisibilityDecayTask() : Task() {
-	}
+	VisibilityDecayTask();
 
-	void run() {
-		VisibilityManager::instance()->performVisiblityDecay();
-		reschedule(VisibilityManager::instance()->getVisDecayTickRate() * 1000);
-	}
+	void run();
 };
 
 }

@@ -3,36 +3,23 @@
 
 #include "engine/engine.h"
 #include "system/util/HashTable.h"
+#include "PlanetMapSubCategory.h"
 
 class PlanetMapSubCategory;
 
 class PlanetMapSubCategoryList : public HashTable<int, Reference<PlanetMapSubCategory*>> {
-	int hash(const int& key) const override {
-		return key; // this is the string crc so no need to rehash
-	}
+	int hash(const int& key) const override;
 
-	int hash(const String& key) const {
-		return key.hashCode();
-	}
+	int hash(const String& key) const;
 
 public:
-	PlanetMapSubCategoryList() : HashTable<int, Reference<PlanetMapSubCategory*>>(256) {
-		setNullValue(nullptr);
-	}
+	PlanetMapSubCategoryList();
 
-	bool containsKey(const String& key) const {
-		return HashTable<int, Reference<PlanetMapSubCategory*>>::containsKey(key.hashCode());
-	}
+	bool containsKey(const String& key) const;
 
-	const Reference<PlanetMapSubCategory*>& get(const String& key) const {
-		return HashTable<int, Reference<PlanetMapSubCategory*>>::get(key.hashCode());
-	}
+	const Reference<PlanetMapSubCategory*>& get(const String& key) const;
 
-	const Reference<PlanetMapSubCategory*>& get(const int& key) const {
-		return HashTable<int, Reference<PlanetMapSubCategory*>>::get(key);
-	}
+	const Reference<PlanetMapSubCategory*>& get(const int& key) const;
 
-	Reference<PlanetMapSubCategory*> put(const String& key, const Reference<PlanetMapSubCategory*>& value) {
-		return HashTable<int, Reference<PlanetMapSubCategory*>>::put(key.hashCode(), value);
-	}
+	Reference<PlanetMapSubCategory*> put(const String& key, const Reference<PlanetMapSubCategory*>& value);
 };

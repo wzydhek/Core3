@@ -16,49 +16,21 @@ protected:
 	BehaviorTreeSlot slotID;
 
 public:
-	TreeSocket(const String& className, const uint32 id, const LuaObject& args) : Behavior(className, id, args), slotID(BehaviorTreeSlot::NONE) {
-		parseArgs(args);
-	}
+	TreeSocket(const String& className, const uint32 id, const LuaObject& args);
 
-	TreeSocket(const TreeSocket& b) : Behavior(b), slotID(b.slotID) {
-	}
+	TreeSocket(const TreeSocket& b);
 
-	TreeSocket& operator=(const TreeSocket& b) {
-		if (this == &b)
-			return *this;
+	TreeSocket& operator=(const TreeSocket& b);
 
-		Behavior::operator=(b);
-		slotID = b.slotID;
-		return *this;
-	}
+	bool isSocket() const;
 
-	bool isSocket() const {
-		return true;
-	}
+	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const;
 
-	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const {
-		const Behavior* child = agent->getBehaviorTree(slotID);
+	void parseArgs(const LuaObject& args);
 
-		if (child == nullptr)
-			return FAILURE;
+	String print() const;
 
-		return child->doAction(agent);
-	}
-
-	void parseArgs(const LuaObject& args) {
-		slotID = getArg<BehaviorTreeSlot>()(args, "slot");
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << "-" << getBehaviorTreeSlotName(slotID);
-
-		return msg.toString();
-	}
-
-	const BehaviorTreeSlot& getSlotID() const {
-		return slotID;
-	}
+	const BehaviorTreeSlot& getSlotID() const;
 };
 
 } // namespace bt
@@ -67,3 +39,5 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::creature::ai::bt;

@@ -27,102 +27,39 @@ public:
 	StringId(const String& fil, const String& stringId);
 	StringId(StringId&& id);
 
-	StringId& operator=(const StringId& id) {
-		if (&id == this)
-			return *this;
+	StringId& operator=(const StringId& id);
 
-		file = id.file;
-		stringID = id.stringID;
-		filler = id.filler;
+	StringId& operator=(StringId&& id);
 
-		return *this;
-	}
+	bool operator==(const StringId& id) const;
 
-	StringId& operator=(StringId&& id) {
-		if (&id == this)
-			return *this;
-
-		file = std::move(id.file);
-		stringID = std::move(id.stringID);
-		filler = id.filler;
-
-		return *this;
-	}
-
-	bool operator==(const StringId& id) const {
-		if (&id == this)
-			return true;
-
-		if(file == id.file &&
-				stringID == id.stringID)
-			return true;
-
-		return false;
-	}
-
-	int compareTo(const StringId& id) const {
-		return getFullPath().compareTo(id.getFullPath());
-	}
+	int compareTo(const StringId& id) const;
 
 	void clear();
 
-	inline void getFullPath(String& str) const {
-		str = "@" + file + ":" + stringID;
-	}
+	void getFullPath(String& str) const;
 
-	String getFullPath() const {
-		return "@" + file + ":" + stringID;
-	}
+	String getFullPath() const;
 
-	inline const String& getFile() const {
-		return file;
-	}
+	const String& getFile() const;
 
-	inline const String& getStringID() const {
-		return stringID;
-	}
+	const String& getStringID() const;
 
-	inline uint32 size() const {
-		return file.length() + stringID.length();
-	}
+	uint32 size() const;
 
-	inline bool isEmpty() const {
-		if (file.isEmpty())
-			return true;
+	bool isEmpty() const;
 
-		return false;
-	}
-
-	inline int getFiller() const {
-		return filler;
-	}
+	int getFiller() const;
 
 	void setStringId(const String& fullPath);
 
-	inline void setStringId(const String& file, const String& id) {
-		StringId::file = file;
-		StringId::stringID = id;
-	}
+	void setStringId(const String& file, const String& id);
 
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return file.toBinaryStream(stream) &&
-				TypeInfo<int >::toBinaryStream(&filler, stream) &&
-				stringID.toBinaryStream(stream);
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		file.parseFromBinaryStream(stream);
-		TypeInfo<int >::parseFromBinaryStream(&filler, stream);
-		stringID.parseFromBinaryStream(stream);
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
-		return true;
-	}
-
-	String toString() const {
-		StringBuffer asStr;
-		asStr << file << ":" << stringID;
-		return asStr.toString();
-	}
+	String toString() const;
 };
 
 void to_json(nlohmann::json& k, const server::zone::objects::scene::variables::StringId& str);

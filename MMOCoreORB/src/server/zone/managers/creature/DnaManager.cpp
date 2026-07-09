@@ -608,3 +608,13 @@ int DnaManager::levelForScore(int type, float value) {
 
 	return rc;
 }
+
+int DnaManager::reduceByPercent(int source, int percent) {
+	float reduceBy = (100.0 - (float)percent) / 100.0;
+	uint32 newValue = (int)(((float)source) * reduceBy);
+
+	if (newValue < 1)
+		newValue = 1;
+
+	return newValue;
+}

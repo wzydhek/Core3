@@ -8,7 +8,7 @@
 #pragma once
 
 #include "../ProceduralRule.h"
-#include "terrain/layer/affectors/AffectorProceduralRule.h"
+#include "AffectorProceduralRule.h"
 #include "../Road.h"
 #include "../HeightData.h"
 
@@ -16,21 +16,13 @@ class Point2D  {
 public:
 	float x, y;
 
-	Point2D() {
-	}
+	Point2D();
 
-	Point2D(float xPos, float yPos) {
-		x = xPos;
-		y = yPos;
-	}
+	Point2D(float xPos, float yPos);
 
-	inline float getX() const {
-		return x;
-	}
+	float getX() const;
 
-	inline float getY() const {
-		return y;
-	}
+	float getY() const;
 };
 
 class AffectorRiver : public ProceduralRule<'ARIV'>, public AffectorProceduralRule {
@@ -56,80 +48,11 @@ class AffectorRiver : public ProceduralRule<'ARIV'>, public AffectorProceduralRu
 	String var15;
 
 public:
-	AffectorRiver() : var1(0), var2(0), var3(0), var4(0), var5(0), var6(0), var7(0), var8(0),
-		var9(0), var10(0), var11(0), var12(0) {
+	AffectorRiver();
 
-	}
+	~AffectorRiver();
 
-	~AffectorRiver() {
-		for (int i = 0; i < positions.size(); ++i)
-			delete positions.get(i);
-	}
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		uint32 version = iffStream->getNextFormType();
-
-		iffStream->openForm(version);
-
-		switch (version) {
-		case '0005':
-			parseFromIffStream(iffStream, Version<'0005'>());
-			break;
-		default:
-			System::out << "unknown AffectorRiver version 0x" << hex << version << endl;
-			break;
-		}
-
-		iffStream->closeForm(version);
-	}
-
-	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0005'>) {
-		informationHeader.readObject(iffStream);
-
-		iffStream->openForm('DATA');
-
-		uint32 type = iffStream->getNextFormType();
-
-		switch (type) {
-		case ('ROAD'):
-			road.readObject(iffStream);
-			break;
-		case ('HDTA'):
-			hdta.readObject(iffStream);
-			break;
-		default:
-			System::out << "Unknown type in AffectorRiver, expecting ROAD or HDTA!\n";
-			break;
-		}
-
-		iffStream->openChunk('DATA');
-
-		var1 = iffStream->getInt();
-
-		for (int i = 0; i < var1; i++) {
-			Point2D* pos = new Point2D();
-			pos->x = iffStream->getFloat();
-			pos->y = iffStream->getFloat();
-
-			positions.add(pos);
-		}
-
-		var2 = iffStream->getFloat();
-		var3 = iffStream->getInt();
-		var4 = iffStream->getInt();
-		var5 = iffStream->getInt();
-		var6 = iffStream->getFloat();
-		var7 = iffStream->getFloat();
-		var8 = iffStream->getFloat();
-		var9 = iffStream->getInt();
-		var10 = iffStream->getFloat();
-		var11 = iffStream->getFloat();
-		var12 = iffStream->getFloat();
-
-		iffStream->getString(var15);
-
-		iffStream->closeChunk('DATA');
-
-		iffStream->closeForm('DATA');
-	}
+	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0005'>);
 };

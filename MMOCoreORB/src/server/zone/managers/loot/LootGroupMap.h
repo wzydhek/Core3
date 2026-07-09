@@ -34,37 +34,21 @@ public:
 
 	int initialize();
 
-	inline void putLootItemTemplate(const String& name, LootItemTemplate* item) {
-		itemTemplates.put(name, item);
-	}
+	void putLootItemTemplate(const String& name, LootItemTemplate* item);
 
-	inline void putLootGroupTemplate(const String& name, LootGroupTemplate* group) {
-		groupTemplates.put(name, group);
-	}
+	void putLootGroupTemplate(const String& name, LootGroupTemplate* group);
 
-	const LootGroupTemplate* getLootGroupTemplate(const String& name) const {
-		return groupTemplates.get(name);
-	}
+	const LootGroupTemplate* getLootGroupTemplate(const String& name) const;
 
-	const LootItemTemplate* getLootItemTemplate(const String& name) const {
-		return itemTemplates.get(name);
-	}
+	const LootItemTemplate* getLootItemTemplate(const String& name) const;
 
-	inline int countLootItemTemplates() const {
-		return itemTemplates.size();
-	}
+	int countLootItemTemplates() const;
 
-	inline int countLootGroupTemplates() const {
-		return groupTemplates.size();
-	}
+	int countLootGroupTemplates() const;
 
-	bool lootGroupExists(const String& group) const {
-		return groupTemplates.containsKey(group);
-	}
+	bool lootGroupExists(const String& group) const;
 
-	bool lootItemExists(const String& item) const {
-		return itemTemplates.containsKey(item);
-	}
+	bool lootItemExists(const String& item) const;
 
 private:
 	static String currentFilename;

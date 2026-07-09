@@ -1,0 +1,282 @@
+#include "LootItemTemplate.h"
+
+LootItemTemplate::LootItemTemplate(const String& name) : attributesMap() {
+	templateName = name;
+	randomDotChance = -1;
+	staticDotChance = -1;
+	staticDotType = -1;
+
+	junkDealerTypeNeeded = 0;
+	junkMinValue = 0;
+	junkMaxValue = 0;
+	suppressSerialNumber = false;
+
+	levelMax = 0;
+	levelMin = 0;
+
+	objectType = 0;
+
+	isRandomResource = false;
+
+	setLoggingName("LootItemTemplate");
+}
+
+void LootItemTemplate::readObject(LuaObject* templateData) {
+	customObjectName = templateData->getStringField("customObjectName");
+	directObjectTemplate = templateData->getStringField("directObjectTemplate");
+	suppressSerialNumber = templateData->getBooleanField("suppressSerialNumber");
+
+	junkDealerTypeNeeded = templateData->getIntField("junkDealerTypeNeeded");
+	junkMinValue = templateData->getIntField("junkMinValue");
+	junkMaxValue = templateData->getIntField("junkMaxValue");
+
+	levelMin = templateData->getFloatField("minimumLevel", 0);
+	levelMax = templateData->getFloatField("maximumLevel", -1);
+
+	isRandomResource = directObjectTemplate == "object/resource_container/simple.iff";
+
+	auto tanoTemplate = dynamic_cast<SharedTangibleObjectTemplate*>(TemplateManager::instance()->getTemplate(directObjectTemplate.hashCode()));
+
+	if (tanoTemplate != nullptr) {
+		objectType = tanoTemplate->getGameObjectType();
+
+		const auto groups = tanoTemplate->getExperimentalGroups();
+		const auto attributes = tanoTemplate->getExperimentalAttributes();
+		const auto minValues = tanoTemplate->getExperimentalMin();
+		const auto maxValues = tanoTemplate->getExperimentalMax();
+		const auto precisionValues = tanoTemplate->getExperimentalPrecision();
+		const auto combines = tanoTemplate->getExperimentalWeights();
+
+		bool isComponent = (tanoTemplate->getGameObjectType() & SceneObjectType::COMPONENT);
+
+		for (int i = 0; i < attributes->size(); ++i) {
+			const String& attribute = attributes->get(i);
+			const String& group = groups->get(i);
+
+			if (attribute == "sockets") {
+				continue;
+			}
+
+			float min = minValues->get(i);
+			float max = maxValues->get(i);
+
+			int precision = precisionValues->get(i);
+			bool hidden = group == "" || group == "null";
+			int combine = LootAttributeType::getAttributeType(objectType, attribute);
+
+			if (isComponent) {
+				min = 0.f;
+				max = 0.f;
+			}
+
+			if (min == max && max == 0.f) {
+				combine = LootAttributeType::STATIC;
+				hidden = true;
+			}
+
+			attributesMap.addExperimentalAttribute(attribute, group, min, max, precision, hidden, combine);
+			attributesMap.setCurrentPercentage(attribute, 0.f, 1.f);
+		}
+	}
+
+	LuaObject craftvals = templateData->getObjectField("craftingValues");
+
+	if (craftvals.isValidTable()) {
+		for (int i = 1; i <= craftvals.getTableSize(); ++i) {
+			LuaObject row = craftvals.getObjectAt(i);
+
+			if (row.isValidTable() && row.getTableSize() >= 3) {
+				String attribute = row.getStringAt(1);
+				String group = attribute;
+
+				float min = row.getFloatAt(2);
+				float max = row.getFloatAt(3);
+
+				int precision = 0;
+				bool hidden = false;
+				int combine = LootAttributeType::getAttributeType(objectType, attribute);
+
+				if (attributesMap.hasExperimentalAttribute(attribute)) {
+					group = attributesMap.getAttributeGroup(attribute);
+					precision = attributesMap.getPrecision(attribute);
+				}
+
+				if (row.getTableSize() >= 4) {
+					precision = row.getIntAt(4);
+				}
+
+				if (row.getTableSize() >= 5) {
+					hidden = row.getBooleanAt(5);
+				}
+
+				if (row.getTableSize() >= 6) {
+					combine = row.getIntAt(6);
+				}
+
+				if (min == max && max == 0.f) {
+					combine = LootAttributeType::STATIC;
+					hidden = true;
+				}
+
+				attributesMap.addExperimentalAttribute(attribute, group, min, max, precision, hidden, combine);
+				attributesMap.setCurrentPercentage(attribute, 0.f, 1.f);
+
+				row.pop();
+			}
+		}
+
+		craftvals.pop();
+	}
+
+	LuaObject customizationStringNamesList = templateData->getObjectField("customizationStringNames");
+
+	for (int i = 1; i <= customizationStringNamesList.getTableSize(); ++i) {
+		customizationStringNames.add(customizationStringNamesList.getStringAt(i));
+	}
+
+	customizationStringNamesList.pop();
+
+	LuaObject custValues = templateData->getObjectField("customizationValues");
+
+	for (int i = 1; i <= custValues.getTableSize(); ++i) {
+		lua_rawgeti(templateData->getLuaState(), -1, i);
+
+		LuaObject values(templateData->getLuaState());
+
+		Vector<int> valuesVector;
+
+		for (int j = 1; j <= values.getTableSize(); ++j) {
+			valuesVector.add(values.getIntAt(j));
+		}
+
+		customizationValues.add(valuesVector);
+
+		values.pop();
+	}
+
+	custValues.pop();
+
+	LuaObject skillModsLuaObject = templateData->getObjectField("skillMods");
+
+	for (int i = 1; i <= skillModsLuaObject.getTableSize(); ++i) {
+		lua_rawgeti(templateData->getLuaState(), -1, i);
+
+		LuaObject skill(templateData->getLuaState());
+
+		skillMods.put(skill.getStringAt(1), skill.getIntAt(2));
+
+		skill.pop();
+	}
+
+	skillModsLuaObject.pop();
+
+	// Initializations.
+	randomDotChance = templateData->getFloatField("randomDotChance", -1);
+	staticDotChance = templateData->getFloatField("staticDotChance", -1);
+	staticDotType = templateData->getFloatField("staticDotType", -1);
+
+	LuaObject dotValuesTable = templateData->getObjectField("staticDotValues");
+
+	if (dotValuesTable.isValidTable() && dotValuesTable.getTableSize() > 0) {
+		for (int i = 1; i <= dotValuesTable.getTableSize(); ++i) {
+			lua_rawgeti(templateData->getLuaState(), -1, i);
+
+			LuaObject dot(templateData->getLuaState());
+
+			String property;
+			SortedVector<int> valuesVector;
+
+			if (dot.isValidTable()) {
+				property = dot.getStringAt(1);
+				valuesVector.put(dot.getIntAt(2));
+				valuesVector.put(dot.getIntAt(3));
+			}
+			staticDotValues.put(property, valuesVector);
+
+			dot.pop();
+		}
+		dotValuesTable.pop();
+	}
+
+	// info(true) << "---------- FINISHED Loading data for " << directObjectTemplate << " ----------";
+}
+
+const String& LootItemTemplate::getTemplateName() const {
+	return templateName;
+}
+
+const String& LootItemTemplate::getDirectObjectTemplate() const {
+	return directObjectTemplate;
+}
+
+const String& LootItemTemplate::getCustomObjectName() const {
+	return customObjectName;
+}
+
+const Vector<String>* LootItemTemplate::getCustomizationStringNames() const {
+	return &customizationStringNames;
+}
+
+const Vector<Vector<int>>* LootItemTemplate::getCustomizationValues() const {
+	return &customizationValues;
+}
+
+bool LootItemTemplate::getSuppressSerialNumber() const {
+	return suppressSerialNumber;
+}
+
+AttributesMap LootItemTemplate::getAttributesMapCopy() const {
+	return attributesMap;
+}
+
+const VectorMap<String, int>* LootItemTemplate::getSkillMods() const {
+	return &skillMods;
+}
+
+float LootItemTemplate::getRandomDotChance() const {
+	return randomDotChance;
+}
+
+float LootItemTemplate::getStaticDotChance() const {
+	return staticDotChance;
+}
+
+int LootItemTemplate::getStaticDotType() const {
+	return staticDotType;
+}
+
+int LootItemTemplate::getJunkDealerTypeNeeded() const {
+	return junkDealerTypeNeeded;
+}
+
+int LootItemTemplate::getJunkMinValue() const {
+	return junkMinValue;
+}
+
+int LootItemTemplate::getJunkMaxValue() const {
+	return junkMaxValue;
+}
+
+int LootItemTemplate::getLevelMax() const {
+	return levelMax;
+}
+
+int LootItemTemplate::getLevelMin() const {
+	return levelMin;
+}
+
+bool LootItemTemplate::isRandomResourceContainer() const {
+	return isRandomResource;
+}
+
+bool LootItemTemplate::isShipComponent() const {
+	return objectType & SceneObjectType::SHIPATTACHMENT;
+}
+
+uint32 LootItemTemplate::getObjectType() const {
+	return objectType;
+}
+
+const VectorMap<String, SortedVector<int>>* LootItemTemplate::getStaticDotValues() const {
+	return &staticDotValues;
+}

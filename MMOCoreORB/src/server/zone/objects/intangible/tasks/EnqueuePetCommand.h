@@ -18,17 +18,7 @@ class EnqueuePetCommand : public Task {
 	uint64 target;
 	int priority;
 public:
-	EnqueuePetCommand(CreatureObject* pet, uint32 command, const String& args, uint64 target, int priority = QueueCommand::NOCOMBATQUEUE) {
-		this->pet = pet;
-		commandCRC = command;
-		arguments = args;
-		this->target = target;
-		this->priority = priority;
-	}
+	EnqueuePetCommand(CreatureObject* pet, uint32 command, const String& args, uint64 target, int priority = QueueCommand::NOCOMBATQUEUE);
 
-	void run() {
-		Locker locker(pet);
-
-		pet->enqueueCommand(commandCRC, 0, target, arguments, priority);
-	}
+	void run();
 };

@@ -485,3 +485,113 @@ float LootValues::getLevelRankValue(int level, float distMin, float distMax) {
 
 	return Math::linearInterpolate(distMin, distMax, rank);
 }
+
+uint32 LootValues::getObjectType() const {
+	return objectType;
+}
+
+int LootValues::getDynamicValues() const {
+	return dynamicValues;
+}
+
+int LootValues::getModifier() const {
+	return modifier;
+}
+
+int LootValues::getLevel() const {
+	return level;
+}
+
+void LootValues::setModifier(int lootModifier) {
+	modifier = Math::clamp((int)(STATIC), lootModifier, (int)(LEGENDARY + EXPERIMENTAL));
+}
+
+void LootValues::setLevel(int lootLevel) {
+	level = Math::clamp((int)(LEVELMIN), lootLevel, (int)(LEVELMAX));
+}
+
+#ifdef LOOTVALUES_DEBUG
+void LootValues::debugAttributes(TangibleObject* prototype, const LootItemTemplate* itemTemplate) {
+	if (modifier <= 0.f && dynamicValues <= 0) {
+		return;
+	}
+
+	prototype->setCustomObjectName(itemTemplate->getCustomObjectName(), false);
+
+	if (modifier > EXCEPTIONAL + 1) {
+		prototype->setCustomObjectName(prototype->getDisplayedName() + " (Legendary)", false);
+	} else if (modifier > ENHANCED + 1) {
+		prototype->setCustomObjectName(prototype->getDisplayedName() + " (Exceptional)", false);
+	} else if (modifier > EXPERIMENTAL + 1) {
+		prototype->setCustomObjectName(prototype->getDisplayedName() + " (Enhanced)", false);
+	} else if (modifier > STATIC) {
+		prototype->setCustomObjectName(prototype->getDisplayedName() + " (Experimental)", false);
+	}
+
+	StringBuffer msg;
+
+	msg << prototype->getDisplayedName() << endl
+		<< endl
+		<< "LootItemTemplate: " << endl
+		<< "  LootItemName:   " << itemTemplate->getTemplateName() << endl
+		<< "  ObjectPath:     " << itemTemplate->getDirectObjectTemplate() << endl
+		<< "  ObjectType:     " << "0x" << String::hexvalueOf(itemTemplate->getObjectType()) << endl
+		<< "  LevelMax:       " << itemTemplate->getLevelMax() << endl
+		<< "  LevelMin:       " << itemTemplate->getLevelMin() << endl
+		<< endl
+		<< "-------------------------------------------------------------------------------------" << endl
+		<< toDebugString();
+
+	prototype->setCustomObjectName(msg.toString(), false);
+}
+
+String LootValues::toDebugString() {
+	StringBuffer msg, buf;
+
+	for (int i = 1; i < RandomType::SIZE; ++i) {
+		String typeStr = randomTypeToString(i);
+
+		for (int ii = 0; ii < getTotalExperimentalAttributes(); ++ii) {
+			const String& attribute = getAttribute(ii);
+			if (!staticValues.hasExperimentalAttribute(attribute)) {
+				continue;
+			}
+
+			int randomType = getCombineType(attribute);
+			if (randomType != i) {
+				continue;
+			}
+
+			float minMin = staticValues.getMinValue(attribute);
+			float minMax = staticValues.getMaxValue(attribute);
+
+			float maxMin = getMinValue(attribute);
+			float maxMax = getMaxValue(attribute);
+
+			float value = getCurrentValue(attribute);
+			float percent = getCurrentPercentage(attribute);
+			float percentMax = getMaxPercentage(attribute);
+
+			String tab = getPrecision(attribute) % 10 ? "    " : "      ";
+
+			buf << "  " << typeStr << "    " << attribute << tab << ((int)(minMin * 100) * 0.01f) << tab << ((int)(minMax * 100) * 0.01f) << tab << ((int)(maxMin * 100) * 0.01f) << tab << ((int)(maxMax * 100) * 0.01f) << tab << ((int)(value * 100) * 0.01f) << tab << ((int)(percent * 100)) << "%" << tab
+				<< ((int)(percentMax * 100)) << "%" << endl;
+		}
+	}
+
+	if (buf.length() > 0) {
+		msg << "AttributeValues: " << endl
+			<< "  Level:         " << level << endl
+			<< "  Modifier:      " << modifier << endl
+			<< "  Attributes:    " << staticValues.getSize() << endl
+			<< "  DynamicValues: " << dynamicValues << endl
+			<< endl
+			<< "-------------------------------------------------------------------------------------" << endl
+			<< "  randomType  attribute  minMin  minMax  maxMin  maxMax  value  percent  percentMax  " << endl
+			<< "-------------------------------------------------------------------------------------" << endl
+			<< buf.toString() << "-------------------------------------------------------------------------------------" << endl;
+	}
+
+	return msg.toString();
+}
+#endif // LOOTVALUES_DEBUG

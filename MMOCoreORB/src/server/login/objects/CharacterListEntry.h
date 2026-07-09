@@ -26,170 +26,66 @@ public:
 	CharacterListEntry() = default;
 
 
-	CharacterListEntry(const CharacterListEntry& e) : Object() {
-		objectID = e.objectID;
-		accountID = e.accountID;
-		galaxyID = e.galaxyID;
-		firstName = e.firstName;
-		surName = e.surName;
-		race = e.race;
-		gender = e.gender;
-		creationDate = e.creationDate;
+	CharacterListEntry(const CharacterListEntry& e);
 
-		galaxyName = e.galaxyName;
-		banReason = e.banReason;
-		banAdmin = e.banAdmin;
-		banExpiration = e.banExpiration;
-	}
+	CharacterListEntry& operator=(const CharacterListEntry& e);
 
-	CharacterListEntry& operator=(const CharacterListEntry& e) {
-		if (this == &e)
-			return *this;
+	~CharacterListEntry();
 
-		objectID = e.objectID;
-		accountID = e.accountID;
-		galaxyID = e.galaxyID;
-		firstName = e.firstName;
-		surName = e.surName;
-		race = e.race;
-		gender = e.gender;
-		creationDate = e.creationDate;
+	uint32 getAccountID() const;
 
-		galaxyName = e.galaxyName;
-		banReason = e.banReason;
-		banAdmin = e.banAdmin;
-		banExpiration = e.banExpiration;
+	const Time& getCreationDate() const;
 
-		return *this;
-	}
+	const String& getFirstName() const;
 
-	~CharacterListEntry() {
+	uint32 getGalaxyID() const;
 
-	}
+	const String& getGalaxyName() const;
 
-	uint32 getAccountID() const {
-		return accountID;
-	}
+	uint32 getGender() const;
 
-	const Time& getCreationDate() const {
-		return creationDate;
-	}
+	uint64 getObjectID() const;
 
-	const String& getFirstName() const {
-		return firstName;
-	}
+	uint32 getRace() const;
 
-	uint32 getGalaxyID() const {
-		return galaxyID;
-	}
+	const String& getSurName() const;
 
-	const String& getGalaxyName() const {
-		return galaxyName;
-	}
+	void setAccountID(uint32 accountID);
 
-	uint32 getGender() const {
-		return gender;
-	}
+	void setCreationDate(Time creationDate);
 
-	uint64 getObjectID() const {
-		return objectID;
-	}
+	void setFirstName(String firstName);
 
-	uint32 getRace() const {
-		return race;
-	}
+	void setGalaxyName(String galaxyName);
 
-	const String& getSurName() const {
-		return surName;
-	}
+	void setGalaxyID(uint32 galaxyID);
 
-	void setAccountID(uint32 accountID) {
-		this->accountID = accountID;
-	}
+	void setGender(uint32 gender);
 
-	void setCreationDate(Time creationDate) {
-		this->creationDate = creationDate;
-	}
+	void setObjectID(uint64 objectID);
 
-	void setFirstName(String firstName) {
-		this->firstName = firstName;
-	}
+	void setRace(uint32 race);
 
-	void setGalaxyName(String galaxyName) {
-		this->galaxyName = galaxyName;
-	}
+	void setSurName(String surName);
 
-	void setGalaxyID(uint32 galaxyID) {
-		this->galaxyID = galaxyID;
-	}
-
-	void setGender(uint32 gender) {
-		this->gender = gender;
-	}
-
-	void setObjectID(uint64 objectID) {
-		this->objectID = objectID;
-	}
-
-	void setRace(uint32 race) {
-		this->race = race;
-	}
-
-	void setSurName(String surName) {
-		this->surName = surName;
-	}
-
-	String getFullName() const {
-		StringBuffer fullName;
-		fullName << firstName;
-
-		if(!surName.isEmpty())
-			fullName << " " << surName;
-
-		return fullName.toString();
-	}
+	String getFullName() const;
 
 
-	bool isBanned() const {
-		return !banExpiration.isPast();
-	}
+	bool isBanned() const;
 
-	void setBanReason(const String& banReason) {
-		this->banReason = banReason;
-	}
+	void setBanReason(const String& banReason);
 
-	const String& getBanReason() const {
-		return banReason;
-	}
+	const String& getBanReason() const;
 
-	void setBanExpiration(Time banExpiration) {
-		this->banExpiration = banExpiration;
-	}
+	void setBanExpiration(Time banExpiration);
 
-	uint32 getBanExpiration() const {
-		return banExpiration.getTime();
-	}
+	uint32 getBanExpiration() const;
 
-	void setBanAdmin(uint32 banAdmin) {
-		this->banAdmin = banAdmin;
-	}
+	void setBanAdmin(uint32 banAdmin);
 
-	uint32 getBanAdmin() const {
-		return banAdmin;
-	}
+	uint32 getBanAdmin() const;
 
-	String toString() const {
-		StringBuffer buf;
-		buf << "CharacterListEntry("
-			<< "name: " << getFullName()
-			<< ", oid: " << objectID
-			<< ", galaxy: " << galaxyID
-			<< ", account: " << accountID
-			<< ")";
-		return buf.toString();
-	}
+	String toString() const;
 
-	String toStringData() const {
-		return toString();
-	}
+	String toStringData() const;
 };

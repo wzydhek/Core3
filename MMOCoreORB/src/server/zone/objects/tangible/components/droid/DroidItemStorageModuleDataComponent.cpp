@@ -149,3 +149,11 @@ int DroidItemStorageModuleDataComponent::handleObjectMenuSelect(CreatureObject* 
 
 	return 0;
 }
+
+int DroidItemStorageModuleDataComponent::getBatteryDrain() {
+	return 0;
+}
+
+bool DroidItemStorageModuleDataComponent::isStackable() {
+	return true;
+}

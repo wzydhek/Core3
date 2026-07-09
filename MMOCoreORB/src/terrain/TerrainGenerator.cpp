@@ -8,6 +8,10 @@
 #include "TerrainGenerator.h"
 #include "engine/util/u3d/AABB.h"
 
+TerrainGenerator::TerrainGenerator(ProceduralTerrainAppearance* ptat) {
+	terrain = ptat;
+}
+
 void TerrainGenerator::processLayers() {
 	Vector<Layer*>* layerVector = layers.getLayers();
 
@@ -151,4 +155,36 @@ void TerrainGenerator::addLayer(Layer* layer) {
 
 void TerrainGenerator::removeLayer(Layer* layer) {
 	layers.getLayers()->removeElement(layer);
+}
+
+MapGroup* TerrainGenerator::getMapGroup() {
+	return &mapGroup;
+}
+
+LayersGroup* TerrainGenerator::getLayersGroup() {
+	return &layers;
+}
+
+BitmapGroup* TerrainGenerator::getBitmapGroup() {
+	return &bitmapGroup;
+}
+
+MapFractal* TerrainGenerator::getMfrc(int idx) {
+	return mapGroup.getMfrc(idx);
+}
+
+const MapGroup* TerrainGenerator::getMapGroup() const {
+	return &mapGroup;
+}
+
+const LayersGroup* TerrainGenerator::getLayersGroup() const {
+	return &layers;
+}
+
+const BitmapGroup* TerrainGenerator::getBitmapGroup() const {
+	return &bitmapGroup;
+}
+
+const MapFractal* TerrainGenerator::getMfrc(int idx) const {
+	return mapGroup.getMfrc(idx);
 }

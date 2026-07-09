@@ -3,6 +3,39 @@
 
 // #define DEBUG_SQUADRONS
 
+ShipSquadronDataEntry::ShipSquadronDataEntry() : Object() {
+	speed = 0.f;
+}
+
+const Vector3& ShipSquadronDataEntry::getFormation() const {
+	return formation;
+}
+
+const Vector3& ShipSquadronDataEntry::getPosition() const {
+	return position;
+}
+
+float ShipSquadronDataEntry::getSpeed() const {
+	return speed;
+}
+
+void ShipSquadronDataEntry::setFormation(const Vector3& value) {
+	formation = value;
+}
+
+void ShipSquadronDataEntry::setPosition(const Vector3& value) {
+	position = value;
+}
+
+void ShipSquadronDataEntry::setSpeed(float value) {
+	speed = value;
+}
+
+ShipSquadronData::ShipSquadronData() : Object() {
+	formationRadius = 0.f;
+	formationType = 0;
+}
+
 ShipSquadronData::ShipSquadronData(ShipObject* ship) : Object() {
 	formationRadius = ShipSquadronFormation::NONE;
 	formationType = ShipSquadronFormation::NONE;
@@ -88,4 +121,24 @@ float ShipSquadronData::getFormationSpeed() const {
 	}
 
 	return Math::clamp(0.f, speed, 512.f);
+}
+
+int ShipSquadronData::size() const {
+	return squadronData.size();
+}
+
+int ShipSquadronData::getFormationType() const {
+	return formationType;
+}
+
+float ShipSquadronData::getFormationRadius() const {
+	return formationRadius;
+}
+
+void ShipSquadronData::setFormationType(int value) {
+	formationType = value;
+}
+
+void ShipSquadronData::setFormationRadius(float value) {
+	formationRadius = value;
 }

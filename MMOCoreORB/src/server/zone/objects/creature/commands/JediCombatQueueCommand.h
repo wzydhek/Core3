@@ -13,11 +13,7 @@ class JediCombatQueueCommand : public CombatQueueCommand {
 
 public:
 
-	JediCombatQueueCommand(const String& name, ZoneProcessServer* server) : CombatQueueCommand(name, server) {
-		visMod = 25;
-	}
+	JediCombatQueueCommand(const String& name, ZoneProcessServer* server);
 
-	virtual bool isJediCombatCommand() const override {
-		return true;
-	}
+	virtual bool isJediCombatCommand() const override;
 };

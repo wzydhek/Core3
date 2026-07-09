@@ -9,6 +9,7 @@
 
 #include "TreeDataBlock.h"
 
+namespace tre3 {
 class TreeFileRecord : public Object, public Logger {
 	String recordName;
 	String treeFilePath;
@@ -23,148 +24,38 @@ class TreeFileRecord : public Object, public Logger {
 	byte md5Sum[16];
 
 public:
-	TreeFileRecord() : Object(), Logger(), checksum(0), uncompressedSize(0), fileOffset(0), compressionType(0), compressedSize(0), nameOffset(0) {
-		setLoggingName("TreeFileRecord");
-		setLogging(false);
+	TreeFileRecord();
 
-		memset(md5Sum, 0, 16);
-	}
+	TreeFileRecord(const TreeFileRecord& tfr);
 
-	TreeFileRecord(const TreeFileRecord& tfr) : Object(), Logger() {
-		recordName = tfr.recordName;
-		treeFilePath = tfr.treeFilePath;
-		checksum = tfr.checksum;
-		uncompressedSize = tfr.uncompressedSize;
-		fileOffset = tfr.fileOffset;
-		compressionType = tfr.compressionType;
-		compressedSize = tfr.compressedSize;
-		nameOffset = tfr.nameOffset;
-		memcpy(md5Sum, tfr.md5Sum, 16);
+	TreeFileRecord& operator=(const TreeFileRecord& tfr);
 
-		setLoggingName("TreeFileRecord " + recordName);
-		setLogging(false);
-	}
+	int compareTo(const TreeFileRecord& tfr) const;
 
-	TreeFileRecord& operator= (const TreeFileRecord& tfr) {
-		if (this == &tfr)
-			return *this;
+	int compareTo(const String& fileName) const;
 
-		recordName = tfr.recordName;
-		treeFilePath = tfr.treeFilePath;
-		checksum = tfr.checksum;
-		uncompressedSize = tfr.uncompressedSize;
-		fileOffset = tfr.fileOffset;
-		compressionType = tfr.compressionType;
-		compressedSize = tfr.compressedSize;
-		nameOffset = tfr.nameOffset;
-		memcpy(md5Sum, tfr.md5Sum, 16);
+	void read(FileInputStream* fileStream);
 
-		setLoggingName("TreeFileRecord " + recordName);
+	uint32 readFromBuffer(const byte* buffer);
 
-		return *this;
-	}
+	byte* getBytes();
 
-	int compareTo(const TreeFileRecord& tfr) const {
-		return recordName.compareTo(tfr.recordName);
-	}
+	String toString() const;
 
-	int compareTo(const String& fileName) const {
-		return recordName.compareTo(fileName);
-	}
+	void setMD5Sum(byte sum[16]);
 
-	void read(FileInputStream* fileStream) {
-		fileStream->read((byte*) &checksum, 4);
-		fileStream->read((byte*) &uncompressedSize, 4);
-		fileStream->read((byte*) &fileOffset, 4);
-		fileStream->read((byte*) &compressionType, 4);
-		fileStream->read((byte*) &compressedSize, 4);
-		fileStream->read((byte*) &nameOffset, 4);
-	}
+	uint32 getNameOffset() const;
 
-	uint32 readFromBuffer(const byte* buffer) {
-	    uint32 bufferOffset = 0;
+	uint32 getCompressionType() const;
 
-	    checksum = *(uint32*)(buffer + bufferOffset);
-	    bufferOffset += sizeof(checksum);
+	uint32 getUncompressedSize() const;
 
-	    uncompressedSize = *(uint32*)(buffer + bufferOffset);
-	    bufferOffset += sizeof(uncompressedSize);
+	void setRecordName(const String& name);
 
-	    fileOffset = *(uint32*)(buffer + bufferOffset);
-	    bufferOffset += sizeof(fileOffset);
+	const String& getRecordName() const;
 
-	    compressionType = *(uint32*)(buffer + bufferOffset);
-	    bufferOffset += sizeof(compressionType);
-
-	    compressedSize = *(uint32*)(buffer + bufferOffset);
-	    bufferOffset += sizeof(compressedSize);
-
-	    nameOffset = *(uint32*)(buffer + bufferOffset);
-	    bufferOffset += sizeof(nameOffset);
-
-	    return bufferOffset;
-	}
-
-	byte* getBytes() {
-		File file(treeFilePath);
-		FileInputStream fileStream(&file);
-
-		if (!file.exists()) {
-			error("Tree File does not exist: " + treeFilePath);
-			return nullptr;
-		}
-
-		fileStream.skip(fileOffset);
-
-		TreeDataBlock db;
-		db.setCompressedSize(compressedSize);
-		db.setUncompressedSize(uncompressedSize);
-		db.setCompressionType(compressionType);
-
-		byte* buffer = db.uncompress(&fileStream);
-
-		fileStream.close();
-
-		return buffer;
-	}
-
-	String toString() const {
-		StringBuffer str;
-		str << "Checksum: " << checksum;
-		str << " UncompressedSize: " << uncompressedSize;
-		str << " FileOffset: " << fileOffset;
-		str << " CompressionType: " << compressionType;
-		str << " FileSize: " << compressedSize;
-		str << " NameOffset: " << nameOffset;
-
-		return str.toString();
-	}
-
-	inline void setMD5Sum(byte sum[16]) {
-		memcpy(&md5Sum, sum, 16);
-	}
-
-	inline uint32 getNameOffset() const {
-		return nameOffset;
-	}
-
-	inline uint32 getCompressionType() const {
-		return compressionType;
-	}
-
-	inline uint32 getUncompressedSize() const {
-		return uncompressedSize;
-	}
-
-	inline void setRecordName(const String& name) {
-		recordName = name;
-	}
-
-	inline const String& getRecordName() const {
-		return recordName;
-	}
-
-	inline void setTreeFilePath(const String& path) {
-		treeFilePath = path;
-	}
+	void setTreeFilePath(const String& path);
 };
+} // namespace tre3
+
+using namespace tre3;

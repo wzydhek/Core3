@@ -13,16 +13,13 @@ class BoxVolume : public BaseBoundingVolume {
 protected:
 	AABB bbox;
 public:
-	BoxVolume() : bbox(Vector3(), Vector3()) { }
-	const AABB& getBoundingBox() const {
-		return bbox;
-	}
+	BoxVolume();
+
+	const AABB& getBoundingBox() const;
 
 	void read(IffStream *iff);
 
-	bool isBoundingBox() const {
-		return true;
-	}
+	bool isBoundingBox() const;
 
 #ifdef OSG_RENDERER
 	osg::ref_ptr<osg::Node> draw() const;

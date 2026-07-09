@@ -13,17 +13,11 @@ class NonPlayerCreatureObjectTemplate : public SharedCreatureObjectTemplate {
 
 public:
 
-	NonPlayerCreatureObjectTemplate() {
-	}
+	NonPlayerCreatureObjectTemplate();
 
-	virtual ~NonPlayerCreatureObjectTemplate() {
-	}
+	virtual ~NonPlayerCreatureObjectTemplate();
 
-	void readObject(LuaObject* templateData) {
-		SharedCreatureObjectTemplate::readObject(templateData);
-	}
+	void readObject(LuaObject* templateData);
 
-	bool isNonPlayerCreatureObjectTemplate() {
-		return true;
-	}
+	bool isNonPlayerCreatureObjectTemplate();
 };

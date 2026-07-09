@@ -17,34 +17,9 @@ class GuildUpdateEvent : public Task {
 	ManagedWeakReference<GuildObject*> guildObject;
 
 public:
-	GuildUpdateEvent(GuildObject* guildObj, ZoneServer* zserv) : Task() {
-		guildObject = guildObj;
+	GuildUpdateEvent(GuildObject* guildObj, ZoneServer* zserv);
 
-		server = zserv;
-
-		setCustomTaskQueue("slowQueue");
-	}
-
-	void run() {
-		if (server == nullptr || server->isServerShuttingDown())
-			return;
-
-		ManagedReference<GuildObject*> guild = guildObject.get();
-
-		if (guild == nullptr)
-			return;
-
-		Locker locker(guild);
-
-		if (server->isServerLoading()) {
-			guild->rescheduleUpdateEvent(10000);
-			return;
-		}
-
-		GuildManager* guildManager = server->getGuildManager();
-
-		guildManager->processGuildUpdate(guild);
-	}
+	void run();
 };
 
 }

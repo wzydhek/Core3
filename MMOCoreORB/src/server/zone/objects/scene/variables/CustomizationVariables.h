@@ -31,19 +31,13 @@ public:
 
 	void setVariable(const String& type, int16 value);
 
-	int16 getVariable(uint8 type) const {
-		return get(type);
-	}
+	int16 getVariable(uint8 type) const;
 
-	int16 getVariable(int idx) const {
-		return get(idx);
-	}
+	int16 getVariable(int idx) const;
 
 	void getVariable(int idx, uint8& type, int16& value) const;
 
-	int getSize() const {
-		return size();
-	}
+	int getSize() const;
 
 	void parseFromClientString(const String& custString);
 

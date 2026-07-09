@@ -254,3 +254,6 @@ void HeightMap::readPlaneForConversion(FileInputStream* file, float* buffer, int
 	}
 }
 
+bool HeightMap::isLoaded() {
+	return reader != nullptr;
+}

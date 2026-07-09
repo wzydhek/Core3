@@ -15,3 +15,7 @@ void BaseBoundingVolume::read(IffStream *iff) {
 	iff->closeForm('0001');
 	iff->closeForm('EXSP');
 }
+
+const Sphere& BaseBoundingVolume::getBoundingSphere() const {
+	return bsphere;
+}

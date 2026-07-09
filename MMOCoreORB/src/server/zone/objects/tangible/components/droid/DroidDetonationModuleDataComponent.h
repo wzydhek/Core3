@@ -38,7 +38,7 @@ public:
 
 	int handleObjectMenuSelect(CreatureObject* player, byte selectedID, PetControlDevice* controller);
 
-	virtual int getBatteryDrain() { return 0; }
+	virtual int getBatteryDrain();
 
 	void deactivate();
 
@@ -48,7 +48,7 @@ public:
 
 	void onStore();
 
-	virtual bool isStackable() { return true; }
+	virtual bool isStackable();
 
 	virtual void addToStack(BaseDroidModuleComponent* other);
 
@@ -59,23 +59,21 @@ public:
 
 	int calculateDamage(DroidObject* droid);
 
-	bool readyForDetonation() { return initialized; }
+	bool readyForDetonation();
 
-	void setReadyForDetonation() { initialized = true;}
+	void setReadyForDetonation();
 
-	bool countdownInProgress() { return started; }
+	bool countdownInProgress();
 
-	void startCountDown() { started = true;}
+	void startCountDown();
 
-	void stopCountDown() { started = false;}
+	void stopCountDown();
 
 	void setSpecies(int i);
 
 	void initialize(DroidObject* droid);
 
-	virtual bool isDetonationModule() {
-		return true;
-	}
+	virtual bool isDetonationModule();
 };
 
 } // droid

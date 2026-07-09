@@ -9,6 +9,9 @@
 
 #include "../../TerrainGenerator.h"
 
+FilterFractal::FilterFractal() : FilterProceduralRule(1, 'FFRA'), fractalId(0), min(0), max(0), var6(0), mfrc(nullptr) {
+	filterType = HEIGHTTYPE;
+}
 
 float FilterFractal::process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator, FilterRectangle* rect) {
 	if (mfrc == nullptr) {

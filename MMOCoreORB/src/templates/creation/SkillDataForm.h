@@ -13,56 +13,15 @@ class SkillDataForm : public IffTemplate {
 	VectorMap<String, String> professionInfoPaths;
 
 public:
-	SkillDataForm() {
+	SkillDataForm();
 
-	}
+	~SkillDataForm();
 
-	~SkillDataForm() {
+	void readObject(IffStream* iffStream);
 
-	}
+	int getTotalPaths() const;
 
-	void readObject(IffStream* iffStream) {
-		iffStream->openForm('PFDT');
+	const String& getPathBySkillName(const String& professionName) const;
 
-		uint32 version = iffStream->getNextFormType();
-		Chunk* versionChunk = iffStream->openForm(version);
-
-		switch (version) {
-		case '0000':
-		{
-			Vector<Chunk*> chunks;
-			versionChunk->getChildren(chunks);
-
-			for (int i = 0; i < chunks.size(); ++i) {
-				Chunk* data = chunks.get(i);
-
-				String key;
-				String value;
-
-				data->readString(key);
-				data->readString(value);
-
-				professionInfoPaths.put(key, value);
-			}
-		}
-			break;
-		}
-
-		iffStream->closeForm(version);
-		iffStream->closeForm('PFDT');
-	}
-
-	inline int getTotalPaths() const {
-		return professionInfoPaths.size();
-	}
-
-	inline const String& getPathBySkillName(const String& professionName) const {
-		return professionInfoPaths.get(professionName);
-	}
-
-	inline const String& getSkillNameAt(int idx) const {
-		const VectorMapEntry<String, String>* entry = &professionInfoPaths.elementAt(idx);
-
-		return entry->getKey();
-	}
+	const String& getSkillNameAt(int idx) const;
 };

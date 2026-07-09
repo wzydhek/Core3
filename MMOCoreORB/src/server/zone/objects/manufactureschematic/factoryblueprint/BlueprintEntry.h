@@ -100,72 +100,42 @@ public:
 	void print();
 
 	/// If item requires identical
-	bool needsIdentical() {
-		return identical;
-	}
+	bool needsIdentical();
 
-	void setIdentical(bool value) {
-		identical = value;
-	}
+	void setIdentical(bool value);
 
 	/// Getter for type
-	String getType() {
-		return type;
-	}
+	String getType();
 
 	/// Getter for key
-	String getKey() {
-		return key;
-	}
+	String getKey();
 
 	/// Getter for serial
-	String getSerial() {
-		return serialNumber;
-	}
+	String getSerial();
 
 	/// Getter for displayed name
-	String getDisplayedName() {
-		return displayedName;
-	}
+	String getDisplayedName();
 
 	/// getter for quantity
-	int getQuantity() {
-		return quantity;
-	}
+	int getQuantity();
 
-	void setQuantity(int value) {
-		quantity = value;
-	}
+	void setQuantity(int value);
 
 	/// increase for quantity
-	void increaseQuantity(int value) {
-		quantity += value;
-	}
+	void increaseQuantity(int value);
 
 	/// Add a match to the vector
-	void addMatch(TangibleObject* object) {
-		matchingHopperItems.add(object);
-	}
+	void addMatch(TangibleObject* object);
 
-	void setDisplayedName(String value) {
-		displayedName = value;
-	}
+	void setDisplayedName(String value);
 
-	void setType(String value) {
-		type = value;
-	}
+	void setType(String value);
 
-	void setKey(String value) {
-		key = value;
-	}
+	void setKey(String value);
 
-	void setSerial(String value) {
-		serialNumber = value;
-	}
+	void setSerial(String value);
 
-	void setHopper(SceneObject* hopper) {
-		inputHopper = hopper;
-	}
+	void setHopper(SceneObject* hopper);
 
 private:
 

@@ -18,10 +18,7 @@ namespace login {
 
 	public:
 
-		LoginPacketHandler() : Logger() {
-			server = nullptr;
-			processServer = nullptr;
-		}
+		LoginPacketHandler();
 
 		LoginPacketHandler(const String& s, LoginProcessServerImplementation* serv);
 

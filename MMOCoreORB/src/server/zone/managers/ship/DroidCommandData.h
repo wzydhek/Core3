@@ -1,6 +1,9 @@
 
 #pragma once
 
+#include "system/lang/Object.h"
+#include "system/lang/String.h"
+
 namespace server {
 namespace zone {
 namespace managers {
@@ -21,64 +24,34 @@ protected:
 	float frontShieldRatio;
 
 public:
-	DroidCommandData(String command, String notifyString, float delay, int component, float energyModifier, float generalModifier, float incurDamage, float frontReinforcePercent, float capacitorReinforcePercent, float frontRatio) : Object() {
-		commandName = command;
-		stringID = notifyString;
-		delayModifier = delay;
-		componentType = component;
-		energyEfficiency = energyModifier;
-		generalEfficiency = generalModifier;
-		damage = incurDamage;
-		frontReinforceRatio = frontReinforcePercent;
-		capacitorReinforcePercentage = capacitorReinforcePercent;
-		frontShieldRatio = frontRatio;
-	}
+	DroidCommandData(String command, String notifyString, float delay, int component, float energyModifier, float generalModifier, float incurDamage, float frontReinforcePercent, float capacitorReinforcePercent, float frontRatio);
 
-	~DroidCommandData() {
-	}
+	~DroidCommandData();
 
-	const String& getCommandName() const {
-		return commandName;
-	}
+	const String& getCommandName() const;
 
-	const String& getStringID() const {
-		return stringID;
-	}
+	const String& getStringID() const;
 
-	float getDelayModifier() const {
-		return delayModifier;
-	}
+	float getDelayModifier() const;
 
-	int getComponentType() const {
-		return componentType;
-	}
+	int getComponentType() const;
 
-	float getEnergyEfficiency() const {
-		return energyEfficiency;
-	}
+	float getEnergyEfficiency() const;
 
-	float getGeneralEfficiency() const {
-		return generalEfficiency;
-	}
+	float getGeneralEfficiency() const;
 
-	float getDamage() const {
-		return damage;
-	}
+	float getDamage() const;
 
-	float getFrontReinforceRatio() const {
-		return frontReinforceRatio;
-	}
+	float getFrontReinforceRatio() const;
 
-	float getCapacitorReinforcePercentage() const {
-		return capacitorReinforcePercentage;
-	}
+	float getCapacitorReinforcePercentage() const;
 
-	float getFrontShieldRatio() const {
-		return frontShieldRatio;
-	}
+	float getFrontShieldRatio() const;
 };
 
 }
 }
 }
 }
+
+using namespace server::zone::managers::ship;

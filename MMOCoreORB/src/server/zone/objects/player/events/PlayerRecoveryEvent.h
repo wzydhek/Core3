@@ -17,40 +17,13 @@ class PlayerRecoveryEvent : public Task {
 	Time startTime;
 
 public:
-	PlayerRecoveryEvent(PlayerObject* ghost) : Task(2000) {
-		weakGhost = ghost;
-		startTime.updateToCurrentTime();
-	}
+	PlayerRecoveryEvent(PlayerObject* ghost);
 
-	~PlayerRecoveryEvent() {
-	}
+	~PlayerRecoveryEvent();
 
-	void run() {
-		ManagedReference<PlayerObject*> ghost = weakGhost.get();
+	void run();
 
-		if (ghost == nullptr) {
-			return;
-		}
-
-		ManagedReference<SceneObject*> strongParent = ghost->getParent().get();
-
-		if (strongParent == nullptr) {
-			return;
-		}
-
-		Locker lock(strongParent);
-
-		if (!ghost->isOnline() && !ghost->isLinkDead()) {
-			return;
-		}
-
-		ghost->doRecovery(startTime.miliDifference());
-	}
-
-	void schedule(uint64 delay = 0) {
-		startTime.updateToCurrentTime();
-		Task::schedule(delay);
-	}
+	void schedule(uint64 delay = 0);
 };
 
 } // namespace events

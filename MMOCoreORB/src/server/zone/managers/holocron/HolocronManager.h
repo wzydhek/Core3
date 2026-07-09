@@ -28,15 +28,7 @@ namespace server {
 					SortedVector<BugCategory> categories;
 
 				public:
-					HolocronManager(ZoneProcessServer* pserv) {
-						processor = pserv;
-
-						setLoggingName("HolocronManager");
-						setGlobalLogging(false);
-						setLogging(false);
-
-						loadBugCategories();
-					}
+					HolocronManager(ZoneProcessServer* pserv);
 
 					void loadBugCategories();
 					void sendRequestCategoriesResponseTo(ZoneClientSession* client);

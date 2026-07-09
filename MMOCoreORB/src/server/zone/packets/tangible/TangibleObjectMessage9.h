@@ -9,10 +9,6 @@
 
 class TangibleObjectMessage9 : public BaseLineMessage {
 public:
-	TangibleObjectMessage9(const TangibleObject* tano)
-			: BaseLineMessage(tano, 0x54414E4F, 9, 0x00) {
-
-		setSize();
-	}
+	TangibleObjectMessage9(const TangibleObject* tano);
 
 };

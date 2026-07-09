@@ -9,10 +9,6 @@
 
 class ResourceHarvesterActivatePageMessage : public BaseMessage {
 public:
-	ResourceHarvesterActivatePageMessage(uint64 oid) : BaseMessage() {
-    	insertShort(0x02);
-    	insertInt(0xBD18C679);  // CRC
-    	insertLong(oid);
-	}
+	ResourceHarvesterActivatePageMessage(uint64 oid);
 
 };

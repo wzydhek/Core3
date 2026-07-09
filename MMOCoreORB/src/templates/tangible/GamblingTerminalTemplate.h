@@ -13,29 +13,15 @@ class GamblingTerminalTemplate : public SharedTangibleObjectTemplate {
 	int machineType;
 
 public:
-	GamblingTerminalTemplate() : machineType(0) {
+	GamblingTerminalTemplate();
 
-	}
+	~GamblingTerminalTemplate();
 
-	~GamblingTerminalTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
+    int getMachineType() const;
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+    void setMachineType(int machineType);
 
-		machineType = templateData->getIntField("machineType");
-    }
-
-    inline int getMachineType() const {
-        return machineType;
-    }
-
-    void setMachineType(int machineType) {
-    	this->machineType = machineType;
-    }
-
-	bool isGamblingTerminalTemplate() {
-		return true;
-	}
+	bool isGamblingTerminalTemplate();
 };

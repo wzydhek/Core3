@@ -11,10 +11,6 @@
 
 class ClientCreateCharacterSuccess : public BaseMessage {
 public:
-	ClientCreateCharacterSuccess(uint64 objid) : BaseMessage() {
-		insertShort(0x02);
-		insertInt(0x1DB575CC); //opcode: ClientCreateCharacterSuccess
-		insertLong(objid);
-	}
+	ClientCreateCharacterSuccess(uint64 objid);
 
 };

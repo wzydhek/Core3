@@ -37,11 +37,7 @@ class Layer : public TemplateVariable<'LAYR'> {
 	int filterFlag;
 
 public:
-	Layer(Layer* par = nullptr) {
-		parent = par;
-		boundariesFlag = 0;
-		filterFlag = 0;
-	}
+	Layer(Layer* par = nullptr);
 
 	~Layer();
 
@@ -52,59 +48,31 @@ public:
 	Boundary* parseBoundary(IffStream* iffStream);
 	FilterProceduralRule* parseFilter(IffStream* iffStream);
 
-	Vector<Layer*>* getChildren() {
-		return &children;
-	}
+	Vector<Layer*>* getChildren();
 
-	Vector<Boundary*>* getBoundaries() {
-		return &boundaries;
-	}
+	Vector<Boundary*>* getBoundaries();
 
-	Vector<AffectorProceduralRule*>* getAffectors() {
-		return &affectors;
-	}
+	Vector<AffectorProceduralRule*>* getAffectors();
 
-	Vector<FilterProceduralRule*>* getFilters() {
-		return &filters;
-	}
+	Vector<FilterProceduralRule*>* getFilters();
 
-	const Vector<Layer*>* getChildren() const {
-		return &children;
-	}
+	const Vector<Layer*>* getChildren() const;
 
-	const Vector<Boundary*>* getBoundaries() const {
-		return &boundaries;
-	}
+	const Vector<Boundary*>* getBoundaries() const;
 
-	const Vector<AffectorProceduralRule*>* getAffectors() const {
-		return &affectors;
-	}
+	const Vector<AffectorProceduralRule*>* getAffectors() const;
 
-	const Vector<FilterProceduralRule*>* getFilters() const {
-		return &filters;
-	}
+	const Vector<FilterProceduralRule*>* getFilters() const;
 
-	inline Layer* getParent() {
-		return parent;
-	}
+	inline Layer* getParent();
 
-	inline const Layer* getParent() const {
-		return parent;
-	}
+	const Layer* getParent() const;
 
-	inline bool invertBoundaries() const {
-		return boundariesFlag != 0;
-	}
+	bool invertBoundaries() const;
 
-	inline bool invertFilters() const {
-		return filterFlag != 0;
-	}
+	bool invertFilters() const;
 
-	inline bool isEnabled() const {
-		return infoHeader.isEnabled();
-	}
+	bool isEnabled() const;
 
-	inline const String& getDescription() const {
-		return infoHeader.getDescription();
-	}
+	const String& getDescription() const;
 };

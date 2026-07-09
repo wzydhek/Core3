@@ -9,7 +9,10 @@
 #include "server/zone/objects/creature/ai/AiAgent.h"
 
 using namespace server::zone::objects::creature::ai::bt;
-using namespace server::zone::objects::creature::ai::bt::node;
+
+Sequence::Sequence(const String& className, const uint32 id, const LuaObject& args) : Composite(className, id, args) {
+}
+
 
 Behavior::Status Sequence::execute(AiAgent* agent, unsigned int startIdx) const {
 	// loop through children and return FAILURE on first one that failed
@@ -30,6 +33,9 @@ Behavior::Status Sequence::execute(AiAgent* agent, unsigned int startIdx) const 
 	return SUCCESS;
 }
 
+ParallelSequence::ParallelSequence(const String& className, const uint32 id, const LuaObject& args) : Composite(className, id, args) {
+}
+
 Behavior::Status ParallelSequence::execute(AiAgent* agent, unsigned int startIdx) const {
 	// loop through ALL children and return failure if any fail
 	Behavior::Status finalResult = SUCCESS;
@@ -47,6 +53,9 @@ Behavior::Status ParallelSequence::execute(AiAgent* agent, unsigned int startIdx
 	}
 
 	return finalResult;
+}
+
+RandomSequence::RandomSequence(const String& className, const uint32 id, const LuaObject& args) : Composite(className, id, args) {
 }
 
 Behavior::Status RandomSequence::execute(AiAgent* agent, unsigned int startIdx) const {

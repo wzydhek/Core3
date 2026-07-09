@@ -43,149 +43,41 @@ public:
 
 	void addCollisionHardpoint(SharedShipObjectTemplate* shipTemplate, const String& componentName, const String& attachmentName, const String& hardpointName, int slot, float radius);
 
-	int getBoundingVolumeType(const BaseBoundingVolume* volume) const {
-		if (volume->isBoundingSphere()) { return SPHERE; }
-		if (volume->isBoundingBox()) { return BOX; }
-		return MESH;
-	}
+	int getBoundingVolumeType(const BaseBoundingVolume* volume) const;
 
-	bool isIdentityMatrix(const Matrix4& matrix) const {
-		return matrix[0][0] == 1.f && matrix[1][1] == 1.f && matrix[2][2] == 1.f && matrix[3][3] == 1.f
-			&& matrix[0][1] == 0.f && matrix[0][2] == 0.f && matrix[0][3] == 0.f
-			&& matrix[1][0] == 0.f && matrix[1][2] == 0.f && matrix[1][3] == 0.f
-			&& matrix[2][0] == 0.f && matrix[2][1] == 0.f && matrix[2][3] == 0.f
-			&& matrix[3][0] == 0.f && matrix[3][1] == 0.f && matrix[3][2] == 0.f;
-	}
+	bool isIdentityMatrix(const Matrix4& matrix) const;
 
-	Sphere getChassisBoundingSphere(const BaseBoundingVolume* volume) const {
-		const auto& sphere = volume->getBoundingSphere();
-		float radius = sphere.getCenter().length() + sphere.getRadius();
+	Sphere getChassisBoundingSphere(const BaseBoundingVolume* volume) const;
 
-		return Sphere(Vector3::ZERO, radius);
-	}
+	Sphere getHardpointBoundingSphere(const Sphere& sphere, const Vector3& position, const Matrix4& rotation) const;
 
-	Sphere getHardpointBoundingSphere(const Sphere& sphere, const Vector3& position, const Matrix4& rotation) const {
-		Vector3 spherePosition = position + (sphere.getCenter() * rotation);
+	Sphere getHardpointBoundingSphere(const AABB& box, const Vector3& position, const Matrix4& rotation) const;
 
-		return Sphere(spherePosition, sphere.getRadius());
-	}
+	AABB getHardpointBoundingBox(const AABB& box, const Vector3& position, const Matrix4& rotation) const;
 
-	Sphere getHardpointBoundingSphere(const AABB& box, const Vector3& position, const Matrix4& rotation) const {
-		const Vector3& boxCenter = box.center();
-		float radius = (boxCenter - *box.getMinBound()).length();
-		Vector3 transformedCenter = position + (boxCenter * rotation);
+	String getAttachmentTemplatePath(const String& attachmentName, int slot) const;
 
-		return Sphere(transformedCenter, radius);
-	}
+	String getShipFileName(const String& shipName) const;
 
-	AABB getHardpointBoundingBox(const AABB& box, const Vector3& position, const Matrix4& rotation) const {
-		auto maxBound = position + (*box.getMaxBound() * rotation);
-		auto minBound = position + (*box.getMinBound() * rotation);
+	const VectorMap<uint32, ShipCollisionHardpoint>& getHardpoints(const String& slotName) const;
 
-		float maxX = Math::max(minBound.getX(), maxBound.getX());
-		float maxY = Math::max(minBound.getY(), maxBound.getY());
-		float maxZ = Math::max(minBound.getZ(), maxBound.getZ());
+	const VectorMap<uint32, ShipCollisionHardpoint>& getHardpoints(uint32 slot) const;
 
-		float minX = Math::min(minBound.getX(), maxBound.getX());
-		float minY = Math::min(minBound.getY(), maxBound.getY());
-		float minZ = Math::min(minBound.getZ(), maxBound.getZ());
+	const Vector<uint32>& getTargetableSlots() const;
 
-		return AABB(Vector3(minX, minY, minZ), Vector3(maxX, maxY, maxZ));
-	}
+	int getSlotWeight(uint32 slot) const;
 
-	String getAttachmentTemplatePath(const String& attachmentName, int slot) const {
-		switch (slot) {
-			case Components::CHASSIS: return "object/tangible/ship/attachment/wing/" + attachmentName + ".iff";
-			case Components::ENGINE:  return "object/tangible/ship/attachment/engine/" + attachmentName + ".iff";
-			case Components::SHIELD0:
-			case Components::SHIELD1:  return "object/tangible/ship/attachment/shield/" + attachmentName + ".iff";
-			case Components::BOOSTER:  return "object/tangible/ship/attachment/booster/" + attachmentName + ".iff";
-			case Components::BRIDGE:  return "object/tangible/ship/attachment/bridge/" + attachmentName + ".iff";
-			case Components::HANGAR:  return "object/tangible/ship/attachment/hangar/" + attachmentName + ".iff";
-			default: {
-				if (slot >= Components::WEAPON_START) {
-					return "object/tangible/ship/attachment/weapon/" + attachmentName + ".iff";
-				}
-			}
-		}
+	const AppearanceTemplate* getAppearanceTemplate() const;
 
-		return "";
-	}
+	const Sphere& getBoundingSphere() const;
 
-	String getShipFileName(const String& shipName) const {
-		String chassisName = shipName.replaceAll("shared_", "");
+	const Sphere& getChassisSphere() const;
 
-		if (!chassisName.contains(".iff")) {
-			String path = chassisName.contains("player_") ? "object/ship/player/" : "object/ship/";
-			chassisName = path + chassisName + ".iff";
-		}
+	const AABB& getChassisBox() const;
 
-		return chassisName;
-	}
+	int getVolumeType() const;
 
-	const VectorMap<uint32, ShipCollisionHardpoint>& getHardpoints(const String& slotName) const {
-		return hardpointMap.get(slotName);
-	}
+	int getHardpointSize() const;
 
-	const VectorMap<uint32, ShipCollisionHardpoint>& getHardpoints(uint32 slot) const {
-		return hardpointMap.get(Components::shipComponentSlotToString(slot));
-	}
-
-	const Vector<uint32>& getTargetableSlots() const {
-		return targetableSlots;
-	}
-
-	int getSlotWeight(uint32 slot) const {
-		return slotWeights.get(slot);
-	}
-
-	const AppearanceTemplate* getAppearanceTemplate() const {
-		return appearance;
-	}
-
-	const Sphere& getBoundingSphere() const {
-		return boundingSphere;
-	}
-
-	const Sphere& getChassisSphere() const {
-		return chassisSphere;
-	}
-
-	const AABB& getChassisBox() const {
-		return chassisBox;
-	}
-
-	int getVolumeType() const {
-		return volumeType;
-	}
-
-	int getHardpointSize() const {
-		return hardpointSize;
-	}
-
-	String toDebugString(bool includeHardpoints = true) const {
-		StringBuffer msg;
-
-		msg
-		<< "  apearanceName:  " << (appearance ? appearance->getFileName() : "") << endl
-		<< "  boundingSphere: " << boundingSphere.getCenter().toString() << endl
-		<< "  boundingRadius: " << boundingSphere.getRadius() << endl
-		<< "  chassisSphere:  " << chassisSphere.getCenter().toString() << endl
-		<< "  chassisRadius:  " << chassisSphere.getRadius() << endl
-		<< "  chassisBox:     " << chassisBox.getMinBound()->toString() << " " << chassisBox.getMaxBound()->toString() << endl
-		<< "  volumeType:     " << volumeType << endl
-		<< "--------------------------------" << endl;
-
-		if (includeHardpoints) {
-			for (int i = 0; i < hardpointMap.size(); ++i) {
-				auto harpdoints = hardpointMap.elementAt(i).getValue();
-
-				for (int ii = 0; ii < harpdoints.size(); ++ii) {
-					msg << harpdoints.elementAt(ii).getValue().toDebugString() << endl;
-				}
-			}
-		}
-
-		return msg.toString();
-	}
+	String toDebugString(bool includeHardpoints = true) const;
 };

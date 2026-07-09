@@ -7,6 +7,71 @@
 #include "templates/datatables/DataTableRow.h"
 #include "templates/manager/DataArchiveStore.h"
 
+ShipChassisData::ComponentHardpoint::ComponentHardpoint(const String& tmpl, const String& hardpoint, float collisionDistance) {
+	templateName = tmpl;
+	hardpointName = hardpoint;
+	range = collisionDistance;
+}
+
+float ShipChassisData::ComponentHardpoint::getRange() const {
+	return range;
+}
+
+bool ShipChassisData::ComponentHardpoint::isVisible() const {
+	return !templateName.isEmpty();
+}
+
+const String& ShipChassisData::ComponentHardpoint::getTemplateName() const {
+	return templateName;
+}
+
+const String& ShipChassisData::ComponentHardpoint::getHardpointName() const {
+	return hardpointName;
+}
+
+ShipChassisData::ComponentSlotData::ComponentSlotData(const String& slotName, const String& slotCompatability, float weight, bool isTargetable) {
+	name = slotName;
+	compatability = slotCompatability;
+	hitWeight = weight;
+	targetable = isTargetable;
+}
+
+ShipChassisData::ComponentSlotData::ComponentSlotData(const ComponentSlotData& rhs) : Object(rhs) {
+	name = rhs.name;
+	compatability = rhs.compatability;
+	hitWeight = rhs.hitWeight;
+	targetable = rhs.targetable;
+	componentHardpoints = rhs.componentHardpoints;
+}
+
+const VectorMap<String, Vector<const ShipChassisData::ComponentHardpoint*>>& ShipChassisData::ComponentSlotData::getComponentHardpoints() const {
+	return componentHardpoints;
+}
+
+const Vector<const ShipChassisData::ComponentHardpoint*>& ShipChassisData::ComponentSlotData::getHardpoint(const String& name) const {
+	return componentHardpoints.get(name);
+}
+
+void ShipChassisData::ComponentSlotData::addHardpointData(String componentName, Vector<const ComponentHardpoint*>& hardpoints) {
+	componentHardpoints.put(componentName, hardpoints);
+}
+
+const String& ShipChassisData::ComponentSlotData::getName() const {
+	return name;
+}
+
+const String& ShipChassisData::ComponentSlotData::getCompatability() const {
+	return compatability;
+}
+
+float ShipChassisData::ComponentSlotData::getHitWeight() const {
+	return hitWeight;
+}
+
+bool ShipChassisData::ComponentSlotData::isTargetable() const {
+	return targetable;
+}
+
 ShipChassisData::ShipChassisData(DataTableRow* row, Vector<String>& columnNames) : Object() {
 	row->getCell(0)->getValue(name);
 	row->getCell(3)->getValue(wingOpenSpeed);
@@ -107,4 +172,15 @@ void ShipChassisData::loadComponentHardpoints() {
 		}
 	}
 	delete iffStream;
+}
+
+const String& ShipChassisData::getName() const {
+	return name;
+}
+float ShipChassisData::getWingOpenSpeed() const {
+	return wingOpenSpeed;
+}
+
+const ShipChassisData::ComponentSlotData* ShipChassisData::getComponentSlotData(int slotIndex) const {
+	return componentMap.get(Components::shipComponentSlotToString(slotIndex));
 }

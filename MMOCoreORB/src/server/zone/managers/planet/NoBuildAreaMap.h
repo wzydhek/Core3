@@ -10,27 +10,11 @@ class NoBuildAreaMap : public Object {
 	Vector<ManagedReference<Region*> > areas;
 
 public:
-	NoBuildAreaMap() { }
+	NoBuildAreaMap();
 
-	~NoBuildAreaMap() {
+	~NoBuildAreaMap();
 
-	}
+	bool add(Region* region);
 
-	bool add(Region* region) {
-		return areas.add(region);
-	}
-
-	bool isNoBuildZone(float x, float y, StringId& fullAreaName) {
-		for (int i = 0; i < areas.size(); i++) {
-			Region* region = areas.get(i);
-
-			if (region->containsPoint(x,y)) {
-				fullAreaName = *region->getObjectName();
-
-				return true;
-			}
-		}
-
-		return false;
-	}
+	bool isNoBuildZone(float x, float y, StringId& fullAreaName);
 };

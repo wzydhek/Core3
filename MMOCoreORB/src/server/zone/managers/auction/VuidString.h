@@ -8,35 +8,20 @@
 #pragma once
 
 #include "engine/engine.h"
+#include "system/lang/String.h"
 
 class VuidString : public String {
 public:
 
-	VuidString() : String()  {
+	VuidString();
 
-	}
+	~VuidString();
 
-	~VuidString(){
+	VuidString(const String& val);
 
-	}
+	VuidString(const char* str);
 
-	VuidString(const String& val) : String(val){
+	VuidString(const VuidString& val);
 
-	}
-
-	VuidString(const char* str) : String(str){
-
-	}
-
-	VuidString(const VuidString& val) : String(val) {
-
-	}
-
-	int compareTo(const VuidString& str) const {
-
-		if(beginsWith(str))
-			return 0;
-
-		return String::compareTo((String)str);
-	}
+	int compareTo(const VuidString& str) const;
 };

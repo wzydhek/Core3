@@ -10,53 +10,12 @@
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/sui/SuiBox.h"
 
 class GuildMemberPermissionsResponseSuiCallback : public SuiCallback {
 public:
-	GuildMemberPermissionsResponseSuiCallback(ZoneServer* server)
-		: SuiCallback(server) {
-	}
+	GuildMemberPermissionsResponseSuiCallback(ZoneServer* server);
 
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!suiBox->isListBox() || cancelPressed)
-			return;
-
-		if (args->size() < 1)
-			return;
-
-		int index = Integer::valueOf(args->get(0).toString());
-
-		if (index == -1)
-			return;
-
-		SuiListBox* listBox = cast<SuiListBox*>( suiBox);
-
-		uint64 memberID = listBox->getMenuObjectID(index);
-
-		ManagedReference<GuildManager*> guildManager = server->getGuildManager();
-
-		if (guildManager == nullptr)
-			return;
-
-		ManagedReference<SceneObject*> obj = suiBox->getUsingObject().get();
-
-		if (obj == nullptr || !obj->isTerminal())
-			return;
-
-		Terminal* terminal = cast<Terminal*>( obj.get());
-
-		if (!terminal->isGuildTerminal())
-			return;
-
-		GuildTerminal* guildTerminal = cast<GuildTerminal*>( terminal);
-
-		ManagedReference<GuildObject*> guild = player->getGuildObject().get();
-
-		if (guild == nullptr)
-			return;
-
-		guildManager->toggleGuildPermission(player, memberID, index, guildTerminal);
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

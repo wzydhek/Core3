@@ -26,43 +26,25 @@ public:
 	const static uint32 RANGEDINTCUSTOMIZATIONVARIABLE = 0x20;
 	const static uint32 CUSTOMIZATIONVARIABLEMAP = 0x22;
 public:
-	Param() {
-		type = (uint32)-1;
-	}
+	Param();
 
-	virtual ~Param() {
-
-	}
+	virtual ~Param();
 
 	virtual bool parse(engine::util::Chunk* source) = 0;
 
 	virtual String toString() const = 0;
 
-	inline uint32 getType() const {
-		return type;
-	}
+	uint32 getType() const;
 
-	inline void setType(uint32 tp) {
-		type = tp;
-	}
+	void setType(uint32 tp);
 
-	inline bool isBool() const {
-		return type == BOOL;
-	}
+	bool isBool() const;
 
-	inline bool isFloat() const {
-		return type == FLOAT;
-	}
+	bool isFloat() const;
 
-	inline bool isInteger() const {
-		return type == INTEGER;
-	}
+	bool isInteger() const;
 
-	inline bool isString() const {
-		return type == STRING;
-	}
+	bool isString() const;
 
-	inline bool isStringId() const {
-		return type == STRINGID;
-	}
+	bool isStringId() const;
 };

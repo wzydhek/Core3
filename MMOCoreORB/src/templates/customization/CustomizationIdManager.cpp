@@ -86,3 +86,22 @@ void CustomizationIdManager::readObject(IffStream* iffStream) {
 	info() << "loaded " << customizationIds.size() << " customization ids";
 }
 
+int CustomizationIdManager::getCustomizationId(const String& var) {
+	return customizationIds.get(var);
+}
+
+String CustomizationIdManager::getCustomizationVariable(int id) {
+	return reverseIds.get(id);
+}
+
+PaletteData* CustomizationIdManager::getPaletteData(const String& palette) {
+	return paletteColumns.get(palette);
+}
+
+HairAssetData* CustomizationIdManager::getHairAssetData(const String& hairServerTemplate) {
+	return hairAssetSkillMods.get(hairServerTemplate);
+}
+
+bool CustomizationIdManager::canBeBald(const int objectCRC) {
+	return allowBald.get(objectCRC);
+}

@@ -8,48 +8,14 @@
 #pragma once
 
 #include "engine/engine.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 class EjectObjectEvent : public Task {
 	ManagedReference<SceneObject*> object;
 	float x, z, y;
 
 public:
-	EjectObjectEvent(SceneObject* obj, float x, float z, float y) {
-		object = obj;
-		this->x = x, this->y = y, this->z = z;
-	}
+	EjectObjectEvent(SceneObject* obj, float x, float z, float y);
 
-	void run() {
-		Locker locker(object);
-
-		if (object->isCreatureObject()) {
-			StringBuffer msg;
-			msg << "EjectObjectEvent("
-				<< object->getObjectID()
-				<< ", x:" << x
-				<< ", z:" << z
-				<< ", y:" << y
-				<< ")"
-				<< " from " << object->getWorldPosition().toString();
-				;
-
-			auto creo = object->asCreatureObject();
-
-			if (creo != nullptr) {
-				creo->info(msg.toString());
-
-				if (creo->isPlayerCreature()) {
-					PlayerObject* ghost = creo->getPlayerObject();
-
-					if (ghost != nullptr) {
-						ghost->setForcedTransform(true);
-					}
-				}
-			} else {
-				object->info(msg.toString());
-			}
-		}
-		object->teleport(x, z, y);
-		object->updateZone(true, true);
-	}
+	void run();
 };

@@ -12,43 +12,7 @@ class VehicleDecayTask : public Task {
 	bool initialDecay;
 
 public:
-	VehicleDecayTask(TangibleObject* veh) : Task() {
-		vehicleObj = veh;
-		initialDecay = true;
-	}
+	VehicleDecayTask(TangibleObject* veh);
 
-	void run() {
-		ManagedReference<TangibleObject*> vehicle = vehicleObj.get();
-
-		if (vehicle == nullptr)
-			return;
-
-		Reference<VehicleObjectTemplate*> vehicleTemplate = cast<VehicleObjectTemplate*>(vehicle->getObjectTemplate());
-
-		if (vehicleTemplate == nullptr)
-			return;
-
-		Locker locker(vehicle);
-
-		vehicle->removePendingTask("decay");
-
-		int decayCycle = vehicleTemplate->getDecayCycle();
-
-		if (decayCycle == 0)
-			decayCycle = 600;
-
-		int decayRate = vehicleTemplate->getDecayRate();
-
-		if (decayRate == 0)
-			decayRate = 15;
-
-		if (initialDecay) {
-			vehicle->inflictDamage(vehicle, 0, decayRate / 2, true);
-			initialDecay = false;
-		} else {
-			vehicle->inflictDamage(vehicle, 0, decayRate, true);
-		}
-
-		vehicle->addPendingTask("decay", this, decayCycle * 1000);
-	}
+	void run();
 };

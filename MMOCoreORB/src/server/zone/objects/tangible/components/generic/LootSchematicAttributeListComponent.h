@@ -9,6 +9,9 @@
 
 #include "templates/tangible/LootSchematicTemplate.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/scene/components/AttributeListComponent.h"
 
 class LootSchematicAttributeListComponent: public AttributeListComponent {
 public:
@@ -19,20 +22,6 @@ public:
 	 * @post { this object is locked, menuResponse is complete}
 	 * @param menuResponse ObjectMenuResponse that will be sent to the client
 	 */
-	void fillAttributeList(AttributeListMessage* alm, CreatureObject* creature, SceneObject* object) const {
-
-		LootSchematicTemplate* schematicData = cast<LootSchematicTemplate*> (object->getObjectTemplate());
-		if (schematicData == nullptr) {
-			return;
-		}
-
-		String skillNeeded = "@skl_n:" + schematicData->getRequiredSkill();
-		StringIdManager* stringIdManager = StringIdManager::instance();
-
-		UnicodeString skill = stringIdManager->getStringId(skillNeeded.hashCode());
-
-		if(!skill.isEmpty())
-			alm->insertAttribute("skill_required", skill);
-	}
+	void fillAttributeList(AttributeListMessage* alm, CreatureObject* creature, SceneObject* object) const;
 
 };

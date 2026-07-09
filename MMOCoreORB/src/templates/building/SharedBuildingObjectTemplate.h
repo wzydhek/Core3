@@ -36,11 +36,9 @@ class SharedBuildingObjectTemplate : public SharedStructureObjectTemplate {
 	Vector<SecurityPatrolSpawn> securitySpawns;
 
 public:
-	SharedBuildingObjectTemplate() : medicalRating(0), publicStructure(false), alwaysPublic(false), factionBaseType(0), ejectDistance(2.5f) {
-	}
+	SharedBuildingObjectTemplate();
 
-	~SharedBuildingObjectTemplate() {
-	}
+	~SharedBuildingObjectTemplate();
 
 	void readObject(LuaObject* templateData);
 	void readObject(IffStream* iffStream);
@@ -50,70 +48,35 @@ public:
 	void parseVariableData(const String& varName, Chunk* data);
 	void parseFileData(IffStream* iffStream);
 
-	virtual bool isSharedBuildingObjectTemplate() {
-		return true;
-	}
+	virtual bool isSharedBuildingObjectTemplate();
 
-	inline bool isPublicStructure() const {
-		if (alwaysPublic)
-			return true;
+	bool isPublicStructure() const;
 
-		return publicStructure;
-	}
+	bool isAlwaysPublic() const;
 
-	inline bool isAlwaysPublic() const {
-		return alwaysPublic;
-	}
+	const ChildObject* getSign() const;
 
-	inline const ChildObject* getSign() const {
-		return &sign;
-	}
+	int getMedicalRating() const;
 
-	inline int getMedicalRating() const {
-		return medicalRating;
-	}
+	int getChildCreatureObjectsSize() const;
 
-	inline int getChildCreatureObjectsSize() const  {
-		return childCreatureObjects.size();
-	}
+	ChildCreatureObject* getChildCreatureObject(int indx);
 
-	inline ChildCreatureObject* getChildCreatureObject(int indx){
-		return &childCreatureObjects.get(indx);
-	}
+	const String& getTerrainModificationFile() const;
 
-	inline const String& getTerrainModificationFile() const {
-		return terrainModificationFileName.get();
-	}
+	const String& getInteriorLayoutFileName() const;
 
-	inline const String& getInteriorLayoutFileName() const {
-		return interiorLayoutFileName.get();
-	}
+	const Vector3& getEjectionPoint() const;
 
-	inline const Vector3& getEjectionPoint() const {
-		return ejectionPoint;
-	}
+	int getFactionBaseType() const;
 
-	inline int getFactionBaseType() const {
-		return factionBaseType;
-	}
+	int getShopSignsSize() const;
 
-	inline int getShopSignsSize() const {
-		return shopSigns.size();
-	}
+	const SignTemplate* getShopSign(int idx) const;
 
-	inline const SignTemplate* getShopSign(int idx) const {
-		return &shopSigns.get(idx);
-	}
+	float getEjectDistance() const;
 
-	inline float getEjectDistance() const {
-		return ejectDistance;
-	}
+	int getSecuritySpawnsSize() const;
 
-	inline int getSecuritySpawnsSize() const {
-		return securitySpawns.size();
-	}
-
-	inline const SecurityPatrolSpawn* getSecurityPatrol(int idx) const {
-		return &securitySpawns.get(idx);
-	}
+	const SecurityPatrolSpawn* getSecurityPatrol(int idx) const;
 };

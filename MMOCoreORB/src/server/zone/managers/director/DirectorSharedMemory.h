@@ -16,63 +16,33 @@ class DirectorSharedMemory : public Object {
 	HashTable<String, Vector<String>> stringVectorTable;
 
 public:
-	uint64 get(const String& k) const {
-		return hashTable.get(k);
-	}
+	uint64 get(const String& k) const;
 
-	const String& getString(const String& k) const {
-		return stringTable.get(k);
-	}
+	const String& getString(const String& k) const;
 
-	Vector3 getVector3(const String& k) const {
-		return vector3Table.get(k);
-	}
+	Vector3 getVector3(const String& k) const;
 
-	Vector<String> getStringVector(const String& k) const {
-		return stringVectorTable.get(k);
-	}
+	Vector<String> getStringVector(const String& k) const;
 
-	void put(const String& k, uint64 v) {
-		hashTable.put(k, v);
-	}
+	void put(const String& k, uint64 v);
 
-	void putString(const String& k, const String& v) {
-		stringTable.put(k, v);
-	}
+	void putString(const String& k, const String& v);
 
-	void putVector3(const String& k, const Vector3& v) {
-		vector3Table.put(k, v);
-	}
+	void putVector3(const String& k, const Vector3& v);
 
-	void putStringVector(const String& k, const Vector<String>& v) {
-		stringVectorTable.put(k, v);
-	}
+	void putStringVector(const String& k, const Vector<String>& v);
 
-	void remove(const String& k) {
-		hashTable.remove(k);
-	}
+	void remove(const String& k);
 
-	void removeString(const String& k) {
-		stringTable.remove(k);
-	}
+	void removeString(const String& k);
 
-	void removeVector3(const String& k) {
-		vector3Table.remove(k);
-	}
+	void removeVector3(const String& k);
 
-	void removeStringVector(const String& k) {
-		stringVectorTable.remove(k);
-	}
+	void removeStringVector(const String& k);
 
-	void setNullValue(uint64 o) {
-		hashTable.setNullValue(o);
-	}
+	void setNullValue(uint64 o);
 
-	Object* clone() {
-		return ObjectCloner<DirectorSharedMemory>::clone(this);
-	}
+	Object* clone();
 
-	Object* clone(void* object) {
-		return TransactionalObjectCloner<DirectorSharedMemory>::clone(this);
-	}
+	Object* clone(void* object);
 };

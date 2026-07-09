@@ -13,6 +13,22 @@
 #include "../Road.h"
 #include "../HeightData.h"
 
+AffectorRoad::AffectorRoad() : coordinateCount(0), width(0.f), familyID(0), featheringType(0), featheringAmount(0), featheringShader(0), featheringShaderDistance(0.5f) {
+	affectorType = HEIGHTROAD;
+}
+
+AffectorRoad::~AffectorRoad() {
+	for (int i = 0; i < midPositions.size(); ++i)
+		delete midPositions.get(i);
+
+	midPositions.removeAll();
+
+	for (int i = 0; i < rectangles.size(); ++i)
+		delete rectangles.get(i);
+
+	rectangles.removeAll();
+}
+
 void AffectorRoad::process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator) {
 #ifdef DEBUG_AFFECTOR_ROAD
 	StringBuffer msg;
@@ -251,4 +267,12 @@ void AffectorRoad::sendDebugMessage(String message) {
 	msg << " - coordinateCount: " << coordinateCount << " width: " << width << " familyID: " << familyID << " featheringType: " << featheringType << " featheringAmount: " << featheringAmount << " featheringShader: " << featheringShader << " featheringShaderDistance: " << featheringShaderDistance << endl;
 
 	Logger::console.info(true) << msg << message;
+}
+
+int AffectorRoad::getFamilyID() {
+	return familyID;
+}
+
+bool AffectorRoad::isEnabled() {
+	return informationHeader.isEnabled();
 }

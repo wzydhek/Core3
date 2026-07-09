@@ -1,0 +1,63 @@
+#include "DroidMaintenanceSessionRunMenuSuiCallback.h"
+
+DroidMaintenanceSessionRunMenuSuiCallback::DroidMaintenanceSessionRunMenuSuiCallback(ZoneServer* server) : SuiCallback(server) {
+}
+
+void DroidMaintenanceSessionRunMenuSuiCallback::run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
+	bool cancelPressed = (eventIndex == 1);
+
+	ManagedReference<Facade*> facade = player->getActiveSession(SessionFacadeType::DROIDMAINTENANCERUN);
+	ManagedReference<DroidMaintenanceSession*> session = dynamic_cast<DroidMaintenanceSession*>(facade.get());
+
+	if (session == nullptr) {
+		player->dropActiveSession(SessionFacadeType::DROIDMAINTENANCERUN);
+		return;
+	}
+
+	if (!suiBox->isListBox() || args->size() < 2 || cancelPressed) {
+		session->cancelSession();
+		return;
+	}
+
+	if (args->size() < 2)
+		return;
+
+	bool otherPressed = !Bool::valueOf(args->get(0).toString());
+
+	if (otherPressed) {
+		session->performMaintenanceRun();
+		return;
+	} else {
+		uint64 idx = Long::unsignedvalueOf(args->get(1).toString());
+		SuiListBox* suiListBox = cast<SuiListBox*>(suiBox);
+		if (idx == -1) {
+			session->sendMaintenanceTransferBox();
+			return;
+		}
+		uint64 itemId = suiListBox->getMenuObjectID(idx);
+		// lookup structure
+		StructureObject* stobject = nullptr;
+		ManagedReference<SceneObject*> structure = player->getZoneServer()->getObject(itemId);
+		if (structure != nullptr && structure->isStructureObject()) {
+			stobject = cast<StructureObject*>(structure.get());
+			if (stobject != nullptr) {
+				session->setSelectedStructure(stobject);
+				session->sendMaintenanceTransferBox();
+			} else {
+				player->sendSystemMessage("@pet/droid_modules:droid_maint_data_error");
+				return;
+			}
+		} else {
+			player->sendSystemMessage("@pet/droid_modules:droid_maint_data_error");
+			return;
+		}
+	}
+
+	// int idx = Integer::valueOf(args->get(0).toString());
+
+	// SuiListBox* box = cast<SuiListBox*>( suiBox);
+
+	// byte menuID = box->getMenuObjectID(idx);
+
+	// session->handleMenuSelect(player, menuID, box);
+}

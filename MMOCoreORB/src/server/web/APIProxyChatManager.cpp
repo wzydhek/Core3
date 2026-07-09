@@ -61,7 +61,10 @@
 namespace server {
  namespace web3 {
 
-String APIProxyChatManager::expandTo(String toExpr, Function<String(String playerName)> process, bool skipOffline) const {
+APIProxyChatManager::APIProxyChatManager() : BaseAPIProxy("ChatManager") {
+}
+
+ String APIProxyChatManager::expandTo(String toExpr, Function<String(String playerName)> process, bool skipOffline) const {
 	auto server = getZoneServer();
 
 	if (server == nullptr) {

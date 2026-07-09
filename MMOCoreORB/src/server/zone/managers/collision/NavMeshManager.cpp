@@ -314,6 +314,10 @@ void NavMeshManager::stop() {
 	cancelAllJobs();
 }
 
+bool NavMeshManager::isStopped() const {
+	return stopped;
+}
+
 bool NavMeshManager::AABBEncompasessAABB(const AABB& lhs, const AABB& rhs) {
     const Vector3 &lMin = *lhs.getMinBound();
     const Vector3 &lMax = *lhs.getMaxBound();

@@ -142,4 +142,19 @@ void ServerDatabase::updateDatabaseSchema() {
 		"ALTER TABLE `account_log` MODIFY COLUMN `ip_address` VARCHAR(64);"
 	);
 }
+
+Database* ServerDatabase::instance() {
+	if (databases == nullptr)
+		throw DatabaseException("No Server Database initiated");
+
+	int i = currentDB.postIncrement() % databases->size();
+
+	return databases->get(i);
+}
+
+int ServerDatabase::getSchemaVersion() const {
+	return dbSchemaVersion;
+}
+
 #endif // !WITH_SWGREALMS_API
+

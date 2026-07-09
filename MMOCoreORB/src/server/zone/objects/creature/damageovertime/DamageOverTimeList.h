@@ -17,40 +17,17 @@ protected:
 	Mutex guard;
 
 public:
-	DamageOverTimeList() {
-		setNoDuplicateInsertPlan();
-		setLoggingName("DamageOverTimeList");
-	}
+	DamageOverTimeList();
 
-	DamageOverTimeList(const DamageOverTimeList& list) : VectorMap<uint64, Vector<DamageOverTime>>(list), Logger(), guard() {
-		setNoDuplicateInsertPlan();
+	DamageOverTimeList(const DamageOverTimeList& list);
 
-		nextTick = list.nextTick;
-	}
+	DamageOverTimeList& operator=(const DamageOverTimeList& list);
 
-	DamageOverTimeList& operator=(const DamageOverTimeList& list) {
-		if (this == &list) {
-			return *this;
-		}
+	friend void to_json(nlohmann::json& j, const DamageOverTimeList& l);
 
-		nextTick = list.nextTick;
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-		return *this;
-	}
-
-	friend void to_json(nlohmann::json& j, const DamageOverTimeList& l) {
-		const VectorMap<uint64, Vector<DamageOverTime>>& map = l;
-
-		to_json(j, map);
-	}
-
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return VectorMap<uint64, Vector<DamageOverTime>>::toBinaryStream(stream);
-	}
-
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		return VectorMap<uint64, Vector<DamageOverTime>>::parseFromBinaryStream(stream);
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
 	uint64 activateDots(CreatureObject* victim);
 	uint32 addDot(CreatureObject* victim, CreatureObject* attacker, uint64 parentObjectID, uint32 duration, uint64 dotType, uint8 pool, uint32 strength, float potency, uint32 defense, int secondaryStrength = 0);
@@ -68,32 +45,15 @@ public:
 
 	int getStrength(uint8 pool, uint64 dotType);
 
-	uint64 generateKey(uint64 dotType, uint8 pool, uint64 parentObjectID) {
-		// System::out << "oid: " << objectID << " pool: " << pool << " dotType: " << dotType << endl;
-		uint64 key = parentObjectID;
-		key ^= Long::hashCode((uint64)pool);
-		key ^= Long::hashCode((uint64)dotType);
-		// System::out << "key " << key << endl;
-		return key;
-	}
+	uint64 generateKey(uint64 dotType, uint8 pool, uint64 parentObjectID);
 
-	inline void setNextTick(Time time) {
-		nextTick = time;
-	}
+	void setNextTick(Time time);
 
-	inline void setNextTick(uint32 delay) {
-		nextTick.addMiliTime(delay * 1000);
-	}
+	void setNextTick(uint32 delay);
 
-	inline Time getNextTick() {
-		return nextTick;
-	}
+	Time getNextTick();
 
-	bool hasDot() {
-		return !isEmpty();
-	}
+	bool hasDot();
 
-	inline bool isNextTickPast() {
-		return nextTick.isPast();
-	}
+	bool isNextTickPast();
 };

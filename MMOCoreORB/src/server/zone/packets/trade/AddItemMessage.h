@@ -4,11 +4,9 @@
 
 #pragma once
 
+#include "engine/service/proto/BaseMessage.h"
+
 class AddItemMessage : public BaseMessage {
 public:
-	AddItemMessage(uint64 itemID) : BaseMessage(14) {
-		insertShort(1);
-		insertInt(0x1E8D1356);
-		insertLong(itemID);
-	}
+	AddItemMessage(uint64 itemID);
 };

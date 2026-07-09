@@ -13,24 +13,7 @@ class CheckAuctionsTask : public Task {
 	ManagedWeakReference<AuctionManager*> auctionManager;
 
 public:
-	CheckAuctionsTask(AuctionManager* manager) {
-		auctionManager = manager;
+	CheckAuctionsTask(AuctionManager* manager);
 
-		setCustomTaskQueue("slowQueue");
-	}
-
-	void run() {
-		ManagedReference<AuctionManager*> strongRef = auctionManager.get();
-
-		if (strongRef == nullptr)
-			return;
-
-		ZoneServer* server = strongRef->getZoneServer();
-
-		if (server == nullptr || server->isServerShuttingDown())
-			return;
-
-		strongRef->checkAuctions();
-		strongRef->checkVendorItems();
-	}
+	void run();
 };

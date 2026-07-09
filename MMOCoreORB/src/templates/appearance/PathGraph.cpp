@@ -8,6 +8,15 @@
 #include "PathGraph.h"
 #include "templates/appearance/FloorMesh.h"
 
+PathGraph::PathGraph(FloorMesh* floor) {
+	floorMesh = floor;
+	type = None;
+}
+
+PathGraph::~PathGraph() {
+	pathNodes.forEach([](auto node) { delete node; });
+}
+
 uint32 PathNode::getID() const {
 	int cellID = pathGraph->getFloorMesh()->getCellID();
 
@@ -84,6 +93,13 @@ void PathGraph::readObject(IffStream* iffStream) {
 	connectNodes(pathEdges);
 }
 
+float PathGraph::calculateManhattanDistance(const PathNode* node1, const PathNode* node2) {
+	/*return abs(node1->getX() - node2->getX()) + abs(node1->getY() - node2->getY())
+			+ abs(node1->getZ() - node2->getZ());*/
+
+	return node1->getPosition().squaredDistanceTo(node2->getPosition());
+}
+
 const PathNode* PathGraph::getNode(int globalNumberID) const {
 	for (int i = 0; i < pathNodes.size(); ++i) {
 		const PathNode* pathNode = pathNodes.getUnsafe(i);
@@ -93,6 +109,10 @@ const PathNode* PathGraph::getNode(int globalNumberID) const {
 	}
 
 	return nullptr;
+}
+
+const PathNode* PathGraph::findNearestNode(float x, float z, float y) const {
+	return findNearestNode(Vector3(x, y, z));
 }
 
 const PathNode* PathGraph::findGlobalNode(int globalNodeID) const {
@@ -180,4 +200,46 @@ void PathGraph::connectNodes(Vector<PathEdge>& pathEdges) {
 
 		fromNode->addChild(toNode);
 	}
+}
+
+void PathGraph::addPathNode(PathNode* pathNode) {
+	pathNodes.add(pathNode);
+}
+
+const Vector<PathEdge>* PathGraph::getPathEdges() const {
+	return &pathEdges;
+}
+
+const Vector<PathNode*>* PathGraph::getPathNodes() const {
+	return &pathNodes;
+}
+
+Vector<const PathNode*> PathGraph::getGlobalNodes() const {
+	Vector<const PathNode*> nodes;
+
+	for (int i = 0; i < pathNodes.size(); ++i) {
+		if (pathNodes.get(i)->getGlobalGraphNodeID() != -1)
+			nodes.add(pathNodes.get(i));
+	}
+
+	return nodes;
+}
+
+Vector<PathNode*> PathGraph::getGlobalNodes() {
+	Vector<PathNode*> nodes;
+
+	for (int i = 0; i < pathNodes.size(); ++i) {
+		if (pathNodes.get(i)->getGlobalGraphNodeID() != -1)
+			nodes.add(pathNodes.get(i));
+	}
+
+	return nodes;
+}
+
+const FloorMesh* PathGraph::getFloorMesh() const {
+	return floorMesh;
+}
+
+PathGraph::PathGraphType PathGraph::getType() const {
+	return type;
 }

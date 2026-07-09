@@ -7,6 +7,8 @@
 
 #pragma once
 
+#include "engine/service/proto/BaseMessage.h"
+
 /* Valid elements found:
  * radar
  * toolbar
@@ -24,13 +26,6 @@ public:
 	 * @param enable If true, element is visible, otherwise disables element
 	 * @param binkCount times the element will blink
 	 */
-	NewbieTutorialEnableHudElement(const String& element, bool enable = true, float blinkCount = 0.f) : BaseMessage() {
-		insertShort(0x04);
-		insertInt(0xCA375124);  // CRC
-
-		insertAscii(element); //see elements above.
-		insertBoolean(enable);
-		insertFloat(blinkCount); // times the element blinks
-   }
+	NewbieTutorialEnableHudElement(const String& element, bool enable = true, float blinkCount = 0.f);
 
 };

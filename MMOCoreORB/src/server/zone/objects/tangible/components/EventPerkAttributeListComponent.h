@@ -10,6 +10,8 @@
 #include "server/zone/objects/scene/components/AttributeListComponent.h"
 #include "server/zone/objects/tangible/components/EventPerkDataComponent.h"
 #include "server/zone/objects/tangible/deed/eventperk/EventPerkDeed.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/scene/SceneObject.h"
 
 class EventPerkAttributeListComponent : public AttributeListComponent {
 public:
@@ -19,40 +21,5 @@ public:
 	 * @post { this object is locked, menuResponse is complete}
 	 * @param menuResponse ObjectMenuResponse that will be sent to the client
 	 */
-	void fillAttributeList(AttributeListMessage* alm, CreatureObject* player, SceneObject* sceneObject) const {
-		if (player == nullptr || sceneObject == nullptr || !sceneObject->isTangibleObject())
-			return;
-
-		// Fill from parent
-		AttributeListComponent::fillAttributeList(alm, player, sceneObject);
-
-		EventPerkDataComponent* data = cast<EventPerkDataComponent*>(sceneObject->getDataObjectComponent()->get());
-
-		if (data == nullptr) {
-			error() << "Event Perk EventPerkDataComponent is nullptr, destroying EventPerk ID: " << sceneObject->getObjectID();
-
-			Locker lock(sceneObject);
-			sceneObject->destroyObjectFromWorld(true);
-			sceneObject->destroyObjectFromDatabase(true);
-
-			return;
-		}
-
-		EventPerkDeed* deed = data->getDeed();
-
-		if (deed == nullptr) {
-			error() << "Event Perk Deed is nullptr, destroying EventPerk ID: " << sceneObject->getObjectID();
-
-			Locker lock(sceneObject);
-			sceneObject->destroyObjectFromWorld(true);
-			sceneObject->destroyObjectFromDatabase(true);
-
-			return;
-		}
-
-		ManagedReference<CreatureObject*> owner = deed->getOwner().get();
-		if (owner != nullptr) {
-			alm->insertAttribute("owner", owner->getFirstName());
-		}
-	}
+	void fillAttributeList(AttributeListMessage* alm, CreatureObject* player, SceneObject* sceneObject) const;
 };

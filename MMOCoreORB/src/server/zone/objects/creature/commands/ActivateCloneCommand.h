@@ -4,41 +4,11 @@
 
 #pragma once
 
-#include "server/zone/ZoneServer.h"
-#include "server/zone/managers/player/PlayerManager.h"
+#include "QueueCommand.h"
 
 class ActivateCloneCommand : public QueueCommand {
 public:
-	ActivateCloneCommand(const String& name, ZoneProcessServer* server) : QueueCommand(name, server) {
-	}
+	ActivateCloneCommand(const String& name, ZoneProcessServer* server);
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		if (!creature->isPlayerCreature())
-			return GENERALERROR;
-
-		CreatureObject* player = cast<CreatureObject*>(creature);
-
-		if (!player->isDead())
-			return GENERALERROR;
-
-		auto zoneServer = creature->getZoneServer();
-
-		if (zoneServer == nullptr)
-			return GENERALERROR;
-
-		auto playerManager = zoneServer->getPlayerManager();
-
-		if (playerManager == nullptr)
-			return GENERALERROR;
-
-		playerManager->sendActivateCloneRequest(player);
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 };

@@ -14,8 +14,7 @@ protected:
 	int affectorType;
 
 public:
-	AffectorProceduralRule() : affectorType(0) {
-	}
+	AffectorProceduralRule();
 
 	const static int HEIGHTTYPE = 0x100;
 	const static int HEIGHTFRACTAL = 0x101;
@@ -31,20 +30,12 @@ public:
 	virtual void process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator) {
 	}
 
-	inline bool isHeightTypeAffector() const {
-		return affectorType & HEIGHTTYPE;
-	}
+	bool isHeightTypeAffector() const;
 
-	inline bool isEnvoronmentTypeAffector() const {
-		return affectorType & ENVIRONMENT;
-	}
+	bool isEnvoronmentTypeAffector() const;
 
-	inline int getAffectorType() const {
-		return affectorType;
-	}
+	int getAffectorType() const;
 
-	virtual bool isEnabled() {
-		return false;
-	}
+	virtual bool isEnabled();
 
 };

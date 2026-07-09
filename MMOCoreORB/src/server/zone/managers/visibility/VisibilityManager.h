@@ -159,13 +159,9 @@ public:
 	 */
 	void performVisiblityDecay();
 
-	int getPvpRatingDivisor() {
-		return pvpRatingDivisor;
-	}
+	int getPvpRatingDivisor();
 
-	unsigned int getVisDecayTickRate() {
-		return visDecayTickRate;
-	}
+	unsigned int getVisDecayTickRate();
 };
 
 }

@@ -16,10 +16,7 @@ class ChatParameter : public virtual Object {
 protected:
 	virtual void addToPacketStream(Message* packet) const = 0;
 
-	virtual void insertHeaderToMessage(Message* message) const {
-		message->insertByte(TYPE_STRINGID);
-		message->insertInt(STRINGID);
-	}
+	virtual void insertHeaderToMessage(Message* message) const;
 
 public:
 	static const byte TYPE_STRINGID = 1;
@@ -31,23 +28,14 @@ public:
 	ChatParameter();
 	ChatParameter(const ChatParameter& id);
 
-	ChatParameter& operator=(const ChatParameter& id) {
-		if (&id == this)
-			return *this;
-
-		return *this;
-	}
+	ChatParameter& operator=(const ChatParameter& id);
 
 	void insertToMessage(Message* message) const;
 	virtual void parse(Message* message) = 0;
 
-	inline bool isStringIdParameter() {
-		return false;
-	}
+	inline bool isStringIdParameter();
 
-	inline bool isWaypointParameter() {
-		return false;
-	}
+	inline bool isWaypointParameter();
 };
 
 }

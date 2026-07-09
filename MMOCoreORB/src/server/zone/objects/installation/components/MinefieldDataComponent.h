@@ -25,97 +25,42 @@ protected:
 	SynchronizedSortedVector<uint64> notifiedPlayers;
 
 public:
-	MinefieldDataComponent() {
-		attackSpeed = 5.f;
-		maxRange = 32.f;
+	MinefieldDataComponent();
 
-		templateData = nullptr;
-		explodeDelay.updateToCurrentTime();
+	virtual ~MinefieldDataComponent();
 
-		addSerializableVariables();
-	}
+	void writeJSON(nlohmann::json& j) const;
 
-	virtual ~MinefieldDataComponent() {
-	}
+	void initializeTransientMembers();
 
-	void writeJSON(nlohmann::json& j) const {
-		DataObjectComponent::writeJSON(j);
+	bool isMinefieldData();
 
-		SERIALIZE_JSON_MEMBER(mines);
-	}
+	bool canExplode();
 
-	void initializeTransientMembers() {
-		// Logger::Logger tlog("minefieldata");
-		// tlog.info("initializing minefield transients",true);
-		if (getParent() != nullptr) {
-			templateData = dynamic_cast<SharedInstallationObjectTemplate*>(getParent()->getObjectTemplate());
-			attackSpeed = 5;
-		}
-	}
+	int getCapacity();
 
-	bool isMinefieldData() {
-		return true;
-	}
+	void updateCooldown(uint64 cooldown);
 
-	bool canExplode() {
-		return explodeDelay.isPast();
-	}
+	void addMine(WeaponObject* weapon);
 
-	int getCapacity() {
-		return CAPACITY;
-	}
+	WeaponObject* getMine(int indx);
 
-	void updateCooldown(uint64 cooldown) {
-		explodeDelay.updateToCurrentTime();
-		explodeDelay.addMiliTime(cooldown);
-	}
+	WeaponObject* removeMine(int indx);
 
-	void addMine(WeaponObject* weapon) {
-		if (weapon == nullptr) {
-			return;
-		}
+	int getMineCapacity();
 
-		mines.add(weapon);
-	}
+	int getMineCount();
 
-	WeaponObject* getMine(int indx) {
-		return mines.get(indx);
-	}
+	void setMaxRange(float val);
 
-	WeaponObject* removeMine(int indx) {
-		return mines.remove(indx);
-	}
+	float getMaxRange();
 
-	int getMineCapacity() {
-		return CAPACITY;
-	}
+	bool hasNotifiedPlayer(const uint64 oid);
 
-	int getMineCount() {
-		return mines.size();
-	}
+	void addNotifiedPlayer(const uint64 oid);
 
-	void setMaxRange(float val) {
-		maxRange = val;
-	}
-
-	float getMaxRange() {
-		return maxRange;
-	}
-
-	bool hasNotifiedPlayer(const uint64 oid) {
-		return notifiedPlayers.contains(oid);
-	}
-
-	void addNotifiedPlayer(const uint64 oid) {
-		notifiedPlayers.put(oid);
-	}
-
-	void removeNotifiedPlayer(const uint64 oid) {
-		notifiedPlayers.drop(oid);
-	}
+	void removeNotifiedPlayer(const uint64 oid);
 
 private:
-	void addSerializableVariables() {
-		addSerializableVariable("mines", &mines);
-	}
+	void addSerializableVariables();
 };

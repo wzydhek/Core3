@@ -12,45 +12,11 @@
 
 class GuildObjectDeltaMessage3 : public DeltaMessage {
 public:
-	GuildObjectDeltaMessage3(uint64 oid)
-			: DeltaMessage(oid, 0x47494C44, 3) {
-	}
+	GuildObjectDeltaMessage3(uint64 oid);
 
+	void addGuild(GuildObject* guild);
 
-	void addGuild(GuildObject* guild) {
-		startUpdate(0x04);
-		startList(1, 0);
-		insertByte(0x01);
+	void removeGuild(GuildObject* guild);
 
-		if (guild == nullptr) {
-			insertAscii("");
-			return;
-		}
-
-		StringBuffer guildString;
-		guildString << guild->getGuildID() << ":" << guild->getGuildAbbrev();
-		insertAscii(guildString.toString());
-	}
-
-	void removeGuild(GuildObject* guild) {
-		startUpdate(0x04);
-		startList(1, 0);
-		insertByte(0x00);
-
-		if (guild == nullptr) {
-			insertAscii("");
-			return;
-		}
-
-		StringBuffer guildString;
-		guildString << guild->getGuildID() << ":" << guild->getGuildAbbrev();
-		insertAscii(guildString.toString());
-	}
-
-	void removeAllGuilds() {
-		startUpdate(0x04);
-		insertInt(0);
-		insertInt(0);
-		insertByte(0x03);
-	}
+	void removeAllGuilds();
 };

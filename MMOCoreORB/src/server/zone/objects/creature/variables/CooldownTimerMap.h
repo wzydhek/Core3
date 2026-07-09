@@ -14,93 +14,33 @@ class CooldownTimer : public Variable {
 	Time timeStamp;
 
 public:
-	CooldownTimer() : Variable() {
-		//timeStamp = nullptr;
-	}
+	CooldownTimer();
 
-	CooldownTimer(const Time& timestamp) : Variable() {
-		timeStamp = timestamp;
-	}
+	CooldownTimer(const Time& timestamp);
 
-	CooldownTimer(const CooldownTimer& obj) : Variable() {
-		timeStamp = obj.timeStamp;
-	}
+	CooldownTimer(const CooldownTimer& obj);
 
-	CooldownTimer& operator=(const CooldownTimer& tim) {
-		timeStamp = tim.timeStamp;
+	CooldownTimer& operator=(const CooldownTimer& tim);
 
-		return *this;
-	}
+	void operator=(Time obj);
 
-	void operator=(Time obj) {
-		timeStamp = obj;
-	}
+	bool toString(String& str);
 
-	bool toString(String& str) {
-		timeStamp.toString(str);
+	bool parseFromString(const String& str, int version = 0);
 
-		return true;
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	bool parseFromString(const String& str, int version = 0) {
-		Time parsed;
+	friend void to_json(nlohmann::json& j, const CooldownTimer& t);
 
-		parsed.parseFromString(str);
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
-		if (parsed.isPast())
-			return false;
+	bool isPast() const;
 
-		timeStamp = parsed;
+	void addMiliTime(uint64 mtime);
 
-		return true;
-	}
+	Time* getTime();
 
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		timeStamp.toBinaryStream(stream);
-
-		return true;
-	}
-
-	friend void to_json(nlohmann::json& j, const CooldownTimer& t) {
-		j["timeStamp"] = t.timeStamp;
-	}
-
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		Time parsed;
-
-		parsed.parseFromBinaryStream(stream);
-
-		if (parsed.isPast())
-			return false;
-
-		timeStamp = parsed;
-
-		return true;
-	}
-
-	bool isPast() const {
-		return timeStamp.isPast();
-	}
-
-	void addMiliTime(uint64 mtime) {
-		timeStamp.addMiliTime(mtime);
-	}
-
-	/*Time& get() {
-		return timeStamp;
-	}
-
-	operator Time*() const {
-		return &timeStamp;
-	}*/
-
-	Time* getTime() {
-		return &timeStamp;
-	}
-
-	const Time* getTime() const {
-		return &timeStamp;
-	}
+	const Time* getTime() const;
 };
 
 class CooldownTimerMap : public Object {
@@ -108,89 +48,27 @@ class CooldownTimerMap : public Object {
 	mutable Mutex cooldownMutex;
 
 public:
-	CooldownTimerMap() : timers(1, 1) {
-	}
+	CooldownTimerMap();
 
-	CooldownTimerMap(const CooldownTimerMap& map) : Object(), cooldownMutex() {
-		timers = map.timers;
-	}
+	CooldownTimerMap(const CooldownTimerMap& map);
 
-	~CooldownTimerMap() {
-	}
+	~CooldownTimerMap();
 
-	CooldownTimerMap& operator=(const CooldownTimerMap& map) {
-		if (this == &map)
-			return *this;
+	CooldownTimerMap& operator=(const CooldownTimerMap& map);
 
-		timers = map.timers;
-		cooldownMutex = map.cooldownMutex;
+	bool isPast(const String& cooldownName) const;
 
-		return *this;
-	}
+	void updateToCurrentAndAddMili(const String& cooldownName, uint64 mili);
 
-	bool isPast(const String& cooldownName) const {
-		Locker locker(&cooldownMutex);
+	Time* updateToCurrentTime(const String& cooldownName);
 
-		auto entry = timers.getEntry(cooldownName);
+	void addMiliTime(const String& cooldownName, uint64 mili);
 
-		if (entry == nullptr)
-			return true;
+	const Time* getTime(const String& cooldownName) const;
 
-		return entry->getValue().isPast();
-	}
+	Object* clone();
 
-	void updateToCurrentAndAddMili(const String& cooldownName, uint64 mili) {
-		Locker locker(&cooldownMutex);
-
-		Time* cooldown = updateToCurrentTime(cooldownName);
-
-		cooldown->addMiliTime(mili);
-	}
-
-	Time* updateToCurrentTime(const String& cooldownName) {
-		Locker locker(&cooldownMutex);
-
-		if (!timers.containsKey(cooldownName)) {
-			timers.put(cooldownName, Time());
-		}
-
-		Time* cooldown = timers.get(cooldownName).getTime();
-		cooldown->updateToCurrentTime();
-
-		return cooldown;
-	}
-
-	void addMiliTime(const String& cooldownName, uint64 mili) {
-		Locker locker(&cooldownMutex);
-
-		if (!timers.containsKey(cooldownName)) {
-			timers.put(cooldownName, Time());
-		}
-
-		Time* cooldown = timers.get(cooldownName).getTime();
-		cooldown->addMiliTime(mili);
-	}
-
-	const Time* getTime(const String& cooldownName) const {
-		Locker locker(&cooldownMutex);
-
-		auto entry = timers.getEntry(cooldownName);
-
-		if (entry == nullptr)
-			return nullptr;
-
-		const Time* cooldown = entry->getValue().getTime();
-
-		return cooldown;
-	}
-
-	Object* clone() {
-		return ObjectCloner<CooldownTimerMap>::clone(this);
-	}
-
-	Object* clone(void* object) {
-		return TransactionalObjectCloner<CooldownTimerMap>::clone(this);
-	}
+	Object* clone(void* object);
 
 
 };

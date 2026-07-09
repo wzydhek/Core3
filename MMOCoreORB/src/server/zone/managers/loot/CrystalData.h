@@ -21,134 +21,44 @@ class CrystalData : public Object {
 	int maxWoundChance;
 
 public:
-	CrystalData() : Object(), minDamage(0), maxDamage(0), minHitpoints(0), maxHitpoints(0), minHealthSac(0), maxHealthSac(0), minActionSac(0), maxActionSac(0),
-		minMindSac(0), maxMindSac(0), minAttackSpeed(0.0), maxAttackSpeed(0.0), minForceCost(0.0), maxForceCost(0.0), minWoundChance(0), maxWoundChance(0) {
-	}
+	CrystalData();
 
-	CrystalData(const CrystalData& data) : Object() {
-		minDamage = data.minDamage;
-		maxDamage = data.maxDamage;
-		minHitpoints = data.minHitpoints;
-		maxHitpoints = data.maxHitpoints;
-		minHealthSac = data.minHealthSac;
-		maxHealthSac = data.maxHealthSac;
-		minActionSac = data.minActionSac;
-		maxActionSac = data.maxActionSac;
-		minMindSac = data.minMindSac;
-		maxMindSac = data.maxMindSac;
-		minAttackSpeed = data.minAttackSpeed;
-		maxAttackSpeed = data.maxAttackSpeed;
-		minForceCost = data.minForceCost;
-		maxForceCost = data.maxForceCost;
-		minWoundChance = data.minWoundChance;
-		maxWoundChance = data.maxWoundChance;
-	}
+	CrystalData(const CrystalData& data);
 
-	CrystalData& operator=(const CrystalData& data) {
-		if (this == &data)
-			return *this;
+	CrystalData& operator=(const CrystalData& data);
 
-		minDamage = data.minDamage;
-		maxDamage = data.maxDamage;
-		minHitpoints = data.minHitpoints;
-		maxHitpoints = data.maxHitpoints;
-		minHealthSac = data.minHealthSac;
-		maxHealthSac = data.maxHealthSac;
-		minActionSac = data.minActionSac;
-		maxActionSac = data.maxActionSac;
-		minMindSac = data.minMindSac;
-		maxMindSac = data.maxMindSac;
-		minAttackSpeed = data.minAttackSpeed;
-		maxAttackSpeed = data.maxAttackSpeed;
-		minForceCost = data.minForceCost;
-		maxForceCost = data.maxForceCost;
-		minWoundChance = data.minWoundChance;
-		maxWoundChance = data.maxWoundChance;
+	void readObject(LuaObject* luaObject);
 
-		return *this;
-	}
+	int getMinDamage() const;
 
-	void readObject(LuaObject* luaObject) {
-		minDamage = luaObject->getIntField("minDamage");
-		maxDamage = luaObject->getIntField("maxDamage");
-		minHitpoints = luaObject->getIntField("minHitpoints");
-		maxHitpoints = luaObject->getIntField("maxHitpoints");
-		minHealthSac = luaObject->getIntField("minHealthSac");
-		maxHealthSac = luaObject->getIntField("maxHealthSac");
-		minActionSac = luaObject->getIntField("minActionSac");
-		maxActionSac = luaObject->getIntField("maxActionSac");
-		minMindSac = luaObject->getIntField("minMindSac");
-		maxMindSac = luaObject->getIntField("maxMindSac");
-		minAttackSpeed = luaObject->getFloatField("minAttackSpeed");
-		maxAttackSpeed = luaObject->getFloatField("maxAttackSpeed");
-		minForceCost = luaObject->getFloatField("minForceCost");
-		maxForceCost = luaObject->getFloatField("maxForceCost");
-		minWoundChance = luaObject->getIntField("minWoundChance");
-		maxWoundChance = luaObject->getIntField("maxWoundChance");
-	}
+	int getMaxDamage() const;
 
-	inline int getMinDamage() const {
-		return minDamage;
-	}
+	int getMinHitpoints() const;
 
-	inline int getMaxDamage() const {
-		return maxDamage;
-	}
+	int getMaxHitpoints() const;
 
-	inline int getMinHitpoints() const {
-		return minHitpoints;
-	}
+	int getMinHealthSac() const;
 
-	inline int getMaxHitpoints() const {
-		return maxHitpoints;
-	}
+	int getMaxHealthSac() const;
 
-	inline int getMinHealthSac() const {
-		return minHealthSac;
-	}
+	int getMinActionSac() const;
 
-	inline int getMaxHealthSac() const {
-		return maxHealthSac;
-	}
+	int getMaxActionSac() const;
 
-	inline int getMinActionSac() const {
-		return minActionSac;
-	}
+	int getMinMindSac() const;
 
-	inline int getMaxActionSac() const {
-		return maxActionSac;
-	}
+	int getMaxMindSac() const;
 
-	inline int getMinMindSac() const {
-		return minMindSac;
-	}
+	int getMinWoundChance() const;
 
-	inline int getMaxMindSac() const {
-		return maxMindSac;
-	}
+	float getMinAttackSpeed() const;
 
-	inline int getMinWoundChance() const {
-		return minWoundChance;
-	}
+	float getMaxAttackSpeed() const;
 
-	inline float getMinAttackSpeed() const {
-		return minAttackSpeed;
-	}
+	float getMinForceCost() const;
 
-	inline float getMaxAttackSpeed() const {
-		return maxAttackSpeed;
-	}
+	float getMaxForceCost() const;
 
-	inline float getMinForceCost() const {
-		return minForceCost;
-	}
-
-	inline float getMaxForceCost() const {
-		return maxForceCost;
-	}
-
-	inline int getMaxWoundChance() const {
-		return maxWoundChance;
-	}
+	int getMaxWoundChance() const;
 
 };

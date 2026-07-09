@@ -9,6 +9,8 @@
 
 #include "ScreenHandler.h"
 #include "engine/log/Logger.h"
+#include "system/io/ObjectInputStream.h"
+#include "system/io/ObjectOutputStream.h"
 
 namespace server {
 namespace zone {
@@ -21,17 +23,13 @@ class LuaScreenHandler : public ScreenHandler, Logger, public Object {
 protected:
 
 public:
-	LuaScreenHandler() : ScreenHandler(), Logger("LuaScreenHandler") {}
+	LuaScreenHandler();
 
-	ConversationScreen* handleScreen(CreatureObject* conversingPlayer, SceneObject* conversingNPC, int selectedOption, ConversationScreen* conversationScreen);
+	virtual ConversationScreen* handleScreen(CreatureObject* conversingPlayer, SceneObject* conversingNPC, int selectedOption, ConversationScreen* conversationScreen) = 0;
 
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return true;
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		return true;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
 
 } // namespace screenhandlers

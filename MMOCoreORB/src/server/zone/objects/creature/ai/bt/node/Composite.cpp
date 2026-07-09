@@ -9,7 +9,62 @@
 #include "server/zone/objects/creature/ai/AiAgent.h"
 
 using namespace server::zone::objects::creature::ai::bt;
-using namespace server::zone::objects::creature::ai::bt::node;
+
+Composite::Composite(const String& className, const uint32 id, const LuaObject& args) : Behavior(className, id, args) {
+}
+
+Composite::Composite(const Composite& b) : Behavior(b), children(b.children) {
+}
+
+Composite& Composite::operator=(const Composite& b) {
+	if (this == &b)
+		return *this;
+
+	Behavior::operator=(b);
+	children = b.children;
+
+	return *this;
+}
+
+Composite::~Composite() {
+}
+
+bool Composite::isComposite() const {
+	return true;
+}
+
+bool Composite::hasChild(Behavior* c) const {
+	for (int idx = 0; idx < children.size(); ++idx)
+		if (children.get(idx) == c)
+			return true;
+
+	return false;
+}
+
+Behavior* Composite::getChild(uint32 cID) const {
+	for (int idx = 0; idx < children.size(); ++idx)
+		if (children.get(idx)->getID() == cID)
+			return children.get(idx);
+
+	return NULL;
+}
+
+Vector<const Behavior*> Composite::getRecursiveChildList() const {
+	Vector<const Behavior*> retVal;
+	retVal.add(this);
+
+	for (int idx = 0; idx < children.size(); ++idx) {
+		retVal.addAll(children.get(idx)->getRecursiveChildList());
+	}
+
+	return retVal;
+}
+
+void Composite::addChild(Reference<Behavior*> child) {
+	assert(child != this);
+
+	children.add(child);
+}
 
 Behavior::Status Composite::doAction(AiAgent* agent) const {
 #ifdef DEBUG_AI
@@ -90,4 +145,27 @@ String Composite::print() const {
 	}
 	stream << "]";
 	return stream.toString();
+}
+
+bool Composite::checkConditions(AiAgent* agent) const {
+	if (children.size() <= 0)
+		return false;
+
+	if (!Behavior::checkConditions(agent)) {
+		return true;
+	}
+
+	return true;
+}
+
+Vector<Reference<Behavior*>> Composite::shuffleChildren() const {
+	Vector<Reference<Behavior*>> ran = children;
+
+	for (int i = 0; i < ran.size(); ++i) {
+		int index = (int)System::random(ran.size() - 1 - i) + i;
+		Reference<Behavior*> temp = ran.set(i, ran.get(index));
+		ran.set(index, temp);
+	}
+
+	return ran;
 }

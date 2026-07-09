@@ -1,6 +1,17 @@
 #include "CompositeVolume.h"
 #include "BoundingVolumeFactory.h"
 
+CompositeVolume::CompositeVolume() : bbox(Vector3(0, 0, 0), Vector3(0, 0, 0)) {
+}
+
+bool CompositeVolume::isCompositeVolume() {
+	return true;
+}
+
+const AABB& CompositeVolume::getBoundingBox() const {
+	return bbox;
+}
+
 void CompositeVolume::read(IffStream *iff) {
 	iff->openForm('0000');
 	uint32 chunks = iff->getSubChunksNumber();
@@ -10,6 +21,7 @@ void CompositeVolume::read(IffStream *iff) {
 	}
 	iff->closeForm('0000');
 }
+
 #ifdef OSG_RENDERER
 osg::ref_ptr<osg::Node> CompositeVolume::draw() const {
 	osg::ref_ptr<osg::Group> group(new osg::Group);

@@ -3,6 +3,10 @@
 #include "server/zone/objects/ship/ShipChassisData.h"
 #include "server/zone/objects/ship/ComponentSlots.h"
 
+SpaceCollisionManager::SpaceCollisionManager() {
+	setLoggingName("SpaceCollisionManager");
+}
+
 float SpaceCollisionManager::getProjectileCollision(ShipObject* ship, const ShipProjectile* projectile, SpaceCollisionResult& result, Vector<ManagedReference<SceneObject*>>& targetVectorCopy) {
 	if (ship == nullptr || projectile == nullptr || targetVectorCopy.size() == 0) {
 		return MISS;

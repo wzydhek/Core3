@@ -1123,3 +1123,73 @@ const StructureFootprint* TemplateManager::loadStructureFootprint(const String& 
 
 	return structureFootprint;
 }
+
+TemplateCRCMap& TemplateManager::getTemplateCRCMap() const {
+	return *templateCRCMap;
+}
+
+bool TemplateManager::containsTemplateType(uint32 type) const {
+	return templateFactory.containsObject(type);
+}
+
+const PlanetMapCategory* TemplateManager::getPlanetMapCategoryByName(const String& name) const {
+	return planetMapCategoryList.get(name);
+}
+
+const PlanetMapCategory* TemplateManager::getPlanetMapCategoryByCrc(int crc) const {
+	return planetMapCategoryList.get(crc);
+}
+
+const PlanetMapCategory* TemplateManager::getPlanetMapCategoryById(int index) const {
+	auto iterator = planetMapCategoryList.iterator();
+
+	while (iterator.hasNext()) {
+		const Reference<PlanetMapCategory*>& cat = iterator.getNextValue();
+
+		if (cat->getIndex() == index)
+			return cat.get();
+	}
+
+	return nullptr;
+}
+
+// Planet Map Sub Categories
+const PlanetMapSubCategory* TemplateManager::getPlanetMapSubCategoryByName(const String& name) const {
+	return planetMapSubCategoryList.get(name);
+}
+
+const PlanetMapSubCategory* TemplateManager::getPlanetMapSubCategoryByCrc(int crc) const {
+	return planetMapSubCategoryList.get(crc);
+}
+
+const PlanetMapSubCategory* TemplateManager::getPlanetMapSubCategoryById(int index) const {
+	auto iterator = planetMapSubCategoryList.iterator();
+
+	while (iterator.hasNext()) {
+		const Reference<PlanetMapSubCategory*>& cat = iterator.getNextValue();
+
+		if (cat->getIndex() == index)
+			return cat.get();
+	}
+
+	return nullptr;
+}
+
+/**
+ * This method should only be called after Templates have been loaded.
+ * It attempts to return the StructureFootprint that resides at the specified filepath, but requires
+ * that it has been loaded previously.
+ * @param filePath The TRE path of the desired Structure Footprint file.
+ * @return Returns the StructureFootprint object, or nullptr if it does not exist.
+ */
+const StructureFootprint* TemplateManager::getStructureFootprint(const String& filePath) const {
+	return structureFootprints.get(filePath);
+}
+
+bool TemplateManager::structureFootprintExists(const String& filePath) const {
+	return structureFootprints.contains(filePath);
+}
+
+const SlotId* TemplateManager::getSlotId(const String& slotName) const {
+	return slotDefinitions.get(slotName);
+}

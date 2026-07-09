@@ -30,67 +30,29 @@ public:
 	 * \param min Minimum Value
 	 * \param max Maximum Value
 	 */
-	ResourceAttribute(const String& n, const int min, const int max) {
-		name = n;
-		minimum = min;
-		maximum = max;
-		index = 0;
-
-		setIndex(name);
-	}
+	ResourceAttribute(const String& n, const int min, const int max);
 
 	/**
 	 * Destructor
 	 */
-	~ResourceAttribute() {
+	~ResourceAttribute();
 
-	}
-
-	void setIndex(const String& name) {
-		if(name == "res_decay_resist")
-			index = CraftingManager::DR;
-		else if(name == "res_quality")
-			index = CraftingManager::OQ;
-		else if(name == "res_flavor")
-			index = CraftingManager::FL;
-		else if(name == "res_potential_energy")
-			index = CraftingManager::PE;
-		else if(name == "res_malleability")
-			index = CraftingManager::MA;
-		else if(name == "res_toughness")
-			index = CraftingManager::UT;
-		else if(name == "res_shock_resistance")
-			index = CraftingManager::SR;
-		else if(name == "res_conductivity")
-			index = CraftingManager::CD;
-		else if(name == "res_cold_resist")
-			index = CraftingManager::CR;
-		else if(name == "res_heat_resist")
-			index = CraftingManager::HR;
-	}
+	void setIndex(const String& name);
 
 	/**
 	 * Returns the name of the Attribute
 	 */
-	const String& getName() const {
-		return name;
-	}
+	const String& getName() const;
 
 	/**
 	 * Returns the minimum value of the Attribute
 	 */
-	int getMinimum() const {
-		return minimum;
-	}
+	int getMinimum() const;
 
 	/**
 	 * Returns the maximum value of the Attribute
 	 */
-	int getMaximum() const {
-		return maximum;
-	}
+	int getMaximum() const;
 
-	int getIndex() const {
-		return index;
-	}
+	int getIndex() const;
 };

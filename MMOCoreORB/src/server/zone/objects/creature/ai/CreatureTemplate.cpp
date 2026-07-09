@@ -261,3 +261,389 @@ void CreatureTemplate::readObject(LuaObject* templateData) {
 	reactionStf = templateData->getStringField("reactionStf");
 	personalityStf = templateData->getStringField("personalityStf");
 }
+
+float CreatureTemplate::getKinetic() const {
+	if (isSpecialProtection(SharedWeaponObjectTemplate::KINETIC))
+		return kinetic - 100;
+	else
+		return kinetic;
+}
+
+float CreatureTemplate::getEnergy() const {
+	if (isSpecialProtection(SharedWeaponObjectTemplate::ENERGY))
+		return energy - 100;
+	else
+		return energy;
+}
+
+float CreatureTemplate::getElectricity() const {
+	if (isSpecialProtection(SharedWeaponObjectTemplate::ELECTRICITY))
+		return electricity - 100;
+	else
+		return electricity;
+}
+
+float CreatureTemplate::getStun() const {
+	if (isSpecialProtection(SharedWeaponObjectTemplate::STUN))
+		return stun - 100;
+	else
+		return stun;
+}
+
+float CreatureTemplate::getBlast() const {
+	if (isSpecialProtection(SharedWeaponObjectTemplate::BLAST))
+		return blast - 100;
+	else
+		return blast;
+}
+
+float CreatureTemplate::getHeat() const {
+	if (isSpecialProtection(SharedWeaponObjectTemplate::HEAT))
+		return heat - 100;
+	else
+		return heat;
+}
+
+float CreatureTemplate::getCold() const {
+	if (isSpecialProtection(SharedWeaponObjectTemplate::COLD))
+		return cold - 100;
+	else
+		return cold;
+}
+
+float CreatureTemplate::getAcid() const {
+	if (isSpecialProtection(SharedWeaponObjectTemplate::ACID))
+		return acid - 100;
+	else
+		return acid;
+}
+
+float CreatureTemplate::getLightSaber() const {
+	if (isSpecialProtection(SharedWeaponObjectTemplate::LIGHTSABER))
+		return lightSaber - 100;
+	else
+		return lightSaber;
+}
+
+bool CreatureTemplate::isStalker() const {
+	return creatureBitmask & ObjectFlag::STALKER;
+}
+
+bool CreatureTemplate::isBaby() const {
+	return creatureBitmask & ObjectFlag::BABY;
+}
+
+bool CreatureTemplate::isKiller() const {
+	return creatureBitmask & ObjectFlag::KILLER;
+}
+
+bool CreatureTemplate::isHealer() const {
+	return creatureBitmask & ObjectFlag::HEALER;
+}
+
+bool CreatureTemplate::isPack() const {
+	return creatureBitmask & ObjectFlag::PACK;
+}
+
+bool CreatureTemplate::isHerd() const {
+	return creatureBitmask & ObjectFlag::HERD;
+}
+
+float CreatureTemplate::getTame() const {
+	return tamingChance;
+}
+
+const String& CreatureTemplate::getMeatType() const {
+	return meatType;
+}
+
+const String& CreatureTemplate::getBoneType() const {
+	return boneType;
+}
+
+const String& CreatureTemplate::getHideType() const {
+	return hideType;
+}
+
+const String& CreatureTemplate::getMilkType() const {
+	return milkType;
+}
+
+const String& CreatureTemplate::getCustomName() const {
+	return customName;
+}
+
+float CreatureTemplate::getMilk() const {
+	return milk;
+}
+
+float CreatureTemplate::getHideMax() const {
+	return hideAmount;
+}
+
+float CreatureTemplate::getBoneMax() const {
+	return boneAmount;
+}
+
+float CreatureTemplate::getMeatMax() const {
+	return meatAmount;
+}
+
+unsigned int CreatureTemplate::getFerocity() const {
+	return ferocity;
+}
+
+unsigned int CreatureTemplate::getArmor() const {
+	return armor;
+}
+
+const String& CreatureTemplate::getObjectName() const {
+	return objectName;
+}
+
+uint32 CreatureTemplate::getPlanetMapCategory() const {
+	return planetMapCategory;
+}
+
+String CreatureTemplate::getPlanetMapCategoryName() const {
+	return mapCategoryName;
+}
+
+uint32 CreatureTemplate::getPlanetMapSubCategory() const {
+	return planetMapSubCategory;
+}
+
+String CreatureTemplate::getPlanetMapSubCategoryName() const {
+	return mapSubCategoryName;
+}
+
+int CreatureTemplate::getRandomNameType() const {
+	return randomNameType;
+}
+
+int CreatureTemplate::getMobType() const {
+	return mobType;
+}
+
+bool CreatureTemplate::getRandomNameTag() const {
+	return randomNameTag;
+}
+
+const String& CreatureTemplate::getSocialGroup() const {
+	return socialGroup;
+}
+
+uint32 CreatureTemplate::getConversationTemplate() const {
+	return conversationTemplate;
+}
+
+uint32 CreatureTemplate::getOptionsBitmask() const {
+	return optionsBitmask;
+}
+
+uint64 CreatureTemplate::getCustomAiMap() {
+	return customAiMap;
+}
+
+const String& CreatureTemplate::getFaction() const {
+	return faction;
+}
+
+int CreatureTemplate::getLevel() const {
+	return level;
+}
+
+float CreatureTemplate::getChanceHit() const {
+	return chanceHit;
+}
+
+float CreatureTemplate::getScale() const {
+	return scale;
+}
+
+int CreatureTemplate::getDamageMin() const {
+	return damageMin;
+}
+
+int CreatureTemplate::getDamageMax() const {
+	return damageMax;
+}
+
+float CreatureTemplate::getAttackSpeed() const {
+	return attackSpeed;
+}
+
+float CreatureTemplate::getSpecialDamageMult() const {
+	return specialDamageMult;
+}
+
+int CreatureTemplate::getRange() const {
+	return range;
+}
+
+int CreatureTemplate::getBaseXp() const {
+	return baseXp;
+}
+
+int CreatureTemplate::getBaseHAM() const {
+	return baseHAM;
+}
+
+int CreatureTemplate::getBaseHAMmax() const {
+	return baseHAMmax;
+}
+
+int CreatureTemplate::getRandomHue() const {
+	int randHue = System::random(hues.size() - 1);
+	return hues.get(randHue);
+}
+
+int CreatureTemplate::getHueCount() const {
+	return hues.size();
+}
+
+int CreatureTemplate::getTotalHues() const {
+	return hues.size();
+}
+
+int CreatureTemplate::getAggroRadius() const {
+	return aggroRadius;
+}
+
+uint32 CreatureTemplate::getPvpBitmask() const {
+	return pvpBitmask;
+}
+
+uint32 CreatureTemplate::getCreatureBitmask() const {
+	return creatureBitmask;
+}
+
+uint32 CreatureTemplate::getDiet() const {
+	return diet;
+}
+
+bool CreatureTemplate::isTauntable() const {
+	return tauntable;
+}
+
+int CreatureTemplate::getLightsaberColor() const {
+	return lightsaberColor;
+}
+
+const Vector<String>& CreatureTemplate::getTemplates() const {
+	return templates;
+}
+
+const LootGroupCollection* CreatureTemplate::getLootGroups() const {
+	return &lootgroups;
+}
+
+const String& CreatureTemplate::getPrimaryWeapon() const {
+	return primaryWeapon;
+}
+
+const String& CreatureTemplate::getSecondaryWeapon() const {
+	return secondaryWeapon;
+}
+
+const String& CreatureTemplate::getThrownWeapon() const {
+	return thrownWeapon;
+}
+
+const CreatureAttackMap* CreatureTemplate::getPrimaryAttacks() const {
+	return primaryAttacks;
+}
+
+const CreatureAttackMap* CreatureTemplate::getSecondaryAttacks() const {
+	return secondaryAttacks;
+}
+
+const String& CreatureTemplate::getPatrolPathTemplate() const {
+	return patrolPathTemplate;
+}
+
+void CreatureTemplate::setTemplateName(const String& t) {
+	templateName = t;
+}
+
+const String& CreatureTemplate::getTemplateName() const {
+	return templateName;
+}
+
+String& CreatureTemplate::getTemplateName() {
+	return templateName;
+}
+
+bool CreatureTemplate::hasPatrolPathTemplate() const {
+	return !patrolPathTemplate.isEmpty();
+}
+
+const String& CreatureTemplate::getOutfit() const {
+	return outfit;
+}
+
+const String& CreatureTemplate::getAiTemplate() const {
+	return aiTemplate;
+}
+
+const String& CreatureTemplate::getDefaultWeapon() const {
+	return defaultWeapon;
+}
+
+const String& CreatureTemplate::getDefaultAttack() const {
+	return defaultAttack;
+}
+
+const String& CreatureTemplate::getControlDeviceTemplate() const {
+	return controlDeviceTemplate;
+}
+
+const String& CreatureTemplate::getContainerComponentTemplate() const {
+	return containerComponentTemplate;
+}
+
+const String& CreatureTemplate::getReactionStf() const {
+	return reactionStf;
+}
+
+const String& CreatureTemplate::getPersonalityStf() const {
+	return personalityStf;
+}
+
+const String& CreatureTemplate::getHealerType() const {
+	return healerType;
+}
+
+bool CreatureTemplate::isSpecialProtection(int resistType) const {
+	switch (resistType) {
+		case SharedWeaponObjectTemplate::KINETIC:
+			return kinetic > 100;
+			break;
+		case SharedWeaponObjectTemplate::ENERGY:
+			return energy > 100;
+			break;
+		case SharedWeaponObjectTemplate::ELECTRICITY:
+			return electricity > 100;
+			break;
+		case SharedWeaponObjectTemplate::STUN:
+			return stun > 100;
+			break;
+		case SharedWeaponObjectTemplate::BLAST:
+			return blast > 100;
+			break;
+		case SharedWeaponObjectTemplate::HEAT:
+			return heat > 100;
+			break;
+		case SharedWeaponObjectTemplate::COLD:
+			return cold > 100;
+			break;
+		case SharedWeaponObjectTemplate::ACID:
+			return acid > 100;
+			break;
+		case SharedWeaponObjectTemplate::LIGHTSABER:
+			return lightSaber > 100;
+			break;
+	}
+
+	return false;
+}

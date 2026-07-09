@@ -13,6 +13,7 @@ namespace zlib {
 	#include <zlib.h>
 }
 
+namespace tre3 {
 class TreeDataBlock {
 	uint32 compressionType;
 
@@ -25,82 +26,32 @@ public:
 	const static int SIZE = 6 * sizeof(int);
 
 public:
-	TreeDataBlock() {
-		compressionType = 0;
-		compressedSize = 0;
-		uncompressedSize = 0;
-	}
+	TreeDataBlock();
 
-	TreeDataBlock(const TreeDataBlock& tdb) {
-		compressionType = tdb.compressionType;
-		compressedSize = tdb.compressedSize;
-		uncompressedSize = tdb.uncompressedSize;
-	}
+	TreeDataBlock(const TreeDataBlock& tdb);
 
-	TreeDataBlock& operator= (const TreeDataBlock& tdb) {
-		if (this == &tdb)
-			return *this;
+	TreeDataBlock& operator=(const TreeDataBlock& tdb);
 
-		compressionType = tdb.compressionType;
-		compressedSize = tdb.compressedSize;
-		uncompressedSize = tdb.uncompressedSize;
-
-		return *this;
-	}
-
-	void read(FileInputStream* fileStream, int offset) {
-
-	}
+	void read(FileInputStream* fileStream, int offset);
 
 	/**
 	 * Uncompresses a block of data and returns it in a byte buffer.
 	 * @param fileStream FileInputStream that has been advanced to the position of the compressedData and will be read for the compressedSize
 	 */
-	byte* uncompress(FileInputStream* fileStream) {
-		byte* uncompressedData = new byte[uncompressedSize];
+	byte* uncompress(FileInputStream* fileStream);
 
-		switch (compressionType) {
-		case 2: //Data is compressed
-		{
-			byte* compressedData = new byte[compressedSize];
+	void compress();
 
-			fileStream->read(compressedData, compressedSize);
+	void setCompressionType(uint32 value);
 
-			int result = zlib::uncompress(uncompressedData, &uncompressedSize, compressedData, compressedSize);
+	void setCompressedSize(uint32 value);
 
-			delete [] compressedData;
-		}
-			break;
-		case 0: //Data is uncompressed
-		default:
-			fileStream->read(uncompressedData, uncompressedSize);
-			break;
-		}
+	void setUncompressedSize(uint32 value);
 
-		return uncompressedData;
-	}
+	uint32 getCompressedSize() const;
 
-	void compress() {
-
-	}
-
-	inline void setCompressionType(uint32 value) {
-		compressionType = value;
-	}
-
-	inline void setCompressedSize(uint32 value) {
-		compressedSize = value;
-	}
-
-	inline void setUncompressedSize(uint32 value) {
-		uncompressedSize = value;
-	}
-
-	inline uint32 getCompressedSize() const {
-		return compressedSize;
-	}
-
-	inline uint32 getUncompressedSize() const {
-		return uncompressedSize;
-	}
+	uint32 getUncompressedSize() const;
 };
+} // namespace tre3
+
+using namespace tre3;

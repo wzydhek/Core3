@@ -41,6 +41,38 @@ void CellPortal::readObject(IffStream* iff) {
 	iff->closeChunk();
 }
 
+bool CellPortal::isSolid() const {
+	return solid;
+}
+
+int CellPortal::getGeometryIndex() const {
+	return geometryIndex;
+}
+
+bool CellPortal::isWindingCCW() const {
+	return winding;
+}
+
+int CellPortal::getTargetCellIndex() const {
+	return targetCell;
+}
+
+const String& CellPortal::getDoorTemplate() const {
+	return doorName;
+}
+
+bool CellPortal::hasDoorTemplate() const {
+	return doorName.isEmpty() == false;
+}
+
+bool CellPortal::hasDoorTransform() const {
+	return transformFlag;
+}
+
+const Matrix4& CellPortal::getDoorTransform() const {
+	return doorTransform;
+}
+
 CellProperty::CellProperty() : Object(), Logger("CellProperty"), numberOfPortals(0),
 	floorMesh(nullptr), appearanceTemplate(nullptr), cellID(0), boundingVolume(nullptr) {
 	connectedCells.setNoDuplicateInsertPlan();
@@ -213,4 +245,48 @@ void CellProperty::readObject(IffStream* iffStream) {
 	}
 
 	iffStream->closeForm('CELL');
+}
+
+AppearanceTemplate* CellProperty::getAppearanceTemplate() {
+	return appearanceTemplate;
+}
+
+void CellProperty::addConnectedCell(int cellID) {
+	connectedCells.put(cellID);
+}
+
+const SortedVector<int>& CellProperty::getConnectedCells() const {
+	return connectedCells;
+}
+
+bool CellProperty::hasConnectedCell(int cellID) const {
+	return connectedCells.contains(cellID);
+}
+
+const FloorMesh* CellProperty::getFloorMesh() const {
+	return floorMesh;
+}
+
+FloorMesh* CellProperty::getFloorMesh() {
+	return floorMesh;
+}
+
+const String& CellProperty::getName() const {
+	return name;
+}
+
+int CellProperty::getCellID() const {
+	return cellID;
+}
+
+int CellProperty::getNumberOfPortals() const {
+	return numberOfPortals;
+}
+
+bool CellProperty::hasWorldPortal() const {
+	return worldPortal;
+}
+
+const CellPortal* CellProperty::getPortal(int idx) const {
+	return portals.get(idx);
 }

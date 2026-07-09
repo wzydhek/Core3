@@ -24,6 +24,15 @@ const String AttributesMap::EMPTY;
 		Contains the property and the Value Object to store the data for that property.
 */
 
+AttributesMap::AttributesMap() {
+	setLoggingName("AttributesMap");
+
+	attributeValues.setNullValue(nullptr);
+}
+
+AttributesMap::~AttributesMap() {
+}
+
 void AttributesMap::addExperimentalAttribute(const String& attribute, const String& group, const float min, const float max, const int precision, const bool filler, const int combine) {
 #ifdef DEBUG_ATTRIBUTES_MAP
 	info(true) << "AttributesMap::addExperimentalAttribute called for: " << attribute << " Group: " << group << " Min: " << min << " Max:" << max << " Precision: " << precision;
@@ -527,4 +536,80 @@ void AttributesMap::setPrecision(const String& attribute, const int amount) {
 #endif // DEBUG_ATTRIBUTES_MAP
 
 	values->setPrecision(amount);
+}
+
+int AttributesMap::getSize() const {
+	return attributes.size();
+}
+
+void AttributesMap::addAttribute(const String& attribute) {
+	if (attributes.contains(attribute))
+		return;
+
+	attributes.add(attribute);
+}
+
+void AttributesMap::addVisibleGroup(const String& group) {
+#ifdef DEBUG_ATTRIBUTES_MAP
+	info(true) << "Attempting to add Visible Experimental Group: " << group;
+#endif // DEBUG_ATTRIBUTES_MAP
+
+	if (visibleGroups.contains(group))
+		return;
+
+	// Sort these alphabetically
+	for (int i = 0; i < visibleGroups.size(); ++i) {
+		const String currGroup = visibleGroups.get(i);
+
+		if (currGroup < group) {
+			visibleGroups.insertElementAt(group, i);
+			return;
+		}
+	}
+
+	visibleGroups.add(group);
+
+#ifdef DEBUG_ATTRIBUTES_MAP
+	info(true) << "Adding Visible Experimental Group: " << group << " with a new Total Groups of " << visibleGroups.size();
+#endif // DEBUG_ATTRIBUTES_MAP
+}
+
+void AttributesMap::removeVisibleGroup(const String& group) {
+#ifdef DEBUG_ATTRIBUTES_MAP
+	info(true) << "Attempting to remove Visible Experimental Group: " << group;
+#endif // DEBUG_ATTRIBUTES_MAP
+
+	uint32 groupHash = group.hashCode();
+
+	for (int i = 0; i < visibleGroups.size(); ++i) {
+		uint32 visHash = visibleGroups.get(i).hashCode();
+
+		if (groupHash == visHash) {
+			visibleGroups.remove(i);
+			return;
+		}
+	}
+}
+
+bool AttributesMap::hasExperimentalAttribute(const String& attribute) const {
+	// info(true) << "hasExperimentalAttribute has a attributes size of " << attributes.size() << " and is checking for " << attribute;
+	uint32 attributeHash = attribute.hashCode();
+
+	for (int i = 0; i < attributes.size(); ++i) {
+		uint32 iteratedHash = attributes.get(i).hashCode();
+
+		if (iteratedHash == attributeHash)
+			return true;
+	}
+
+	return false;
+}
+
+void AttributesMap::removeAll() {
+	Locker lock(&mutex);
+
+	attributes.removeAll();
+	visibleGroups.removeAll();
+	attributeGroups.removeAll();
+	attributeValues.removeAll();
 }

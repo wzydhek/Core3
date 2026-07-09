@@ -10,6 +10,110 @@
 
 #define BARRIER_HEIGHT 3
 
+EdgeID::EdgeID(int triangleID, int edgeID) {
+	this->triangleID = triangleID;
+	this->edgeID = edgeID;
+}
+
+EdgeID::EdgeID() {
+	triangleID = -1;
+	edgeID = -1;
+}
+
+int EdgeID::compareTo(const EdgeID& rhs) const {
+	if (triangleID == rhs.triangleID) {
+		if (edgeID == rhs.edgeID)
+			return 0;
+		else if (edgeID < rhs.edgeID)
+			return 1;
+		else
+			return -1;
+	} else if (triangleID < rhs.triangleID) {
+		return 1;
+	} else {
+		return -1;
+	}
+}
+
+bool EdgeID::toBinaryStream(ObjectOutputStream* stream) {
+	return false;
+}
+
+bool EdgeID::parseFromBinaryStream(ObjectInputStream* stream) {
+	return false;
+}
+
+Nods::Nods() {
+	x0 = y0 = z0 = x1 = y1 = z1 = 0;
+	id = var2 = leftNode = rightNode = 0;
+}
+
+void Nods::readObject(IffStream* iffStream) {
+	x1 = iffStream->getFloat();
+	z1 = iffStream->getFloat();
+	y1 = iffStream->getFloat();
+
+	x0 = iffStream->getFloat();
+	z0 = iffStream->getFloat();
+	y0 = iffStream->getFloat();
+
+	id = iffStream->getInt();
+	var2 = iffStream->getInt();
+	leftNode = iffStream->getInt();
+	rightNode = iffStream->getInt();
+}
+
+bool Nods::toBinaryStream(ObjectOutputStream* stream) {
+	return false;
+}
+
+bool Nods::parseFromBinaryStream(ObjectInputStream* stream) {
+	return false;
+}
+
+Bedg::Bedg() {
+	triangleID = edgeID = 0;
+	var3 = 0;
+}
+
+void Bedg::readObject(IffStream* iffStream) {
+	triangleID = iffStream->getInt();
+	edgeID = iffStream->getInt();
+	var3 = iffStream->getByte();
+}
+
+int Bedg::getTriangleID() const {
+	return triangleID;
+}
+
+int Bedg::getEdgeID() const {
+	return edgeID;
+}
+
+bool Bedg::toBinaryStream(ObjectOutputStream* stream) {
+	return false;
+}
+
+bool Bedg::parseFromBinaryStream(ObjectInputStream* stream) {
+	return false;
+}
+
+FloorMeshTriangleNode::Edge::Edge() {
+	neighbor = -1;
+	flags = -1;
+	portalID = -1;
+}
+
+FloorMeshTriangleNode::FloorMeshTriangleNode(FloorMesh* floorMesh) : neighbors(1, 1) {
+	mesh = floorMesh;
+	indicies[0] = 0;
+	indicies[1] = 0;
+	indicies[2] = 0;
+	triangleID = 0;
+	tag = 0;
+	nonSolid = false;
+}
+
 void FloorMeshTriangleNode::readObject(IffStream* iffStream) {
 	indicies[0] = iffStream->getInt(); // Corner Index[0]
 	indicies[1] = iffStream->getInt(); // Corner Index[1]
@@ -57,6 +161,41 @@ void FloorMeshTriangleNode::readObject(IffStream* iffStream) {
 				break;
 		}
 	}
+}
+
+int FloorMeshTriangleNode::getIndex(int val) {
+	assert(val < 3);
+
+	return indicies[val];
+}
+
+bool FloorMeshTriangleNode::isEdge() const {
+	// return edge;
+	return neighbors.size() < 3;
+}
+
+uint32 FloorMeshTriangleNode::getID() const {
+	return triangleID;
+}
+
+const FloorMeshTriangleNode::Edge* FloorMeshTriangleNode::getEdges() const {
+	return edges;
+}
+
+void FloorMeshTriangleNode::addNeighbor(TriangleNode* node) {
+	neighbors.add(node);
+}
+
+const Vector<TriangleNode*>* FloorMeshTriangleNode::getNeighbors() const {
+	return &neighbors;
+}
+
+bool FloorMeshTriangleNode::toBinaryStream(ObjectOutputStream* stream) {
+	return false;
+}
+
+bool FloorMeshTriangleNode::parseFromBinaryStream(ObjectInputStream* stream) {
+	return false;
 }
 
 FloorMesh::FloorMesh() {
@@ -400,7 +539,7 @@ Vector <Reference<MeshData*>> FloorMesh::getTransformedMeshData(const Matrix4& p
 	Vector<Vector3> *vertices = data->getVerts();
 	Vector<MeshTriangle> *triangles = data->getTriangles();
 
-	for (const auto& edge : uncrossableEdges) {
+	for (const EdgeID& edge : uncrossableEdges) {
 		const auto& tri = tris.get(edge.getTriangleID());
 		int startIndex = edge.getEdgeID() % 3;
 
@@ -453,4 +592,43 @@ Vector <Reference<MeshData*>> FloorMesh::getTransformedMeshData(const Matrix4& p
 #endif
 
 	return meshData;
+}
+
+const PathGraph* FloorMesh::getPathGraph() const {
+	return pathGraph;
+}
+
+PathGraph* FloorMesh::getPathGraph() {
+	return pathGraph;
+}
+
+const FloorMeshTriangleNode* FloorMesh::getTriangle(int tri) const {
+	return tris.get(tri);
+}
+
+int FloorMesh::getTriangleCount() const {
+	return tris.size();
+}
+
+const AABBTree* FloorMesh::getAABBTree() const {
+	return aabbTree;
+}
+
+const Vector3* FloorMesh::getVertex(int vert) const {
+	return &vertices.get(vert);
+}
+
+int FloorMesh::getCellID() const {
+	return cellID;
+}
+
+void FloorMesh::setCellID(int id) {
+	cellID = id;
+}
+
+float FloorMesh::calculateManhattanDistance(const TriangleNode* node1, const TriangleNode* node2) const {
+	Vector3 bary = node1->getBarycenter();
+	Vector3 bary2 = node2->getBarycenter();
+
+	return bary.squaredDistanceTo(bary2);
 }

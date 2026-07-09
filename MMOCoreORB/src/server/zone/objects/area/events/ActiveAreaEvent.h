@@ -34,21 +34,7 @@ namespace server {
 	   const static int EXITEVENT = 2;
 
    public:
-	   ActiveAreaEvent(ActiveArea* ar, SceneObject* obj, uint32 eventt) {
-		   activeArea = ar;
-		   eventType = eventt;
-		   sceneObject = obj;
-
-		   if (!obj) {
-		   	return;
-		   }
-
-		   const auto zone = obj->getZone();
-
-		   if (zone) {
-		   	setCustomTaskQueue(zone->getZoneName());
-		   }
-	   }
+	   ActiveAreaEvent(ActiveArea* ar, SceneObject* obj, uint32 eventt);
 
 	   void run();
 

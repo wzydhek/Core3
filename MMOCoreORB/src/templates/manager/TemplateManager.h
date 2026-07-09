@@ -73,9 +73,7 @@ protected:
 	LuaObject* getLuaObject(const String& iffTemplateName);
 
 public:
-	TemplateCRCMap& getTemplateCRCMap() const {
-		return *templateCRCMap;
-	}
+	TemplateCRCMap& getTemplateCRCMap() const;
 
 	TemplateManager();
 	~TemplateManager();
@@ -109,9 +107,7 @@ public:
 
 	ObjectInputStream* openTreFile(const String& filePath);
 
-	inline bool containsTemplateType(uint32 type) const {
-		return templateFactory.containsObject(type);
-	}
+	bool containsTemplateType(uint32 type) const;
 
 	FloorMesh* getFloorMesh(const String& fileName);
 	PortalLayout* getPortalLayout(const String& fileName);
@@ -133,48 +129,18 @@ public:
 	void addClientTemplate(uint32 crc, const String& templateName);
 
 	// Primary Planet Map Categories
-	const PlanetMapCategory* getPlanetMapCategoryByName(const String& name) const {
-		return planetMapCategoryList.get(name);
-	}
+	const PlanetMapCategory* getPlanetMapCategoryByName(const String& name) const;
 
-	const PlanetMapCategory* getPlanetMapCategoryByCrc(int crc) const {
-		return planetMapCategoryList.get(crc);
-	}
+	const PlanetMapCategory* getPlanetMapCategoryByCrc(int crc) const;
 
-	const PlanetMapCategory* getPlanetMapCategoryById(int index) const {
-		auto iterator = planetMapCategoryList.iterator();
-
-		while (iterator.hasNext()) {
-			const Reference<PlanetMapCategory*>& cat = iterator.getNextValue();
-
-			if (cat->getIndex() == index)
-				return cat.get();
-		}
-
-		return nullptr;
-	}
+	const PlanetMapCategory* getPlanetMapCategoryById(int index) const;
 
 	// Planet Map Sub Categories
-	const PlanetMapSubCategory* getPlanetMapSubCategoryByName(const String& name) const {
-		return planetMapSubCategoryList.get(name);
-	}
+	const PlanetMapSubCategory* getPlanetMapSubCategoryByName(const String& name) const;
 
-	const PlanetMapSubCategory* getPlanetMapSubCategoryByCrc(int crc) const {
-		return planetMapSubCategoryList.get(crc);
-	}
+	const PlanetMapSubCategory* getPlanetMapSubCategoryByCrc(int crc) const;
 
-	const PlanetMapSubCategory* getPlanetMapSubCategoryById(int index) const {
-		auto iterator = planetMapSubCategoryList.iterator();
-
-		while (iterator.hasNext()) {
-			const Reference<PlanetMapSubCategory*>& cat = iterator.getNextValue();
-
-			if (cat->getIndex() == index)
-				return cat.get();
-		}
-
-		return nullptr;
-	}
+	const PlanetMapSubCategory* getPlanetMapSubCategoryById(int index) const;
 
 	/**
 	 * This method should only be called after Templates have been loaded.
@@ -183,17 +149,11 @@ public:
 	 * @param filePath The TRE path of the desired Structure Footprint file.
 	 * @return Returns the StructureFootprint object, or nullptr if it does not exist.
 	 */
-	const StructureFootprint* getStructureFootprint(const String& filePath) const {
-		return structureFootprints.get(filePath);
-	}
+	const StructureFootprint* getStructureFootprint(const String& filePath) const;
 
-	bool structureFootprintExists(const String& filePath) const {
-		return structureFootprints.contains(filePath);
-	}
+	bool structureFootprintExists(const String& filePath) const;
 
-	const SlotId* getSlotId(const String& slotName) const {
-		return slotDefinitions.get(slotName);
-	}
+	const SlotId* getSlotId(const String& slotName) const;
 
 	friend class SharedObjectTemplate;
 };

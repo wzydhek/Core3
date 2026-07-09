@@ -7,6 +7,20 @@
 
 #include "RangedIntCustomizationVariables.h"
 
+RangedIntCustomizationVariables::RangedIntCustomizationVariables() : Param() {
+}
+
+RangedIntCustomizationVariables::~RangedIntCustomizationVariables() {
+	/*QMap<QString, PaletteColorCustomizationVariable*>::const_iterator i;
+
+	for (i = variables.constBegin(); i != variables.constEnd(); ++i)
+		delete i.value();*/
+
+	for (int i = 0; i < variables.size(); ++i)
+		delete variables.get(i);
+
+	// std::cout << "DELETING RangedIntCustomizationVariables\n";
+}
 
 bool RangedIntCustomizationVariables::parse(Chunk* source) {
 	//std::cout << "parsing RangedIntCustomizationVariables\n";
@@ -113,4 +127,9 @@ String RangedIntCustomizationVariables::toString() const {
 	stream << "}";
 
 	return stream.toString();
+}
+
+void RangedIntCustomizationVariables::toString(String& str) {
+	// std::cout << "entering void toString(QString& str)\n";
+	// str = test;
 }

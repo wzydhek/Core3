@@ -29,11 +29,11 @@ public:
 
 	void fillAttributeList(AttributeListMessage* msg, CreatureObject* droid);
 
-	int getBatteryDrain() { return 0;}
+	int getBatteryDrain();
 
 	String toString() const;
 
-	bool isStackable() { return true; }
+	bool isStackable();
 
 	void copy(BaseDroidModuleComponent* other);
 
@@ -43,7 +43,7 @@ public:
 
 	void initialize(DroidObject* droid);
 
-	bool isCombatModule() { return true; }
+	bool isCombatModule();
 };
 
 } // droid

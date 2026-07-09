@@ -11,6 +11,22 @@
 #include "templates/manager/PlanetMapSubCategory.h"
 #include "server/zone/objects/scene/SceneObject.h"
 
+MapLocationTable::MapLocationTable() {
+	locations.setNoDuplicateInsertPlan();
+}
+
+MapLocationTable::MapLocationTable(const MapLocationTable& t) : Object(), ReadWriteLock() {
+	locations = t.locations;
+}
+
+Object* MapLocationTable::clone() {
+	return ObjectCloner<MapLocationTable>::clone(this);
+}
+
+Object* MapLocationTable::clone(void* object) {
+	return TransactionalObjectCloner<MapLocationTable>::clone(this);
+}
+
 void MapLocationTable::transferObject(SceneObject* object) {
 	if (object == nullptr)
 		return;
@@ -132,4 +148,12 @@ const SortedVector<MapLocationEntry> MapLocationTable::getLocation(const String&
 
 int MapLocationTable::findLocation(const String& name) const {
 	return locations.find(name);
+}
+
+const SortedVector<MapLocationEntry>& MapLocationTable::get(int index) const {
+	return locations.elementAt(index).getValue();
+}
+
+int MapLocationTable::size() const {
+	return locations.size();
 }

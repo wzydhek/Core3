@@ -8,6 +8,10 @@
 #include "AffectorHeightFractal.h"
 #include "../../TerrainGenerator.h"
 
+AffectorHeightFractal::AffectorHeightFractal() : fractalId(0), operationType(0), height(0), mfrc(nullptr) {
+	affectorType = HEIGHTFRACTAL;
+}
+
 void AffectorHeightFractal::process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator) {
 	if (transformValue == 0)
 		return;
@@ -80,4 +84,16 @@ void AffectorHeightFractal::parseFromIffStream(engine::util::IffStream* iffStrea
 
 	iffStream->closeChunk('PARM');
 	iffStream->closeForm('DATA');
+}
+
+int AffectorHeightFractal::getFractalId() {
+	return fractalId;
+}
+
+float AffectorHeightFractal::getHeight() {
+	return height;
+}
+
+bool AffectorHeightFractal::isEnabled() {
+	return informationHeader.isEnabled();
 }

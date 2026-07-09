@@ -15,15 +15,7 @@ class ClearThreatStateTask : public Task {
 	uint64 state;
 
 public:
-	ClearThreatStateTask(TangibleObject* me, TangibleObject* tar, uint64 st) {
-		self = me;
-		target = tar;
-		state = st;
-	}
+	ClearThreatStateTask(TangibleObject* me, TangibleObject* tar, uint64 st);
 
-	void run() {
-		Locker locker(self);
-		ThreatMap* threatMap = self->getThreatMap();
-		threatMap->clearThreatState(target, state);
-	}
+	void run();
 };

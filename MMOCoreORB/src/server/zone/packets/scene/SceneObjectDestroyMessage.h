@@ -9,24 +9,9 @@
 
 class SceneObjectDestroyMessage : public BaseMessage {
 public:
-	SceneObjectDestroyMessage(SceneObject* scno) : BaseMessage(18) {
-		insertShort(0x03);
-		insertInt(0x4D45D504);  // CRC
-		insertLong(scno->getObjectID());  // ObjectID
-		insertByte(scno->isHyperspacing() ? 0x01 : 0x00);
-	}
+	SceneObjectDestroyMessage(SceneObject* scno);
 
-	SceneObjectDestroyMessage(uint64 oid) : BaseMessage(18) {
-		insertShort(0x03);
-		insertInt(0x4D45D504);  // CRC
-		insertLong(oid);  // ObjectID
-		insertByte(0);
-	}
+	SceneObjectDestroyMessage(uint64 oid);
 
-	SceneObjectDestroyMessage(uint64 oid, bool hyperspace) : BaseMessage(18) {
-		insertShort(0x03);
-		insertInt(0x4D45D504);  // CRC
-		insertLong(oid);  // ObjectID
-		insertByte(hyperspace);
-	}
+	SceneObjectDestroyMessage(uint64 oid, bool hyperspace);
 };

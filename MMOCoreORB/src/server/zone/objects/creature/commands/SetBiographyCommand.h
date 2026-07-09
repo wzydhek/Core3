@@ -4,29 +4,12 @@
 
 #pragma once
 
+#include "QueueCommand.h"
+
 class SetBiographyCommand : public QueueCommand {
 public:
-	SetBiographyCommand(const String& name, ZoneProcessServer* server) : QueueCommand(name, server) {
-	}
+	SetBiographyCommand(const String& name, ZoneProcessServer* server);
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		if (!creature->isPlayerCreature())
-			return GENERALERROR;
-
-		auto ghost = creature->getPlayerObject();
-
-		if (ghost == nullptr) {
-			return GENERALERROR;
-		}
-
-		ghost->setBiography(arguments);
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 };
+

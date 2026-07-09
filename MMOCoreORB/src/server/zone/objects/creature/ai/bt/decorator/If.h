@@ -13,19 +13,11 @@ namespace decorator {
 
 class If : public Decorator {
 public:
-	If(const String& className, const uint32 id, const LuaObject& args)
-			: Decorator(className, id, args) {
-	}
+	If(const String& className, const uint32 id, const LuaObject& args);
 
-	If(const If& b)
-			: Decorator(b) {
-	}
+	If(const If& b);
 
-	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const {
-		assert(child != nullptr);
-
-		return child->doAction(agent);
-	}
+	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 }
@@ -35,3 +27,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt::decorator;

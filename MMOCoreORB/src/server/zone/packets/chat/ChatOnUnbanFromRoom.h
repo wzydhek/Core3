@@ -9,29 +9,9 @@
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/ZoneServer.h"
 
 class ChatOnUnbanFromRoom : public BaseMessage {
 public:
-	ChatOnUnbanFromRoom(CreatureObject* unbanner, const String& unbaneeName, const String& roomPath, int error, int requestID = 0) : BaseMessage() {
-		String galaxy = unbanner->getZoneServer()->getGalaxyName();
-
-		insertShort(0x06);
-		insertInt(0xBAF9B815);  //Opcode
-
-		insertAscii(roomPath); //Full room path
-
-		insertAscii("SWG"); //Game
-		insertAscii(galaxy); //Galaxy name
-		insertAscii(unbanner->getFirstName()); //Unbanner's first name
-
-		insertAscii("SWG"); //Game
-		insertAscii(galaxy); // Galaxy name
-		insertAscii(unbaneeName); //Unbanee's first name
-
-		insertInt(error); ///Result code
-		insertInt(requestID); //Request ID
-
-	}
+	ChatOnUnbanFromRoom(CreatureObject* unbanner, const String& unbaneeName, const String& roomPath, int error, int requestID = 0);
 
 };

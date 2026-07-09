@@ -2,6 +2,7 @@
 
 #include "system/lang/Object.h"
 #include "engine/util/u3d/Vector3.h"
+#include "engine/lua/LuaObject.h"
 
 class SecurityPatrolSpawn : public Object {
 protected:
@@ -11,62 +12,23 @@ protected:
 	float direction;
 
 public:
-	SecurityPatrolSpawn() {
-		patrol = "";
-		faction = 0;
-		direction = 0.f;
-	}
+	SecurityPatrolSpawn();
 
-	SecurityPatrolSpawn(const SecurityPatrolSpawn& obj) : Object() {
-		patrol = obj.patrol;
-		faction = obj.faction;
-		location = obj.location;
-		direction = obj.direction;
-	}
+	SecurityPatrolSpawn(const SecurityPatrolSpawn& obj);
 
-	SecurityPatrolSpawn& operator=(const SecurityPatrolSpawn& obj) {
-		if (this == &obj)
-			return *this;
+	SecurityPatrolSpawn& operator=(const SecurityPatrolSpawn& obj);
 
-		patrol = obj.patrol;
-		faction = obj.faction;
-		location = obj.location;
-		direction = obj.direction;
+	void parseFromLua(LuaObject* luaObject);
 
-		return *this;
-	}
+	void setlocation(float x, float z, float y);
 
-	void parseFromLua(LuaObject* luaObject) {
-		patrol = luaObject->getStringField("patrol");
+	void setPatrol(String pat);
 
-		location.setX(luaObject->getFloatField("x"));
-		location.setZ(luaObject->getFloatField("z"));
-		location.setY(luaObject->getFloatField("y"));
+	const Vector3& getLocation() const;
 
-		direction = luaObject->getFloatField("heading");
-	}
+	float getDirection() const;
 
-	inline void setlocation(float x, float z, float y) {
-		location.set(x, z, y);
-	}
+	String getPatrol() const;
 
-	inline void setPatrol(String pat) {
-		patrol = pat;
-	}
-
-	inline const Vector3& getLocation() const {
-		return location;
-	}
-
-	inline float getDirection() const {
-		return direction;
-	}
-
-	inline String getPatrol() const {
-		return patrol;
-	}
-
-	inline int getFaction() const {
-		return faction;
-	}
+	int getFaction() const;
 };

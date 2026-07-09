@@ -11,6 +11,13 @@
 #include "ShipInspectTask.h"
 #include "server/zone/packets/scene/PlayClientEffectLocMessage.h"
 
+ShipInspectTask::ShipInspectTask(CreatureObject* player, ShipObject* targetShip) : Task() {
+	setLoggingName("ShipInspectTask");
+
+	weakPlayer = player;
+	weakTargetShip = targetShip;
+}
+
 void ShipInspectTask::run() {
 	auto player = weakPlayer.get();
 	auto targetShip = weakTargetShip.get();

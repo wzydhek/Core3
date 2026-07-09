@@ -5,75 +5,35 @@
 #pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class CreatureObjectDeltaMessage4 : public DeltaMessage {
 	CreatureObject* creo;
 
 public:
-	CreatureObjectDeltaMessage4(CreatureObject* cr) : DeltaMessage(cr->getObjectID(), 'CREO', 0x04) {
-		creo = cr;
-	}
+	CreatureObjectDeltaMessage4(CreatureObject* cr);
 
-	void updateAccelerationMultiplierBase() {
-		addFloatUpdate(0x00, creo->getAccelerationMultiplierBase());
-	}
+	void updateAccelerationMultiplierBase();
 
-	void updateAccelerationMultiplierMod() {
-		addFloatUpdate(0x01, creo->getAccelerationMultiplierMod());
-	}
+	void updateAccelerationMultiplierMod();
 
-	void updateSpeedMultiplierBase() {
-		addFloatUpdate(0x04, creo->getSpeedMultiplierBase());
-	}
+	void updateSpeedMultiplierBase();
 
-	void updateSpeedMultiplierMod() {
-		addFloatUpdate(0x05, creo->getSpeedMultiplierMod());
-	}
+	void updateSpeedMultiplierMod();
 
-	void updateListenToID(uint64 objectid) {
-		startUpdate(0x06);
-		insertLong(objectid);
-	}
+	void updateListenToID(uint64 objectid);
 
-	void updateRunSpeed() {
-		addFloatUpdate(0x07, creo->getRunSpeed());
-	}
+	void updateRunSpeed();
 
-	void updateSlopeModAngle() {
-		addFloatUpdate(0x08, creo->getSlopeModAngle());
-	}
+	void updateSlopeModAngle();
 
-	void updateSlopeModPercent() {
-		addFloatUpdate(0x09, creo->getSlopeModPercent());
-	}
+	void updateSlopeModPercent();
 
-	void updateTurnScale() {
-		addFloatUpdate(0x0A, creo->getTurnScale());
-	}
+	void updateTurnScale();
 
-	void updateWalkSpeed() {
-		addFloatUpdate(0x0B, creo->getWalkSpeed());
-	}
+	void updateWalkSpeed();
 
-	void updateWaterModPercent() {
-		addFloatUpdate(0x0C, creo->getWaterModPercent());
-	}
+	void updateWaterModPercent();
 
-	void updateSpeedAndAccelerationMods(bool sendSelf = true) {
-		float aScale = creo->getAccelerationMultiplierMod();
-		float mScale = creo->getSpeedMultiplierMod();
-		float tScale = creo->getTurnScale();
-
-		if (aScale == 0.f && mScale == 0.f) {
-			aScale = 0.1f;
-		}
-
-		if (mScale == 0.f && !sendSelf) {
-			mScale = 0.1f;
-		}
-
-		addFloatUpdate(0x01, aScale); // accelerationMultiplierMod
-		addFloatUpdate(0x05, mScale); // speedMultiplierMod
-		addFloatUpdate(0x0A, tScale); // turnScale
-	}
+	void updateSpeedAndAccelerationMods(bool sendSelf = true);
 };

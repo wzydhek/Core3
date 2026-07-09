@@ -15,37 +15,17 @@ class WoundPackTemplate : public SharedTangibleObjectTemplate {
 	byte attribute;
 
 public:
-	WoundPackTemplate() {
-		medicineUse = 0;
-		effectiveness = 0;
-		attribute = 0;
-	}
+	WoundPackTemplate();
 
-	~WoundPackTemplate() {
+	~WoundPackTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	int getMedicineUse();
 
-		medicineUse = templateData->getIntField("medicineUse");
-		effectiveness = templateData->getFloatField("effectiveness");
-		attribute = templateData->getIntField("attribute");
-    }
+	float getEffectiveness();
 
-	inline int getMedicineUse() {
-		return medicineUse;
-	}
+	byte getAttribute();
 
-	inline float getEffectiveness() {
-		return effectiveness;
-	}
-
-	inline byte getAttribute() {
-		return attribute;
-	}
-
-	bool isWoundPackTemplate() {
-		return true;
-	}
+	bool isWoundPackTemplate();
 };

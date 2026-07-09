@@ -12,23 +12,13 @@ protected:
 	SynchronizedSortedVector<uint64> notifiedPlayers;
 
 public:
-	GarageDataComponent() {
+	GarageDataComponent();
 
-	}
+	~GarageDataComponent();
 
-	~GarageDataComponent() {
+	bool hasNotifiedPlayer(const uint64 oid);
 
-	}
+	void addNotifiedPlayer(const uint64 oid);
 
-	bool hasNotifiedPlayer(const uint64 oid) {
-		return notifiedPlayers.contains(oid);
-	}
-
-	void addNotifiedPlayer(const uint64 oid) {
-		notifiedPlayers.put(oid);
-	}
-
-	void removeNotifiedPlayer(const uint64 oid) {
-		notifiedPlayers.drop(oid);
-	}
+	void removeNotifiedPlayer(const uint64 oid);
 };

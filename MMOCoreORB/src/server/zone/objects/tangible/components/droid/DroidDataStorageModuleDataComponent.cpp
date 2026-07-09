@@ -270,3 +270,15 @@ void DroidDataStorageModuleDataComponent::onCall() {
 void DroidDataStorageModuleDataComponent::onStore() {
 	// no op on store
 }
+
+int DroidDataStorageModuleDataComponent::getRating() {
+	return rating;
+}
+
+int DroidDataStorageModuleDataComponent::getBatteryDrain() {
+	return 0;
+}
+
+bool DroidDataStorageModuleDataComponent::isStackable() {
+	return true;
+}

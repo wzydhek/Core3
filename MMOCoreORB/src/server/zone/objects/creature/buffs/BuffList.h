@@ -38,61 +38,17 @@ public:
 	friend void to_json(nlohmann::json& j, const BuffList& l);
 
 	//Getters
-	inline int getBuffListSize() const {
-		return buffList.size();
-	}
+	int getBuffListSize() const;
 
-	Buff* getBuffByIndex(int index) const {
-		Locker guard(&mutex);
+	Buff* getBuffByIndex(int index) const;
 
-		if (index < 0 || index >= buffList.size())
-			return nullptr;
+	Buff* getBuffByCRC(uint32 buffcrc) const;
 
-		Buff* buff = buffList.elementAt(index).getValue();
+	long long getModifierByName(const String& skillMod) const;
 
-		return buffList.elementAt(index).getValue();
-	}
+	bool hasBuff(uint32 buffcrc) const;
 
-	Buff* getBuffByCRC(uint32 buffcrc) const {
-		Locker guard(&mutex);
+	bool hasSpice() const;
 
-		return buffList.get(buffcrc);
-	}
-
-	long long getModifierByName(const String& skillMod) const {
-		Locker guard(&mutex);
-
-		int mod = 0;
-
-		for (int i = 0; i < buffList.size(); i++) {
-			Buff* temp = buffList.get(i);
-			mod += temp->getSkillModifierValue(skillMod);
-		}
-
-		return mod;
-	}
-
-	bool hasBuff(uint32 buffcrc) const {
-		Locker guard(&mutex);
-
-		return buffList.contains(buffcrc);
-	}
-
-	inline bool hasSpice() const {
-		return spiceActive;
-	}
-
-	bool hasTrapBuff() const {
-		Locker guard(&mutex);
-
-		for (int i = 0; i < buffList.size(); i++) {
-			Buff* temp = buffList.get(i);
-
-			if (temp->isTrapBuff()) {
-				return true;
-			}
-		}
-
-		return false;
-	}
+	bool hasTrapBuff() const;
 };

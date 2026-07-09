@@ -13,21 +13,7 @@ class VendorReturnToPositionTask : public Task {
 	WeakReference<CreatureObject*> vendor;
 	float heading;
 public:
-	VendorReturnToPositionTask(CreatureObject* cr, int va) {
-		vendor = cr;
-		heading = va;
-	}
+	VendorReturnToPositionTask(CreatureObject* cr, int va);
 
-	void run() {
-
-		ManagedReference<CreatureObject*> strongref = vendor.get();
-
-		if(strongref == nullptr)
-			return;
-
-		Locker locker(strongref);
-		strongref->updateDirection(Math::deg2rad(heading));
-
-		strongref->removePendingTask("vendorreturn");
-	}
+	void run();
 };

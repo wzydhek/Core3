@@ -1139,6 +1139,27 @@ int ServerCore::getSchemaVersion() {
 }
 #endif // !WITH_SWGREALMS_API
 
+// getters
+server::zone::ZoneServer* ServerCore::getZoneServer() {
+	return zoneServerRef.get();
+}
+
+bool ServerCore::truncateDatabases() {
+	return truncateAllData;
+}
+
+ServerCore* ServerCore::getInstance() {
+	return instance;
+}
+
+Logger& ServerCore::logger() {
+	return *instance;
+}
+
+bool ServerCore::hasArgument(const String& arg) {
+	return arguments.contains(arg);
+}
+
 coredetail::ConsoleReaderService::ConsoleReaderService(ServerCore* serverCoreInstance) : ServiceThread("ConsoleReader"), core(serverCoreInstance) {
 }
 

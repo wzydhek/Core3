@@ -41,245 +41,111 @@ protected:
 	float saberResist;
 
 public:
-	DnaSampleTemplate() {
-		cleverness = 0.f;
-		endurance = 0.f;
-		fierceness = 0.f;
-		power = 0.f;
-		intellect = 0.f;
-		courage = 0.f;
-		dependability = 0.f;
-		dexterity = 0.f;
-		fortitude = 0.f;
-		hardiness = 0.f;
+	DnaSampleTemplate();
 
-		source = "unknown";
-		ranged = false;
-		special1 = "";
-		special2 = "";
-		quality = "Low";
-		armorRating = 0;
-		kinResist = -1;
-		energyResist = -1;
-		blastResist = -1;
-		coldResist = -1;
-		heatResist = -1;
-		elecResist = -1;
-		acidResist = -1;
-		stunResist = -1;
-		saberResist = -1;
-	}
+	~DnaSampleTemplate();
 
-	~DnaSampleTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
+	float getAcidResist() const;
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
-		quality = templateData->getStringField("quality");
-	}
+	float getSaberResist() const;
 
-	float getAcidResist() const {
-		return acidResist;
-	}
+	int getArmorRating() const;
 
-	float getSaberResist() const {
-		return saberResist;
-	}
+	float getBlastResist() const;
 
-	int getArmorRating() const {
-		return armorRating;
-	}
+	float getCleverness() const;
 
-	float getBlastResist() const {
-		return blastResist;
-	}
+	float getColdResist() const;
 
-	float getCleverness() const {
-		return cleverness;
-	}
+	float getCourage() const;
 
-	float getColdResist() const {
-		return coldResist;
-	}
+	float getDependability() const;
 
-	float getCourage() const {
-		return courage;
-	}
+	float getDexterity() const;
 
-	float getDependability() const {
-		return dependability;
-	}
+	float getElecResist() const;
 
-	float getDexterity() const {
-		return dexterity;
-	}
+	float getEndurance() const;
 
-	float getElecResist() const {
-		return elecResist;
-	}
+	float getEnergyResist() const;
 
-	float getEndurance() const {
-		return endurance;
-	}
+	float getFierceness() const;
 
-	float getEnergyResist() const {
-		return energyResist;
-	}
+	float getFortitude() const;
 
-	float getFierceness() const {
-		return fierceness;
-	}
+	float getHardiness() const;
 
-	float getFortitude() const {
-		return fortitude;
-	}
+	float getHeatResist() const;
 
-	float getHardiness() const {
-		return hardiness;
-	}
+	float getIntellect() const;
 
-	float getHeatResist() const {
-		return heatResist;
-	}
+	float getKinResist() const;
 
-	float getIntellect() const {
-		return intellect;
-	}
+	float getPower() const;
 
-	float getKinResist() const {
-		return kinResist;
-	}
+	String getQuality() const;
 
-	float getPower() const {
-		return power;
-	}
+	bool getRanged() const;
 
-	String getQuality() const {
-		return quality;
-	}
+	String getSource() const;
 
-	bool getRanged() const {
-		return ranged;
-	}
+	String getSpecial1() const;
 
-	String getSource() const {
-		return source;
-	}
+	String getSpecial2() const;
 
-	String getSpecial1() const {
-		return special1;
-	}
+	float getStunResist() const;
 
-	String getSpecial2() const {
-		return special2;
-	}
+	void setAcidResist(float acidResist);
 
-	float getStunResist() const {
-		return stunResist;
-	}
+	void setSaberResist(float value);
 
-	void setAcidResist(float acidResist) {
-		this->acidResist = acidResist;
-	}
+	void setArmorRating(int armorRating);
 
-	void setSaberResist(float value) {
-		this->saberResist = value;
-	}
+	void setBlastResist(float blastResist);
 
-	void setArmorRating(int armorRating) {
-		this->armorRating = armorRating;
-	}
+	void setCleverness(float cleverness);
 
-	void setBlastResist(float blastResist) {
-		this->blastResist = blastResist;
-	}
+	void setColdResist(float coldResist);
 
-	void setCleverness(float cleverness) {
-		this->cleverness = cleverness;
-	}
+	void setCourage(float courage);
 
-	void setColdResist(float coldResist) {
-		this->coldResist = coldResist;
-	}
+	void setDependability(float dependability);
 
-	void setCourage(float courage) {
-		this->courage = courage;
-	}
+	void setDexterity(float dexterity);
 
-	void setDependability(float dependability) {
-		this->dependability = dependability;
-	}
+	void setElecResist(float elecResist);
 
-	void setDexterity(float dexterity) {
-		this->dexterity = dexterity;
-	}
+	void setEndurance(float endurance);
 
-	void setElecResist(float elecResist) {
-		this->elecResist = elecResist;
-	}
+	void setEnergyResist(int energyResist);
 
-	void setEndurance(float endurance) {
-		this->endurance = endurance;
-	}
+	void setFierceness(float fierceness);
 
-	void setEnergyResist(int energyResist) {
-		this->energyResist = energyResist;
-	}
+	void setFortitude(float fortitude);
 
-	void setFierceness(float fierceness) {
-		this->fierceness = fierceness;
-	}
+	void setHardiness(float hardiness);
 
-	void setFortitude(float fortitude) {
-		this->fortitude = fortitude;
-	}
+	void setHeatResist(float heatResist);
 
-	void setHardiness(float hardiness) {
-		this->hardiness = hardiness;
-	}
+	void setIntellect(float intellect);
 
-	void setHeatResist(float heatResist) {
-		this->heatResist = heatResist;
-	}
+	void setKinResist(float kinResist);
 
-	void setIntellect(float intellect) {
-		this->intellect = intellect;
-	}
+	void setPower(float power);
 
-	void setKinResist(float kinResist) {
-		this->kinResist = kinResist;
-	}
+	void setQuality(String quality);
 
-	void setPower(float power) {
-		this->power = power;
-	}
+	void setRanged(bool ranged);
 
-	void setQuality(String quality) {
-		this->quality = quality;
-	}
+	void setSource(String source);
 
-	void setRanged(bool ranged) {
-		this->ranged = ranged;
-	}
+	void setSpecial1(String special1);
 
-	void setSource(String source) {
-		this->source = source;
-	}
+	void setSpecial2(String special2);
 
-	void setSpecial1(String special1) {
-		this->special1 = special1;
-	}
+	void setStunResist(float stunResist);
 
-	void setSpecial2(String special2) {
-		this->special2 = special2;
-	}
-
-	void setStunResist(float stunResist) {
-		this->stunResist = stunResist;
-	}
-
-	bool isDnaSampleTemplate() {
-		return true;
-	}
+	bool isDnaSampleTemplate();
 };

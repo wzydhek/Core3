@@ -11,43 +11,21 @@
 
 class Point3D {
 public:
-	Point3D() {
-	}
-
-	Point3D(float newX, float newY, float newZ) {
-		x = newX;
-		y = newY;
-		z = newZ;
-	}
-
 	float x, z, y;
 
-	float squaredDistanceTo(float locX, float locZ, float locY) {
-		float deltaX = x - locX;
-		float deltaZ = z - locZ;
-		float deltaY = y - locY;
+	Point3D();
 
-		return (deltaX * deltaX + deltaZ * deltaZ + deltaY * deltaY);
-	}
+	Point3D(float newX, float newY, float newZ);
 
-	float squaredDistanceTo(float locX, float locY) {
-		float deltaX = x - locX;
-		float deltaY = y - locY;
+	float squaredDistanceTo(float locX, float locZ, float locY);
 
-		return (deltaX * deltaX + deltaY * deltaY);
-	}
+	float squaredDistanceTo(float locX, float locY);
 
-	float getX() {
-		return x;
-	}
+	float getX();
 
-	float getZ() {
-		return z;
-	}
+	float getZ();
 
-	float getY() {
-		return y;
-	}
+	float getY();
 };
 
 // #define DEBUG_AFFECTOR_ROAD
@@ -57,27 +35,16 @@ class Segment : public TemplateVariable<'SGMT'> {
 	bool flatRoad;
 
 public:
-	Segment() {
-		flatRoad = false;
-	}
+	Segment();
 
-	~Segment() {
-		for (int i = 0; i < positions.size(); ++i)
-			delete positions.get(i);
-
-		positions.removeAll();
-	}
+	~Segment();
 
 	void createRoadwayHeights();
 	void readObject(engine::util::IffStream* iffStream);
 	bool hasInitialCoordinate(float x, float y);
 	void findNearestHeight(float& baseValue, Vector3 worldPosition, Vector3 roadCenter, float direction);
 
-	void setFlatRoad(bool val) {
-		flatRoad = val;
-	}
+	void setFlatRoad(bool val);
 
-	bool isFlatRoad() {
-		return flatRoad;
-	}
+	bool isFlatRoad();
 };

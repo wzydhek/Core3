@@ -18,35 +18,17 @@ protected:
 	SynchronizedVector<ManagedReference<SpawnArea*> > noSpawnAreas;
 
 public:
-	SpawnAreaMap() : Logger("SpawnAreaMap") {
-		setAllowDuplicateInsertPlan();
-	}
+	SpawnAreaMap();
 
-	SpawnAreaMap(const SpawnAreaMap& l) : SynchronizedVectorMap<uint32, ManagedReference<SpawnArea*> >(l) , Logger("SpawnAreaMap"),
-		zone(l.zone), noSpawnAreas(l.noSpawnAreas) {
-	}
+	SpawnAreaMap(const SpawnAreaMap& l);
 
-	SpawnAreaMap& operator=(const SpawnAreaMap& m) {
-		if (this == &m) {
-			return *this;
-		}
+	SpawnAreaMap& operator=(const SpawnAreaMap& m);
 
-		zone = m.zone;
-		noSpawnAreas = m.noSpawnAreas;
-
-		return *this;
-	}
-
-	virtual ~SpawnAreaMap() {
-	}
+	virtual ~SpawnAreaMap();
 
 	void unloadMap();
 
-	void addSpawnArea(uint32 spawnHash, ManagedReference<SpawnArea*> area) {
-		put(spawnHash, area);
-	}
+	void addSpawnArea(uint32 spawnHash, ManagedReference<SpawnArea*> area);
 
-	void addNoSpawnArea(ManagedReference<SpawnArea*> area) {
-		noSpawnAreas.add(area);
-	}
+	void addNoSpawnArea(ManagedReference<SpawnArea*> area);
 };

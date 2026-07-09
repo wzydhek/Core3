@@ -17,36 +17,17 @@ private:
 	String sampleAnimation;
 
 public:
-	SurveyToolTemplate() : toolType(0) {
+	SurveyToolTemplate();
 
-	}
+	~SurveyToolTemplate();
 
-	~SurveyToolTemplate() {
+	void readObject(LuaObject* templateData) override;
 
-	}
+	int getToolType() const;
 
-	void readObject(LuaObject* templateData) override {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	const String& getSurveyType() const;
 
-		toolType = templateData->getIntField("toolType");
-		surveyType = templateData->getStringField("surveyType");
-		surveyAnimation = templateData->getStringField("toolAnimation");
-		sampleAnimation = templateData->getStringField("sampleAnimation");
-	}
+	const String& getSurveyAnimation() const;
 
-	int getToolType() const {
-		return toolType;
-	}
-
-	const String& getSurveyType() const {
-		return surveyType;
-	}
-
-	const String& getSurveyAnimation() const {
-		return surveyAnimation;
-	}
-
-	const String& getSampleAnimation() const {
-		return sampleAnimation;
-	}
+	const String& getSampleAnimation() const;
 };

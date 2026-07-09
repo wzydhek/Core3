@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef MISSIONNPCSPAWNMAP_H_
-#define MISSIONNPCSPAWNMAP_H_
+#pragma once
 
 #include "engine/util/u3d/Vector3.h"
 #include "engine/log/Logger.h"
@@ -90,18 +89,14 @@ public:
 	 * @param stream stream to read from.
 	 * @return true if successful.
 	 */
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		return spawnMap.parseFromBinaryStream(stream);
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
 	/**
 	 * Write the object to a stream.
 	 * @param stream stream to write to.
 	 * @param true if successful.
 	 */
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return spawnMap.toBinaryStream(stream);
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
 	/**
 	 * Save all spawn points to lua script.
@@ -116,5 +111,3 @@ public:
 } // namespace server
 
 using namespace server::zone::managers::mission::spawnmaps;
-
-#endif /* MISSIONNPCSPAWNMAP_H_ */

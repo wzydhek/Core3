@@ -21,13 +21,11 @@ namespace server {
 			String mManagerName;
 
 		public:
-			BaseAPIProxy(const String& managerName) {
-				mManagerName = managerName;
-			}
+			BaseAPIProxy(const String& managerName);
 
-			static server::zone::ZoneServer* getZoneServer() {
-				return ServerCore::getZoneServer();
-			}
+			static server::zone::ZoneServer* getZoneServer();
 	};
  }
 }
+
+using namespace server::web3;

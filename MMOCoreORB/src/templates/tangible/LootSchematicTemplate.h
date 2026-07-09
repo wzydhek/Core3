@@ -18,35 +18,16 @@ protected:
 
 
 public:
-	LootSchematicTemplate() {
-		targetDraftSchematic = "";
-		targetUseCount = 1;
-		requiredSkill = "";
-	}
+	LootSchematicTemplate();
 
-	~LootSchematicTemplate() {
+	~LootSchematicTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	const String& getTargetDraftSchematic();
 
-		targetDraftSchematic = templateData->getStringField("targetDraftSchematic");
-		targetUseCount = templateData->getIntField("targetUseCount");
-		requiredSkill = templateData->getStringField("requiredSkill");
+	const String& getRequiredSkill();
 
-	}
-
-	const String& getTargetDraftSchematic() {
-		return targetDraftSchematic;
-	}
-
-	const String& getRequiredSkill() {
-		return requiredSkill;
-	}
-
-	int getTargetUseCount() {
-		return targetUseCount;
-	}
+	int getTargetUseCount();
 
 };

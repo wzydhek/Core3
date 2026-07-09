@@ -7,6 +7,12 @@
 
 #include "SharedBuildingObjectTemplate.h"
 
+SharedBuildingObjectTemplate::SharedBuildingObjectTemplate() : medicalRating(0), publicStructure(false), alwaysPublic(false), factionBaseType(0), ejectDistance(2.5f) {
+}
+
+SharedBuildingObjectTemplate::~SharedBuildingObjectTemplate() {
+}
+
 void SharedBuildingObjectTemplate::parseVariableData(const String& varName, Chunk* data) {
 	if (varName == "terrainModificationFileName") {
 		terrainModificationFileName.parse(data);
@@ -218,4 +224,71 @@ void SharedBuildingObjectTemplate::readObject(LuaObject* templateData) {
 	publicStructure = (bool) templateData->getByteField("publicStructure");
 
 	alwaysPublic = (bool) templateData->getByteField("alwaysPublic");*/
+}
+
+bool SharedBuildingObjectTemplate::isSharedBuildingObjectTemplate() {
+	return true;
+}
+
+bool SharedBuildingObjectTemplate::isPublicStructure() const {
+	if (alwaysPublic)
+		return true;
+
+	return publicStructure;
+}
+
+bool SharedBuildingObjectTemplate::isAlwaysPublic() const {
+	return alwaysPublic;
+}
+
+const ChildObject* SharedBuildingObjectTemplate::getSign() const {
+	return &sign;
+}
+
+int SharedBuildingObjectTemplate::getMedicalRating() const {
+	return medicalRating;
+}
+
+int SharedBuildingObjectTemplate::getChildCreatureObjectsSize() const {
+	return childCreatureObjects.size();
+}
+
+ChildCreatureObject* SharedBuildingObjectTemplate::getChildCreatureObject(int indx) {
+	return &childCreatureObjects.get(indx);
+}
+
+const String& SharedBuildingObjectTemplate::getTerrainModificationFile() const {
+	return terrainModificationFileName.get();
+}
+
+const String& SharedBuildingObjectTemplate::getInteriorLayoutFileName() const {
+	return interiorLayoutFileName.get();
+}
+
+const Vector3& SharedBuildingObjectTemplate::getEjectionPoint() const {
+	return ejectionPoint;
+}
+
+int SharedBuildingObjectTemplate::getFactionBaseType() const {
+	return factionBaseType;
+}
+
+int SharedBuildingObjectTemplate::getShopSignsSize() const {
+	return shopSigns.size();
+}
+
+const SignTemplate* SharedBuildingObjectTemplate::getShopSign(int idx) const {
+	return &shopSigns.get(idx);
+}
+
+float SharedBuildingObjectTemplate::getEjectDistance() const {
+	return ejectDistance;
+}
+
+int SharedBuildingObjectTemplate::getSecuritySpawnsSize() const {
+	return securitySpawns.size();
+}
+
+const SecurityPatrolSpawn* SharedBuildingObjectTemplate::getSecurityPatrol(int idx) const {
+	return &securitySpawns.get(idx);
 }

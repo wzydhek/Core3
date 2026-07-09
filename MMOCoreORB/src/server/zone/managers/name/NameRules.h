@@ -15,138 +15,39 @@ class NameRules: public Object {
 	String specialChars;
 
 public:
-	NameRules() {
-		nameChance = 0;
-		minSyllables = 0;
-		maxSyllables = 0;
-		minChars = 0;
-		maxChars = 0;
-		specialCharChance = 0;
-		maxSpecialChars = 0;
-		chanceBeginsSpecial = 0;
-		chanceMiddleSpecial = 0;
-		chanceEndsSpecial = 0;
-		maxSpecialSyllables = 0;
-		uniqueChance = 0;
+	NameRules();
 
-		specialChars = "";
-	}
+	NameRules(const NameRules& rules);
 
-	NameRules(const NameRules& rules) : Object() {
-		nameChance = rules.nameChance;
-		minSyllables = rules.minSyllables;
-		maxSyllables = rules.maxSyllables;
-		minChars = rules.minChars;
-		maxChars = rules.maxChars;
-		specialCharChance = rules.specialCharChance;
-		maxSpecialChars = rules.maxSpecialChars;
-		chanceBeginsSpecial = rules.chanceBeginsSpecial;
-		chanceMiddleSpecial = rules.chanceMiddleSpecial;
-		chanceEndsSpecial = rules.chanceEndsSpecial;
-		maxSpecialSyllables = rules.maxSpecialSyllables;
-		uniqueChance = rules.uniqueChance;
+	NameRules& operator=(const NameRules& rules);
 
-		specialChars = rules.specialChars;
-	}
+	void readObject(LuaObject* luaObject);
 
-	NameRules& operator=(const NameRules& rules) {
-		if (this == &rules)
-			return *this;
+	int getNameChance() const;
 
-		nameChance = rules.nameChance;
-		minSyllables = rules.minSyllables;
-		maxSyllables = rules.maxSyllables;
-		minChars = rules.minChars;
-		maxChars = rules.maxChars;
-		specialCharChance = rules.specialCharChance;
-		maxSpecialChars = rules.maxSpecialChars;
-		chanceBeginsSpecial = rules.chanceBeginsSpecial;
-		chanceMiddleSpecial = rules.chanceMiddleSpecial;
-		chanceEndsSpecial = rules.chanceEndsSpecial;
-		maxSpecialSyllables = rules.maxSpecialSyllables;
-		uniqueChance = rules.uniqueChance;
+	int getUniqueChance() const;
 
-		specialChars = rules.specialChars;
+	int getMinSyllables() const;
 
-		return *this;
-	}
+	int getMaxSyllables() const;
 
-	void readObject(LuaObject* luaObject) {
-		if (!luaObject->isValidTable())
-			return;
+	int getMinChars() const;
 
-		nameChance = luaObject->getIntField("nameChance");
-		minSyllables = luaObject->getIntField("minSyllables");
-		maxSyllables = luaObject->getIntField("maxSyllables");
-		minChars = luaObject->getIntField("minChars");
-		maxChars = luaObject->getIntField("maxChars");
-		specialCharChance = luaObject->getIntField("specialCharChance");
-		maxSpecialChars = luaObject->getIntField("maxSpecialChars");
-		chanceBeginsSpecial = luaObject->getIntField("chanceBeginsSpecial");
-		chanceMiddleSpecial = luaObject->getIntField("chanceMiddleSpecial");
-		chanceEndsSpecial = luaObject->getIntField("chanceEndsSpecial");
-		maxSpecialSyllables = luaObject->getIntField("maxSpecialSyllables");
-		uniqueChance = luaObject->getIntField("uniqueChance");
+	int getMaxChars() const;
 
-		specialChars = luaObject->getStringField("specialChars");
-	}
+	int getSpecialCharChance() const;
 
-	int getNameChance() const {
-		return nameChance;
-	}
+	int getMaxSpecialChars() const;
 
-	int getUniqueChance() const {
-		return uniqueChance;
-	}
+	int getChanceBeginsSpecial() const;
 
-	int getMinSyllables() const {
-		return minSyllables;
-	}
+	int getChanceMiddleSpecial() const;
 
-	int getMaxSyllables() const {
-		return maxSyllables;
-	}
+	int getChanceEndsSpecial() const;
 
-	int getMinChars() const {
-		return minChars;
-	}
+	int getMaxSpecialSyllables() const;
 
-	int getMaxChars() const {
-		return maxChars;
-	}
+	String getRandomSpecialChar() const;
 
-	int getSpecialCharChance() const {
-		return specialCharChance;
-	}
-
-	int getMaxSpecialChars() const {
-		return maxSpecialChars;
-	}
-
-	int getChanceBeginsSpecial() const {
-		return chanceBeginsSpecial;
-	}
-
-	int getChanceMiddleSpecial() const {
-		return chanceMiddleSpecial;
-	}
-
-	int getChanceEndsSpecial() const {
-		return chanceEndsSpecial;
-	}
-
-	int getMaxSpecialSyllables() const {
-		return maxSpecialSyllables;
-	}
-
-	String getRandomSpecialChar() const {
-		int strLen = specialChars.length() - 1;
-		int randIndex = System::random(strLen);
-		String randChar = specialChars.subString(randIndex, randIndex + 1);
-		return randChar;
-	}
-
-	const String& getSpecialChars() const {
-		return specialChars;
-	}
+	const String& getSpecialChars() const;
 };

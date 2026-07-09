@@ -122,3 +122,21 @@ void MissionNpcSpawnMap::saveSpawnPoints() {
 	spawnMap.saveSpawnPoints(file);
 	loadSpawnPointsFromLua();
 }
+
+/**
+ * Read the object from a stream.
+ * @param stream stream to read from.
+ * @return true if successful.
+ */
+bool MissionNpcSpawnMap::parseFromBinaryStream(ObjectInputStream* stream) {
+	return spawnMap.parseFromBinaryStream(stream);
+}
+
+/**
+ * Write the object to a stream.
+ * @param stream stream to write to.
+ * @param true if successful.
+ */
+bool MissionNpcSpawnMap::toBinaryStream(ObjectOutputStream* stream) {
+	return spawnMap.toBinaryStream(stream);
+}

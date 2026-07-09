@@ -28,3 +28,11 @@ void FactionRanks::readObject(DataTableIff* table) {
 		ranks.add(rank);
 	}
 }
+
+const FactionRank& FactionRanks::getRank(int index) {
+	return ranks.get(index);
+}
+
+int FactionRanks::getCount() {
+	return ranks.size();
+}

@@ -22,107 +22,27 @@ class StructureFootprint : public IffTemplate {
 	Vector<String> rows;
 
 public:
-	StructureFootprint() {
-		rowSize = 0;
-		colSize = 0;
+	StructureFootprint();
 
-		centerX = 0;
-		centerY = 0;
+	StructureFootprint(const StructureFootprint& sfp);
 
-		rowChunkSize = 0.f;
-		colChunkSize = 0.f;
-	}
+	StructureFootprint& operator=(const StructureFootprint& sfp);
 
-	StructureFootprint(const StructureFootprint& sfp) : Object(), TemplateData(), IffTemplate() {
-		rowSize = sfp.rowSize;
-		colSize = sfp.colSize;
+	void readObject(IffStream* iffStream);
 
-		centerX = sfp.centerX;
-		centerY = sfp.centerY;
+	String toString() const;
 
-		rowChunkSize = sfp.rowChunkSize;
-		colChunkSize = sfp.colChunkSize;
+	String toStringData() const;
 
-		rows = sfp.rows;
-	}
+	float getRowSize() const;
 
-	StructureFootprint& operator= (const StructureFootprint& sfp) {
-		if (this == &sfp)
-			return *this;
+	float getColSize() const;
 
-		rowSize = sfp.rowSize;
-		colSize = sfp.colSize;
+	float getCenterX() const;
 
-		centerX = sfp.centerX;
-		centerY = sfp.centerY;
+	float getCenterY() const;
 
-		rowChunkSize = sfp.rowChunkSize;
-		colChunkSize = sfp.colChunkSize;
+	float getRowChunkSize() const;
 
-		rows = sfp.rows;
-
-		return *this;
-	}
-
-	void readObject(IffStream* iffStream) {
-		iffStream->openForm('FOOT');
-
-		uint32 version = iffStream->getNextFormType();
-		iffStream->openForm(version);
-
-		switch (version) {
-			case '0000':
-			{
-				Chunk* info = iffStream->openChunk('INFO');
-				colSize = info->readInt();
-				rowSize = info->readInt();
-				centerX = info->readInt();
-				centerY = info->readInt();
-				colChunkSize = info->readFloat();
-				rowChunkSize = info->readFloat();
-				iffStream->closeChunk('INFO');
-
-				//TODO: Parse chunk PRNT
-			}
-			break;
-		}
-
-		iffStream->closeForm(version);
-		iffStream->closeForm('FOOT');
-	}
-
-	String toString() const {
-		StringBuffer str;
-		str << "{rowSize=" << rowSize << ";colSize=" << colSize << ";centerX=" << centerX << ";centerY=" << centerY << ";rowChunkSize=" << rowChunkSize << ";colChunkSize=" << colChunkSize << "}";
-
-		return str.toString();
-	}
-
-	String toStringData() const {
-		return toString();
-	}
-
-	inline float getRowSize() const {
-		return rowSize;
-	}
-
-	inline float getColSize() const {
-		return colSize;
-	}
-
-	inline float getCenterX() const {
-		return centerX;
-	}
-
-	inline float getCenterY() const {
-		return centerY;
-	}
-
-	inline float getRowChunkSize() const {
-		return rowChunkSize;
-	}
-
-	inline float getColChunkSize() const {
-		return colChunkSize;
-	}
+	float getColChunkSize() const;
 };

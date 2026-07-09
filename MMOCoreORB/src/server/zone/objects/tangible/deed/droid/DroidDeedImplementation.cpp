@@ -25,6 +25,7 @@
 #include "server/zone/objects/tangible/components/droid/BaseDroidModuleComponent.h"
 #include "server/zone/objects/tangible/component/droid/DroidComponent.h"
 #include "server/zone/managers/crafting/labratories/DroidMechanics.h"
+#include "server/zone/managers/radial/RadialOptions.h"
 
 void DroidDeedImplementation::loadTemplateData(SharedObjectTemplate* templateData) {
 	DeedImplementation::loadTemplateData(templateData);

@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "engine/engine.h"
+
 /**
  * Please see Radial in the wiki for a list of client side radial id's.
  * Also, please note that radial id's are handled in RadialManager.cpp and most have already been defined.
@@ -27,133 +29,45 @@ class RadialMenuItem : public Object {
 	int itemIndex;
 
 public:
-	RadialMenuItem(int itemidx, RadialMenuItem* parent, uint8 radialid, uint8 callback, const UnicodeString& text = "") {
-		setRadialID(radialid);
-		setCallback(callback);
-		setText(text);
+	RadialMenuItem(int itemidx, RadialMenuItem* parent, uint8 radialid, uint8 callback, const UnicodeString& text = "");
 
-		RadialMenuItem::parent = parent;
+	RadialMenuItem();
 
-		itemIndex = itemidx;
-	}
+	~RadialMenuItem();
 
-	RadialMenuItem() {
-		radialID = 0;
-		callback = 0;
+	void addRadialMenuItem(int itemidx, uint8 radialid, uint8 callback, const UnicodeString& text = "");
 
-		itemIndex = 0;
+	RadialMenuItem* getItem(int index);
 
-		parent = nullptr;
-	}
-
-	~RadialMenuItem() {
-		/*for (int i = 0; i < children.size(); ++i)
-			delete children.get(i);*/
-
-		//children.removeAll();
-	}
-
-	void addRadialMenuItem(int itemidx, uint8 radialid, uint8 callback, const UnicodeString& text = "") {
-		RadialMenuItem* menuitem = new RadialMenuItem(itemidx, this, radialid, callback, text);
-		children.add(menuitem);
-	}
-
-	RadialMenuItem* getItem(int index) {
-		RadialMenuItem* returnItem = nullptr;
-
-		for (int i = 0; i < children.size(); ++i) {
-			RadialMenuItem* item = children.get(i);
-
-			if (item->getItemIndex() == index)
-				return item;
-			else {
-				returnItem = item->getItem(index);
-
-				if (returnItem != nullptr)
-					return returnItem;
-			}
-		}
-
-		return returnItem;
-	}
-
-	RadialMenuItem* getItemByRadialID(uint8 index) {
-		RadialMenuItem* returnItem = nullptr;
-
-		for (int i = 0; i < children.size(); ++i) {
-			RadialMenuItem* item = children.get(i);
-
-			if (item->getRadialID() == index)
-				return item;
-			else {
-				returnItem = item->getItemByRadialID(index);
-
-				if (returnItem != nullptr)
-					return returnItem;
-			}
-		}
-
-		return returnItem;
-	}
+	RadialMenuItem* getItemByRadialID(uint8 index);
 
 	//Setters
-	inline void setRadialID(uint8 radialid) {
-		radialID = radialid;
-	}
+	void setRadialID(uint8 radialid);
 
-	inline void setCallback(uint8 cback) {
-		callback = cback;
-	}
+	void setCallback(uint8 cback);
 
-	inline void setText(const UnicodeString& txt) {
-		text = txt;
-	}
+	void setText(const UnicodeString& txt);
 
-	inline void setParent(RadialMenuItem* item) {
-		parent = item;
-	}
+	void setParent(RadialMenuItem* item);
 
-	inline void setItemIndex(int idx) {
-		itemIndex = idx;
-	}
+	void setItemIndex(int idx);
 
 	//Getters
-	inline uint8 getRadialID() {
-		return radialID;
-	}
+	uint8 getRadialID();
 
-	inline uint8 getCallback() {
-		return callback;
-	}
+	uint8 getCallback();
 
-	inline UnicodeString& getText() {
-		return text;
-	}
+	UnicodeString& getText();
 
-	inline RadialMenuItem* getChild(int idx) {
-		return children.get(idx);
-	}
+	RadialMenuItem* getChild(int idx);
 
-	inline RadialMenuItem* getParent() {
-		return parent;
-	}
+	RadialMenuItem* getParent();
 
-	inline bool hasChildren() {
-		return children.size() > 0;
-	}
+	bool hasChildren();
 
-	inline int getChildrenSize() {
-		return children.size();
-	}
+	int getChildrenSize();
 
-	inline int getParentIndex() {
-		if (parent != nullptr) {
-			return parent->getItemIndex();
-		} else
-			return 0;
-	}
+	int getParentIndex();
 
-	inline int getItemIndex() {
-		return itemIndex;
-	}
+	int getItemIndex();
 };

@@ -15,44 +15,14 @@ class BitmapGroup : public TemplateVariable<'MGRP'> {
 	VectorMap<uint32, TargaBitmap*> mfrcs;
 
 public:
-	BitmapGroup() {
-	}
+	BitmapGroup();
 
-	~BitmapGroup() {
-		while (mfams.size() > 0)
-			delete mfams.remove(0);
-	}
+	~BitmapGroup();
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		uint32 version = iffStream->getNextFormType();
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-		iffStream->openForm(version);
+	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>);
 
-		switch (version) {
-		case '0000':
-			parseFromIffStream(iffStream, Version<'0000'>());
-			break;
-		default:
-			System::out << "unknown MGRP version " << version << endl;
-			break;
-		}
-
-		iffStream->closeForm(version);
-	}
-
-	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>) {
-		int number = iffStream->getSubChunksNumber();
-
-		for (int i = 0; i < number; ++i) {
-			BitMapFamily* sfam = new BitMapFamily();
-			sfam->readObject(iffStream);
-			mfams.add(sfam);
-			mfrcs.put(sfam->getVar1(), sfam->getMap());
-		}
-	}
-
-	inline TargaBitmap* getBitmap(int index) {
-		return mfrcs.get((uint32)index);
-	}
+	TargaBitmap* getBitmap(int index);
 
 };

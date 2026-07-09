@@ -158,33 +158,17 @@ public:
 
 	TransactionLog(SceneObject* src, SceneObject* dst, TrxCode code, int amount, bool isCash = true, CAPTURE_CALLER_DECLARE);
 
-	TransactionLog(SceneObject* src, SceneObject* dst, TrxCode code, bool exportSubject = false, CAPTURE_CALLER_DECLARE)
-		: TransactionLog(src, dst, (SceneObject*)nullptr, code, exportSubject, file, function, line) {
-			setType("apply");
-	}
+	TransactionLog(SceneObject* src, SceneObject* dst, TrxCode code, bool exportSubject = false, CAPTURE_CALLER_DECLARE);
 
-	TransactionLog(TrxCode code, SceneObject* dst, SceneObject* subject, bool exportSubject = false, CAPTURE_CALLER_DECLARE)
-		: TransactionLog((SceneObject*)nullptr, dst, subject, code, exportSubject, file, function, line) {
-	}
+	TransactionLog(TrxCode code, SceneObject* dst, SceneObject* subject, bool exportSubject = false, CAPTURE_CALLER_DECLARE);
 
-	TransactionLog(SceneObject* src, TrxCode code, SceneObject* subject, bool exportSubject = false, CAPTURE_CALLER_DECLARE)
-		: TransactionLog(src, (SceneObject*)nullptr, subject, code, exportSubject, file, function, line) {
-	}
+	TransactionLog(SceneObject* src, TrxCode code, SceneObject* subject, bool exportSubject = false, CAPTURE_CALLER_DECLARE);
 
-	TransactionLog(TrxCode code, SceneObject* dst, CAPTURE_CALLER_DECLARE)
-		: TransactionLog((SceneObject*)nullptr, dst, (SceneObject*)nullptr, code, false, file, function, line) {
-			if (!isStat(code)) {
-				mAutoCommit = false;
-			}
-	}
+	TransactionLog(TrxCode code, SceneObject* dst, CAPTURE_CALLER_DECLARE);
 
-	TransactionLog(SceneObject* src, TrxCode code, uint amount, bool isCash = true, CAPTURE_CALLER_DECLARE)
-		: TransactionLog(src, nullptr, code, amount, isCash, file, function, line) {
-	}
+	TransactionLog(SceneObject* src, TrxCode code, uint amount, bool isCash = true, CAPTURE_CALLER_DECLARE);
 
-	TransactionLog(TrxCode code, SceneObject* dst, uint amount, bool isCash = true, CAPTURE_CALLER_DECLARE)
-		: TransactionLog((SceneObject*)nullptr, dst, code, amount, isCash, file, function, line) {
-	}
+	TransactionLog(TrxCode code, SceneObject* dst, uint amount, bool isCash = true, CAPTURE_CALLER_DECLARE);
 
 	TransactionLog(uint64 srcObjectID, TrxCode code, uint amount, bool isCash = true, CAPTURE_CALLER_DECLARE);
 
@@ -192,54 +176,11 @@ public:
 
 	~TransactionLog();
 
-	TransactionLog(const TransactionLog& rhs) {
-		*this = rhs;
-	}
+	TransactionLog(const TransactionLog& rhs);
 
-	TransactionLog newChild() {
-		TransactionLog child;
+	TransactionLog newChild();
 
-		// Copy limited properties from parent
-		child.mEnabled = mEnabled;
-		child.mDebug = mDebug;
-		child.mExportRelated = mExportRelated;
-		child.mWorldPosition = mWorldPosition;
-		child.mWorldPositionContext = mWorldPositionContext;
-		child.mZoneName = mZoneName;
-		child.mContext = mContext;
-		child.mTransaction["trxId"] = getNewTrxID();
-		child.mTransaction["trxGroup"] = getTrxGroup();
-		child.mTransaction["code"] = mTransaction["code"];
-		child.mTransaction["src"] = mTransaction["src"];
-		child.mTransaction["dst"] = mTransaction["dst"];
-		child.mTransaction["subject"] = mTransaction["subject"];
-
-		return child;
-	}
-
-	TransactionLog& operator=(const TransactionLog& rhs) {
-		if (this == &rhs) {
-			return *this;
-		}
-
-		mStartTime = rhs.mStartTime;
-		mEnabled = rhs.mEnabled;
-		mDebug = rhs.mDebug;
-		mCommitted = rhs.mCommitted;
-		mAborted = rhs.mAborted;
-		mExportRelated = rhs.mExportRelated;
-		mError << rhs.mError;
-		mWorldPosition = rhs.mWorldPosition;
-		mWorldPositionContext = rhs.mWorldPositionContext;
-		mZoneName = rhs.mZoneName;
-		mRelatedObjects = rhs.mRelatedObjects;
-		mChildObjects = rhs.mChildObjects;
-		mState = rhs.mState;
-		mContext = rhs.mContext;
-		mTransaction = rhs.mTransaction;
-
-		return *this;
-	}
+	TransactionLog& operator=(const TransactionLog& rhs);
 
 	void commit(bool discardEmpty = false);
 
@@ -249,107 +190,55 @@ public:
 
 	const String getErrorMessage();
 
-	bool isEnabled() const {
-		return getEnabled() && mEnabled;
-	}
+	bool isEnabled() const;
 
-	void setEnabled(bool enabled) {
-		mEnabled = enabled;
-	}
+	void setEnabled(bool enabled);
 
-	void setWriteLog(bool enabled) {
-		mEnabled = enabled;
-	}
+	void setWriteLog(bool enabled);
 
-	void discard() {
-		mEnabled = false;
-	}
+	void discard();
 
 	bool isCreditTransaction() const;
 
-	void setExportRelatedObjects(bool exportRelated) {
-		mExportRelated = exportRelated;
-	}
+	void setExportRelatedObjects(bool exportRelated);
 
-	bool getExportRealtedObjects() const {
-		return mExportRelated;
-	}
+	bool getExportRealtedObjects() const;
 
-	static const String getNewTrxGroup() {
-		return "G" + getNewTrxID().toUpperCase();
-	}
+	static const String getNewTrxGroup();
 
-	void setTrxGroup(const String& groupTrxId) {
-		mTransaction["trxGroup"] = groupTrxId;
-	}
+	void setTrxGroup(const String& groupTrxId);
 
-	const String getTrxGroup() {
-		if (!mTransaction.contains("trxGroup")) {
-			mTransaction["trxGroup"] = getNewTrxGroup();
-		}
+	const String getTrxGroup();
 
-		return String(mTransaction["trxGroup"]);
-	}
+	void groupWith(TransactionLog& leadTrx);
 
-	void groupWith(TransactionLog& leadTrx) {
-		mTransaction["trxGroup"] = leadTrx.getTrxGroup();
-	}
+	void setAutoCommit(bool autocommit);
 
-	void setAutoCommit(bool autocommit) {
-		mAutoCommit = autocommit;
-	}
+	void setAmount(int amount, bool isCash = false);
 
-	void setAmount(int amount, bool isCash = false) {
-		mTransaction["isCash"] = isCash;
-		mTransaction["amount"] = amount;
-	}
+	void setType(const String& type);
 
-	void setType(const String& type) {
-		mContext["type"] = type;
-	}
-
-	const String getType() const {
-		return String(mContext["type"]);
-	}
+	const String getType() const;
 
 	void setSubject(SceneObject* subject, bool exportSubject = false);
 
 	void setExperience(const String& xpType, int xpAdd, int xpTotal);
 
-	bool getAutoCommit() const {
-		return mAutoCommit;
-	}
+	bool getAutoCommit() const;
 
-	void setDebug(bool debug) {
-		mDebug = debug;
-	}
+	void setDebug(bool debug);
 
-	bool getDebug() const {
-		return mDebug;
-	}
+	bool getDebug() const;
 
-	bool isAborted() const {
-		return mAborted;
-	}
+	bool isAborted() const;
 
-	bool isVerbose() const {
-		return getVerbose();
-	}
+	bool isVerbose() const;
 
-	void setMaxDepth(int maxDepth) {
-		mMaxDepth = maxDepth;
-	}
+	void setMaxDepth(int maxDepth);
 
-	int getMaxDepth() const {
-		return mMaxDepth;
-	}
+	int getMaxDepth() const;
 
-	const String getTrxID() const {
-		if (!isEnabled())
-			return "disabled";
-
-		return String(mTransaction["trxId"].get<std::string>());
-	}
+	const String getTrxID() const;
 
 	String toStringData() const;
 
@@ -376,8 +265,7 @@ public:
 	void exportRelated();
 
 private:
-	TransactionLog() {
-	};
+	TransactionLog();
 
 	static AtomicInteger exportBacklog;
 
@@ -421,28 +309,5 @@ private:
 
 	static const String trxCodeToString(TrxCode code);
 
-	static bool isStat(TrxCode code) {
-		switch (code) {
-			case TrxCode::COMBATSTATS:
-			case TrxCode::CORPSEEXPIRATION:
-			case TrxCode::CRAFTINGSESSION:
-			case TrxCode::DATABASECOMMIT:
-			case TrxCode::EXPERIENCE:
-			case TrxCode::JABBASPALACE:
-			case TrxCode::NEWBIETUTORIAL:
-			case TrxCode::PLAYERDIED:
-			case TrxCode::PLAYERLINKDEAD:
-			case TrxCode::PLAYERLOGGINGOUT:
-			case TrxCode::PLAYEROFFLINE:
-			case TrxCode::PLAYERONLINE:
-			case TrxCode::SESSIONSTATS:
-			case TrxCode::POISYSTEM:
-			case TrxCode::SKILLTRAININGSYSTEM:
-			case TrxCode::TESTACCOUNT:
-				return true;
-
-			default:
-				return false;
-		}
-	}
+	static bool isStat(TrxCode code);
 };

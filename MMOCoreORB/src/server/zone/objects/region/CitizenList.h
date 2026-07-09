@@ -12,7 +12,5 @@
 
 class CitizenList : public SynchronizedSortedVector<uint64> {
 public:
-	CitizenList() : SynchronizedSortedVector<uint64>() {
-		setNoDuplicateInsertPlan();
-	}
+	CitizenList();
 };

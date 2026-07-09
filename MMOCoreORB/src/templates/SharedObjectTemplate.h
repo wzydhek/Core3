@@ -221,368 +221,177 @@ public:
 
 	static String getType(int type);
 
-	inline const String& getAppearanceFilename() const {
-		return appearanceFilename.get();
-	}
+	const String& getAppearanceFilename() const;
 
-	inline float getClearFloraRadius() const {
-		return clearFloraRadius;
-	}
+	float getClearFloraRadius() const;
 
-	inline const String& getClientDataFile() const {
-		return clientDataFile.get();
-	}
+	const String& getClientDataFile() const;
 
-	inline int getCollisionActionBlockFlags() const {
-		return collisionActionBlockFlags;
-	}
+	int getCollisionActionBlockFlags() const;
 
-	inline int getCollisionActionFlags() const {
-		return collisionActionFlags;
-	}
+	int getCollisionActionFlags() const;
 
-	inline int getCollisionActionPassFlags() const {
-		return collisionActionPassFlags;
-	}
+	int getCollisionActionPassFlags() const;
 
-	inline int getCollisionMaterialBlockFlags() const {
-		return collisionMaterialBlockFlags;
-	}
+	int getCollisionMaterialBlockFlags() const;
 
-	inline int getCollisionMaterialFlags() const {
-		return collisionMaterialFlags;
-	}
+	int getCollisionMaterialFlags() const;
 
-	inline int getCollisionMaterialPassFlags() const {
-		return collisionMaterialPassFlags;
-	}
+	int getCollisionMaterialPassFlags() const;
 
-	inline int getContainerType() const {
-		return containerType;
-	}
+	int getContainerType() const;
 
-	inline int getContainerVolumeLimit() const {
-		return containerVolumeLimit;
-	}
+	int getContainerVolumeLimit() const;
 
-	inline String getDetailedDescription() const {
-		return detailedDescription.getFullString();
-	}
+	String getDetailedDescription() const;
 
-	inline int getGameObjectType() const {
-		return gameObjectType;
-	}
+	int getGameObjectType() const;
 
-	inline int getClientGameObjectType() const {
-		return clientGameObjectType;
-	}
+	int getClientGameObjectType() const;
 
-	inline float getLocationReservationRadius() const {
-		return locationReservationRadius;
-	}
+	float getLocationReservationRadius() const;
 
-	inline String getLookAtText() const {
-		return lookAtText.getFullString();
-	}
+	String getLookAtText() const;
 
-	inline float getNoBuildRadius() const {
-		return noBuildRadius;
-	}
+	float getNoBuildRadius() const;
 
-	inline String getObjectName() const {
-		return objectName.getFullString();
-	}
+	String getObjectName() const;
 
-	inline const String& getCustomName() const {
-		return customName;
-	}
+	const String& getCustomName() const;
 
-	inline bool getOnlyVisibleInTools() const {
-		return onlyVisibleInTools;
-	}
+	bool getOnlyVisibleInTools() const;
 
-	inline const String& getPortalLayoutFilename() const {
-		return portalLayoutFilename.get();
-	}
+	const String& getPortalLayoutFilename() const;
 
 	const PortalLayout* getPortalLayout();
 	AppearanceTemplate* getAppearanceTemplate();
 
-	const Vector <Vector<String>>& getArrangementDescriptors() const {
-		if (arrangementDescriptors == nullptr) {
-			const static Vector < Vector<String> > EMPTY_DESCRIPTORS;
-			return EMPTY_DESCRIPTORS;
-		} else
-			return arrangementDescriptors->getArrangementSlots();
-	}
+	const Vector<Vector<String>>& getArrangementDescriptors() const;
 
 	/*inline Vector<float>* getScale() {
 		return &scale;
 	}*/
 
-	inline void addDerivedFile(const String& name) {
-		loadedDerivedFiles.put(name);
-	}
+	void addDerivedFile(const String& name);
 
-	inline float getMinScale() const {
-		return scale.getMin();
-	}
+	float getMinScale() const;
 
-	inline float getMaxScale() const {
-		return scale.getMax();
-	}
+	float getMaxScale() const;
 
-	inline bool isNoTrade() const {
-		return noTrade;
-	}
+	bool isNoTrade() const;
 
-	inline bool isForceNoTrade() const {
-		return forceNoTrade;
-	}
+	bool isForceNoTrade() const;
 
-	inline float getScaleThresholdBeforeExtentTest() const {
-		return scaleThresholdBeforeExtentTest;
-	}
+	float getScaleThresholdBeforeExtentTest() const;
 
-	inline bool getSendToClient() const {
-		return sendToClient;
-	}
+	bool getSendToClient() const;
 
-	inline const Vector<String>* getSlotDescriptors() const {
-		if (slotDescriptors == nullptr)
-			return nullptr;
-		else
-			return slotDescriptors->getSlots();
-	}
+	const Vector<String>* getSlotDescriptors() const;
 
-	inline bool getSnapToTerrain() const {
-		return snapToTerrain;
-	}
+	bool getSnapToTerrain() const;
 
-	inline int getSurfaceType() const {
-		return surfaceType;
-	}
+	int getSurfaceType() const;
 
-	inline const String& getTintPallete() const {
-		return tintPallete.get();
-	}
+	const String& getTintPallete() const;
 
-	inline int getTotalCellNumber() const {
-		return totalCellNumber;
-	}
+	int getTotalCellNumber() const;
 
-	inline uint32 getClientObjectCRC() const {
-		return clientTemplateFileName.hashCode();
-	}
+	uint32 getClientObjectCRC() const;
 
-	inline const String& getClientTemplateFileName() const {
-		return clientTemplateFileName;
-	}
+	const String& getClientTemplateFileName() const;
 
-	inline uint32 getServerObjectCRC() const {
-		return fullTemplateString.hashCode();
-	}
+	uint32 getServerObjectCRC() const;
 
-	inline const String& getFullTemplateString() const {
-		return fullTemplateString;
-	}
+	const String& getFullTemplateString() const;
 
-	inline const String& getDataObjectComponent() const {
-		return dataObjectComponent;
-	}
+	const String& getDataObjectComponent() const;
 
-	inline const String& getTemplateFileName() const {
-		return templateFileName;
-	}
+	const String& getTemplateFileName() const;
 
-	inline const String& getContainerComponent() const {
-		return containerComponent;
-	}
+	const String& getContainerComponent() const;
 
-	inline const String& getGroundZoneComponent() const {
-		return groundZoneComponent;
-	}
+	const String& getGroundZoneComponent() const;
 
-	inline const String& getSpaceZoneComponent() const {
-		return spaceZoneComponent;
-	}
+	const String& getSpaceZoneComponent() const;
 
-	inline const String& getObjectMenuComponent() const {
-		return objectMenuComponent;
-	}
+	const String& getObjectMenuComponent() const;
 
-	inline const String& getAttributeListComponent() const {
-		return attributeListComponent;
-	}
+	const String& getAttributeListComponent() const;
 
-	inline const PlanetMapCategory* getPlanetMapCategory() const {
-		return planetMapCategory;
-	}
+	const PlanetMapCategory* getPlanetMapCategory() const;
 
-	inline const PlanetMapSubCategory* getPlanetMapSubCategory() const {
-		return planetMapSubCategory;
-	}
+	const PlanetMapSubCategory* getPlanetMapSubCategory() const;
 
-	inline bool isAutoRegistering() const {
-		return autoRegisterWithPlanetMap;
-	}
+	bool isAutoRegistering() const;
 
-	inline int getChildObjectsSize() const {
-		return childObjects.size();
-	}
+	int getChildObjectsSize() const;
 
-	inline const ChildObject* getChildObject(int idx) const {
-		return &childObjects.get(idx);
-	}
+	const ChildObject* getChildObject(int idx) const;
 
-	bool hasInheritPermissionsFromParent() const {
-		return inheritPermissionsFromParent;
-	}
+	bool hasInheritPermissionsFromParent() const;
 
-	const HashTable<uint32, uint32>* getGroupPermissions() const {
-		return &groupPermissions;
-	}
+	const HashTable<uint32, uint32>* getGroupPermissions() const;
 
-	bool hasArrangementDescriptor(const String& s) const {
-		const auto& hAD = getArrangementDescriptors();
+	bool hasArrangementDescriptor(const String& s) const;
 
-		for (int i = 0; i < hAD.size(); ++i) {
-			const auto& slotItems = hAD.get(i);
-
-			if (slotItems.contains(s)) {
-				return true;
-			}
-		}
-
-		return false;
-	}
-
-	bool getDelayedContainerLoad() const {
-		return delayedContainerLoad;
-	}
+	bool getDelayedContainerLoad() const;
 
 public:
-	void setAppearanceFilename(const String& appearanceFilename) {
-		this->appearanceFilename = appearanceFilename;
-	}
+	void setAppearanceFilename(const String& appearanceFilename);
 
-	void setClearFloraRadius(float clearFloraRadius) {
-		this->clearFloraRadius = clearFloraRadius;
-	}
+	void setClearFloraRadius(float clearFloraRadius);
 
-	void setClientDataFile(const String& clientDataFile) {
-		this->clientDataFile = clientDataFile;
-	}
+	void setClientDataFile(const String& clientDataFile);
 
-	void setCollisionActionBlockFlags(int collisionActionBlockFlags) {
-		this->collisionActionBlockFlags = collisionActionBlockFlags;
-	}
+	void setCollisionActionBlockFlags(int collisionActionBlockFlags);
 
-	void setCollisionActionFlags(int collisionActionFlags) {
-		this->collisionActionFlags = collisionActionFlags;
-	}
+	void setCollisionActionFlags(int collisionActionFlags);
 
-	void setCollisionActionPassFlags(int collisionActionPassFlags) {
-		this->collisionActionPassFlags = collisionActionPassFlags;
-	}
+	void setCollisionActionPassFlags(int collisionActionPassFlags);
 
-	void setCollisionMaterialBlockFlags(int collisionMaterialBlockFlags) {
-		this->collisionMaterialBlockFlags = collisionMaterialBlockFlags;
-	}
+	void setCollisionMaterialBlockFlags(int collisionMaterialBlockFlags);
 
-	void setCollisionMaterialFlags(int collisionMaterialFlags) {
-		this->collisionMaterialFlags = collisionMaterialFlags;
-	}
+	void setCollisionMaterialFlags(int collisionMaterialFlags);
 
-	void setCollisionMaterialPassFlags(int collisionMaterialPassFlags) {
-		this->collisionMaterialPassFlags = collisionMaterialPassFlags;
-	}
+	void setCollisionMaterialPassFlags(int collisionMaterialPassFlags);
 
-	void setContainerType(int containerType) {
-		this->containerType = containerType;
-	}
+	void setContainerType(int containerType);
 
-	void setContainerVolumeLimit(int containerVolumeLimit) {
-		this->containerVolumeLimit = containerVolumeLimit;
-	}
+	void setContainerVolumeLimit(int containerVolumeLimit);
 
-	void setDetailedDescription(String detailedDescription) {
-		this->detailedDescription = detailedDescription;
-	}
+	void setDetailedDescription(String detailedDescription);
 
-	void setGameObjectType(int gameObjectType) {
-		this->gameObjectType = gameObjectType;
-	}
+	void setGameObjectType(int gameObjectType);
 
-	void setLocationReservationRadius(float locationReservationRadius) {
-		this->locationReservationRadius = locationReservationRadius;
-	}
+	void setLocationReservationRadius(float locationReservationRadius);
 
-	void setLookAtText(const String& lookAtText) {
-		this->lookAtText = lookAtText;
-	}
+	void setLookAtText(const String& lookAtText);
 
-	void setNoBuildRadius(float noBuildRadius) {
-		this->noBuildRadius = noBuildRadius;
-	}
+	void setNoBuildRadius(float noBuildRadius);
 
-	void setObjectName(const String& objectName) {
-		this->objectName = objectName;
-	}
+	void setObjectName(const String& objectName);
 
-	void setOnlyVisibleInTools(bool onlyVisibleInTools) {
-		this->onlyVisibleInTools = onlyVisibleInTools;
-	}
+	void setOnlyVisibleInTools(bool onlyVisibleInTools);
 
-	void setPortalLayoutFilename(const String& portalLayoutFilename) {
-		this->portalLayoutFilename = portalLayoutFilename;
-	}
+	void setPortalLayoutFilename(const String& portalLayoutFilename);
 
-	/*void setRrangementDescriptors(Vector<String> rrangementDescriptors) {
-		this->arrangementDescriptors = rrangementDescriptors;
-	}*/
+	void setScale(float scale);
 
-	void setScale(float scale) {
-		this->scale = scale;
-	}
+	void setScaleThresholdBeforeExtentTest(float scaleThresholdBeforeExtentTest);
 
-	void setScaleThresholdBeforeExtentTest(float scaleThresholdBeforeExtentTest) {
-		this->scaleThresholdBeforeExtentTest = scaleThresholdBeforeExtentTest;
-	}
+	void setSendToClient(bool sendToClient);
 
-	void setSendToClient(bool sendToClient) {
-		this->sendToClient = sendToClient;
-	}
+	void setSnapToTerrain(bool snapToTerrain);
 
-	/*void setSlotDescriptors(Vector<String> slotDescriptors) {
-		this->slotDescriptors = slotDescriptors;
-	}*/
+	void setSurfaceType(int surfaceType);
 
-	void setSnapToTerrain(bool snapToTerrain) {
-		this->snapToTerrain = snapToTerrain;
-	}
+	void setTintPallete(const String& tintPallete);
 
-	void setSurfaceType(int surfaceType) {
-		this->surfaceType = surfaceType;
-	}
+	void setTotalCellNumber(int totalCellNumber);
 
-	void setTintPallete(const String& tintPallete) {
-		this->tintPallete = tintPallete;
-	}
+	void setFullTemplateString(const String& str);
 
-	void setTotalCellNumber(int totalCellNumber) {
-		this->totalCellNumber = totalCellNumber;
-	}
-
-	void setFullTemplateString(const String& str) {
-		fullTemplateString = str;
-	}
-
-	void setTemplateFileName(const String& str) {
-		templateFileName = str;
-
-		Logger::setLoggingName("SharedObjectTemplate " + templateFileName);
-	}
+	void setTemplateFileName(const String& str);
 
 public:
 	virtual bool isArmorObjectTemplate() {
@@ -761,7 +570,5 @@ public:
 		return false;
 	}
 
-	virtual bool isNavUpdatesEnabled() {
-		return updatesNavMesh;
-	}
+	virtual bool isNavUpdatesEnabled();
 };

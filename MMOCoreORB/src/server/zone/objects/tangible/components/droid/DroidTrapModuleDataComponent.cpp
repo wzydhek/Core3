@@ -401,3 +401,26 @@ bool DroidTrapModuleDataComponent::parseFromBinaryStream(ObjectInputStream* stre
 	}
 	return true;
 }
+
+int DroidTrapModuleDataComponent::getBatteryDrain() {
+	return 0;
+}
+
+bool DroidTrapModuleDataComponent::isStackable() {
+	return true;
+}
+
+ManagedReference<TangibleObject*> DroidTrapModuleDataComponent::getTrap() {
+	return trap;
+}
+float DroidTrapModuleDataComponent::getTrapBonus() {
+	return trapBonus;
+}
+
+void DroidTrapModuleDataComponent::writeJSON(nlohmann::json& j) const {
+	BaseDroidModuleComponent::writeJSON(j);
+
+	SERIALIZE_JSON_MEMBER(trapBonus);
+	SERIALIZE_JSON_MEMBER(modules);
+	SERIALIZE_JSON_MEMBER(trap);
+}

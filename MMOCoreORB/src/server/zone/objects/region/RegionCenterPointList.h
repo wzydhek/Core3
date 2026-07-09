@@ -12,8 +12,5 @@
 
 class RegionCenterPointList : public Vector<RegionCenterPoint> {
 public:
-	void addRegion(float x, float y, float radius) {
-		RegionCenterPoint point(x, y, radius);
-		add(point);
-	}
+	void addRegion(float x, float y, float radius);
 };

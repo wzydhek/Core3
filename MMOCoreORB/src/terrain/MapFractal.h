@@ -37,13 +37,7 @@ class MapFractal : public TemplateVariable<'MFRC'> {
 public:
 	MapFractal();
 
-	~MapFractal() {
-		delete noise;
-		noise = nullptr;
-
-		delete rand;
-		rand = nullptr;
-	}
+	~MapFractal();
 
 	void parseFromIffStream(engine::util::IffStream* iffStream);
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);
@@ -60,66 +54,27 @@ public:
 
 	void setSeed(int seed);
 
-	inline void setBias(int bias) {
-		this->bias = bias; // bias
-	}
+	void setBias(int bias);
 
-	inline void setBiasValue(float value) {
-		biasValue = value; // bias value
-	}
+	void setBiasValue(float value);
 
-	inline void setGainType(int type) {
-		gainType = type; // gain type
-	}
+	void setGainType(int type);
 
-	inline void setGainValue(float val) {
-		gainValue = val; // gain value
-	}
+	void setGainValue(float val);
 
-	inline void setOctaves(int octaves) {
-		this->octaves = octaves; // octaves
-	}
+	void setOctaves(int octaves);
 
-	inline void setOctavesParam(float param) {
-		octavesParam = param; // octaves param
-	}
+	void setOctavesParam(float param);
 
-	void setAmplitude(float ampl) {
-		amplitude = ampl;
+	void setAmplitude(float ampl);
 
-		offset32 = 0.f;
+	void setXFreq(float xfreq);
 
-		float v3 = 0;
-		float v2 = 1.0;
+	void setYFreq(float yfreq);
 
-		for (int i = 0; i < octaves; ++i) {
-			v3 = v3 + v2;
-			v2 = v2 * amplitude;
-		}
+	void setZOffset(float offset);
 
-		offset32 = v3;
+	void setXOffset(float offset);
 
-		if (offset32 != 0)
-			offset32 = 1.0 / offset32;
-	}
-
-	inline void setXFreq(float xfreq) {
-		xFrequency = xfreq; // x.freq
-	}
-
-	inline void setYFreq(float yfreq) {
-		yFrequency = yfreq; // y.freq
-	}
-
-	inline void setZOffset(float offset) {
-		zOffset = offset; // z.offset
-	}
-
-	inline void setXOffset(float offset) {
-		xOffset = offset; // x.offset
-	}
-
-	inline void setCombination(int comb) {
-		combination = comb; // combination
-	}
+	void setCombination(int comb);
 };

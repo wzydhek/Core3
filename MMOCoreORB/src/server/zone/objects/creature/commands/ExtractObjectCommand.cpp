@@ -1,0 +1,39 @@
+#include "ExtractObjectCommand.h"
+#include "server/zone/ZoneServer.h"
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/factorycrate/FactoryCrate.h"
+
+ExtractObjectCommand::ExtractObjectCommand(const String& name, ZoneProcessServer* server) : QueueCommand(name, server) {
+}
+
+int ExtractObjectCommand::doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
+	if (!checkStateMask(creature))
+		return INVALIDSTATE;
+
+	if (!checkInvalidLocomotions(creature))
+		return INVALIDLOCOMOTION;
+
+	try {
+		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
+
+		if (object == nullptr || !object->isFactoryCrate()) {
+			creature->sendSystemMessage("Trying to 'ExtractObjectCommand' on item that isn't a factory crate");
+			return GENERALERROR;
+		}
+
+		if (!object->isASubChildOf(creature))
+			return GENERALERROR;
+
+		ManagedReference<FactoryCrate*> crate = cast<FactoryCrate*>(object.get());
+
+		if (!crate->extractObjectToInventory(creature)) {
+			// error("Error extracting object in ExtractObjectCommand");
+		}
+
+	} catch (Exception& e) {
+		error("Unhandled Exception in ExtractObjectCommand");
+		creature->sendSystemMessage("Unhandled Exception in ExtractObjectCommand");
+	}
+
+	return SUCCESS;
+}

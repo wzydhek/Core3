@@ -8,45 +8,11 @@
 #pragma once
 
 #include "engine/engine.h"
-#include "server/zone/ZoneServer.h"
-#include "BoardShuttleCommand.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class ServerInfoCommand {
 public:
-	static int executeCommand(CreatureObject* creature, uint64 target, const UnicodeString& arguments) {
-		PlayerObject* ghost = creature->getPlayerObject();
+	static int executeCommand(CreatureObject* creature, uint64 target, const UnicodeString& arguments);
 
-		if (ghost == nullptr)
-			return 1;
-
-		ZoneServer* zserv = creature->getZoneServer();
-
-		SuiMessageBox* box = new SuiMessageBox(creature, 0);
-		box->setPromptTitle("Server Information");
-		box->setPromptText(zserv->getInfo());
-
-		ghost->addSuiBox(box);
-		creature->sendMessage(box->generateMessage());
-
-		StringTokenizer tokenizer(arguments.toString());
-
-		if (tokenizer.hasMoreTokens()) {
-			try {
-				int cityCap = tokenizer.getIntToken();
-
-				BoardShuttleCommand::MAXIMUM_PLAYER_COUNT = cityCap;
-
-				creature->sendSystemMessage("Maximum number of player per city set to " + String::valueOf(cityCap));
-			} catch (...) {
-				creature->error("exception parsing city cap");
-			}
-		}
-
-		return 0;
-	}
-
-	static void sendSyntax(CreatureObject* player) {
-		if (player != nullptr)
-			player->sendSystemMessage("Syntax: /server info");
-	}
+	static void sendSyntax(CreatureObject* player);
 };

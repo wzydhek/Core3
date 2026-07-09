@@ -13,22 +13,9 @@ class ObjectMenuSelectCallback : public MessageCallback {
 	uint64 objectID;
 	uint8 radialID;
 public:
-	ObjectMenuSelectCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), objectID(0), radialID(0) {
+	ObjectMenuSelectCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		objectID = message->parseLong();
-		radialID = message->parseByte();
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player != nullptr) {
-			RadialManager* radialManager = server->getZoneServer()->getRadialManager();
-			radialManager->handleObjectMenuSelect(player, radialID, objectID);
-		}
-	}
+	void run();
 };

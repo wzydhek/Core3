@@ -11,14 +11,7 @@ class CreateFactoryObjectTask : public Task {
 	ManagedReference<FactoryObject* > factoryObject;
 
 public:
-	CreateFactoryObjectTask(FactoryObject* factory) : Task() {
-		factoryObject = factory;
-	}
+	CreateFactoryObjectTask(FactoryObject* factory);
 
-	void run() {
-
-		Locker _locker(factoryObject);
-
-		factoryObject->createNewObject();
-	}
+	void run();
 };

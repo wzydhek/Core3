@@ -62,41 +62,23 @@ public:
 	bool toBinaryStream(ObjectOutputStream* stream);
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 
-	uint64 getOwnerID() const {
-		return ownerID;
-	}
+	uint64 getOwnerID() const;
 
-	const HashTable<uint32, uint32>* getGroupPermissions() const {
-		return &groupPermissions;
-	}
+	const HashTable<uint32, uint32>* getGroupPermissions() const;
 
-	bool hasInheritPermissionsFromParent() const {
-		return inheritPermissionsFromParent;
-	}
+	bool hasInheritPermissionsFromParent() const;
 
-	uint16 getAllowPermissions(uint32 group) const {
-		return (uint16)(groupPermissions.get(group) >> 16);
-	}
+	uint16 getAllowPermissions(uint32 group) const;
 
-	uint16 getDenyPermissions(uint32 group) const {
-		return (uint16)(groupPermissions.get(group) & 0x0000FFFF);
-	}
+	uint16 getDenyPermissions(uint32 group) const;
 
-	uint32 getFullPermissions(uint32 group) const {
-		return groupPermissions.get(group);
-	}
+	uint32 getFullPermissions(uint32 group) const;
 
-	uint32 getFullPermissions(const String& group) const {
-		return groupPermissions.get(group.hashCode());
-	}
+	uint32 getFullPermissions(const String& group) const;
 
-	void setOwner(uint64 id) {
-		ownerID = id;
-	}
+	void setOwner(uint64 id);
 
-	void setInheritPermissionsFromParent(bool val) {
-		inheritPermissionsFromParent = val;
-	}
+	void setInheritPermissionsFromParent(bool val);
 };
 
 void to_json(nlohmann::json& k, const server::zone::objects::scene::variables::ContainerPermissions& perms);

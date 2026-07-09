@@ -14,83 +14,35 @@ namespace leafspace {
 
 class DummySpace : public BehaviorSpace {
 public:
-	DummySpace(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	DummySpace(const String& className, const uint32 id, const LuaObject& args);
 
-	DummySpace(const DummySpace& d) : BehaviorSpace(d) {
-	}
+	DummySpace(const DummySpace& d);
 
-	BehaviorSpace::Status execute(ShipAiAgent*, unsigned int) const {
-		return SUCCESS; // this is meant to be decorated with AlwaysXX, so this return won't matter.
-	}
+	BehaviorSpace::Status execute(ShipAiAgent*, unsigned int) const;
 };
 
 class FindNextPosition : public BehaviorSpace {
 public:
-	FindNextPosition(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	FindNextPosition(const String& className, const uint32 id, const LuaObject& args);
 
-	FindNextPosition(const FindNextPosition& a) : BehaviorSpace(a) {
-	}
+	FindNextPosition(const FindNextPosition& a);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		uint32 movementState = agent->getMovementState();
-
-		if (movementState == ShipAiAgent::FOLLOWING || movementState == ShipAiAgent::ATTACKING) {
-			return agent->findNextPosition(agent->getMaxDistance()) ? SUCCESS : FAILURE;
-		}
-
-		return agent->findNextPosition(agent->getMaxDistance()) ? RUNNING : SUCCESS;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 class Wait : public BehaviorSpace {
 public:
-	Wait(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args), duration(-1) {
-		parseArgs(args);
-	}
+	Wait(const String& className, const uint32 id, const LuaObject& args);
 
-	Wait(const Wait& a) : BehaviorSpace(a), duration(a.duration) {
-	}
+	Wait(const Wait& a);
 
-	Wait& operator=(const Wait& a) {
-		if (this == &a)
-			return *this;
+	Wait& operator=(const Wait& a);
 
-		BehaviorSpace::operator=(a);
-		duration = a.duration;
+	void parseArgs(const LuaObject& args);
 
-		return *this;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-	void parseArgs(const LuaObject& args) {
-		duration = (int)(getArg<float>()(args, "duration") * 1000);
-	}
-
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		// we don't need to check a value. Just checking to see if this value
-		// exists on the blackboard is fine since it can never be false
-		if (agent->peekBlackboard("isWaiting")) {
-			if (agent->isWaiting() || duration < 0) // < 0 means indefinite wait
-				return RUNNING;
-			else {
-				agent->eraseBlackboard("isWaiting");
-				return SUCCESS;
-			}
-		}
-
-		agent->setWait(duration);
-		agent->writeBlackboard("isWaiting", true);
-
-		return RUNNING;
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << "-" << duration;
-
-		return msg.toString();
-	}
+	String print() const;
 
 private:
 	int duration;
@@ -98,37 +50,17 @@ private:
 
 class GeneratePatrol : public BehaviorSpace {
 public:
-	GeneratePatrol(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args), numPoints(0), distFromHome(0.0) {
-		parseArgs(args);
-	}
+	GeneratePatrol(const String& className, const uint32 id, const LuaObject& args);
 
-	GeneratePatrol(const GeneratePatrol& a) : BehaviorSpace(a), numPoints(a.numPoints), distFromHome(a.distFromHome) {
-	}
+	GeneratePatrol(const GeneratePatrol& a);
 
-	GeneratePatrol& operator=(const GeneratePatrol& a) {
-		if (this == &a)
-			return *this;
-		BehaviorSpace::operator=(a);
-		numPoints = a.numPoints;
-		distFromHome = a.distFromHome;
-		return *this;
-	}
+	GeneratePatrol& operator=(const GeneratePatrol& a);
 
-	void parseArgs(const LuaObject& args) {
-		numPoints = getArg<int>()(args, "numPoints");
-		distFromHome = getArg<float>()(args, "distFromHome");
-	}
+	void parseArgs(const LuaObject& args);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		return agent->generatePatrol(numPoints, distFromHome) ? SUCCESS : FAILURE;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-	String print() const {
-		StringBuffer msg;
-		msg << className << "-" << numPoints << ":" << distFromHome;
-
-		return msg.toString();
-	}
+	String print() const;
 
 private:
 	int numPoints;
@@ -138,69 +70,30 @@ private:
 
 class ExitCombat : public BehaviorSpace {
 public:
-	ExitCombat(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	ExitCombat(const String& className, const uint32 id, const LuaObject& args);
 
-	ExitCombat(const ExitCombat& a) : BehaviorSpace(a) {
-	}
+	ExitCombat(const ExitCombat& a);
 
-	ExitCombat& operator=(const ExitCombat& a) {
-		if (this == &a)
-			return *this;
-		BehaviorSpace::operator=(a);
-		return *this;
-	}
+	ExitCombat& operator=(const ExitCombat& a);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		agent->removeDefenders();
-		agent->setTargetShipObject(nullptr);
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-		return SUCCESS;
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << "- called";
-
-		return msg.toString();
-	}
+	String print() const;
 };
 
 class WriteBlackboard : public BehaviorSpace {
 public:
-	WriteBlackboard(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-		parseArgs(args);
-	}
+	WriteBlackboard(const String& className, const uint32 id, const LuaObject& args);
 
-	WriteBlackboard(const WriteBlackboard& a) : BehaviorSpace(a), key(a.key), val(a.val) {
-	}
+	WriteBlackboard(const WriteBlackboard& a);
 
-	WriteBlackboard& operator=(const WriteBlackboard& a) {
-		if (this == &a)
-			return *this;
-		BehaviorSpace::operator=(a);
-		key = a.key;
-		val = a.val;
-		return *this;
-	}
+	WriteBlackboard& operator=(const WriteBlackboard& a);
 
-	void parseArgs(const LuaObject& args) {
-		key = getArg<String>()(args, "key");
-		val = getArg<uint32>()(args, "val");
-	}
+	void parseArgs(const LuaObject& args);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		agent->writeBlackboard(key, val);
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-		return SUCCESS;
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << "-" << key << ":" << val;
-
-		return msg.toString();
-	}
+	String print() const;
 
 private:
 	String key;
@@ -209,42 +102,17 @@ private:
 
 class WriteBlackboardFloat : public BehaviorSpace {
 public:
-	WriteBlackboardFloat(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-		parseArgs(args);
-	}
+	WriteBlackboardFloat(const String& className, const uint32 id, const LuaObject& args);
 
-	WriteBlackboardFloat(const WriteBlackboardFloat& a) : BehaviorSpace(a), key(a.key), val(a.val) {
-	}
+	WriteBlackboardFloat(const WriteBlackboardFloat& a);
 
-	WriteBlackboardFloat& operator=(const WriteBlackboardFloat& a) {
-		if (this == &a) {
-			return *this;
-		}
+	WriteBlackboardFloat& operator=(const WriteBlackboardFloat& a);
 
-		BehaviorSpace::operator=(a);
-		key = a.key;
-		val = a.val;
+	void parseArgs(const LuaObject& args);
 
-		return *this;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-	void parseArgs(const LuaObject& args) {
-		key = getArg<String>()(args, "key");
-		val = getArg<float>()(args, "val");
-	}
-
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		agent->writeBlackboard(key, val);
-
-		return SUCCESS;
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << "-" << key << ":" << val;
-
-		return msg.toString();
-	}
+	String print() const;
 
 private:
 	String key;
@@ -253,36 +121,17 @@ private:
 
 class EraseBlackboard : public BehaviorSpace {
 public:
-	EraseBlackboard(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args), param("") {
-		parseArgs(args);
-	}
+	EraseBlackboard(const String& className, const uint32 id, const LuaObject& args);
 
-	EraseBlackboard(const EraseBlackboard& a) : BehaviorSpace(a), param(a.param) {
-	}
+	EraseBlackboard(const EraseBlackboard& a);
 
-	EraseBlackboard& operator=(const EraseBlackboard& a) {
-		if (this == &a)
-			return *this;
-		BehaviorSpace::operator=(a);
-		param = a.param;
-		return *this;
-	}
+	EraseBlackboard& operator=(const EraseBlackboard& a);
 
-	void parseArgs(const LuaObject& args) {
-		param = getArg<String>()(args, "param");
-	}
+	void parseArgs(const LuaObject& args);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		agent->eraseBlackboard(param);
-		return SUCCESS;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-	String print() const {
-		StringBuffer msg;
-		msg << className << "-" << param;
-
-		return msg.toString();
-	}
+	String print() const;
 
 private:
 	String param;
@@ -290,68 +139,26 @@ private:
 
 class Leash : public BehaviorSpace {
 public:
-	Leash(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	Leash(const String& className, const uint32 id, const LuaObject& args);
 
-	Leash(const Leash& a) : BehaviorSpace(a) {
-	}
+	Leash(const Leash& a);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		agent->leash();
-
-		return SUCCESS;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 class SetAlert : public BehaviorSpace {
 public:
-	SetAlert(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args), aggroDelay(0.f) {
-		parseArgs(args);
-	}
+	SetAlert(const String& className, const uint32 id, const LuaObject& args);
 
-	SetAlert(const SetAlert& b) : BehaviorSpace(b), aggroDelay(b.aggroDelay) {
-	}
+	SetAlert(const SetAlert& b);
 
-	SetAlert& operator=(const SetAlert& b) {
-		if (this == &b)
-			return *this;
+	SetAlert& operator=(const SetAlert& b);
 
-		BehaviorSpace::operator=(b);
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-		aggroDelay = b.aggroDelay;
-		return *this;
-	}
+	void parseArgs(const LuaObject& args);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		Time* alert = agent->getAlertedTime();
-
-		if (alert == nullptr || !alert->isPast())
-			return FAILURE;
-
-		alert->updateToCurrentTime();
-		alert->addMiliTime(duration);
-
-		Time* delay = agent->getAggroDelay();
-
-		if (delay != nullptr && delay->isPast()) {
-			delay->updateToCurrentTime();
-			delay->addMiliTime(aggroDelay);
-			// agent->info(true) << " SetAlert Complete! Delay: " << aggroDelay;
-		}
-
-		return SUCCESS;
-	}
-
-	void parseArgs(const LuaObject& args) {
-		aggroDelay = (int)(getArg<float>()(args, "aggroDelay") * 1000);
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << "- Aggro Delay: " << aggroDelay;
-
-		return msg.toString();
-	}
+	String print() const;
 
 private:
 	int duration;
@@ -360,50 +167,22 @@ private:
 
 class SetDisabledEngineSpeed : public BehaviorSpace {
 public:
-	SetDisabledEngineSpeed(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	SetDisabledEngineSpeed(const String& className, const uint32 id, const LuaObject& args);
 
-	SetDisabledEngineSpeed(const FindNextPosition& a) : BehaviorSpace(a) {
-	}
+	SetDisabledEngineSpeed(const FindNextPosition& a);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-
-		return agent->setDisabledEngineSpeed() ? RUNNING : SUCCESS;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 class UpdateHomePosition : public BehaviorSpace {
 	public:
-		UpdateHomePosition(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-			parseArgs(args);
-		}
+	UpdateHomePosition(const String& className, const uint32 id, const LuaObject& args);
 
-		UpdateHomePosition(const UpdateHomePosition& a) : BehaviorSpace(a) {
-		}
+		UpdateHomePosition(const UpdateHomePosition& a);
 
-		void parseArgs(const LuaObject& args) {
-			useTargetPosition = getArg<bool>()(args, "useTargetPosition");
-		}
+		void parseArgs(const LuaObject& args);
 
-		BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-			uint32 shipFlag = agent->getShipBitmask();
-
-			auto newHome = agent->getPosition();
-
-			if (useTargetPosition) {
-				ManagedReference<ShipObject*> targetShip = agent->getTargetShipObject().get();
-
-				if (targetShip != nullptr) {
-					Locker clock(targetShip, agent);
-
-					newHome = targetShip->getPosition();
-				}
-			}
-
-			agent->setHomeLocation(newHome.getX(), newHome.getZ(), newHome.getY(), Quaternion::IDENTITY);
-
-			return SUCCESS;
-		}
+		BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
 	private:
 		bool useTargetPosition;
@@ -416,3 +195,5 @@ class UpdateHomePosition : public BehaviorSpace {
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace::leafspace;

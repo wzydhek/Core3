@@ -17,13 +17,9 @@ namespace variables {
 
 class IntVectorDeltaVector: public DeltaVector<Vector<int> > {
 public:
-	IntVectorDeltaVector() {
-		
-	}
+	IntVectorDeltaVector();
 	
-	~IntVectorDeltaVector() {
-		
-	}
+	~IntVectorDeltaVector();
 };
 
 }

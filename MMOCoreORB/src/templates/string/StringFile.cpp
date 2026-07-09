@@ -94,3 +94,11 @@ bool StringFile::checkHeader(ObjectInputStream* inputFile) {
 
 	return true;
 }
+
+const HashTable<String, UnicodeString>& StringFile::getStringMap() const {
+	return stringMap;
+}
+
+UnicodeString StringFile::getValue(const String& id) const {
+	return stringMap.get(id);
+}

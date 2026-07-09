@@ -20,24 +20,16 @@ class AffectorHeightFractal : public ProceduralRule<'AHFR'>, public AffectorProc
 	MapFractal* mfrc;
 
 public:
-	AffectorHeightFractal() : fractalId(0), operationType(0), height(0), mfrc(nullptr) {
-		affectorType = HEIGHTFRACTAL;
-	}
+	AffectorHeightFractal();
 
 	void process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator);
 
 	void parseFromIffStream(engine::util::IffStream* iffStream);
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0003'>);
 
-	inline int getFractalId() {
-		return fractalId;
-	}
+	int getFractalId();
 
-	inline float getHeight() {
-		return height;
-	}
+	float getHeight();
 
-	bool isEnabled() {
-		return informationHeader.isEnabled();
-	}
+	bool isEnabled();
 };

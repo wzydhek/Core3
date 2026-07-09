@@ -5,37 +5,22 @@
 #pragma once
 
 #include "ObjectControllerMessage.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class StringList : public ObjectControllerMessage {
 	uint8 optionCount;
 
 public:
 
-	StringList(CreatureObject* creo) : ObjectControllerMessage(creo->getObjectID(), 0x0B, 0xE0) {
-		optionCount = 0;
-		insertByte(0);
-	}
+	StringList(CreatureObject* creo);
 
-	void insertOption(const String& file, const String& str) {
-		insertUnicode(UnicodeString("@" + file + ":" + str));
-		updateOptionCount();
-	}
+	void insertOption(const String& file, const String& str);
 
-	void insertOption(const String& option) {
-		insertUnicode(UnicodeString(option));
-		updateOptionCount();
-	}
+	void insertOption(const String& option);
 
-	void insertOption(const UnicodeString& option) {
-		insertUnicode(option);
-		updateOptionCount();
-	}
+	void insertOption(const UnicodeString& option);
 
-	void updateOptionCount() {
-		insertByte(30, ++optionCount);
-	}
+	void updateOptionCount();
 
-	int getOptionCount() {
-		return optionCount;
-	}
+	int getOptionCount();
 };

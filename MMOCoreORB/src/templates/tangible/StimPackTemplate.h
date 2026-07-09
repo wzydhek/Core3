@@ -23,51 +23,19 @@ public:
 	const static int STIM_D = 4;
 	const static int STIM_E = 5;
 
-	StimPackTemplate() {
-		medicineUse = 0;
-		effectiveness = 0;
-		medicineClass = 0;
-	}
+	StimPackTemplate();
 
-	~StimPackTemplate() {
+	~StimPackTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	int getMedicineUse();
 
-		medicineUse = templateData->getIntField("medicineUse");
-		effectiveness = templateData->getFloatField("effectiveness");
-		medicineClass = templateData->getIntField("medicineClass");
+	float getEffectiveness();
 
-		LuaObject atts = templateData->getObjectField("attributes");
+	bool isStimPackTemplate();
 
-		for (int i = 0; i < atts.getTableSize(); ++i) {
-			byte att = atts.getIntAt(i + 1);
+	int getMedicineClass();
 
-			attributes.add(att);
-		}
-
-		atts.pop();
-    }
-
-	inline int getMedicineUse() {
-		return medicineUse;
-	}
-
-	inline float getEffectiveness() {
-		return effectiveness;
-	}
-
-	bool isStimPackTemplate() {
-		return true;
-	}
-
-	inline int getMedicineClass() {
-		return medicineClass;
-	}
-
-	inline Vector<byte> getAttributes() {
-		return attributes;
-	}
+	Vector<byte> getAttributes();
 };

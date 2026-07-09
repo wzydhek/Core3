@@ -58,301 +58,86 @@ protected:
 	Vector<String> schematicsRevoked;
 
 public:
-	Skill() {
-		skillName = "root";
-		graphType = 0;
+	Skill();
 
-		godOnly = false;
-		moneyRequired = 0;
-		jediStateRequired = 0;
-		xpCost = 0;
-		profession = false;
-		xpCap = 0;
-		apprenticeshipsRequired = 0;
-		jediStateRequired = 0;
-		title = false;
-		hidden = false;
-		searchable = false;
-		skillsRequiredCount = 0;
-		pointsRequired = 0;
-		parentNode = nullptr;
-	}
+	~Skill();
 
-	~Skill() {
-	}
+	int compareTo(const Skill& s);
 
-	int compareTo(const Skill& s) {
-		return skillName.compareTo(s.skillName);
-	}
+	int compareTo(Skill* s);
 
-	int compareTo(Skill* s) {
-		return skillName.compareTo(s->skillName);
-	}
+	void parseDataTableRow(DataTableRow* row);
 
-	void parseDataTableRow(DataTableRow* row) {
-		row->getValue(0, skillName);
-		row->getValue(1, parentName);
-		row->getValue(2, graphType);
-		row->getValue(3, godOnly);
-		row->getValue(4, title);
-		row->getValue(5, profession);
-		row->getValue(6, hidden);
-		row->getValue(7, moneyRequired);
-		row->getValue(8, pointsRequired);
-		row->getValue(9, skillsRequiredCount);
-		row->getValue(10, skillsRequired);
-		row->getValue(11, preclusionSkills);
-		row->getValue(12, xpType);
-		row->getValue(13, xpCost);
-		row->getValue(14, xpCap);
-		row->getValue(15, missionsRequired);
-		row->getValue(16, apprenticeshipsRequired);
-		row->getValue(17, statsRequired);
-		row->getValue(18, speciesRequired);
-		row->getValue(19, jediStateRequired);
-		row->getValue(20, skillAbility);
-		row->getValue(21, commands);
+	void parseLuaObject(LuaObject* templateData);
 
-		String skillmodstring;
-		row->getValue(22, skillmodstring);
-		parseSkillMods(skillmodstring);
+	const String& getSkillName() const;
 
-		row->getValue(23, schematicsGranted);
-		row->getValue(24, schematicsRevoked);
-		row->getValue(25, searchable);
-	}
+	int getJediStateRequired() const;
 
-	void parseLuaObject(LuaObject* templateData) {
+	bool isGodOnly() const;
 
-		if (!templateData->isValidTable())
-			return;
+	bool isTitle() const;
 
-		skillName = templateData->getStringField("skillName");
-		parentName = templateData->getStringField("parentName");
-		graphType = templateData->getIntField("graphType");
-		godOnly = templateData->getIntField("godOnly");
-		title = templateData->getIntField("title");
-		profession = templateData->getIntField("profession");
-		hidden = templateData->getIntField("hidden");
-		moneyRequired = templateData->getIntField("moneyRequired");
-		pointsRequired = templateData->getIntField("pointsRequired");
-		skillsRequiredCount = templateData->getIntField("skillsRequiredCount");
+	bool isSkill() const;
 
-		LuaObject skillsRequiredTable = templateData->getObjectField("skillsRequired");
-		for(int i = 1; i <= skillsRequiredTable.getTableSize(); i++) {
-			skillsRequired.add(skillsRequiredTable.getStringAt(i));
-		}
-		skillsRequiredTable.pop();
+	bool isHidden() const;
 
-		LuaObject preclusionSkillsTable = templateData->getObjectField("preclusionSkills");
-		for(int i = 1; i <= preclusionSkillsTable.getTableSize(); i++) {
-			preclusionSkills.add(preclusionSkillsTable.getStringAt(i));
-		}
-		preclusionSkillsTable.pop();
+	bool isSearchable() const;
 
-		xpType = templateData->getStringField("xpType");
-		xpCost = templateData->getIntField("xpCost");
-		xpCap = templateData->getIntField("xpCap");
+	Skill* getParent() const;
 
-		LuaObject missionsRequiredTable = templateData->getObjectField("missionsRequired");
-		for(int i = 1; i <= missionsRequiredTable.getTableSize(); i++) {
-			missionsRequired.add(missionsRequiredTable.getStringAt(i));
-		}
-		missionsRequiredTable.pop();
+	int getTotalChildren() const;
 
-		apprenticeshipsRequired = templateData->getIntField("apprenticeshipsRequired");
+	const Skill* getChildNode(int idx) const;
 
-		LuaObject statsRequiredTable = templateData->getObjectField("statsRequired");
-		for(int i = 1; i <= statsRequiredTable.getTableSize(); i++) {
-			statsRequired.add(statsRequiredTable.getStringAt(i));
-		}
-		statsRequiredTable.pop();
+	bool containsChildNode(Skill* skill) const;
 
-		LuaObject speciesRequiredTable = templateData->getObjectField("speciesRequired");
-		for(int i = 1; i <= statsRequiredTable.getTableSize(); i++) {
-			speciesRequired.add(statsRequiredTable.getStringAt(i));
-		}
-		speciesRequiredTable.pop();
+	const String& getParentName() const;
 
-		jediStateRequired = templateData->getIntField("jediStateRequired");
+	void addChild(Skill* skill);
 
-		LuaObject skillAbilityTable = templateData->getObjectField("skillAbility");
-		for(int i = 1; i <= skillAbilityTable.getTableSize(); i++) {
-			skillAbility.add(skillAbilityTable.getStringAt(i));
-		}
-		skillAbilityTable.pop();
+	const Vector<String>* getAbilities() const;
 
-		LuaObject commandsTable = templateData->getObjectField("commands");
-		for(int i = 1; i <= commandsTable.getTableSize(); i++) {
-			commands.add(commandsTable.getStringAt(i));
-		}
-		commandsTable.pop();
+	const Vector<String>* getSchematicsGranted() const;
 
-		LuaObject skillModifiersTable = templateData->getObjectField("skillModifiers");
-		for(int i = 1; i <= skillModifiersTable.getTableSize(); i++) {
-			LuaObject skillMod = skillModifiersTable.getObjectAt(i);
-			if (skillMod.isValidTable()) {
-				String skillModName = skillMod.getStringAt(1);
-				int skillModValue = skillMod.getIntAt(2);
-				skillModifiers.put(skillModName, skillModValue);
-			}
-			skillMod.pop();
-		}
-		skillModifiersTable.pop();
+	const VectorMap<String, int>* getSkillModifiers() const;
 
-		LuaObject schematicsGrantedTable = templateData->getObjectField("schematicsGranted");
-		for(int i = 1; i <= schematicsGrantedTable.getTableSize(); i++) {
-			schematicsGranted.add(schematicsGrantedTable.getStringAt(i));
-		}
-		schematicsGrantedTable.pop();
+	const Vector<String>* getSkillsRequired() const;
 
-		LuaObject schematicsRevokedTable = templateData->getObjectField("schematicsRevoked");
-		for(int i = 1; i <= schematicsRevokedTable.getTableSize(); i++) {
-			schematicsRevoked.add(schematicsRevokedTable.getStringAt(i));
-		}
-		schematicsRevokedTable.pop();
+	bool isRequiredSkillOf(Skill* skill) const;
 
-		searchable = templateData->getIntField("searchable");
+	const String& getXpType() const;
 
-	}
-
-	inline const String& getSkillName() const {
-		return skillName;
-	}
-
-	inline int getJediStateRequired() const {
-		return jediStateRequired;
-	}
-
-	inline bool isGodOnly() const {
-		return godOnly;
-	}
-
-	inline bool isTitle() const {
-		return title;
-	}
-
-	inline bool isSkill() const {
-		return profession;
-	}
-
-	inline bool isHidden() const {
-		return hidden;
-	}
-
-	inline bool isSearchable() const {
-		return searchable;
-	}
-
-	inline Skill* getParent() const {
-		return parentNode.get();
-	}
-
-	inline int getTotalChildren() const {
-		return childNodes.size();
-	}
-
-	inline const Skill* getChildNode(int idx) const {
-		return childNodes.get(idx);
-	}
-
-	inline bool containsChildNode(Skill* skill) const {
-		return childNodes.contains(skill);
-	}
-
-	inline const String& getParentName() const {
-		return parentName;
-	}
-
-	inline void addChild(Skill* skill) {
-		skill->setParentNode(this);
-		childNodes.add(skill);
-	}
-
-	inline const Vector<String>* getAbilities() const {
-		return &commands;
-	}
-
-	inline const Vector<String>* getSchematicsGranted() const {
-		return &schematicsGranted;
-	}
-
-	inline const VectorMap<String, int>* getSkillModifiers() const {
-		return &skillModifiers;
-	}
-
-	inline const Vector<String>* getSkillsRequired() const {
-		return &skillsRequired;
-	}
-
-	inline bool isRequiredSkillOf(Skill* skill) const {
-		return skillsRequired.contains(skill->getSkillName());
-	}
-
-	inline const String& getXpType() const {
-		return xpType;
-	}
-
-	inline int getXpCap() const {
-		return xpCap;
-	}
+	int getXpCap() const;
 
 	/**
 	 * Returns the XP cost for the skill.
 	 * @return XP cost for the skill.
 	 */
-	inline int getXpCost() const {
-		return xpCost;
-	}
+	int getXpCost() const;
 
 	/**
 	 * Returns the credits required for training the skill at a trainer.
 	 * @return the credits required for training the skill at a trainer.
 	 */
-	inline int getMoneyRequired() const {
-		return moneyRequired;
-	}
+	int getMoneyRequired() const;
 
 	/**
 	 * Returns the number of skill points required for the skill.
 	 * @return the number of skill points required for the skill.
 	 */
-	inline int getSkillPointsRequired() const {
-		return pointsRequired;
-	}
+	int getSkillPointsRequired() const;
 
 	/**
 	 * Returns the species required for the skill.
 	 * @return the species required for the skill.
 	 */
-	inline const Vector<String>* getSpeciesRequired() const {
-		return &speciesRequired;
-	}
+	const Vector<String>* getSpeciesRequired() const;
 
 private:
-	inline void setParentNode(Skill* skill) {
-		parentNode = skill;
-	}
+	void setParentNode(Skill* skill);
 
-	void parseSkillMods(const String& modstring) {
-		StringTokenizer tokenizer(modstring);
-		tokenizer.setDelimeter(",");
-
-		while (tokenizer.hasMoreTokens()) {
-			String token;
-			tokenizer.getStringToken(token);
-
-			int pos = token.indexOf("=");
-
-			if (pos == -1)
-				continue;
-
-			String k = token.subString(0, pos);
-			String v = token.subString(pos + 1);
-
-			skillModifiers.put(k, Integer::valueOf(v));
-		}
-	}
+	void parseSkillMods(const String& modstring);
 
 	friend class server::zone::managers::skill::SkillManager;
 };

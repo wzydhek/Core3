@@ -8,13 +8,6 @@
 
 class ChatOnSendInstantMessage : public BaseMessage {
 public:
-	ChatOnSendInstantMessage(uint32 seq, int result = 0) : BaseMessage() {
-		insertShort(0x03);
-		insertInt(0x88DBB381);  // CRC
-
-		insertInt(result);
-			
-		insertInt(seq);
-	} 
+	ChatOnSendInstantMessage(uint32 seq, int result = 0); 
 	
 };

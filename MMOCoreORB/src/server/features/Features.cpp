@@ -18,3 +18,7 @@ bool Features::loadFeatures() {
 
 	return true;
 }
+
+bool Features::hasFeature(const String& key) {
+	return options.containsKey(key);
+}

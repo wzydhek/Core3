@@ -12,21 +12,12 @@
 class DroidCustomKitTemplate : public SharedTangibleObjectTemplate {
 
 public:
-	DroidCustomKitTemplate() {
+	DroidCustomKitTemplate();
 
-	}
+	~DroidCustomKitTemplate();
 
-	~DroidCustomKitTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
-
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
-
-    }
-
-	bool isDroidCustomKitTemplate() {
-		return true;
-	}
+	bool isDroidCustomKitTemplate();
 
 };

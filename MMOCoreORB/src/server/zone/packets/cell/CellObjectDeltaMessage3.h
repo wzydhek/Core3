@@ -12,12 +12,7 @@ class CellObjectDeltaMessage3 : public DeltaMessage {
 	CellObject* cell;
 
 public:
-	CellObjectDeltaMessage3(CellObject* co)
-			: DeltaMessage(co->getObjectID(), 0x53434C54, 3) {
-		cell = co;
-	}
+	CellObjectDeltaMessage3(CellObject* co);
 
-	void updateCellNumber(int cellNumber) {
-		addIntUpdate(5, cellNumber);
-	}
+	void updateCellNumber(int cellNumber);
 };

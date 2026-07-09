@@ -32,6 +32,7 @@
 #include "server/zone/managers/crafting/CraftingManager.h"
 #include "server/zone/objects/draftschematic/DraftSchematic.h"
 #include "server/zone/objects/manufactureschematic/ManufactureSchematic.h"
+#include "server/zone/managers/player/PlayerManager.h"
 
 SuiManager::SuiManager() : Logger("SuiManager") {
 	server = nullptr;
@@ -941,4 +942,8 @@ int32 SuiManager::sendSuiPage(CreatureObject* creature, SuiPageData* pageData, c
 	}
 
 	return 0;
+}
+
+void SuiManager::setZoneProcessServer(ZoneProcessServer* srv) {
+	server = srv;
 }

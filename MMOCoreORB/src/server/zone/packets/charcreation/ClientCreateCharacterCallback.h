@@ -27,60 +27,31 @@ class ClientCreateCharacterCallback : public MessageCallback {
 	uint8 tutflag;
 
 public:
-	ClientCreateCharacterCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), species(0), height(0), tutflag(0) {
-
-		setCustomTaskQueue("slowQueue");
-	}
+	ClientCreateCharacterCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
 	void parse(Message* message);
 
 	void run();
 
-	inline void getRaceFile(String& file) const {
-		file = racefile;
-	}
+	void getRaceFile(String& file) const;
 
-	inline void getCustomizationString(String& customizationString) const {
-		customizationString = customization;
-	}
+	void getCustomizationString(String& customizationString) const;
 
-	inline void getLocation(String& location) const {
-		location = ClientCreateCharacterCallback::location;
-	}
+	void getLocation(String& location) const;
 
-	inline void getHairObject(String& hair) const {
-		hair = hairobj;
-	}
+	void getHairObject(String& hair) const;
 
-	inline void getHairCustomization(String& hairCustomization) const {
-		hairCustomization = haircust;
-	}
+	void getHairCustomization(String& hairCustomization) const;
 
-	inline void getSkill(String& profession) const {
-		profession = this->profession;
-	}
+	void getSkill(String& profession) const;
 
-	inline float getHeight() const {
-		return height;
-	}
+	float getHeight() const;
 
-	inline void getBiography(UnicodeString& biography) const {
-		biography = bio;
-	}
+	void getBiography(UnicodeString& biography) const;
 
-	inline bool getTutorialFlag() const {
-		if (tutflag)
-			return true;
-		else
-			return false;
-	}
+	bool getTutorialFlag() const;
 
-	inline void getCharacterName(UnicodeString& name) const {
-		name = characterName;
-	}
+	void getCharacterName(UnicodeString& name) const;
 
-	inline int getSpecies() const {
-		return species;
-	}
+	int getSpecies() const;
 };

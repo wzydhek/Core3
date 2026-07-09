@@ -33,9 +33,9 @@ public:
 	void onCall();
 	void onStore();
 	void updateCraftingValues(CraftingValues* values, bool firstUpdate);
-	bool isActive(){ return active; }
-	float getAutoRepairPower() { return autoRepairPower; }
-	virtual bool isStackable() { return true; }
+	bool isActive();
+	float getAutoRepairPower();
+	virtual bool isStackable();
 	virtual void addToStack(BaseDroidModuleComponent* other);
 	virtual void copy(BaseDroidModuleComponent* other);
 };

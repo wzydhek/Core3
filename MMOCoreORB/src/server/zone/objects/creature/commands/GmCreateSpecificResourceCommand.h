@@ -4,31 +4,14 @@
 
 #pragma once
 
-#include "server/zone/managers/resource/ResourceManager.h"
+#include "QueueCommand.h"
 
 class GmCreateSpecificResourceCommand : public QueueCommand {
 public:
 
-	GmCreateSpecificResourceCommand(const String& name, ZoneProcessServer* server)
-		: QueueCommand(name, server) {
+	GmCreateSpecificResourceCommand(const String& name, ZoneProcessServer* server);
 
-	}
-
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		if(!creature->isPlayerCreature())
-			return INVALIDPARAMETERS;
-
-		ManagedReference<ResourceManager* > resourceManager = server->getZoneServer()->getResourceManager();
-		resourceManager->createResourceSpawn(creature, arguments);
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };
+

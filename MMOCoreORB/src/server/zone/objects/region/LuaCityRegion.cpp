@@ -40,3 +40,7 @@ int LuaCityRegion::isClientRegion(lua_State* L) {
 
 	return 1;
 }
+
+CityRegion* LuaCityRegion::_getRealCityRegion() {
+	return realObject.get();
+}

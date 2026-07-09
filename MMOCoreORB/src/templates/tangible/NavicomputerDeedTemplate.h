@@ -14,25 +14,13 @@ class NavicomputerDeedTemplate : public DeedTemplate {
 	String datapadObjectTemplate;
 
 public:
-	NavicomputerDeedTemplate() {
+	NavicomputerDeedTemplate();
 
-	}
+	~NavicomputerDeedTemplate();
 
-	~NavicomputerDeedTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
+	const String& getControlDeviceObjectTemplate() const;
 
-	void readObject(LuaObject* templateData) {
-		DeedTemplate::readObject(templateData);
-		controlDeviceObjectTemplate = templateData->getStringField("controlDeviceObjectTemplate");
-		datapadObjectTemplate = templateData->getStringField("datapadObjectTemplate");
-	}
-
-	const String& getControlDeviceObjectTemplate() const {
-		return controlDeviceObjectTemplate;
-	}
-
-	const String& getDatapadObjectTemplate() const {
-		return datapadObjectTemplate;
-	}
+	const String& getDatapadObjectTemplate() const;
 };

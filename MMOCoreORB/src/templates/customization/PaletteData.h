@@ -28,95 +28,39 @@ protected:
 	int idMasterIndexes;
 
 public:
-	PaletteData() {
-		creationColumns = creationIndexes
-				= idNoviceColumns = idNoviceIndexes
-				= idLevel1Columns = idLevel1Indexes
-				= idLevel2Columns = idLevel2Indexes
-				= idLevel3Columns = idLevel3Indexes
-				= idLevel4Columns = idLevel4Indexes
-				= idMasterColumns = idMasterIndexes = 0;
-	}
+	PaletteData();
 
-	void readObject(DataTableRow* row) {
-		row->getValue(0, name);
-		row->getValue(1, creationColumns);
-		row->getValue(2, creationIndexes);
-		row->getValue(3, idNoviceColumns);
-		row->getValue(4, idNoviceIndexes);
-		row->getValue(5, idLevel1Columns);
-		row->getValue(6, idLevel1Indexes);
-		row->getValue(7, idLevel2Columns);
-		row->getValue(8, idLevel2Indexes);
-		row->getValue(9, idLevel3Columns);
-		row->getValue(10, idLevel3Indexes);
-		row->getValue(11, idLevel4Columns);
-		row->getValue(12, idLevel4Indexes);
-		row->getValue(13, idMasterColumns);
-		row->getValue(14, idMasterIndexes);
-	}
+	void readObject(DataTableRow* row);
 
-	int getCreationColumns() const {
-		return creationColumns;
-	}
+	int getCreationColumns() const;
 
-	int getCreationIndexes() const {
-		return creationIndexes;
-	}
+	int getCreationIndexes() const;
 
-	int getIdLevel1Columns() const {
-		return idLevel1Columns;
-	}
+	int getIdLevel1Columns() const;
 
-	int getIdLevel1Indexes() const {
-		return idLevel1Indexes;
-	}
+	int getIdLevel1Indexes() const;
 
-	int getIdLevel2Columns() const {
-		return idLevel2Columns;
-	}
+	int getIdLevel2Columns() const;
 
-	int getIdLevel2Indexes() const {
-		return idLevel2Indexes;
-	}
+	int getIdLevel2Indexes() const;
 
-	int getIdLevel3Columns() const {
-		return idLevel3Columns;
-	}
+	int getIdLevel3Columns() const;
 
-	int getIdLevel3Indexes() const {
-		return idLevel3Indexes;
-	}
+	int getIdLevel3Indexes() const;
 
-	int getIdLevel4Columns() const {
-		return idLevel4Columns;
-	}
+	int getIdLevel4Columns() const;
 
-	int getIdLevel4Indexes() const {
-		return idLevel4Indexes;
-	}
+	int getIdLevel4Indexes() const;
 
-	int getIdMasterColumns() const {
-		return idMasterColumns;
-	}
+	int getIdMasterColumns() const;
 
-	int getIdMasterIndexes() const {
-		return idMasterIndexes;
-	}
+	int getIdMasterIndexes() const;
 
-	void setIdMasterIndexes(int idMasterIndexes) {
-		this->idMasterIndexes = idMasterIndexes;
-	}
+	void setIdMasterIndexes(int idMasterIndexes);
 
-	int getIdNoviceColumns() const {
-		return idNoviceColumns;
-	}
+	int getIdNoviceColumns() const;
 
-	int getIdNoviceIndexes() const {
-		return idNoviceIndexes;
-	}
+	int getIdNoviceIndexes() const;
 
-	String getName() {
-		return name;
-	}
+	String getName();
 };

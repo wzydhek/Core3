@@ -16,38 +16,9 @@ class PlayerDisconnectEvent : public Task {
 	ManagedWeakReference<PlayerObject*> player;
 	bool isSafeArea;
 public:
-	PlayerDisconnectEvent(PlayerObject* pl, bool isSafe) : Task(2000) {
-		player = pl;
-		isSafeArea = isSafe;
-	}
+	PlayerDisconnectEvent(PlayerObject* pl, bool isSafe);
 
-	void run() {
-		ManagedReference<PlayerObject*> play = player.get();
-
-		if (play == nullptr)
-			return;
-
-		ManagedReference<SceneObject*> par = play->getParent().get();
-
-		Locker locker(par);
-
-		try {
-			play->clearDisconnectEvent();
-
-			play->setLinkDead(isSafeArea);
-
-			if (play->isOnline()) {
-				play->disconnect(true, false);
-			}
-
-			play->notifyOffline();
-
-		} catch (Exception& e) {
-			play->error("Unreported Exception caught in PlayerDisconnectEvent::activate");
-
-			play->clearDisconnectEvent();
-		}
-	}
+	void run();
 
 };
 

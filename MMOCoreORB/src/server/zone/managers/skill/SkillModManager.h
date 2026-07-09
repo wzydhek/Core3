@@ -82,17 +82,11 @@ public:
 
 	void verifyBuffSkillMods(CreatureObject* creature);
 
-	inline int getMinSkill(const uint32 modType) {
-		return skillModMin.get(modType);
-	}
+	int getMinSkill(const uint32 modType);
 
-	inline int getMaxSkill(const uint32 modType) {
-		return skillModMax.get(modType);
-	}
+	int getMaxSkill(const uint32 modType);
 
-	inline bool isWearableModDisabled(String mod) {
-		return disabledWearableSkillMods.contains(mod);
-	}
+	bool isWearableModDisabled(String mod);
 };
 
 }

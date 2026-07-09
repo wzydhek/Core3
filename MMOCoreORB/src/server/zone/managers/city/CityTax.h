@@ -5,8 +5,9 @@
  *      Author: swgemu
  */
 
-#ifndef CITYTAX_H_
-#define CITYTAX_H_
+#pragma once
+
+#include "engine/lua/LuaObject.h"
 
 class CityTax : public Object {
 	int minValue;
@@ -21,85 +22,29 @@ class CityTax : public Object {
 	String emailBody;
 
 public:
-	CityTax() : Object(), minValue(0), maxValue(0) {
-	}
+	CityTax();
 
-	CityTax(const CityTax& tax) : Object() {
-		minValue = tax.minValue;
-		maxValue = tax.maxValue;
-		menuText = tax.menuText;
-		inputTitle = tax.inputTitle;
-		inputText = tax.inputText;
-		statusPrompt = tax.statusPrompt;
-		systemMessage = tax.systemMessage;
-		emailSubject = tax.emailSubject;
-		emailBody = tax.emailBody;
-	}
+	CityTax(const CityTax& tax);
 
-	CityTax& operator=(const CityTax& tax) {
-		if (this == &tax)
-			return *this;
+	CityTax& operator=(const CityTax& tax);
 
-		minValue = tax.minValue;
-		maxValue = tax.maxValue;
-		menuText = tax.menuText;
-		inputTitle = tax.inputTitle;
-		inputText = tax.inputText;
-		statusPrompt = tax.statusPrompt;
-		systemMessage = tax.systemMessage;
-		emailSubject = tax.emailSubject;
-		emailBody = tax.emailBody;
+	void readObject(LuaObject* luaObject);
 
-		return *this;
-	}
+	int getMinValue() const;
 
-	void readObject(LuaObject* luaObject) {
-		minValue = luaObject->getIntField("min");
-		maxValue = luaObject->getIntField("max");
-		menuText = luaObject->getStringField("menuText");
-		inputTitle = luaObject->getStringField("inputTitle");
-		inputText = luaObject->getStringField("inputText");
-		statusPrompt = luaObject->getStringField("statusPrompt");
-		systemMessage = luaObject->getStringField("systemMessage");
-		emailSubject = luaObject->getStringField("emailSubject");
-		emailBody = luaObject->getStringField("emailBody");
-	}
+	int getMaxValue() const;
 
-	inline int getMinValue() const {
-		return minValue;
-	}
+	const String& getMenuText() const;
 
-	inline int getMaxValue() const {
-		return maxValue;
-	}
+	const String& getInputTitle() const;
 
-	inline const String& getMenuText() const {
-		return menuText;
-	}
+	const String& getInputText() const;
 
-	inline const String& getInputTitle() const {
-		return inputTitle;
-	}
+	const String& getStatusPrompt() const;
 
-	inline const String& getInputText() const {
-		return inputText;
-	}
+	const String& getSystemMessage() const;
 
-	inline const String& getStatusPrompt() const {
-		return statusPrompt;
-	}
+	const String& getEmailSubject() const;
 
-	inline const String& getSystemMessage() const {
-		return systemMessage;
-	}
-
-	inline const String& getEmailSubject() const {
-		return emailSubject;
-	}
-
-	inline const String& getEmailBody() const {
-		return emailBody;
-	}
+	const String& getEmailBody() const;
 };
-
-#endif /* CITYTAX_H_ */

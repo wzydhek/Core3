@@ -5,8 +5,7 @@
  *      Author: swgemu
  */
 
-#ifndef PAYCITYTAXTASK_H_
-#define PAYCITYTAXTASK_H_
+#pragma once
 
 #include "server/zone/objects/region/CityRegion.h"
 
@@ -14,22 +13,7 @@ class PayPropertyTaxTask : public Task {
 	ManagedWeakReference<CityRegion*> cityObject;
 	float amount;
 public:
-	PayPropertyTaxTask(CityRegion* city, float tax) {
+	PayPropertyTaxTask(CityRegion* city, float tax);
 
-		cityObject = city;
-		amount = tax;
-	}
-
-	void run() {
-
-		ManagedReference<CityRegion*> strongRefCity = cityObject.get();
-
-		if (strongRefCity == nullptr)
-			return;
-
-		Locker lock(strongRefCity);
-		strongRefCity->addToCityTreasury(amount);
-	}
+	void run();
 };
-
-#endif /* PAYCITYTAXTASK_H_ */

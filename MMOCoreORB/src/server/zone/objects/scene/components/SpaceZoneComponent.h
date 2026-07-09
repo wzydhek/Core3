@@ -32,9 +32,7 @@ protected:
 	void insertChildObjectsToZone(SceneObject* sceneObject, SpaceZone* zone) const;
 
 public:
-	SpaceZoneComponent() {
-		setLoggingName("SpaceZoneComponent");
-	}
+	SpaceZoneComponent();
 
 	virtual void notifyInsertToZone(SceneObject* sceneObject, SpaceZone* zone) const;
 

@@ -22,85 +22,25 @@ class RacialCreationData : public Object {
 	int totalAttributes;
 
 public:
-	RacialCreationData() {
-		totalAttributes = 0;
-	}
+	RacialCreationData();
 
-	RacialCreationData(const RacialCreationData& cd) : Object() {
-		minAttributes = cd.minAttributes;
-		maxAttributes = cd.maxAttributes;
-		modAttributes = cd.modAttributes;
-		totalAttributes = cd.totalAttributes;
-	}
+	RacialCreationData(const RacialCreationData& cd);
 
-	RacialCreationData& operator= (const RacialCreationData& cd) {
-		if (this == &cd)
-			return *this;
+	RacialCreationData& operator=(const RacialCreationData& cd);
 
-		minAttributes = cd.minAttributes;
-		maxAttributes = cd.maxAttributes;
-		modAttributes = cd.modAttributes;
-		totalAttributes = cd.totalAttributes;
+	void parseAttributeData(const DataTableRow* row);
 
-		return *this;
-	}
+	void parseRacialModData(const DataTableRow* row);
 
-	void parseAttributeData(const DataTableRow* row) {
-		//The data starts at offset 2.
-		int min = 0;
-		int max = 0;
+	int getAttributeMin(int idx) const;
 
-		for (int i = 2; i < 20; i+=2) {
-			row->getValue(i, min);
-			row->getValue(i + 1, max);
+	int getAttributeMax(int idx) const;
 
-			minAttributes.add(min);
-			maxAttributes.add(max);
-		}
+	int getAttributeMod(int idx) const;
 
-		row->getValue(20, totalAttributes);
-	}
+	int getAttributeTotal() const;
 
-	void parseRacialModData(const DataTableRow* row) {
-		int mod = 0;
-
-		for (int i = 2; i < 11; ++i) {
-			row->getValue(i, mod);
-
-			modAttributes.add(mod);
-		}
-	}
-
-	inline int getAttributeMin(int idx) const {
-		return minAttributes.get(idx);
-	}
-
-	inline int getAttributeMax(int idx) const {
-		return maxAttributes.get(idx);
-	}
-
-	inline int getAttributeMod(int idx) const {
-		return modAttributes.get(idx);
-	}
-
-	inline int getAttributeTotal() const {
-		return totalAttributes;
-	}
-
-	String toString() const {
-		StringBuffer str;
-
-		for (int i = 0; i < minAttributes.size(); ++i)
-			str << "min[" << i << "]:" << minAttributes.get(i) << ";";
-
-		for (int i = 0; i < maxAttributes.size(); ++i)
-			str << "max[" << i << "]:" << maxAttributes.get(i) << ";";
-
-		for (int i = 0; i < modAttributes.size(); ++i)
-			str << "mod[" << i << "]:" << modAttributes.get(i) << ";";
-
-		return str.toString();
-	}
+	String toString() const;
 };
 
 }

@@ -46,6 +46,7 @@
 #include "server/zone/objects/ship/ai/CapitalShipObject.h"
 #include "server/zone/objects/ship/PobShipObject.h"
 //#include "PositionUpdateTask.h"
+#include "server/zone/objects/creature/ai/AiAgent.h"
 
 #include "variables/ContainerPermissions.h"
 

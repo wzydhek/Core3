@@ -7,14 +7,10 @@
 
 #pragma once
 
+#include "engine/service/proto/BaseMessage.h"
+
 class DestroyClientPathMessage : public BaseMessage {
 public:
-   DestroyClientPathMessage() : BaseMessage() {
-		insertShort(0x01);
-		insertInt(0xA75E85EB);  // CRC
-
-		//Destroys the path
-
-   }
+	DestroyClientPathMessage();
 
 };

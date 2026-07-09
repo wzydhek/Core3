@@ -23,45 +23,7 @@ class CityForceUpdateTypeSuiCallback : public SuiCallback {
 	ManagedWeakReference<CityRegion*> cityRegion;
 
 public:
-	CityForceUpdateTypeSuiCallback(ZoneServer* server, CityRegion* city) : SuiCallback(server) {
-		cityRegion = city;
-	}
+	CityForceUpdateTypeSuiCallback(ZoneServer* server, CityRegion* city);
 
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		ManagedReference<CityRegion*> city = cityRegion.get();
-
-		if (city == nullptr)
-			return;
-
-		if (!suiBox->isMessageBox() || player == nullptr) {
-			return;
-		}
-
-		PlayerObject* ghost = player->getPlayerObject();
-
-		if (ghost == nullptr)
-			return;
-
-		if (!ghost->isPrivileged())
-			return;
-
-		Locker clocker(city, player);
-
-		StringIdChatParameter params;
-		params.setTO(city->getCityRegionName());
-
-		CityManager* cityManager = server->getCityManager();
-
-		if (cancelPressed) {
-			params.setStringId("city/city", "force_city_update"); // Forcing a city update for city %TO.
-			cityManager->processCityUpdate(city);
-		} else {
-			params.setStringId("city/city", "force_city_election"); // Forcing a city update for city %TO.
-			cityManager->updateCityVoting(city,true);
-		}
-
-		player->sendSystemMessage(params);
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

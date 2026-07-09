@@ -9,9 +9,5 @@
 
 class ManufactureSchematicObjectMessage9 : public BaseLineMessage {
 public:
-	ManufactureSchematicObjectMessage9(uint64 oid) 
-			: BaseLineMessage(oid, 0x4D53434F, 9, 0x00) {
-
-		setSize();
-	}
+	ManufactureSchematicObjectMessage9(uint64 oid);
 };

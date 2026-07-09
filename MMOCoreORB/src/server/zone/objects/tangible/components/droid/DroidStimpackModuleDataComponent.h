@@ -42,7 +42,7 @@ public:
 
 	void onStore();
 
-	bool isStackable() { return true; }
+	bool isStackable();
 
 	void copy(BaseDroidModuleComponent* other);
 

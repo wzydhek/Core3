@@ -10,7 +10,7 @@ Distribution of this file for usage outside of Core3 is prohibited.
 #include "engine/log/Logger.h"
 #include "engine/db/Database.h"
 #include "Statement.h"
-#include "ResultSet.h"
+#include "MySqlResultSet.h"
 
 namespace server {
   namespace db {
@@ -67,14 +67,7 @@ namespace server {
 		static void onThreadStart();
 		static void onThreadEnd();
 
-		int compareTo(const Database* database) const final {
-			if (this < database)
-				return 1;
-			else if (this > database)
-				return -1;
-			else
-				return 0;
-		}
+		int compareTo(const Database* database) const final;
 
 	};
 

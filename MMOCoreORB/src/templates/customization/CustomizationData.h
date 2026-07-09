@@ -32,193 +32,62 @@ class CustomizationData : public Object {
 	float maxScale;
 
 public:
-	CustomizationData() {
-		isScale = false;
-		reverse = false;
-		cameraYaw = 0.f;
-		discrete = false;
-		randomizable = false;
-		randomizableGroup = false;
-		isVarHairColor = false;
-		skillModValue = 0;
-		minScale = 0.f;
-		maxScale = 0.f;
-	}
+	CustomizationData();
 
-	CustomizationData(const CustomizationData& c) :	Object() {
-		speciesGender = c.speciesGender;
-		customizationGroup = c.customizationGroup;
-		type = c.type;
-		customizationName = c.customizationName;
-		variables = c.variables;
-		isScale = c.isScale;
-		reverse = c.reverse;
-		colorLinked = c.colorLinked;
-		colorLinkedtoSelf0 = c.colorLinkedtoSelf0;
-		colorLinkedtoSelf1 = c.colorLinkedtoSelf1;
-		cameraYaw = c.cameraYaw;
-		discrete = c.discrete;
-		randomizable = c.randomizable;
-		randomizableGroup = c.randomizableGroup;
-		isVarHairColor = c.isVarHairColor;
-		imageDesignSkillMod = c.imageDesignSkillMod;
-		skillModValue = c.skillModValue;
-		modificationType = c.modificationType;
-		minScale = c.minScale;
-		maxScale = c.maxScale;
-	}
+	CustomizationData(const CustomizationData& c);
 
-	CustomizationData& operator=(const CustomizationData& c) {
-		if (this == &c)
-			return *this;
+	CustomizationData& operator=(const CustomizationData& c);
 
-		speciesGender = c.speciesGender;
-		customizationGroup = c.customizationGroup;
-		type = c.type;
-		customizationName = c.customizationName;
-		variables = c.variables;
-		isScale = c.isScale;
-		reverse = c.reverse;
-		colorLinked = c.colorLinked;
-		colorLinkedtoSelf0 = c.colorLinkedtoSelf0;
-		colorLinkedtoSelf1 = c.colorLinkedtoSelf1;
-		cameraYaw = c.cameraYaw;
-		discrete = c.discrete;
-		randomizable = c.randomizable;
-		randomizableGroup = c.randomizableGroup;
-		isVarHairColor = c.isVarHairColor;
-		imageDesignSkillMod = c.imageDesignSkillMod;
-		skillModValue = c.skillModValue;
-		modificationType = c.modificationType;
-		minScale = c.minScale;
-		maxScale = c.maxScale;
+	void parseRow(DataTableRow* row);
 
-		return *this;
-	}
+	const String& getCustomizationGroup() const;
 
-	void parseRow(DataTableRow* row) {
-		try {
-			row->getValue(0, speciesGender);
-			row->getValue(1, customizationGroup);
-			row->getValue(2, type);
-			row->getValue(3, customizationName);
-			row->getValue(4, variables);
-			row->getValue(5, isScale);
-			row->getValue(6, reverse);
-			row->getValue(7, colorLinked);
-			row->getValue(8, colorLinkedtoSelf0);
-			row->getValue(9, colorLinkedtoSelf1);
-			row->getValue(10, cameraYaw);
-			row->getValue(11, discrete);
-			row->getValue(12, randomizable);
-			row->getValue(13, randomizableGroup);
-			row->getValue(14, isVarHairColor);
-			row->getValue(15, imageDesignSkillMod);
-			row->getValue(16, skillModValue);
-			row->getValue(17, modificationType);
-		} catch (const Exception& e) {
-			System::err << "CustomizationData::parse() exception: " << e.getMessage() << endl;
-		}
-	}
+	const String& getType() const;
 
-	inline const String& getCustomizationGroup() const {
-		return customizationGroup;
-	}
+	const String& getCustomizationName() const;
 
-	inline const String& getType() const {
-		return type;
-	}
+	const String& getVariables() const;
 
-	inline const String& getCustomizationName() const {
-		return customizationName;
-	}
+	bool getIsScale() const;
 
-	inline const String& getVariables() const {
-		return variables;
-	}
+	bool getReverse() const;
 
-	inline bool getIsScale() const {
-		return isScale;
-	}
+	const String& getColorLinked() const;
 
-	inline bool getReverse() const {
-		return reverse;
-	}
+	const String& getColorLinkedtoSelf0() const;
 
-	inline const String& getColorLinked() const {
-		return colorLinked;
-	}
+	const String& getColorLinkedtoSelf1() const;
 
-	inline const String& getColorLinkedtoSelf0() const {
-		return colorLinkedtoSelf0;
-	}
+	float getCameraYaw() const;
 
-	inline const String& getColorLinkedtoSelf1() const {
-		return colorLinkedtoSelf1;
-	}
+	bool getDiscrete() const;
 
-	inline float getCameraYaw() const {
-		return cameraYaw;
-	}
+	bool getRandomizable() const;
 
-	inline bool getDiscrete() const {
-		return discrete;
-	}
+	bool getRandomizableGroup() const;
 
-	inline bool getRandomizable() const {
-		return randomizable;
-	}
+	bool getIsVarHairColor() const;
 
-	inline bool getRandomizableGroup() const {
-		return randomizableGroup;
-	}
+	const String& getImageDesignSkillMod() const;
 
-	inline bool getIsVarHairColor() const {
-		return isVarHairColor;
-	}
+	int getSkillModValue() const;
 
-	inline const String& getImageDesignSkillMod() const {
-		return imageDesignSkillMod;
-	}
+	const String& getModificationType() const;
 
-	inline int getSkillModValue() const {
-		return skillModValue;
-	}
+	bool isPhysicalModificationType() const;
 
-	inline const String& getModificationType() const {
-		return modificationType;
-	}
+	bool isCosmeticModificationType() const;
 
-	inline bool isPhysicalModificationType() const {
-		return (modificationType == "physical");
-	}
+	bool isHorizontalSlider() const;
 
-	inline bool isCosmeticModificationType() const {
-		return (modificationType == "cosmetic");
-	}
+	bool isColorPicker() const;
 
-	inline bool isHorizontalSlider() const {
-		return (type == "hslider");
-	}
+	float getMinScale() const;
 
-	inline bool isColorPicker() const {
-		return (type == "color");
-	}
+	float getMaxScale() const;
 
-	inline float getMinScale() const {
-		return minScale;
-	}
+	void setMinScale(float min);
 
-	inline float getMaxScale() const {
-		return maxScale;
-	}
-
-	inline void setMinScale(float min) {
-		minScale = min;
-	}
-
-	inline void setMaxScale(float max) {
-		maxScale = max;
-	}
+	void setMaxScale(float max);
 
 };

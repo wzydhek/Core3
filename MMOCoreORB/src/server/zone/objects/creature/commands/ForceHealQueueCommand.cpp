@@ -9,6 +9,8 @@
 #include "server/zone/managers/collision/CollisionManager.h"
 #include "server/zone/managers/frs/FrsManager.h"
 #include "server/zone/objects/player/FactionStatus.h"
+#include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/managers/visibility/VisibilityManager.h"
 
 ForceHealQueueCommand::ForceHealQueueCommand(const String& name, ZoneProcessServer* server) : JediQueueCommand(name, server) {
 	speed = 3;
@@ -444,4 +446,84 @@ int ForceHealQueueCommand::doQueueCommand(CreatureObject* creature, const uint64
 		retval = runCommand(creature, targetCreature);
 
 	return retval;
+}
+
+bool ForceHealQueueCommand::isForceHealCommand() const {
+	return true;
+}
+
+void ForceHealQueueCommand::setForceCostMultiplier(float fcm) {
+	forceCostMultiplier = fcm;
+}
+
+void ForceHealQueueCommand::setHealStateCost(unsigned int cost) {
+	healStateCost = cost;
+}
+
+void ForceHealQueueCommand::setStatesToHeal(unsigned int states) {
+	statesToHeal = states;
+}
+
+void ForceHealQueueCommand::setHealDiseaseCost(unsigned int cost) {
+	healDiseaseCost = cost;
+}
+
+void ForceHealQueueCommand::setHealPoisonCost(unsigned int cost) {
+	healPoisonCost = cost;
+}
+
+void ForceHealQueueCommand::setHealBleedingCost(unsigned int cost) {
+	healBleedingCost = cost;
+}
+
+void ForceHealQueueCommand::setHealFireCost(unsigned int cost) {
+	healFireCost = cost;
+}
+
+void ForceHealQueueCommand::setAttributesToHeal(unsigned int attributes) {
+	attributesToHeal = attributes;
+}
+
+void ForceHealQueueCommand::setWoundAttributesToHeal(unsigned int attributes) {
+	woundAttributesToHeal = attributes;
+}
+
+void ForceHealQueueCommand::setHealBattleFatigue(unsigned int amount) {
+	healBattleFatigue = amount;
+}
+
+void ForceHealQueueCommand::setHealAmount(unsigned int amount) {
+	healAmount = amount;
+}
+
+void ForceHealQueueCommand::setHealWoundAmount(unsigned int amount) {
+	healWoundAmount = amount;
+}
+
+void ForceHealQueueCommand::setBleedHealIterations(unsigned int amount) {
+	bleedHealIterations = amount;
+}
+
+void ForceHealQueueCommand::setPoisonHealIterations(unsigned int amount) {
+	poisonHealIterations = amount;
+}
+
+void ForceHealQueueCommand::setDiseaseHealIterations(unsigned int amount) {
+	diseaseHealIterations = amount;
+}
+
+void ForceHealQueueCommand::setFireHealIterations(unsigned int amount) {
+	fireHealIterations = amount;
+}
+
+void ForceHealQueueCommand::setRange(int r) {
+	range = r;
+}
+
+void ForceHealQueueCommand::setSpeed(int s) {
+	speed = s;
+}
+
+void ForceHealQueueCommand::setAllowedTarget(unsigned int t) {
+	allowedTarget = t;
 }

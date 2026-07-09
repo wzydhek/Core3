@@ -14,30 +14,9 @@ class DespawnShipAgentTask : public Task {
 	ManagedReference<ShipAiAgent*> shipAgent;
 
 public:
-	DespawnShipAgentTask(ShipAiAgent* agent) : Task(1000) {
-		shipAgent = agent;
-	}
+	DespawnShipAgentTask(ShipAiAgent* agent);
 
-	void run() {
-		Locker locker(shipAgent);
+	void run();
 
-		shipAgent->removePendingTask("despawn");
-
-		shipAgent->destroyObjectFromWorld(false);
-	}
-
-	void schedule(uint64 delay = 0) {
-		if (shipAgent != nullptr) {
-			auto zone = shipAgent->getZone();
-
-			if (zone != nullptr) {
-				setCustomTaskQueue(zone->getZoneName());
-			}
-		}
-
-		try {
-			Task::schedule(delay);
-		} catch (...) {
-		}
-	}
+	void schedule(uint64 delay = 0);
 };

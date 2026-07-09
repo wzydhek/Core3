@@ -11,14 +11,8 @@ class HarvesterObjectDeltaMessage3 : public DeltaMessage {
 	HarvesterObject* haro;
 	
 public:
-	HarvesterObjectDeltaMessage3(HarvesterObject* ho)
-			: DeltaMessage(ho->getObjectID(), 0x4F4E5449, 3) {
-		haro = ho;
-	}
+	HarvesterObjectDeltaMessage3(HarvesterObject* ho);
 
-	void updateDamage(uint32 value) {
-		haro->setConditionDamage(value);
-		addIntUpdate(0x0A, value);
-	}	
+	void updateDamage(uint32 value);
 	
 };

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "engine/engine.h"
+
 namespace server {
 namespace zone {
 namespace managers {
@@ -14,31 +16,17 @@ protected:
 	Quaternion rotation;
 
 public:
-	TerminalSpawn(String name, Vector3 loc, int cell, Quaternion rot) : Object() {
-		templateName = name;
-		cellID = cell;
-		spawnLoc = loc;
-		rotation = rot;
-	}
+	TerminalSpawn(String name, Vector3 loc, int cell, Quaternion rot);
 
-	~TerminalSpawn() {
-	}
+	~TerminalSpawn();
 
-	String getTemplateName() {
-		return templateName;
-	}
+	String getTemplateName();
 
-	int getCellID() {
-		return cellID;
-	}
+	int getCellID();
 
-	inline Vector3* getSpawnLoc() {
-		return &spawnLoc;
-	}
+	Vector3* getSpawnLoc();
 
-	Quaternion getRotation() const {
-		return rotation;
-	}
+	Quaternion getRotation() const;
 
 };
 
@@ -46,3 +34,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::managers::gcw;

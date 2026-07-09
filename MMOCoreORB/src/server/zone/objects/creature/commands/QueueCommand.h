@@ -93,9 +93,7 @@ public:
 	/**
 	 * Gets a string describing this commands syntax usage.
 	 */
-	virtual String getSyntax() const {
-		return String("");
-	}
+	virtual String getSyntax() const;
 
 	/*
 	 * Unsuccessful command completion alerts the player of the invalid state, must clear the queue action from client queue
@@ -116,13 +114,9 @@ public:
 	/*
 	 * adds an invalid locomotion
 	 */
-	void addInvalidLocomotion(int l) {
-		invalidLocomotion.add(l);
-	}
+	void addInvalidLocomotion(int l);
 
-	inline bool checkDistance(SceneObject* source, SceneObject* target, float range) const {
-		return (source->getWorldPosition().distanceTo(target->getWorldPosition()) - source->getTemplateRadius() - target->getTemplateRadius() <= range);
-	}
+	bool checkDistance(SceneObject* source, SceneObject* target, float range) const;
 
 	/*
 	 * Override me
@@ -132,290 +126,121 @@ public:
 	/*
 	 * Checks all states at once with a bitwise operation
 	 */
-	bool checkStateMask(CreatureObject* creature) const {
-		return (creature->getStateBitmask() & stateMask) == 0;
-	}
+	bool checkStateMask(CreatureObject* creature) const;
 
-	bool checkSpaceStates(CreatureObject* creature) const {
-		return (creature->isPilotingShip() || creature->isInShipStation());
-	}
+	bool checkSpaceStates(CreatureObject* creature) const;
 
 	/**
 	 * Returns duration of the command
 	 */
 
-	virtual float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const {
-		// TODO: modify this value by skill, probably need to specify which skill affects what in luas
-		return defaultTime;
-	}
+	virtual float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const;
 
 	//setters
 
 	/*
 	 * Sets the invalid states for this command
 	 */
-	inline void setStateMask(uint64 mask) {
-		stateMask = mask;
-	}
+	void setStateMask(uint64 mask);
 
 	/*inline void setTarget(int num) {
 		target = num;
 	}*/
 
-	inline void setDefaultTime(float time) {
-		defaultTime = time;
-	}
+	void setDefaultTime(float time);
 
-	inline void setTargetType(int num) {
-		targetType = num;
-	}
+	void setTargetType(int num);
 
-	inline void setDisabled(bool state) {
-		disabled = state;
-	}
+	void setDisabled(bool state);
 
-	inline void setDisabled(int state) {
-		if (state == 0)
-			disabled = false;
-		else
-			disabled = true;
-	}
+	void setDisabled(int state);
 
-	inline void setAddToCombatQueue(bool state) {
-		addToQueue = state;
-	}
+	void setAddToCombatQueue(bool state);
 
-	inline void setAddToCombatQueue(int state) {
-		if (state == 0)
-			addToQueue = false;
-		else
-			addToQueue = true;
-	}
+	void setAddToCombatQueue(int state);
 
-	inline void setCommandGroup(int val) {
-		commandGroup = val;
-	}
+	void setCommandGroup(int val);
 
-	inline void setMaxRange(float r) {
-		maxRangeToTarget = (int)r;
-	}
+	void setMaxRange(float r);
 
-	inline void setCharacterAbility(const String& ability) {
-		characterAbility = ability;
+	void setCharacterAbility(const String& ability);
 
-		if(ability == "admin") {
-			admin = true;
+	void setDefaultPriority(const String& priority);
 
-			// Allow config to potentially override admin cmd cooldown
-			if (cooldown == 0) {
-				setCooldown(0);
-			}
-		}
-	}
-
-	inline void setDefaultPriority(const String& priority) {
-		if (priority == "immediate")
-			defaultPriority = IMMEDIATE;
-		else if (priority == "normal")
-			defaultPriority = NORMAL;
-		else if (priority == "front")
-			defaultPriority = FRONT;
-		else
-			System::out << "Setting unknown priority " << priority << endl;
-	}
-
-	inline void setDefaultPriority(const int priority) {
-		if (priority < 0 || priority > 2)
-			System::out << "Setting unknown priority " << priority << endl;
-		else
-			defaultPriority = priority;
-	}
+	void setDefaultPriority(const int priority);
 
 	//getters
-	inline uint64 getStateMask() const {
-		return stateMask;
-	}
+	uint64 getStateMask() const;
 
-	inline bool requiresAdmin() const {
-		return admin;
-	}
+	bool requiresAdmin() const;
 
-	/*inline int getTarget() {
-		return target;
-	}*/
+	int getTargetType() const;
 
-	inline int getTargetType() const {
-		return targetType;
-	}
+	String getName() const;
 
-	inline String getName() const {
-		return name;
-	}
+	uint32 getNameCRC() const;
 
-	inline uint32 getNameCRC() const {
-		return nameCRC;
-	}
+	virtual float getMaxRange() const;
 
-	inline virtual float getMaxRange() const {
-		return maxRangeToTarget;
-	}
+	const String& getQueueCommandName() const;
 
-	inline const String& getQueueCommandName() const {
-		return name;
-	}
+	const String& getCharacterAbility() const;
 
-	inline const String& getCharacterAbility() const {
-		return characterAbility;
-	}
+	float getDefaultTime() const;
 
-	inline float getDefaultTime() const {
-		return defaultTime;
-	}
-
-	inline int getDefaultPriority() const {
-		return defaultPriority;
-	}
+	int getDefaultPriority() const;
 
 	/*
 	 * @return True if the command has been disabled by the admins
 	 */
-	bool isDisabled() const {
-		return disabled;
-	}
+	bool isDisabled() const;
 
 	/*
 	 * @return True if the command is supposed to be added to the combat queue.
 	 */
-	bool addToCombatQueue() const {
-		return addToQueue;
-	}
+	bool addToCombatQueue() const;
 
-	virtual bool isCombatCommand() const {
-		return false;
-	}
+	virtual bool isCombatCommand() const;
 
-	virtual bool isForceHealCommand() const {
-		return false;
-	}
+	virtual bool isForceHealCommand() const;
 
-	virtual bool isJediQueueCommand() const {
-		return false;
-	}
+	virtual bool isJediQueueCommand() const;
 
-	virtual bool isJediCombatCommand() const {
-		return false;
-	}
+	virtual bool isJediCombatCommand() const;
 
-	bool isJediCommand() const {
-		return (isForceHealCommand() || isJediQueueCommand() || isJediCombatCommand());
-	}
+	bool isJediCommand() const;
 
-	inline int getSkillModSize() const {
-		return skillMods.size();
-	}
+	int getSkillModSize() const;
 
-	inline int getSkillMod(int index, String& skillMod) const {
-		skillMod = skillMods.elementAt(index).getKey();
-		return skillMods.elementAt(index).getValue();
-	}
+	int getSkillMod(int index, String& skillMod) const;
 
-	inline int getCommandGroup() const {
-		return commandGroup;
-	}
+	int getCommandGroup() const;
 
-	void addSkillMod(const String& skillMod, const int value) {
-		skillMods.put(skillMod, value);
-	}
+	void addSkillMod(const String& skillMod, const int value);
 
-	bool isWearingArmor(CreatureObject* creo) const {
-		for (int i = 0; i < creo->getSlottedObjectsSize(); ++i) {
-			SceneObject* item = creo->getSlottedObject(i);
-			if (item != nullptr && item->isArmorObject())
-				return true;
-		}
+	bool isWearingArmor(CreatureObject* creo) const;
 
-		return false;
-	}
+	void setCooldownString(String msg);
 
-	void setCooldownString(String msg) {
-		cooldownString = msg;
-	}
+	String getCooldownString() const;
 
-	String getCooldownString() const {
-		return cooldownString;
-	}
+	void setCooldownName(String name);
 
-	void setCooldownName(String name) {
-		cooldownName = name;
-	}
+	String getCooldownName() const;
 
-	String getCooldownName() const {
-		return cooldownName;
-	}
+	void setCooldown(int cooldownMili);
 
-	void setCooldown(int cooldownMili) {
-		cooldown = Math::max(0, ConfigManager::instance()->getInt("Core3.CommandCooldown." + name, cooldownMili));
-
-		if (cooldown > 0 && cooldownName.isEmpty()) {
-			cooldownName = "command_" + name;
-		}
-
-		if (cooldownMili == 0 && cooldown > 0) {
-			info(true) << "setCooldown(" << cooldownMili << "): cooldown=" << cooldown << "; cooldownName=" << cooldownName;
-		}
-	}
-
-	inline int getCooldown() const {
-		return cooldown;
-	}
+	inline int getCooldown() const;
 
 	bool checkCooldown(CreatureObject* creo) const;
 
-	virtual void handleBuff(SceneObject* creature, ManagedObject* object, int64 param) const {
-	}
+	virtual void handleBuff(SceneObject* creature, ManagedObject* object, int64 param) const;
 
 	int doCommonMedicalCommandChecks(CreatureObject* creature) const;
 
 	void checkForTef(CreatureObject* creature, CreatureObject* target) const;
 
-	String toStringData() const {
-		StringBuffer buf;
-		buf << "QueueCommand(" << name
-			<< ", nameCRC=" << nameCRC
-			<< ", stateMask=" << stateMask
-			<< ", targetType=" << targetType
-			<< ", maxRangeToTarget=" << maxRangeToTarget
-			<< ", disabled=" << disabled
-			<< ", addToQueue=" << addToQueue
-			<< ", admin=" << admin
-			<< ", cooldown=" << cooldown
-			<< ", cooldownString=\"" << cooldownString << "\""
-			<< ", defaultTime=" << defaultTime
-			<< ", characterAbility=" << characterAbility
-			<< ", defaultPriority=" << defaultPriority
-			<< ", commandGroup=" << commandGroup
-			<< ", invalidLocomotion=[";
-
-		for (int i = 0; i < invalidLocomotion.size(); ++i) {
-			if (i) {
-				buf << ", ";
-			}
-			buf << invalidLocomotion.get(i);
-		}
-
-		buf << "], skillMods=[";
-
-		for (int i = 0; i < skillMods.size(); ++i) {
-			if (i) {
-				buf << ", ";
-			}
-			buf << skillMods.get(i);
-		}
-
-		buf << "])";
-
-		return buf.toString();
-	}
+	String toStringData() const;
 };
 
 

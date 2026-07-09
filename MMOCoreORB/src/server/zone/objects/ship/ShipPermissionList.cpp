@@ -364,3 +364,49 @@ bool ShipPermissionList::isListFull(const String& listName) const {
 
 	return list.size() >= MAX_ENTRIES;
 }
+
+void ShipPermissionList::setOwner(const uint64 objectID) {
+	Locker locker(&lock);
+
+	ownerID = objectID;
+}
+
+uint64 ShipPermissionList::getOwner() const {
+	return ownerID;
+}
+
+/**
+ * Adds the specified list name to this permission list.
+ * @param listName The list to add.
+ */
+void ShipPermissionList::addList(const String& listName) {
+	Locker locker(&lock);
+
+	if (idPermissionLists.contains(listName))
+		return;
+
+	SortedVector<uint64> list;
+	list.setNoDuplicateInsertPlan();
+	idPermissionLists.put(listName, list);
+}
+
+/**
+ * Drops the specified list name from this permission list.
+ * @param listName The list to drop.
+ */
+void ShipPermissionList::dropList(const String& listName) {
+	Locker locker(&lock);
+
+	idPermissionLists.drop(listName);
+}
+
+/**
+ * Checks to see if the specified list name exists.
+ * @param listName The list to check for.
+ * @return Returns true if the specified list exists, or false if it does not exist.
+ */
+bool ShipPermissionList::containsList(const String& listName) const {
+	ReadLocker locker(&lock);
+
+	return idPermissionLists.contains(listName);
+}

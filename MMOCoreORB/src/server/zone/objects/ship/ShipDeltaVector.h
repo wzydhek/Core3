@@ -35,77 +35,18 @@ protected:
 		Public = 2,
 	};
 
-	int getDeltaType(uint32 deltaID) {
-		switch (deltaID) {
-			case DeltaTypeID::Delta1:
-				return DeltaType::Private;
-			case DeltaTypeID::Delta3:
-				return DeltaType::Public;
-			case DeltaTypeID::Delta4:
-				return DeltaType::Private;
-			case DeltaTypeID::Delta6:
-				return DeltaType::Public;
-		}
-
-		return DeltaTypeID::None;
-	}
+	int getDeltaType(uint32 deltaID);
 
 public:
-	ShipDeltaVector(SceneObject* ship, SceneObject* player = nullptr) : Object() {
-		deltaVector.setNoDuplicateInsertPlan();
-		deltaVector.setNullValue(nullptr);
+	ShipDeltaVector(SceneObject* ship, SceneObject* player = nullptr);
 
-		objectID = ship->getObjectID();
-		playerID = player != nullptr ? player->getObjectID() : 0;
-	}
-
-	~ShipDeltaVector() {
-		reset();
-	}
+	~ShipDeltaVector();
 
 	void sendMessages(ShipObject* ship);
 
-	void reset(SceneObject* player = nullptr) {
-		Locker lock(&deltaMutex);
+	void reset(SceneObject* player = nullptr);
 
-		playerID = player != nullptr ? player->getObjectID() : 0;
+	DeltaMessage* getMessage(uint32 deltaID);
 
-		for (int i = deltaVector.size() - 1; i >= 0; --i) {
-			auto message = deltaVector.elementAt(i).getValue();
-
-			if (message != nullptr) {
-				delete message;
-				message = nullptr;
-			}
-
-			deltaVector.remove(i);
-		}
-	}
-
-	DeltaMessage* getMessage(uint32 deltaID) {
-		Locker lock(&deltaMutex);
-
-		int deltaType = getDeltaType(deltaID);
-
-		if (deltaType == DeltaTypeID::None || (deltaType == DeltaType::Private && playerID == DeltaTypeID::None)) {
-			return nullptr;
-		}
-
-		auto delta = deltaVector.get(deltaID);
-
-		if (delta != nullptr) {
-			return delta;
-		}
-
-		delta = new DeltaMessage(objectID, 'SHIP', deltaID);
-		deltaVector.put(deltaID, delta);
-
-		return delta;
-	}
-
-	int size() {
-		ReadLocker lock(&deltaMutex);
-
-		return deltaVector.size();
-	}
+	int size();
 };

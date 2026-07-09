@@ -260,3 +260,60 @@ int CloseObjectsVector::put(Reference<TreeEntry*>&& o) {
 
 	return res;
 }
+
+int CloseObjectsVector::size() const NO_THREAD_SAFETY_ANALYSIS {
+	return count;
+}
+
+void CloseObjectsVector::setNoDuplicateInsertPlan() {
+	objects.setNoDuplicateInsertPlan();
+}
+
+String CloseObjectsVector::receiverFlagsToString(int flags) {
+	StringBuffer buf;
+	String sep = "";
+
+	if (flags & PLAYERTYPE) {
+		flags = flags & ~PLAYERTYPE;
+		buf << sep << "PLAYER";
+		sep = ", ";
+	}
+
+	if (flags & CREOTYPE) {
+		flags = flags & ~CREOTYPE;
+		buf << sep << "CREO";
+		sep = ", ";
+	}
+
+	if (flags & COLLIDABLETYPE) {
+		flags = flags & ~COLLIDABLETYPE;
+		buf << sep << "COLLIDABLE";
+		sep = ", ";
+	}
+
+	if (flags & STRUCTURETYPE) {
+		flags = flags & ~STRUCTURETYPE;
+		buf << sep << "STRUCTURE";
+		sep = ", ";
+	}
+
+	if (flags & SHIPTYPE) {
+		flags = flags & ~SHIPTYPE;
+		buf << sep << "SHIP";
+		sep = ", ";
+	}
+
+	if (flags & PLAYERSHIPTYPE) {
+		flags = flags & ~PLAYERSHIPTYPE;
+		buf << sep << "PLAYERSHIP";
+		sep = ", ";
+	}
+
+	if (flags)
+		buf << sep << "<unexpected flags: " << flags << ">";
+
+	if (buf.length() == 0)
+		buf << "<no flags>";
+
+	return buf.toString();
+}

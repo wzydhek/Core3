@@ -5,40 +5,16 @@
 
 #pragma once
 
+#include "engine/engine.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+
 class UpdateToolCountdownTask : public Task {
 	ManagedWeakReference<TangibleObject* > craftTool;
 	ManagedWeakReference<CreatureObject* > player;
 	int timeLeft;
 
 public:
-	UpdateToolCountdownTask(CreatureObject* pl, TangibleObject* tool, int time) : Task() {
-		craftTool = tool;
-		player = pl;
-		timeLeft = time;
-	}
+	UpdateToolCountdownTask(CreatureObject* pl, TangibleObject* tool, int time);
 
-	void run() {
-		try {
-			ManagedReference<CreatureObject* > crafter = player.get();
-
-			if (crafter == nullptr) {
-				return;
-			}
-
-			Locker locker(crafter);
-
-			ManagedReference<TangibleObject* > craftingTool = craftTool.get();
-
-			if (craftingTool == nullptr) {
-				return;
-			}
-
-			Locker clocker(craftingTool, crafter);
-
-			craftingTool->setCountdownTimer(timeLeft, true);
-
-		} catch (Exception& e) {
-			System::out << "Unreported exception caught in UpdateToolCountdownEvent::activate\n";
-		}
-	}
+	void run();
 };

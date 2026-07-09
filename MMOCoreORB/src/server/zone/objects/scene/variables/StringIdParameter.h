@@ -31,16 +31,10 @@ protected:
 	StringId stringID;
 	UnicodeString customName;
 
-	StringIdParameter() : Serializable() {
-		addSerializableVariables();
-	}
+	StringIdParameter();
 
 private:
-	inline void addSerializableVariables() {
-		addSerializableVariable("stringID", &stringID);
-		addSerializableVariable("pointerParameter", &pointerParameter);
-		addSerializableVariable("customName", &customName);
-	}
+	void addSerializableVariables();
 
 public:
 	StringIdParameter(const StringIdParameter& par);
@@ -49,101 +43,40 @@ public:
 	StringIdParameter(StringIdParameter&& par);
 #endif
 
-	StringIdParameter& operator=(const StringIdParameter& par) {
-		if (this == &par)
-			return *this;
-
-		pointerParameter = par.pointerParameter;
-		stringID = par.stringID;
-		customName = par.customName;
-
-		return *this;
-	}
+	StringIdParameter& operator=(const StringIdParameter& par);
 
 #ifdef CXX11_COMPILER
-	StringIdParameter& operator=(StringIdParameter&& par) {
-		if (this == &par)
-			return *this;
-
-		pointerParameter = par.pointerParameter;
-		stringID = std::move(par.stringID);
-		customName = std::move(par.customName);
-
-		return *this;
-	}
+	StringIdParameter& operator=(StringIdParameter&& par);
 #endif
 
-	friend void to_json(nlohmann::json& j, const StringIdParameter& p) {
-		j["stringID"] = p.stringID;
-		j["pointerParameter"] = p.pointerParameter;
-		j["customName"] = p.customName;
-	}
+	friend void to_json(nlohmann::json& j, const StringIdParameter& p);
 
 	void set(const StringId* sid);
 	void set(const StringId& sid);
 
-	void clear() {
-		stringID.clear();
-		pointerParameter = 0;
-	}
+	void clear();
 
-	void set(uint64 oid) {
-		clear();
+	void set(uint64 oid);
 
-		pointerParameter = oid;
-	}
+	void set(const String& file, const String& id);
 
-	void set(const String& file, const String& id) {
-		clear();
+	void set(const UnicodeString& us);
 
-		stringID.setStringId(file, id);
-	}
+	void set(const String& cs);
 
-	void set(const UnicodeString& us) {
-		clear();
+	void set(const char* cstr);
 
-		customName = us;
-	}
+	uint32 size() const;
 
-	void set(const String& cs) {
-		clear();
+	uint64 getPointerParameter() const;
 
-		customName = UnicodeString(cs);
-	}
+	const UnicodeString& getUnicodeParameter() const;
 
-	void set(const char* cstr) {
-		clear();
+	String getDisplayedName() const;
 
-		customName = UnicodeString(cstr);
-	}
+	const String& getFileParameter() const;
 
-	inline uint32 size() const {
-		return sizeof(pointerParameter) + stringID.size();
-	}
-
-	inline uint64 getPointerParameter() const {
-		return pointerParameter;
-	}
-
-	inline const UnicodeString& getUnicodeParameter() const {
-		return customName;
-	}
-
-	inline String getDisplayedName() const {
-		if (customName.isEmpty()) {
-			return stringID.getFullPath();
-		} else {
-			return customName.toString();
-		}
-	}
-
-	inline const String& getFileParameter() const {
-		return stringID.getFile();
-	}
-
-	inline const String& getStringIDParameter() const {
-		return stringID.getStringID();
-	}
+	const String& getStringIDParameter() const;
 
 	friend class server::chat::StringIdChatParameter;
 };

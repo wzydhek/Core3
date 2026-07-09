@@ -13,17 +13,11 @@ namespace decoratorspace {
 
 class IfSpace : public DecoratorSpace {
 public:
-	IfSpace(const String& className, const uint32 id, const LuaObject& args) : DecoratorSpace(className, id, args) {
-	}
+	IfSpace(const String& className, const uint32 id, const LuaObject& args);
 
-	IfSpace(const IfSpace& b) : DecoratorSpace(b) {
-	}
+	IfSpace(const IfSpace& b);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		assert(child != nullptr);
-
-		return child->doAction(agent);
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 } // namespace decoratorspace
@@ -33,3 +27,5 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace::decoratorspace;

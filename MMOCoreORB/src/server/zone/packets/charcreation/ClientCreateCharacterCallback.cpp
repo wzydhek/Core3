@@ -10,6 +10,10 @@
 #include "server/zone/ZoneProcessServer.h"
 #include "server/zone/objects/player/Races.h"
 
+ClientCreateCharacterCallback::ClientCreateCharacterCallback(ZoneClientSession* client, ZoneProcessServer* server) : MessageCallback(client, server), species(0), height(0), tutflag(0) {
+	setCustomTaskQueue("slowQueue");
+}
+
 void ClientCreateCharacterCallback::parse(Message* message) {
 	message->parseAscii(customization);
 	message->parseUnicode(characterName);
@@ -55,4 +59,51 @@ void ClientCreateCharacterCallback::run() {
 	} else {
 		client->info("failed to create char");
 	}
+}
+
+void ClientCreateCharacterCallback::getRaceFile(String& file) const {
+	file = racefile;
+}
+
+void ClientCreateCharacterCallback::getCustomizationString(String& customizationString) const {
+	customizationString = customization;
+}
+
+void ClientCreateCharacterCallback::getLocation(String& location) const {
+	location = ClientCreateCharacterCallback::location;
+}
+
+void ClientCreateCharacterCallback::getHairObject(String& hair) const {
+	hair = hairobj;
+}
+
+void ClientCreateCharacterCallback::getHairCustomization(String& hairCustomization) const {
+	hairCustomization = haircust;
+}
+
+void ClientCreateCharacterCallback::getSkill(String& profession) const {
+	profession = this->profession;
+}
+
+float ClientCreateCharacterCallback::getHeight() const {
+	return height;
+}
+
+void ClientCreateCharacterCallback::getBiography(UnicodeString& biography) const {
+	biography = bio;
+}
+
+bool ClientCreateCharacterCallback::getTutorialFlag() const {
+	if (tutflag)
+		return true;
+	else
+		return false;
+}
+
+void ClientCreateCharacterCallback::getCharacterName(UnicodeString& name) const {
+	name = characterName;
+}
+
+int ClientCreateCharacterCallback::getSpecies() const {
+	return species;
 }

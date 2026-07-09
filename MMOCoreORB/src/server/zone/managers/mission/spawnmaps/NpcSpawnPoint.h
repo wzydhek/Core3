@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef NPCSPAWNPOINT_H_
-#define NPCSPAWNPOINT_H_
+#pragma once
 
 #include "engine/util/u3d/Vector3.h"
 #include "engine/util/u3d/Quaternion.h"
@@ -102,41 +101,31 @@ public:
 	 * Get the in use information.
 	 * @return true if spawn already is in use, false if it is free to use.
 	 */
-	inline int getInUse() const {
-		return inUseByNumberOfMissions;
-	}
+	int getInUse() const;
 
 	/**
 	 * Get the spawn type bit mask.
 	 * @return the spawn type bit mask.
 	 */
-	inline int getSpawnType() const {
-		return spawnType;
-	}
+	int getSpawnType() const;
 
 	/**
 	 * Get the position for the spawn on the planet.
 	 * @return the position for the spawn on the planet.
 	 */
-	inline const Vector3* getPosition() const {
-		return &position;
-	}
+	const Vector3* getPosition() const;
 
 	/**
 	 * Get the direction the spawn point npc should face.
 	 * @return the direction the spawn point npc should face.
 	 */
-	inline const Quaternion* getDirection() const {
-		return &direction;
-	}
+	const Quaternion* getDirection() const;
 
 	/**
 	 * Get the spawned npc pointer.
 	 * @return a pointer to the spawned npc.
 	 */
-	inline AiAgent* getNpc() const {
-		return npc;
-	}
+	AiAgent* getNpc() const;
 
 	/**
 	 * Load the object from a stream.
@@ -156,14 +145,9 @@ public:
 	 * Saves the spawn points to a file.
 	 * @param file the file stream to save the spawn points to.
 	 */
-	void saveSpawnPoint(std::ofstream& file) {
-		file << "\t\t{ " << position.getX() << ", " << position.getY();
-		file << ", " << direction.getRadians() << ", " << spawnType << " }";
-	}
+	void saveSpawnPoint(std::ofstream& file);
 
-	String toString() const {
-		return "NpcSpawnPoint at " + position.toString() + " of spawntype " + String::valueOf(spawnType) + " is " + (inUseByNumberOfMissions > 0 ? " in use." : "free.");
-	}
+	String toString() const;
 
 	void allocateNpc(Zone* zone, CreatureManager* creatureManager);
 
@@ -180,5 +164,3 @@ public:
 } // namespace server
 
 using namespace server::zone::managers::mission::spawnmaps;
-
-#endif /* NPCSPAWNPOINT_H_ */

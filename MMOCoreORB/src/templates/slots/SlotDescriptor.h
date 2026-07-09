@@ -13,39 +13,11 @@ class SlotDescriptor : public IffTemplate {
 	Vector<String> slots;
 
 public:
-	SlotDescriptor() {
-	}
+	SlotDescriptor();
 
-	void readObject(IffStream* iffStream) {
-		iffStream->openForm('SLTD');
-		uint32 version = iffStream->getNextFormType();
-		iffStream->openForm(version);
+	void readObject(IffStream* iffStream);
 
-		switch (version) {
-		case '0000':
-		{
-			Chunk* data = iffStream->openChunk('DATA');
+	void clone(Vector<String>& copyVec) const;
 
-			while (data->hasData()) {
-				String slotName;
-				data->readString(slotName);
-				slots.add(slotName);
-			}
-
-			iffStream->closeChunk('DATA');
-		}
-			break;
-		}
-
-		iffStream->closeForm(version);
-		iffStream->closeForm('SLTD');
-	}
-
-	void clone(Vector<String>& copyVec) const {
-		slots.clone(copyVec);
-	}
-
-	const Vector<String>* getSlots() const {
-		return &slots;
-	}
+	const Vector<String>* getSlots() const;
 };

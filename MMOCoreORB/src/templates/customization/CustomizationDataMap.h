@@ -11,10 +11,7 @@
 
 class CustomizationDataMap : public VectorMap<String, Vector<CustomizationData>> {
 public:
-	CustomizationDataMap() {
-		setNoDuplicateInsertPlan();
-	}
+	CustomizationDataMap();
 
-	void parseFromIffStream(IffStream* iffStream) {
-	}
+	void parseFromIffStream(IffStream* iffStream);
 };

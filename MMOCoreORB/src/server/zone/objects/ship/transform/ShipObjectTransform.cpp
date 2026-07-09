@@ -3,6 +3,14 @@
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 #include "server/zone/packets/ship/ShipUpdateTransformMessage.h"
 
+ShipObjectTransform::ShipObjectTransform() : Object() {
+	serverTime = 0ull;
+	deltaTime = 0.f;
+
+	nextDistance = 0.f;
+	nextRotation = 0.f;
+}
+
 ShipObjectTransform::ShipObjectTransform(ShipObject* ship) : Object() {
 	initializeTransform(ship);
 }
@@ -415,4 +423,60 @@ void ShipObjectTransform::broadcastTransform(ShipObject* ship) {
 		auto data = new ShipUpdateTransformMessage(ship, currentPosition, velocity, rateY, rateP, rateR, syncStamp);
 		playerEntry->sendMessage(data);
 	}
+}
+
+const SpaceTransform& ShipObjectTransform::getPreviousTransform() const {
+	return previousTransform;
+}
+
+const SpaceTransform& ShipObjectTransform::getCurrentTransform() const {
+	return currentTransform;
+}
+
+const SpaceTransform& ShipObjectTransform::getNextTransform() const {
+	return nextTransform;
+}
+
+float ShipObjectTransform::getNextDistance() const {
+	return nextDistance;
+}
+
+float ShipObjectTransform::getNextRotation() const {
+	return nextRotation;
+}
+
+void ShipObjectTransform::setDeltaTime() {
+	uint64 miliTime = System::getMiliTime();
+	uint64 miliDiff = miliTime - serverTime;
+
+	serverTime = miliTime;
+	deltaTime = Math::clamp(0.f, miliDiff * 0.001f, (float)DELTA_MAX);
+}
+
+bool ShipObjectTransform::isScheduled() const {
+	return (System::getMiliTime() - serverTime) >= (uint64)(DELTA_MIN * 1000);
+}
+
+bool ShipObjectTransform::isStaticUpdate() const {
+	return deltaTime < DELTA_MIN || (nextRotation <= ROTATION_EPSILON && nextDistance <= POSITION_EPSILON && currentTransform.getSpeed() <= 0.f);
+}
+
+bool ShipObjectTransform::isInertiaUpdate() const {
+	return currentTransform.getSpeed() == previousTransform.getSpeed() && currentTransform.getRotation() == previousTransform.getRotation() && currentTransform.getVelocity() == previousTransform.getVelocity();
+}
+
+String ShipObjectTransform::toDebugString() const {
+	StringBuffer msg;
+	msg << "ShipObjectTransform: "
+		<< "  deltaTime:         " << deltaTime << endl
+		<< "  currentTransform:  " << endl
+		<< currentTransform.toDebugString() << endl
+		<< "  nextTransform:     " << endl
+		<< nextTransform.toDebugString() << endl
+		<< "  transformType:     " << endl
+		<< transformType.toDebugString() << endl
+		<< "  nextRotation:      " << nextRotation << endl
+		<< "  nextDistance:      " << nextDistance << endl;
+
+	return msg.toString();
 }

@@ -10,22 +10,14 @@
 
 #pragma once
 
+#include "engine/engine.h"
+#include "server/zone/managers/resource/ResourceManager.h"
+
 class ResourceShiftTask : public Task {
 	ManagedReference<ResourceManager* > resourceManager;
 
 public:
-	ResourceShiftTask(ManagedReference<ResourceManager* >  resMan) {
-		resourceManager = resMan;
+	ResourceShiftTask(ManagedReference<ResourceManager*> resMan);
 
-		setCustomTaskQueue("slowQueue");
-	}
-
-	void run() {
-		ZoneServer* server = resourceManager->getZoneServer();
-
-		if (server == nullptr || server->isServerShuttingDown())
-			return;
-
-		resourceManager->shiftResources();
-	}
+	void run();
 };

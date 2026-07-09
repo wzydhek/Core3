@@ -23,13 +23,9 @@ class SuiPageData : public Logger, public Object {
 	VectorMap<byte, Reference<SuiCommand*> > callbacks;
 
 public:
-	SuiPageData(const String& rootPage) : Object() {
-		init(rootPage, 0, 0);
-	}
+	SuiPageData(const String& rootPage);
 
-	SuiPageData(const String& rootPage, const uint64& targetNetworkId, const float& forceCloseDistance) : Object() {
-		init(rootPage, targetNetworkId, forceCloseDistance);
-	}
+	SuiPageData(const String& rootPage, const uint64& targetNetworkId, const float& forceCloseDistance);
 
 	void setProperty(const String& widget, const String& property, const UnicodeString& value);
 	UnicodeString getPropertyValue(const String& widget, const String& property);
@@ -47,64 +43,29 @@ public:
 	void sendTo(CreatureObject* creo);
 	void sendUpdateTo(CreatureObject* creo);
 
-	void setStoredData(const String& key, const String& value) {
-		if (storedData.contains(key))
-			storedData.drop(key);
+	void setStoredData(const String& key, const String& value);
 
-		storedData.put(key, value);
-	}
+	void deleteStoredData(const String& key);
 
-	void deleteStoredData(const String& key) {
-		storedData.drop(key);
-	}
+	String getStoredData(const String& key);
 
-	String getStoredData(const String& key) {
-		if (!storedData.contains(key))
-			return "";
+	void setPageId(int pageId);
 
-		return storedData.get(key);
-	}
+	int32 getPageId();
 
-	void setPageId(int pageId) {
-		id = pageId;
-	}
+	void setForceCloseDistance(float dist);
 
-	int32 getPageId() {
-		return id;
-	}
+	float getForceCloseDistance();
 
-	void setForceCloseDistance(float dist) {
-		forceCloseDistance = dist;
-	}
+	void setTargetNetworkId(uint64 id);
 
-	float getForceCloseDistance() {
-		return forceCloseDistance;
-	}
+	SuiCommand* getCommand(int index);
 
-	void setTargetNetworkId(uint64 id) {
-		targetNetworkId = id;
-	}
+	uint64 getTargetNetworkId();
 
-	SuiCommand* getCommand(int index) {
-		return commands.get(index);
-	}
-
-	uint64 getTargetNetworkId() {
-		return targetNetworkId;
-	}
-
-	inline String& getRootPage() {
-		return rootPage;
-	}
+	String& getRootPage();
 
 private:
-	inline void init(const String& rootPage, const uint64& targetNetworkId, const float& forceCloseDistance) {
-		this->id = 0;
-
-		this->rootPage = rootPage;
-		this->targetNetworkId = targetNetworkId;
-		this->forceCloseDistance = forceCloseDistance;
-		this->unknownNetworkId = 0;
-	}
+	void init(const String& rootPage, const uint64& targetNetworkId, const float& forceCloseDistance);
 
 };

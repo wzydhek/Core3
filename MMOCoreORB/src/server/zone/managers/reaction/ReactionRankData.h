@@ -1,6 +1,9 @@
 
 #pragma once
 
+#include "system/lang/Object.h"
+#include "system/lang/String.h"
+
 namespace server {
 namespace zone {
 namespace managers {
@@ -13,22 +16,13 @@ protected:
 	String templateName;
 
 public:
-	ReactionRankData(String name, int min, int max) : Object() {
-		templateName = name;
-		minRank = min;
-		maxRank = max;
-	}
+	ReactionRankData(String name, int min, int max);
 
-	~ReactionRankData() {
-	}
+	~ReactionRankData();
 
-	String getTemplateName() {
-		return templateName;
-	}
+	String getTemplateName();
 
-	int getRandomRank() {
-		return minRank + System::random(maxRank - minRank);
-	}
+	int getRandomRank();
 
 };
 
@@ -36,3 +30,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::managers::reaction;

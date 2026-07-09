@@ -6,16 +6,12 @@
 
 #include "system/lang.h"
 #include "system/util/HashTable.h"
-#include "GroupObject.h"
+#include "server/zone/objects/group/GroupObject.h"
 
 class GroupMap : public HashTable<uint64, GroupObject*> {
-	int hash(uint64 const& key) override {
-        	return Long::hashCode(key);
-	}
+	int hash(uint64 const& key) const override;
 
 public:
-	GroupMap(int initsize) : HashTable<uint64, GroupObject*>(initsize) {
-		setNullValue(nullptr);
-	}
+	GroupMap(int initsize);
 
 };

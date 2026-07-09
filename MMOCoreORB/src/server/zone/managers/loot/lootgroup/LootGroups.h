@@ -13,38 +13,13 @@ class LootGroups {
 	SortedVector<LootGroupEntry> entries;
 
 public:
-	LootGroups() {
-	}
+	LootGroups();
 
-	void readObject(LuaObject* obj) {
-		if (!obj->isValidTable())
-			return;
+	void readObject(LuaObject* obj);
 
-		lua_State* L = obj->getLuaState();
+	void put(const LootGroupEntry& entry);
 
-		for (int i = 1; i <= obj->getTableSize(); ++i) {
-			lua_rawgeti(L, -1, i);
+	int count() const;
 
-			LuaObject luagroup(L);
-
-			LootGroupEntry entry;
-			entry.readObject(&luagroup);
-
-			put(entry);
-
-			luagroup.pop();
-		}
-	}
-
-	void put(const LootGroupEntry& entry) {
-		entries.put(entry);
-	}
-
-	int count() const {
-		return entries.size();
-	}
-
-	const LootGroupEntry* get(int idx) const {
-		return &entries.get(idx);
-	}
+	const LootGroupEntry* get(int idx) const;
 };

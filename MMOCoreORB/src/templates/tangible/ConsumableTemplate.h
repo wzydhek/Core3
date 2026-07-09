@@ -39,157 +39,48 @@ class ConsumableTemplate : public SharedTangibleObjectTemplate {
 	int foragedFood;
 
 public:
-	ConsumableTemplate() {
-		duration = 0;
-		filling = 0;
+	ConsumableTemplate();
 
-		nutrition = 0.f;
-		nutritionMin = 0.f;
-		nutritionMax = 0.f;
+	~ConsumableTemplate();
 
-		effectType = 0;
+	void readObject(LuaObject* templateData);
 
-		fillingMin = 0;
-		fillingMax = 0;
-		flavorMin = 0;
-		flavorMax = 0;
-		quantityMin = 0;
-		quantityMax = 0;
+    uint32 getBuffCRC() const;
 
-		buffCRC = 0;
+    String& getBuffName();
 
-		consumableType = 0;
-		foragedFood = 0;
-	}
+    int getConsumableType() const;
 
-	~ConsumableTemplate() {
+    int getForagedFood() const;
 
-	}
+    int getDuration() const;
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+    int getEffectType() const;
 
-		duration = templateData->getIntField("duration");
-		filling = templateData->getIntField("filling");
-		nutrition = templateData->getFloatField("nutrition");
+    int getFilling() const;
 
-		effectType = templateData->getIntField("effectType");
+    int getFillingMax() const;
 
-		eventType.removeAll();
+    int getFillingMin() const;
 
-		LuaObject eventTypes = templateData->getObjectField("eventTypes");
+    int getFlavorMax() const;
 
-		for (int i = 1; i <= eventTypes.getTableSize(); ++i) {
-			eventType.add(eventTypes.getIntAt(i));
-		}
+    int getFlavorMin() const;
 
-		eventTypes.pop();
+	VectorMap<String, float>* getModifiers();
 
-		fillingMin = templateData->getIntField("fillingMin");
-		fillingMax = templateData->getIntField("fillingMax");
+	Vector<int>* getEventTypes();
 
-		flavorMin = templateData->getIntField("flavorMin");
-		flavorMax = templateData->getIntField("flavorMax");
-		nutritionMin = templateData->getFloatField("nutritionMin");
-		nutritionMax = templateData->getFloatField("nutritionMax");
-		quantityMin = templateData->getIntField("quantityMin");
-		quantityMax = templateData->getIntField("quantityMax");
+	float getNutrition() const;
 
-		modifiers.removeAll();
+	float getNutritionMax() const;
 
-		LuaObject mods = templateData->getObjectField("modifiers");
+	float getNutritionMin() const;
 
-		for (int i = 1; i <= mods.getTableSize(); i += 2) {
-			String attribute = mods.getStringAt(i);
-			float value = mods.getFloatAt(i + 1);
+	int getQuantityMax() const;
 
-			modifiers.put(attribute, value);
-		}
+	int getQuantityMin() const;
 
-		mods.pop();
-
-		buffName = templateData->getStringField("buffName");
-		buffCRC = templateData->getIntField("buffCRC");
-
-		speciesRestriction = templateData->getStringField("speciesRestriction");
-		//consumableType = templateData->getIntField("consumableType");
-		foragedFood = templateData->getIntField("foragedFood");
-    }
-
-    inline uint32 getBuffCRC() const {
-		return buffCRC;
-	}
-
-    inline String& getBuffName() {
-		return buffName;
-	}
-
-    inline int getConsumableType() const {
-		return consumableType;
-	}
-
-    inline int getForagedFood() const {
-		return foragedFood;
-	}
-
-    inline int getDuration() const {
-		return duration;
-	}
-
-    inline int getEffectType() const {
-		return effectType;
-	}
-
-    inline int getFilling() const {
-		return filling;
-	}
-
-    inline int getFillingMax() const {
-		return fillingMax;
-	}
-
-    inline int getFillingMin() const {
-		return fillingMin;
-	}
-
-    inline int getFlavorMax() const {
-		return flavorMax;
-	}
-
-    inline int getFlavorMin() const {
-		return flavorMin;
-	}
-
-	VectorMap<String, float>* getModifiers() {
-		return &modifiers;
-	}
-
-	Vector<int>* getEventTypes() {
-		return &eventType;
-	}
-
-	inline float getNutrition() const {
-		return nutrition;
-	}
-
-	inline float getNutritionMax() const {
-		return nutritionMax;
-	}
-
-	inline float getNutritionMin() const {
-		return nutritionMin;
-	}
-
-	inline int getQuantityMax() const {
-		return quantityMax;
-	}
-
-	inline int getQuantityMin() const {
-		return quantityMin;
-	}
-
-	inline String& getSpeciesRestriction() {
-		return speciesRestriction;
-	}
+	String& getSpeciesRestriction();
 
 };

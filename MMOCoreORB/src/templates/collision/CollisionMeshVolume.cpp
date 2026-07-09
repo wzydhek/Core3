@@ -1,5 +1,12 @@
 #include "CollisionMeshVolume.h"
 
+CollisionMeshVolume::CollisionMeshVolume() : bbox(Vector3(0, 0, 0), Vector3(0, 0, 0)) {
+}
+
+bool CollisionMeshVolume::isCollisionMesh() {
+	return true;
+}
+
 void CollisionMeshVolume::read(IffStream *iff) {
 	try {
 		iff->openForm('0000');
@@ -34,6 +41,11 @@ void CollisionMeshVolume::read(IffStream *iff) {
 	}
 
 }
+
+const AABB& CollisionMeshVolume::getBoundingBox() const {
+	return bbox;
+}
+
 #ifdef OSG_RENDERER
 osg::ref_ptr<osg::Node> CollisionMeshVolume::draw() const {
 	osg::ref_ptr< osg::Geode > geode( new osg::Geode() );

@@ -1142,3 +1142,15 @@ void ObjectManager::shutdown() {
 	charactersSaved = nullptr;
 	templateManager = nullptr;
 }
+
+bool ObjectManager::contains(uint32 objectCRC) const {
+	return objectFactory.containsObject(objectCRC);
+}
+
+bool ObjectManager::isObjectUpdateInProgress() const {
+	return objectUpdateInProgress;
+}
+
+void ObjectManager::setZoneProcessor(ZoneProcessServer* srv) {
+	server = srv;
+}

@@ -14,60 +14,25 @@ class EntertainingData : public Serializable {
 	int strength;
 	int timeStarted;
 public:
-	EntertainingData() {
-		duration = 0;
-		strength = 0;
-		timeStarted = time(0);
-		addSerializableVariables();
-	}
+	EntertainingData();
 
-	EntertainingData(const EntertainingData& d) : Object(), Serializable() {
-		duration = d.duration;
-		strength = d.strength;
-		timeStarted = d.timeStarted;
+	EntertainingData(const EntertainingData& d);
 
-		addSerializableVariables();
-	}
+	EntertainingData& operator=(const EntertainingData& d);
 
-	EntertainingData& operator=(const EntertainingData& d) {
-		if (this == &d)
-			return *this;
+	void addSerializableVariables();
 
-		duration = d.duration;
-		strength = d.strength;
-		timeStarted = d.timeStarted;
+	int getDuration();
 
-		return *this;
-	}
+	int getStrength();
 
-	inline void addSerializableVariables() {
-		addSerializableVariable("duration", &duration);
-		addSerializableVariable("strength", &strength);
-	}
+	int getTimeStarted();
 
-	inline int getDuration() {
-		return duration;
-	}
+	void setStrength(int str);
 
-	inline int getStrength() {
-		return strength;
-	}
-	inline int getTimeStarted() {
-		return timeStarted;
-	}
-	inline void setStrength(int str) {
-		strength = str;
-	}
+	void incrementStrength(int incr);
 
-	inline void incrementStrength(int incr) {
-		strength += incr;
-	}
+	void setDuration(int dur);
 
-	inline void setDuration(int dur) {
-		duration = dur;
-	}
-
-	inline void incrementDuration(int incr) {
-		duration += incr;
-	}
+	void incrementDuration(int incr);
 };

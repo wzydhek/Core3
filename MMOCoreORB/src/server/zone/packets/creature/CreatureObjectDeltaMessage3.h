@@ -11,57 +11,31 @@ class CreatureObjectDeltaMessage3 : public DeltaMessage {
 	CreatureObject* creo;
 
 public:
-	CreatureObjectDeltaMessage3(CreatureObject* cr) : DeltaMessage(cr->getObjectID(), 0x4352454F, 3) {
-		creo = cr;
-	}
+	CreatureObjectDeltaMessage3(CreatureObject* cr);
 
-	void updateCharacterAppearance() {
-		String appearance;
-		creo->getCustomizationString(appearance);
-		addAsciiUpdate(0x04, appearance);
-	}
+	void updateCharacterAppearance();
 
-	void updateCreatureBitmask(uint32 value) {
-		addIntUpdate(0x06, value);
-	}
+	void updateCreatureBitmask(uint32 value);
 
-	void updateIncapacitationRecoveryTime(uint32 duration) {
-		addIntUpdate(0x07, duration);
-	}
+	void updateIncapacitationRecoveryTime(uint32 duration);
 
-	void updateConditionDamage() {
-		addIntUpdate(0x08, creo->getConditionDamage());
-	}
+	void updateConditionDamage();
 
-	void updateMaxCondition() {
-		addIntUpdate(0x09, creo->getMaxCondition());
-	}
+	void updateMaxCondition();
 
 	// 0x0A ??
 
-	void updatePosture() {
-		addByteUpdate(0x0B, creo->getPosture());
-	}
+	void updatePosture();
 
-	void updateFactionRank() {
-		addByteUpdate(0x0C, creo->getFactionRank());
-	}
+	void updateFactionRank();
 
-	void updateCreatureLinkID() {
-		addLongUpdate(0x0D, creo->getCreatureLinkID());
-	}
+	void updateCreatureLinkID();
 
-	void updateHeight() {
-		addFloatUpdate(0x0E, creo->getHeight());
-	}
+	void updateHeight();
 
-	void updateShockWounds() {
-		addIntUpdate(0x0F, (int) creo->getShockWounds());
-	}
+	void updateShockWounds();
 
-	void updateStatesBitmask() {
-		addLongUpdate(0x10, creo->getStateBitmask());
-	}
+	void updateStatesBitmask();
 
 	// 0x11 - Wounds update handled in CreatureObjectImplementation
 };

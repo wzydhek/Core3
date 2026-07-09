@@ -99,3 +99,35 @@ int LootGroupMap::addLootItemTemplate(lua_State* L) {
 
 	return 0;
 }
+
+void LootGroupMap::putLootItemTemplate(const String& name, LootItemTemplate* item) {
+	itemTemplates.put(name, item);
+}
+
+void LootGroupMap::putLootGroupTemplate(const String& name, LootGroupTemplate* group) {
+	groupTemplates.put(name, group);
+}
+
+const LootGroupTemplate* LootGroupMap::getLootGroupTemplate(const String& name) const {
+	return groupTemplates.get(name);
+}
+
+const LootItemTemplate* LootGroupMap::getLootItemTemplate(const String& name) const {
+	return itemTemplates.get(name);
+}
+
+int LootGroupMap::countLootItemTemplates() const {
+	return itemTemplates.size();
+}
+
+int LootGroupMap::countLootGroupTemplates() const {
+	return groupTemplates.size();
+}
+
+bool LootGroupMap::lootGroupExists(const String& group) const {
+	return groupTemplates.containsKey(group);
+}
+
+bool LootGroupMap::lootItemExists(const String& item) const {
+	return itemTemplates.containsKey(item);
+}

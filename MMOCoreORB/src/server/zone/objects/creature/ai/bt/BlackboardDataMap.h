@@ -12,25 +12,13 @@ namespace bt {
 
 class BlackboardDataMap : public VectorMap<String, BlackboardData> {
 public:
-	BlackboardDataMap() {
-		setNoDuplicateInsertPlan();
-	}
+	BlackboardDataMap();
 
-	BlackboardDataMap(const BlackboardDataMap& b) : VectorMap<String, BlackboardData>(b) {
-		setNoDuplicateInsertPlan();
-	}
+	BlackboardDataMap(const BlackboardDataMap& b);
 
-	~BlackboardDataMap() {}
+	~BlackboardDataMap();
 
-	BlackboardDataMap& operator=(const BlackboardDataMap& b) {
-		if (this == &b)
-			return *this;
-
-		VectorMap<String, BlackboardData>::operator=(b);
-		setNoDuplicateInsertPlan();
-
-		return *this;
-	}
+	BlackboardDataMap& operator=(const BlackboardDataMap& b);
 };
 
 }
@@ -39,3 +27,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt;

@@ -604,3 +604,43 @@ String CommandQueue::toString() const {
 
 	return buf.toString();
 }
+
+int CommandQueue::getQueueSize() const {
+	return queueVector.size();
+}
+
+String CommandQueue::toStringData() const {
+	return toString();
+}
+
+CommandQueueTask::CommandQueueTask(CommandQueue* queue) {
+	weakQueue = queue;
+
+	setLoggingName("CommandQueueTask");
+}
+
+void CommandQueueTask::run() {
+	auto commandQueue = weakQueue.get();
+
+	if (commandQueue == nullptr) {
+#ifdef DEBUG_QUEUE
+		info(true) << __PRETTY_FUNCTION__ << ":" << __LINE__ << " weakQueue.get() == nullptr!";
+#endif // DEBUG_QUEUE
+		return;
+	}
+
+	try {
+#ifdef DEBUG_QUEUE
+		info(true) << "######################################## Task Start";
+#endif // DEBUG_QUEUE
+		commandQueue->run();
+#ifdef DEBUG_QUEUE
+		info(true) << "######################################## Task Complete\n";
+#endif // DEBUG_QUEUE
+
+	} catch (Exception& e) {
+		e.printStackTrace();
+	} catch (...) {
+		throw;
+	}
+}

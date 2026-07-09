@@ -14,24 +14,15 @@ protected:
 	String animation;
 
 public:
-	DroidEffectsModuleTemplate()  {}
-	~DroidEffectsModuleTemplate() {}
+	DroidEffectsModuleTemplate();
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
-		effectName = templateData->getStringField("effectName");
-		animation = templateData->getStringField("animation");
-	}
+	~DroidEffectsModuleTemplate();
 
-	String& getEffectName() {
-		return effectName;
-	}
+	void readObject(LuaObject* templateData);
 
-	String& getAnimation() {
-		return animation;
-	}
+	String& getEffectName();
 
-	 bool isDroidEffectsModuleTemplate() {
-		 return true;
-	 }
+	String& getAnimation();
+
+	bool isDroidEffectsModuleTemplate();
 };

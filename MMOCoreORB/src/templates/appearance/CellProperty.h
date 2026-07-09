@@ -25,37 +25,21 @@ public:
 
 	void readObject(IffStream *iff);
 
-	bool isSolid() const {
-		return solid;
-	}
+	bool isSolid() const;
 
-	int getGeometryIndex() const {
-		return geometryIndex;
-	}
+	int getGeometryIndex() const;
 
-	bool isWindingCCW() const {
-		return winding;
-	}
+	bool isWindingCCW() const;
 
-	int getTargetCellIndex() const {
-		return targetCell;
-	}
+	int getTargetCellIndex() const;
 
-	const String& getDoorTemplate() const {
-		return doorName;
-	}
+	const String& getDoorTemplate() const;
 
-	bool hasDoorTemplate() const {
-		return doorName.isEmpty() == false;
-	}
+	bool hasDoorTemplate() const;
 
-	bool hasDoorTransform() const {
-		return transformFlag;
-	}
+	bool hasDoorTransform() const;
 
-	const Matrix4& getDoorTransform() const {
-		return doorTransform;
-	}
+	const Matrix4& getDoorTransform() const;
 
 };
 
@@ -80,49 +64,27 @@ public:
 
 	void readObject(IffStream* iffStream);
 
-	AppearanceTemplate* getAppearanceTemplate() {
-		return appearanceTemplate;
-	}
+	AppearanceTemplate* getAppearanceTemplate();
 
-	void addConnectedCell(int cellID) {
-		connectedCells.put(cellID);
-	}
+	void addConnectedCell(int cellID);
 
-	const SortedVector<int>& getConnectedCells() const {
-		return connectedCells;
-	}
+	const SortedVector<int>& getConnectedCells() const;
 
-	bool hasConnectedCell(int cellID) const {
-		return connectedCells.contains(cellID);
-	}
+	bool hasConnectedCell(int cellID) const;
 
-	const FloorMesh* getFloorMesh() const {
-		return floorMesh;
-	}
+	const FloorMesh* getFloorMesh() const;
 
-	FloorMesh* getFloorMesh() {
-		return floorMesh;
-	}
+	FloorMesh* getFloorMesh();
 
-	const String& getName() const {
-		return name;
-	}
+	const String& getName() const;
 
-	int getCellID() const {
-		return cellID;
-	}
+	int getCellID() const;
 
-	int getNumberOfPortals() const {
-		return numberOfPortals;
-	}
+	int getNumberOfPortals() const;
 
-	bool hasWorldPortal() const {
-		return worldPortal;
-	}
+	bool hasWorldPortal() const;
 
-	const CellPortal* getPortal(int idx) const {
-		return portals.get(idx);
-	}
+	const CellPortal* getPortal(int idx) const;
 
 	void loadVersion4(IffStream* iffStream);
 	void loadVersion5(IffStream* iffStream);

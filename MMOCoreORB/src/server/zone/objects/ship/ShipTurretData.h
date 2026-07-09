@@ -13,86 +13,33 @@ protected:
 	float maxPitch;
 
 public:
-	ShipTurretData() {
-		weaponIndex = 0;
-		minYaw = 0.f;
-		maxYaw = 0.f;
-		minPitch = 0.f;
-		maxPitch = 0.f;
-	}
+	ShipTurretData();
 
-	void readObject(DataTableRow* row) {
-		if (row == nullptr || row->getCellsSize() < 6) {
-			return;
-		}
+	void readObject(DataTableRow* row);
 
-		row->getCell(0)->getValue(chassisName);
-		row->getCell(1)->getValue(weaponIndex);
-		row->getCell(2)->getValue(minYaw);
-		row->getCell(3)->getValue(maxYaw);
-		row->getCell(4)->getValue(minPitch);
-		row->getCell(5)->getValue(maxPitch);
-	}
+	void readObject(LuaObject* row);
 
-	void readObject(LuaObject* row) {
-		if (row == nullptr || row->getTableSize() < 6) {
-			Logger log("ShipTurretData");
-			log.info(true) << "!row " << row->getTableSize();
-		}
+	const String& getChassisName() const;
 
-		chassisName = row->getStringAt(1);
-		weaponIndex = row->getIntAt(2);
-		minYaw = row->getFloatAt(3);
-		maxYaw = row->getFloatAt(4);
-		minPitch = row->getFloatAt(5);
-		maxPitch = row->getFloatAt(6);
-	}
+	int getWeaponIndex() const;
 
-	const String& getChassisName() const {
-		return chassisName;
-	}
+	float getMinYaw() const;
 
-	int getWeaponIndex() const {
-		return weaponIndex;
-	}
+	float getMaxYaw() const;
 
-	float getMinYaw() const {
-		return minYaw;
-	}
+	float getMinPitch() const;
 
-	float getMaxYaw() const {
-		return maxYaw;
-	}
+	float getMaxPitch() const;
 
-	float getMinPitch() const {
-		return minPitch;
-	}
+	void setChassisName(const String& name);
 
-	float getMaxPitch() const {
-		return maxPitch;
-	}
+	void setWeaponIndex(int index);
 
-	void setChassisName(const String& name) {
-		chassisName = name;
-	}
+	void setMinYaw(float minY);
 
-	void setWeaponIndex(int index) {
-		weaponIndex = index;
-	}
+	void setMaxYaw(float maxY);
 
-	void setMinYaw(float minY) {
-		minYaw = minY;
-	}
+	void setMinPitch(float minP);
 
-	void setMaxYaw(float maxY) {
-		maxYaw = maxY;
-	}
-
-	void setMinPitch(float minP) {
-		minPitch = minP;
-	}
-
-	void setMaxPitch(float maxP) {
-		maxPitch = maxP;
-	}
+	void setMaxPitch(float maxP);
 };

@@ -15,6 +15,12 @@
 #include "boundaries.h"
 #include "filters.h"
 
+Layer::Layer(Layer* par) {
+	parent = par;
+	boundariesFlag = 0;
+	filterFlag = 0;
+}
+
 Layer::~Layer() {
 	while (children.size() > 0) {
 		delete children.remove(0);
@@ -300,4 +306,60 @@ FilterProceduralRule* Layer::parseFilter(IffStream* iffStream) {
 		res->readObject(iffStream);
 
 	return res;
+}
+
+Vector<Layer*>* Layer::getChildren() {
+	return &children;
+}
+
+Vector<Boundary*>* Layer::getBoundaries() {
+	return &boundaries;
+}
+
+Vector<AffectorProceduralRule*>* Layer::getAffectors() {
+	return &affectors;
+}
+
+Vector<FilterProceduralRule*>* Layer::getFilters() {
+	return &filters;
+}
+
+const Vector<Layer*>* Layer::getChildren() const {
+	return &children;
+}
+
+const Vector<Boundary*>* Layer::getBoundaries() const {
+	return &boundaries;
+}
+
+const Vector<AffectorProceduralRule*>* Layer::getAffectors() const {
+	return &affectors;
+}
+
+const Vector<FilterProceduralRule*>* Layer::getFilters() const {
+	return &filters;
+}
+
+Layer* Layer::getParent() {
+	return parent;
+}
+
+const Layer* Layer::getParent() const {
+	return parent;
+}
+
+bool Layer::invertBoundaries() const {
+	return boundariesFlag != 0;
+}
+
+bool Layer::invertFilters() const {
+	return filterFlag != 0;
+}
+
+bool Layer::isEnabled() const {
+	return infoHeader.isEnabled();
+}
+
+const String& Layer::getDescription() const {
+	return infoHeader.getDescription();
 }

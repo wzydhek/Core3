@@ -19,45 +19,21 @@ class HairAssetData : public Object {
 	String serverPlayerTemplate;
 
 public:
-	HairAssetData() {
-		skillModValue = 0;
-		availableAtCreation = 0;
-	}
+	HairAssetData();
 
-	void readObject(DataTableRow* row) {
-		row->getValue(0, sharedTemplate);
-		row->getValue(1, playerTemplate);
-		row->getValue(2, skillModValue);
-		row->getValue(3, availableAtCreation);
-		row->getValue(4, serverTemplate);
-		row->getValue(5, serverPlayerTemplate);
-	}
+	void readObject(DataTableRow* row);
 
-	bool isAvailableAtCreation() const {
-		return availableAtCreation;
-	}
+	bool isAvailableAtCreation() const;
 
-	String getPlayerTemplate() const {
-		return playerTemplate;
-	}
+	String getPlayerTemplate() const;
 
-	String getServerPlayerTemplate() const {
-		return serverPlayerTemplate;
-	}
+	String getServerPlayerTemplate() const;
 
-	void setServerPlayerTemplate(const String& serverPlayerTemplate) {
-		this->serverPlayerTemplate = serverPlayerTemplate;
-	}
+	void setServerPlayerTemplate(const String& serverPlayerTemplate);
 
-	String getServerTemplate() const {
-		return serverTemplate;
-	}
+	String getServerTemplate() const;
 
-	String getSharedTemplate() const {
-		return sharedTemplate;
-	}
+	String getSharedTemplate() const;
 
-	int getSkillModValue() const {
-		return skillModValue;
-	}
+	int getSkillModValue() const;
 };

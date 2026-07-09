@@ -1,0 +1,199 @@
+#include "SkillModList.h"
+
+SkillModGroup::SkillModGroup() {
+	setAllowOverwriteInsertPlan();
+	setNullValue(0);
+}
+
+SkillModGroup::SkillModGroup(const SkillModGroup& m) : VectorMap<String, int>(m) {
+	setAllowOverwriteInsertPlan();
+	setNullValue(0);
+}
+
+SkillModGroup& SkillModGroup::operator=(const SkillModGroup& m) {
+	if (this == &m)
+		return *this;
+
+	VectorMap<String, int>::operator=(m);
+
+	return *this;
+}
+
+SkillModList::SkillModList() {
+	mods.setAllowOverwriteInsertPlan();
+
+	addSerializableVariables();
+}
+
+SkillModList::SkillModList(const SkillModList& l) : Object(), DeltaVectorMap<String, SkillModEntry>(l) {
+	mods.setAllowOverwriteInsertPlan();
+
+	mods = l.mods;
+
+	addSerializableVariables();
+}
+
+SkillModList& SkillModList::operator=(const SkillModList& l) {
+	if (this == &l)
+		return *this;
+
+	DeltaVectorMap<String, SkillModEntry>::operator=(l);
+
+	mods = l.mods;
+
+	return *this;
+}
+
+void SkillModList::addSerializableVariables() {
+	addSerializableVariable("mods", &mods);
+}
+
+void to_json(nlohmann::json& j, const SkillModList& map) {
+	j["mods"] = map.mods;
+
+	const DeltaVectorMap<String, SkillModEntry>& vm = map;
+
+	to_json(j, vm);
+}
+
+bool SkillModList::add(const uint32 modType, const String& skillMod, int value) {
+	if (!mods.contains(modType)) {
+		SkillModGroup newgroup;
+		newgroup.put(skillMod, value);
+		mods.put(modType, newgroup);
+	} else {
+		SkillModGroup* group = &mods.get(modType);
+		int oldValue = group->get(skillMod);
+		int newValue = oldValue + value;
+		if (newValue != 0)
+			group->put(skillMod, newValue);
+		else
+			group->drop(skillMod);
+	}
+
+	return true;
+}
+
+SkillModEntry SkillModList::getVisibleSkillMod(const String& skillMod) const {
+	SkillModEntry newEntry;
+
+	for (int i = 0; i < mods.size(); ++i) {
+		uint32 modType = mods.elementAt(i).getKey();
+		SkillModGroup* group = &mods.elementAt(i).getValue();
+
+		if (group->contains(skillMod)) {
+			int maxSkill = SkillModManager::instance()->getMaxSkill(modType);
+			int minSkill = SkillModManager::instance()->getMinSkill(modType);
+
+			if (modType & SkillModManager::BONUSMOD) {
+				int newSkillBonus = newEntry.getSkillBonus() + group->get(skillMod);
+
+				if (maxSkill != 0 && minSkill != 0) {
+					if (newSkillBonus >= 0)
+						newSkillBonus = Math::min(newSkillBonus, maxSkill);
+					else
+						newSkillBonus = Math::max(newSkillBonus, minSkill);
+				}
+				newEntry.setSkillBonus(newSkillBonus);
+
+			} else if (modType & SkillModManager::PERMANENTMOD) {
+				int newSkillMod = newEntry.getSkillMod() + group->get(skillMod);
+
+				if (maxSkill != 0 && minSkill != 0) {
+					if (newSkillMod >= 0)
+						newSkillMod = Math::min(newSkillMod, maxSkill);
+					else
+						newSkillMod = Math::max(newSkillMod, minSkill);
+				}
+
+				newEntry.setSkillMod(newSkillMod);
+			}
+		}
+	}
+	return newEntry;
+}
+
+SkillModGroup* SkillModList::getSkillModGroup(const uint32 type) {
+	if (!mods.contains(type)) {
+		SkillModGroup group;
+		mods.put(type, group);
+	}
+
+	return &mods.get(type);
+}
+
+int SkillModList::getSkillMod(const String& skillMod) const {
+	int skill = 0;
+
+	for (int i = 0; i < mods.size(); ++i) {
+		uint32 modType = mods.elementAt(i).getKey();
+		const SkillModGroup* group = &mods.elementAt(i).getValue();
+
+		if (group->contains(skillMod)) {
+			int maxSkill = SkillModManager::instance()->getMaxSkill(modType);
+			int minSkill = SkillModManager::instance()->getMinSkill(modType);
+
+			int newSkillBonus = group->get(skillMod);
+
+			if (maxSkill != 0 && minSkill != 0) {
+				if (newSkillBonus >= 0)
+					newSkillBonus = Math::min(newSkillBonus, maxSkill);
+				else
+					newSkillBonus = Math::max(newSkillBonus, minSkill);
+			}
+
+			skill += newSkillBonus;
+		}
+	}
+
+	return skill;
+}
+
+int SkillModList::getSkillModOfType(const String& skillMod, const uint32 modType) {
+	const SkillModGroup* group = getSkillModGroup(modType);
+
+	if (group->contains(skillMod)) {
+		return group->get(skillMod);
+	}
+
+	return 0;
+}
+
+String SkillModList::getPrintableSkillModList() const {
+	VectorMap<String, int> skills;
+	skills.setAllowOverwriteInsertPlan();
+
+	for (int i = 0; i < mods.size(); i++) {
+		uint32 modType = mods.elementAt(i).getKey();
+		const SkillModGroup* group = &mods.elementAt(i).getValue();
+
+		for (int j = 0; j < group->size(); j++) {
+			String skillMod = group->elementAt(j).getKey();
+			int skillModValue = group->elementAt(j).getValue();
+
+			int maxSkill = SkillModManager::instance()->getMaxSkill(modType);
+			int minSkill = SkillModManager::instance()->getMinSkill(modType);
+
+			if (maxSkill != 0 && minSkill != 0) {
+				if (skillModValue >= 0)
+					skillModValue = Math::min(skillModValue, maxSkill);
+				else
+					skillModValue = Math::max(skillModValue, minSkill);
+			}
+
+			if (skills.contains(skillMod)) {
+				skillModValue += skills.get(skillMod);
+			}
+
+			skills.put(skillMod, skillModValue);
+		}
+	}
+
+	StringBuffer skill;
+
+	for (int i = 0; i < skills.size(); i++) {
+		skill << skills.elementAt(i).getKey() << " : " << skills.get(i) << "\n";
+	}
+
+	return skill.toString();
+}

@@ -46,13 +46,9 @@ protected:
 	Vector<int> baseHAM;
 
 public:
-	SharedCreatureObjectTemplate() {
+	SharedCreatureObjectTemplate();
 
-	}
-
-	~SharedCreatureObjectTemplate() {
-
-	}
+	~SharedCreatureObjectTemplate();
 
 	void readObject(LuaObject* templateData);
 	void readObject(IffStream* iffStream);
@@ -62,188 +58,88 @@ public:
 	void parseVariableData(const String& varName, Chunk* data);
 	void parseFileData(IffStream* iffStream);
 
-	inline const Vector<FloatParam>& getAcceleration() const {
-		return acceleration.get();
-	}
+	const Vector<FloatParam>& getAcceleration() const;
 
-	inline const String& getAnimationMapFilename() const {
-		return animationMapFilename.getValue();
-	}
+	const String& getAnimationMapFilename() const;
 
-	inline const Vector<int>& getBaseHAM() const {
-		return baseHAM;
-	}
+	const Vector<int>& getBaseHAM() const;
 
-	inline float getCameraHeight() const {
-		return cameraHeight;
-	}
+	float getCameraHeight() const;
 
-	inline float getCollisionHeight() const {
-		return collisionHeight;
-	}
+	float getCollisionHeight() const;
 
-	inline float getCollisionLength() const {
-		return collisionLength;
-	}
+	float getCollisionLength() const;
 
-	inline float getCollisionOffsetX() const {
-		return collisionOffsetX;
-	}
+	float getCollisionOffsetX() const;
 
-	inline float getCollisionOffsetZ() const {
-		return collisionOffsetZ;
-	}
+	float getCollisionOffsetZ() const;
 
-	inline float getCollisionRadius() const {
-		return collisionRadius;
-	}
+	float getCollisionRadius() const;
 
-	inline int getGender() const {
-		return gender;
-	}
+	int getGender() const;
 
-	inline const String& getMovementDatatable() const {
-		return movementDatatable.getValue();
-	}
+	const String& getMovementDatatable() const;
 
-	inline int getNiche() const {
-		return niche;
-	}
+	int getNiche() const;
 
-	inline const Vector<BoolParam>& getPostureAlignToTerrain() const {
-		return postureAlignToTerrain.get();
-	}
+	const Vector<BoolParam>& getPostureAlignToTerrain() const;
 
-	inline int getRace() const {
-		return race;
-	}
+	int getRace() const;
 
-	inline float getSlopeModAngle() const {
-		return slopeModAngle;
-	}
+	float getSlopeModAngle() const;
 
-	inline float getSlopeModPercent() const {
-		return slopeModPercent;
-	}
+	float getSlopeModPercent() const;
 
-	inline int getSpecies() const {
-		return species;
-	}
+	int getSpecies() const;
 
-	inline const Vector<FloatParam>& getSpeed() const {
-		return speed.get();
-	}
+	const Vector<FloatParam>& getSpeed() const;
 
-	inline float getStepHeight() const {
-		return stepHeight;
-	}
+	float getStepHeight() const;
 
-	inline float getSwimHeight() const {
-		return swimHeight;
-	}
+	float getSwimHeight() const;
 
-	inline const Vector<FloatParam>& getTurnRate() const {
-		return turnRate.get();
-	}
+	const Vector<FloatParam>& getTurnRate() const;
 
-	inline float getWarpTolerance() const {
-		return warpTolerance;
-	}
+	float getWarpTolerance() const;
 
-	inline float getWaterModPercent() const {
-		return waterModPercent;
-	}
+	float getWaterModPercent() const;
 
-	/*void setAcceleration(Vector<float> acceleration) {
-		this->acceleration = acceleration;
-	}*/
+	void setAnimationMapFilename(String animationMapFilename);
 
-	void setAnimationMapFilename(String animationMapFilename) {
-		this->animationMapFilename = animationMapFilename;
-	}
+	void setBaseHAM(Vector<int> baseHAM);
 
-	void setBaseHAM(Vector<int> baseHAM) {
-		this->baseHAM = baseHAM;
-	}
+	void setCameraHeight(float cameraHeight);
 
-	void setCameraHeight(float cameraHeight) {
-		this->cameraHeight = cameraHeight;
-	}
+	void setCollisionHeight(float collisionHeight);
 
-	void setCollisionHeight(float collisionHeight) {
-		this->collisionHeight = collisionHeight;
-	}
+	void setCollisionLength(float collisionLength);
 
-	void setCollisionLength(float collisionLength) {
-		this->collisionLength = collisionLength;
-	}
+	void setCollisionOffsetX(float collisionOffsetX);
 
-	void setCollisionOffsetX(float collisionOffsetX) {
-		this->collisionOffsetX = collisionOffsetX;
-	}
+	void setCollisionOffsetZ(float collisionOffsetZ);
 
-	void setCollisionOffsetZ(float collisionOffsetZ) {
-		this->collisionOffsetZ = collisionOffsetZ;
-	}
+	void setCollisionRadius(float collisionRadius);
 
-	void setCollisionRadius(float collisionRadius) {
-		this->collisionRadius = collisionRadius;
-	}
+	void setGender(int gender);
 
-	void setGender(int gender) {
-		this->gender = gender;
-	}
+	void setMovementDatatable(String movementDatatable);
 
-	void setMovementDatatable(String movementDatatable) {
-		this->movementDatatable = movementDatatable;
-	}
+	void setNiche(int niche);
+	
+	void setRace(int race);
 
-	void setNiche(int niche) {
-		this->niche = niche;
-	}
+	void setSlopeModAngle(float slopeModAngle);
 
-	/*void setPostureAlignToTerrain(Vector<bool> postureAlignToTerrain) {
-		this->postureAlignToTerrain = postureAlignToTerrain;
-	}*/
+	void setSlopeModPercent(float slopeModPercent);
 
-	void setRace(int race) {
-		this->race = race;
-	}
+	void setSpecies(int species);
 
-	void setSlopeModAngle(float slopeModAngle) {
-		this->slopeModAngle = slopeModAngle;
-	}
+	void setStepHeight(float stepHeight);
 
-	void setSlopeModPercent(float slopeModPercent) {
-		this->slopeModPercent = slopeModPercent;
-	}
+	void setSwimHeight(float swimHeight);
 
-	void setSpecies(int species) {
-		this->species = species;
-	}
+	void setWarpTolerance(float warpTolerance);
 
-	/*void setSpeed(Vector<float> speed) {
-		this->speed = speed;
-	}*/
-
-	void setStepHeight(float stepHeight) {
-		this->stepHeight = stepHeight;
-	}
-
-	void setSwimHeight(float swimHeight) {
-		this->swimHeight = swimHeight;
-	}
-
-	/*void setTurnRate(Vector<float> turnRate) {
-		this->turnRate = turnRate;
-	}*/
-
-	void setWarpTolerance(float warpTolerance) {
-		this->warpTolerance = warpTolerance;
-	}
-
-	void setWaterModPercent(float waterModPercent) {
-		this->waterModPercent = waterModPercent;
-	}
+	void setWaterModPercent(float waterModPercent);
 
 };

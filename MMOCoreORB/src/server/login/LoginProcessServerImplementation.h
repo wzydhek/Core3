@@ -26,13 +26,9 @@ namespace server {
 
 			void initialize();
 
-			inline WeakReference<LoginServer*> getLoginServer() {
-				return server;
-			}
+			WeakReference<LoginServer*> getLoginServer();
 
-			inline LoginPacketHandler* getPacketHandler() {
-				return loginPacketHandler;
-			}
+			LoginPacketHandler* getPacketHandler();
 		};
 
 	} // namspace login

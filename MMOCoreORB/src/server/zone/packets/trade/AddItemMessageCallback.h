@@ -8,40 +8,14 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/zone/managers/player/PlayerManager.h"
 
 class AddItemMessageCallback : public MessageCallback {
 	uint64 id;
 
 public:
-	AddItemMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) : MessageCallback(client, server), id(0) {
-	}
+	AddItemMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	void parse(Message* message) {
-		id = message->parseLong();
-	}
+	void parse(Message* message);
 
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		if (id == 0)
-			return;
-
-		auto zoneServer = server->getZoneServer();
-
-		if (zoneServer == nullptr)
-			return;
-
-		auto playerMan = zoneServer->getPlayerManager();
-
-		if (playerMan == nullptr)
-			return;
-
-		Locker lock(player);
-
-		playerMan->handleAddItemToTradeWindow(player, id);
-	}
+	void run();
 };

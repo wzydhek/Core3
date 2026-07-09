@@ -21,89 +21,30 @@ class Composite : public Behavior {
 protected:
 	Vector<Reference<Behavior*> > children;
 
-	Vector<Reference<Behavior*> > shuffleChildren() const {
-		Vector<Reference<Behavior*> > ran = children;
-
-		for (int i = 0; i < ran.size(); ++i) {
-			int index = (int) System::random(ran.size() - 1 - i) + i;
-			Reference<Behavior*> temp = ran.set(i, ran.get(index));
-			ran.set(index, temp);
-		}
-
-		return ran;
-	}
+	Vector<Reference<Behavior*>> shuffleChildren() const;
 
 public:
-	Composite(const String& className, const uint32 id, const LuaObject& args)
-			: Behavior(className, id, args) {
-	}
+	Composite(const String& className, const uint32 id, const LuaObject& args);
 
-	Composite(const Composite& b)
-			: Behavior(b), children(b.children) {
-	}
+	Composite(const Composite& b);
 
-	Composite& operator=(const Composite& b) {
-		if (this == &b)
-			return *this;
+	Composite& operator=(const Composite& b);
 
-		Behavior::operator=(b);
-		children = b.children;
+	virtual ~Composite();
 
-		return *this;
-	}
+	bool isComposite() const;
 
-	virtual ~Composite() {
-	}
+	bool hasChild(Behavior* c) const;
 
-	bool isComposite() const {
-		return true;
-	}
+	Behavior* getChild(uint32 cID) const;
 
-	bool hasChild(Behavior* c) const {
-		for (int idx = 0; idx < children.size(); ++idx)
-			if (children.get(idx) == c)
-				return true;
+	Vector<const Behavior*> getRecursiveChildList() const;
 
-		return false;
-	}
-
-	Behavior* getChild(uint32 cID) const {
-		for (int idx = 0; idx < children.size(); ++idx)
-			if (children.get(idx)->getID() == cID)
-				return children.get(idx);
-
-		return NULL;
-	}
-
-	Vector<const Behavior*> getRecursiveChildList() const {
-		Vector<const Behavior*> retVal;
-		retVal.add(this);
-
-		for (int idx = 0; idx < children.size(); ++idx) {
-			retVal.addAll(children.get(idx)->getRecursiveChildList());
-		}
-
-		return retVal;
-	}
-
-	virtual void addChild(Reference<Behavior*> child) {
-		assert(child != this);
-
-		children.add(child);
-	}
+	virtual void addChild(Reference<Behavior*> child);
 
 	String print() const;
 
-	virtual bool checkConditions(AiAgent* agent) const {
-		if (children.size() <= 0)
-			return false;
-
-		if (!Behavior::checkConditions(agent)) {
-			return true;
-		}
-
-		return true;
-	}
+	virtual bool checkConditions(AiAgent* agent) const;
 
 	Behavior::Status doAction(AiAgent* agent) const;
 };
@@ -115,3 +56,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt::node;

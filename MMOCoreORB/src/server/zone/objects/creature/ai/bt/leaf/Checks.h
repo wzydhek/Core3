@@ -326,3 +326,5 @@ template<> bool CheckHasHerdObserver::check(AiAgent* agent) const;
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt::leaf;

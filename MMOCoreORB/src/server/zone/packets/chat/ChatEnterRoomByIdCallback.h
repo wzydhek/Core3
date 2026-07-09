@@ -8,31 +8,16 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/chat/ChatManager.h"
 
 class ChatEnterRoomByIdCallback : public MessageCallback {
 	uint32 requestID;
 	uint32 roomID;
 
 public:
-	ChatEnterRoomByIdCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), requestID(0), roomID(0) {
-	}
+	ChatEnterRoomByIdCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	void parse(Message* message) {
-		requestID = message->parseInt();
-		roomID = message->parseInt();
-	}
+	void parse(Message* message);
 
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		ChatManager* chatManager = server->getChatManager();
-		if (chatManager != nullptr)
-			chatManager->handleChatEnterRoomById(player, roomID, requestID);
-	}
+	void run();
 
 };

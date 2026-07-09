@@ -18,42 +18,24 @@ protected:
 	int gallopCooldown;
 
 public:
-	MountSpeedData(String file, float run, float multiplier, int duration, int cooldown) : Object() {
-		String filename = file;
-		appearanceFilename.setValue(filename);
+	MountSpeedData(String file, float run, float multiplier, int duration, int cooldown);
 
-		runSpeed = run;
-		gallopSpeedMultiplier = multiplier;
-		gallopDuration = duration;
-		gallopCooldown = cooldown;
-	}
+	~MountSpeedData();
 
-	~MountSpeedData() {
+	String getAppearanceFilename();
 
-	}
+	float getRunSpeed();
 
-	String getAppearanceFilename() {
-		return appearanceFilename;
-	}
+	float getGallopSpeedMultiplier();
 
-	float getRunSpeed() {
-		return runSpeed;
-	}
+	int getGallopDuration();
 
-	float getGallopSpeedMultiplier() {
-		return gallopSpeedMultiplier;
-	}
-
-	int getGallopDuration() {
-		return gallopDuration;
-	}
-
-	int getGallopCooldown() {
-		return gallopCooldown;
-	}
+	int getGallopCooldown();
 };
 
 }
 }
 }
 }
+
+using namespace server::zone::managers::creature;

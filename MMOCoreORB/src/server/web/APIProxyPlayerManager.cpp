@@ -26,7 +26,10 @@
 namespace server {
  namespace web3 {
 
-server::zone::managers::player::PlayerManager* APIProxyPlayerManager::getPlayerManager() {
+APIProxyPlayerManager::APIProxyPlayerManager() : BaseAPIProxy("PlayerManager") {
+ }
+
+ server::zone::managers::player::PlayerManager* APIProxyPlayerManager::getPlayerManager() {
 	auto server = getZoneServer();
 
 	if (server == nullptr) {

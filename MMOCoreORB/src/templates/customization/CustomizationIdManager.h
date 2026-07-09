@@ -27,23 +27,13 @@ public:
 	void loadAllowBald(IffStream* iffStream);
 	void readObject(IffStream* iffStream);
 
-	int getCustomizationId(const String& var) {
-		return customizationIds.get(var);
-	}
+	int getCustomizationId(const String& var);
 
-	String getCustomizationVariable(int id) {
-		return reverseIds.get(id);
-	}
+	String getCustomizationVariable(int id);
 
-	PaletteData* getPaletteData(const String& palette) {
-		return paletteColumns.get(palette);
-	}
+	PaletteData* getPaletteData(const String& palette);
 
-	HairAssetData* getHairAssetData(const String& hairServerTemplate) {
-		return hairAssetSkillMods.get(hairServerTemplate);
-	}
+	HairAssetData* getHairAssetData(const String& hairServerTemplate);
 
-	bool canBeBald(const int objectCRC) {
-		return allowBald.get(objectCRC);
-	}
+	bool canBeBald(const int objectCRC);
 };

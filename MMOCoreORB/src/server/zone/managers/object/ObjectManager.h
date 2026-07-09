@@ -54,9 +54,7 @@ namespace zone {
 		ObjectManager(bool initializeTemplates = true);
 		~ObjectManager();
 
-		bool contains(uint32 objectCRC) const {
-			return objectFactory.containsObject(objectCRC);
-		}
+		bool contains(uint32 objectCRC) const;
 
 		void loadStaticObjects();
 
@@ -102,19 +100,16 @@ namespace zone {
 
 		void shutdown();
 
-		bool isObjectUpdateInProgress() const {
-			return objectUpdateInProgress;
-		}
+		bool isObjectUpdateInProgress() const;
 
 		ObjectDatabase* loadTable(const String& database, uint64 objectID = 0);
 
 		void updateObjectVersion();
 
-		inline void setZoneProcessor(ZoneProcessServer* srv) {
-			server = srv;
-		}
+		void setZoneProcessor(ZoneProcessServer* srv);
 
-		template<typename ClassType> void getPersistentObjectsSerializedVariable(const uint32 variableHashCode, ClassType* address, uint64 objectID) {
+		template <typename ClassType>
+		void getPersistentObjectsSerializedVariable(const uint32 variableHashCode, ClassType* address, uint64 objectID) {
 			uint16 tableID = (uint16)(objectID >> 48);
 
 			LocalDatabase* db = databaseManager->getDatabase(tableID);
@@ -122,7 +117,7 @@ namespace zone {
 			if (db == nullptr || !db->isObjectDatabase())
 				return;
 
-			ObjectDatabase* database = cast<ObjectDatabase*>( db);
+			ObjectDatabase* database = cast<ObjectDatabase*>(db);
 
 			ObjectInputStream objectData(500);
 

@@ -7,6 +7,10 @@
 
 #pragma once
 
+#include "system/lang/Object.h"
+#include "system/lang/String.h"
+#include "engine/lua/LuaObject.h"
+
 class VeteranReward : public Object {
 
 protected:
@@ -17,78 +21,31 @@ protected:
 	bool jtlReward;
 
 public:
-	VeteranReward() {
-		milestone = 0;
-		oneTime = false;
-		jtlReward = false;
-	}
+	VeteranReward();
 
-	VeteranReward(const VeteranReward& obj) : Object() {
-		templateFile = obj.templateFile;
-		milestone = obj.milestone;
-		oneTime = obj.oneTime;
-		description = obj.description;
-		jtlReward = obj.jtlReward;
-	}
+	VeteranReward(const VeteranReward& obj);
 
-	VeteranReward& operator=(const VeteranReward& obj) {
-		if (this == &obj)
-			return *this;
+	VeteranReward& operator=(const VeteranReward& obj);
 
-		templateFile = obj.templateFile;
-		milestone = obj.milestone;
-		oneTime = obj.oneTime;
-		description = obj.description;
-		jtlReward = obj.jtlReward;
+	void parseFromLua(LuaObject* luaObject);
 
-		return *this;
-	}
+	void setTemplateFile(const String& file);
 
-	void parseFromLua(LuaObject* luaObject) {
-		templateFile = luaObject->getStringField("templateFile");
-		milestone = luaObject->getIntField("milestone");
-		oneTime = luaObject->getBooleanField("oneTime");
-		description = luaObject->getStringField("description");
-		jtlReward = luaObject->getBooleanField("jtlReward");
-	}
+	void setMilestone(unsigned int days);
 
-	inline void setTemplateFile(const String& file) {
-		templateFile = file;
-	}
+	void setOneTime(bool flag);
 
-	inline void setMilestone(unsigned int days) {
-		milestone = days;
-	}
+	void setDescription(const String& desc);
 
-	inline void setOneTime(bool flag) {
-		oneTime = flag;
-	}
+	void setJtlReward(bool val);
 
-	inline void setDescription( const String& desc ){
-		description = desc;
-	}
+	String& getTemplateFile();
 
-	inline void setJtlReward(bool val) {
-		jtlReward = val;
-	}
+	unsigned int getMilestone();
 
-	inline String& getTemplateFile() {
-		return templateFile;
-	}
+	bool isOneTime();
 
-	inline unsigned int getMilestone() {
-		return milestone;
-	}
+	String& getDescription();
 
-	inline bool isOneTime() {
-		return oneTime;
-	}
-
-	inline String& getDescription(){
-		return description;
-	}
-
-	inline bool isJtlReward() {
-		return jtlReward;
-	}
+	bool isJtlReward();
 };

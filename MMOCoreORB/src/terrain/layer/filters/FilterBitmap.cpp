@@ -11,6 +11,45 @@
 
 #include "../../TargaBitmap.h"
 
+FilterBitmap::FilterBitmap() : FilterProceduralRule(5, 'FBIT'), bitmapId(0), min(0), max(0), map(nullptr) { // magic numbers from the client
+}
+
+void FilterBitmap::parseFromIffStream(engine::util::IffStream* iffStream) {
+	uint32 version = iffStream->getNextFormType();
+
+	iffStream->openForm(version);
+
+	switch (version) {
+		case '0000':
+			parseFromIffStream(iffStream, Version<'0000'>());
+			break;
+		default:
+			System::out << "unknown FilterBIT version 0x" << hex << version << endl;
+			break;
+	}
+
+	iffStream->closeForm(version);
+}
+
+void FilterBitmap::parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>) {
+	informationHeader.readObject(iffStream);
+
+	iffStream->openForm('DATA');
+
+	iffStream->openChunk('PARM');
+
+	// 5 vars
+	bitmapId = iffStream->getInt();
+	featheringType = iffStream->getInt();
+	featheringAmount = iffStream->getFloat();
+	min = iffStream->getFloat();
+	max = iffStream->getFloat();
+
+	iffStream->closeChunk('PARM');
+
+	iffStream->closeForm('DATA');
+}
+
 float FilterBitmap::process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator, FilterRectangle* rect) {
 	if (map == nullptr) {
 		map = terrainGenerator->getBitmapGroup()->getBitmap(bitmapId);

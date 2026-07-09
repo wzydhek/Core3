@@ -17,13 +17,9 @@ namespace variables {
 
 class Uint64VectorDeltaVector: public DeltaVector<Vector<uint64> > {
 public:
-	Uint64VectorDeltaVector() {
-		
-	}
+	Uint64VectorDeltaVector();
 	
-	~Uint64VectorDeltaVector() {
-		
-	}
+	~Uint64VectorDeltaVector();
 };
 
 }

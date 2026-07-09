@@ -15,21 +15,11 @@ protected:
 	String animation;
 
 public:
-	LiveSampleTemplate() {
-		animation = "";
-	}
+	LiveSampleTemplate();
 
-	~LiveSampleTemplate() {
+	~LiveSampleTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
-		animation = templateData->getStringField("animation");
-
-	}
-
-	String getAnimation() {
-		return animation;
-	}
+	String getAnimation();
 };

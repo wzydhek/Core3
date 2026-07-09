@@ -19,23 +19,15 @@ class PortalGeometry : public Object {
 	Reference<MeshData*> geometry;
 	AABB boundingBox;
 public:
-	PortalGeometry() : geometry(new MeshData()), boundingBox(Vector3(0, 0, 0), Vector3(0, 0, 0)) { }
+	PortalGeometry();
 
-	MeshData* getGeometry() {
-		return geometry;
-	}
+	MeshData* getGeometry();
 
-	const MeshData* getGeometry() const {
-		return geometry;
-	}
+	const MeshData* getGeometry() const;
 
-	const AABB& getBoundingBox() const {
-		return boundingBox;
-	}
+	const AABB& getBoundingBox() const;
 
-	void setBoundingBox(const AABB& aabb) {
-		boundingBox = aabb;
-	}
+	void setBoundingBox(const AABB& aabb);
 };
 
 class PortalLayout : public IffTemplate, public Logger {
@@ -46,16 +38,12 @@ public:
 	PortalLayout();
 	~PortalLayout();
 
-	const PathGraph *getPathGraph() const {
-		return pathGraph;
-	}
+	const PathGraph* getPathGraph() const;
 
 	void readPortalGeometry0003(IffStream *iff, int numPortals);
 	void readPortalGeometry0004(IffStream *iff, int numPortals);
 
-	void readObject(IffStream* templateData) {
-		parse(templateData);
-	}
+	void readObject(IffStream* templateData);
 
 	void parse(IffStream* iffStream);
 
@@ -69,46 +57,25 @@ public:
 
 	int getCellID(const String& cellName) const;
 
-	inline int getCellTotalNumber() const {
-		//exclude the outside cell
-		return Math::max(0, cellProperties.size() - 1);
-	}
+	int getCellTotalNumber() const;
 
-	inline int getFloorMeshNumber() const {
-		return cellProperties.size();
-	}
+	int getFloorMeshNumber() const;
 
-	inline const FloorMesh* getFloorMesh(int cellIndex) const {
-		return cellProperties.get(cellIndex)->getFloorMesh();
-	}
+	const FloorMesh* getFloorMesh(int cellIndex) const;
 
-	inline FloorMesh* getFloorMesh(int cellIndex) {
-		return cellProperties.get(cellIndex)->getFloorMesh();
-	}
+	FloorMesh* getFloorMesh(int cellIndex);
 
-	inline const AppearanceTemplate* getAppearanceTemplate(int cellIndex) const {
-		return cellProperties.get(cellIndex)->getAppearanceTemplate();
-	}
+	const AppearanceTemplate* getAppearanceTemplate(int cellIndex) const;
 
-	const Vector<Reference<CellProperty*> >& getCellProperties() const {
-		return cellProperties;
-	}
+	const Vector<Reference<CellProperty*>>& getCellProperties() const;
 
-	inline const CellProperty* getCellProperty(int cellIndex) const {
-		return cellProperties.get(cellIndex);
-	}
+	const CellProperty* getCellProperty(int cellIndex) const;
 
-	inline int getAppearanceTemplatesSize() const {
-		return cellProperties.size();
-	}
+	int getAppearanceTemplatesSize() const;
 
-	inline const MeshData* getPortalGeometry(int idx) const {
-		return portalGeometry.get(idx)->getGeometry();
-	}
+	const MeshData* getPortalGeometry(int idx) const;
 
-	const AABB& getPortalBounds(int idx) const {
-		return portalGeometry.get(idx)->getBoundingBox();
-	}
+	const AABB& getPortalBounds(int idx) const;
 
 	static uint32 loadCRC(IffStream* iffStream);
 };

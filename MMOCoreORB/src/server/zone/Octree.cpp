@@ -38,6 +38,10 @@ Object* Octree::clone(void* mem) {
 	return TransactionalObjectCloner<Octree>::clone(this);
 }
 
+void Octree::free() {
+	TransactionalMemoryManager::instance()->destroy(this);
+}
+
 void Octree::setSize(float minx, float miny, float minz, float maxx, float maxy, float maxz) {
 	root = new TreeNode(minx, miny, minz, maxx, maxy, maxz, nullptr);
 }
@@ -1186,4 +1190,12 @@ int Octree::_inRange(const Reference<TreeNode*>& node, float x, float y, float z
 	}
 
 	return count;
+}
+
+void Octree::setLogging(bool doLog) {
+	logTree = doLog;
+}
+
+bool Octree::doLog() {
+	return logTree;
 }

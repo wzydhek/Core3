@@ -74,62 +74,11 @@ public:
 
 	void safeRunForEach(const Function<void(TreeEntry* const&)>& lambda, uint32 receiverType) const;
 
-	int size() const NO_THREAD_SAFETY_ANALYSIS {
-		return count;
-	}
+	int size() const NO_THREAD_SAFETY_ANALYSIS;
 
-	void setNoDuplicateInsertPlan() {
-		objects.setNoDuplicateInsertPlan();
-	}
+	void setNoDuplicateInsertPlan();
 
-	static String receiverFlagsToString(int flags) {
-		StringBuffer buf;
-		String sep = "";
-
-		if (flags & PLAYERTYPE) {
-			flags = flags & ~PLAYERTYPE;
-			buf << sep << "PLAYER";
-			sep = ", ";
-		}
-
-		if (flags & CREOTYPE) {
-			flags = flags & ~CREOTYPE;
-			buf << sep << "CREO";
-			sep = ", ";
-		}
-
-		if (flags & COLLIDABLETYPE) {
-			flags = flags & ~COLLIDABLETYPE;
-			buf << sep << "COLLIDABLE";
-			sep = ", ";
-		}
-
-		if (flags & STRUCTURETYPE) {
-			flags = flags & ~STRUCTURETYPE;
-			buf << sep << "STRUCTURE";
-			sep = ", ";
-		}
-
-		if (flags & SHIPTYPE) {
-			flags = flags & ~SHIPTYPE;
-			buf << sep << "SHIP";
-			sep = ", ";
-		}
-
-		if (flags & PLAYERSHIPTYPE) {
-			flags = flags & ~PLAYERSHIPTYPE;
-			buf << sep << "PLAYERSHIP";
-			sep = ", ";
-		}
-
-		if (flags)
-			buf << sep << "<unexpected flags: " << flags << ">";
-
-		if (buf.length() == 0)
-			buf << "<no flags>";
-
-		return buf.toString();
-	}
+	static String receiverFlagsToString(int flags);
 };
 
  }

@@ -14,19 +14,7 @@ class ContrabandScanTask : public Task {
 	WeakReference<CreatureObject*> weakPlayer;
 
 public:
-	ContrabandScanTask(CreatureObject* player) {
-		weakPlayer = player;
-	}
+	ContrabandScanTask(CreatureObject* player);
 
-	void run() {
-		ManagedReference<CreatureObject*> player = weakPlayer.get();
-
-		if (player != nullptr) {
-			Locker locker(player);
-			ManagedReference<ContrabandScanSession*> scanSession = player->getActiveSession(SessionFacadeType::CONTRABANDSCAN).castTo<ContrabandScanSession*>();
-			if (scanSession != nullptr) {
-				scanSession->runContrabandScan();
-			}
-		}
-	}
+	void run();
 };

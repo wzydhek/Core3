@@ -4,10 +4,9 @@
 
 #pragma once
 
+#include "engine/service/proto/BaseMessage.h"
+
 class AbortTradeMessage : public BaseMessage {
 public:
-	AbortTradeMessage() : BaseMessage(6) {
-		insertShort(1);
-		insertInt(0x9CA80F98);
-	}
+	AbortTradeMessage();
 };

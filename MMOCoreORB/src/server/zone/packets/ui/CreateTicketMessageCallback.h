@@ -8,7 +8,6 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/zone/managers/holocron/HolocronManager.h"
 
 class CreateTicketMessageCallback : public MessageCallback {
 	String playerName;
@@ -18,27 +17,9 @@ class CreateTicketMessageCallback : public MessageCallback {
 	UnicodeString ticketBody;
 
 public:
-	CreateTicketMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) : MessageCallback(client, server), categoryId(0), subCategoryId(0) {
-	}
+	CreateTicketMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	void parse(Message* message) {
-		if (!ConfigManager::instance()->getBool("Core3.AccountManager.HolocronTicketsEnabled", false)) {
-			return;
-		}
+	void parse(Message* message);
 
-		message->parseAscii(playerName);
-		categoryId = message->parseInt();
-		subCategoryId = message->parseInt();
-
-		message->parseUnicode(ticketBody);
-	}
-
-	void run() {
-		if (!ConfigManager::instance()->getBool("Core3.AccountManager.HolocronTicketsEnabled", false)) {
-			return;
-		}
-
-		HolocronManager* holocronManager = server->getHolocronManager();
-		holocronManager->submitTicket(client, ticketBody);
-	}
+	void run();
 };

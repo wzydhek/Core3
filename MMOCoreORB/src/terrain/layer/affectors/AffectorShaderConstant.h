@@ -8,6 +8,7 @@
 #pragma once
 
 #include "../ProceduralRule.h"
+#include "AffectorProceduralRule.h"
 
 class AffectorShaderConstant : public ProceduralRule<'ASCN'>, public AffectorProceduralRule {
 	int familyId; // shader family id to affect
@@ -15,36 +16,9 @@ class AffectorShaderConstant : public ProceduralRule<'ASCN'>, public AffectorPro
 	float featheringAmount; // how much to soften
 
 public:
-	AffectorShaderConstant() : familyId(0), featheringType(0), featheringAmount(0) {
+	AffectorShaderConstant();
 
-	}
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		uint32 version = iffStream->getNextFormType();
-
-		iffStream->openForm(version);
-
-		switch (version) {
-		case '0001':
-			parseFromIffStream(iffStream, Version<'0001'>());
-			break;
-		default:
-			System::out << "unknown AffectorShaderConstant version 0x" << hex << version << endl;
-			break;
-		}
-
-		iffStream->closeForm(version);
-	}
-
-	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>) {
-		informationHeader.readObject(iffStream);
-
-		iffStream->openChunk('DATA');
-
-		familyId = iffStream->getInt();
-		featheringType = iffStream->getInt();
-		featheringAmount = iffStream->getFloat();
-
-		iffStream->closeChunk('DATA');
-	}
+	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);
 };

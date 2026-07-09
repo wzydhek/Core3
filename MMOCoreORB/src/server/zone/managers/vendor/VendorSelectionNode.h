@@ -19,148 +19,40 @@ class VendorSelectionNode : public Object {
 	SortedVector<Reference<VendorSelectionNode*> > childNodes;
 
 public:
-	VendorSelectionNode() : Object() {
-		hiringRequired = 0;
-	}
+	VendorSelectionNode();
 
-	VendorSelectionNode(const VendorSelectionNode& node) : Object() {
-		nodeTitle = node.nodeTitle;
-		nodePath = node.nodePath;
-		suiDisplay = node.suiDisplay;
-		hiringRequired = node.hiringRequired;
-		childNodes = node.childNodes;
+	VendorSelectionNode(const VendorSelectionNode& node);
 
-	}
+	VendorSelectionNode& operator=(const VendorSelectionNode& node);
 
-	VendorSelectionNode& operator= (const VendorSelectionNode& node) {
-		if (this == &node)
-			return *this;
+	void parseFromLua(LuaObject& lua);
 
-		nodeTitle = node.nodeTitle;
-		nodePath = node.nodePath;
-		suiDisplay = node.suiDisplay;
-		hiringRequired = node.hiringRequired;
-		childNodes = node.childNodes;
+	int compareTo(const VendorSelectionNode& node) const;
 
-		return *this;
-	}
+	void addChildNode(VendorSelectionNode* node);
 
-	void parseFromLua(LuaObject& lua) {
-		if (!lua.isValidTable())
-			return;
+	void setNodeName(const String& name);
 
-		nodeTitle = lua.getStringField("nodeName");
-		nodePath = lua.getStringField("nodePath");
+	void setNodePath(const String& path);
 
-		if (!lua.getStringField("suiDisplay").isEmpty())
-			suiDisplay = lua.getStringField("suiDisplay");
+	void setHiringRequired(int hiring);
 
-		hiringRequired = lua.getIntField("hiringRequired");
+	bool hasChildNode();
 
-		LuaObject childNodes = lua.getObjectField("childNodes");
+	void addChildrenToListBox(SuiListBox* listBox, int hiringSkill);
 
-		if (childNodes.isValidTable()) {
-			for (int i = 1; i < childNodes.getTableSize() + 1; ++i) {
-				lua_State* L = lua.getLuaState();
-				lua_rawgeti(L, -1, i);
-				LuaObject luaNode(L);
+	VendorSelectionNode* getNode(int idx);
 
-				if (luaNode.isValidTable()) {
-					Reference<VendorSelectionNode*> childNode = new VendorSelectionNode();
-					childNode->parseFromLua(luaNode);
+	int getChildNodeSize();
 
-					addChildNode(childNode);
-				}
+	String getRandomTemplate(int skillLevel);
 
-				luaNode.pop();
-			}
-		}
+	String& getNodeName();
 
-		childNodes.pop();
-	}
+	int getHiringRequired();
 
-	inline int compareTo(const VendorSelectionNode& node) const {
-		if (hiringRequired > node.hiringRequired)
-			return -1;
+	String& getSuiDisplay();
 
-		if (hiringRequired < node.hiringRequired)
-			return 1;
-
-		return 0;
-	}
-
-	inline void addChildNode(VendorSelectionNode* node) {
-		childNodes.add(node);
-	}
-
-	inline void setNodeName(const String& name) {
-		nodeTitle = name;
-	}
-
-	inline void setNodePath(const String& path) {
-		nodePath = path;
-	}
-
-	inline void setHiringRequired(int hiring) {
-		hiringRequired = hiring;
-	}
-
-	inline bool hasChildNode() {
-		return childNodes.size() > 0;
-	}
-
-	inline void addChildrenToListBox(SuiListBox* listBox, int hiringSkill) {
-		for (int i = 0; i < childNodes.size(); ++i) {
-			VendorSelectionNode* child = childNodes.get(i);
-			if (child->getHiringRequired() <= hiringSkill)
-				listBox->addMenuItem(child->getNodeName(), i);
-		}
-	}
-
-	VendorSelectionNode* getNode(int idx) {
-		if (idx < 0 || idx >= childNodes.size())
-			return nullptr;
-
-		return childNodes.get(idx);
-	}
-
-	inline int getChildNodeSize() {
-		return childNodes.size();
-	}
-
-	String getRandomTemplate(int skillLevel) {
-
-		if(childNodes.size() == 0)
-			return "";
-
-		VendorSelectionNode* node = nullptr;
-		int loop = 0;
-
-		do {
-			node = childNodes.get(System::random(childNodes.size() - 1));
-			loop++;
-		} while((node == nullptr || node->getHiringRequired() > skillLevel) && loop < 10 );
-
-		if(node == nullptr)
-			return "";
-
-		return node->getTemplatePath();
-	}
-
-	inline String& getNodeName() {
-		return nodeTitle;
-	}
-
-	inline int getHiringRequired() {
-		return hiringRequired;
-	}
-
-	inline String& getSuiDisplay() {
-		return suiDisplay;
-	}
-
-	inline String& getTemplatePath() {
-		return nodePath;
-	}
+	String& getTemplatePath();
 
 };

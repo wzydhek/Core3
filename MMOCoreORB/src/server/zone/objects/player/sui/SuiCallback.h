@@ -27,9 +27,7 @@ namespace sui {
 		ManagedReference<ZoneServer*> server;
 
 	public:
-		SuiCallback(ZoneServer* serv) {
-			server = serv;
-		}
+		SuiCallback(ZoneServer* serv);
 
 		/**
 		 * @param player The player that this suibox is assigned to.
@@ -59,9 +57,7 @@ registerObserver(ObserverEventType::CREATUREREVIVED, new LambdaObserver(
 
 		}
 
-		virtual void run(server::zone::objects::creature::CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-			return function.getLambda()(player, suiBox, eventIndex, args);
-		}
+		virtual void run(server::zone::objects::creature::CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 
 	};
 }
@@ -71,3 +67,6 @@ registerObserver(ObserverEventType::CREATUREREVIVED, new LambdaObserver(
 }
 
 using namespace server::zone::objects::player::sui;
+
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/sui/SuiBox.h"

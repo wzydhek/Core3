@@ -18,8 +18,7 @@ namespace server {
 
 	class APIProxyObjectManager : public BaseAPIProxy {
 	public:
-		APIProxyObjectManager() : BaseAPIProxy("Object")  {
-		}
+		APIProxyObjectManager();
 
 		void handle(APIRequest& apiRequest);
 	private:

@@ -25,9 +25,7 @@ public:
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 	Zone* operator=(Zone* obj);
 #ifdef ODB_SERIALIZATION
-	const String& getZoneName() const {
-		return zoneName;
-	}
+	const String& getZoneName() const;
 #endif
 };
 

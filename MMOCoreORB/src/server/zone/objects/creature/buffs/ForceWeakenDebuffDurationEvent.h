@@ -18,27 +18,11 @@ namespace server {
 			ManagedWeakReference<Buff*> buffObject;
 
 		public:
-			ForceWeakenDebuffDurationEvent(CreatureObject* creature, Buff* buff) : Task((int64) buff->getBuffDuration() * 1000) {
-				creatureObject = creature;
-				buffObject = buff;
-			}
+			ForceWeakenDebuffDurationEvent(CreatureObject* creature, Buff* buff);
 
-			void run() {
-				ManagedReference<CreatureObject*> creature = creatureObject.get();
-				ManagedReference<Buff*> buff = buffObject.get();
+			void run();
 
-				if (creature == nullptr || buff == nullptr)
-					return;
-
-				Locker locker(creature);
-				Locker clocker(buff, creature);
-
-				buff->activate(false);
-			}
-
-			void setBuffObject(Buff* buff) {
-				buffObject = buff;
-			}
+			void setBuffObject(Buff* buff);
 		};
     }
    }

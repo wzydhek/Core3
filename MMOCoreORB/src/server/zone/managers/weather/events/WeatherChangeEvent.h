@@ -17,17 +17,9 @@ class WeatherChangeEvent : public Task {
 	ManagedWeakReference<WeatherManager*> weatherManager;
 
 public:
-	WeatherChangeEvent(WeatherManager* weatherManager) : Task() {
-		this->weatherManager = weatherManager;
-	}
+	WeatherChangeEvent(WeatherManager* weatherManager);
 
-	void run() {
-		ManagedReference<WeatherManager*> wm = weatherManager.get();
-
-		if (wm != nullptr) {
-			wm->createNewWeatherPattern();
-		}
-	}
+	void run();
 
 };
 

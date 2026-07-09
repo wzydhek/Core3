@@ -8,34 +8,12 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/zone/managers/player/PlayerManager.h"
 
 class AbortTradeMessageCallback : public MessageCallback {
 public:
-	AbortTradeMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) : MessageCallback(client, server) {
-	}
+	AbortTradeMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	void parse(Message* message) {
-	}
+	void parse(Message* message);
 
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		auto zoneServer = server->getZoneServer();
-
-		if (zoneServer == nullptr)
-			return;
-
-		auto playerMan = zoneServer->getPlayerManager();
-
-		if (playerMan == nullptr)
-			return;
-
-		Locker lock(player);
-
-		playerMan->handleAbortTradeMessage(player);
-	}
+	void run();
 };

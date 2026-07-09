@@ -13,46 +13,11 @@ class ArrangementDescriptor : public IffTemplate {
 	Vector< Vector<String> > arrangementSlots;
 
 public:
-	ArrangementDescriptor() {
-	}
+	ArrangementDescriptor();
 
-	void readObject(IffStream* iffStream) {
-		iffStream->openForm('ARGD');
-		uint32 version = iffStream->getNextFormType();
-		Chunk* versionForm = iffStream->openForm(version);
+	void readObject(IffStream* iffStream);
 
-		switch (version) {
-		case '0000':
-		{
-			for (int i = 0; i < versionForm->getChunksSize(); ++i) {
-				Chunk* arg = iffStream->openChunk('ARG ');
-				Vector<String>  slot;
+	void clone(Vector<Vector<String>>& copyVec) const;
 
-				while (arg->hasData()) {
-					String slotName;
-					arg->readString(slotName);
-
-					slot.add(slotName);
-				}
-
-				arrangementSlots.add(slot);
-
-				iffStream->closeChunk('ARG ');
-			}
-		}
-
-		break;
-		}
-
-		iffStream->closeForm(version);
-		iffStream->closeForm('ARGD');
-	}
-
-	void clone(Vector< Vector<String> >& copyVec) const {
-		arrangementSlots.clone(copyVec);
-	}
-
-	const Vector< Vector<String> >& getArrangementSlots() const {
-		return arrangementSlots;
-	}
+	const Vector<Vector<String>>& getArrangementSlots() const;
 };

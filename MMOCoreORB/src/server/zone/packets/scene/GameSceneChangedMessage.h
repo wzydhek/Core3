@@ -8,9 +8,6 @@
 
 class GameSceneChangedMessage : public BaseMessage {
 public:
-	GameSceneChangedMessage() : BaseMessage(8) {
-		insertShort(0x01);
-		insertInt(0xBBADAEB9);
-	}
+	GameSceneChangedMessage();
 	
 };

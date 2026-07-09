@@ -31,8 +31,17 @@
 #include "server/zone/managers/frs/FrsManager.h"
 #include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/objects/installation/TurretObject.h"
+#include "server/zone/objects/player/FactionStatus.h"
+#include "server/zone/objects/creature/commands/effect/CommandEffect.h"
 
 #define COMBAT_SPAM_RANGE 85 // Range at which players will see Combat Log Info
+
+CombatManager::CombatManager() {
+	setLoggingName("CombatManager");
+	setGlobalLogging(false);
+	setLogging(false);
+	initializeDefaultAttacks();
+}
 
 /*
 * Notes:
@@ -3638,4 +3647,62 @@ void CombatManager::initializeDefaultAttacks() {
 	defaultMeleeAttacks.add(STRING_HASHCODE("attack_low_left_medium_3"));
 	defaultMeleeAttacks.add(STRING_HASHCODE("attack_low_right_medium_3"));
 	defaultMeleeAttacks.add(STRING_HASHCODE("attack_low_center_medium_3"));
+}
+
+int CombatManager::getWeaponDefendResult(uint32 defendWeaponMask) const {
+	switch (defendWeaponMask) {
+		case WeaponType::ONEHANDMELEEWEAPON:
+			return HitStatus::DODGE;
+		case WeaponType::TWOHANDMELEEWEAPON:
+			return HitStatus::COUNTER;
+		case WeaponType::POLEARMWEAPON:
+			return HitStatus::BLOCK;
+		case WeaponType::PISTOLWEAPON:
+			return HitStatus::DODGE;
+		case WeaponType::CARBINEWEAPON:
+			return HitStatus::COUNTER;
+		case WeaponType::RIFLEWEAPON:
+			return HitStatus::BLOCK;
+		case WeaponType::ONEHANDJEDIWEAPON:
+			return HitStatus::RICOCHET;
+		case WeaponType::TWOHANDJEDIWEAPON:
+			return HitStatus::RICOCHET;
+		case WeaponType::POLEARMJEDIWEAPON:
+			return HitStatus::RICOCHET;
+		default: {
+			const int defenseAcuity[] = {BLOCK, DODGE, COUNTER};
+			return defenseAcuity[System::random(2)];
+		}
+	}
+}
+
+float CombatManager::getWeaponPostureModifier(uint32 attackWeaponMask) const {
+	switch (attackWeaponMask) {
+		case WeaponType::RIFLEWEAPON:
+			return 2.5f;
+		case WeaponType::CARBINEWEAPON:
+			return 2.f;
+		case WeaponType::PISTOLWEAPON:
+			return 1.5f;
+		case WeaponType::SPECIALHEAVYWEAPON:
+			return 3.f;
+		case WeaponType::ONEHANDMELEEWEAPON:
+			return 1.f;
+		case WeaponType::TWOHANDMELEEWEAPON:
+			return 1.f;
+		case WeaponType::UNARMEDWEAPON:
+			return 1.f;
+		case WeaponType::POLEARMWEAPON:
+			return 1.f;
+		case WeaponType::THROWNWEAPON:
+			return 1.f;
+		case WeaponType::ONEHANDJEDIWEAPON:
+			return 1.f;
+		case WeaponType::TWOHANDJEDIWEAPON:
+			return 1.f;
+		case WeaponType::POLEARMJEDIWEAPON:
+			return 1.f;
+		default:
+			return 1.f;
+	}
 }

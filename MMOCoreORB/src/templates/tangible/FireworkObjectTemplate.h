@@ -14,30 +14,15 @@ class FireworkObjectTemplate : public SharedTangibleObjectTemplate {
 	bool isShow;
 
 public:
-	FireworkObjectTemplate() {
-		isShow = false;
-	}
+	FireworkObjectTemplate();
 
-	~FireworkObjectTemplate() {
+	~FireworkObjectTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+    String getFireworkObject() const;
 
-		fireworkObject = templateData->getStringField("fireworkObject");
-		isShow = templateData->getBooleanField("showPackage");
-	}
+    bool isFireworkShow();
 
-    inline String getFireworkObject() const {
-       return fireworkObject;
-    }
-
-    bool isFireworkShow() {
-    	return isShow;
-    }
-
-	bool isFireworkObjectTemplate() {
-		return true;
-	}
+	bool isFireworkObjectTemplate();
 };

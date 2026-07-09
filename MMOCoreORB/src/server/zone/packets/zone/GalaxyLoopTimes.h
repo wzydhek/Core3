@@ -12,30 +12,14 @@
 
 class GalaxyLoopTimesResponse : public BaseMessage {
 public:
-	GalaxyLoopTimesResponse() : BaseMessage() {
-		insertShort(3);
-		insertInt(0x4E428088);
-		insertInt(0);
-		insertInt(0);
-		insertInt(0);
-	}
+	GalaxyLoopTimesResponse();
 };
 
 class RequestGalaxyLoopTimesCallback : public MessageCallback {
 public:
-	RequestGalaxyLoopTimesCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server) {
+	RequestGalaxyLoopTimesCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-	}
-
-	void run() {
-		// this makes the client spam the server with GalaxyLoopTimes requests
-		// TODO: figure out the values in the Response
-
-		/*GalaxyLoopTimesResponse* reply = new GalaxyLoopTimesResponse();
-		client->sendMessage(reply);*/
-	}
+	void run();
 };

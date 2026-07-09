@@ -8,6 +8,7 @@
 #pragma once
 
 #include "engine/engine.h"
+#include "server/login/account/Account.h"
 
 namespace server {
 namespace login {
@@ -16,10 +17,7 @@ namespace account {
 	class AccountMap : public VectorMap<uint32, ManagedReference<Account*> >, public ReadWriteLock {
 
 	public:
-		AccountMap() : VectorMap<uint32, ManagedReference<Account*> >(), ReadWriteLock("AccountMap") {
-			setInsertPlan(VectorMap<uint32, ManagedReference<Account*> >::NO_DUPLICATE);
-			setNullValue(nullptr);
-		}
+		AccountMap();
 	};
 
 }

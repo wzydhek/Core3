@@ -2,8 +2,7 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef DESPAWNMISSIONNPCTASK_H_
-#define DESPAWNMISSIONNPCTASK_H_
+#pragma once
 
 #include "server/zone/managers/mission/spawnmaps/NpcSpawnPoint.h"
 #include "server/zone/managers/mission/MissionManager.h"
@@ -20,19 +19,9 @@ class DespawnMissionNpcTask : public Task {
 	WeakReference<NpcSpawnPoint*> npcSpawnPoint;
 
 public:
-	DespawnMissionNpcTask(MissionManager* missionManager, NpcSpawnPoint* npcSpawnPoint) {
-		this->missionManager = missionManager;
-		this->npcSpawnPoint = npcSpawnPoint;
-	}
+	DespawnMissionNpcTask(MissionManager* missionManager, NpcSpawnPoint* npcSpawnPoint);
 
-	void run() {
-		auto strongReferenceSpawnPoint = npcSpawnPoint.get();
-		auto strongReferenceManager = missionManager.get();
-
-		if (strongReferenceSpawnPoint && strongReferenceManager) {
-			strongReferenceManager->despawnMissionNpc(strongReferenceSpawnPoint);
-		}
-	}
+	void run();
 };
 
 } // namespace events
@@ -44,4 +33,3 @@ public:
 
 using namespace server::zone::managers::mission::spawnmaps::events;
 
-#endif /* DESPAWNMISSIONNPCTASK_H_ */

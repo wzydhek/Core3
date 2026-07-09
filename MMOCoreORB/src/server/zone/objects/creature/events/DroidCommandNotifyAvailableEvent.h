@@ -10,20 +10,8 @@ class DroidCommandNotifyAvailableEvent : public Task {
 	ManagedWeakReference<CreatureObject*> creo;
 
 public:
-	DroidCommandNotifyAvailableEvent(CreatureObject* cr) : Task() {
-		creo = cr;
-	}
+	DroidCommandNotifyAvailableEvent(CreatureObject* cr);
 
-	void run() {
-		ManagedReference<CreatureObject*> creature = creo.get();
-
-		if (creature == nullptr)
-			return;
-
-		Locker locker(creature);
-
-		creature->removePendingTask("droid_command_notify");
-		creature->sendSystemMessage("@space/space_interaction:droid_delay_ready"); //Droid command completed. Ready for new command.
-	}
+	void run();
 
 };

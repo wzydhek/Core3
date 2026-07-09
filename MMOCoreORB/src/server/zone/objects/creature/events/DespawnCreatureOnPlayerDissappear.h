@@ -20,39 +20,9 @@ class DespawnCreatureOnPlayerDissappear : public Task {
 	ManagedWeakReference<AiAgent*> creature;
 
 public:
-	DespawnCreatureOnPlayerDissappear(AiAgent* creo) {
-		creature = creo;
+	DespawnCreatureOnPlayerDissappear(AiAgent* creo);
 
-		auto zone = creo->getZone();
-
-		if (zone != nullptr) {
-			setCustomTaskQueue(zone->getZoneName());
-		}
-	}
-
-	void run() {
-		ManagedReference<AiAgent*> strongRef = creature.get();
-
-		if (strongRef == nullptr)
-			return;
-
-		Locker locker(strongRef);
-
-		strongRef->clearDespawnEvent();
-
-		Zone* zone = strongRef->getZone();
-
-		if (zone == nullptr)
-			return;
-
-		if (!strongRef->getDespawnOnNoPlayerInRange())
-			return;
-
-		if (strongRef->getNumberOfPlayersInRange() <= 0) {
-			strongRef->destroyObjectFromWorld(true);
-			strongRef->notifyDespawn(zone);
-		}
-	}
+	void run();
 };
 
 

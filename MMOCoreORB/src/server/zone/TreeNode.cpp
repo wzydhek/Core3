@@ -77,6 +77,18 @@ TreeNode::TreeNode(float minx, float miny, float maxx, float maxy, TreeNode *par
 TreeNode::~TreeNode() {
 }
 
+Object* TreeNode::clone() {
+	return ObjectCloner<TreeNode>::clone(this);
+}
+
+Object* TreeNode::clone(void* object) {
+	return TransactionalObjectCloner<TreeNode>::clone(this);
+}
+
+void TreeNode::free() {
+	TransactionalMemoryManager::instance()->destroy(this);
+}
+
 void TreeNode::addObject(TreeEntry* obj) {
 	if (!validateNode()) {
 		Logger::console.error() << "[TreeNode] invalid node in addObject() - " << toStringData() << "\n";
@@ -100,6 +112,10 @@ void TreeNode::addObject(TreeEntry* obj) {
 
 	objects.put(obj);
 	obj->setNode(this);
+}
+
+TreeEntry* TreeNode::getObject(int index) {
+	return objects.get(index);
 }
 
 void TreeNode::removeObject(TreeEntry* obj) {
@@ -229,4 +245,69 @@ String TreeNode::toStringData() {
 	"[Total Objects in Node: " << objects.size() << "]";
 
 	return msg.toString();
+}
+
+bool TreeNode::validateNode() const {
+	if (nodeType == OCTREE_NODE) {
+		if (minX > maxX || minY > maxY || minZ > maxZ) {
+			return false;
+		}
+	} else if (minX > maxX || minY > maxY) {
+		return false;
+	}
+
+	return true;
+}
+
+// Check if this node has any associated objects
+bool TreeNode::isEmpty() const {
+	return objects.isEmpty();
+}
+
+// Check if this node has children nodes
+bool TreeNode::hasSubNodes() const {
+	return nwNode != nullptr || neNode != nullptr || swNode != nullptr || seNode != nullptr || nwNode2 != nullptr || neNode2 != nullptr || swNode2 != nullptr || seNode2 != nullptr;
+}
+
+// Test if the point is inside this node
+bool TreeNode::testInside(float x, float y, float z) const {
+	// Logger::console.info(true) << "TreeNode - testInside --- Using X: " << x << " Z: " << z << " Y: " << y << " minX: " << minX << " maxX: " << maxX << " minZ: " << minZ << " maxZ: " << maxZ << " minY: " << minY << " maxY: " << maxY;
+
+	return ((x > minX) && (x < maxX) && (y > minY) && (y < maxY) && (z > minZ) && (z < maxZ));
+}
+
+bool TreeNode::testInside(float x, float y) const {
+	return ((x > minX) && (x < maxX) && (y > minY) && (y < maxY));
+}
+
+float TreeNode::squaredDistanceToCenter(float x, float y, float z) const {
+	float dx = x - centerX;
+	float dy = y - centerY;
+	float dz = z - centerZ;
+
+	return dx * dx + dy * dy + dz * dz;
+}
+
+bool TreeNode::testInRangeTop(float z, float range) const {
+	return (z + range) >= dividerZ;
+}
+
+bool TreeNode::testInRangeBottom(float z, float range) const {
+	return (z - range) <= dividerZ;
+}
+
+bool TreeNode::testInRangeNorth(float y, float range) const {
+	return (y + range) >= dividerY;
+}
+
+bool TreeNode::testInRangeSouth(float y, float range) const {
+	return (y - range) <= dividerY;
+}
+
+bool TreeNode::testInRangeEast(float x, float range) const {
+	return (x + range) >= dividerX;
+}
+
+bool TreeNode::testInRangeWest(float x, float range) const {
+	return (x - range) <= dividerX;
 }

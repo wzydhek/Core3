@@ -19,46 +19,27 @@ protected:
 	uint8 defaultLanguage;
 
 public:
-	PlayerCreatureTemplate() {
-		defaultLanguage = 0;
-	}
+	PlayerCreatureTemplate();
 
-	~PlayerCreatureTemplate() {
-	}
+	~PlayerCreatureTemplate();
 
-	const CustomizationDataMap& getCustomizationDataMap() const {
-		return dataMap;
-	}
+	const CustomizationDataMap& getCustomizationDataMap() const;
 
-	CustomizationDataMap& getCustomizationDataMap() {
-		return dataMap;
-	}
+	CustomizationDataMap& getCustomizationDataMap();
 
-	const Vector<CustomizationData>& getCustomizationData(const String& customizationName) const {
-		return dataMap.get(customizationName);
-	}
+	const Vector<CustomizationData>& getCustomizationData(const String& customizationName) const;
 
-	const Vector<String>& getStartingSkills() const {
-		return startingSkills;
-	}
+	const Vector<String>& getStartingSkills() const;
 
-	const Vector<String>& getStartingItems() const {
-		return startingItems;
-	}
+	const Vector<String>& getStartingItems() const;
 
-	inline uint8 getDefaultLanguage() const {
-		return defaultLanguage;
-	}
+	uint8 getDefaultLanguage() const;
 
-	void setCustomizationDataMap(const CustomizationDataMap& map) {
-		dataMap = map;
-	}
+	void setCustomizationDataMap(const CustomizationDataMap& map);
 
 	void parseVariableData(const String& varName, LuaObject* templateData);
 
 	void readObject(LuaObject* templateData) override;
 
-	bool isPlayerCreatureTemplate() const override {
-		return true;
-	}
+	bool isPlayerCreatureTemplate() const override;
 };

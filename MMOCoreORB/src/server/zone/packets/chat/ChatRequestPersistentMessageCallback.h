@@ -8,31 +8,15 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/chat/ChatManager.h"
 
 class ChatRequestPersistentMessageCallback : public MessageCallback {
 	uint32 mailid;
 
 public:
-	ChatRequestPersistentMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), mailid(0) {
-	}
+	ChatRequestPersistentMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	void parse(Message* message) {
-		message->shiftOffset(4); //skip spacer/unk
-		mailid = message->parseInt();
-	}
+	void parse(Message* message);
 
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		ChatManager* chatManager = server->getChatManager();
-
-		if (chatManager != nullptr)
-			chatManager->handleRequestPersistentMsg(player, mailid);
-	}
+	void run();
 
 };

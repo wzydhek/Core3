@@ -22,36 +22,9 @@ public:
 	char  bitsperpixel;
 	char  imagedescriptor;
 
-	TargaHeader() {
-		idlength = 0;
-		colourmaptype = 0;
-		datatypecode = 0;
-		colourmaporigin = 0;
-		colourmaplength = 0;
-		colourmapdepth = 0;
-		x_origin = 0;
-		y_origin = 0;
-		width = 0;
-		height = 0;
-		bitsperpixel = 0;
-		imagedescriptor = 0;
-	}
+	TargaHeader();
 
-	void readData(ObjectInputStream* fileReader) {
-		//header
-		idlength = fileReader->readByte();
-		colourmaptype = fileReader->readByte();
-		datatypecode = fileReader->readByte();
-		colourmaporigin = fileReader->readShort();
-		colourmaplength = fileReader->readShort();
-		colourmapdepth = fileReader->readByte();
-		x_origin = fileReader->readSignedShort();
-		y_origin = fileReader->readSignedShort();
-		width = fileReader->readShort();
-		height = fileReader->readShort();
-		bitsperpixel = fileReader->readByte();
-		imagedescriptor = fileReader->readByte();
-	}
+	void readData(ObjectInputStream* fileReader);
 
 };
 
@@ -81,13 +54,9 @@ public:
 
 	void readObject(ObjectInputStream* stream);
 
-	int getWidth() const {
-		return header.width;
-	}
+	int getWidth() const;
 
-	int getHeight() const {
-		return header.height;
-	}
+	int getHeight() const;
 
 	unsigned char getData(int offset) const;
 };

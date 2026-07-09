@@ -1,5 +1,12 @@
 #include "DetailVolume.h"
 
+DetailVolume::DetailVolume() {
+}
+
+bool DetailVolume::isDetailVolume() {
+	return true;
+}
+
 void DetailVolume::read(IffStream* iff) {
 	iff->openForm('0000');
 	iff->openForm('CPST');
@@ -7,6 +14,7 @@ void DetailVolume::read(IffStream* iff) {
 	iff->closeForm('CPST');
 	iff->closeForm('0000');
 }
+
 #ifdef OSG_RENDERER
 osg::ref_ptr<osg::Node> DetailVolume::draw() const {
 	osg::ref_ptr<osg::Group> group(new osg::Group);

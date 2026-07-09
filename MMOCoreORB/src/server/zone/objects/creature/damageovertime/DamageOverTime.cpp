@@ -530,3 +530,96 @@ void DamageOverTime::multiplyDuration(float multiplier) {
 	expires = newTime;
 
 }
+
+void DamageOverTime::expireTick() {
+	expires.updateToCurrentTime();
+}
+
+void DamageOverTime::setAttackerID(uint64 value) {
+	attackerID = value;
+}
+
+void DamageOverTime::setType(uint64 value) {
+	type = value;
+}
+
+void DamageOverTime::setAttribute(uint8 value) {
+	attribute = value;
+}
+
+void DamageOverTime::setStrength(uint32 value) {
+	strength = value;
+}
+
+void DamageOverTime::setDuration(uint32 seconds) {
+	duration = seconds;
+}
+
+void DamageOverTime::setExpires(const Time& time) {
+	expires = time;
+}
+
+void DamageOverTime::setNextTick(const Time& tick) {
+	nextTick = tick;
+}
+
+void DamageOverTime::setSecondaryStrength(int str) {
+	secondaryStrength = str;
+}
+
+// Getters
+uint64 DamageOverTime::getAttackerID() {
+	return attackerID;
+}
+
+uint64 DamageOverTime::getType() {
+	return type;
+}
+
+uint8 DamageOverTime::getAttribute() {
+	return attribute;
+}
+
+uint32 DamageOverTime::getStrength() {
+	return strength;
+}
+
+uint32 DamageOverTime::getDuration() {
+	return duration;
+}
+
+bool DamageOverTime::isActivated() {
+	return !expires.isPast();
+}
+
+bool DamageOverTime::isPast() {
+	return expires.isPast();
+}
+
+bool DamageOverTime::isFuture() {
+	return expires.isFuture();
+}
+
+bool DamageOverTime::isPresent() {
+	return expires.isPresent();
+}
+
+bool DamageOverTime::nextTickPast() {
+	return nextTick.isPast();
+}
+
+Time DamageOverTime::getApplied() {
+	return applied;
+}
+
+Time DamageOverTime::getNextTick() {
+	return nextTick;
+}
+
+Time DamageOverTime::getExpires() {
+	return expires;
+}
+
+int DamageOverTime::getSecondaryStrength() {
+	return secondaryStrength;
+}

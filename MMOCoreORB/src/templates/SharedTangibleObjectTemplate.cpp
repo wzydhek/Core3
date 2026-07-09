@@ -457,3 +457,151 @@ void SharedTangibleObjectTemplate::readObject(LuaObject* templateData) {
 		resourceWeights->add(newWeight);
 	}
 }
+
+int SharedTangibleObjectTemplate::getMaxCondition() const {
+	return maxCondition;
+}
+
+uint32 SharedTangibleObjectTemplate::getOptionsBitmask() const {
+	return optionsBitmask;
+}
+
+uint32 SharedTangibleObjectTemplate::getPvpStatusBitmask() const {
+	return pvpStatusBitmask;
+}
+
+void SharedTangibleObjectTemplate::setMaxCondition(int maxCondition) {
+	this->maxCondition = maxCondition;
+}
+
+void SharedTangibleObjectTemplate::setOptionsBitmask(uint32 optionsBitmask) {
+	this->optionsBitmask = optionsBitmask;
+}
+
+void SharedTangibleObjectTemplate::setPvpStatusBitmask(uint32 pvpStatusBitmask) {
+	this->pvpStatusBitmask = pvpStatusBitmask;
+}
+
+const Vector<String>& SharedTangibleObjectTemplate::getCertificationsRequired() const {
+	return certificationsRequired;
+}
+
+int SharedTangibleObjectTemplate::getLevel() const {
+	return level;
+}
+
+bool SharedTangibleObjectTemplate::isInvisible() const {
+	return invisible;
+}
+
+int SharedTangibleObjectTemplate::getUseCount() const {
+	return useCount;
+}
+
+uint16 SharedTangibleObjectTemplate::getPlayerUseMask() const {
+	return playerUseMask;
+}
+
+unsigned int SharedTangibleObjectTemplate::getFaction() const {
+	return faction;
+}
+
+int SharedTangibleObjectTemplate::getJunkDealerNeeded() const {
+	return junkDealerNeeded;
+}
+
+int SharedTangibleObjectTemplate::getJunkValue() const {
+	return junkValue;
+}
+
+const StructureFootprint* SharedTangibleObjectTemplate::getStructureFootprint() const {
+	return structureFootprint;
+}
+
+bool SharedTangibleObjectTemplate::getTargetable() const {
+	return targetable;
+}
+
+void SharedTangibleObjectTemplate::setCertificationsRequired(Vector<String> certificationsRequired) {
+	this->certificationsRequired = certificationsRequired;
+}
+
+void SharedTangibleObjectTemplate::setPlayerUseMask(uint16 playerUseMask) {
+	this->playerUseMask = playerUseMask;
+}
+
+void SharedTangibleObjectTemplate::setTargetable(bool targetable) {
+	this->targetable = targetable;
+}
+
+bool SharedTangibleObjectTemplate::getSliceable() const {
+	return sliceable;
+}
+
+bool SharedTangibleObjectTemplate::isInsurable() const {
+	return insurable;
+}
+
+void SharedTangibleObjectTemplate::setInsurable(bool val) {
+	this->insurable = val;
+}
+
+bool SharedTangibleObjectTemplate::isJediRobe() const {
+	return jediRobe;
+}
+
+void SharedTangibleObjectTemplate::setJediRobe(bool val) {
+	this->jediRobe = val;
+}
+
+const Vector<short>* SharedTangibleObjectTemplate::getNumberExperimentalProperties() const {
+	return numberExperimentalProperties;
+}
+
+const Vector<String>* SharedTangibleObjectTemplate::getExperimentalProperties() const {
+	return experimentalProperties;
+}
+
+const Vector<short>* SharedTangibleObjectTemplate::getExperimentalWeights() const {
+	return experimentalWeights;
+}
+
+const Vector<String>* SharedTangibleObjectTemplate::getExperimentalGroups() const {
+	return experimentalGroups;
+}
+
+const Vector<String>* SharedTangibleObjectTemplate::getExperimentalAttributes() const {
+	return experimentalAttributes;
+}
+
+const Vector<float>* SharedTangibleObjectTemplate::getExperimentalMin() const {
+	return experimentalMin;
+}
+
+const Vector<float>* SharedTangibleObjectTemplate::getExperimentalMax() const {
+	return experimentalMax;
+}
+
+const Vector<short>* SharedTangibleObjectTemplate::getExperimentalPrecision() const {
+	return experimentalPrecision;
+}
+
+const Vector<uint32>* SharedTangibleObjectTemplate::getPlayerRaces() const {
+	return playerRaces;
+}
+
+const Vector<Reference<ResourceWeight*>>* SharedTangibleObjectTemplate::getResourceWeights() const {
+	return resourceWeights;
+}
+
+const VectorMap<String, int>* SharedTangibleObjectTemplate::getSkillMods() const {
+	return &skillMods;
+}
+
+int SharedTangibleObjectTemplate::getSkillMod(const String& mod) const {
+	return skillMods.get(mod);
+}
+
+bool SharedTangibleObjectTemplate::isSharedTangibleObjectTemplate() const {
+	return true;
+}

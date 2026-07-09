@@ -25,124 +25,31 @@ class WorldSnapshotNode : public Object {
 	uint32 unknown2;
 
 public:
-	WorldSnapshotNode() : Object(), objectID(0), parentID(0), nameID(0), cellid(0), gameObjectType(0), unknown2(0) {
+	WorldSnapshotNode();
 
-	}
+	WorldSnapshotNode(const WorldSnapshotNode& wsn);
 
-	WorldSnapshotNode(const WorldSnapshotNode& wsn) : Object() {
-		childNodes = wsn.childNodes;
-		objectID = wsn.objectID;
-		parentID = wsn.parentID;
-		nameID = wsn.nameID;
-		cellid = wsn.cellid;
-		direction = wsn.direction;
-		position = wsn.position;
-		gameObjectType = wsn.gameObjectType;
-		unknown2 = wsn.unknown2;
-	}
+	WorldSnapshotNode& operator=(const WorldSnapshotNode& wsn);
 
-	WorldSnapshotNode& operator= (const WorldSnapshotNode& wsn) {
-		if (this == &wsn)
-			return *this;
+	void parse(IffStream* iffStream);
 
-		childNodes = wsn.childNodes;
-		objectID = wsn.objectID;
-		parentID = wsn.parentID;
-		nameID = wsn.nameID;
-		cellid = wsn.cellid;
-		direction = wsn.direction;
-		position = wsn.position;
-		gameObjectType = wsn.gameObjectType;
-		unknown2 = wsn.unknown2;
+	Quaternion getDirection() const;
 
-		return *this;
-	}
+	float getGameObjectType() const;
 
-	void parse(IffStream* iffStream) {
-		iffStream->openForm('NODE');
+	uint32 getNameID() const;
 
-		uint32 version = iffStream->getNextFormType();
-		Chunk* versionForm = iffStream->openForm(version);
+	uint32 getObjectID() const;
 
-		switch (version) {
-		case '0000':
-		{
-			Chunk* data = iffStream->openChunk('DATA');
-			objectID = data->readInt();
-			parentID = data->readInt();
-			nameID = data->readInt();
-			cellid = data->readInt();
+	uint32 getParentID() const;
 
-			float qw = data->readFloat();
-			float qx = data->readFloat();
-			float qy = data->readFloat();
-			float qz = data->readFloat();
+	Vector3 getPosition() const;
 
-			float x = data->readFloat();
-			float z = data->readFloat();
-			float y = data->readFloat();
+	uint32 getCellID() const;
 
-			direction.set(qw, qx, qy, qz);
-			position.set(x, z, y);
+	uint32 getUnknown2() const;
 
-			gameObjectType = data->readFloat();
-			unknown2 = data->readInt();
+	int getNodeCount();
 
-			iffStream->closeChunk('DATA');
-		}
-			break;
-		default:
-			break;
-		}
-
-		for (int i = 0; i < versionForm->getChunksSize() - 1; ++i) {
-			WorldSnapshotNode childNode;
-			childNode.parse(iffStream);
-
-			childNodes.add(childNode);
-		}
-
-		iffStream->closeForm(version);
-		iffStream->closeForm('NODE');
-	}
-
-	Quaternion getDirection() const {
-		return direction;
-	}
-
-	float getGameObjectType() const {
-		return gameObjectType;
-	}
-
-	uint32 getNameID() const {
-		return nameID;
-	}
-
-	uint32 getObjectID() const {
-		return objectID;
-	}
-
-	uint32 getParentID() const {
-		return parentID;
-	}
-
-	Vector3 getPosition() const {
-		return position;
-	}
-
-	uint32 getCellID() const {
-		return cellid;
-	}
-
-	uint32 getUnknown2() const {
-		return unknown2;
-	}
-
-	inline int getNodeCount() {
-		return childNodes.size();
-	}
-
-	inline WorldSnapshotNode* getNode(int idx) {
-		return &childNodes.get(idx);
-	}
+	WorldSnapshotNode* getNode(int idx);
 };

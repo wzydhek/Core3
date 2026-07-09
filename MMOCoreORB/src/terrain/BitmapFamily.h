@@ -9,7 +9,6 @@
 
 #include "TemplateVariable.h"
 #include "TargaBitmap.h"
-#include "templates/manager/DataArchiveStore.h"
 
 class BitMapFamily : public TemplateVariable<'MFAM'> {
 	int var1;
@@ -18,49 +17,15 @@ class BitMapFamily : public TemplateVariable<'MFAM'> {
 
 	TargaBitmap map;
 public:
-	BitMapFamily() : var1(0) {
+	BitMapFamily();
 
-	}
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		iffStream->openChunk('DATA');
+	TargaBitmap* getMap();
 
-		var1 = iffStream->getInt();
-		iffStream->getString(name);
-		iffStream->getString(file);
+	const String& getName() const;
 
-		iffStream->closeChunk('DATA');
+	int getVar1() const;
 
-		int size = 0 ;
-		byte* data = DataArchiveStore::instance()->getData(file, size);
-
-		if (data != nullptr) {
-			ObjectInputStream stream((char*)data, size);
-
-			try {
-				map.readObject(&stream);
-			} catch (Exception& e) {
-				Logger::console.error("could not parse targa file for BitMapFamily " + file);
-				Logger::console.error(e.getMessage());
-			}
-
-			delete [] data;
-		}
-	}
-
-	inline TargaBitmap* getMap() {
-		return &map;
-	}
-
-	inline const String& getName() const {
-		return name;
-	}
-
-	inline int getVar1() const {
-		return var1;
-	}
-
-	inline const String& getFile() const {
-		return file;
-	}
+	const String& getFile() const;
 };

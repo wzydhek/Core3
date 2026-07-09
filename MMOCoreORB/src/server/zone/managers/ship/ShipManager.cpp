@@ -1453,3 +1453,79 @@ void ShipManager::dropShipUniqueID(ShipObject* ship) {
 	Locker sLock(ship);
 	shipUniqueIdMap.dropUniqueID(ship);
 }
+
+bool ShipManager::hyperspaceLocationExists(const String& name) const {
+	return hyperspaceLocations.contains(name) && hyperspaceZones.contains(name);
+}
+
+const Vector3& ShipManager::getHyperspaceLocation(const String& name) const {
+	return hyperspaceLocations.get(name);
+}
+
+const String& ShipManager::getHyperspaceZone(const String& name) const {
+	return hyperspaceZones.get(name);
+}
+
+const ShipComponentData* ShipManager::getShipComponent(const String& name) const {
+	return shipComponents.get(name.hashCode());
+}
+
+const ShipComponentData* ShipManager::getShipComponent(uint32 hash) const {
+	return shipComponents.get(hash);
+}
+
+const ShipComponentData* ShipManager::getShipComponentFromTemplate(const String& templateName) const {
+	return shipComponentTemplateNames.get(templateName);
+}
+
+const ShipProjectileData* ShipManager::getProjectileData(uint32 hash) const {
+	return shipProjectileData.get(hash);
+}
+
+const ShipChassisData* ShipManager::getChassisData(const String& shipName) const {
+	return chassisData.get(shipName);
+}
+
+const ShipAppearanceData* ShipManager::getAppearanceData(const String& shipName) const {
+	return shipAppearanceData.get(shipName);
+}
+
+const ShipTurretData* ShipManager::getShipTurretData(const String& shipName, uint32 slot) const {
+	return turretData.get(shipName).get(slot);
+}
+
+const ShipCollisionData* ShipManager::getCollisionData(ShipObject* ship) {
+	if (ship == nullptr) {
+		return nullptr;
+	}
+
+	return shipCollisionData.get(ship->getServerObjectCRC());
+}
+
+const ShipMissileData* ShipManager::getMissileData(uint32 ammoType) const {
+	return missileData.get(ammoType);
+}
+
+const ShipCountermeasureData* ShipManager::getCountermeasureData(uint32 ammoType) const {
+	return countermeasureData.get(ammoType);
+}
+
+const ShipAiAgentPilotData* ShipManager::getPilotData(const String& pilotType) const {
+	return pilotData.get(pilotType);
+}
+
+ShipUniqueIdMap* ShipManager::getShipUniqueIdMap() {
+	return &shipUniqueIdMap;
+}
+
+HashTableIterator<uint32, Reference<SpaceSpawnGroup*>> ShipManager::spawnGroupIterator() {
+	return spawnGroupMap.iterator();
+}
+
+SpaceSpawnGroup* ShipManager::getSpaceSpawnGroup(uint32 crc) {
+	return spawnGroupMap.get(crc);
+}
+
+DroidCommandData* ShipManager::getDroidCommandData(uint32 hashCode) const {
+	return DroidCommands.get(hashCode);
+}

@@ -12,24 +12,7 @@ class FireworkRemoveEvent : public Task {
 	ManagedReference<CreatureObject*> player;
 
 public:
-	FireworkRemoveEvent(CreatureObject* player, StaticObject* firework) : Task(1000) {
-		this->player = player;
-		this->firework = firework;
-	}
+	FireworkRemoveEvent(CreatureObject* player, StaticObject* firework);
 
-	void run() {
-		if (firework == nullptr)
-			return;
-
-		try {
-			Locker locker(firework);
-
-			firework->destroyObjectFromWorld(true);
-		} catch (Exception& e) {
-			player->error("unreported exception on FireworkEvent::run()");
-		}
-
-		firework = nullptr;
-		player = nullptr;
-	}
+	void run();
 };

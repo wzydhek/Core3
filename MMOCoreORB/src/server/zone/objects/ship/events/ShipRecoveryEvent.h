@@ -17,38 +17,11 @@ class ShipRecoveryEvent : public Task {
 	ManagedWeakReference<ShipObject*> weakShip;
 
 public:
-	ShipRecoveryEvent(ShipObject* shipObj) : Task(1000) {
-		weakShip = shipObj;
-	}
+	ShipRecoveryEvent(ShipObject* shipObj);
 
-	void run() {
-		ManagedReference<ShipObject*> ship = weakShip.get();
+	void run();
 
-		if (ship == nullptr) {
-			return;
-		}
-
-		Locker lock(ship);
-
-		ship->doRecovery(1000);
-	}
-
-	void schedule(uint64 delay = 0) {
-		ManagedReference<ShipObject*> ship = weakShip.get();
-
-		if (ship != nullptr) {
-			auto zone = ship->getZone();
-
-			if (zone != nullptr) {
-				setCustomTaskQueue(zone->getZoneName());
-			}
-		}
-
-		try {
-			Task::schedule(delay);
-		} catch (...) {
-		}
-	}
+	void schedule(uint64 delay = 0);
 };
 
 } // namespace events

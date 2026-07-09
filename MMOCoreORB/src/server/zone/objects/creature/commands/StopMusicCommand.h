@@ -4,36 +4,14 @@
 
 #pragma once
 
-#include "server/zone/objects/creature/CreatureObject.h"
-#include "server/zone/objects/player/sessions/EntertainingSession.h"
+#include "QueueCommand.h"
 
 class StopMusicCommand : public QueueCommand {
 public:
 
-	StopMusicCommand(const String& name, ZoneProcessServer* server)
-		: QueueCommand(name, server) {
+	StopMusicCommand(const String& name, ZoneProcessServer* server);
 
-	}
-
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		PerformanceManager* performanceManager = SkillManager::instance()->getPerformanceManager();
-
-		ManagedReference<EntertainingSession*> session = creature->getActiveSession(SessionFacadeType::ENTERTAINING).castTo<EntertainingSession*>();
-
-		if (session == nullptr || !session->isPlayingMusic()) {
-			performanceManager->performanceMessageToSelf(creature, nullptr, "performance", "music_not_performing"); // You are not currently playing a song.
-			return GENERALERROR;
-		}
-
-		session->stopMusic(false);
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };
+

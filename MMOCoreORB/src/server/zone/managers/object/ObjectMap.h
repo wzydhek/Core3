@@ -12,25 +12,15 @@ class ObjectMap : public Object {
 	int maxConnections;
 
 public:
-	ObjectMap() : objects(3000), maxConnections(50000) {
-	}
+	ObjectMap();
 
-	ObjectMap(int initsize) : objects(initsize), maxConnections(50000) {
-	}
+	ObjectMap(int initsize);
 
-	ManagedReference<SceneObject*> put(uint64 oid, SceneObject* object) {
-		return objects.put(oid, object);
-	}
+	ManagedReference<SceneObject*> put(uint64 oid, SceneObject* object);
 
-	ManagedReference<SceneObject*> remove(uint64 oid) {
-		return objects.remove(oid);
-	}
+	ManagedReference<SceneObject*> remove(uint64 oid);
 
-	HashTableIterator<uint64, ManagedReference<SceneObject*> > iterator() {
-		return objects.iterator();
-	}
+	HashTableIterator<uint64, ManagedReference<SceneObject*>> iterator();
 
-	HashTable<uint64, ManagedReference<SceneObject*> >* getMap() {
-		return &objects;
-	}
+	HashTable<uint64, ManagedReference<SceneObject*>>* getMap();
 };

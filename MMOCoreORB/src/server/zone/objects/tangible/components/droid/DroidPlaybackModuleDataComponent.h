@@ -48,7 +48,7 @@ public:
 	void onCall();
 	void onStore();
 	void addListener(uint64 id);
-	virtual bool isStackable() { return true; }
+	virtual bool isStackable();
 	virtual void addToStack(BaseDroidModuleComponent* other);
 	virtual void copy(BaseDroidModuleComponent* other);
 	void deleteTrack(CreatureObject* player, int slotIndex);
@@ -66,37 +66,18 @@ public:
 	String getTrackName(int perfIndex);
 	int getMatchingIndex(DroidObject* droid, int perfIndex);
 
-	inline bool isPlayingMusic() {
-		return performanceIndex > 0;
-	}
+	bool isPlayingMusic();
 
-	inline int getPerformanceIndex() {
-		return performanceIndex;
-	}
+	int getPerformanceIndex();
 
-	inline bool isRecording() {
-		return currentlyRecording;
-	}
+	bool isRecording();
 
-	inline int getTotalTracks() {
-		return trackList.size();
-	}
+	int getTotalTracks();
 
-	inline int getTrackPerformanceIndex(int index) {
-		return trackList.get(index);
-	}
+	int getTrackPerformanceIndex(int index);
 
-	void writeJSON(nlohmann::json& j) const {
-		BaseDroidModuleComponent::writeJSON(j);
+	void writeJSON(nlohmann::json& j) const;
 
-		SERIALIZE_JSON_MEMBER(currentlyRecording);
-		SERIALIZE_JSON_MEMBER(recordingTrack);
-		SERIALIZE_JSON_MEMBER(recordingPerformanceIndex);
-		SERIALIZE_JSON_MEMBER(totalTracks);
-		SERIALIZE_JSON_MEMBER(trackList);
-		SERIALIZE_JSON_MEMBER(observer);
-
-	}
 private:
 	void stopRecording(CreatureObject* player, bool success);
 	int writeObjectMembers(ObjectOutputStream* stream);

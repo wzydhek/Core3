@@ -8,7 +8,6 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/chat/ChatManager.h"
 
 class ChatRemoveModeratorFromRoomCallback : public MessageCallback {
 	String deopeeName; //Player to deop.
@@ -16,32 +15,10 @@ class ChatRemoveModeratorFromRoomCallback : public MessageCallback {
 	int requestID;
 
 public:
-	ChatRemoveModeratorFromRoomCallback(ZoneClientSession* client, ZoneProcessServer* server) : MessageCallback(client, server) {
-		deopeeName = "";
-		roomPath = "";
-		requestID = 0;
-	}
+	ChatRemoveModeratorFromRoomCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	void parse(Message* message) {
-		String unused;
+	void parse(Message* message);
 
-		message->parseAscii(unused); //Game name
-		message->parseAscii(unused); //Galaxy name
-		message->parseAscii(deopeeName); //Player to deop
-		message->parseAscii(roomPath); //Path to room
-		requestID = message->parseInt(); //requestID
-
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> deoper = client->getPlayer();
-
-		if (deoper == nullptr)
-			return;
-
-		ManagedReference<ChatManager*> chatManager = server->getChatManager();
-		if (chatManager != nullptr)
-			chatManager->handleChatRemoveModerator(deoper, deopeeName, roomPath, requestID);
-	}
+	void run();
 
 };

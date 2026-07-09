@@ -8,32 +8,14 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/zone/Zone.h"
 
 class GetMapLocationsCallback : public MessageCallback {
 	String zoneName;
 
 public:
-	GetMapLocationsCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server) {
+	GetMapLocationsCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		message->parseAscii(zoneName);
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> object = client->getPlayer();
-
-		if (object == nullptr)
-			return;
-
-		Locker _locker(object);
-
-		Zone* zone = server->getZoneServer()->getZone(zoneName);
-
-		if (zone != nullptr && !zone->isSpaceZone())
-			zone->sendMapLocationsTo(object);
-	}
+	void run();
 };

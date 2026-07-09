@@ -4,23 +4,14 @@
 
 #pragma once
 
+#include "QueueCommand.h"
+
 class UseSkillBuffCommand : public QueueCommand {
 public:
 
-	UseSkillBuffCommand(const String& name, ZoneProcessServer* server)
-		: QueueCommand(name, server) {
+	UseSkillBuffCommand(const String& name, ZoneProcessServer* server);
 
-	}
-
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };
+

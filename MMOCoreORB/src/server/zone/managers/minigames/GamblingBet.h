@@ -17,29 +17,15 @@ class GamblingBet : public Object {
 	String target;
 
 public:
-	GamblingBet(CreatureObject* pl, int bet, String betTarget) {
-		player = pl;
-		amount = bet;
-		target = betTarget;
-	}
+	GamblingBet(CreatureObject* pl, int bet, String betTarget);
 
-	GamblingBet(CreatureObject* pl, int bet) {
-		player = pl;
-		amount = bet;
-		target = "slot";
-	}
+	GamblingBet(CreatureObject* pl, int bet);
 
-	int getAmount() const {
-		return amount;
-	}
+	int getAmount() const;
 
-	const String& getTarget() const {
-		return target;
-	}
+	const String& getTarget() const;
 
-	CreatureObject* getPlayer() {
-		return player.get();
-	}
+	CreatureObject* getPlayer();
 
 };
 
@@ -47,3 +33,6 @@ public:
 }
 }
 }
+
+using namespace server::zone::managers::minigames;
+

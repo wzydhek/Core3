@@ -21,93 +21,35 @@ class ChildCreatureObject : public Object {
 	float heading;
 
 public:
-	ChildCreatureObject() {
-		cellid = 0;
-		containmentType = 0;
-		respawnTime = 0;
-		heading = 0;
-	}
+	ChildCreatureObject();
 
-	ChildCreatureObject(const ChildCreatureObject& obj) : Object() {
-		position = obj.position;
-		cellid = obj.cellid;
-		containmentType = obj.containmentType;
-		mobileName = obj.mobileName;
-		respawnTime = obj.respawnTime;
-		heading = obj.heading;
-	}
+	ChildCreatureObject(const ChildCreatureObject& obj);
 
-	ChildCreatureObject& operator=(const ChildCreatureObject& obj) {
-		if (this == &obj)
-			return *this;
+	ChildCreatureObject& operator=(const ChildCreatureObject& obj);
 
-		position = obj.position;
-		cellid = obj.cellid;
-		containmentType = obj.containmentType;
-		mobileName = obj.mobileName;
-		respawnTime = obj.respawnTime;
-		heading = obj.heading;
+	void parseFromLua(LuaObject* luaObject);
 
-		return *this;
-	}
+	void setPosition(float x, float z, float y);
 
-	void parseFromLua(LuaObject* luaObject) {
-		position.setX(luaObject->getFloatField("x"));
-		position.setZ(luaObject->getFloatField("z"));
-		position.setY(luaObject->getFloatField("y"));
-		cellid = luaObject->getIntField("cellid");
-		containmentType = luaObject->getIntField("containmentType");
-		mobileName = luaObject->getStringField("mobile");
-		respawnTime = luaObject->getIntField("respawn");
-		heading = luaObject->getFloatField("heading");
+	void setCellId(int id);
 
-	}
+	void setContainmentType(int containment);
 
-	inline void setPosition(float x, float z, float y) {
-		position.set(x, z, y);
-	}
+	void setMobileName(String name);
 
-	inline void setCellId(int id) {
-		cellid = id;
-	}
+	void setRespawnTime(int respawn);
 
-	inline void setContainmentType(int containment) {
-		containmentType = containment;
-	}
+	void setHeading(float head);
 
-	inline void setMobileName(String name) {
-		mobileName = name;
-	}
+	const Vector3& getPosition() const;
 
-	inline void setRespawnTime(int respawn) {
-		respawnTime = respawn;
-	}
+	int getCellId() const;
 
-	inline void setHeading(float head) {
-		heading = head;
-	}
+	int getContainmentType() const;
 
-	inline const Vector3& getPosition() const {
-		return position;
-	}
+	const String& getMobile() const;
 
-	inline int getCellId() const {
-		return cellid;
-	}
+	float getHeading() const;
 
-	inline int getContainmentType() const {
-		return containmentType;
-	}
-
-	inline const String& getMobile() const {
-		return mobileName;
-	}
-
-	inline float getHeading() const {
-		return heading;
-	}
-
-	inline int getRespawnTimer() const {
-		return respawnTime;
-	}
+	int getRespawnTimer() const;
 };

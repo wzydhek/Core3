@@ -14,31 +14,15 @@ class StatePackTemplate : public SharedTangibleObjectTemplate {
 	uint64 state;
 
 public:
-	StatePackTemplate() {
-		medicineUse = 0;
-		state = 0;
-	}
+	StatePackTemplate();
 
-	~StatePackTemplate() {
+	~StatePackTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	int getMedicineUse();
 
-		medicineUse = templateData->getIntField("medicineUse");
-		state = templateData->getLongField("state");
-    }
+	uint64 getState();
 
-	inline int getMedicineUse() {
-		return medicineUse;
-	}
-
-	inline uint64 getState() {
-		return state;
-	}
-
-	bool isStatePackTemplate() {
-		return true;
-	}
+	bool isStatePackTemplate();
 };

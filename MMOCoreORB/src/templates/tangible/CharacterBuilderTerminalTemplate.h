@@ -16,59 +16,15 @@ class CharacterBuilderTerminalTemplate : public SharedTangibleObjectTemplate {
 	Vector<String> villageBranchUnlocks;
 
 public:
-	CharacterBuilderTerminalTemplate() : rootNode(nullptr) {
-	}
+	CharacterBuilderTerminalTemplate();
 
-	~CharacterBuilderTerminalTemplate() {
-		if (rootNode != nullptr) {
-			//delete rootNode;
-			rootNode = nullptr;
-		}
-	}
+	~CharacterBuilderTerminalTemplate();
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	void readObject(LuaObject* templateData);
 
-		LuaObject luaGlowyBadges = templateData->getObjectField("glowyBadgeIds");
+    const CharacterBuilderMenuNode* getItemList() const;
 
-		for (int i = 1; i <= luaGlowyBadges.getTableSize(); ++i) {
-			glowyBadgeIds.add(luaGlowyBadges.getIntAt(i));
-		}
+    const Vector<int>& getGlowyBadgeIds() const;
 
-		luaGlowyBadges.pop();
-
-		LuaObject luaBranchUnlocks = templateData->getObjectField("villageBranchUnlocks");
-
-		for (int i = 1; i <= luaBranchUnlocks.getTableSize(); ++i) {
-			villageBranchUnlocks.add(luaBranchUnlocks.getStringAt(i));
-		}
-
-		luaBranchUnlocks.pop();
-
-		LuaObject luaItemList = templateData->getObjectField("itemList");
-
-		//Ensure that the luaItemList root level is of an even order.
-		if (luaItemList.getTableSize() % 2 != 0) {
-			System::out << "[CharacterBuilderTerminalTemplate] Dimension mismatch in itemList. Item count must be a multiple of 2." << endl;
-			luaItemList.pop();
-			return;
-		}
-
-		rootNode = new CharacterBuilderMenuNode("root");
-		rootNode->readLuaObject(luaItemList, true);
-
-		luaItemList.pop();
-    }
-
-    inline const CharacterBuilderMenuNode* getItemList() const {
-        return rootNode;
-    }
-
-    inline const Vector<int>& getGlowyBadgeIds() const {
-        return glowyBadgeIds;
-    }
-
-    inline const Vector<String>& getVillageBranchUnlocks() const {
-        return villageBranchUnlocks;
-    }
+    const Vector<String>& getVillageBranchUnlocks() const;
 };

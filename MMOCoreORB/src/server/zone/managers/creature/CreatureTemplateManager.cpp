@@ -426,3 +426,83 @@ int CreatureTemplateManager::addDressGroup(lua_State* L) {
 
 	return 0;
 }
+
+int CreatureTemplateManager::size() {
+	return hashTable.size();
+}
+
+HashTableIterator<uint32, Reference<CreatureTemplate*>> CreatureTemplateManager::iterator() {
+	return hashTable.iterator();
+}
+
+HashTableIterator<uint32, Reference<LairTemplate*>> CreatureTemplateManager::lairTemplateIterator() {
+	return lairTemplates.iterator();
+}
+
+HashTableIterator<uint32, Reference<SpawnGroup*>> CreatureTemplateManager::spawnGroupIterator() {
+	return spawnGroupMap.iterator();
+}
+
+HashTableIterator<uint32, Reference<SpawnGroup*>> CreatureTemplateManager::destroyMissionGroupIterator() {
+	return destroyMissionGroupMap.iterator();
+}
+
+CreatureTemplate* CreatureTemplateManager::getTemplate(uint32 crc) {
+	return hashTable.get(crc);
+}
+
+PatrolPathTemplate* CreatureTemplateManager::getPatrolPathTemplate(const String& name) {
+	return patrolPaths.get(name);
+}
+
+CreatureTemplate* CreatureTemplateManager::getTemplate(const String& ascii) {
+	return hashTable.get(ascii.hashCode());
+}
+
+MobileOutfitGroup* CreatureTemplateManager::getMobileOutfitGroup(const String& name) {
+	return outfits.get(name);
+}
+
+ConversationTemplate* CreatureTemplateManager::getConversationTemplate(const String& name) {
+	return conversations.get(name.hashCode()).get();
+}
+
+ConversationTemplate* CreatureTemplateManager::getConversationTemplate(uint32 crc) {
+	return conversations.get(crc).get();
+}
+
+const Vector<String>& CreatureTemplateManager::getWeapons(uint32 crc) {
+	return weaponMap.get(crc);
+}
+
+const Vector<String>& CreatureTemplateManager::getWeapons(const String& ascii) {
+	return weaponMap.get(ascii.hashCode());
+}
+
+SpawnGroup* CreatureTemplateManager::getSpawnGroup(uint32 crc) {
+	return spawnGroupMap.get(crc);
+}
+
+LairTemplate* CreatureTemplateManager::getLairTemplate(uint32 crc) {
+	return lairTemplates.get(crc);
+}
+
+SpawnGroup* CreatureTemplateManager::getDestroyMissionGroup(uint32 crc) {
+	return destroyMissionGroupMap.get(crc);
+}
+
+AiSpeciesData* CreatureTemplateManager::getAiSpeciesData(uint32 speciesID) {
+	return aiSpeciesData.get(speciesID);
+}
+
+const Vector<String>& CreatureTemplateManager::getDressGroup(uint32 crc) {
+	return dressMap.get(crc);
+}
+
+const Vector<String>& CreatureTemplateManager::getDressGroup(const String& ascii) {
+	return dressMap.get(ascii.hashCode());
+}
+
+float CreatureTemplateManager::getGlobalAttackSpeedOverride() const {
+	return globalAttackSpeedOverride;
+}

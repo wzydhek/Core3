@@ -1,6 +1,22 @@
 #include "ActiveAreaEvent.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 
+ActiveAreaEvent::ActiveAreaEvent(ActiveArea* ar, SceneObject* obj, uint32 eventt) {
+	activeArea = ar;
+	eventType = eventt;
+	sceneObject = obj;
+
+	if (!obj) {
+		return;
+	}
+
+	const auto zone = obj->getZone();
+
+	if (zone) {
+		setCustomTaskQueue(zone->getZoneName());
+	}
+}
+
 void ActiveAreaEvent::run() {
 	auto area = activeArea.get();
 	auto object = sceneObject.get();

@@ -130,3 +130,5 @@ template<> bool CheckWeapons::check(ShipAiAgent* agent) const;
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace::leafspace;

@@ -128,25 +128,23 @@ public:
 
 	virtual void onStore();
 
-	virtual bool isDroidModuleData() { return true; }
+	virtual bool isDroidModuleData();
 
-	virtual bool isStackable() { return false; }
+	virtual bool isStackable();
 
-	virtual bool isCombatModule() { return false; }
+	virtual bool isCombatModule();
 
-	virtual bool isDetonationModule() {
-		return false;
-	}
+	virtual bool isDetonationModule();
 
-	virtual void addToStack(BaseDroidModuleComponent* other) {}
+	virtual void addToStack(BaseDroidModuleComponent* other);
 
-	virtual void copy(BaseDroidModuleComponent* other){}
+	virtual void copy(BaseDroidModuleComponent* other);
 
 	Reference<server::zone::objects::creature::ai::DroidObject*> getDroidObject();
 
 	virtual void updateCraftingValues(CraftingValues* values, bool firstUpdate);
 
-	virtual void setSpecies(int s) { species = s;}
+	virtual void setSpecies(int s);
 };
 
 } //droid

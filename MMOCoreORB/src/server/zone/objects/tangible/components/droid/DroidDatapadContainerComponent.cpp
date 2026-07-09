@@ -55,3 +55,7 @@ int DroidDatapadContainerComponent::canAddObject(SceneObject* sceneObject, Scene
 
 	return 0;
 }
+
+bool DroidDatapadContainerComponent::isDataPadContainer() const {
+	return true;
+}

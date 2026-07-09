@@ -7,6 +7,12 @@
 
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 
+SharedCreatureObjectTemplate::SharedCreatureObjectTemplate() {
+}
+
+SharedCreatureObjectTemplate::~SharedCreatureObjectTemplate() {
+}
+
 void SharedCreatureObjectTemplate::parseVariableData(const String& varName, Chunk* data) {
 	if (varName == "gender") {
 		gender.parse(data);
@@ -309,3 +315,186 @@ void SharedCreatureObjectTemplate::readObject(LuaObject* templateData) {
 
 }
 
+const Vector<FloatParam>& SharedCreatureObjectTemplate::getAcceleration() const {
+	return acceleration.get();
+}
+
+const String& SharedCreatureObjectTemplate::getAnimationMapFilename() const {
+	return animationMapFilename.getValue();
+}
+
+const Vector<int>& SharedCreatureObjectTemplate::getBaseHAM() const {
+	return baseHAM;
+}
+
+float SharedCreatureObjectTemplate::getCameraHeight() const {
+	return cameraHeight;
+}
+
+float SharedCreatureObjectTemplate::getCollisionHeight() const {
+	return collisionHeight;
+}
+
+float SharedCreatureObjectTemplate::getCollisionLength() const {
+	return collisionLength;
+}
+
+float SharedCreatureObjectTemplate::getCollisionOffsetX() const {
+	return collisionOffsetX;
+}
+
+float SharedCreatureObjectTemplate::getCollisionOffsetZ() const {
+	return collisionOffsetZ;
+}
+
+float SharedCreatureObjectTemplate::getCollisionRadius() const {
+	return collisionRadius;
+}
+
+int SharedCreatureObjectTemplate::getGender() const {
+	return gender;
+}
+
+const String& SharedCreatureObjectTemplate::getMovementDatatable() const {
+	return movementDatatable.getValue();
+}
+
+int SharedCreatureObjectTemplate::getNiche() const {
+	return niche;
+}
+
+const Vector<BoolParam>& SharedCreatureObjectTemplate::getPostureAlignToTerrain() const {
+	return postureAlignToTerrain.get();
+}
+
+int SharedCreatureObjectTemplate::getRace() const {
+	return race;
+}
+
+float SharedCreatureObjectTemplate::getSlopeModAngle() const {
+	return slopeModAngle;
+}
+
+float SharedCreatureObjectTemplate::getSlopeModPercent() const {
+	return slopeModPercent;
+}
+
+int SharedCreatureObjectTemplate::getSpecies() const {
+	return species;
+}
+
+const Vector<FloatParam>& SharedCreatureObjectTemplate::getSpeed() const {
+	return speed.get();
+}
+
+float SharedCreatureObjectTemplate::getStepHeight() const {
+	return stepHeight;
+}
+
+float SharedCreatureObjectTemplate::getSwimHeight() const {
+	return swimHeight;
+}
+
+const Vector<FloatParam>& SharedCreatureObjectTemplate::getTurnRate() const {
+	return turnRate.get();
+}
+
+float SharedCreatureObjectTemplate::getWarpTolerance() const {
+	return warpTolerance;
+}
+
+float SharedCreatureObjectTemplate::getWaterModPercent() const {
+	return waterModPercent;
+}
+
+/*void setAcceleration(Vector<float> acceleration) {
+	this->acceleration = acceleration;
+}*/
+
+void SharedCreatureObjectTemplate::setAnimationMapFilename(String animationMapFilename) {
+	this->animationMapFilename = animationMapFilename;
+}
+
+void SharedCreatureObjectTemplate::setBaseHAM(Vector<int> baseHAM) {
+	this->baseHAM = baseHAM;
+}
+
+void SharedCreatureObjectTemplate::setCameraHeight(float cameraHeight) {
+	this->cameraHeight = cameraHeight;
+}
+
+void SharedCreatureObjectTemplate::setCollisionHeight(float collisionHeight) {
+	this->collisionHeight = collisionHeight;
+}
+
+void SharedCreatureObjectTemplate::setCollisionLength(float collisionLength) {
+	this->collisionLength = collisionLength;
+}
+
+void SharedCreatureObjectTemplate::setCollisionOffsetX(float collisionOffsetX) {
+	this->collisionOffsetX = collisionOffsetX;
+}
+
+void SharedCreatureObjectTemplate::setCollisionOffsetZ(float collisionOffsetZ) {
+	this->collisionOffsetZ = collisionOffsetZ;
+}
+
+void SharedCreatureObjectTemplate::setCollisionRadius(float collisionRadius) {
+	this->collisionRadius = collisionRadius;
+}
+
+void SharedCreatureObjectTemplate::setGender(int gender) {
+	this->gender = gender;
+}
+
+void SharedCreatureObjectTemplate::setMovementDatatable(String movementDatatable) {
+	this->movementDatatable = movementDatatable;
+}
+
+void SharedCreatureObjectTemplate::setNiche(int niche) {
+	this->niche = niche;
+}
+
+/*void setPostureAlignToTerrain(Vector<bool> postureAlignToTerrain) {
+	this->postureAlignToTerrain = postureAlignToTerrain;
+}*/
+
+void SharedCreatureObjectTemplate::setRace(int race) {
+	this->race = race;
+}
+
+void SharedCreatureObjectTemplate::setSlopeModAngle(float slopeModAngle) {
+	this->slopeModAngle = slopeModAngle;
+}
+
+void SharedCreatureObjectTemplate::setSlopeModPercent(float slopeModPercent) {
+	this->slopeModPercent = slopeModPercent;
+}
+
+void SharedCreatureObjectTemplate::setSpecies(int species) {
+	this->species = species;
+}
+
+/*void setSpeed(Vector<float> speed) {
+	this->speed = speed;
+}*/
+
+void SharedCreatureObjectTemplate::setStepHeight(float stepHeight) {
+	this->stepHeight = stepHeight;
+}
+
+void SharedCreatureObjectTemplate::setSwimHeight(float swimHeight) {
+	this->swimHeight = swimHeight;
+}
+
+/*void setTurnRate(Vector<float> turnRate) {
+	this->turnRate = turnRate;
+}*/
+
+void SharedCreatureObjectTemplate::setWarpTolerance(float warpTolerance) {
+	this->warpTolerance = warpTolerance;
+}
+
+void SharedCreatureObjectTemplate::setWaterModPercent(float waterModPercent) {
+	this->waterModPercent = waterModPercent;
+}

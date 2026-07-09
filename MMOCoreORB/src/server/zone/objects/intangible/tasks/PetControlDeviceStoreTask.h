@@ -9,26 +9,7 @@ class PetControlDeviceStoreTask : public Task {
 	bool force;
 
 public:
-	PetControlDeviceStoreTask(PetControlDevice* device, CreatureObject* playerCreo, bool force) {
-		this->device = device;
-		this->force = force;
-		this->playerCreo = playerCreo;
-	}
+	PetControlDeviceStoreTask(PetControlDevice* device, CreatureObject* playerCreo, bool force);
 
-	void run() {
-		auto petDevice = device.get();
-		auto player = playerCreo.get();
-
-		if (petDevice == nullptr || player == nullptr)
-			return;
-
-		ManagedReference<TangibleObject*> controlledObject = petDevice->getControlledObject();
-
-		if (controlledObject == nullptr || !controlledObject->isAiAgent())
-			return;
-
-		Locker lock(petDevice);
-
-		petDevice->storeObject(player, force);
-	}
+	void run();
 };

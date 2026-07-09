@@ -42,37 +42,11 @@ class ThreatMapEntry : public VectorMap<String, uint32> {
 	Time startTime;
 
 public:
-	ThreatMapEntry() {
-		setNullValue(0);
-		aggroMod = 0;
-		threatBitmask = 0;
-		healAmount = 0;
-		nonAggroDamageTotal = 0;
-	}
+	ThreatMapEntry();
 
-	ThreatMapEntry(const ThreatMapEntry& e) : VectorMap<String, uint32>(e) {
-		setNullValue(0);
-		aggroMod = e.aggroMod;
-		threatBitmask = e.threatBitmask;
-		healAmount = e.healAmount;
-		nonAggroDamageTotal = e.nonAggroDamageTotal;
-		startTime = e.startTime;
-	}
+	ThreatMapEntry(const ThreatMapEntry& e);
 
-	ThreatMapEntry& operator=(const ThreatMapEntry& e) {
-		if (this == &e)
-			return *this;
-
-		aggroMod = e.aggroMod;
-		threatBitmask = e.threatBitmask;
-		healAmount = e.healAmount;
-		nonAggroDamageTotal = e.nonAggroDamageTotal;
-		startTime = e.startTime;
-
-		VectorMap<String, uint32>::operator=(e);
-
-		return *this;
-	}
+	ThreatMapEntry& operator=(const ThreatMapEntry& e);
 
 	void addDamage(WeaponObject* weapon, uint32 damage);
 	void addDamage(String xp, uint32 damage);
@@ -81,82 +55,30 @@ public:
 	bool hasState(uint64 state);
 	void clearThreatState(uint64 state);
 
-	void addAggro(int value) {
-		aggroMod += value;
-	}
+	void addAggro(int value);
 
-	void addHeal(int value) {
-		healAmount += value;
-	}
+	void addHeal(int value);
 
-	int getHeal() {
-		return healAmount;
-	}
+	int getHeal();
 
-	int getAggroMod() {
-		return aggroMod;
-	}
+	int getAggroMod();
 
-	uint32 getDurationSeconds() {
-		Time now;
-		return startTime.miliDifference(now) / 1000.0;
-	}
+	uint32 getDurationSeconds();
 
-	uint32 getDPS() {
-		uint32 duration = getDurationSeconds();
+	uint32 getDPS();
 
-		if (duration > 0) {
-			return getTotalDamage() / getDurationSeconds();
-		}
+	void removeAggro(int value);
 
-		return 0;
-	}
+	void clearAggro();
 
-	void removeAggro(int value) {
-		aggroMod -= value;
-	}
-
-	void clearAggro() {
-		aggroMod = 0;
-	}
-
-	uint32 getTotalDamage() {
-		uint32 totalDamage = 0;
-
-		for (int i = 0; i < size(); i++)
-			totalDamage += elementAt(i).getValue();
-
-		return totalDamage;
-	}
+	uint32 getTotalDamage();
 
 	// getLootDamage excludes damage done by DOT's
-	uint32 getLootDamage() {
-		uint32 totalDamage = 0;
+	uint32 getLootDamage();
 
-		for (int i = 0; i < size(); i++) {
-			String type = elementAt(i).getKey();
-			uint32 damage = elementAt(i).getValue();
+	void setNonAggroDamage(uint32 amount);
 
-			// Logger::console.info("Dam value type " + type + "  #" + String::valueOf(i) + " with a value of " + String::valueOf(damage), true);
-
-			if (type == "dotDMG")
-				continue;
-
-			totalDamage += damage;
-		}
-
-		// Logger::console.info("Combined total damage = " + String::valueOf(totalDamage), true);
-
-		return totalDamage;
-	}
-
-	void setNonAggroDamage(uint32 amount) {
-		nonAggroDamageTotal = amount;
-	}
-
-	uint32 getNonAggroDamage() {
-		return nonAggroDamageTotal;
-	}
+	uint32 getNonAggroDamage();
 };
 
 class ThreatMap : public VectorMap<ManagedReference<TangibleObject*>, ThreatMapEntry>, public Logger {
@@ -173,39 +95,13 @@ protected:
 	Mutex lockMutex;
 
 public:
-	ThreatMap(TangibleObject* me) : VectorMap<ManagedReference<TangibleObject*>, ThreatMapEntry>(1, 0), Logger() {
-		self = me;
-		currentThreat = nullptr;
-		setNoDuplicateInsertPlan();
-	}
+	ThreatMap(TangibleObject* me);
 
-	ThreatMap(const ThreatMap& map) : VectorMap<ManagedReference<TangibleObject*>, ThreatMapEntry>(map), Logger(), lockMutex() {
-		setNoDuplicateInsertPlan();
-		self = map.self;
-		currentThreat = map.currentThreat;
-		threatMapObserver = map.threatMapObserver;
-		threatMatrix = map.threatMatrix;
-		cooldownTimerMap = map.cooldownTimerMap;
-	}
+	ThreatMap(const ThreatMap& map);
 
-	ThreatMap& operator=(const ThreatMap& map) {
-		if (this == &map)
-			return *this;
+	ThreatMap& operator=(const ThreatMap& map);
 
-		setNoDuplicateInsertPlan();
-		self = map.self;
-		currentThreat = map.currentThreat;
-		threatMapObserver = map.threatMapObserver;
-		threatMatrix = map.threatMatrix;
-		cooldownTimerMap = map.cooldownTimerMap;
-
-		VectorMap<ManagedReference<TangibleObject*>, ThreatMapEntry>::operator=(map);
-
-		return *this;
-	}
-
-	~ThreatMap() {
-	}
+	~ThreatMap();
 
 	void removeAll(bool forceRemoveAll = false);
 

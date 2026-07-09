@@ -7,19 +7,7 @@ class DespawnDynamicSpawnTask : public Task {
 	ManagedReference<SceneObject*> spawn;
 
 public:
-	DespawnDynamicSpawnTask(SceneObject* sceno) {
-		spawn = sceno;
-	}
+	DespawnDynamicSpawnTask(SceneObject* sceno);
 
-	void run() {
-		Locker locker(spawn);
-
-		Zone* zone = spawn->getZone();
-
-		if (zone == nullptr)
-			return;
-
-		spawn->destroyObjectFromWorld(true);
-
-	}
+	void run();
 };

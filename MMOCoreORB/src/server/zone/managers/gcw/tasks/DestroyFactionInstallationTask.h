@@ -15,19 +15,8 @@ class DestroyFactionInstallationTask : public Task {
 	ManagedReference<InstallationObject*> installation;
 
 public:
-	DestroyFactionInstallationTask(InstallationObject* inst) {
-		installation = inst;
+	DestroyFactionInstallationTask(InstallationObject* inst);
 
-	}
-
-	void run() {
-		Zone* zne = installation->getZone();
-		if (zne == nullptr)
-			return;
-
-		GCWManager* gcwMan = zne->getGCWManager();
-		if (gcwMan != nullptr)
-			gcwMan->notifyInstallationDestruction(installation);
-	}
+	void run();
 
 };

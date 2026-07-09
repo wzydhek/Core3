@@ -19,40 +19,9 @@ class TerrainMaps : public IffTemplateVariable {
 	TerrainMap<'WMAP'> waterMap;
 	TerrainMap<'SMAP'> seedMap;
 public:
-	void readObject(engine::util::IffStream* iffStream) {
-		parseFromIffStream(iffStream);
-	}
+	void readObject(engine::util::IffStream* iffStream);
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		uint32 version = iffStream->getNextFormType();
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-		iffStream->openForm(version);
-
-		switch (version) {
-		case '0000':
-			break; // valid version, no maps inside, so no parsing
-		case '0001':
-			parseFromIffStream(iffStream, Version<'0001'>());
-			break;
-		default:
-			System::out << "unknown MAPS version " << String::valueOf(version);
-			break;
-		}
-
-		iffStream->closeForm(version);
-	}
-
-	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>) {
-		iffStream->openChunk('DATA');
-
-		var1 = iffStream->getFloat();
-		var2 = iffStream->getFloat();
-		var3 = iffStream->getInt();
-		var4 = iffStream->getInt();
-
-		iffStream->closeChunk('DATA');
-
-		waterMap.readObject(iffStream);
-		seedMap.readObject(iffStream);
-	}
+	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);
 };

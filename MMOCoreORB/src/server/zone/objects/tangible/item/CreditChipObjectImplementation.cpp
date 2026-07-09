@@ -10,6 +10,7 @@
 #include "server/zone/packets/scene/AttributeListMessage.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/objects/transaction/TransactionLog.h"
+#include "server/zone/managers/radial/RadialOptions.h"
 
 void CreditChipObjectImplementation::fillObjectMenuResponse(ObjectMenuResponse* menuResponse, CreatureObject* player) {
 	if (player == nullptr) {

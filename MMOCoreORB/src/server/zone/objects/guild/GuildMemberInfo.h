@@ -24,100 +24,41 @@ namespace guild {
 		uint64 declaredAllegiance; // TODO: remove after wipe
 
 	public:
-		GuildMemberInfo() {
-			playerID = 0;
-			permissions = 0;
-			declaredAllegiance = 0;
-
-			//addSerializableVariables();
-		}
+		GuildMemberInfo();
 
 		GuildMemberInfo(uint64 playerid);
 
-		GuildMemberInfo(const GuildMemberInfo& gmi) : Object() {
-			playerID = gmi.playerID;
-			guildTitle = gmi.guildTitle;
-			permissions = gmi.permissions;
-			declaredAllegiance = gmi.declaredAllegiance;
-
-			//addSerializableVariables();
-		}
+		GuildMemberInfo(const GuildMemberInfo& gmi);
 
 		int compareTo(const GuildMemberInfo& gmi) const;
 
 		GuildMemberInfo& operator=(const GuildMemberInfo& gmi);
 
-		friend void to_json(nlohmann::json& j, const GuildMemberInfo& m) {
-			j["playerID"] = m.playerID;
-			j["guildTitle"] = m.guildTitle;
-			j["permissions"] = m.permissions;
-			j["declaredAllegiance"] = m.declaredAllegiance;
-		}
+		friend void to_json(nlohmann::json& j, const GuildMemberInfo& m);
 
-		bool toBinaryStream(ObjectOutputStream* stream) {
-			stream->writeLong(playerID);
-			guildTitle.toBinaryStream(stream);
-			stream->writeByte(permissions);
-			stream->writeLong(declaredAllegiance);
+		bool toBinaryStream(ObjectOutputStream* stream);
 
-			return true;
-		}
+		bool parseFromBinaryStream(ObjectInputStream* stream);
 
-		bool parseFromBinaryStream(ObjectInputStream* stream) {
-			playerID = stream->readLong();
-			guildTitle.parseFromBinaryStream(stream);
-			permissions = stream->readByte();
-			declaredAllegiance = stream->readLong();
+		uint64 getPlayerID();
 
-			return true;
-		}
+		void setPlayerID(uint64 playerid);
 
-		/*inline void addSerializableVariables() {
-			addSerializableVariable("playerID", &playerID);
-			addSerializableVariable("guildTitle", &guildTitle);
-			addSerializableVariable("permissions", &permissions);
-			addSerializableVariable("declaredAllegiance", &declaredAllegiance);
-		}*/
+		String& getGuildTitle();
 
-		inline uint64 getPlayerID() {
-			return playerID;
-		}
+		void setGuildTitle(const String& title);
 
-		inline void setPlayerID(uint64 playerid) {
-			playerID = playerid;
-		}
+		uint8 getPermissions();
 
-		inline String& getGuildTitle() {
-			return guildTitle;
-		}
+		void setPermissions(uint8 permission);
 
-		inline void setGuildTitle(const String& title) {
-			guildTitle = title;
-		}
+		void addPermission(uint8 permission);
 
-		inline uint8 getPermissions() {
-			return permissions;
-		}
+		void removePermission(uint8 permission);
 
-		inline void setPermissions(uint8 permission) {
-			permissions = permission;
-		}
+		void togglePermission(uint8 permission);
 
-		inline void addPermission(uint8 permission) {
-			permissions |= permission;
-		}
-
-		inline void removePermission(uint8 permission) {
-			permissions &= ~permission;
-		}
-
-		inline void togglePermission(uint8 permission) {
-			permissions ^= permission;
-		}
-
-		inline bool hasPermission(uint8 permission) {
-			return (permissions & permission);
-		}
+		bool hasPermission(uint8 permission);
 	};
 }
 }

@@ -8,6 +8,7 @@
 #pragma once
 
 #include "LootGroups.h"
+#include "engine/lua/LuaObject.h"
 
 class LootGroupCollectionEntry : public Object {
 	LootGroups lootGroups;
@@ -15,43 +16,15 @@ class LootGroupCollectionEntry : public Object {
 	int lootChance;
 
 public:
-	LootGroupCollectionEntry() {
-		lootChance = 0;
-	}
+	LootGroupCollectionEntry();
 
-	LootGroupCollectionEntry(const LootGroupCollectionEntry& lgce) : Object() {
-		lootGroups = lgce.lootGroups;
-		lootChance = lgce.lootChance;
-	}
+	LootGroupCollectionEntry(const LootGroupCollectionEntry& lgce);
 
-	LootGroupCollectionEntry& operator=(const LootGroupCollectionEntry& lgce) {
-		if (this == &lgce)
-			return *this;
+	LootGroupCollectionEntry& operator=(const LootGroupCollectionEntry& lgce);
 
-		lootGroups = lgce.lootGroups;
-		lootChance = lgce.lootChance;
+	void readObject(LuaObject* lua, int level);
 
-		return *this;
-	}
+	 int getLootChance() const;
 
-	void readObject(LuaObject* lua, int level) {
-		lootChance = lua->getIntField("lootChance");
-
-		if (lootChance == 0) {
-			lootChance = 2000000 + (level * 20000); // 20% + (0.2% * level)
-		}
-
-		LuaObject luagroups = lua->getObjectField("groups");
-		lootGroups.readObject(&luagroups);
-
-		luagroups.pop();
-	}
-
-	inline int getLootChance() const {
-		return lootChance;
-	}
-
-	const LootGroups* getLootGroups() const {
-		return &lootGroups;
-	}
+	const LootGroups* getLootGroups() const;
 };

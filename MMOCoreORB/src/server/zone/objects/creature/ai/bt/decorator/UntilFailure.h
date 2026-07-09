@@ -13,24 +13,11 @@ namespace decorator {
 
 class UntilFailure : public Decorator {
 public:
-	UntilFailure(const String& className, const uint32 id, const LuaObject& args)
-			: Decorator(className, id, args) {
-	}
+	UntilFailure(const String& className, const uint32 id, const LuaObject& args);
 
-	UntilFailure(const UntilFailure& b)
-			: Decorator(b) {
-	}
+	UntilFailure(const UntilFailure& b);
 
-	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const {
-		assert(child != nullptr);
-
-		Behavior::Status result = child->doAction(agent);
-		while (result == SUCCESS) {
-			result = child->doAction(agent);
-		}
-
-		return result;
-	}
+	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 }
@@ -40,3 +27,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt::decorator;

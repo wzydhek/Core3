@@ -16,34 +16,19 @@ protected:
 	String personalityStf;
 
 public:
-	DroidPersonalityModuleTemplate()  {}
-	~DroidPersonalityModuleTemplate() {}
+	DroidPersonalityModuleTemplate();
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
-		reactionName = templateData->getStringField("reactionName");
-		attrName = templateData->getStringField("attrName");
-		convTemplate = templateData->getStringField("conversationTemplate");
-		personalityStf = templateData->getStringField("personalityStf");
-	}
+	~DroidPersonalityModuleTemplate();
 
-	String& getReactionName() {
-		return reactionName;
-	}
+	void readObject(LuaObject* templateData);
 
-	String& getChipName() {
-		return attrName;
-	}
+	String& getReactionName();
 
-	String& getConversationTemplate() {
-		return convTemplate;
-	}
+	String& getChipName();
 
-	String& getPersonalityStf() {
-		return personalityStf;
-	}
+	String& getConversationTemplate();
 
-	 bool isDroidPersonalityModuleTemplate() {
-		 return true;
-	 }
+	String& getPersonalityStf();
+
+	bool isDroidPersonalityModuleTemplate();
 };

@@ -15,9 +15,7 @@
 
 class ShipStationContainerComponent : public ContainerComponent, public Logger {
 public:
-	ShipStationContainerComponent() {
-		setLoggingName("ShipStationContainerComponent");
-	}
+	ShipStationContainerComponent();
 
 	bool transferObject(SceneObject* sceneObject, SceneObject* object, int containmentType, bool notifyClient = false, bool allowOverflow = false, bool notifyRoot = true) const override;
 };

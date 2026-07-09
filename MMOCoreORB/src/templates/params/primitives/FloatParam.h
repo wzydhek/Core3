@@ -13,100 +13,30 @@ class FloatParam : public TemplateBase<float> {
 	float min;
 	float max;
 public:
-	FloatParam() : TemplateBase<float>(0.f) {
-		setType(FLOAT);
-		min = 0;
-		max = 0;
-	}
+	FloatParam();
 
-	FloatParam(float m) : TemplateBase<float>(m) {
-		setType(FLOAT);
-		min = 0;
-		max = 0;
-	}
+	FloatParam(float m);
 
-	FloatParam& operator= (float val) {
-		create(val);
+	FloatParam& operator=(float val);
 
-		return *this;
-	}
+	void setMin(float m);
 
-	inline void setMin(float m) {
-		min = m;
-	}
+	void setMax(float m);
 
-	inline void setMax(float m) {
-		max = m;
-	}
+	String toString() const;
 
-	String toString() const {
-		StringBuffer in;
-
-		if (min != 0 || max != 0) {
-			in << "{" << min << ", " << max << "}";
-		} else {
-			in << get();
-		}
-
-		return in.toString();
-	}
-
-	static bool toBinaryStream(ObjectOutputStream* stream) {
-		return false;
-	}
+	static bool toBinaryStream(ObjectOutputStream* stream);
 
 	/*static bool parseFromString(T* address, const sys::lang::String& value, int version = 0) {
 		return address->parseFromString(value, version);
 	}*/
 
-	static bool parseFromBinaryStream(ObjectInputStream* stream) {
-		return false;
-	}
+	static bool parseFromBinaryStream(ObjectInputStream* stream);
 
 
-	virtual bool parse(engine::util::Chunk* source) {
-		uint8 readCase = source->readByte();
-		uint8 byte2 = source->readByte();
+	virtual bool parse(engine::util::Chunk* source);
 
-		if (readCase == 1 && byte2 == 0x20) {
-			create(source->readFloat());
+	float getMin() const;
 
-			return true;
-		} else if (readCase == 2 && byte2 == 0x20) {
-			IffStream* iffStream = source->getIffStream();
-
-
-			StringBuffer msg;
-			msg << "unhandled FloatParam type! in " <<  iffStream->getFileName();
-			Logger::console.error(msg.toString());
-			/*stream << iffStream->getFileName().c_str() << "\n";
-			SWGForensics::instance->printToConsole(text);*/
-		} else if (readCase == 3 && byte2 == 0x20) {
-			/*IffStream* iffStream = source->getIffStream();
-
-			QString text;
-			QTextStream stream(&text);
-
-			stream << "READ CASE 3 MOTHER FUCKER FloatParam type! in ";
-			stream << iffStream->getFileName().c_str() << "\n";
-			SWGForensics::instance->printToConsole(text);*/
-
-			min = source->readFloat();
-			max = source->readFloat();
-		}
-
-			/* else {
-			create(0.f);
-		}*/
-
-		return false;
-	}
-
-	inline float getMin() const {
-		return min;
-	}
-
-	inline float getMax() const {
-		return max;
-	}
+	float getMax() const;
 };

@@ -6,7 +6,9 @@
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 
 using namespace server::zone::objects::ship::ai::btspace;
-using namespace server::zone::objects::ship::ai::btspace::nodespace;
+
+SequenceSpace::SequenceSpace(const String& className, const uint32 id, const LuaObject& args) : CompositeSpace(className, id, args) {
+}
 
 BehaviorSpace::Status SequenceSpace::execute(ShipAiAgent* agent, unsigned int startIdx) const {
 	// loop through children and return FAILURE on first one that failed
@@ -27,6 +29,9 @@ BehaviorSpace::Status SequenceSpace::execute(ShipAiAgent* agent, unsigned int st
 	return SUCCESS;
 }
 
+ParallelSequenceSpace::ParallelSequenceSpace(const String& className, const uint32 id, const LuaObject& args) : CompositeSpace(className, id, args) {
+}
+
 BehaviorSpace::Status ParallelSequenceSpace::execute(ShipAiAgent* agent, unsigned int startIdx) const {
 	// loop through ALL children and return failure if any fail
 	BehaviorSpace::Status finalResult = SUCCESS;
@@ -45,6 +50,9 @@ BehaviorSpace::Status ParallelSequenceSpace::execute(ShipAiAgent* agent, unsigne
 	}
 
 	return finalResult;
+}
+
+RandomSequenceSpace::RandomSequenceSpace(const String& className, const uint32 id, const LuaObject& args) : CompositeSpace(className, id, args) {
 }
 
 BehaviorSpace::Status RandomSequenceSpace::execute(ShipAiAgent* agent, unsigned int startIdx) const {

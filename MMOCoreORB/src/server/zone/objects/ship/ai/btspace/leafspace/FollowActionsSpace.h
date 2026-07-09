@@ -20,123 +20,24 @@ namespace leafspace {
 
 class CalculateAggroMod : public BehaviorSpace {
 public:
-	CalculateAggroMod(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	CalculateAggroMod(const String& className, const uint32 id, const LuaObject& args);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-#ifdef DEBUG_SHIP_AI
-		if (agent->peekBlackboard("aiDebug") && agent->readBlackboard("aiDebug") == true)
-			agent->info(true) << agent->getDisplayedName() << " - CalculateAggroMod  called";
-#endif // DEBUG_SHIP_AI
-
-		ManagedReference<ShipObject*> targetShip = nullptr;
-
-		if (agent->peekBlackboard("targetShipProspect")) {
-#ifdef DEBUG_SHIP_AI
-			if (agent->peekBlackboard("aiDebug") && agent->readBlackboard("aiDebug") == true)
-				agent->info(true) << agent->getDisplayedName() << " - CalculateAggroMod  readBlackboard";
-#endif // DEBUG_SHIP_AI
-			targetShip = agent->readBlackboard("targetShipProspect").get<ManagedReference<ShipObject*>>();
-		}
-
-#ifdef DEBUG_SHIP_AI
-		if (agent->peekBlackboard("aiDebug") && agent->readBlackboard("aiDebug") == true)
-			agent->info(true) << agent->getDisplayedName() << " - CalculateAggroMod  target check";
-#endif // DEBUG_SHIP_AI
-
-		if (targetShip == nullptr)
-			return FAILURE;
-
-		float minMod = 1.5f; // Math::min(1.f - (tarCreo->getLevel() - agent->getLevel()) / 8.f, 1.5f);
-		float mod = Math::max(0.75f, minMod);
-
-		agent->writeBlackboard("aggroMod", mod);
-
-#ifdef DEBUG_SHIP_AI
-		if (agent->peekBlackboard("aiDebug") && agent->readBlackboard("aiDebug") == true)
-			agent->info(true) << agent->getDisplayedName() << " - CalculateAggroMod  complete";
-#endif // DEBUG_SHIP_AI
-
-		return agent->peekBlackboard("aggroMod") ? SUCCESS : FAILURE;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 class SetMovementState : public BehaviorSpace {
 public:
-	SetMovementState(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args), state(0) {
-		parseArgs(args);
-	}
+	SetMovementState(const String& className, const uint32 id, const LuaObject& args);
 
-	SetMovementState(const SetMovementState& a) : BehaviorSpace(a), state(a.state) {
-	}
+	SetMovementState(const SetMovementState& a);
 
-	SetMovementState& operator=(const SetMovementState& a) {
-		if (this == &a)
-			return *this;
-		BehaviorSpace::operator=(a);
-		state = a.state;
-		return *this;
-	}
+	SetMovementState& operator=(const SetMovementState& a);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		ManagedReference<ShipObject*> targetShip = nullptr;
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-		if (agent->peekBlackboard("targetShipProspect")) {
-			targetShip = agent->readBlackboard("targetShipProspect").get<ManagedReference<ShipObject*>>();
-		}
+	void parseArgs(const LuaObject& args);
 
-		// agent->info(true) << agent->getDisplayedName() << " set movement state: " << state;
-
-		switch (state) {
-			case ShipAiAgent::OBLIVIOUS:
-			case ShipAiAgent::WATCHING:
-			case ShipAiAgent::PATROLLING: {
-				agent->clearOptionBit(OptionBitmask::WINGS_OPEN, true);
-				break;
-			}
-			case ShipAiAgent::ATTACKING: {
-				if (targetShip != nullptr) {
-					Locker clocker(targetShip, agent);
-
-					agent->setTargetShipObject(targetShip);
-				}
-
-				agent->setOptionBit(OptionBitmask::WINGS_OPEN, true);
-				agent->clearPatrolPoints();
-
-				break;
-			}
-			case ShipAiAgent::EVADING: {
-				agent->clearPatrolPoints();
-				break;
-			}
-			case ShipAiAgent::FLEEING:
-			case ShipAiAgent::LEASHING:
-			case ShipAiAgent::FOLLOWING:
-			case ShipAiAgent::PATHING_HOME:
-			case ShipAiAgent::FOLLOW_FORMATION:
-			default: {
-				agent->clearOptionBit(OptionBitmask::WINGS_OPEN, true);
-				agent->clearPatrolPoints();
-				break;
-			}
-		};
-
-		agent->setMovementState(state);
-
-		return SUCCESS;
-	}
-
-	void parseArgs(const LuaObject& args) {
-		state = getArg<int32>()(args, "state");
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << "-" << state;
-
-		return msg.toString();
-	}
+	String print() const;
 
 private:
 	uint32 state;
@@ -144,85 +45,26 @@ private:
 
 class SetDefenderFromProspect : public BehaviorSpace {
 public:
-	SetDefenderFromProspect(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	SetDefenderFromProspect(const String& className, const uint32 id, const LuaObject& args);
 
-	SetDefenderFromProspect(const SetDefenderFromProspect& a) : BehaviorSpace(a) {
-	}
+	SetDefenderFromProspect(const SetDefenderFromProspect& a);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		if (!agent->peekBlackboard("targetShipProspect"))
-			return FAILURE;
-
-		ManagedReference<ShipObject*> targetShip = agent->readBlackboard("targetShipProspect").get<ManagedReference<ShipObject*>>();
-
-		if (targetShip == nullptr) {
-			agent->eraseBlackboard("targetShipProspect");
-			return FAILURE;
-		}
-
-		Locker clocker(targetShip, agent);
-
-		agent->setDefender(targetShip);
-
-		// agent->info(true) << " DEFENDER SET FROM targetShipProspect ---  " << targetShip->getDisplayedName();
-
-#ifdef DEBUG_SHIP_AI
-		if (agent->peekBlackboard("aiDebug") && agent->readBlackboard("aiDebug") == true)
-			agent->info(true) << agent->getDisplayedName() << " - SetDefenderFromProspect";
-#endif // DEBUG_SHIP_AI
-
-		return agent->getMainDefender() == targetShip ? SUCCESS : FAILURE;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 class Evade : public BehaviorSpace {
 public:
-	Evade(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args), evadeDelay(5000) {
-		parseArgs(args);
-	}
+	Evade(const String& className, const uint32 id, const LuaObject& args);
 
-	Evade(const Evade& a) : BehaviorSpace(a), evadeDelay(a.evadeDelay) {
-	}
+	Evade(const Evade& a);
 
-	Evade& operator=(const Evade& a) {
-		if (this == &a)
-			return *this;
-		BehaviorSpace::operator=(a);
+	Evade& operator=(const Evade& a);
 
-		evadeDelay = a.evadeDelay;
+	void parseArgs(const LuaObject& args);
 
-		return *this;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-	void parseArgs(const LuaObject& args) {
-		evadeDelay = getArg<uint64>()(args, "evadeDelay");
-	}
-
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		Time* evadeTime = agent->getEvadeDelay();
-
-		if (evadeTime != nullptr && evadeTime->isPast()) {
-			evadeTime->updateToCurrentTime();
-
-			uint64 randomEvade = evadeDelay + System::random(evadeDelay);
-
-			evadeTime->addMiliTime(randomEvade);
-
-			// agent->info(true) << agent->getDisplayedName() << " Evade delay set for " << randomEvade;
-		}
-
-		// agent->info(true) << agent->getDisplayedName() << " Evade Success";
-
-		return SUCCESS;
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << " - Evade Delay: " << evadeDelay ;
-
-		return msg.toString();
-	}
+	String print() const;
 
 	private:
 	uint64 evadeDelay;
@@ -230,214 +72,46 @@ public:
 
 class EngageSingleTarget : public BehaviorSpace {
 public:
-	EngageSingleTarget(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	EngageSingleTarget(const String& className, const uint32 id, const LuaObject& args);
 
-	EngageSingleTarget(const EngageSingleTarget& a) : BehaviorSpace(a) {
-	}
+	EngageSingleTarget(const EngageSingleTarget& a);
 
-	EngageSingleTarget& operator=(const EngageSingleTarget& a) {
-		if (this == &a) {
-			return *this;
-		}
+	EngageSingleTarget& operator=(const EngageSingleTarget& a);
 
-		BehaviorSpace::operator=(a);
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-		return *this;
-	}
-
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		if (!agent->peekBlackboard("targetShipProspect")) {
-			return FAILURE;
-		}
-
-		ManagedReference<ShipObject*> targetShip = agent->readBlackboard("targetShipProspect").get<ManagedReference<ShipObject*>>();
-
-		if (targetShip == nullptr) {
-			return FAILURE;
-		}
-
-		Vector<uint32> weaponVector = agent->getActiveWeaponVector();
-
-		if (weaponVector.size() == 0) {
-			return FAILURE;
-		}
-
-		Locker clock(targetShip, agent);
-
-		for (int i = 0; i < weaponVector.size(); i++) {
-			int slot = weaponVector.get(i);
-
-			agent->fireWeaponAtTarget(targetShip, slot, Components::CHASSIS);
-		}
-
-		uint64 timeNow = System::getMiliTime();
-		agent->writeBlackboard("refireInterval", timeNow);
-
-		return SUCCESS;
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << "-";
-
-		return msg.toString();
-	}
+	String print() const;
 };
 
 class EngageTurrets : public BehaviorSpace {
 public:
-	EngageTurrets(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	EngageTurrets(const String& className, const uint32 id, const LuaObject& args);
 
-	EngageTurrets(const EngageTurrets& a) : BehaviorSpace(a) {
-	}
+	EngageTurrets(const EngageTurrets& a);
 
-	EngageTurrets& operator=(const EngageTurrets& a) {
-		if (this == &a) {
-			return *this;
-		}
+	EngageTurrets& operator=(const EngageTurrets& a);
 
-		BehaviorSpace::operator=(a);
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-		return *this;
-	}
-
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		auto targetVector = agent->getTargetVector();
-
-		if (targetVector == nullptr || targetVector->size() == 0) {
-			return FAILURE;
-		}
-
-		auto weaponVector = agent->getActiveWeaponVector();
-
-		if (weaponVector.size() == 0) {
-			return FAILURE;
-		}
-
-		int weaponsFiredMax = 10;
-		int weaponsFired = 0;
-
-		Vector<ManagedReference<ShipObject*>> targetVectorCopy;
-		targetVector->safeCopyTo(targetVectorCopy);
-
-		for (int i = 0; i < targetVectorCopy.size(); ++i) {
-			auto targetEntry = targetVectorCopy.get(i);
-
-			if (targetEntry == nullptr || !targetEntry->isAttackableBy(agent) || !agent->isAggressiveTo(targetEntry)) {
-				continue;
-			}
-
-			Locker cLock(targetEntry, agent);
-
-			for (int ii = weaponVector.size(); -1 < --ii;) {
-				int key = System::random(ii);
-				int slot = weaponVector.get(key);
-
-				if (agent->fireWeaponAtTarget(targetEntry, slot, Components::CHASSIS)) {
-					weaponVector.remove(key);
-					weaponsFired += 1;
-				}
-
-				if (weaponVector.size() == 0 || weaponsFired >= weaponsFiredMax) {
-					break;
-				}
-			}
-
-			if (weaponVector.size() == 0 || weaponsFired >= weaponsFiredMax) {
-				break;
-			}
-		}
-
-		uint64 timeNow = System::getMiliTime();
-		agent->writeBlackboard("refireInterval", timeNow);
-
-		return SUCCESS;
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << "-";
-
-		return msg.toString();
-	}
+	String print() const;
 };
 
 class GetProspectFromThreatMap : public BehaviorSpace {
 public:
-	GetProspectFromThreatMap(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	GetProspectFromThreatMap(const String& className, const uint32 id, const LuaObject& args);
 
-	GetProspectFromThreatMap(const GetProspectFromThreatMap& a) : BehaviorSpace(a) {
-	}
+	GetProspectFromThreatMap(const GetProspectFromThreatMap& a);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		agent->eraseBlackboard("targetShipProspect");
-
-		auto threatMap = agent->getThreatMap();
-
-		if (threatMap == nullptr) {
-			return FAILURE;
-		}
-
-		ManagedReference<TangibleObject*> topThreat = threatMap->getHighestThreatAttacker();
-
-		// Make sure top threat is not null and is a ship
-		if (topThreat == nullptr || !topThreat->isShipObject()) {
-			return FAILURE;
-		}
-
-		ManagedReference<ShipObject*> targetShip = topThreat->asShipObject();
-
-		if (targetShip == nullptr)
-			return FAILURE;
-
-		Locker lock(targetShip, agent);
-
-		// agent->info(true) << " NEW THREAT SET ---  Top Threat setting targetShipProspect: " << targetShip->getShipName();
-
-		agent->writeBlackboard("targetShipProspect", targetShip);
-
-		return SUCCESS;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 class GetProspectFromDefenders : public BehaviorSpace {
 public:
-	GetProspectFromDefenders(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	GetProspectFromDefenders(const String& className, const uint32 id, const LuaObject& args);
 
-	GetProspectFromDefenders(const GetProspectFromDefenders& a) : BehaviorSpace(a) {
-	}
+	GetProspectFromDefenders(const GetProspectFromDefenders& a);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		ManagedReference<SceneObject*> defender = agent->getMainDefender();
-
-		if (defender == nullptr || !defender->isShipObject())
-			return FAILURE;
-
-		ManagedReference<ShipObject*> defenderShip = defender->asShipObject();
-
-		if (defenderShip == nullptr)
-			return FAILURE;
-
-		ManagedReference<ShipObject*> targetShip = nullptr;
-
-		if (agent->peekBlackboard("targetShipProspect")) {
-			targetShip = agent->readBlackboard("targetShipProspect").get<ManagedReference<ShipObject*>>();
-
-			if (targetShip != nullptr && targetShip->getObjectID() == defenderShip->getObjectID())
-				return SUCCESS;
-		}
-
-		Locker clocker(defenderShip, agent);
-
-		agent->eraseBlackboard("targetShipProspect");
-		agent->writeBlackboard("targetShipProspect", defenderShip);
-
-		return SUCCESS;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 } // namespace leafspace
@@ -447,3 +121,5 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace::leafspace;

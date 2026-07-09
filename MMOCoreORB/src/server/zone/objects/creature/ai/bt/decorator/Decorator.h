@@ -15,115 +15,29 @@ protected:
 	Reference<Behavior*> child;
 
 public:
-	Decorator(const String& className, const uint32 id, const LuaObject& args)
-			: Behavior(className, id, args) {
-	}
+	Decorator(const String& className, const uint32 id, const LuaObject& args);
 
-	Decorator(const Decorator& b)
-			: Behavior(b) {
-		child = b.child;
-	}
+	Decorator(const Decorator& b);
 
-	Decorator& operator=(const Decorator& b) {
-		if (this == &b)
-			return *this;
+	Decorator& operator=(const Decorator& b);
 
-		Behavior::operator=(b);
-		child = b.child;
+	virtual ~Decorator();
 
-		return *this;
-	}
+	bool isDecorator() const;
 
-	virtual ~Decorator() {
-	}
+	bool hasChild(Behavior* c) const;
 
-	bool isDecorator() const {
-		return true;
-	}
+	Behavior* getChild(uint32 cID) const;
 
-	bool hasChild(Behavior* c) const {
-		return child == c;
-	}
+	Vector<const Behavior*> getRecursiveChildList() const;
 
-	Behavior* getChild(uint32 cID) const {
-		if (child->getID() == cID)
-			return child;
+	virtual void setChild(Reference<Behavior*> newChild);
 
-		return NULL;
-	}
+	String print() const;
 
-	Vector<const Behavior*> getRecursiveChildList() const {
-		Vector<const Behavior*> retVal;
-		retVal.add(this);
+	virtual bool checkConditions(AiAgent* agent) const;
 
-		retVal.addAll(child->getRecursiveChildList());
-
-		return retVal;
-	}
-
-	virtual void setChild(Reference<Behavior*> newChild) {
-		assert(child != this);
-
-		child = newChild;
-	}
-
-	String print() const {
-		StringBuffer stream;
-		stream << Behavior::print() << "[";
-		if (child != nullptr)
-			stream << child->print();
-		stream << "]";
-		return stream.toString();
-	}
-
-	virtual bool checkConditions(AiAgent* agent) const {
-		if (child == nullptr)
-			return false;
-
-		if (!Behavior::checkConditions(agent)) {
-			return true;
-		}
-
-		return true;
-	}
-
-	Behavior::Status doAction(AiAgent* agent) const {
-#ifdef DEBUG_AI
-		if (agent->peekBlackboard("aiDebug") && agent->readBlackboard("aiDebug") == true) {
-			StringBuffer msg;
-			msg << "0x" << hex << id << " " << print().toCharArray();
-
-			agent->info(msg.toString(), true);
-		}
-#endif // DEBUG_AI
-
-		if (!checkConditions(agent)) {
-			return INVALID;
-		}
-
-		if (!agent->isRunningBehavior(id))
-			this->start(agent);
-		else
-			agent->popRunningChain();
-
-		Behavior::Status result = this->execute(agent);
-
-#ifdef DEBUG_AI
-		if (agent->peekBlackboard("aiDebug") && agent->readBlackboard("aiDebug") == true) {
-			StringBuffer msg;
-
-			msg << "0x" << hex << id << " " << print() << " result: " << result;
-			agent->info(msg.toString(), true);
-		}
-#endif // DEBUG_AI
-
-		if (result == RUNNING)
-			agent->addRunningID(id);
-		else
-			this->end(agent);
-
-		return result;
-	}
+	Behavior::Status doAction(AiAgent* agent) const;
 };
 
 }
@@ -133,3 +47,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt::decorator;

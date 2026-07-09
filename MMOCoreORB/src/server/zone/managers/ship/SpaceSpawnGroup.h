@@ -21,63 +21,21 @@ protected:
 	Vector<Reference<SpaceSpawn*>> spawnList;
 
 public:
-	SpaceSpawnGroup() {
-	}
+	SpaceSpawnGroup();
 
-	SpaceSpawnGroup(const String& tempName, LuaObject& shipSpawnGroups) {
-		templateName = tempName;
+	SpaceSpawnGroup(const String& tempName, LuaObject& shipSpawnGroups);
 
-		if (!shipSpawnGroups.isValidTable()) {
-			return;
-		}
+	SpaceSpawnGroup(const SpaceSpawnGroup& gr);
 
-		for (int i = 1; i <= shipSpawnGroups.getTableSize(); ++i) {
-			lua_rawgeti(shipSpawnGroups.getLuaState(), -1, i);
-			LuaObject shipSpawn(shipSpawnGroups.getLuaState());
+	virtual ~SpaceSpawnGroup();
 
-			if (shipSpawn.isValidTable()) {
-				Reference<SpaceSpawn*> spaceSpawn = new SpaceSpawn();
-				spaceSpawn->readObject(shipSpawn);
+	SpaceSpawnGroup& operator=(const SpaceSpawnGroup& gr);
 
-				spawnList.add(spaceSpawn);
-			}
+	const String& getTemplateName() const;
 
-			shipSpawn.pop();
-		}
+	const Vector<Reference<SpaceSpawn*>>& getSpawnList();
 
-		shipSpawnGroups.pop();
-	}
-
-	SpaceSpawnGroup(const SpaceSpawnGroup& gr) : Object() {
-		templateName = gr.templateName;
-		spawnList = gr.spawnList;
-	}
-
-	virtual ~SpaceSpawnGroup() {
-	}
-
-	SpaceSpawnGroup& operator=(const SpaceSpawnGroup& gr) {
-		if (this == &gr) {
-			return *this;
-		}
-
-		templateName = gr.templateName;
-		spawnList = gr.spawnList;
-
-		return *this;
-	}
-
-	const String& getTemplateName() const {
-		return templateName;
-	}
-
-	const Vector<Reference<SpaceSpawn*>>& getSpawnList() {
-		return spawnList;
-	}
-
-	void setTemplateName(const String& templateName) {
-		this->templateName = templateName;
-	}
+	void setTemplateName(const String& templateName);
 };
 
 } // namespace ship

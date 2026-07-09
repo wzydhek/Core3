@@ -26,150 +26,41 @@ class SharedInstallationObjectTemplate : public SharedStructureObjectTemplate {
 	String factionString;
 
 public:
-	SharedInstallationObjectTemplate() {
-		installationType = 0;
+	SharedInstallationObjectTemplate();
 
-		armorRating = 0;
-		kinetic = 0;
-		energy = 0;
-		electricity = 0;
-		stun = 0;
-		blast = 0;
-		heat = 0;
-		cold = 0;
-		acid = 0;
-		lightSaber = 0;
-		weapon = "";
-		chanceHit = 0;
-		factionString = "";
-	}
+	~SharedInstallationObjectTemplate();
 
-	~SharedInstallationObjectTemplate() {
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedStructureObjectTemplate::readObject(templateData);
+	void readObject(IffStream* iffStream);
 
-		installationType = templateData->getIntField("installationType");
+	virtual bool isSharedInstallationObjectTemplate();
 
-		armorRating = templateData->getIntField("rating");
-		kinetic = templateData->getFloatField("kinetic");
-		energy = templateData->getFloatField("energy");
-		electricity = templateData->getFloatField("electricity");
-		stun = templateData->getFloatField("stun");
-		blast = templateData->getFloatField("blast");
-		heat = templateData->getFloatField("heat");
-		cold = templateData->getFloatField("cold");
-		acid = templateData->getFloatField("acid");
-		lightSaber = templateData->getFloatField("lightSaber");
-		weapon = templateData->getStringField("weapon");
-		chanceHit = templateData->getFloatField("chanceHit");
-		factionString = templateData->getStringField("factionString");
-	}
+	uint32 getInstallationType() const;
 
-	void readObject(IffStream* iffStream) {
-		uint32 nextType = iffStream->getNextFormType();
+	unsigned int getArmorRating() const;
 
-		if (nextType != 'SIOT') {
-			//Logger::console.error("expecting SHOT got " + String::hexvalueOf((int)nextType));
+	float getKinetic() const;
 
-			SharedTangibleObjectTemplate::readObject(iffStream);
+	float getEnergy() const;
 
-			return;
-		}
+	float getElectricity() const;
 
-		iffStream->openForm('SIOT');
+	float getStun() const;
 
-		uint32 derv = iffStream->getNextFormType();
+	float getBlast() const;
 
-		if (derv == 'DERV') {
-			loadDerv(iffStream);
+	float getHeat() const;
 
-			derv = iffStream->getNextFormType();
-		}
+	float getCold() const;
 
-		/*while (derv != 0) {
-							if (derv != '
-						}*/
+	float getAcid() const;
 
-		iffStream->openForm(derv);
+	float getLightSaber() const;
 
-		try {
-			//parseFileData(iffStream);
-		} catch (Exception& e) {
-			String msg;
-			msg += "exception caught parsing file data ->";
-			msg += e.getMessage();
+	const String& getWeapon() const;
 
-			Logger::console.error(msg);
-		}
+	float getChanceHit() const;
 
-		iffStream->closeForm(derv);
-
-		if (iffStream->getRemainingSubChunksNumber() > 0) {
-			readObject(iffStream);
-		}
-
-		iffStream->closeForm('SIOT');
-	}
-
-	virtual bool isSharedInstallationObjectTemplate() {
-		return true;
-	}
-
-	inline uint32 getInstallationType() const {
-		return installationType;
-	}
-
-	inline unsigned int getArmorRating() const {
-		return armorRating;
-	}
-
-	inline float getKinetic() const {
-		return kinetic;
-	}
-
-	inline float getEnergy() const {
-		return energy;
-	}
-
-	inline float getElectricity() const {
-		return electricity;
-	}
-
-	inline float getStun() const {
-		return stun;
-	}
-
-	inline float getBlast() const {
-		return blast;
-	}
-
-	inline float getHeat() const {
-		return heat;
-	}
-
-	inline float getCold() const {
-		return cold;
-	}
-
-	inline float getAcid() const {
-		return acid;
-	}
-
-	inline float getLightSaber() const {
-		return lightSaber;
-	}
-
-	inline const String& getWeapon() const {
-		return weapon;
-	}
-
-	inline float getChanceHit() const {
-		return chanceHit;
-	}
-
-	inline const String& getFactionString() const {
-		return factionString;
-	}
+	const String& getFactionString() const;
 };

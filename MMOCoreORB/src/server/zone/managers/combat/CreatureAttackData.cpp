@@ -7,6 +7,7 @@
 
 #include "CreatureAttackData.h"
 #include "server/zone/objects/creature/commands/CombatQueueCommand.h"
+#include "server/zone/objects/creature/commands/effect/CommandEffect.h"
 
 CreatureAttackData::CreatureAttackData(const UnicodeString& dataString, const CombatQueueCommand* base, uint64 target) {
 	targetID = target;
@@ -223,4 +224,168 @@ bool CreatureAttackData::changesAttackerPosture() const {
 	}
 
 	return false;
+}
+
+float CreatureAttackData::getActionDamageMultiplier() const {
+	return actionDamageMultiplier;
+}
+
+void CreatureAttackData::setActionDamageMultiplier(float actionDamageMultiplier) {
+	this->actionDamageMultiplier = actionDamageMultiplier;
+}
+
+float CreatureAttackData::getHealthDamageMultiplier() const {
+	return healthDamageMultiplier;
+}
+
+void CreatureAttackData::setHealthDamageMultiplier(float healthDamageMultiplier) {
+	this->healthDamageMultiplier = healthDamageMultiplier;
+}
+
+float CreatureAttackData::getMindDamageMultiplier() const {
+	return mindDamageMultiplier;
+}
+
+void CreatureAttackData::setMindDamageMultiplier(float mindDamageMultiplier) {
+	this->mindDamageMultiplier = mindDamageMultiplier;
+}
+
+const CombatQueueCommand* CreatureAttackData::getCommand() const {
+	return baseCommand;
+}
+
+float CreatureAttackData::getMinDamage() const {
+	return minDamage;
+}
+
+float CreatureAttackData::getMaxDamage() const {
+	return maxDamage;
+}
+
+int CreatureAttackData::getDamageType() const {
+	return damageType;
+}
+
+int CreatureAttackData::getAccuracyBonus() const {
+	return accuracyBonus;
+}
+
+float CreatureAttackData::getActionCostMultiplier() const {
+	return actionCostMultiplier;
+}
+
+void CreatureAttackData::setSplashDamage(bool b) {
+	splashDamage = b;
+}
+
+bool CreatureAttackData::isSplashDamage() const {
+	return splashDamage;
+}
+
+bool CreatureAttackData::getHitIncapTarget() const {
+	return hitIncapTarget;
+}
+
+int CreatureAttackData::getAreaRange() const {
+	return areaRange;
+}
+
+int CreatureAttackData::getConeAngle() const {
+	return coneAngle;
+}
+
+float CreatureAttackData::getDamageMultiplier() const {
+	return damageMultiplier;
+}
+
+float CreatureAttackData::getForceCostMultiplier() const {
+	return forceCostMultiplier;
+}
+
+float CreatureAttackData::getHealthCostMultiplier() const {
+	return healthCostMultiplier;
+}
+
+float CreatureAttackData::getMindCostMultiplier() const {
+	return mindCostMultiplier;
+}
+
+int CreatureAttackData::getPoolsToDamage() const {
+	return poolsToDamage;
+}
+
+int CreatureAttackData::getConeRange() const {
+	return coneRange;
+}
+
+int CreatureAttackData::getRange() const {
+	return range;
+}
+
+float CreatureAttackData::getSpeedMultiplier() const {
+	return speedMultiplier;
+}
+
+const VectorMap<uint8, StateEffect>* CreatureAttackData::getStateEffects() const {
+	return stateEffects;
+}
+
+const Vector<DotEffect>* CreatureAttackData::getDotEffects() const {
+	return dotEffects;
+}
+
+bool CreatureAttackData::isForceAttack() const {
+	return forceAttack;
+}
+
+float CreatureAttackData::getFrsLightMinDamageModifier() const {
+	return frsLightMinDamageModifier;
+}
+
+float CreatureAttackData::getFrsLightMaxDamageModifier() const {
+	return frsLightMaxDamageModifier;
+}
+
+float CreatureAttackData::getFrsDarkMinDamageModifier() const {
+	return frsDarkMinDamageModifier;
+}
+
+float CreatureAttackData::getFrsDarkMaxDamageModifier() const {
+	return frsDarkMaxDamageModifier;
+}
+
+void CreatureAttackData::setForceAttack(bool forceAttack) {
+	this->forceAttack = forceAttack;
+}
+
+uint8 CreatureAttackData::getTrails() const {
+	return trails;
+}
+
+uint64 CreatureAttackData::getPrimaryTarget() const {
+	return targetID;
+}
+
+void CreatureAttackData::setTrails(uint8 trails) {
+	this->trails = trails;
+}
+
+const String& CreatureAttackData::getCombatSpam() const {
+	return combatSpam;
+}
+
+void CreatureAttackData::setCombatSpam(const String& spam) {
+	this->combatSpam = spam;
+}
+
+bool CreatureAttackData::isStateOnlyAttack() const {
+	return poolsToDamage == 0;
+}
+
+int CreatureAttackData::getStateAccuracyBonus() const {
+	return stateAccuracyBonus;
+}
+
+void CreatureAttackData::setStateAccuracyBonus(int stateAccuracyBonus) {
+	this->stateAccuracyBonus = stateAccuracyBonus;
 }

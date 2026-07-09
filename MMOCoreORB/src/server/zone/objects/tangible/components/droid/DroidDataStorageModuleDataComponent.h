@@ -49,17 +49,11 @@ public:
 
 	void onStore();
 
-	int getRating() {
-		return rating;
-	}
+	int getRating();
 
-	int getBatteryDrain() {
-		return 0;
-	}
+	int getBatteryDrain();
 
-	bool isStackable() {
-		return true;
-	}
+	bool isStackable();
 };
 
 } // droid

@@ -4,10 +4,9 @@
 
 #pragma once
 
+#include "engine/service/proto/BaseMessage.h"
+
 class TradeCompleteMessage : public BaseMessage {
 public:
-	TradeCompleteMessage() : BaseMessage(0x06) {
-		insertShort(0x01);
-		insertInt(0xC542038B);
-	}
+	TradeCompleteMessage();
 };

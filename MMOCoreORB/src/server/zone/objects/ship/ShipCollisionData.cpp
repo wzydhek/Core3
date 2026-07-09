@@ -299,3 +299,155 @@ void ShipCollisionData::addCollisionHardpoint(SharedShipObjectTemplate* shipTemp
 		targetableSlots.add(slot);
 	}
 }
+
+int ShipCollisionData::getBoundingVolumeType(const BaseBoundingVolume* volume) const {
+	if (volume->isBoundingSphere()) {
+		return SPHERE;
+	}
+	if (volume->isBoundingBox()) {
+		return BOX;
+	}
+	return MESH;
+}
+
+bool ShipCollisionData::isIdentityMatrix(const Matrix4& matrix) const {
+	return matrix[0][0] == 1.f && matrix[1][1] == 1.f && matrix[2][2] == 1.f && matrix[3][3] == 1.f && matrix[0][1] == 0.f && matrix[0][2] == 0.f && matrix[0][3] == 0.f && matrix[1][0] == 0.f && matrix[1][2] == 0.f && matrix[1][3] == 0.f && matrix[2][0] == 0.f && matrix[2][1] == 0.f && matrix[2][3] == 0.f &&
+		   matrix[3][0] == 0.f && matrix[3][1] == 0.f && matrix[3][2] == 0.f;
+}
+
+Sphere ShipCollisionData::getChassisBoundingSphere(const BaseBoundingVolume* volume) const {
+	const auto& sphere = volume->getBoundingSphere();
+	float radius = sphere.getCenter().length() + sphere.getRadius();
+
+	return Sphere(Vector3::ZERO, radius);
+}
+
+Sphere ShipCollisionData::getHardpointBoundingSphere(const Sphere& sphere, const Vector3& position, const Matrix4& rotation) const {
+	Vector3 spherePosition = position + (sphere.getCenter() * rotation);
+
+	return Sphere(spherePosition, sphere.getRadius());
+}
+
+Sphere ShipCollisionData::getHardpointBoundingSphere(const AABB& box, const Vector3& position, const Matrix4& rotation) const {
+	const Vector3& boxCenter = box.center();
+	float radius = (boxCenter - *box.getMinBound()).length();
+	Vector3 transformedCenter = position + (boxCenter * rotation);
+
+	return Sphere(transformedCenter, radius);
+}
+
+AABB ShipCollisionData::getHardpointBoundingBox(const AABB& box, const Vector3& position, const Matrix4& rotation) const {
+	auto maxBound = position + (*box.getMaxBound() * rotation);
+	auto minBound = position + (*box.getMinBound() * rotation);
+
+	float maxX = Math::max(minBound.getX(), maxBound.getX());
+	float maxY = Math::max(minBound.getY(), maxBound.getY());
+	float maxZ = Math::max(minBound.getZ(), maxBound.getZ());
+
+	float minX = Math::min(minBound.getX(), maxBound.getX());
+	float minY = Math::min(minBound.getY(), maxBound.getY());
+	float minZ = Math::min(minBound.getZ(), maxBound.getZ());
+
+	return AABB(Vector3(minX, minY, minZ), Vector3(maxX, maxY, maxZ));
+}
+
+String ShipCollisionData::getAttachmentTemplatePath(const String& attachmentName, int slot) const {
+	switch (slot) {
+		case Components::CHASSIS:
+			return "object/tangible/ship/attachment/wing/" + attachmentName + ".iff";
+		case Components::ENGINE:
+			return "object/tangible/ship/attachment/engine/" + attachmentName + ".iff";
+		case Components::SHIELD0:
+		case Components::SHIELD1:
+			return "object/tangible/ship/attachment/shield/" + attachmentName + ".iff";
+		case Components::BOOSTER:
+			return "object/tangible/ship/attachment/booster/" + attachmentName + ".iff";
+		case Components::BRIDGE:
+			return "object/tangible/ship/attachment/bridge/" + attachmentName + ".iff";
+		case Components::HANGAR:
+			return "object/tangible/ship/attachment/hangar/" + attachmentName + ".iff";
+		default: {
+			if (slot >= Components::WEAPON_START) {
+				return "object/tangible/ship/attachment/weapon/" + attachmentName + ".iff";
+			}
+		}
+	}
+
+	return "";
+}
+
+String ShipCollisionData::getShipFileName(const String& shipName) const {
+	String chassisName = shipName.replaceAll("shared_", "");
+
+	if (!chassisName.contains(".iff")) {
+		String path = chassisName.contains("player_") ? "object/ship/player/" : "object/ship/";
+		chassisName = path + chassisName + ".iff";
+	}
+
+	return chassisName;
+}
+
+const VectorMap<uint32, ShipCollisionHardpoint>& ShipCollisionData::getHardpoints(const String& slotName) const {
+	return hardpointMap.get(slotName);
+}
+
+const VectorMap<uint32, ShipCollisionHardpoint>& ShipCollisionData::getHardpoints(uint32 slot) const {
+	return hardpointMap.get(Components::shipComponentSlotToString(slot));
+}
+
+const Vector<uint32>& ShipCollisionData::getTargetableSlots() const {
+	return targetableSlots;
+}
+
+int ShipCollisionData::getSlotWeight(uint32 slot) const {
+	return slotWeights.get(slot);
+}
+
+const AppearanceTemplate* ShipCollisionData::getAppearanceTemplate() const {
+	return appearance;
+}
+
+const Sphere& ShipCollisionData::getBoundingSphere() const {
+	return boundingSphere;
+}
+
+const Sphere& ShipCollisionData::getChassisSphere() const {
+	return chassisSphere;
+}
+
+const AABB& ShipCollisionData::getChassisBox() const {
+	return chassisBox;
+}
+
+int ShipCollisionData::getVolumeType() const {
+	return volumeType;
+}
+
+int ShipCollisionData::getHardpointSize() const {
+	return hardpointSize;
+}
+
+String ShipCollisionData::toDebugString(bool includeHardpoints) const {
+	StringBuffer msg;
+
+	msg << "  apearanceName:  " << (appearance ? appearance->getFileName() : "") << endl
+		<< "  boundingSphere: " << boundingSphere.getCenter().toString() << endl
+		<< "  boundingRadius: " << boundingSphere.getRadius() << endl
+		<< "  chassisSphere:  " << chassisSphere.getCenter().toString() << endl
+		<< "  chassisRadius:  " << chassisSphere.getRadius() << endl
+		<< "  chassisBox:     " << chassisBox.getMinBound()->toString() << " " << chassisBox.getMaxBound()->toString() << endl
+		<< "  volumeType:     " << volumeType << endl
+		<< "--------------------------------" << endl;
+
+	if (includeHardpoints) {
+		for (int i = 0; i < hardpointMap.size(); ++i) {
+			auto harpdoints = hardpointMap.elementAt(i).getValue();
+
+			for (int ii = 0; ii < harpdoints.size(); ++ii) {
+				msg << harpdoints.elementAt(ii).getValue().toDebugString() << endl;
+			}
+		}
+	}
+
+	return msg.toString();
+}

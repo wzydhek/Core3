@@ -84,66 +84,31 @@ public:
 	 */
 	BehaviorSpace(const String& className, const uint32 id, const LuaObject& args);
 
-	BehaviorSpace(const BehaviorSpace& b) : Object(), className(b.className), id(b.id), parent(b.parent) {
-	}
+	BehaviorSpace(const BehaviorSpace& b);
 
-	BehaviorSpace& operator=(const BehaviorSpace& b) {
-		if (this == &b)
-			return *this;
+	BehaviorSpace& operator=(const BehaviorSpace& b);
 
-		className = b.className;
-		id = b.id;
-		parent = b.parent;
+	virtual ~BehaviorSpace();
 
-		return *this;
-	}
+	virtual String print() const;
 
-	virtual ~BehaviorSpace() {
-	}
+	virtual bool isCompositeSpace() const;
 
-	virtual String print() const {
-		return className;
-	}
+	virtual bool isDecoratorSpace() const;
 
-	virtual bool isCompositeSpace() const {
-		return false;
-	}
+	virtual bool isSocketSpace() const;
 
-	virtual bool isDecoratorSpace() const {
-		return false;
-	}
+	void setParent(BehaviorSpace* parent_);
 
-	virtual bool isSocketSpace() const {
-		return false;
-	}
+	uint32 getID() const;
 
-	void setParent(BehaviorSpace* parent_) {
-		assert(parent_ != nullptr);
-		assert(parent_->isCompositeSpace() || parent_->isDecoratorSpace());
-		parent = parent_;
-	}
+	BehaviorSpace* getParent() const;
 
-	uint32 getID() const {
-		return id;
-	}
+	virtual BehaviorSpace* getChild(uint32) const;
 
-	BehaviorSpace* getParent() const {
-		return parent.get();
-	}
+	virtual bool hasChild(BehaviorSpace*) const;
 
-	virtual BehaviorSpace* getChild(uint32) const {
-		return NULL;
-	}
-
-	virtual bool hasChild(BehaviorSpace*) const {
-		return false;
-	}
-
-	virtual Vector<const BehaviorSpace*> getRecursiveChildList() const {
-		Vector<const BehaviorSpace*> retVal;
-		retVal.add(this);
-		return retVal;
-	}
+	virtual Vector<const BehaviorSpace*> getRecursiveChildList() const;
 
 protected:
 	/**

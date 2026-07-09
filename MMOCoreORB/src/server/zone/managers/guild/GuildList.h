@@ -11,7 +11,5 @@
 
 class GuildList : public VectorMap<uint32, ManagedReference<GuildObject*> > {
 public:
-	GuildList() : VectorMap<uint32, ManagedReference<GuildObject*> >() {
-
-	}
+	GuildList();
 };

@@ -209,3 +209,10 @@ void VisibilityManager::loadConfiguration() {
 	}
 }
 
+int VisibilityManager::getPvpRatingDivisor() {
+	return pvpRatingDivisor;
+}
+
+unsigned int VisibilityManager::getVisDecayTickRate() {
+	return visDecayTickRate;
+}

@@ -92,84 +92,44 @@ public:
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const override;
 
-	bool isForceHealCommand() const override {
-		return true;
-	}
+	bool isForceHealCommand() const override;
 
-	void setForceCostMultiplier(float fcm) {
-		forceCostMultiplier = fcm;
-	}
+	void setForceCostMultiplier(float fcm);
 
-	void setHealStateCost(unsigned int cost) {
-		healStateCost = cost;
-	}
+	void setHealStateCost(unsigned int cost);
 
-	void setStatesToHeal(unsigned int states) {
-		statesToHeal = states;
-	}
+	void setStatesToHeal(unsigned int states);
 
-	void setHealDiseaseCost(unsigned int cost) {
-		healDiseaseCost = cost;
-	}
+	void setHealDiseaseCost(unsigned int cost);
 
-	void setHealPoisonCost(unsigned int cost) {
-		healPoisonCost = cost;
-	}
+	void setHealPoisonCost(unsigned int cost);
 
-	void setHealBleedingCost(unsigned int cost) {
-		healBleedingCost = cost;
-	}
+	void setHealBleedingCost(unsigned int cost);
 
-	void setHealFireCost(unsigned int cost) {
-		healFireCost = cost;
-	}
+	void setHealFireCost(unsigned int cost);
 
-	void setAttributesToHeal(unsigned int attributes) {
-		attributesToHeal = attributes;
-	}
+	void setAttributesToHeal(unsigned int attributes);
 
-	void setWoundAttributesToHeal(unsigned int attributes) {
-		woundAttributesToHeal = attributes;
-	}
+	void setWoundAttributesToHeal(unsigned int attributes);
 
-	void setHealBattleFatigue(unsigned int amount) {
-		healBattleFatigue = amount;
-	}
+	void setHealBattleFatigue(unsigned int amount);
 
-	void setHealAmount(unsigned int amount ) {
-		healAmount = amount;
-	}
+	void setHealAmount(unsigned int amount);
 
-	void setHealWoundAmount(unsigned int amount) {
-		healWoundAmount = amount;
-	}
+	void setHealWoundAmount(unsigned int amount);
 
-	void setBleedHealIterations(unsigned int amount) {
-		bleedHealIterations = amount;
-	}
+	void setBleedHealIterations(unsigned int amount);
 
-	void setPoisonHealIterations(unsigned int amount) {
-		poisonHealIterations = amount;
-	}
+	void setPoisonHealIterations(unsigned int amount);
 
-	void setDiseaseHealIterations(unsigned int amount) {
-		diseaseHealIterations = amount;
-	}
+	void setDiseaseHealIterations(unsigned int amount);
 
-	void setFireHealIterations(unsigned int amount) {
-		fireHealIterations = amount;
-	}
+	void setFireHealIterations(unsigned int amount);
 
-	void setRange(int r) {
-		range = r;
-	}
+	void setRange(int r);
 
-	void setSpeed(int s) {
-		speed = s;
-	}
+	void setSpeed(int s);
 
-	void setAllowedTarget(unsigned int t) {
-		allowedTarget = t;
-	}
+	void setAllowedTarget(unsigned int t);
 
 };

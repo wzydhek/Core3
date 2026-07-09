@@ -43,28 +43,13 @@ public:
 
 class CommandQueueActionVector : public SortedVector<CommandReference<CommandQueueAction*> > {
 public:
-	CommandQueueActionVector() {
+	CommandQueueActionVector();
 
-	}
+	CommandQueueActionVector(const CommandQueueActionVector& v);
 
-	CommandQueueActionVector(const CommandQueueActionVector& v) : SortedVector<CommandReference<CommandQueueAction*> >(v) {
+	CommandQueueActionVector& operator=(const CommandQueueActionVector& v);
 
-	}
+	Object* clone();
 
-	CommandQueueActionVector& operator=(const CommandQueueActionVector& v) {
-		if (this == &v)
-			return *this;
-
-		SortedVector<CommandReference<CommandQueueAction*> >::operator=(v);
-
-		return *this;
-	}
-
-	Object* clone() {
-		return ObjectCloner<CommandQueueActionVector>::clone(this);
-	}
-
-	Object* clone(void* object) {
-		return TransactionalObjectCloner<CommandQueueActionVector>::clone(this);
-	}
+	Object* clone(void* object);
 };

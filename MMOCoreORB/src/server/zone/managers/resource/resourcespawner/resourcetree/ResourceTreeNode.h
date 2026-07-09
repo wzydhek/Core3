@@ -20,8 +20,8 @@ private:
 	int maxtype, mintype, maxpool, minpool;
 
 	int depth;
-	Vector<ResourceTreeEntry* > entries;
-	Vector<ResourceTreeNode* > nodes;
+	Vector<ResourceTreeEntry*> entries;
+	Vector<ResourceTreeNode*> nodes;
 
 	ResourceTreeNode* parentNode;
 

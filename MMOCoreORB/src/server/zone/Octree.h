@@ -29,9 +29,7 @@ namespace server {
 		Object* clone();
 		Object* clone(void* object);
 
-		void free() {
-			TransactionalMemoryManager::instance()->destroy(this);
-		}
+		void free();
 
 		void setSize(float minx, float miny, float minz, float maxx, float maxy, float maxz);
 
@@ -83,13 +81,9 @@ namespace server {
 		void safeCopyObjects(const Reference<TreeNode*>& node, SortedVector<TreeEntry*>& objects) const;
 
 	public:
-		static void setLogging(bool doLog) {
-			logTree = doLog;
-		}
+		static void setLogging(bool doLog);
 
-		inline static bool doLog() {
-			return logTree;
-		}
+		static bool doLog();
 	};
   } // namespace zone
 } // namespace server

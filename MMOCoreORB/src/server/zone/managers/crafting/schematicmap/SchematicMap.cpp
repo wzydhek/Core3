@@ -241,3 +241,7 @@ void SchematicMap::sendResourceWeightsTo(CreatureObject* player, uint32 schemati
 
 	schematic->sendResourceWeightsTo(player);
 }
+
+DraftSchematic* SchematicMap::get(uint32 schemid) {
+	return schematicCrcMap.get(schemid);
+}

@@ -555,3 +555,15 @@ bool SkillModManager::compareMods(VectorMap<String, int>& mods, CreatureObject* 
 
 	return match;
 }
+
+int SkillModManager::getMinSkill(const uint32 modType) {
+	return skillModMin.get(modType);
+}
+
+int SkillModManager::getMaxSkill(const uint32 modType) {
+	return skillModMax.get(modType);
+}
+
+bool SkillModManager::isWearableModDisabled(String mod) {
+	return disabledWearableSkillMods.contains(mod);
+}

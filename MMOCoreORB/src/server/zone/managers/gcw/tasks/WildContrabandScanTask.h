@@ -14,18 +14,7 @@ class WildContrabandScanTask : public Task {
 	WeakReference<CreatureObject*> weakPlayer;
 
 public:
-	WildContrabandScanTask(CreatureObject* player) {
-		weakPlayer = player;
-	}
+	WildContrabandScanTask(CreatureObject* player);
 
-	void run() {
-		ManagedReference<CreatureObject*> player = weakPlayer.get();
-
-		if (player != nullptr) {
-			ManagedReference<WildContrabandScanSession*> scanSession = player->getActiveSession(SessionFacadeType::WILDCONTRABANDSCAN).castTo<WildContrabandScanSession*>();
-			if (scanSession != nullptr) {
-				scanSession->runWildContrabandScan();
-			}
-		}
-	}
+	void run();
 };

@@ -13,29 +13,17 @@ class DataTableRow {
 	Vector<DataTableCell*> cells;
 
 public:
-	DataTableRow() {
+	DataTableRow();
 
-	}
+	~DataTableRow();
 
-	~DataTableRow() {
-		cells.forEach([](auto cell) { delete cell; });
-	}
+	void addCell(DataTableCell* c);
 
-	void addCell(DataTableCell* c) {
-		cells.add(c);
-	}
+	DataTableCell* getCell(int idx);
 
-	DataTableCell* getCell(int idx) {
-		return cells.get(idx);
-	}
+	const DataTableCell* getCell(int idx) const;
 
-	const DataTableCell* getCell(int idx) const {
-		return cells.get(idx);
-	}
-
-	int getCellsSize() const {
-		return cells.size();
-	}
+	int getCellsSize() const;
 
 	template <typename V>
 	void getValue(int idx, V& out) const {

@@ -54,3 +54,15 @@ void WorldSnapshotIff::readObject(IffStream* iffStream) {
 	iffStream->closeForm(version);
 	iffStream->closeForm('WSNP');
 }
+
+int WorldSnapshotIff::getNodeCount() {
+	return nodes.size();
+}
+
+WorldSnapshotNode* WorldSnapshotIff::getNode(int idx) {
+	return &nodes.get(idx);
+}
+
+String WorldSnapshotIff::getObjectTemplateName(int idx) const {
+	return objectTemplateNameList.get(idx);
+}

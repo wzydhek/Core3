@@ -11,6 +11,11 @@
 
 #include "account/AccountManager.h"
 
+LoginPacketHandler::LoginPacketHandler() : Logger() {
+	server = nullptr;
+	processServer = nullptr;
+}
+
 LoginPacketHandler::LoginPacketHandler(const String& s, LoginProcessServerImplementation* serv)
 		: Logger(s) {
 

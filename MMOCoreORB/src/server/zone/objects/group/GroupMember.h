@@ -25,74 +25,35 @@ class GroupMember : public Variable {
 	ManagedReference<CreatureObject*> creature;
 
 public:
-	GroupMember() {
-		creature = nullptr;
-	}
+	GroupMember();
 
-	GroupMember(const GroupMember& obj) : Variable() {
-		creature = obj.creature;
-	}
+	GroupMember(const GroupMember& obj);
 
-	GroupMember(CreatureObject* obj) {
-		creature = obj;
-	}
+	GroupMember(CreatureObject* obj);
 
-	GroupMember& operator=(const GroupMember& obj) {
-		if (this == &obj) {
-			return *this;
-		}
+	GroupMember& operator=(const GroupMember& obj);
 
-		creature = obj.creature;
+	bool operator==(const GroupMember& member) const;
 
-		return *this;
-	}
+	bool operator==(CreatureObject* member) const;
 
-	bool operator==(const GroupMember& member) const {
-		return creature.get() == member.creature.get();
-	}
+	void operator=(CreatureObject* obj);
 
-	bool operator==(CreatureObject* member) const {
-		return creature.get() == member;
-	}
+	Reference<CreatureObject*> operator->() const;
 
-	void operator=(CreatureObject* obj) {
-		creature = obj;
-	}
-
-	Reference<CreatureObject*> operator->() const {
-		return creature.get();
-	}
-
-	Reference<CreatureObject*> get() {
-		return creature.get();
-	}
+	Reference<CreatureObject*> get();
 
 	operator Reference<CreatureObject*>() const {
 		return creature.get();
 	}
 
-	bool toString(String& str) {
-		return creature.toString(str);
-	}
+	bool toString(String& str);
 
-	bool parseFromString(const String& str, int version = 0) {
-		return creature.parseFromString(str, version);
-	}
+	bool parseFromString(const String& str, int version = 0);
 
 	friend void to_json(nlohmann::json& j, const GroupMember& m);
 
 	bool toBinaryStream(ObjectOutputStream* stream);
 
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		creature.parseFromBinaryStream(stream);
-
-		if (creature == nullptr)
-			return false;
-
-		String name;
-
-		name.parseFromBinaryStream(stream);
-
-		return true;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 };

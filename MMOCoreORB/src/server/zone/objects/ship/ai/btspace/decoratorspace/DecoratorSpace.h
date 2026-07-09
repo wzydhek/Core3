@@ -1,6 +1,7 @@
 #pragma once
 
 #include "server/zone/objects/ship/ai/btspace/BehaviorSpace.h"
+#include "server/zone/objects/ship/ai/ShipAiAgent.h"
 
 namespace server {
 namespace zone {
@@ -15,113 +16,29 @@ protected:
 	Reference<BehaviorSpace*> child;
 
 public:
-	DecoratorSpace(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	DecoratorSpace(const String& className, const uint32 id, const LuaObject& args);
 
-	DecoratorSpace(const DecoratorSpace& b) : BehaviorSpace(b) {
-		child = b.child;
-	}
+	DecoratorSpace(const DecoratorSpace& b);
 
-	DecoratorSpace& operator=(const DecoratorSpace& b) {
-		if (this == &b)
-			return *this;
+	DecoratorSpace& operator=(const DecoratorSpace& b);
 
-		BehaviorSpace::operator=(b);
-		child = b.child;
+	virtual ~DecoratorSpace();
 
-		return *this;
-	}
+	bool isDecoratorSpace() const;
 
-	virtual ~DecoratorSpace() {
-	}
+	bool hasChild(BehaviorSpace* c) const;
 
-	bool isDecoratorSpace() const {
-		return true;
-	}
+	BehaviorSpace* getChild(uint32 cID) const;
 
-	bool hasChild(BehaviorSpace* c) const {
-		return child == c;
-	}
+	Vector<const BehaviorSpace*> getRecursiveChildList() const;
 
-	BehaviorSpace* getChild(uint32 cID) const {
-		if (child->getID() == cID)
-			return child;
+	virtual void setChild(Reference<BehaviorSpace*> newChild);
 
-		return NULL;
-	}
+	String print() const;
 
-	Vector<const BehaviorSpace*> getRecursiveChildList() const {
-		Vector<const BehaviorSpace*> retVal;
-		retVal.add(this);
+	virtual bool checkConditions(ShipAiAgent* agent) const;
 
-		retVal.addAll(child->getRecursiveChildList());
-
-		return retVal;
-	}
-
-	virtual void setChild(Reference<BehaviorSpace*> newChild) {
-		assert(newChild != this);
-
-		child = newChild;
-	}
-
-	String print() const {
-		StringBuffer stream;
-		stream << BehaviorSpace::print() << "[";
-		if (child != nullptr)
-			stream << child->print();
-		stream << "]";
-		return stream.toString();
-	}
-
-	virtual bool checkConditions(ShipAiAgent* agent) const {
-		if (child == nullptr)
-			return false;
-
-		if (!BehaviorSpace::checkConditions(agent)) {
-			return true;
-		}
-
-		return true;
-	}
-
-	BehaviorSpace::Status doAction(ShipAiAgent* agent) const {
-#ifdef DEBUG_SHIP_AI
-		if (agent->peekBlackboard("aiDebug") && agent->readBlackboard("aiDebug") == true) {
-			StringBuffer msg;
-			msg << "0x" << hex << id << " " << print().toCharArray();
-
-			agent->info(true) << agent->getDisplayedName() << " ID: " << agent->getObjectID() << " - " << msg.toString();
-		}
-#endif // DEBUG_SHIP_AI
-
-		if (!checkConditions(agent)) {
-			return INVALID;
-		}
-
-		if (!agent->isRunningBehavior(id))
-			this->start(agent);
-		else
-			agent->popRunningChain();
-
-		BehaviorSpace::Status result = this->execute(agent);
-
-#ifdef DEBUG_SHIP_AI
-		if (agent->peekBlackboard("aiDebug") && agent->readBlackboard("aiDebug") == true) {
-			StringBuffer msg;
-
-			msg << "0x" << hex << id << " " << print() << " result: " << result;
-			agent->info(true) << agent->getDisplayedName() << " ID: " << agent->getObjectID() << " - " << msg.toString();
-		}
-#endif // DEBUG_SHIP_AI
-
-		if (result == RUNNING)
-			agent->addRunningID(id);
-		else
-			this->end(agent);
-
-		return result;
-	}
+	BehaviorSpace::Status doAction(ShipAiAgent* agent) const;
 };
 
 } // namespace decoratorspace
@@ -131,3 +48,5 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace::decoratorspace;

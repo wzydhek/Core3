@@ -140,3 +140,160 @@ void ShipAgentTemplate::readObject(LuaObject* templateData) {
 
 	cargoString = templateData->getStringField("cargoString").trim();
 }
+
+void ShipAgentTemplate::setTemplateName(const String& t) {
+	templateName = t;
+}
+
+// Accessors
+String ShipAgentTemplate::getTemplateName() const {
+	return templateName;
+}
+
+String ShipAgentTemplate::getShipTemplate() const {
+	return shipTemplate;
+}
+
+String ShipAgentTemplate::getPilotTemplate() const {
+	return pilotTemplate;
+}
+
+String ShipAgentTemplate::getShipType() const {
+	return shipType;
+}
+
+int ShipAgentTemplate::getExperience() const {
+	return experience;
+}
+
+float ShipAgentTemplate::getLootChance() const {
+	return lootChance;
+}
+
+int ShipAgentTemplate::getLootRolls() const {
+	return lootRolls;
+}
+
+String ShipAgentTemplate::getLootTable() const {
+	return lootTable;
+}
+
+int ShipAgentTemplate::getMinCredits() const {
+	return minCredits;
+}
+
+int ShipAgentTemplate::getMaxCredits() const {
+	return maxCredits;
+}
+
+int ShipAgentTemplate::getAggressive() const {
+	return aggressive;
+}
+
+String ShipAgentTemplate::getSpaceFaction() const {
+	return spaceFaction;
+}
+
+int ShipAgentTemplate::getTotalAlliedFactions() const {
+	return alliedFactions.size();
+}
+
+String ShipAgentTemplate::getAlliedFaction(int index) const {
+	return alliedFactions.get(index);
+}
+
+int ShipAgentTemplate::getTotalEnemyFactions() const {
+	return enemyFactions.size();
+}
+
+String ShipAgentTemplate::getEnemyFaction(int index) const {
+	return enemyFactions.get(index);
+}
+
+int ShipAgentTemplate::getImperialFactionReward() const {
+	return imperialFactionReward;
+}
+
+int ShipAgentTemplate::getRebelFactionReward() const {
+	return rebelFactionReward;
+}
+
+int ShipAgentTemplate::getColor1() const {
+	return color1;
+}
+
+int ShipAgentTemplate::getColor2() const {
+	return color2;
+}
+
+int ShipAgentTemplate::getTexture() const {
+	return texture;
+}
+
+String ShipAgentTemplate::getQuestLoot() const {
+	return questLoot;
+}
+
+String ShipAgentTemplate::getInteriorChassis() const {
+	return interiorChassis;
+}
+
+int ShipAgentTemplate::getFormationLocation() const {
+	return formationLocation;
+}
+
+String ShipAgentTemplate::getAppearance() const {
+	return appearance;
+}
+
+String ShipAgentTemplate::getTauntType() const {
+	return tauntType;
+}
+
+float ShipAgentTemplate::getTauntAttackChance() const {
+	return tauntAttackChance;
+}
+
+float ShipAgentTemplate::getTauntDefendChance() const {
+	return tauntDefendChance;
+}
+
+float ShipAgentTemplate::getTauntDieChance() const {
+	return tauntDieChance;
+}
+
+float ShipAgentTemplate::getTauntAggressiveness() const {
+	return tauntAggressiveness;
+}
+
+uint32 ShipAgentTemplate::getPvpBitmask() const {
+	return pvpBitmask;
+}
+
+uint32 ShipAgentTemplate::getShipBitmask() const {
+	return shipBitmask;
+}
+
+uint32 ShipAgentTemplate::getOptionsBitmask() const {
+	return optionsBitmask;
+}
+
+uint64 ShipAgentTemplate::getCustomShipAiMap() const {
+	return customShipAiMap;
+}
+
+uint32 ShipAgentTemplate::getConversationTemplate() const {
+	return conversationTemplate;
+}
+
+uint32 ShipAgentTemplate::getConversationMobile() const {
+	return conversationMobile;
+}
+
+uint32 ShipAgentTemplate::getConversationMessage() const {
+	return conversationMessage;
+}
+
+String ShipAgentTemplate::getCargoString() const {
+	return cargoString;
+}

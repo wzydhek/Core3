@@ -1,5 +1,16 @@
 #include "SphereVolume.h"
 
+SphereVolume::SphereVolume() : bbox(Vector3(0, 0, 0), Vector3(0, 0, 0)) {
+}
+
+const AABB& SphereVolume::getBoundingBox() const {
+	return bbox;
+}
+
+bool SphereVolume::isBoundingSphere() const {
+	return true;
+}
+
 #ifdef OSG_RENDERER
 osg::ref_ptr<osg::Node> SphereVolume::draw() const {
 	osg::TessellationHints* hints = new osg::TessellationHints;

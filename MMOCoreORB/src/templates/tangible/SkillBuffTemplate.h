@@ -16,54 +16,20 @@ class SkillBuffTemplate : public SharedTangibleObjectTemplate {
 	unsigned int buffCRC;
 
 public:
-	SkillBuffTemplate() : duration(0), buffCRC(0) {
+	SkillBuffTemplate();
 
-	}
+	~SkillBuffTemplate();
 
-	~SkillBuffTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
+    String& getBuffName();
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+    int getDuration() const;
 
-		duration = templateData->getIntField("duration");
+	VectorMap<String, float>* getModifiers();
 
-		modifiers.removeAll();
-		LuaObject mods = templateData->getObjectField("modifiers");
+	bool isSkillBuffTemplate();
 
-		for (int i = 1; i <= mods.getTableSize(); i += 2) {
-			String attribute = mods.getStringAt(i);
-			float value = mods.getFloatAt(i + 1);
-
-			modifiers.put(attribute, value);
-		}
-		mods.pop();
-
-		buffName = templateData->getStringField("buffName");
-
-		buffCRC = templateData->getIntField("buffCRC");
-
-    }
-
-    inline String& getBuffName() {
-		return buffName;
-	}
-
-    inline int getDuration() const {
-		return duration;
-	}
-
-	VectorMap<String, float>* getModifiers() {
-		return &modifiers;
-	}
-
-	bool isSkillBuffTemplate() {
-		return true;
-	}
-
-	inline unsigned int getBuffCRC(){
-		return buffCRC;
-	}
+	unsigned int getBuffCRC();
 
 };

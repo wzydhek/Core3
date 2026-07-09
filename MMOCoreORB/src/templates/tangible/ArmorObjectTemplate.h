@@ -36,179 +36,71 @@ public:
 	// hit locations (for serverside armor checks)
 	enum SuitLocations { NOLOCATION = 0x0, CHEST = 0x1, ARMS = 0x2, LEGS = 0x4, HEAD = 0x8 };
 
-	ArmorObjectTemplate() {
-		healthEncumbrance = 0;
-		actionEncumbrance = 0;
-		mindEncumbrance = 0;
+	ArmorObjectTemplate();
 
-		rating = 0;
+	~ArmorObjectTemplate();
 
-		kinetic = 0;
-		energy = 0;
-		electricity = 0;
-		stun = 0;
-		blast = 0;
-		heat = 0;
-		cold = 0;
-		acid = 0;
-		lightSaber = 0;
+	void readObject(LuaObject* templateData);
 
-		vulnerabilites = 0;
-		specialResists = 0;
+	float getAcid() const;
 
-		hitLocation = NOLOCATION;
-	}
+	int getActionEncumbrance() const;
 
-	~ArmorObjectTemplate() {
+	float getBlast() const;
 
-	}
+	float getCold() const;
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	float getElectricity() const;
 
-		vulnerabilites = templateData->getIntField("vulnerability");
-		specialResists = templateData->getIntField("specialResists");
+	float getEnergy() const;
 
-		healthEncumbrance = templateData->getIntField("healthEncumbrance");
-		actionEncumbrance = templateData->getIntField("actionEncumbrance");
-		mindEncumbrance = templateData->getIntField("mindEncumbrance");
+	int getHealthEncumbrance() const;
 
-		rating = templateData->getIntField("rating");
+	float getHeat() const;
 
-		kinetic = templateData->getFloatField("kinetic");
-		energy = templateData->getFloatField("energy");
-		electricity = templateData->getFloatField("electricity");
-		stun = templateData->getFloatField("stun");
-		blast = templateData->getFloatField("blast");
-		heat = templateData->getFloatField("heat");
-		cold = templateData->getFloatField("cold");
-		acid = templateData->getFloatField("acid");
-		lightSaber = templateData->getFloatField("lightSaber");
+	float getKinetic() const;
 
-		hitLocation = templateData->getIntField("hitLocation");
-	}
+	float getLightSaber() const;
 
-	inline float getAcid() const {
-		return acid;
-	}
+	int getMindEncumbrance() const;
 
-	inline int getActionEncumbrance() const {
-		return actionEncumbrance;
-	}
+	int getRating() const;
 
-	inline float getBlast() const {
-		return blast;
-	}
+	float getStun() const;
 
-	inline float getCold() const {
-		return cold;
-	}
+	int getVulnerabilites() const;
 
-	inline float getElectricity() const {
-		return electricity;
-	}
+	int getSpecialResists() const;
 
-	inline float getEnergy() const {
-		return energy;
-	}
+	int getHitLocation() const;
 
-	inline int getHealthEncumbrance() const {
-		return healthEncumbrance;
-	}
+	void setAcid(float acid);
 
-	inline float getHeat() const {
-		return heat;
-	}
+	void setActionEncumbrance(int actionEncumbrance);
 
-	inline float getKinetic() const {
-		return kinetic;
-	}
+	void setBlast(float blast);
 
-	inline float getLightSaber() const {
-		return lightSaber;
-	}
+	void setCold(float cold);
 
-	inline int getMindEncumbrance() const {
-		return mindEncumbrance;
-	}
+	void setElectricity(float electricity);
 
-	inline int getRating() const {
-		return rating;
-	}
+	void setEnergy(float energy);
 
-	float getStun() const {
-		return stun;
-	}
+	void setHealthEncumbrance(int healthEncumbrance);
 
-	int getVulnerabilites() const {
-		return vulnerabilites;
-	}
+	void setHeat(float heat);
 
-	int getSpecialResists() const {
-		return specialResists;
-	}
+	void setKinetic(float kinetic);
 
-	int getHitLocation() const {
-		return hitLocation;
-	}
+	void setLightSaber(float lightSaber);
 
-	void setAcid(float acid) {
-		this->acid = acid;
-	}
+	void setMindEncumbrance(int mindEncumbrance);
 
-	void setActionEncumbrance(int actionEncumbrance) {
-		this->actionEncumbrance = actionEncumbrance;
-	}
+	void setRating(int rating);
 
-	void setBlast(float blast) {
-		this->blast = blast;
-	}
+	void setStun(float stun);
 
-	void setCold(float cold) {
-		this->cold = cold;
-	}
+	void setHitLocation(int hitLocation);
 
-	void setElectricity(float electricity) {
-		this->electricity = electricity;
-	}
-
-	void setEnergy(float energy) {
-		this->energy = energy;
-	}
-
-	void setHealthEncumbrance(int healthEncumbrance) {
-		this->healthEncumbrance = healthEncumbrance;
-	}
-
-	void setHeat(float heat) {
-		this->heat = heat;
-	}
-
-	void setKinetic(float kinetic) {
-		this->kinetic = kinetic;
-	}
-
-	void setLightSaber(float lightSaber) {
-		this->lightSaber = lightSaber;
-	}
-
-	void setMindEncumbrance(int mindEncumbrance) {
-		this->mindEncumbrance = mindEncumbrance;
-	}
-
-	void setRating(int rating) {
-		this->rating = rating;
-	}
-
-	void setStun(float stun) {
-		this->stun = stun;
-	}
-
-	void setHitLocation(int hitLocation) {
-		this->hitLocation = hitLocation;
-	}
-
-	bool isArmorObjectTemplate() {
-		return true;
-	}
+	bool isArmorObjectTemplate();
 };

@@ -70,7 +70,7 @@ int DataArchiveStore::loadTres(const String& path, const Vector<String>& treFile
 
 	debug("Loading TRE archives...");
 
-	treeDirectory = new TreeArchive();
+	treeDirectory = new tre3::TreeArchive();
 
 	int j = 0;
 
@@ -125,3 +125,6 @@ IffStream* DataArchiveStore::openIffFile(const String& fileName) const {
 	return iffStream;
 }
 
+const TreeArchive* DataArchiveStore::getTreeArchive() const {
+	return treeDirectory;
+}

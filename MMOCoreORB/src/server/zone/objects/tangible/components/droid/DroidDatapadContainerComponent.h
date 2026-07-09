@@ -12,7 +12,5 @@ public:
 
 	int canAddObject(SceneObject* sceneObject, SceneObject* object, int containmentType, String& errorDescription) const;
 
-	inline bool isDataPadContainer() const {
-		return true;
-	}
+	bool isDataPadContainer() const;
 };

@@ -16,39 +16,19 @@ class PathEdge {
 	float laneWidthLeft;
 
 public:
-	PathEdge() : from(0), to(0), laneWidthRight(0), laneWidthLeft(0) {
-	}
+	PathEdge();
 
-	void readObject(IffStream* iffStream) {
-		from = iffStream->getInt();
-		to = iffStream->getInt();
-		laneWidthRight = iffStream->getFloat();
-		laneWidthLeft = iffStream->getFloat();
-	}
+	void readObject(IffStream* iffStream);
 
-	inline int getFromConnection() const {
-		return from;
-	}
+	int getFromConnection() const;
 
-	inline int getToConnection() const {
-		return to;
-	}
+	int getToConnection() const;
 
-	inline float getLaneWidthRight() const {
-		return laneWidthRight;
-	}
+	float getLaneWidthRight() const;
 
-	inline float getLaneWidthLeft() const {
-		return laneWidthLeft;
-	}
+	float getLaneWidthLeft() const;
 
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return false;
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		return false;
-	}
-
-
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 };

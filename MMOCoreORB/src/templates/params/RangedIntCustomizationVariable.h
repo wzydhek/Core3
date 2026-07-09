@@ -21,94 +21,20 @@ protected:
 	IntegerParam maxValueExclusive;
 
 public:
-	RangedIntCustomizationVariable() : Param() {
-		setType(RANGEDINTCUSTOMIZATIONVARIABLE);
-	}
+	RangedIntCustomizationVariable();
 
-	RangedIntCustomizationVariable(const RangedIntCustomizationVariable& m) : CustomizationVariable() , Param() {
-		setType(RANGEDINTCUSTOMIZATIONVARIABLE);
+	RangedIntCustomizationVariable(const RangedIntCustomizationVariable& m);
 
-		variableName = m.variableName;
-		minValueInclusive = m.minValueInclusive;
-		defaultValue = m.defaultValue;
-		maxValueExclusive = m.maxValueExclusive;
-	}
+	RangedIntCustomizationVariable& operator=(const RangedIntCustomizationVariable& m);
 
-	RangedIntCustomizationVariable& operator=(const RangedIntCustomizationVariable& m) {
-		variableName = m.variableName;
-		minValueInclusive = m.minValueInclusive;
-		defaultValue = m.defaultValue;
-		maxValueExclusive = m.maxValueExclusive;
+	~RangedIntCustomizationVariable();
 
-		return *this;
-	}
+	int getDefaultValue() const;
 
-	~RangedIntCustomizationVariable() {
-	}
+	String toString() const;
 
-	inline int getDefaultValue() const {
-		return defaultValue;
-	}
+	bool parse(Chunk* source);
 
-	String toString() const {
-		StringBuffer stream;
-		/*stream << "variableName" << " = " << variableName.toString() << "\n";
-		stream << "minValueInclusive" << " = " << minValueInclusive.toString() << "\n";
-		stream << "defaultValue" << " = " << defaultValue.toString() << "\n";
-		stream << "maxValueExclusive" << " = " << maxValueExclusive.toString() << "\n";*/
-
-		stream << "{";
-
-		stream << variableName.toString() << ", "
-				<< minValueInclusive.toString() << ", "
-				<< defaultValue.toString() << ", "
-				<< maxValueExclusive.toString();
-
-		stream << "}";
-
-		return stream.toString();
-	}
-
-	bool parse(Chunk* source) {
-		IffStream* iffStream = source->getIffStream();
-
-		Chunk* chunk = iffStream->openChunk('PCNT');
-
-		if (chunk == nullptr) {
-			//std::cout << "could not open pcnt\n";
-			return false;
-		}
-
-		int vars = iffStream->getInt();
-
-		iffStream->closeChunk('PCNT');
-
-		for (int j = 0; j < vars; ++j) {
-			Chunk* var = iffStream->openChunk('XXXX');
-
-			String varName;
-			var->readString(varName);
-
-			//std::cout << "parsing RICV:[" << varName.toStdString() << "]\n";
-
-			if (varName == "variableName") {
-				variableName.parse(var);
-			} else if (varName == "minValueInclusive") {
-				minValueInclusive.parse(var);
-			} else if (varName == "defaultValue") {
-				defaultValue.parse(var);
-			} else if (varName == "maxValueExclusive") {
-				maxValueExclusive.parse(var);
-			}
-
-			iffStream->closeChunk('XXXX');
-		}
-
-		return true;
-	}
-
-	const String& getVariableName() const {
-		return variableName.get();
-	}
+	const String& getVariableName() const;
 
 };

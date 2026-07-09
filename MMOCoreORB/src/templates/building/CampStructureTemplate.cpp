@@ -8,6 +8,11 @@
 
 #include "CampStructureTemplate.h"
 
+CampStructureTemplate::CampStructureTemplate() : experience(0), duration(0), radius(0), aggroMod(0), skillRequired(0), healthWoundRegenRate(0), actionWoundRegenRate(0), mindWoundRegenRate(0) {
+}
+
+CampStructureTemplate::~CampStructureTemplate() {
+}
 
 void CampStructureTemplate::readObject(LuaObject* templateData) {
 	SharedBuildingObjectTemplate::readObject(templateData);
@@ -23,3 +28,38 @@ void CampStructureTemplate::readObject(LuaObject* templateData) {
 	mindWoundRegenRate = templateData->getIntField("mindWoundRegenRate");
 }
 
+bool CampStructureTemplate::isCampStructureTemplate() {
+	return true;
+}
+
+int CampStructureTemplate::getDuration() const {
+	return duration;
+}
+
+int CampStructureTemplate::getExperience() const {
+	return experience;
+}
+
+int CampStructureTemplate::getRadius() const {
+	return radius;
+}
+
+int CampStructureTemplate::getAggroMod() const {
+	return aggroMod;
+}
+
+int CampStructureTemplate::getSkillRequired() const {
+	return skillRequired;
+}
+
+int CampStructureTemplate::getHealthWoundRegenRate() {
+	return healthWoundRegenRate;
+}
+
+int CampStructureTemplate::getActionWoundRegenRate() {
+	return actionWoundRegenRate;
+}
+
+int CampStructureTemplate::getMindWoundRegenRate() {
+	return mindWoundRegenRate;
+}

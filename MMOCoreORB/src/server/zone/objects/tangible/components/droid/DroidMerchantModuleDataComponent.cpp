@@ -218,3 +218,14 @@ void DroidMerchantModuleDataComponent::handlePetCommand(String cmd, CreatureObje
 		}
 	}
 }
+
+const String& DroidMerchantModuleDataComponent::getMessage() const {
+	return message;
+}
+bool DroidMerchantModuleDataComponent::isActive() {
+	return active;
+}
+
+bool DroidMerchantModuleDataComponent::isStackable() {
+	return false;
+}

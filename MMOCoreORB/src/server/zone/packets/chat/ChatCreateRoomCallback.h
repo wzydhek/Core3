@@ -8,7 +8,6 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/chat/ChatManager.h"
 
 class ChatCreateRoomCallback : public MessageCallback {
 	uint8 moderationFlag; //0=not-moderated, 1=moderated
@@ -19,36 +18,10 @@ class ChatCreateRoomCallback : public MessageCallback {
 	short unknown;
 
 public:
-	ChatCreateRoomCallback(ZoneClientSession* client, ZoneProcessServer* server) : MessageCallback(client, server) {
-		moderationFlag = 0;
-		permissionFlag = 0;
-		roomPath = "";
-		roomTitle = "";
-		requestID = 0;
-		unknown = 0;
+	ChatCreateRoomCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-		setCustomTaskQueue("slowQueue");
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		permissionFlag = message->parseByte();
-		moderationFlag = message->parseByte();
-		unknown = message->parseShort(); //not used, always 0.
-		message->parseAscii(roomPath);
-		message->parseAscii(roomTitle);
-		requestID = message->parseInt();
-
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		ChatManager* chatManager = server->getChatManager();
-		if (chatManager != nullptr)
-			chatManager->handleChatCreateRoom(player, permissionFlag, moderationFlag, roomPath, roomTitle, requestID);
-	}
+	void run();
 
 };

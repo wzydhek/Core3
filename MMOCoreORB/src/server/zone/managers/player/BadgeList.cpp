@@ -75,3 +75,26 @@ void BadgeList::add(Badge* badge) {
 	badges.put(badge->getIndex(), badge);
 	names.put(badge->getKey(), badge);
 }
+
+/*
+ * Get a badge by name
+ * returns nullptr if the name wasn't found
+ */
+const Badge* BadgeList::get(const String& name) const {
+	return names.get(name);
+}
+
+/*
+ * Get a badge by index
+ * return nullptre if the name wasn't found
+ */
+const Badge* BadgeList::get(unsigned int idx) const {
+	return badges.get(idx);
+}
+
+/*
+ * Returns the (idx, Badge*) vector map
+ */
+const VectorMap<unsigned int, const Badge*>* BadgeList::getMap() const {
+	return &badges;
+}

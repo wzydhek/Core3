@@ -76,162 +76,84 @@ public:
 
 	void readObject(LuaObject* templateData);
 
-	void setTemplateName(const String& t) {
-		templateName = t;
-	}
+	void setTemplateName(const String& t);
 
 	// Accessors
-	inline String getTemplateName() const {
-		return templateName;
-	}
+	String getTemplateName() const;
 
-	inline String getShipTemplate() const {
-		return shipTemplate;
-	}
+	String getShipTemplate() const;
 
-	inline String getPilotTemplate() const {
-		return pilotTemplate;
-	}
+	String getPilotTemplate() const;
 
-	inline String getShipType() const {
-		return shipType;
-	}
+	String getShipType() const;
 
-	inline int getExperience() const {
-		return experience;
-	}
+	int getExperience() const;
 
-	inline float getLootChance() const {
-		return lootChance;
-	}
+	float getLootChance() const;
 
-	inline int getLootRolls() const {
-		return lootRolls;
-	}
+	int getLootRolls() const;
 
-	inline String getLootTable() const {
-		return lootTable;
-	}
+	String getLootTable() const;
 
-	inline int getMinCredits() const {
-		return minCredits;
-	}
+	int getMinCredits() const;
 
-	inline int getMaxCredits() const {
-		return maxCredits;
-	}
+	int getMaxCredits() const;
 
-	inline int getAggressive() const {
-		return aggressive;
-	}
+	int getAggressive() const;
 
-	inline String getSpaceFaction() const {
-		return spaceFaction;
-	}
+	String getSpaceFaction() const;
 
-	inline int getTotalAlliedFactions() const {
-		return alliedFactions.size();
-	}
+	int getTotalAlliedFactions() const;
 
-	inline String getAlliedFaction(int index) const {
-		return alliedFactions.get(index);
-	}
+	String getAlliedFaction(int index) const;
 
-	inline int getTotalEnemyFactions() const {
-		return enemyFactions.size();
-	}
+	int getTotalEnemyFactions() const;
 
-	inline String getEnemyFaction(int index) const {
-		return enemyFactions.get(index);
-	}
+	String getEnemyFaction(int index) const;
 
-	inline int getImperialFactionReward() const {
-		return imperialFactionReward;
-	}
+	int getImperialFactionReward() const;
 
-	inline int getRebelFactionReward() const {
-		return rebelFactionReward;
-	}
+	int getRebelFactionReward() const;
 
-	inline int getColor1() const {
-		return color1;
-	}
+	int getColor1() const;
 
-	inline int getColor2() const {
-		return color2;
-	}
+	int getColor2() const;
 
-	inline int getTexture() const {
-		return texture;
-	}
+	int getTexture() const;
 
-	inline String getQuestLoot() const {
-		return questLoot;
-	}
+	String getQuestLoot() const;
 
-	inline String getInteriorChassis() const {
-		return interiorChassis;
-	}
+	String getInteriorChassis() const;
 
-	inline int getFormationLocation() const {
-		return formationLocation;
-	}
+	int getFormationLocation() const;
 
-	inline String getAppearance() const {
-		return appearance;
-	}
+	String getAppearance() const;
 
-	inline String getTauntType() const {
-		return tauntType;
-	}
+	String getTauntType() const;
 
-	inline float getTauntAttackChance() const {
-		return tauntAttackChance;
-	}
+	float getTauntAttackChance() const;
 
-	inline float getTauntDefendChance() const {
-		return tauntDefendChance;
-	}
+	float getTauntDefendChance() const;
 
-	inline float getTauntDieChance() const {
-		return tauntDieChance;
-	}
+	float getTauntDieChance() const;
 
-	inline float getTauntAggressiveness() const {
-		return tauntAggressiveness;
-	}
+	float getTauntAggressiveness() const;
 
-	inline uint32 getPvpBitmask() const {
-		return pvpBitmask;
-	}
+	uint32 getPvpBitmask() const;
 
-	inline uint32 getShipBitmask() const {
-		return shipBitmask;
-	}
+	uint32 getShipBitmask() const;
 
-	inline uint32 getOptionsBitmask() const {
-		return optionsBitmask;
-	}
+	uint32 getOptionsBitmask() const;
 
-	inline uint64 getCustomShipAiMap() const {
-		return customShipAiMap;
-	}
+	uint64 getCustomShipAiMap() const;
 
-	inline uint32 getConversationTemplate() const {
-		return conversationTemplate;
-	}
+	uint32 getConversationTemplate() const;
 
-	inline uint32 getConversationMobile() const {
-		return conversationMobile;
-	}
+	uint32 getConversationMobile() const;
 
-	inline uint32 getConversationMessage() const {
-		return conversationMessage;
-	}
+	uint32 getConversationMessage() const;
 
-	inline String getCargoString() const {
-		return cargoString;
-	}
+	String getCargoString() const;
 };
 
 } // namespace ai

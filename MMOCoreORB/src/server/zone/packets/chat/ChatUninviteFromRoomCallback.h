@@ -8,7 +8,6 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/chat/ChatManager.h"
 
 class ChatUninviteFromRoomCallback : public MessageCallback {
 	String uninviteeName; //Player to uninvite.
@@ -16,32 +15,10 @@ class ChatUninviteFromRoomCallback : public MessageCallback {
 	int requestID;
 
 public:
-	ChatUninviteFromRoomCallback(ZoneClientSession* client, ZoneProcessServer* server) : MessageCallback(client, server) {
-		uninviteeName = "";
-		roomPath = "";
-		requestID = 0;
-	}
+	ChatUninviteFromRoomCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	void parse(Message* message) {
-		String unused;
+	void parse(Message* message);
 
-		message->parseAscii(unused); //Game name
-		message->parseAscii(unused); //Galaxy name
-		message->parseAscii(uninviteeName); //Player uninvited
-		message->parseAscii(roomPath); //Path to room
-		requestID = message->parseInt(); //requestID
-
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> uninviter = client->getPlayer();
-
-		if (uninviter == nullptr)
-			return;
-
-		ManagedReference<ChatManager*> chatManager = server->getChatManager();
-		if (chatManager != nullptr)
-			chatManager->handleChatUninvitePlayer(uninviter, uninviteeName, roomPath, requestID);
-	}
+	void run();
 
 };

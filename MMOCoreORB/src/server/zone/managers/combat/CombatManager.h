@@ -103,12 +103,7 @@ private:
 	void initializeDefaultAttacks();
 
 public:
-	CombatManager() {
-		setLoggingName("CombatManager");
-		setGlobalLogging(false);
-		setLogging(false);
-		initializeDefaultAttacks();
-	}
+	CombatManager();
 
 	/**
 	 * Attempts combat between 2 creature objects
@@ -278,39 +273,7 @@ protected:
 
 	void applyStates(CreatureObject* creature, CreatureObject* targetCreature, DefenderHitList* hitList, const CreatureAttackData& data) const;
 
-	int getWeaponDefendResult(uint32 defendWeaponMask) const {
-		switch (defendWeaponMask) {
-			case WeaponType::ONEHANDMELEEWEAPON: return HitStatus::DODGE;
-			case WeaponType::TWOHANDMELEEWEAPON: return HitStatus::COUNTER;
-			case WeaponType::POLEARMWEAPON: return HitStatus::BLOCK;
-			case WeaponType::PISTOLWEAPON: return HitStatus::DODGE;
-			case WeaponType::CARBINEWEAPON: return HitStatus::COUNTER;
-			case WeaponType::RIFLEWEAPON: return HitStatus::BLOCK;
-			case WeaponType::ONEHANDJEDIWEAPON: return HitStatus::RICOCHET;
-			case WeaponType::TWOHANDJEDIWEAPON: return HitStatus::RICOCHET;
-			case WeaponType::POLEARMJEDIWEAPON: return HitStatus::RICOCHET;
-			default: {
-				const int defenseAcuity[] = { BLOCK, DODGE, COUNTER };
-				return defenseAcuity[System::random(2)];
-			}
-		}
-	}
+	int getWeaponDefendResult(uint32 defendWeaponMask) const;
 
-	float getWeaponPostureModifier(uint32 attackWeaponMask) const {
-		switch(attackWeaponMask) {
-			case WeaponType::RIFLEWEAPON: return 2.5f;
-			case WeaponType::CARBINEWEAPON: return 2.f;
-			case WeaponType::PISTOLWEAPON: return 1.5f;
-			case WeaponType::SPECIALHEAVYWEAPON: return 3.f;
-			case WeaponType::ONEHANDMELEEWEAPON: return 1.f;
-			case WeaponType::TWOHANDMELEEWEAPON: return 1.f;
-			case WeaponType::UNARMEDWEAPON: return 1.f;
-			case WeaponType::POLEARMWEAPON: return 1.f;
-			case WeaponType::THROWNWEAPON: return 1.f;
-			case WeaponType::ONEHANDJEDIWEAPON: return 1.f;
-			case WeaponType::TWOHANDJEDIWEAPON: return 1.f;
-			case WeaponType::POLEARMJEDIWEAPON: return 1.f;
-			default: return 1.f;
-		}
-	}
+	float getWeaponPostureModifier(uint32 attackWeaponMask) const;
 };

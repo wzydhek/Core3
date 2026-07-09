@@ -24,6 +24,9 @@ VendorManager::VendorManager() {
 	nameManager = nullptr;
 }
 
+VendorManager::~VendorManager() {
+}
+
 void VendorManager::initialize(ZoneProcessServer* zserv) {
 	server = zserv;
 
@@ -49,6 +52,10 @@ void VendorManager::loadLuaVendors() {
 
 	delete lua;
 	lua = nullptr;
+}
+
+void VendorManager::loadVendorOutfits() {
+	VendorOutfitManager::instance()->initialize();
 }
 
 bool VendorManager::isValidVendorName(const String& name) {
@@ -562,4 +569,8 @@ void VendorManager::randomizeVendorHeight(CreatureObject* vendor, VendorCreature
 
 	float height = (minScale + heightMod) / 100.0;
 	vendor->setHeight(height, false);
+}
+
+VendorSelectionNode* VendorManager::getRootNode() {
+	return rootNode;
 }

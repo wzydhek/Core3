@@ -7,6 +7,25 @@
 
 #include "PaletteColorCustomizationVariables.h"
 
+PaletteColorCustomizationVariables::PaletteColorCustomizationVariables() : Param() {
+}
+
+PaletteColorCustomizationVariables::PaletteColorCustomizationVariables(const PaletteColorCustomizationVariables& p) : Param() {
+	variables = p.variables;
+}
+
+PaletteColorCustomizationVariables::~PaletteColorCustomizationVariables() {
+	/*QMap<QString, PaletteColorCustomizationVariable*>::const_iterator i;
+
+	for (i = variables.constBegin(); i != variables.constEnd(); ++i)
+		delete i.value();*/
+
+	for (int i = 0; i < variables.size(); ++i)
+		delete variables.get(i);
+
+	// std::cout << "DELETING PaletteColorCustomizationVariables\n";
+}
+
 bool PaletteColorCustomizationVariables::parse(Chunk* source) {
 	//std::cout << "parsing PaletteColorCustomizationVariables\n";
 
@@ -109,4 +128,9 @@ String PaletteColorCustomizationVariables::toString() const {
 	stream << "}";
 
 	return stream.toString();
+}
+
+void PaletteColorCustomizationVariables::toString(String& str) const {
+	// std::cout << "entering void toString(QString& str)\n";
+	// str = test;
 }

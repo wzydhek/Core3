@@ -18,87 +18,29 @@ class Faction : public Object {
 
 public:
 
-	Faction() : Object() {
-		playerAllowed = true;
-		adjustFactor = 1.0;
-	}
+	Faction();
 
-	Faction(const String& name) : Object() {
-		factionName = name;
-		playerAllowed = true;
-		adjustFactor = 1.0;
-	}
+	Faction(const String& name);
 
-	Faction(const Faction& f) : Object() {
-		factionName = f.factionName;
-		playerAllowed = f.playerAllowed;
-		enemies = f.enemies;
-		allies = f.allies;
-		adjustFactor = f.adjustFactor;
-	}
+	Faction(const Faction& f);
 
-	Faction& operator= (const Faction& f) {
-		if (this == &f)
-			return *this;
+	Faction& operator=(const Faction& f);
 
-		factionName = f.factionName;
-		playerAllowed = f.playerAllowed;
-		enemies = f.enemies;
-		allies = f.allies;
-		adjustFactor = f.adjustFactor;
+	void parseEnemiesFromList(const String& list);
 
-		return *this;
-	}
+	void parseAlliesFromList(const String& list);
 
-	void parseEnemiesFromList(const String& list) {
-		StringTokenizer tokenizer(list);
-		tokenizer.setDelimeter(",");
+	const String& getFactionName() const;
 
-		while (tokenizer.hasMoreTokens()) {
-			String token;
-			tokenizer.getStringToken(token);
+	void setPlayerAllowed(bool allowed);
 
-			enemies.put(token);
-		}
-	}
+	void setAdjustFactor(float factor);
 
-	void parseAlliesFromList(const String& list) {
-		StringTokenizer tokenizer(list);
-		tokenizer.setDelimeter(",");
+	const SortedVector<String>* getEnemies() const;
 
-		while (tokenizer.hasMoreTokens()) {
-			String token;
-			tokenizer.getStringToken(token);
+	const SortedVector<String>* getAllies() const;
 
-			allies.put(token);
-		}
-	}
+	bool isPlayerAllowed() const;
 
-	const String& getFactionName() const {
-		return factionName;
-	}
-
-	void setPlayerAllowed(bool allowed) {
-		playerAllowed = allowed;
-	}
-
-	void setAdjustFactor(float factor) {
-		adjustFactor = factor;
-	}
-
-	const SortedVector<String>* getEnemies() const {
-		return &enemies;
-	}
-
-	const SortedVector<String>* getAllies() const {
-		return &allies;
-	}
-
-	bool isPlayerAllowed() const {
-		return playerAllowed;
-	}
-
-	float getAdjustFactor() const {
-		return adjustFactor;
-	}
+	float getAdjustFactor() const;
 };

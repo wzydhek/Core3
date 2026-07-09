@@ -18,38 +18,17 @@ protected:
 	PackedUnitVector direction;
 
 public:
-	PackedVelocity() : speed(0) {
+	PackedVelocity();
 
-	}
+	PackedVelocity(const Vector3& vector);
 
-	PackedVelocity(const Vector3& vector) {
-		set(vector);
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		speed = message->readSignedShort();
-		direction.parse(message);
-	}
+	void write(Message* message);
 
-	void write(Message* message) {
-		message->writeShort(speed);
+	void set(const Vector3& v);
 
-		direction.write(message);
-	}
+	Vector3 get();
 
-	void set(const Vector3& v) {
-		float const mag = v.length();
-
-		speed = static_cast<int16>(clamp(-512.f, mag, 512.f) * velocityScale);
-
-		direction.set(mag ? v/mag : Vector3(0, 0, 1));
-	}
-
-	Vector3 get() {
-		return direction.get() * speed * inverseVelocityScale;
-	}
-
-	float getSpeed() {
-		return speed * inverseVelocityScale;
-	}
+	float getSpeed();
 };

@@ -47,9 +47,7 @@ class StructureManager : public Singleton<StructureManager>, public Logger, publ
 public:
 	StructureManager();
 
-	void setZoneServer(ZoneServer* zoneServer) {
-		server = zoneServer;
-	}
+	void setZoneServer(ZoneServer* zoneServer);
 
 	IndexDatabase* createSubIndex();
 

@@ -29,17 +29,13 @@ public:
 
 	VendorManager();
 
-	~VendorManager() {
-
-	}
+	~VendorManager();
 
 	void initialize(ZoneProcessServer* zserv);
 
 	void loadLuaVendors();
 
-	inline void loadVendorOutfits() {
-		VendorOutfitManager::instance()->initialize();
-	}
+	void loadVendorOutfits();
 
 	bool isValidVendorName(const String& name);
 
@@ -72,9 +68,7 @@ public:
 
 	void randomizeVendorHeight(CreatureObject* vendor, VendorCreatureTemplate* vendorTempl);
 
-	inline VendorSelectionNode* getRootNode() {
-		return rootNode;
-	}
+	VendorSelectionNode* getRootNode();
 };
 
 }

@@ -23,84 +23,33 @@ class DotPackTemplate : public SharedTangibleObjectTemplate {
 	bool hasArea;
 
 public:
-	DotPackTemplate() {
-		medicineUse = 0;
-		effectiveness = 0;
-		duration = 0;
-		area = 0;
-		range = 0;
-		potency = 0;
-		rangeMod = 0;
-		pool = 0;
-		dotType = 0;
-		hasArea = false;
-	}
+	DotPackTemplate();
 
-	~DotPackTemplate() {
+	~DotPackTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	int getMedicineUse();
 
-		medicineUse = templateData->getIntField("medicineUse");
-		effectiveness = templateData->getFloatField("effectiveness");
-		duration = templateData->getIntField("duration");
-		area = templateData->getFloatField("area");
-		hasArea = area != 0;
-		range = templateData->getFloatField("range");
-		rangeMod = templateData->getFloatField("rangeMod");
-		pool = templateData->getIntField("pool");
-		dotType = templateData->getIntField("dotType");
-		potency = templateData->getFloatField("potency");
-		commandToExecute = templateData->getStringField("commandToExecute");
-    }
+	float getEffectiveness();
 
-	inline int getMedicineUse() {
-		return medicineUse;
-	}
+	uint32 getPool();
 
-	inline float getEffectiveness() {
-		return effectiveness;
-	}
+	float getRange();
 
-	inline uint32 getPool() {
-		return pool;
-	}
+	float getArea();
 
-	inline float getRange() {
-		return range;
-	}
+	bool isArea();
 
-	inline float getArea() {
-		return area;
-	}
+	float getRangeMod();
 
-	inline bool isArea() {
-		return hasArea;
-	}
+	uint32 getDuration();
 
-	inline float getRangeMod() {
-		return rangeMod;
-	}
+	float getPotency();
 
-	inline uint32 getDuration() {
-		return duration;
-	}
+	uint32 getDotType();
 
-	inline float getPotency() {
-		return potency;
-	}
+	String& getCommandToExecute();
 
-	inline uint32 getDotType() {
-		return dotType;
-	}
-
-	inline String& getCommandToExecute() {
-		return commandToExecute;
-	}
-
-	bool isDotPackTemplate() {
-		return true;
-	}
+	bool isDotPackTemplate();
 };

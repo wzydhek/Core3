@@ -16,80 +16,25 @@ class CharacterNameMap : public Object {
 	ReadWriteLock guard;
 
 public:
-	CharacterNameMap() : names(3000), reverseTable(3000) {
-	}
+	CharacterNameMap();
 
-	void put(CreatureObject* player) {
-		Locker locker(&guard);
+	void put(CreatureObject* player);
 
-		String firstName = player->getFirstName().toLowerCase();
-		uint64 oid = player->getObjectID();
+	bool put(const String& name, uint64 oid);
 
-		names.put(firstName, oid);
-		reverseTable.put(oid, firstName);
-	}
+	void remove(const String& name);
 
-	bool put(const String& name, uint64 oid) {
-		Locker locker(&guard);
+	void remove(uint64 oid);
 
-		auto lowerCase = name.toLowerCase();
+	uint64 get(const String& name);
 
-		if (names.put(lowerCase, oid) != names.getNullValue())
-			return false;
+	String get(uint64 oid);
 
-		reverseTable.put(oid, lowerCase);
+	bool containsKey(const String& name);
 
-		return true;
-	}
+	bool containsOID(uint64 oid);
 
-	void remove(const String& name) {
-		Locker locker(&guard);
+	int size();
 
-		uint64 oid = names.remove(name.toLowerCase());
-		reverseTable.remove(oid);
-	}
-
-	void remove(uint64 oid) {
-		Locker locker(&guard);
-
-		if (reverseTable.containsKey(oid)) {
-			String name = reverseTable.get(oid);
-			names.remove(name);
-			reverseTable.remove(oid);
-		}
-	}
-
-	uint64 get(const String& name) {
-		ReadLocker locker(&guard);
-
-		return names.get(name.toLowerCase());
-	}
-
-	String get(uint64 oid) {
-		ReadLocker locker(&guard);
-
-		return reverseTable.get(oid);
-	}
-
-	bool containsKey(const String& name) {
-		ReadLocker locker(&guard);
-
-		return names.containsKey(name.toLowerCase());
-	}
-
-	bool containsOID(uint64 oid) {
-		ReadLocker locker(&guard);
-
-		return reverseTable.containsKey(oid);
-	}
-
-	int size() {
-		return names.size();
-	}
-
-	HashTable<String, uint64> getNames() {
-		ReadLocker locker(&guard);
-
-		return names;
-	}
+	HashTable<String, uint64> getNames();
 };

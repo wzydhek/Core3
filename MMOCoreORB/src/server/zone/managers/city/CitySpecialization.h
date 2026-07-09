@@ -5,8 +5,9 @@
  *      Author: swgemu
  */
 
-#ifndef CITYSPECIALIZATION_H_
-#define CITYSPECIALIZATION_H_
+#pragma once
+
+#include "engine/lua/LuaObject.h"
 
 class CitySpecialization : public Object {
 	String name;
@@ -14,67 +15,19 @@ class CitySpecialization : public Object {
 	VectorMap<String, int> skillMods;
 
 public:
-	CitySpecialization() {
-		cost = 0;
-		skillMods.setNoDuplicateInsertPlan();
-		skillMods.setNullValue(0);
-	}
+	CitySpecialization();
 
-	CitySpecialization(const String& name, int cost) {
-		this->name = name;
-		this->cost = cost;
-	}
+	CitySpecialization(const String& name, int cost);
 
-	CitySpecialization(const CitySpecialization& spec) : Object() {
-		name = spec.name;
-		cost = spec.cost;
-		skillMods = spec.skillMods;
-	}
+	CitySpecialization(const CitySpecialization& spec);
 
-	CitySpecialization& operator=(const CitySpecialization& spec) {
-		if (this == &spec)
-			return *this;
+	CitySpecialization& operator=(const CitySpecialization& spec);
 
-		name = spec.name;
-		cost = spec.cost;
-		skillMods = spec.skillMods;
+	void readObject(LuaObject* luaObject);
 
-		return *this;
-	}
+	const String& getName() const;
 
-	void readObject(LuaObject* luaObject) {
-		name = luaObject->getStringField("name");
-		cost = luaObject->getIntField("cost");
+	int getCost() const;
 
-		LuaObject smods = luaObject->getObjectField("skillMods");
-
-		for (int i = 1; i <= smods.getTableSize(); ++i) {
-			LuaObject mod = smods.getObjectAt(i);
-
-			if (mod.isValidTable()) {
-				String k = mod.getStringAt(1);
-				int v = mod.getIntAt(2);
-
-				skillMods.put(k, v);
-			}
-
-			mod.pop();
-		}
-
-		smods.pop();
-	}
-
-	inline const String& getName() const {
-		return name;
-	}
-
-	inline int getCost() const {
-		return cost;
-	}
-
-	inline const VectorMap<String, int>* getSkillMods() const {
-		return &skillMods;
-	}
+	const VectorMap<String, int>* getSkillMods() const;
 };
-
-#endif /* CITYSPECIALIZATION_H_ */

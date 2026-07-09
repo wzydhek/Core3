@@ -29,7 +29,7 @@ public:
 
 	void fillAttributeList(AttributeListMessage* msg, CreatureObject* droid);
 
-	int getBatteryDrain() { return 0;}
+	int getBatteryDrain();
 
 	String toString() const;
 
@@ -37,7 +37,7 @@ public:
 
 	void onStore();
 
-	bool isStackable() { return true; }
+	bool isStackable();
 
 	void copy(BaseDroidModuleComponent* other);
 

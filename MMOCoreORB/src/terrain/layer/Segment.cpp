@@ -4,6 +4,54 @@
 
 #include "Segment.h"
 
+Point3D::Point3D() {
+}
+
+Point3D::Point3D(float newX, float newY, float newZ) {
+	x = newX;
+	y = newY;
+	z = newZ;
+}
+
+
+float Point3D::squaredDistanceTo(float locX, float locZ, float locY) {
+	float deltaX = x - locX;
+	float deltaZ = z - locZ;
+	float deltaY = y - locY;
+
+	return (deltaX * deltaX + deltaZ * deltaZ + deltaY * deltaY);
+}
+
+float Point3D::squaredDistanceTo(float locX, float locY) {
+	float deltaX = x - locX;
+	float deltaY = y - locY;
+
+	return (deltaX * deltaX + deltaY * deltaY);
+}
+
+float Point3D::getX() {
+	return x;
+}
+
+float Point3D::getZ() {
+	return z;
+}
+
+float Point3D::getY() {
+	return y;
+}
+
+Segment::Segment() {
+	flatRoad = false;
+}
+
+Segment::~Segment() {
+	for (int i = 0; i < positions.size(); ++i)
+		delete positions.get(i);
+
+	positions.removeAll();
+}
+
 void Segment::createRoadwayHeights() {
 	// If the road is short or the road is flat do not average
 	if (flatRoad || positions.size() < 3)
@@ -280,4 +328,12 @@ void Segment::findNearestHeight(float& baseValue, Vector3 worldPosition, Vector3
 	Logger::console.info(true) << "Height Returned: " << baseValue;
 	Logger::console.info(true) << "---------- END FIND NEAREST HEIGHT ----------";
 #endif
+}
+
+void Segment::setFlatRoad(bool val) {
+	flatRoad = val;
+}
+
+bool Segment::isFlatRoad() {
+	return flatRoad;
 }

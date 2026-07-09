@@ -16,33 +16,21 @@ class VendorOutfitManager : public Singleton<VendorOutfitManager>, public Logger
 	VectorMap<String, Reference<Outfit*> > outfits;
 
 public:
-	VendorOutfitManager() {
+	VendorOutfitManager();
 
-	}
-
-	~VendorOutfitManager() {
-
-	}
+	~VendorOutfitManager();
 
 	void initialize();
 
 	void loadLuaOutfits();
 
-	inline VectorMap<String, Reference<Outfit*> >* getOutfits() {
-		return &outfits;
-	}
+	VectorMap<String, Reference<Outfit*>>* getOutfits();
 
-	inline String& getOutfitName(int idx) {
-		return outfits.elementAt(idx).getKey();
-	}
+	String& getOutfitName(int idx);
 
-	inline Reference<Outfit*> getOutfit(int idx) {
-		return outfits.get(idx);
-	}
+	Reference<Outfit*> getOutfit(int idx);
 
-	inline Reference<Outfit*> getOutfit(const String& key) {
-		return outfits.get(key);
-	}
+	Reference<Outfit*> getOutfit(const String& key);
 
 };
 

@@ -8,31 +8,13 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/zone/packets/player/PlayerObjectDeltaMessage9.h"
 
 class StomachRequestMessageCallback : public MessageCallback {
 public:
-	StomachRequestMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server) {
+	StomachRequestMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		Reference<PlayerObject*> playerObject = player->getPlayerObject();
-
-		PlayerObjectDeltaMessage9* delta = new  PlayerObjectDeltaMessage9(playerObject);
-		delta->updateStomachFilling();
-		delta->close();
-
-		client->sendMessage(delta);
-	}
+	void run();
 
 };

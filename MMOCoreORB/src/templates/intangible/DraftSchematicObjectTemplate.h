@@ -96,122 +96,64 @@ public:
 
 	void parseVariableData(const String& varName, LuaObject* data);
 
-	const Vector<Reference<DraftSlot* > >* getDraftSlots() const {
-		return draftSlots;
-	}
+	const Vector<Reference<DraftSlot*>>* getDraftSlots() const;
 
-	void addSlot(DraftSlot* slot) {
-		draftSlots->add(slot);
-	}
+	void addSlot(DraftSlot* slot);
 
-	bool getIsMagic() const {
-		return isMagic;
-	}
+	bool getIsMagic() const;
 
-	const String& getAssemblySkill() const {
-		return assemblySkill;
-	}
+	const String& getAssemblySkill() const;
 
-	short getComplexity() const {
-		return complexity;
-	}
+	short getComplexity() const;
 
-	const Vector<short >* getContribution() const {
-		return contribution;
-	}
+	const Vector<short>* getContribution() const;
 
-	int getCraftingToolTab() const {
-		return craftingToolTab;
-	}
+	int getCraftingToolTab() const;
 
-	const String& getExperimentingSkill() const {
-		return experimentingSkill;
-	}
+	const String& getExperimentingSkill() const;
 
-	const String& getCustomizationSkill() const {
-		return customizationSkill;
-	}
+	const String& getCustomizationSkill() const;
 
-	const Vector<short >* getIngredientSlotType() const {
-		return ingredientSlotType;
-	}
+	const Vector<short>* getIngredientSlotType() const;
 
-	const Vector<String>* getIngredientAppearance() const {
-		return ingredientAppearance;
-	}
+	const Vector<String>* getIngredientAppearance() const;
 
-	const String& getIngredientAppearance(int i) const {
-		return ingredientAppearance->get(i);
-	}
+	const String& getIngredientAppearance(int i) const;
 
-	const Vector<String>* getIngredientTemplateNames() const {
-		return ingredientTemplateNames;
-	}
+	const Vector<String>* getIngredientTemplateNames() const;
 
-	const Vector<String>* getIngredientTitleNames() const {
-		return ingredientTitleNames;
-	}
+	const Vector<String>* getIngredientTitleNames() const;
 
-	const Vector<int>* getResourceQuantities() const {
-		return resourceQuantities;
-	}
+	const Vector<int>* getResourceQuantities() const;
 
-	const Vector<String>* getResourceTypes() const {
-		return resourceTypes;
-	}
+	const Vector<String>* getResourceTypes() const;
 
-	short getSize() const {
-		return size;
-	}
+	short getSize() const;
 
-	uint32 getTanoCRC() const {
-		return tanoCRC;
-	}
+	uint32 getTanoCRC() const;
 
-	int getXp() const {
-		return xp;
-	}
+	int getXp() const;
 
-	const String& getXpType() const {
-		return xpType;
-	}
+	const String& getXpType() const;
 
-	const String& getCustomObjectName() const {
-		return customObjectName;
-	}
+	const String& getCustomObjectName() const;
 
-	int getTemplateListSize() const {
-		return additionalTemplates->size();
-	}
+	int getTemplateListSize() const;
 
-	const String& getTemplate(int i) const {
-		return additionalTemplates->get(i);
-	}
+	const String& getTemplate(int i) const;
 
 	const Vector<Reference<ResourceWeight* > >* getResourceWeights();
 
-	const VectorMap<String, int>* getSkillMods() const {
-		return &skillMods;
-	}
+	const VectorMap<String, int>* getSkillMods() const;
 
-	int getSkillMod(const String& mod) const {
-		return skillMods.get(mod);
-	}
+	int getSkillMod(const String& mod) const;
 
-	const Vector<VectorMap<String, int> >* getWeaponDots() const {
-		return &weaponDots;
-	}
+	const Vector<VectorMap<String, int>>* getWeaponDots() const;
 
-	int getLabratory() const {
-		return labratory;
-	}
+	int getLabratory() const;
 
-	int getFactoryCrateSize() const {
-		return factoryCrateSize;
-	}
+	int getFactoryCrateSize() const;
 
-	const String& getFactoryCrateType() const {
-		return factoryCrateType;
-	}
+	const String& getFactoryCrateType() const;
 
 };

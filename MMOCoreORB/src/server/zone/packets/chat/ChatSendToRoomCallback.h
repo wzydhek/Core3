@@ -8,8 +8,6 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/chat/ChatManager.h"
-#include "server/zone/ZoneServer.h"
 
 class ChatSendToRoomCallback : public MessageCallback {
 	UnicodeString chatMessage;
@@ -17,32 +15,10 @@ class ChatSendToRoomCallback : public MessageCallback {
 	uint32 counter;
 
 public:
-	ChatSendToRoomCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), roomID(0), counter(0) {
+	ChatSendToRoomCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		message->parseUnicode(chatMessage);
-
-		message->shiftOffset(4); //?
-
-		roomID = message->parseInt();
-
-		counter = message->parseInt();
-
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		ChatManager* chatManager = server->getZoneServer()->getChatManager();
-
-		if (chatManager != nullptr)
-			chatManager->handleChatRoomMessage(player, chatMessage, roomID, counter);
-	}
+	void run();
 
 };

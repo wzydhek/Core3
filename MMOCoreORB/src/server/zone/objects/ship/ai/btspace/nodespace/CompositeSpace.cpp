@@ -6,7 +6,73 @@
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 
 using namespace server::zone::objects::ship::ai::btspace;
-using namespace server::zone::objects::ship::ai::btspace::nodespace;
+
+CompositeSpace::CompositeSpace(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
+}
+
+CompositeSpace::CompositeSpace(const CompositeSpace& b) : BehaviorSpace(b), children(b.children) {
+}
+
+CompositeSpace& CompositeSpace::operator=(const CompositeSpace& b) {
+	if (this == &b)
+		return *this;
+
+	BehaviorSpace::operator=(b);
+	children = b.children;
+
+	return *this;
+}
+
+CompositeSpace::~CompositeSpace() {
+}
+
+bool CompositeSpace::isCompositeSpace() const {
+	return true;
+}
+
+bool CompositeSpace::hasChild(BehaviorSpace* c) const {
+	for (int idx = 0; idx < children.size(); ++idx)
+		if (children.get(idx) == c)
+			return true;
+
+	return false;
+}
+
+BehaviorSpace* CompositeSpace::getChild(uint32 cID) const {
+	for (int idx = 0; idx < children.size(); ++idx)
+		if (children.get(idx)->getID() == cID)
+			return children.get(idx);
+
+	return NULL;
+}
+
+Vector<const BehaviorSpace*> CompositeSpace::getRecursiveChildList() const {
+	Vector<const BehaviorSpace*> retVal;
+	retVal.add(this);
+
+	for (int idx = 0; idx < children.size(); ++idx) {
+		retVal.addAll(children.get(idx)->getRecursiveChildList());
+	}
+
+	return retVal;
+}
+
+void CompositeSpace::addChild(Reference<BehaviorSpace*> child) {
+	assert(child != this);
+
+	children.add(child);
+}
+
+bool CompositeSpace::checkConditions(ShipAiAgent* agent) const {
+	if (children.size() <= 0)
+		return false;
+
+	if (!BehaviorSpace::checkConditions(agent)) {
+		return true;
+	}
+
+	return true;
+}
 
 BehaviorSpace::Status CompositeSpace::doAction(ShipAiAgent* agent) const {
 #ifdef DEBUG_SHIP_AI
@@ -93,4 +159,18 @@ String CompositeSpace::print() const {
 	stream << "]";
 
 	return stream.toString();
+}
+
+Vector<Reference<BehaviorSpace*>> CompositeSpace::shuffleChildren() const {
+	Vector<Reference<BehaviorSpace*>> ran = children;
+
+	for (int i = 0; i < ran.size(); ++i) {
+		int index = (int)System::random(ran.size() - 1 - i) + i;
+
+		Reference<BehaviorSpace*> temp = ran.set(i, ran.get(index));
+
+		ran.set(index, temp);
+	}
+
+	return ran;
 }

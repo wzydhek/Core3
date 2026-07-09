@@ -7,47 +7,27 @@
 
 #pragma once
 
+#include "system/util/SortedVector.h"
+#include "server/zone/objects/auction/AuctionItem.h"
+
 class TerminalItemList : public SortedVector<ManagedReference<AuctionItem*> >, public ReadWriteLock {
 protected:
 	bool searchable;
 
 public:
-	TerminalItemList() {
-		searchable = false;
-	}
+	TerminalItemList();
 
-	TerminalItemList(const TerminalItemList& list) : SortedVector<ManagedReference<AuctionItem*> >(list), ReadWriteLock() {
-		searchable = list.searchable;
-	}
+	TerminalItemList(const TerminalItemList& list);
 
-	TerminalItemList& operator=(const TerminalItemList& list) {
-		if (this == &list)
-			return *this;
+	TerminalItemList& operator=(const TerminalItemList& list);
 
-		searchable = list.searchable;
+	void setSearchable(bool value);
 
-		return *this;
-	}
+	bool isSearchable();
 
-	inline void setSearchable(bool value) {
-		searchable = value;
-	}
+	int put(const ManagedReference<AuctionItem*>& o);
 
-	inline bool isSearchable() {
-		return searchable == true;
-	}
-
-	int put(const ManagedReference<AuctionItem*>& o) {
-		Locker locker(this);
-
-		return SortedVector<ManagedReference<AuctionItem*> >::put(o);
-	}
-
-	bool drop(const ManagedReference<AuctionItem*>& o) {
-		Locker locker(this);
-
-		return SortedVector<ManagedReference<AuctionItem*> >::drop(o);
-	}
+	bool drop(const ManagedReference<AuctionItem*>& o);
 
 };
 

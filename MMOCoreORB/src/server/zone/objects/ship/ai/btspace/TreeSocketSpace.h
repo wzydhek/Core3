@@ -16,49 +16,21 @@ protected:
 	BehaviorTreeSlotSpace slotID;
 
 public:
-	TreeSocketSpace(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args), slotID(BehaviorTreeSlotSpace::NONESPACE) {
-		parseArgs(args);
-	}
+	TreeSocketSpace(const String& className, const uint32 id, const LuaObject& args);
 
-	TreeSocketSpace(const TreeSocketSpace& b) : BehaviorSpace(b), slotID(b.slotID) {
-	}
+	TreeSocketSpace(const TreeSocketSpace& b);
 
-	TreeSocketSpace& operator=(const TreeSocketSpace& b) {
-		if (this == &b)
-			return *this;
+	TreeSocketSpace& operator=(const TreeSocketSpace& b);
 
-		BehaviorSpace::operator=(b);
-		slotID = b.slotID;
-		return *this;
-	}
+	bool isSocketSpace() const;
 
-	bool isSocketSpace() const {
-		return true;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		const BehaviorSpace* child = agent->getBehaviorTreeSpace(slotID);
+	void parseArgs(const LuaObject& args);
 
-		if (child == nullptr)
-			return FAILURE;
+	String print() const;
 
-		return child->doAction(agent);
-	}
-
-	void parseArgs(const LuaObject& args) {
-		slotID = getArg<BehaviorTreeSlotSpace>()(args, "slot");
-	}
-
-	String print() const {
-		StringBuffer msg;
-		msg << className << "-" << getBehaviorTreeSlotName(slotID);
-
-		return msg.toString();
-	}
-
-	const BehaviorTreeSlotSpace& getSlotID() const {
-		return slotID;
-	}
+	const BehaviorTreeSlotSpace& getSlotID() const;
 };
 
 } // namespace btspace

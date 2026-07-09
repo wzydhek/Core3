@@ -26,66 +26,31 @@ class ValidatedPosition : public Serializable {
 	SerializableVector3 point;
 	uint64 parent;
 public:
-	ValidatedPosition() {
-		parent = 0;
+	ValidatedPosition();
 
-		addSerVariables();
-	}
+	ValidatedPosition(const Vector3& pos);
 
-	ValidatedPosition(const Vector3& pos) {
-		parent = 0;
-		point = pos;
+	ValidatedPosition(const ValidatedPosition& a);
 
-		addSerVariables();
-	}
+	ValidatedPosition& operator=(const ValidatedPosition& a);
 
-	ValidatedPosition(const ValidatedPosition& a) : Object(), Serializable() {
-		point = a.point;
-		parent = a.parent;
-
-		addSerVariables();
-	}
-
-	ValidatedPosition& operator=(const ValidatedPosition& a) {
-		point = a.point;
-		parent = a.parent;
-
-		return *this;
-	}
-
-	friend void to_json(nlohmann::json& j, const ValidatedPosition& pos) {
-		j["point"] = pos.point;
-		j["parent"] = pos.parent;
-	}
+	friend void to_json(nlohmann::json& j, const ValidatedPosition& pos);
 
 	Vector3 getWorldPosition(server::zone::ZoneServer* zoneServer);
 
 	void update(server::zone::objects::scene::SceneObject* object);
 
-	inline uint64 getParent() const {
-		return parent;
-	}
+	uint64 getParent() const;
 
-	inline const Vector3& getPosition() const {
-		return point;
-	}
+	const Vector3& getPosition() const;
 
-	inline void setParent(uint64 par) {
-		parent = par;
-	}
+	void setParent(uint64 par);
 
-	inline void setPosition(const Vector3& pos) {
-		point = pos;
-	}
+	void setPosition(const Vector3& pos);
 
-	inline void setPosition(float x, float z, float y) {
-		point.set(x, z, y);
-	}
+	void setPosition(float x, float z, float y);
 
 private:
-	inline void addSerVariables() {
-		addSerializableVariable("point", &point);
-		addSerializableVariable("parent", &parent);
-	}
+	void addSerVariables();
 
 };

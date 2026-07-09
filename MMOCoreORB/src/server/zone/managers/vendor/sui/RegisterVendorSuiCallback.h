@@ -12,35 +12,7 @@
 
 class RegisterVendorSuiCallback : public SuiCallback {
 public:
-	RegisterVendorSuiCallback(ZoneServer* server)
-		: SuiCallback(server) {
-	}
+	RegisterVendorSuiCallback(ZoneServer* server);
 
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!suiBox->isListBox() || cancelPressed)
-			return;
-
-		if (args->size() < 1)
-			return;
-
-		ManagedReference<SceneObject*> object = suiBox->getUsingObject().get();
-
-		if (object == nullptr || !object->isVendor())
-			return;
-
-		TangibleObject* vendor = cast<TangibleObject*>(object.get());
-
-		if (vendor == nullptr)
-			return;
-
-		SuiListBox* suiListBox = cast<SuiListBox*>( suiBox);
-
-		int index = Integer::valueOf(args->get(0).toString());
-
-		String planetMapCategoryName = suiListBox->getMenuItemName(index).subString(25);
-
-		VendorManager::instance()->handleRegisterVendorCallback(player, vendor, planetMapCategoryName);
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

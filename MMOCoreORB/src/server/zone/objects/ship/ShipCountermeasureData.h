@@ -15,39 +15,9 @@ public:
 		AI2 = 6
 	};
 
-	static int getLauncherAmmoType(const String& dataName) {
-		switch (dataName.hashCode()) {
-			case String::hashCode("countermeasure_chaff_launcher"):
-				return CountermeasureType::MK1;
-			case String::hashCode("countermeasure_decoy_launcher"):
-				return CountermeasureType::MK2;
-			case String::hashCode("countermeasure_microchaff_launcher"):
-				return CountermeasureType::MK3;
-			case String::hashCode("countermeasure_confuser_launcher"):
-				return CountermeasureType::MK4;
-			case String::hashCode("countermeasure_em_launcher"):
-				return CountermeasureType::MK5;
-			default:
-				return -1;
-		}
-	}
+	static int getLauncherAmmoType(const String& dataName);
 
-	static int getCountermeasureAmmoType(uint32 objectCRC) {
-		switch (objectCRC) {
-			case String::hashCode("object/tangible/ship/crafted/weapon/missile/countermeasure_chaff_pack.iff"):
-				return CountermeasureType::MK1;
-			case String::hashCode("object/tangible/ship/crafted/weapon/missile/countermeasure_decoy_pack.iff"):
-				return CountermeasureType::MK2;
-			case String::hashCode("object/tangible/ship/crafted/weapon/missile/countermeasure_microchaff_pack.iff"):
-				return CountermeasureType::MK3;
-			case String::hashCode("object/tangible/ship/crafted/weapon/missile/countermeasure_confuser_pack.iff"):
-				return CountermeasureType::MK4;
-			case String::hashCode("object/tangible/ship/crafted/weapon/missile/countermeasure_em_pack.iff"):
-				return CountermeasureType::MK5;
-			default:
-				return -1;
-		}
-	}
+	static int getCountermeasureAmmoType(uint32 objectCRC);
 
 protected:
 	int countermeasureType;
@@ -60,84 +30,37 @@ protected:
 	float scatterAngle;
 
 public:
-	ShipCountermeasureData() : Object() {
-		countermeasureType = 0;
-		minCount = 0;
-		maxCount = 0;
-		minSpeed = 0.f;
-		maxSpeed = 0.f;
-		scatterAngle = 0.f;
-	}
+	ShipCountermeasureData();
 
-	void readObject(DataTableRow* row) {
-		if (row == nullptr || row->getCellsSize() < 7) {
-			return;
-		}
-
-		row->getCell(0)->getValue(countermeasureType);
-		row->getCell(1)->getValue(appearance);
-		row->getCell(2)->getValue(minCount);
-		row->getCell(3)->getValue(maxCount);
-		row->getCell(4)->getValue(minSpeed);
-		row->getCell(5)->getValue(maxSpeed);
-		row->getCell(6)->getValue(scatterAngle);
-	}
+	void readObject(DataTableRow* row);
 
 	// set
-	void setCountermeasureType(int value) {
-		countermeasureType = value;
-	}
+	void setCountermeasureType(int value);
 
-	void setAppearance(const String& value) {
-		appearance = value;
-	}
+	void setAppearance(const String& value);
 
-	void setMinCount(int value) {
-		minCount = value;
-	}
+	void setMinCount(int value);
 
-	void setMaxCount(int value) {
-		maxCount = value;
-	}
+	void setMaxCount(int value);
 
-	void setMinSpeed(int value) {
-		minSpeed = value;
-	}
+	void setMinSpeed(int value);
 
-	void setMaxSpeed(int value) {
-		maxSpeed = value;
-	}
+	void setMaxSpeed(int value);
 
-	void setScatterAngle(int value) {
-		scatterAngle = value;
-	}
+	void setScatterAngle(int value);
 
 	// get
-	int getCountermeasureType() const {
-		return countermeasureType;
-	}
+	int getCountermeasureType() const;
 
-	const String& getAppearance() const {
-		return appearance;
-	}
+	const String& getAppearance() const;
 
-	int getMinCount() const {
-		return minCount;
-	}
+	int getMinCount() const;
 
-	int getMaxCount() const {
-		return maxCount;
-	}
+	int getMaxCount() const;
 
-	int getMinSpeed() const {
-		return minSpeed;
-	}
+	int getMinSpeed() const;
 
-	int getMaxSpeed() const {
-		return maxSpeed;
-	}
+	int getMaxSpeed() const;
 
-	int getScatterAngle() const {
-		return scatterAngle;
-	}
+	int getScatterAngle() const;
 };

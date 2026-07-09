@@ -21,3 +21,11 @@ void LoginProcessServerImplementation::initialize() {
 	loginPacketHandler = new LoginPacketHandler("LoginPacketHandler", this);
 	loginPacketHandler->setLogging(false);
 }
+
+WeakReference<LoginServer*> LoginProcessServerImplementation::getLoginServer() {
+	return server;
+}
+
+LoginPacketHandler* LoginProcessServerImplementation::getPacketHandler() {
+	return loginPacketHandler;
+}

@@ -7,10 +7,7 @@
 
 #pragma once
 
-#include "server/zone/objects/creature/CreatureObject.h"
 #include "ObjectControllerMessageCallback.h"
-#include "server/zone/managers/mission/MissionManager.h"
-#include "server/zone/objects/mission/MissionObject.h"
 
 class MissionAcceptCallback : public MessageCallback {
 	uint64 missionObjectID;
@@ -19,65 +16,9 @@ class MissionAcceptCallback : public MessageCallback {
 
 	ObjectControllerMessageCallback* objectControllerMain;
 public:
-	MissionAcceptCallback(ObjectControllerMessageCallback* objectControllerCallback) :
-		MessageCallback(objectControllerCallback->getClient(), objectControllerCallback->getServer()),
-		missionObjectID(0), terminalObjectID(0), terminalIndex(0), objectControllerMain(objectControllerCallback) {
+	MissionAcceptCallback(ObjectControllerMessageCallback* objectControllerCallback);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		//System::out << message->toStringData() << endl;
-		message->parseInt();
-		missionObjectID = message->parseLong();
-		terminalObjectID = message->parseLong();
-
-		terminalIndex = message->parseByte();
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		ManagedReference<SceneObject*> terminal = server->getZoneServer()->getObject(terminalObjectID);
-
-		if (terminal == nullptr) {
-			player->sendSystemMessage("@skill_teacher:skill_terminal_disabled");
-			return;
-		}
-
-		if (!terminal->isMissionTerminal())
-			return;
-
-		ManagedReference<SceneObject*> mission = server->getZoneServer()->getObject(missionObjectID);
-
-		if (mission == nullptr)
-			return;
-
-		if (!mission->isMissionObject())
-			return;
-
-		MissionObject* missionObject = cast<MissionObject*>( mission.get());
-
-		if (missionObject == nullptr)
-			return;
-
-		MissionTerminal* missionTerminal = cast<MissionTerminal*>( terminal.get());
-
-		if (missionTerminal == nullptr)
-			return;
-
-		Locker clocker(missionObject, player);
-
-		MissionManager* manager = server->getZoneServer()->getMissionManager();
-		manager->handleMissionAccept(missionTerminal, missionObject, player);
-
-		// MissionAcceptResponse
-		ObjectControllerMessage* mar = new ObjectControllerMessage(player->getObjectID(), 0x0B, 0xFA);
-		mar->insertLong(missionObject->getObjectID());
-		mar->insertByte(0x01);
-		mar->insertByte(terminalIndex);
-		player->sendMessage(mar);
-	}
+	void run();
 };

@@ -13,17 +13,9 @@ class StructureDeedTemplate : public DeedTemplate {
 	String placementComponent;
 
 public:
-	StructureDeedTemplate() {
+	StructureDeedTemplate();
 
-	}
+	void readObject(LuaObject* obj);
 
-	void readObject(LuaObject* obj) {
-		DeedTemplate::readObject(obj);
-
-		placementComponent = obj->getStringField("placeStructureComponent");
-	}
-
-	inline const String& getStructurePlacementComponent() {
-		return placementComponent;
-	}
+	const String& getStructurePlacementComponent();
 };

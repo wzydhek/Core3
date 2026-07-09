@@ -1,0 +1,54 @@
+#include "ShowPvPRatingCommand.h"
+#include "server/zone/ZoneServer.h"
+#include "server/zone/managers/player/PlayerManager.h"
+#include "server/zone/objects/player/PlayerObject.h"
+
+ShowPvPRatingCommand::ShowPvPRatingCommand(const String& name, ZoneProcessServer* server) : QueueCommand(name, server) {
+}
+
+int ShowPvPRatingCommand::doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
+	if (!checkStateMask(creature))
+		return INVALIDSTATE;
+
+	if (!checkInvalidLocomotions(creature))
+		return INVALIDLOCOMOTION;
+
+	PlayerManager* playerManager = server->getZoneServer()->getPlayerManager();
+	ManagedReference<CreatureObject*> targetObj = nullptr;
+	StringTokenizer args(arguments.toString());
+
+	if (creature->getTargetID() != 0) {
+		targetObj = server->getZoneServer()->getObject(creature->getTargetID()).castTo<CreatureObject*>();
+	} else {
+		if (args.hasMoreTokens()) {
+			String targetName = "";
+			args.getStringToken(targetName);
+			targetObj = playerManager->getPlayer(targetName);
+		}
+	}
+
+	if (targetObj != nullptr) {
+		PlayerObject* targetGhost = targetObj->getPlayerObject();
+
+		if (targetGhost != nullptr) {
+			StringIdChatParameter ratingMsg;
+			ratingMsg.setStringId("pvp_rating", "pvp_rating_target");
+			ratingMsg.setTT(targetObj->getFirstName());
+			ratingMsg.setDI(targetGhost->getPvpRating());
+
+			creature->sendSystemMessage(ratingMsg);
+			return SUCCESS;
+		}
+	}
+
+	PlayerObject* ghost = creature->getPlayerObject();
+
+	if (ghost != nullptr) {
+		StringIdChatParameter ratingMsg;
+		ratingMsg.setStringId("pvp_rating", "pvp_rating");
+		ratingMsg.setDI(ghost->getPvpRating());
+		creature->sendSystemMessage(ratingMsg);
+	}
+
+	return SUCCESS;
+}

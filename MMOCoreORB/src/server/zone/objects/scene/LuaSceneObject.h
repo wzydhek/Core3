@@ -124,9 +124,7 @@ namespace scene {
 		int isShipComponentRepairKit(lua_State* L);
 
 	protected:
-		SceneObject* _getRealSceneObject() {
-			return realObject.get();
-		}
+		SceneObject* _getRealSceneObject();
 
 	private:
 		// The pointer to the 'real object' defined in object.cc

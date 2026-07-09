@@ -124,3 +124,7 @@ void DroidArmorModuleDataComponent::copy(BaseDroidModuleComponent* other) {
 
 	droidComponent->addProperty("armor_module", armorModule, 0, "exp_effectiveness");
 }
+
+bool DroidArmorModuleDataComponent::isStackable() {
+	return true;
+}

@@ -1304,3 +1304,18 @@ String ResourceSpawner::healthCheck() {
 
 	return health.toString();
 }
+
+ResourceMap* ResourceSpawner::getResourceMap() {
+	return resourceMap;
+}
+
+const ResourceMap* ResourceSpawner::getResourceMap() const {
+	return resourceMap;
+}
+
+String ResourceSpawner::dumpResources() {
+	if (writeAllSpawnsToScript())
+		return "Resources Dumped";
+
+	return "Error Dumping resources";
+}

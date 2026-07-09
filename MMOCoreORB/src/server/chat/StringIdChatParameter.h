@@ -59,29 +59,9 @@ public:
 
 	friend void to_json(nlohmann::json& j, const StringIdChatParameter& p);
 
-	virtual String toString() const override {
-		return StringId::getFullPath();
-	}
+	virtual String toString() const override;
 
-	StringIdChatParameter& operator=(const StringIdChatParameter& id) {
-		if (this == &id)
-			return *this;
-
-		TT = id.TT;
-		TU = id.TU;
-		TO = id.TO;
-		NU = id.NU;
-
-		DI = id.DI;
-		DF = id.DF;
-
-		unknownByte = id.unknownByte;
-
-		ChatParameter::operator=(id);
-		StringId::operator=(id);
-
-		return *this;
-	}
+	StringIdChatParameter& operator=(const StringIdChatParameter& id);
 
 	void parse(Message* message) override;
 
@@ -106,9 +86,7 @@ public:
 	* @param file stf file name that contains the stf string
 	* @param stringid stringid of stf string
 	*/
-	inline void setTT(const String& file, const String& stringid) {
-		TT.set(file, stringid);
-	}
+	void setTT(const String& file, const String& stringid);
 
 	/**
 	* Sets the TU variable of a stf string
@@ -131,9 +109,7 @@ public:
 	* @param file stf file name that contains the stf string
 	* @param stringid stringid of stf string
 	*/
-	inline void setTU(const String& file, const String& stringid) {
-		TU.set(file, stringid);
-	}
+	void setTU(const String& file, const String& stringid);
 
 	/**
 	* Sets the TO variable of a stf string
@@ -156,9 +132,7 @@ public:
 	* @param file stf file name that contains the stf string
 	* @param stringid stringid of stf string
 	*/
-	inline void setTO(const String& file, const String& stringid) {
-		TO.set(file, stringid);
-	}
+	void setTO(const String& file, const String& stringid);
 
 	/**
 	* Sets the DI variable
@@ -166,9 +140,7 @@ public:
 	* @post { DI variable is set }
 	* @param i value for DI
 	*/
-	inline void setDI(uint32 i) {
-		DI = i;
-	}
+	void setDI(uint32 i);
 
 	/**
 	* Sets the DF variable
@@ -176,9 +148,7 @@ public:
 	* @post { DF variable is set }
 	* @param f value for DF
 	*/
-	inline void setDF(float f) {
-		DF = f;
-	}
+	void setDF(float f);
 
 	/**
 	* Sets the NU variable of a stf string
@@ -194,37 +164,21 @@ public:
 		NU.set(obj);
 	}
 
-	inline void setUnknownByte(uint16 val) {
-		unknownByte = val;
-	}
+	void setUnknownByte(uint16 val);
 
-	StringIdParameter* getTT() {
-		return &TT;
-	}
+	StringIdParameter* getTT();
 
-	StringIdParameter* getTU() {
-		return &TU;
-	}
+	StringIdParameter* getTU();
 
-	StringIdParameter* getTO() {
-		return &TO;
-	}
+	StringIdParameter* getTO();
 
-	const StringIdParameter* getTT() const {
-		return &TT;
-	}
+	const StringIdParameter* getTT() const;
 
-	const StringIdParameter* getTU() const {
-		return &TU;
-	}
+	const StringIdParameter* getTU() const;
 
-	const StringIdParameter* getTO() const {
-		return &TO;
-	}
+	const StringIdParameter* getTO() const;
 
-	const StringIdParameter* getNU() const {
-		return &NU;
-	}
+	const StringIdParameter* getNU() const;
 };
 
 }

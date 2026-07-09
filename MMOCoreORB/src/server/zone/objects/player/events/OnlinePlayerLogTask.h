@@ -17,22 +17,9 @@ namespace events {
 
 class OnlinePlayerLogTask : public Task {
 	public:
-	OnlinePlayerLogTask() : Task() {
-	}
+	OnlinePlayerLogTask();
 
-	void run() {
-		auto server = ServerCore::getZoneServer();
-
-		if (server == nullptr)
-				return;
-
-		Reference<PlayerManager*> playerManager = server->getPlayerManager();
-
-		if (playerManager == nullptr)
-			return;
-
-		playerManager->logOnlinePlayers(false);
-	}
+	void run();
 };
 
 }

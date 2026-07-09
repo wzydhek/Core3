@@ -11,14 +11,8 @@ class PlayerObjectDeltaMessage6 : public DeltaMessage {
 	PlayerObject* play;
 
 public:
-	PlayerObjectDeltaMessage6(PlayerObject* pl)
-			: DeltaMessage(pl->getObjectID(), 0x504C4159, 6) {
-		play = pl;
-	}
+	PlayerObjectDeltaMessage6(PlayerObject* pl);
 
-	void setAdminLevel(uint8 level) {
-		startUpdate(1);
-		insertByte(level);
-	}
+	void setAdminLevel(uint8 level);
 
 };

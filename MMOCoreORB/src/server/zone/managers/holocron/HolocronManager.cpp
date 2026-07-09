@@ -14,6 +14,16 @@
 #include "server/login/account/AccountManager.h"
 #include "BugCategory.h"
 
+HolocronManager::HolocronManager(ZoneProcessServer* pserv) {
+	processor = pserv;
+
+	setLoggingName("HolocronManager");
+	setGlobalLogging(false);
+	setLogging(false);
+
+	loadBugCategories();
+}
+
 void HolocronManager::loadBugCategories() {
 	return;
 

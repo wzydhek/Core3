@@ -12,35 +12,7 @@
 
 class ColorArmorSuiCallback : public SuiCallback {
 public:
-	ColorArmorSuiCallback(ZoneServer* serv) : SuiCallback(serv) {
-	}
+	ColorArmorSuiCallback(ZoneServer* serv);
 
-	void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!sui->isColorPicker() || cancelPressed)
-			return;
-
-		if (!creature->isPlayerCreature())
-			return;
-
-		SuiColorBox* cBox = cast<SuiColorBox*>(sui);
-
-		int index = Integer::valueOf(args->get(0).toString());
-
-		String palette = cBox->getColorPalette();
-
-		ManagedReference<SceneObject*> armorRehue = cBox->getUsingObject().get();
-
-		if (armorRehue == nullptr)
-			return;
-
-		ManagedReference<TangibleObject*> armorRehueTano = armorRehue->asTangibleObject();
-
-		if (armorRehueTano != nullptr) {
-			Locker locker(armorRehueTano, creature);
-
-			armorRehueTano->setCustomizationVariable(palette, index, true);
-		}
-	}
+	void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args);
 };

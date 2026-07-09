@@ -16,24 +16,21 @@ namespace nodespace {
 
 class SequenceSpace : public CompositeSpace {
 public:
-	SequenceSpace(const String& className, const uint32 id, const LuaObject& args) : CompositeSpace(className, id, args) {
-	}
+	SequenceSpace(const String& className, const uint32 id, const LuaObject& args);
 
 	virtual BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 class ParallelSequenceSpace : public CompositeSpace {
 public:
-	ParallelSequenceSpace(const String& className, const uint32 id, const LuaObject& args) : CompositeSpace(className, id, args) {
-	}
+	ParallelSequenceSpace(const String& className, const uint32 id, const LuaObject& args);
 
 	virtual BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 class RandomSequenceSpace : public CompositeSpace {
 public:
-	RandomSequenceSpace(const String& className, const uint32 id, const LuaObject& args) : CompositeSpace(className, id, args) {
-	}
+	RandomSequenceSpace(const String& className, const uint32 id, const LuaObject& args);
 
 	virtual BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
@@ -45,3 +42,5 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace::nodespace;

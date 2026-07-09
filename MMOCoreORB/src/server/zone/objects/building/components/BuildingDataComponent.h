@@ -12,17 +12,11 @@
 class BuildingDataComponent : public DataObjectComponent {
 
 public:
-	BuildingDataComponent(){
-	}
+	BuildingDataComponent();
 
-	virtual ~BuildingDataComponent(){
-	}
+	virtual ~BuildingDataComponent();
 
-	virtual bool isGCWBaseData(){
-		return false;
-	}
+	virtual bool isGCWBaseData();
 
-	bool isBuildingData(){
-		return true;
-	}
+	bool isBuildingData();
 };

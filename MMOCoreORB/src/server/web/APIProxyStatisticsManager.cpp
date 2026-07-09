@@ -22,7 +22,10 @@
 namespace server {
  namespace web3 {
 
-void APIProxyStatisticsManager::handleGET(APIRequest& apiRequest) {
+APIProxyStatisticsManager::APIProxyStatisticsManager() : BaseAPIProxy("StatisticsManager") {
+ }
+
+ void APIProxyStatisticsManager::handleGET(APIRequest& apiRequest) {
 	JSONSerializationType metadata;
 
 	Time now;

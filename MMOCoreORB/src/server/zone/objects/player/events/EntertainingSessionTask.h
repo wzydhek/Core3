@@ -20,18 +20,9 @@ namespace events {
 class EntertainingSessionTask : public Task {
 	ManagedWeakReference<EntertainingSession*> session;
 public:
-	EntertainingSessionTask(EntertainingSession* sess) {
-		session = sess;
-	}
+	EntertainingSessionTask(EntertainingSession* sess);
 
-	void run() {
-		ManagedReference<EntertainingSession*> strongRef = session.get();
-
-		if (strongRef == nullptr)
-			return;
-
-		strongRef->activateAction();
-	}
+	void run();
 };
 
 

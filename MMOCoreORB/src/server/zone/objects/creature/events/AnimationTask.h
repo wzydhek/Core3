@@ -13,14 +13,7 @@ class AnimationTask : public Task {
 	ManagedReference<CreatureObject*> creature;
 	String animation;
 public:
-	AnimationTask(CreatureObject* creo, const String& anim) {
-		creature = creo;
-		animation = anim;
-	}
+	AnimationTask(CreatureObject* creo, const String& anim);
 
-	void run() {
-		Locker locker(creature);
-
-		creature->doAnimation(animation);
-	}
+	void run();
 };

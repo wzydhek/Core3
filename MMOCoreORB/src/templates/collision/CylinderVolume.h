@@ -14,10 +14,11 @@ protected:
 public:
 	Sphere base;
 	float height;
-	CylinderVolume() : bbox(Vector3(0, 0, 0), Vector3(0, 0, 0)), base(Vector3(0, 0, 0), 0), height(0) { }
-	virtual const AABB& getBoundingBox() const {
-		return bbox;
-	}
+
+	CylinderVolume();
+
+	virtual const AABB& getBoundingBox() const;
+
 	virtual void read(IffStream *iff);
 
 #ifdef OSG_RENDERER

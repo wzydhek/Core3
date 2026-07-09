@@ -8,29 +8,15 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/zone/managers/player/PlayerManager.h"
 
 class UnAcceptTransactionMessageCallback : public MessageCallback {
 
 
 public:
-	UnAcceptTransactionMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server) {
+	UnAcceptTransactionMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		PlayerManager* playerManager = server->getZoneServer()->getPlayerManager();
-		playerManager->handleUnAcceptTransactionMessage(player);
-	}
+	void run();
 
 };

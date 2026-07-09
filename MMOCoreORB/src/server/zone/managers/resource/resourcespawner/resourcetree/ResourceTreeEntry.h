@@ -11,7 +11,6 @@
 #pragma once
 
 #include "ResourceAttribute.h"
-#include "ResourceTreeNode.h"
 
 /**
  * The ResourceTreeEntry class represents an
@@ -80,446 +79,279 @@ public:
 	 * Constructor
 	 * \param inType The type of resource this in in stfname
 	 */
-	ResourceTreeEntry(const String& inType) {
-		type = inType;
-
-		recycled = false;
-		children = false;
-		jtl = false;
-
-		maxtype = 0;
-		mintype = 0;
-		minpool = 0;
-		maxpool = 0;
-
-		resourceContainerType = "";
-		randomNameClass = "";
-
-		zoneRestriction = "";
-
-		surveyToolType = -1;
-
-		recycleToolType = -1;
-
-		containerCRC = 0;
-
-		attributeMap.setNullValue(nullptr);
-
-		myNode = nullptr;
-	}
+	ResourceTreeEntry(const String& inType);
 
 	/**
 	 * Deconstructor
 	 */
-	~ResourceTreeEntry() {
-		for(int i = 0; i < attributeMap.size(); ++i)
-			delete attributeMap.get(i);
-	}
+	~ResourceTreeEntry();
 
 	/**
 	 * Sets the node this entry is on
 	 * \param node Tree Node
 	 */
-	void setMyNode(ResourceTreeNode* node) {
-		myNode = node;
-	}
+	void setMyNode(ResourceTreeNode* node);
 
 	/**
 	 * Gets the node this entry is on
 	 * \return Node this entry is on
 	 */
-	ResourceTreeNode* getMyNode() {
-		return myNode;
-	}
+	ResourceTreeNode* getMyNode();
 
-	const ResourceTreeNode* getMyNode() const {
-		return myNode;
-	}
+	const ResourceTreeNode* getMyNode() const;
 
 	/**
 	 * Adds class to classList
 	 * \param newclass New class string to add
 	 */
-	void addClass(const String newclass) {
-		classList.add(newclass);
-	}
+	void addClass(const String newclass);
 
 	/**
 	 * Adds stfClass to stfClassList
 	 * \param newclass New class string to add
 	 */
-	void addStfClass(const String newclass) {
-
-		stfClassList.add(newclass);
-	}
+	void addStfClass(const String newclass);
 
 	/**
 	 * Gets class based in Vector index
 	 * \param index index
 	 * \return Class at index
 	 */
-	String getClass(const int index) const {
-		if(index <= classList.size())
-			return classList.get(index);
-		else
-			return "";
-	}
+	String getClass(const int index) const;
 
 	/**
 	 * Gets stfClass based on vector index
 	 * \param index index
 	 * \return StfClass at index
 	 */
-	String getStfClass(const int index) const {
-		if(index <= stfClassList.size())
-			return stfClassList.get(index);
-		else
-			return "";
-	}
+	String getStfClass(const int index) const;
 
 	/**
 	 * Gets size on classList
 	 * \return classList size
 	 */
-	int getClassCount() const {
-		return classList.size();
-	}
+	int getClassCount() const;
 
 	/**
 	 * Gets size of stfClassList
 	 * \return stfClassList size
 	 */
-	int getStfClassCount() const {
-		return stfClassList.size();
-	}
+	int getStfClassCount() const;
 
 	/**
 	 * Gets the Final Class name
 	 * \return Final name of entry
 	 */
-	String getFinalClass() const {
-		if(classList.size() > 0)
-			return classList.get(classList.size() - 1);
-		else
-			return "";
-	}
+	String getFinalClass() const;
 
 	/**
 	 * Denotes if entry is organic
 	 * \return Is value organic
 	 */
-	bool isOrganic() const {
-		if(classList.size() > 0)
-			return classList.get(0) == "Organic";
-		else
-			return false;
-	}
+	bool isOrganic() const;
 
 	/**
 	 * Adds an attribute to this entry
 	 * \param attrib ResourceAttribute to add
 	 */
-	void addAttribute(ResourceAttribute* attrib) {
-		attributeMap.put(attrib->getName(), attrib);
-	}
+	void addAttribute(ResourceAttribute* attrib);
 
 	/**
 	 * Gets attribute
 	 * \param index index of attribute
 	 * \return ResourceAttibute at index
 	 */
-	const ResourceAttribute* getAttribute(const String& attrib) const {
-		return attributeMap.get(attrib);
-	}
+	const ResourceAttribute* getAttribute(const String& attrib) const;
 
 	/**
 	 * Gets attribute
 	 * \param index index of attribute
 	 * \return ResourceAttibute at index
 	 */
-	const ResourceAttribute* getAttribute(const int index) const {
-		return attributeMap.get(index);
-	}
+	const ResourceAttribute* getAttribute(const int index) const;
 
 	/**
 	 * Gets number of attributes
 	 * \return Number of attributes
 	 */
-	int getAttributeCount() const {
-		return attributeMap.size();
-	}
+	int getAttributeCount() const;
 
 	/**
 	 * Gets maxpool
 	 * \return maxpool
 	 */
-	int getMaxpool() const {
-		return maxpool;
-	}
+	int getMaxpool() const;
 
 	/**
 	 * Gets maxtype
 	 * \return maxtype
 	 */
-	int getMaxtype() const {
-		return maxtype;
-	}
+	int getMaxtype() const;
 
 	/**
 	 * Gets minpool
 	 * \return minpool
 	 */
-	int getMinpool() const {
-		return minpool;
-	}
+	int getMinpool() const;
 
 	/**
 	 * Gets mintype
 	 * \return mintype
 	 */
-	int getMintype() const {
-		return mintype;
-	}
+	int getMintype() const;
 
 	/**
 	 * Gets type
 	 * \return type
 	 */
-	const String& getType() const {
-		return type;
-	}
+	const String& getType() const;
 
 	/**
 	 * Gets randomNameClass
 	 * \return randomNameClass
 	 */
-	const String getRandomNameClass() const {
-		return randomNameClass;
-	}
+	const String getRandomNameClass() const;
 
 	/**
 	 * Gets zoneRestriction
 	 * \return zoneRestriction
 	 */
-	const String& getZoneRestriction() const {
-		return zoneRestriction;
-	}
+	const String& getZoneRestriction() const;
 
 	/**
 	 * Gets recycled
 	 * \return recycled
 	 */
-	bool isRecycled() const	{
-		return recycled == true;
-	}
+	bool isRecycled() const;
 
 	/**
 	 * Gets resourceContainerType
 	 * \return resourceContainerType
 	 */
-	const String& getResourceContainerType() const {
-		return resourceContainerType;
-	}
+	const String& getResourceContainerType() const;
 
 	/**
 	 * sets maxpool
 	 * \param maxpool
 	 */
-	void setMaxpool(int maxpool) {
-		this->maxpool = maxpool;
-	}
+	void setMaxpool(int maxpool);
 
 	/**
 	 * sets maxtype
 	 * \param maxtype
 	 */
-	void setMaxtype(int maxtype) {
-		this->maxtype = maxtype;
-	}
+	void setMaxtype(int maxtype);
 
 	/**
 	 * sets minpool
 	 * \param minpool
 	 */
-	void setMinpool(int minpool) {
-		this->minpool = minpool;
-	}
+	void setMinpool(int minpool);
 
 	/**
 	 * sets mintype
 	 * \param mintype
 	 */
-	void setMintype(int mintype) {
-		this->mintype = mintype;
-	}
+	void setMintype(int mintype);
 
 	/**
 	 * sets type
 	 * \param type
 	 */
-	void setType(const String& name) {
-		this->type = name;
-	}
+	void setType(const String& name);
 
 	/**
 	 * sets randomNameClass
 	 * \param randomNameClass
 	 */
-	void setRandomNameClass(const String& randomNameClass) {
-		this->randomNameClass = randomNameClass;
-	}
+	void setRandomNameClass(const String& randomNameClass);
 
 	/**
 	 * sets recycled
 	 * \param recycled
 	 */
-	void setRecycled(bool recycled)	{
-		this->recycled = recycled;
-	}
+	void setRecycled(bool recycled);
 
 	/**
 	 * sets resourceContainerType
 	 * \param resourceContainerType
 	 */
-	void setResourceContainerType(const String& resourceContainerType) {
-		this->resourceContainerType = resourceContainerType;
-		containerCRC = resourceContainerType.hashCode();
-	}
+	void setResourceContainerType(const String& resourceContainerType);
 
 	/**
 	 * Does entry have children
 	 * \return children
 	 */
-	bool hasChildren() const {
-		return children;
-	}
+	bool hasChildren() const;
 
 	/**
 	 * sets children
 	 * \param child
 	 */
-	void setChildren(bool child) {
-		children = child;
-	}
+	void setChildren(bool child);
 
 	/**
 	 * sets zoneRestriction
 	 * \param zone
 	 */
-	void setZoneRestriction(const String& zone) {
-		zoneRestriction = zone;
-	}
+	void setZoneRestriction(const String& zone);
 
 	/**
 	 * Lets us know if it is zonerestricted type
 	 * \return isZoneRestricted
 	 */
-	bool isZoneRestricted() const {
-		return zoneRestriction != "";
-	}
+	bool isZoneRestricted() const;
 
 	/**
 	 * sets jtl
 	 * \param j
 	 */
-	void setJTL(bool j) {
-		jtl = j;
-	}
+	void setJTL(bool j);
 
 	/**
 	 * Is JTL?
 	 * \return is Jtl resource
 	 */
-	bool isJTL() const {
-		return jtl;
-	}
+	bool isJTL() const;
 
 	/**
 	 * Sets surveyToolType
 	 * \param type
 	 */
-	void setSurveyToolType(int type) {
-		surveyToolType = type;
-	}
+	void setSurveyToolType(int type);
 
 	/**
 	 * Gets surveyToolType
 	 * \return surveyToolType
 	 */
-	int getSurveyToolType() const {
-		return surveyToolType;
-	}
+	int getSurveyToolType() const;
 
 	/**
 	 * Sets recycleToolType
 	 * \param type
 	 */
-	void setRecycleToolType(int type) {
-		recycleToolType = type;
-	}
+	void setRecycleToolType(int type);
 
 	/**
 	 * Gets recycleToolType
 	 * \return recycleToolType
 	 */
-	int getRecycleToolType() const {
-		return recycleToolType;
-	}
+	int getRecycleToolType() const;
 
 	/**
 	 * Gets containerCRC
 	 * \return containerCRC
 	 */
-	uint32 getContainerCRC() const {
-		return containerCRC;
-	}
+	uint32 getContainerCRC() const;
 
 	/**
 	 * Tells us is Entry if of type
 	 * \param type
 	 */
-	bool isType(const String& type) const {
-		for (int i = 0; i < stfClassList.size(); ++i) {
-
-			if (stfClassList.get(i) == type)
-				return true;
-		}
-		for (int i = 0; i < classList.size(); ++i) {
-
-			if (classList.get(i) == type)
-				return true;
-		}
-		return false;
-	}
+	bool isType(const String& type) const;
 
 	/**
 	 * Outputs visual representation of class
 	 */
-	void toString() const {
-
-		System::out << "************ Resource Tree Entry ********************\n";
-		System::out << "Type = " << type << endl;
-		for(int i = 0; i < classList.size(); ++i)
-			System::out << "Class" << i << " = " << classList.get(i) << endl;
-
-		for(int i = 0; i < stfClassList.size(); ++i)
-			System::out << "STFClass" << i << " = " << stfClassList.get(i) << endl;
-
-
-		System::out << "Max Types = " << maxtype << endl;
-		System::out << "Min Types = " << mintype << endl;
-		System::out << "Min Pools = " << minpool << endl;
-		System::out << "Max Pools = " << maxpool << endl;
-
-		for(int i = 0; i < attributeMap.size(); ++i)
-			System::out << attributeMap.get(i)->getName() << ": "
-			<< attributeMap.get(i)->getMinimum()  << " - "
-			<< attributeMap.get(i)->getMaximum() << endl;
-
-		System::out << "Recycled = " << recycled  << endl;
-		System::out << "Resource Container Type = " << resourceContainerType  << endl;
-		System::out << "Random Name Class = " << randomNameClass  << endl;
-		System::out << "Zone Restriction = " << zoneRestriction  << endl;
-		System::out << "Survey Tool Type = " << surveyToolType  << endl;
-	}
+	void toString() const;
 };

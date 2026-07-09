@@ -7,6 +7,40 @@
 
 #include "SharedWeaponObjectTemplate.h"
 
+SharedWeaponObjectTemplate::SharedWeaponObjectTemplate() {
+	damageType = 0;
+
+	armorPiercing = 0;
+
+	healthAttackCost = 0;
+	actionAttackCost = 0;
+	mindAttackCost = 0;
+	forceCost = 0.0;
+
+	pointBlankAccuracy = 0;
+	pointBlankRange = 0;
+
+	idealRange = 0;
+	idealAccuracy = 0;
+
+	maxRange = 0;
+	maxRangeAccuracy = 0;
+
+	minDamage = 0;
+	maxDamage = 0;
+
+	woundsRatio = 0;
+
+	area = 0;
+
+	attackSpeed = 0;
+
+	weaponType = 0xFFFFFFFF;
+}
+
+SharedWeaponObjectTemplate::~SharedWeaponObjectTemplate() {
+}
+
 void SharedWeaponObjectTemplate::parseVariableData(const String& varName, LuaObject* templateData) {
 	lua_State* state = templateData->getLuaState();
 
@@ -238,4 +272,248 @@ void SharedWeaponObjectTemplate::readObject(LuaObject* templateData) {
 
 	combatSpam = templateData->getStringField("combatSpam");
 	animationType = templateData->getStringField("animationType");
+}
+
+String SharedWeaponObjectTemplate::getXpType() const {
+	return xpType;
+}
+
+int SharedWeaponObjectTemplate::getActionAttackCost() const {
+	return actionAttackCost;
+}
+
+int SharedWeaponObjectTemplate::getArea() const {
+	return area;
+}
+
+int SharedWeaponObjectTemplate::getArmorPiercing() const {
+	return armorPiercing;
+}
+
+float SharedWeaponObjectTemplate::getAttackSpeed() const {
+	return attackSpeed;
+}
+
+float SharedWeaponObjectTemplate::getForceCost() const {
+	return forceCost;
+}
+
+int SharedWeaponObjectTemplate::getHealthAttackCost() const {
+	return healthAttackCost;
+}
+
+int SharedWeaponObjectTemplate::getIdealAccuracy() const {
+	return idealAccuracy;
+}
+
+int SharedWeaponObjectTemplate::getIdealRange() const {
+	return idealRange;
+}
+
+int SharedWeaponObjectTemplate::getMaxDamage() const {
+	return maxDamage;
+}
+
+int SharedWeaponObjectTemplate::getMaxRange() const {
+	return maxRange;
+}
+
+int SharedWeaponObjectTemplate::getMaxRangeAccuracy() const {
+	return maxRangeAccuracy;
+}
+
+int SharedWeaponObjectTemplate::getMinDamage() const {
+	return minDamage;
+}
+
+int SharedWeaponObjectTemplate::getMindAttackCost() const {
+	return mindAttackCost;
+}
+
+int SharedWeaponObjectTemplate::getPointBlankAccuracy() const {
+	return pointBlankAccuracy;
+}
+
+int SharedWeaponObjectTemplate::getPointBlankRange() const {
+	return pointBlankRange;
+}
+
+float SharedWeaponObjectTemplate::getWoundsRatio() const {
+	return woundsRatio;
+}
+
+void SharedWeaponObjectTemplate::setActionAttackCost(int actionAttackCost) {
+	this->actionAttackCost = actionAttackCost;
+}
+
+void SharedWeaponObjectTemplate::setArea(int area) {
+	this->area = area;
+}
+
+void SharedWeaponObjectTemplate::setArmorPiercing(int armorPiercing) {
+	this->armorPiercing = armorPiercing;
+}
+
+void SharedWeaponObjectTemplate::setAttackSpeed(float attackSpeed) {
+	this->attackSpeed = attackSpeed;
+}
+
+void SharedWeaponObjectTemplate::setForceCost(float forceCost) {
+	this->forceCost = forceCost;
+}
+
+void SharedWeaponObjectTemplate::setHealthAttackCost(int healthAttackCost) {
+	this->healthAttackCost = healthAttackCost;
+}
+
+void SharedWeaponObjectTemplate::setIdealAccuracy(int idealAccuracy) {
+	this->idealAccuracy = idealAccuracy;
+}
+
+void SharedWeaponObjectTemplate::setIdealRange(int idealRange) {
+	this->idealRange = idealRange;
+}
+
+void SharedWeaponObjectTemplate::setMaxDamage(int maxDamage) {
+	this->maxDamage = maxDamage;
+}
+
+void SharedWeaponObjectTemplate::setMaxRange(int maxRange) {
+	this->maxRange = maxRange;
+}
+
+void SharedWeaponObjectTemplate::setMaxRangeAccuracy(int maxRangeAccuracy) {
+	this->maxRangeAccuracy = maxRangeAccuracy;
+}
+
+void SharedWeaponObjectTemplate::setMinDamage(int minDamage) {
+	this->minDamage = minDamage;
+}
+
+void SharedWeaponObjectTemplate::setMindAttackCost(int mindAttackCost) {
+	this->mindAttackCost = mindAttackCost;
+}
+
+void SharedWeaponObjectTemplate::setPointBlankAccuracy(int pointBlankAccuracy) {
+	this->pointBlankAccuracy = pointBlankAccuracy;
+}
+
+void SharedWeaponObjectTemplate::setPointBlankRange(int pointBlankRange) {
+	this->pointBlankRange = pointBlankRange;
+}
+
+void SharedWeaponObjectTemplate::setWoundsRatio(float woundsRatio) {
+	this->woundsRatio = woundsRatio;
+}
+
+const Vector<String>* SharedWeaponObjectTemplate::getCertificationsRequired() const {
+	return &certificationsRequired;
+}
+
+const Vector<String>* SharedWeaponObjectTemplate::getCreatureAccuracyModifiers() const {
+	return &creatureAccuracyModifiers;
+}
+
+const Vector<String>* SharedWeaponObjectTemplate::getCreatureAimModifiers() const {
+	return &creatureAimModifiers;
+}
+
+const Vector<String>* SharedWeaponObjectTemplate::getDamageModifiers() const {
+	return &damageModifiers;
+}
+
+int SharedWeaponObjectTemplate::getDamageType() const {
+	return damageType;
+}
+
+const Vector<String>* SharedWeaponObjectTemplate::getDefenderDefenseModifiers() const {
+	return &defenderDefenseModifiers;
+}
+
+const Vector<String>* SharedWeaponObjectTemplate::getDefenderSecondaryDefenseModifiers() const {
+	return &defenderSecondaryDefenseModifiers;
+}
+
+const Vector<String>* SharedWeaponObjectTemplate::getDefenderToughnessModifiers() const {
+	return &defenderToughnessModifiers;
+}
+
+const Vector<String>* SharedWeaponObjectTemplate::getSpeedModifiers() const {
+	return &speedModifiers;
+}
+
+void SharedWeaponObjectTemplate::setCertificationsRequired(Vector<String> certificationsRequired) {
+	this->certificationsRequired = certificationsRequired;
+}
+
+void SharedWeaponObjectTemplate::setCreatureAccuracyModifiers(Vector<String> creatureAccuracyModifiers) {
+	this->creatureAccuracyModifiers = creatureAccuracyModifiers;
+}
+
+void SharedWeaponObjectTemplate::setCreatureAimModifiers(Vector<String> creatureAimModifiers) {
+	this->creatureAimModifiers = creatureAimModifiers;
+}
+
+void SharedWeaponObjectTemplate::setDamageModifiers(Vector<String> damageModifiers) {
+	this->damageModifiers = damageModifiers;
+}
+
+void SharedWeaponObjectTemplate::setDamageType(int damageType) {
+	this->damageType = damageType;
+}
+
+void SharedWeaponObjectTemplate::setDefenderDefenseModifiers(Vector<String> defenderDefenseModifiers) {
+	this->defenderDefenseModifiers = defenderDefenseModifiers;
+}
+
+void SharedWeaponObjectTemplate::setDefenderSecondaryDefenseModifiers(Vector<String> defenderSecondaryDefenseModifiers) {
+	this->defenderSecondaryDefenseModifiers = defenderSecondaryDefenseModifiers;
+}
+
+void SharedWeaponObjectTemplate::setDefenderToughnessModifiers(Vector<String> defenderToughnessModifiers) {
+	this->defenderToughnessModifiers = defenderToughnessModifiers;
+}
+
+void SharedWeaponObjectTemplate::setSpeedModifiers(Vector<String> speedModifiers) {
+	this->speedModifiers = speedModifiers;
+}
+
+int SharedWeaponObjectTemplate::getAttackType() const {
+	return attackType;
+}
+
+const String& SharedWeaponObjectTemplate::getWeaponEffect() const {
+	return weaponEffect.get();
+}
+
+int SharedWeaponObjectTemplate::getWeaponEffectIndex() const {
+	return weaponEffectIndex;
+}
+
+void SharedWeaponObjectTemplate::setAttackType(int attackType) {
+	this->attackType = attackType;
+}
+
+void SharedWeaponObjectTemplate::setWeaponEffect(String weaponEffect) {
+	this->weaponEffect = weaponEffect;
+}
+
+void SharedWeaponObjectTemplate::setWeaponEffectIndex(int weaponEffectIndex) {
+	this->weaponEffectIndex = weaponEffectIndex;
+}
+
+const String& SharedWeaponObjectTemplate::getCombatSpam() const {
+	return combatSpam;
+}
+
+const String& SharedWeaponObjectTemplate::getAnimationType() const {
+	return animationType;
+}
+
+uint32 SharedWeaponObjectTemplate::getWeaponType() const {
+	return weaponType;
+}
+
+void SharedWeaponObjectTemplate::setWeaponType(uint32 weaponType) {
+	this->weaponType = weaponType;
 }

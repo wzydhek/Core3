@@ -28,12 +28,12 @@ public:
 	String getModuleName() const;
 	void initializeTransientMembers();
 	void fillAttributeList(AttributeListMessage* msg, CreatureObject* droid);
-	int getBatteryDrain() { return 0;}
+	int getBatteryDrain();
 	String toString() const;
 	// crafting droid module specific
 	void onCall();
 	void onStore();
-	bool isStackable() { return true; }
+	bool isStackable();
 	void copy(BaseDroidModuleComponent* other);
 	void addToStack(BaseDroidModuleComponent* other);
 	void updateCraftingValues(CraftingValues* values, bool firstUpdate);
@@ -45,16 +45,11 @@ public:
 	bool toBinaryStream(ObjectOutputStream* stream);
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 	void decrementTrap();
-	ManagedReference<TangibleObject*> getTrap() { return trap;}
-	float getTrapBonus() { return trapBonus;}
+	ManagedReference<TangibleObject*> getTrap();
+	float getTrapBonus();
 
-	void writeJSON(nlohmann::json& j) const {
-		BaseDroidModuleComponent::writeJSON(j);
+	void writeJSON(nlohmann::json& j) const;
 
-		SERIALIZE_JSON_MEMBER(trapBonus);
-		SERIALIZE_JSON_MEMBER(modules);
-		SERIALIZE_JSON_MEMBER(trap);
-	}
 private:
 	int writeObjectMembers(ObjectOutputStream* stream);
 	bool readObjectMember(ObjectInputStream* stream, const String& name);

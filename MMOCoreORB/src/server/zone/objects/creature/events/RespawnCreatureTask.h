@@ -16,20 +16,7 @@ class RespawnCreatureTask : public Task {
 	int level;
 
 public:
-	RespawnCreatureTask(AiAgent* cr, Zone* zn, int level) {
-		creature = cr;
-		zone = zn;
-		this->level = level;
+	RespawnCreatureTask(AiAgent* cr, Zone* zn, int level);
 
-		setCustomTaskQueue(zone->getZoneName());
-	}
-
-	void run() {
-		if (creature == nullptr)
-			return;
-
-		Locker locker(creature);
-
-		creature->respawn(zone, level);
-	}
+	void run();
 };

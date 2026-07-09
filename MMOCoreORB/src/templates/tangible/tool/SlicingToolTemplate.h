@@ -14,22 +14,12 @@ private:
 	float effectiveness;
 
 public:
-	SlicingToolTemplate() {
-		effectiveness = 0;
-	}
+	SlicingToolTemplate();
 
-	~SlicingToolTemplate() {
+	~SlicingToolTemplate();
 
-	}
+	void readObject(LuaObject* templateData) override;
 
-	void readObject(LuaObject* templateData) override {
-		SharedTangibleObjectTemplate::readObject(templateData);
-
-		effectiveness = templateData->getFloatField("effectiveness");
-	}
-
-	float getEffectiveness() const {
-		return effectiveness;
-	}
+	float getEffectiveness() const;
 
 };

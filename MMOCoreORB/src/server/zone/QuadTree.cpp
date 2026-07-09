@@ -62,6 +62,10 @@ Object* QuadTree::clone(void* mem) {
 	return TransactionalObjectCloner<QuadTree>::clone(this);
 }
 
+void QuadTree::free() {
+	TransactionalMemoryManager::instance()->destroy(this);
+}
+
 void QuadTree::setSize(float minx, float miny, float maxx, float maxy) {
 	//delete root;
 
@@ -771,4 +775,12 @@ int QuadTree::_inRange(const Reference<TreeNode*>& node, float x, float y, float
 	}
 
 	return count;
+}
+
+void QuadTree::setLogging(bool doLog) {
+	logTree = doLog;
+}
+
+bool QuadTree::doLog() {
+	return logTree;
 }

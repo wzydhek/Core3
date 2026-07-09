@@ -12,24 +12,13 @@
 class BasicRangedIntCustomizationVariable : public RangedIntCustomizationVariable {
 
 public:
-	BasicRangedIntCustomizationVariable(int min, int max, int def) {
-		minValueInclusive = min;
-		maxValueExclusive = max;
-		defaultValue = def;
-	}
+	BasicRangedIntCustomizationVariable(int min, int max, int def);
 
-	BasicRangedIntCustomizationVariable(const BasicRangedIntCustomizationVariable& m) : RangedIntCustomizationVariable(m){
-	}
+	BasicRangedIntCustomizationVariable(const BasicRangedIntCustomizationVariable& m);
 
-	inline int getMinValueInclusive() {
-		return minValueInclusive;
-	}
+	int getMinValueInclusive();
 
-	inline int getMaxValueExclusive() {
-		return maxValueExclusive;
-	}
+	int getMaxValueExclusive();
 
-	inline int getDefaultValue() {
-		return defaultValue;
-	}
+	int getDefaultValue();
 };

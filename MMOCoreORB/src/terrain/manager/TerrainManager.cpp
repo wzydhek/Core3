@@ -189,3 +189,51 @@ float TerrainManager::getHeight(float x, float y) {
 	return getUnCachedHeight(x, y);
 #endif
 }
+
+bool TerrainManager::getWaterHeight(float x, float y, float& waterHeight) const {
+	return terrainData->getWater(x, y, waterHeight);
+}
+
+float TerrainManager::getMin() const {
+	if (terrainData) {
+		return terrainData->getSize() / 2 * -1;
+	} else {
+		return -256;
+	}
+}
+
+float TerrainManager::getMax() const {
+	if (terrainData) {
+		return terrainData->getSize() / 2;
+	} else {
+		return 256;
+	}
+}
+
+float TerrainManager::getSize() const {
+	return terrainData->getSize();
+}
+
+int TerrainManager::getCacheHitCount() const {
+	return heightCache->getHitCount();
+}
+
+int TerrainManager::getCacheMissCount() const {
+	return heightCache->getMissCount();
+}
+
+int TerrainManager::getCacheClearCount() const {
+	return heightCache->getClearCount();
+}
+
+int TerrainManager::getCacheClearHeightsCount() const {
+	return heightCache->getClearHeightsCount();
+}
+
+int TerrainManager::getCachedValuesCount() const {
+	return heightCache->getSize();
+}
+
+int TerrainManager::getCacheEvictCount() const {
+	return heightCache->getEvictCount();
+}

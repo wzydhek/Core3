@@ -171,3 +171,15 @@ void TerrainCache::clear(TerrainGenerator* generator) {
 		delete entry;
 	}
 }
+
+int TerrainCache::getClearCount() const {
+	return clearCount;
+}
+
+int TerrainCache::getClearHeightsCount() const {
+	return clearHeightsCount;
+}
+
+int TerrainCache::getEvictCount() const {
+	return evictCount;
+}

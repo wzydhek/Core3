@@ -35,6 +35,14 @@ MapFractal::MapFractal() {
 	setSeed(0);
 }
 
+MapFractal::~MapFractal() {
+	delete noise;
+	noise = nullptr;
+
+	delete rand;
+	rand = nullptr;
+}
+
 float MapFractal::getNoise(float x, float y, int i, int j) {
 	float v39 = x * xFrequency;
 	float v41 = y * yFrequency;
@@ -367,4 +375,67 @@ void MapFractal::setSeed(int seed) {
 
 	noise = new PerlinNoise(rand);
 	noise->init();
+}
+
+void MapFractal::setBias(int bias) {
+	this->bias = bias; // bias
+}
+
+void MapFractal::setBiasValue(float value) {
+	biasValue = value; // bias value
+}
+
+void MapFractal::setGainType(int type) {
+	gainType = type; // gain type
+}
+
+void MapFractal::setGainValue(float val) {
+	gainValue = val; // gain value
+}
+
+void MapFractal::setOctaves(int octaves) {
+	this->octaves = octaves; // octaves
+}
+
+void MapFractal::setOctavesParam(float param) {
+	octavesParam = param; // octaves param
+}
+
+void MapFractal::setAmplitude(float ampl) {
+	amplitude = ampl;
+
+	offset32 = 0.f;
+
+	float v3 = 0;
+	float v2 = 1.0;
+
+	for (int i = 0; i < octaves; ++i) {
+		v3 = v3 + v2;
+		v2 = v2 * amplitude;
+	}
+
+	offset32 = v3;
+
+	if (offset32 != 0)
+		offset32 = 1.0 / offset32;
+}
+
+void MapFractal::setXFreq(float xfreq) {
+	xFrequency = xfreq; // x.freq
+}
+
+void MapFractal::setYFreq(float yfreq) {
+	yFrequency = yfreq; // y.freq
+}
+
+void MapFractal::setZOffset(float offset) {
+	zOffset = offset; // z.offset
+}
+
+void MapFractal::setXOffset(float offset) {
+	xOffset = offset; // x.offset
+}
+
+void MapFractal::setCombination(int comb) {
+	combination = comb; // combination
 }

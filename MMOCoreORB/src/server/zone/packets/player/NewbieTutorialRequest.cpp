@@ -1,0 +1,56 @@
+#include "NewbieTutorialRequest.h"
+#include "server/zone/managers/director/DirectorManager.h"
+#include "server/zone/Zone.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/building/TutorialBuildingObject.h"
+
+NewbieTutorialRequest::NewbieTutorialRequest(const String& action) : BaseMessage() {
+	insertShort(0x02);
+	insertInt(0x90DD61AF); // CRC
+
+	insertAscii(action); // try openContainer openStatMigration etc.
+}
+
+NewbieTutorialResponseCallback::NewbieTutorialResponseCallback(ZoneClientSession* client, ZoneProcessServer* server) : MessageCallback(client, server) {
+}
+
+void NewbieTutorialResponseCallback::parse(Message* message) {
+	message->parseAscii(response);
+}
+
+void NewbieTutorialResponseCallback::run() {
+	if (client == nullptr)
+		return;
+
+	ManagedReference<CreatureObject*> player = client->getPlayer();
+
+	if (player == nullptr)
+		return;
+
+	Locker locker(player);
+
+	// player->info("received response: " + response, true);
+
+	if (response == "zoomCamera") {
+		player->notifyObservers(ObserverEventType::NEWBIETUTORIALZOOMCAMERA, nullptr, 0);
+	} else if (response == "chatbox") {
+		player->notifyObservers(ObserverEventType::CHAT, nullptr, 0);
+	} else if (response == "closeHolocron") {
+		player->notifyObservers(ObserverEventType::NEWBIETUTORIALHOLOCRON, nullptr, 0);
+	} else if (response == "openInventory") {
+		player->notifyObservers(ObserverEventType::NEWBIEOPENINVENTORY);
+	} else if (response == "closeInventory") {
+		player->notifyObservers(ObserverEventType::NEWBIECLOSEINVENTORY);
+	} else if (response == "clientReady") {
+		Zone* zone = player->getZone();
+
+		if (zone == nullptr || zone->getZoneName() != "tutorial")
+			return;
+
+		ManagedReference<TutorialBuildingObject*> bldg = player->getParentRecursively(SceneObjectType::TUTORIALBUILDING).castTo<TutorialBuildingObject*>();
+
+		if (bldg != nullptr && bldg->getTutorialOwnerID() == player->getObjectID()) {
+			DirectorManager::instance()->startScreenPlay(player, "TutorialScreenPlay");
+		}
+	}
+}

@@ -37,75 +37,35 @@ protected:
 	void connectNodes(Vector<PathEdge>& pathEdges);
 
 public:
-	PathGraph(FloorMesh* floor) {
-		floorMesh = floor;
-		type = None;
-	}
+	PathGraph(FloorMesh* floor);
 
-	~PathGraph() {
-		pathNodes.forEach([](auto node) { delete node; });
-	}
+	~PathGraph();
 
 	void readObject(IffStream* iffStream);
 
-	static float calculateManhattanDistance(const PathNode* node1, const PathNode* node2) {
-		/*return abs(node1->getX() - node2->getX()) + abs(node1->getY() - node2->getY())
-				+ abs(node1->getZ() - node2->getZ());*/
-
-		return node1->getPosition().squaredDistanceTo(node2->getPosition());
-	}
+	static float calculateManhattanDistance(const PathNode* node1, const PathNode* node2);
 
 	const PathNode* getNode(int globalNumberID) const;
 
-	inline const PathNode* findNearestNode(float x, float z, float y) const {
-		return findNearestNode(Vector3(x, y, z));
-	}
+	const PathNode* findNearestNode(float x, float z, float y) const;
 
 	const PathNode* findNearestNode(const Vector3& pointAlfa) const;
 	Vector<const PathNode*> getEntrances() const;
 	const PathNode* findNearestGlobalNode(const Vector3& pointAlfa) const;
 	const PathNode* findGlobalNode(int globalNodeID) const;
 
-	inline void addPathNode(PathNode* pathNode) {
-		pathNodes.add(pathNode);
-	}
+	void addPathNode(PathNode* pathNode);
 
-	inline const Vector<PathEdge>* getPathEdges() const {
-		return &pathEdges;
-	}
+	const Vector<PathEdge>* getPathEdges() const;
 
-	inline const Vector<PathNode*>* getPathNodes() const {
-		return &pathNodes;
-	}
+	const Vector<PathNode*>* getPathNodes() const;
 
-	inline Vector<const PathNode*> getGlobalNodes() const {
-		Vector<const PathNode*> nodes;
+	Vector<const PathNode*> getGlobalNodes() const;
 
-		for (int i = 0; i < pathNodes.size(); ++i) {
-			if (pathNodes.get(i)->getGlobalGraphNodeID() != -1)
-				nodes.add(pathNodes.get(i));
-		}
+	Vector<PathNode*> getGlobalNodes();
 
-		return nodes;
-	}
+	const FloorMesh* getFloorMesh() const;
 
-	inline Vector<PathNode*> getGlobalNodes() {
-		Vector<PathNode*> nodes;
-
-		for (int i = 0; i < pathNodes.size(); ++i) {
-			if (pathNodes.get(i)->getGlobalGraphNodeID() != -1)
-				nodes.add(pathNodes.get(i));
-		}
-
-		return nodes;
-	}
-
-	inline const FloorMesh* getFloorMesh() const {
-		return floorMesh;
-	}
-
-	inline PathGraphType getType() const {
-		return type;
-	}
+	PathGraphType getType() const;
 
 };

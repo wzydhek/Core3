@@ -23,41 +23,17 @@ namespace packets {
 		ManagedReference<ZoneProcessServer*> server;
 
 	public:
-		MessageCallback(ZoneClientSession* client, ZoneProcessServer* server) {
-			MessageCallback::client = client;
-			MessageCallback::server = server;
+		MessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-			setLoggingName("MessageCallback");
-		}
-
-		virtual ~MessageCallback() {
-		}
+		virtual ~MessageCallback();
 
 		virtual void parse(Message* message) = 0;
 
-		bool parseMessage(Message* packet) {
-			try {
+		bool parseMessage(Message* packet);
 
-				parse(packet);
+		ZoneClientSession* getClient() const;
 
-			} catch (const Exception& e) {
-				error("exception while parsing message in ZonePacketHandler");
-				error(e.getMessage());
-				e.printStackTrace();
-
-				return false;
-			}
-
-			return true;
-		}
-
-		inline ZoneClientSession* getClient() const {
-			return client.get();
-		}
-
-		inline ZoneProcessServer* getServer() const {
-			return server;
-		}
+		ZoneProcessServer* getServer() const;
 
 	};
 

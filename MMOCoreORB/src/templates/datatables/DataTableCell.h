@@ -12,12 +12,9 @@
 
 class DataTableCell {
 public:
-	DataTableCell() {
-	}
+	DataTableCell();
 
-	virtual ~DataTableCell() {
-
-	}
+	virtual ~DataTableCell();
 
 	virtual void parse(Chunk* chunk) = 0;
 
@@ -26,33 +23,19 @@ public:
 		throw Exception("No valid type specified.");
 	}*/
 
-	virtual void getValue(Vector<String>& out) const {
-		throw Exception(String("No valid type specified. Correct type is ").concat((char)getType()));
-	}
+	virtual void getValue(Vector<String>& out) const;
 
-	virtual void getValue(SortedVector<String>& out) const {
-		throw Exception(String("No valid type specified. Correct type is ").concat((char)getType()));
-	}
+	virtual void getValue(SortedVector<String>& out) const;
 
-	virtual void getValue(String& out) const {
-		throw Exception(String("No valid type specified. Correct type is ").concat((char)getType()));
-	}
+	virtual void getValue(String& out) const;
 
-	virtual void getValue(int& out) const {
-		throw Exception(String("No valid type specified. Correct type is ").concat((char)getType()));
-	}
+	virtual void getValue(int& out) const;
 
-	virtual void getValue(uint32& out) const {
-		throw Exception(String("No valid type specified. Correct type is ").concat((char)getType()));
-	}
+	virtual void getValue(uint32& out) const;
 
-	virtual void getValue(float& out) const {
-		throw Exception(String("No valid type specified. Correct type is ").concat((char)getType()));
-	}
+	virtual void getValue(float& out) const;
 
-	virtual void getValue(bool& out) const {
-		throw Exception(String("No valid type specified. Correct type is ").concat((char)getType()));
-	}
+	virtual void getValue(bool& out) const;
 
 
 	virtual byte getType() const = 0;
@@ -64,125 +47,76 @@ class DataTableCellString : public DataTableCell {
 	String value;
 
 public:
-	DataTableCellString() {
-	}
+	DataTableCellString();
 
 	void getValue(SortedVector<String>& out) const;
 	void getValue(Vector<String>& out) const;
 
-	void parse(Chunk* chunk) {
-		chunk->readString(value);
-	}
+	void parse(Chunk* chunk);
 
-	void getValue(String& out) const {
-		out = value;
-	}
+	void getValue(String& out) const;
 
-	byte getType() const {
-		return 's';
-	}
+	byte getType() const;
 
-	String toString() const {
-		return value;
-	}
+	String toString() const;
 };
 
 class DataTableCellInt : public DataTableCell {
 	int value;
 
 public:
-	DataTableCellInt() {
-		value = 0;
-	}
+	DataTableCellInt();
 
-	void parse(Chunk* chunk) {
-		value = chunk->readSignedInt();
-	}
+	void parse(Chunk* chunk);
 
-	void getValue(int& out) const {
-		out = value;
-	}
+	void getValue(int& out) const;
 
-	byte getType() const {
-		return 'i';
-	}
+	byte getType() const;
 
-	String toString() const {
-		return String::valueOf(value);
-	}
+	String toString() const;
 };
 
 class DataTableCellHex : public DataTableCell {
 	uint32 value;
 
 public:
-	DataTableCellHex() {
-		value = 0;
-	}
+	DataTableCellHex();
 
-	void parse(Chunk* chunk) {
-		value = chunk->readInt();
-	}
+	void parse(Chunk* chunk);
 
-	void getValue(uint32& out) const {
-		out = value;
-	}
+	void getValue(uint32& out) const;
 
-	byte getType() const {
-		return 'h';
-	}
+	byte getType() const;
 
-	String toString() const {
-		return String::valueOf(value);
-	}
+	String toString() const;
 };
 
 class DataTableCellFloat : public DataTableCell {
 	float value;
 
 public:
-	DataTableCellFloat() {
-		value = 0.f;
-	}
+	DataTableCellFloat();
 
-	void parse(Chunk* chunk) {
-		value = chunk->readFloat();
-	}
+	void parse(Chunk* chunk);
 
-	void getValue(float& out) const {
-		out = value;
-	}
+	void getValue(float& out) const;
 
-	byte getType() const {
-		return 'f';
-	}
+	byte getType() const;
 
-	String toString() const {
-		return String::valueOf(value);
-	}
+	String toString() const;
 };
 
 class DataTableCellBinary : public DataTableCell {
 	bool value;
 
 public:
-	DataTableCellBinary() {
-		value = false;
-	}
+	DataTableCellBinary();
 
-	void parse(Chunk* chunk) {
-		value = (bool) chunk->readInt();
-	}
+	void parse(Chunk* chunk);
 
-	void getValue(bool& out) const {
-		out = value;
-	}
+	void getValue(bool& out) const;
 
-	byte getType() const {
-		return 'b';
-	}
+	byte getType() const;
 
-	String toString() const {
-		return String::valueOf(value);
-	}
+	String toString() const;
 };

@@ -21,399 +21,41 @@ class NameData: public Object {
 	int vowelOdds, specialSyllableOdds, uniquePatternOdds;
 
 public:
-	NameData() {
-		firstNameRules = nullptr;
-		lastNameRules = nullptr;
-
-		beginningConsonantOdds = 0;
-		middleConsonantOdds = 0;
-		endingConsonantOdds = 0;
-		vowelOdds = 0;
-		specialSyllableOdds = 0;
-		uniquePatternOdds = 0;
+	NameData();
 
-		beginningConsonants.setNoDuplicateInsertPlan();
-		beginningConsonants.setNullValue(0);
+	~NameData();
 
-		middleConsonants.setNoDuplicateInsertPlan();
-		middleConsonants.setNullValue(0);
+	NameData(const NameData& data);
 
-		endingConsonants.setNoDuplicateInsertPlan();
-		endingConsonants.setNullValue(0);
+	NameData& operator=(const NameData& data);
 
-		specialSyllables.setNoDuplicateInsertPlan();
-		specialSyllables.setNullValue(0);
+	void readObject(LuaObject* luaObject);
 
-		vowels.setNoDuplicateInsertPlan();
-		vowels.setNullValue(0);
-
-		uniquePatterns.setNoDuplicateInsertPlan();
-		uniquePatterns.setNullValue(0);
-	}
-
-	~NameData() {
-		delete firstNameRules;
-		delete lastNameRules;
-	}
-
-	NameData(const NameData& data) : Object() {
-		firstNameRules = data.firstNameRules;
-		lastNameRules = data.lastNameRules;
-
-		beginningConsonants = data.beginningConsonants;
-		middleConsonants = data.middleConsonants;
-		endingConsonants = data.endingConsonants;
-		vowels = data.vowels;
-		specialSyllables = data.specialSyllables;
-
-		beginningConsonantOdds = data.beginningConsonantOdds;
-		middleConsonantOdds = data.middleConsonantOdds;
-		endingConsonantOdds = data.endingConsonantOdds;
-		vowelOdds = data.vowelOdds;
-		specialSyllableOdds = data.specialSyllableOdds;
-		uniquePatternOdds = data.uniquePatternOdds;
-
-		uniquePatterns = data.uniquePatterns;
-		uniques = data.uniques;
-	}
-
-	NameData& operator=(const NameData& data) {
-		if (this == &data)
-			return *this;
-
-		firstNameRules = data.firstNameRules;
-		lastNameRules = data.lastNameRules;
-
-		beginningConsonants = data.beginningConsonants;
-		middleConsonants = data.middleConsonants;
-		endingConsonants = data.endingConsonants;
-		vowels = data.vowels;
-		specialSyllables = data.specialSyllables;
-
-		beginningConsonantOdds = data.beginningConsonantOdds;
-		middleConsonantOdds = data.middleConsonantOdds;
-		endingConsonantOdds = data.endingConsonantOdds;
-		vowelOdds = data.vowelOdds;
-		specialSyllableOdds = data.specialSyllableOdds;
-		uniquePatternOdds = data.uniquePatternOdds;
-
-		uniquePatterns = data.uniquePatterns;
-		uniques = data.uniques;
-
-		return *this;
-	}
-
-	void readObject(LuaObject* luaObject) {
-		if (!luaObject->isValidTable())
-			return;
-
-		LuaObject fName = luaObject->getObjectField("firstNameRules");
+	const NameRules* getFirstNameRules() const;
 
-		if (!fName.isValidTable()) {
-			printf("Error loading name manager first name rule table.\n");
-			return;
-		}
+	const NameRules* getLastNameRules() const;
 
-		firstNameRules = new NameRules();
-		firstNameRules->readObject(&fName);
+	String getRandomBeginningConsonant() const;
 
-		fName.pop();
+	bool beginningConsonantContains(const String& fragment) const;
 
-		LuaObject lName = luaObject->getObjectField("lastNameRules");
+	String getRandomMiddleConsonant() const;
 
-		if (!lName.isValidTable()) {
-			printf("Error loading name manager last name rule table.\n");
-			return;
-		}
+	bool middeConsonantContains(const String& fragment) const;
 
-		lastNameRules = new NameRules();
-		lastNameRules->readObject(&lName);
+	String getRandomEndingConsonant() const;
 
-		lName.pop();
+	bool endingConsonantContains(const String& fragment) const;
 
-		LuaObject consonantTable = luaObject->getObjectField("consonants");
+	String getRandomVowel() const;
 
-		if (!consonantTable.isValidTable()) {
-			printf("Error loading name manager consonant table.\n");
-			return;
-		}
+	bool vowelsContains(const String& fragment) const;
 
-		for (int i = 1; i <= consonantTable.getTableSize(); ++i) {
-			LuaObject obj = consonantTable.getObjectAt(i);
+	String getRandomSpecialSyllable() const;
 
-			if (obj.isValidTable()) {
-				String cons = obj.getStringAt(1);
-				bool begin = obj.getBooleanAt(2);
-				bool mid = obj.getBooleanAt(3);
-				bool end = obj.getBooleanAt(4);
-				int odds = obj.getIntAt(5);
+	String getRandomUniquePattern() const;
 
-				if (begin) {
-					beginningConsonants.put(cons, odds);
-					beginningConsonantOdds += odds;
-				}
-				if (mid) {
-					middleConsonants.put(cons, odds);
-					middleConsonantOdds += odds;
-				}
-				if (end) {
-					endingConsonants.put(cons, odds);
-					endingConsonantOdds += odds;
-				}
-			}
+	String getRandomUnique(const String& type, String& root) const;
 
-			obj.pop();
-		}
-
-		consonantTable.pop();
-
-		LuaObject vowelTable = luaObject->getObjectField("vowels");
-
-		if (!vowelTable.isValidTable()) {
-			printf("Error loading name manager vowel table.\n");
-			return;
-		}
-
-		for (int i = 1; i <= vowelTable.getTableSize(); ++i) {
-			LuaObject obj = vowelTable.getObjectAt(i);
-
-			if (obj.isValidTable()) {
-				String vowel = obj.getStringAt(1);
-				int odds = obj.getIntAt(2);
-
-				vowels.put(vowel, odds);
-				vowelOdds += odds;
-			}
-
-			obj.pop();
-		}
-
-		vowelTable.pop();
-
-		LuaObject specialSyllableTable = luaObject->getObjectField("specials");
-
-		if (!specialSyllableTable.isValidTable()) {
-			printf("Error loading name manager special syllable table.\n");
-			return;
-		}
-
-		for (int i = 1; i <= specialSyllableTable.getTableSize(); ++i) {
-			LuaObject obj = specialSyllableTable.getObjectAt(i);
-
-			if (obj.isValidTable()) {
-				String special = obj.getStringAt(1);
-				int odds = obj.getIntAt(2);
-
-				specialSyllables.put(special, odds);
-				specialSyllableOdds += odds;
-			}
-
-			obj.pop();
-		}
-
-		specialSyllableTable.pop();
-
-		LuaObject uniqueTable = luaObject->getObjectField("uniques");
-
-		if (!uniqueTable.isValidTable()) {
-			printf("Error loading name manager unique table.\n");
-			return;
-		}
-
-		for (int i = 1; i <= uniqueTable.getTableSize(); ++i) {
-			LuaObject obj = uniqueTable.getObjectAt(i);
-
-			if (obj.isValidTable()) {
-				String word = obj.getStringAt(1);
-				String root = obj.getStringAt(2);
-				String type = obj.getStringAt(3);
-
-				Reference<NameUnique*> unique = new NameUnique(word, root, type);
-
-				uniques.add(unique);
-			}
-
-			obj.pop();
-		}
-
-		uniqueTable.pop();
-
-		LuaObject patternTable = luaObject->getObjectField("uniquePatterns");
-
-		if (!patternTable.isValidTable()) {
-			printf("Error loading name manager unique pattern table.\n");
-			return;
-		}
-
-		for (int i = 1; i <= patternTable.getTableSize(); ++i) {
-			LuaObject obj = patternTable.getObjectAt(i);
-
-			if (obj.isValidTable()) {
-				String pattern = obj.getStringAt(1);
-				int odds = obj.getIntAt(2);
-
-				uniquePatterns.put(pattern, odds);
-				uniquePatternOdds += odds;
-			}
-
-			obj.pop();
-		}
-
-		patternTable.pop();
-	}
-
-	const NameRules* getFirstNameRules() const {
-		return firstNameRules;
-	}
-
-	const NameRules* getLastNameRules() const {
-		return lastNameRules;
-	}
-
-	String getRandomBeginningConsonant() const {
-		int randOdd = System::random(beginningConsonantOdds);
-		int tempTotal = 0;
-		String consonant = "";
-
-		for (int i = 0; i < beginningConsonants.size(); i++) {
-			int tempValue = beginningConsonants.elementAt(i).getValue();
-			tempTotal += tempValue;
-
-			if (randOdd <= tempTotal) {
-				consonant = beginningConsonants.elementAt(i).getKey();
-				break;
-			}
-		}
-
-		return consonant;
-	}
-
-	bool beginningConsonantContains(const String& fragment) const {
-		return beginningConsonants.contains(fragment);
-	}
-
-	String getRandomMiddleConsonant() const {
-		int randOdd = System::random(middleConsonantOdds);
-		int tempTotal = 0;
-		String consonant = "";
-
-		for (int i = 0; i < middleConsonants.size(); i++) {
-			int tempValue = middleConsonants.elementAt(i).getValue();
-			tempTotal += tempValue;
-
-			if (randOdd <= tempTotal) {
-				consonant = middleConsonants.elementAt(i).getKey();
-				break;
-			}
-		}
-
-		return consonant;
-	}
-
-	bool middeConsonantContains(const String& fragment) const {
-		return middleConsonants.contains(fragment);
-	}
-
-	String getRandomEndingConsonant() const {
-		int randOdd = System::random(endingConsonantOdds);
-		int tempTotal = 0;
-		String consonant = "";
-
-		for (int i = 0; i < endingConsonants.size(); i++) {
-			int tempValue = endingConsonants.elementAt(i).getValue();
-			tempTotal += tempValue;
-
-			if (randOdd <= tempTotal) {
-				consonant = endingConsonants.elementAt(i).getKey();
-				break;
-			}
-		}
-
-		return consonant;
-	}
-
-	bool endingConsonantContains(const String& fragment) const {
-		return endingConsonants.contains(fragment);
-	}
-
-	String getRandomVowel() const {
-		int randOdd = System::random(vowelOdds);
-		int tempTotal = 0;
-		String vowel = "";
-
-		for (int i = 0; i < vowels.size(); i++) {
-			int tempValue = vowels.elementAt(i).getValue();
-			tempTotal += tempValue;
-
-			if (randOdd <= tempTotal) {
-				vowel = vowels.elementAt(i).getKey();
-				break;
-			}
-		}
-
-		return vowel;
-	}
-
-	bool vowelsContains(const String& fragment) const {
-		return vowels.contains(fragment);
-	}
-
-	String getRandomSpecialSyllable() const {
-		int randOdd = System::random(specialSyllableOdds);
-		int tempTotal = 0;
-		String special = "";
-
-		for (int i = 0; i < specialSyllables.size(); i++) {
-			int tempValue = specialSyllables.elementAt(i).getValue();
-			tempTotal += tempValue;
-
-			if (randOdd <= tempTotal) {
-				special = specialSyllables.elementAt(i).getKey();
-				break;
-			}
-		}
-
-		return special;
-	}
-
-	String getRandomUniquePattern() const {
-		int randOdd = System::random(uniquePatternOdds);
-		int tempTotal = 0;
-		String pattern = "";
-
-		for (int i = 0; i < uniquePatterns.size(); i++) {
-			int tempValue = uniquePatterns.elementAt(i).getValue();
-			tempTotal += tempValue;
-
-			if (randOdd <= tempTotal) {
-				pattern = uniquePatterns.elementAt(i).getKey();
-				break;
-			}
-
-			tempTotal += tempValue;
-		}
-
-		return pattern;
-	}
-
-	String getRandomUnique(const String& type, String &root) const {
-		Vector<Reference<NameUnique*> > uniqueList;
-
-		for (int i = 0; i < uniques.size(); i++) {
-			Reference<NameUnique*> unique = uniques.get(i);
-			String uType = unique->getType();
-
-			if (uType.contains(type))
-				uniqueList.add(unique);
-		}
-
-		int randFinal = System::random(uniqueList.size() - 1);
-		NameUnique* final = uniqueList.elementAt(randFinal);
-		root = final->getRoot();
-		return final->getWord();
-	}
-
-	bool specialSyllablesContains(const String& fragment) const {
-		return specialSyllables.contains(fragment);
-	}
+	bool specialSyllablesContains(const String& fragment) const;
 };

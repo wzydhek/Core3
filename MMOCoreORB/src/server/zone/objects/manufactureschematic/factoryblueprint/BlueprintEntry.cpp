@@ -214,3 +214,71 @@ void to_json(nlohmann::json& j, const BlueprintEntry& entry) {
 	j["inputHopper"] = entry.inputHopper;
 	j["matchingHoppperItems"] = entry.matchingHopperItems;
 }
+
+/// If item requires identical
+bool BlueprintEntry::needsIdentical() {
+	return identical;
+}
+
+void BlueprintEntry::setIdentical(bool value) {
+	identical = value;
+}
+
+/// Getter for type
+String BlueprintEntry::getType() {
+	return type;
+}
+
+/// Getter for key
+String BlueprintEntry::getKey() {
+	return key;
+}
+
+/// Getter for serial
+String BlueprintEntry::getSerial() {
+	return serialNumber;
+}
+
+/// Getter for displayed name
+String BlueprintEntry::getDisplayedName() {
+	return displayedName;
+}
+
+/// getter for quantity
+int BlueprintEntry::getQuantity() {
+	return quantity;
+}
+
+void BlueprintEntry::setQuantity(int value) {
+	quantity = value;
+}
+
+/// increase for quantity
+void BlueprintEntry::increaseQuantity(int value) {
+	quantity += value;
+}
+
+/// Add a match to the vector
+void BlueprintEntry::addMatch(TangibleObject* object) {
+	matchingHopperItems.add(object);
+}
+
+void BlueprintEntry::setDisplayedName(String value) {
+	displayedName = value;
+}
+
+void BlueprintEntry::setType(String value) {
+	type = value;
+}
+
+void BlueprintEntry::setKey(String value) {
+	key = value;
+}
+
+void BlueprintEntry::setSerial(String value) {
+	serialNumber = value;
+}
+
+void BlueprintEntry::setHopper(SceneObject* hopper) {
+	inputHopper = hopper;
+}

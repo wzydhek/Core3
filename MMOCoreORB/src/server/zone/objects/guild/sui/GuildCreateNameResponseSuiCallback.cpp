@@ -1,0 +1,52 @@
+#include "GuildCreateNameResponseSuiCallback.h"
+#include "server/zone/objects/player/PlayerObject.h"
+
+GuildCreateNameResponseSuiCallback::GuildCreateNameResponseSuiCallback(ZoneServer* server) : SuiCallback(server) {
+}
+
+void GuildCreateNameResponseSuiCallback::run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
+	bool cancelPressed = (eventIndex == 1);
+
+	if (player->isInGuild()) {
+		player->sendSystemMessage("@guild:create_fail_in_guild"); // You cannot create a guild while already in a guild.
+		return;
+	}
+
+	if (!suiBox->isInputBox() || cancelPressed)
+		return;
+
+	if (args->size() < 1)
+		return;
+
+	String guildName = args->get(0).toString();
+
+	ManagedReference<SceneObject*> obj = suiBox->getUsingObject().get();
+
+	if (obj == nullptr || !obj->isTerminal())
+		return;
+
+	Terminal* terminal = cast<Terminal*>(obj.get());
+
+	if (!terminal->isGuildTerminal())
+		return;
+
+	GuildTerminal* guildTerminal = cast<GuildTerminal*>(terminal);
+
+	ManagedReference<GuildManager*> guildManager = server->getGuildManager();
+
+	uint64 playerID = player->getObjectID();
+
+	// Check if this player is already creating a guild...
+	if (guildManager->isCreatingGuild(playerID))
+		return;
+
+	if (guildManager->validateGuildName(player, guildName)) {
+		guildManager->addPendingGuild(playerID, guildName);
+		guildManager->sendGuildCreateAbbrevTo(player, guildTerminal);
+		return;
+	}
+
+	// Resend the create name box.
+	player->getPlayerObject()->addSuiBox(suiBox);
+	player->sendMessage(suiBox->generateMessage());
+}

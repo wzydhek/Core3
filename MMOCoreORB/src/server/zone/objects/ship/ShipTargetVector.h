@@ -27,10 +27,7 @@ protected:
 	mutable ReadWriteLock targetLock;
 
 public:
-	ShipTargetVector(ShipObject* ship) : Object() {
-		setLoggingName("ShipTargetVector");
-		serverTime = 0;
-	}
+	ShipTargetVector(ShipObject* ship);
 
 	void update(ShipObject* ship);
 
@@ -45,43 +42,11 @@ private:
 
 	bool isTargetValid(ShipObject* ship, SceneObject* target) const;
 
-	bool isScheduled() const {
-		return (System::getMiliTime() - serverTime) >= UPDATE_INTERVAL;
-	}
+	bool isScheduled() const;
 
-	void setServerTime() {
-		serverTime = System::getMiliTime();
-	}
+	void setServerTime();
 
-	bool isCollidableType(uint32 objectType) const {
-		switch (objectType) {
-			case SceneObjectType::SHIPCAPITAL:
-			case SceneObjectType::SPACESTATION:
-			case SceneObjectType::ASTEROID:
-			case SceneObjectType::SPACEOBJECT: {
-				return true;
-			}
-			default: {
-				return false;
-			}
-		}
-	}
+	bool isCollidableType(uint32 objectType) const;
 
-	String toDebugString() const {
-		StringBuffer msg;
-		msg << "ShipTargetVector: " << targetMap.size() << endl;
-
-		for (int i = 0; i < targetMap.size(); ++i) {
-			auto entry = targetMap.elementAt(i).getValue().get();
-
-			if (entry != nullptr) {
-				continue;
-			}
-
-			float distance = sqrtf(targetMap.elementAt(i).getKey());
-			msg << i << " distance: " << distance << " entry: " << entry->getDisplayedName() << endl;
-		}
-
-		return msg.toString();
-	}
+	String toDebugString() const;
 };

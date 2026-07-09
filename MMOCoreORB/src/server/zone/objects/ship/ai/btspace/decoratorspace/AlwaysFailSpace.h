@@ -13,25 +13,11 @@ namespace decoratorspace {
 
 class AlwaysFailSpace : public DecoratorSpace {
 public:
-	AlwaysFailSpace(const String& className, const uint32 id, const LuaObject& args) : DecoratorSpace(className, id, args) {
-	}
+	AlwaysFailSpace(const String& className, const uint32 id, const LuaObject& args);
 
-	AlwaysFailSpace(const AlwaysFailSpace& b) : DecoratorSpace(b) {
-	}
+	AlwaysFailSpace(const AlwaysFailSpace& b);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		assert(child != nullptr);
-
-		BehaviorSpace::Status result = child->doAction(agent);
-
-		if (result == RUNNING)
-			agent->clearRunningChain();
-
-		if (result == SUCCESS || result == FAILURE || result == RUNNING)
-			return FAILURE;
-
-		return result;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 } // namespace decoratorspace
@@ -41,3 +27,5 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace::decoratorspace;

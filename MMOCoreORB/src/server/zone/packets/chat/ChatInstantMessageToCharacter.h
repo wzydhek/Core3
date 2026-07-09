@@ -5,7 +5,6 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/chat/ChatManager.h"
 
 namespace server {
 namespace zone {
@@ -20,49 +19,21 @@ class ChatInstantMessageToCharacter : public MessageCallback {
 
 	uint32 sequence;
 public:
-	ChatInstantMessageToCharacter(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), sequence(0) {
+	ChatInstantMessageToCharacter(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
-
-	void parse(Message* pack) {
-		pack->parseAscii(game);
-		pack->parseAscii(galaxy);
-
-		pack->parseAscii(name);
-		
-		pack->parseUnicode(message);
-		
-		pack->shiftOffset(4);
-		
-		sequence = pack->parseInt();
-	}
+	void parse(Message* pack);
 	
-	void run() {
-		ChatManager* chatManager = server->getChatManager();
+	void run();
 
-		chatManager->handleChatInstantMessageToCharacter(this);
-	}
+	const String& getName() const;
 
-	inline const String& getName() const {
-		return name;
-	}
+	const String& getGalaxy() const;
 
-	inline const String& getGalaxy() const {
-		return galaxy;
-	}
+	const String& getGame() const;
 
-	inline const String& getGame() const {
-		return game;
-	}
+	const UnicodeString& getMessage() const;
 
-	inline const UnicodeString& getMessage() const {
-		return message;
-	}
-
-	inline int getSequence() const {
-		return sequence;
-	}
+	int getSequence() const;
 
 };
 

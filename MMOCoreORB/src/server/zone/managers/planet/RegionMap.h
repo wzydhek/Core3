@@ -16,50 +16,17 @@ class RegionMap : public ReadWriteLock, public Object, public Logger {
 	VectorMap<String, ManagedReference<Region*> > regions;
 
 public:
-	RegionMap() {
-		cityRegions.setNoDuplicateInsertPlan();
-		cityRegions.setNullValue(nullptr);
+	RegionMap();
 
-		regions.setNoDuplicateInsertPlan();
-		regions.setNullValue(nullptr);
+	~RegionMap();
 
-		setLoggingName("Region Map");
-	}
+	void addCityRegion(CityRegion* cityRegion);
 
-	~RegionMap() {
-	}
+	void dropCityRegion(const String& regionName);
 
-	inline void addCityRegion(CityRegion* cityRegion) {
-		wlock();
+	void addRegion(Region* region);
 
-		cityRegions.put(cityRegion->getCityRegionName(), cityRegion);
-
-		unlock();
-	}
-
-	inline void dropCityRegion(const String& regionName) {
-		wlock();
-
-		cityRegions.drop(regionName);
-
-		unlock();
-	}
-
-	inline void addRegion(Region* region) {
-		wlock();
-
-		regions.put(region->getAreaName(), region);
-
-		unlock();
-	}
-
-	inline void dropRegion(const String& regionName) {
-		wlock();
-
-		regions.drop(regionName);
-
-		unlock();
-	}
+	void dropRegion(const String& regionName);
 
 	/**
 	 * Gets the first city region in the region map found at the specified coordinates.
@@ -67,22 +34,7 @@ public:
 	 * @param y The y coordinate.
 	 * @return Returns a city region or nullptr if one was not found.
 	 */
-	CityRegion* getCityRegionAt(float x, float y) {
-		rlock();
-
-		for (int i = 0; i < cityRegions.size(); ++i) {
-			CityRegion* cityRegion = cityRegions.get(i);
-
-			if (cityRegion->containsPoint(x, y)) {
-				runlock();
-				return cityRegion;
-			}
-		}
-
-		runlock();
-
-		return nullptr;
-	}
+	CityRegion* getCityRegionAt(float x, float y);
 
 	/**
 	 * Gets the first city region in the region map found at the specified coordinates.
@@ -90,52 +42,21 @@ public:
 	 * @param y The y coordinate.
 	 * @return Returns a city region or nullptr if one was not found.
 	 */
-	Region* getRegionAt(float x, float y) {
-		rlock();
+	Region* getRegionAt(float x, float y);
 
-		for (int i = 0; i < regions.size(); ++i) {
-			Region* region = regions.get(i);
+	bool containsCityRegion(const String& name);
 
-			if (region->containsPoint(x, y)) {
-				runlock();
-				return region;
-			}
-		}
+	bool containsRegion(const String& name);
 
-		runlock();
+	CityRegion* getCityRegion(int index);
 
-		return nullptr;
-	}
+	CityRegion* getCityRegion(const String& name);
 
-	inline bool containsCityRegion(const String& name) {
-		return cityRegions.contains(name);
-	}
+	int getTotalCityRegions();
 
-	inline bool containsRegion(const String& name) {
-		return regions.contains(name);
-	}
+	Region* getRegion(int index);
 
-	inline CityRegion* getCityRegion(int index) {
-		return cityRegions.get(index);
-	}
+	Region* getRegion(const String& name);
 
-	inline CityRegion* getCityRegion(const String& name) {
-		return cityRegions.get(name);
-	}
-
-	inline int getTotalCityRegions() {
-		return cityRegions.size();
-	}
-
-	inline Region* getRegion(int index) {
-		return regions.get(index);
-	}
-
-	inline Region* getRegion(const String& name) {
-		return regions.get(name);
-	}
-
-	inline int getTotalRegions() {
-		return regions.size();
-	}
+	int getTotalRegions();
 };

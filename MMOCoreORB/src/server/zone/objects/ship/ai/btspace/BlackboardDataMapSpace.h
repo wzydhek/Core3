@@ -12,26 +12,13 @@ namespace btspace {
 
 class BlackboardDataMapSpace : public VectorMap<String, BlackboardDataSpace> {
 public:
-	BlackboardDataMapSpace() {
-		setNoDuplicateInsertPlan();
-	}
+	BlackboardDataMapSpace();
 
-	BlackboardDataMapSpace(const BlackboardDataMapSpace& b) : VectorMap<String, BlackboardDataSpace>(b) {
-		setNoDuplicateInsertPlan();
-	}
+	BlackboardDataMapSpace(const BlackboardDataMapSpace& b);
 
-	~BlackboardDataMapSpace() {
-	}
+	~BlackboardDataMapSpace();
 
-	BlackboardDataMapSpace& operator=(const BlackboardDataMapSpace& b) {
-		if (this == &b)
-			return *this;
-
-		VectorMap<String, BlackboardDataSpace>::operator=(b);
-		setNoDuplicateInsertPlan();
-
-		return *this;
-	}
+	BlackboardDataMapSpace& operator=(const BlackboardDataMapSpace& b);
 };
 
 } // namespace btspace
@@ -40,3 +27,5 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace;

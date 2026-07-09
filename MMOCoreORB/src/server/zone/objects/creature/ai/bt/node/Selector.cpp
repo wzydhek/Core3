@@ -9,7 +9,9 @@
 #include "server/zone/objects/creature/ai/AiAgent.h"
 
 using namespace server::zone::objects::creature::ai::bt;
-using namespace server::zone::objects::creature::ai::bt::node;
+
+Selector::Selector(const String& className, const uint32 id, const LuaObject& args) : Composite(className, id, args) {
+}
 
 Behavior::Status Selector::execute(AiAgent* agent, unsigned int startIdx) const {
 	// loop through children and return SUCCESS on first one that succeeded
@@ -28,6 +30,9 @@ Behavior::Status Selector::execute(AiAgent* agent, unsigned int startIdx) const 
 
 	// We made it all the way through the list without a success
 	return FAILURE;
+}
+
+ParallelSelector::ParallelSelector(const String& className, const uint32 id, const LuaObject& args) : Composite(className, id, args) {
 }
 
 Behavior::Status ParallelSelector::execute(AiAgent* agent, unsigned int startIdx) const {
@@ -50,6 +55,9 @@ Behavior::Status ParallelSelector::execute(AiAgent* agent, unsigned int startIdx
 	}
 
 	return finalResult;
+}
+
+RandomSelector::RandomSelector(const String& className, const uint32 id, const LuaObject& args) : Composite(className, id, args) {
 }
 
 Behavior::Status RandomSelector::execute(AiAgent* agent, unsigned int startIdx) const {

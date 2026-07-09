@@ -21,51 +21,28 @@ protected:
 	uint16 mindWoundRegenRate;
 
 public:
-	CampStructureTemplate() : experience(0), duration(0), radius(0), aggroMod(0), skillRequired(0), healthWoundRegenRate(0),
-		actionWoundRegenRate(0), mindWoundRegenRate(0) {
+	CampStructureTemplate();
 
-	}
-
-	~CampStructureTemplate() {
-
-	}
+	~CampStructureTemplate();
 
 	void readObject(LuaObject* templateData);
 
-	bool isCampStructureTemplate() {
-		return true;
-	}
+	bool isCampStructureTemplate();
 
-	inline int getDuration() const {
-		return duration;
-	}
+	int getDuration() const;
 
-	inline int getExperience() const {
-		return experience;
-	}
+	int getExperience() const;
 
-	inline int getRadius() const {
-		return radius;
-	}
+	int getRadius() const;
 
-	inline int getAggroMod() const {
-		return aggroMod;
-	}
+	int getAggroMod() const;
 
-	inline int getSkillRequired() const {
-		return skillRequired;
-	}
+	int getSkillRequired() const;
 
-	inline int getHealthWoundRegenRate() {
-		return healthWoundRegenRate;
-	}
+	int getHealthWoundRegenRate();
 
-	inline int getActionWoundRegenRate() {
-		return actionWoundRegenRate;
-	}
+	int getActionWoundRegenRate();
 
-	inline int getMindWoundRegenRate() {
-		return mindWoundRegenRate;
-	}
+	int getMindWoundRegenRate();
 
 };

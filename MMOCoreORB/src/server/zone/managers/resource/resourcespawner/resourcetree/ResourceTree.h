@@ -49,13 +49,9 @@ public:
 	const ResourceTreeEntry* getEntry(const String& type,
 			const Vector<String>& excludes = 0,  const String& zoneName = "") const;
 
-	ResourceTreeNode* getBaseNode() {
-		return baseNode;
-	}
+	ResourceTreeNode* getBaseNode();
 
-	const ResourceTreeNode* getBaseNode() const {
-		return baseNode;
-	}
+	const ResourceTreeNode* getBaseNode() const;
 
 	/**
 	 * Prints the tree

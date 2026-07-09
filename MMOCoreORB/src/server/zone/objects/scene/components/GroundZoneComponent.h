@@ -37,9 +37,7 @@ protected:
 	void insertChildObjectsToZone(SceneObject* sceneObject, Zone* zone) const;
 
 public:
-	GroundZoneComponent() {
-		setLoggingName("GroundZoneComponent");
-	}
+	GroundZoneComponent();
 
 	/**
 	 * Inserts this object into zone

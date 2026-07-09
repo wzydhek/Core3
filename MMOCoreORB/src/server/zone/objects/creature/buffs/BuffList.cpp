@@ -219,3 +219,61 @@ void BuffList::clearBuffs(bool updateclient, bool removeAll) {
 
 	spiceActive = false;
 }
+
+int BuffList::getBuffListSize() const {
+	return buffList.size();
+}
+
+Buff* BuffList::getBuffByIndex(int index) const {
+	Locker guard(&mutex);
+
+	if (index < 0 || index >= buffList.size())
+		return nullptr;
+
+	Buff* buff = buffList.elementAt(index).getValue();
+
+	return buffList.elementAt(index).getValue();
+}
+
+Buff* BuffList::getBuffByCRC(uint32 buffcrc) const {
+	Locker guard(&mutex);
+
+	return buffList.get(buffcrc);
+}
+
+long long BuffList::getModifierByName(const String& skillMod) const {
+	Locker guard(&mutex);
+
+	int mod = 0;
+
+	for (int i = 0; i < buffList.size(); i++) {
+		Buff* temp = buffList.get(i);
+		mod += temp->getSkillModifierValue(skillMod);
+	}
+
+	return mod;
+}
+
+bool BuffList::hasBuff(uint32 buffcrc) const {
+	Locker guard(&mutex);
+
+	return buffList.contains(buffcrc);
+}
+
+bool BuffList::hasSpice() const {
+	return spiceActive;
+}
+
+bool BuffList::hasTrapBuff() const {
+	Locker guard(&mutex);
+
+	for (int i = 0; i < buffList.size(); i++) {
+		Buff* temp = buffList.get(i);
+
+		if (temp->isTrapBuff()) {
+			return true;
+		}
+	}
+
+	return false;
+}

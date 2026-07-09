@@ -9,25 +9,14 @@
 
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/sui/SuiBox.h"
 
 class GuildWarEnemyNameSuiCallback : public SuiCallback {
 	ManagedWeakReference<GuildObject*> guildObject;
 
 public:
-	GuildWarEnemyNameSuiCallback(ZoneServer* server, GuildObject* guild)
-		: SuiCallback(server) {
+	GuildWarEnemyNameSuiCallback(ZoneServer* server, GuildObject* guild);
 
-		guildObject = guild;
-	}
-
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!suiBox->isInputBox() || player == nullptr || args->size() <= 0 || cancelPressed)
-			return;
-
-		String value = args->get(0).toString();
-
-		server->getGuildManager()->declareWarByName(player, guildObject.get(), value);
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

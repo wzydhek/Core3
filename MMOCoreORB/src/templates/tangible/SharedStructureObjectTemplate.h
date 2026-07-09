@@ -29,91 +29,43 @@ protected:
 	int cityMaintenanceRate;
 
 public:
-	SharedStructureObjectTemplate() {
-		baseMaintenanceRate = 0;
-		basePowerRate = 0;
+	SharedStructureObjectTemplate();
 
-		lotSize = 0;
-		cityRankRequired = 0;
-
-		uniqueStructure = false;
-
-		//If it has a maintenance rate, then it is a civic structure.
-		cityMaintenanceBase = 0;
-		cityMaintenanceRate = 0;
-	}
-
-	~SharedStructureObjectTemplate() {
-
-	}
+	~SharedStructureObjectTemplate();
 
 	void readObject(LuaObject* templateData);
 
-	inline uint8 getLotSize() const {
-		return lotSize;
-	}
+	uint8 getLotSize() const;
 
-	inline bool isAllowedZone(const String& zoneName) {
-		return allowedZones.contains(zoneName);
-	}
+	bool isAllowedZone(const String& zoneName);
 
-	inline bool isCivicStructure() const {
-		return (cityMaintenanceBase > 0);
-	}
+	bool isCivicStructure() const;
 
-	inline bool isCommercialStructure() const {
-		return (baseMaintenanceRate > 0 && cityRankRequired > 0);
-	}
+	bool isCommercialStructure() const;
 
-	inline bool isUniqueStructure() const {
-		return uniqueStructure;
-	}
+	bool isUniqueStructure() const;
 
-	inline int getCityMaintenanceBase() const {
-		return cityMaintenanceBase;
-	}
+	int getCityMaintenanceBase() const;
 
-	inline int getCityMaintenanceRate() const {
-		return cityMaintenanceRate;
-	}
+	int getCityMaintenanceRate() const;
 
-	inline int getCityMaintenanceAtRank(int rank) const {
-		return cityMaintenanceBase + cityMaintenanceRate * rank;
-	}
+	int getCityMaintenanceAtRank(int rank) const;
 
-	inline int getTotalAllowedZones() const {
-		return allowedZones.size();
-	}
+	int getTotalAllowedZones() const;
 
-	inline String getAllowedZone(int i) const {
-		return allowedZones.get(i);
-	}
+	String getAllowedZone(int i) const;
 
-	inline int getBaseMaintenanceRate() const {
-		return baseMaintenanceRate;
-	}
+	int getBaseMaintenanceRate() const;
 
-	inline int getBasePowerRate() const {
-		return basePowerRate;
-	}
+	int getBasePowerRate() const;
 
-	inline const String& getAbilityRequired() const {
-		return abilityRequired;
-	}
+	const String& getAbilityRequired() const;
 
-	inline uint8 getCityRankRequired() const {
-		return cityRankRequired;
-	}
+	uint8 getCityRankRequired() const;
 
-	inline const String& getConstructionMarkerTemplate() const {
-		return constructionMarkerTemplate;
-	}
+	const String& getConstructionMarkerTemplate() const;
 
-	inline virtual bool isPublicStructure() const {
-		return false;
-	}
+	virtual bool isPublicStructure() const;
 
-	virtual bool isSharedStructureObjectTemplate() {
-		return true;
-	}
+	virtual bool isSharedStructureObjectTemplate();
 };

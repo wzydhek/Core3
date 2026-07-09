@@ -160,3 +160,39 @@ void server::zone::objects::scene::variables::to_json(nlohmann::json& j, const s
 	j["ownerID"] = perms.getOwnerID();
 	j["inheritPermissionsFromParent"] = perms.hasInheritPermissionsFromParent();
 }
+
+uint64 ContainerPermissions::getOwnerID() const {
+	return ownerID;
+}
+
+const HashTable<uint32, uint32>* ContainerPermissions::getGroupPermissions() const {
+	return &groupPermissions;
+}
+
+bool ContainerPermissions::hasInheritPermissionsFromParent() const {
+	return inheritPermissionsFromParent;
+}
+
+uint16 ContainerPermissions::getAllowPermissions(uint32 group) const {
+	return (uint16)(groupPermissions.get(group) >> 16);
+}
+
+uint16 ContainerPermissions::getDenyPermissions(uint32 group) const {
+	return (uint16)(groupPermissions.get(group) & 0x0000FFFF);
+}
+
+uint32 ContainerPermissions::getFullPermissions(uint32 group) const {
+	return groupPermissions.get(group);
+}
+
+uint32 ContainerPermissions::getFullPermissions(const String& group) const {
+	return groupPermissions.get(group.hashCode());
+}
+
+void ContainerPermissions::setOwner(uint64 id) {
+	ownerID = id;
+}
+
+void ContainerPermissions::setInheritPermissionsFromParent(bool val) {
+	inheritPermissionsFromParent = val;
+}

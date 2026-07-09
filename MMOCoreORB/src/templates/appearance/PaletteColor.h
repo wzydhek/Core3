@@ -7,6 +7,9 @@
 
 #pragma once
 
+#include "system/lang/Object.h"
+#include "system/io/ObjectInputStream.h"
+
 class PaletteColor : public Object {
 	uint8 red;
 	uint8 green;
@@ -14,45 +17,17 @@ class PaletteColor : public Object {
 	uint8 unknown;
 
 public:
-	PaletteColor() {
-		red = green = blue = unknown = 0;
-	}
+	PaletteColor();
 
-	PaletteColor(const PaletteColor& c) : Object() {
-		red = c.red;
-		green = c.green;
-		blue = c.blue;
-		unknown = c.unknown;
-	}
+	PaletteColor(const PaletteColor& c);
 
-	PaletteColor& operator=(const PaletteColor& c) {
-		if (this == &c)
-			return *this;
+	PaletteColor& operator=(const PaletteColor& c);
 
-		red = c.red;
-		green = c.green;
-		blue = c.blue;
-		unknown = c.unknown;
+	void readObject(ObjectInputStream* stream);
 
-		return *this;
-	}
+	uint8 getRed();
 
-	void readObject(ObjectInputStream* stream) {
-		red = stream->readByte();
-		green = stream->readByte();
-		blue = stream->readByte();
-		unknown = stream->readByte();
-	}
+	uint8 getGreen();
 
-	uint8 getRed() {
-		return red;
-	}
-
-	uint8 getGreen() {
-		return green;
-	}
-
-	uint8 getBlue() {
-		return blue;
-	}
+	uint8 getBlue();
 };

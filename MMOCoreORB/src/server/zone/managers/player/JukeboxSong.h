@@ -1,32 +1,23 @@
 #pragma once
 
+#include "system/lang/Object.h"
+#include "system/lang/String.h"
+
 class JukeboxSong : public Object {
 
 protected:
 	String stringId, songFile;
 
 public:
-	JukeboxSong() {
-	}
+	JukeboxSong();
 
-	~JukeboxSong() {
-	}
+	~JukeboxSong();
 
-	JukeboxSong(const JukeboxSong& obj) : Object() {
-		stringId = obj.stringId;
-		songFile = obj.songFile;
-	}
+	JukeboxSong(const JukeboxSong& obj);
 
-	JukeboxSong(String sid, String sfile) : Object() {
-		stringId = sid;
-		songFile = sfile;
-	}
+	JukeboxSong(String sid, String sfile);
 
-	String getSongFile() {
-		return songFile;
-	}
+	String getSongFile();
 
-	String getStringId() {
-		return stringId;
-	}
+	String getStringId();
 };

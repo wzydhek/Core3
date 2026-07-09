@@ -11,13 +11,7 @@ class FactoryCrateObjectDeltaMessage3 : public DeltaMessage {
 	FactoryCrate* tano;
 
 public:
-	FactoryCrateObjectDeltaMessage3(FactoryCrate* ta, uint32 objType = 0x46435954)
-			: DeltaMessage(ta->getObjectID(), objType, 3) {
-		tano = ta;
-	}
+	FactoryCrateObjectDeltaMessage3(FactoryCrate* ta, uint32 objType = 0x46435954);
 
-	void setQuantity(int quantity) {
-
-		addIntUpdate(7, quantity);
-	}
+	void setQuantity(int quantity);
 };

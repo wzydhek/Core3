@@ -225,7 +225,7 @@ engine::db::ResultSet* MySqlDatabase::executeQuery(const char* statement) {
 	}
 #endif
 
-	ResultSet* res = new ResultSet(&mysql, result);
+	ResultSet* res = new MySqlResultSet(&mysql, result);
 	return res;
 }
 
@@ -291,4 +291,13 @@ void MySqlDatabase::onThreadStart() {
 
 void MySqlDatabase::onThreadEnd() {
 	mysql_thread_end();
+}
+
+int MySqlDatabase::compareTo(const Database* database) const {
+	if (this < database)
+		return 1;
+	else if (this > database)
+		return -1;
+	else
+		return 0;
 }

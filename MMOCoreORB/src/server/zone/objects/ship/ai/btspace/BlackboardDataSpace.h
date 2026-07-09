@@ -6,6 +6,8 @@
 #include <memory>
 #include <cassert>
 
+#include "system/lang.h"
+
 namespace server {
 namespace zone {
 namespace objects {
@@ -72,33 +74,24 @@ private:
 	std::shared_ptr<AbstractData> data;
 
 public:
-	BlackboardDataSpace() : Object(), data(NULL) {
-	}
+	BlackboardDataSpace();
 
 	template <typename T>
 	BlackboardDataSpace(T&& in) : Object(), data(new Data<BlackboardType<T>>(std::forward<T>(in))) {
 	}
 
-	BlackboardDataSpace(const BlackboardDataSpace& in) : Object(), data(in.data) {
-	}
+	BlackboardDataSpace(const BlackboardDataSpace& in);
 
-	BlackboardDataSpace(BlackboardDataSpace&& in) : BlackboardDataSpace() {
-		swap(*this, in);
-	}
+	BlackboardDataSpace(BlackboardDataSpace&& in);
 
 	friend void swap(BlackboardDataSpace& a, BlackboardDataSpace& b) {
 		std::swap(a.data, b.data);
 	}
 
-	BlackboardDataSpace& operator=(BlackboardDataSpace in) {
-		swap(*this, in);
-		return *this;
-	}
+	BlackboardDataSpace& operator=(BlackboardDataSpace in);
 
 	// define this as a member function to avoid ambiguous operator== overloads
-	bool operator==(const BlackboardDataSpace& b) const {
-		return *data == *b.data;
-	}
+	bool operator==(const BlackboardDataSpace& b) const;
 
 	template <typename T>
 	BlackboardType<T>& get() {
@@ -133,3 +126,5 @@ inline BlackboardDataSpace::BlackboardDataSpace(BlackboardDataSpace&& in) : Blac
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace;

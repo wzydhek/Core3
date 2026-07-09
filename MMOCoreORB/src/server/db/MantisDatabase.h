@@ -26,18 +26,7 @@ public:
 	MantisDatabase(conf::ConfigManager* configManager);
 	~MantisDatabase();
 
-	inline static Database* instance() {
-		if (databases->size() == 0)
-			return nullptr;
+	static Database* instance();
 
-		int i = currentDB.get() % databases->size();
-
-		currentDB.increment();
-
-		return databases->get(i).get();
-	}
-
-	static const String& getTablePrefix() {
-		return tablePrefix;
-	}
+	static const String& getTablePrefix();
 };

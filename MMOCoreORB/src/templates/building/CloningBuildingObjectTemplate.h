@@ -17,63 +17,19 @@ class CloningBuildingObjectTemplate : public SharedBuildingObjectTemplate {
 public:
 	enum { STANDARD = 0, PLAYER_CITY, JEDI_ONLY, LIGHT_JEDI_ONLY, DARK_JEDI_ONLY, FACTION_REBEL, FACTION_IMPERIAL };
 
-	CloningBuildingObjectTemplate() {
-		facilityType = 0;
-	}
+	CloningBuildingObjectTemplate();
 
-	~CloningBuildingObjectTemplate() {
-	}
+	~CloningBuildingObjectTemplate();
 
-	void readObject(LuaObject* templateData) {
-		SharedBuildingObjectTemplate::readObject(templateData);
+	void readObject(LuaObject* templateData);
 
-		spawningPoints.removeAll();
+	CloneSpawnPoint* getRandomSpawnPoint();
 
-		LuaObject luaItemList = templateData->getObjectField("spawningPoints");
+	bool isCloningBuildingObjectTemplate();
 
-		int size = luaItemList.getTableSize();
+	int getFacilityType();
 
-		lua_State* L = luaItemList.getLuaState();
+	bool isJediCloner();
 
-		for (int i = 0; i < size; ++i) {
-			lua_rawgeti(L, -1, i + 1);
-			LuaObject a(L);
-
-			CloneSpawnPoint point;
-			point.parseFromLua(&a);
-
-			//System::out << "adding spawning point" << endl;
-
-			spawningPoints.add(point);
-
-			a.pop();
-		}
-
-		luaItemList.pop();
-
-		facilityType = templateData->getIntField("facilityType");
-	}
-
-	CloneSpawnPoint* getRandomSpawnPoint() {
-		if (spawningPoints.size() == 0)
-			return nullptr;
-
-		return &spawningPoints.get(System::random(spawningPoints.size() - 1));
-	}
-
-	bool isCloningBuildingObjectTemplate() {
-		return true;
-	}
-
-	int getFacilityType() {
-		return facilityType;
-	}
-
-	bool isJediCloner() {
-		return facilityType == JEDI_ONLY || facilityType == LIGHT_JEDI_ONLY || facilityType == DARK_JEDI_ONLY;
-	}
-
-	inline Vector<CloneSpawnPoint>* getCloneSpawnPoints() {
-		return &spawningPoints;
-	}
+	Vector<CloneSpawnPoint>* getCloneSpawnPoints();
 };

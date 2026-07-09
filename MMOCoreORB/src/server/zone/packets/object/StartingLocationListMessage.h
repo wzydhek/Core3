@@ -5,12 +5,9 @@
 #pragma once
 
 #include "ObjectControllerMessage.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class StartingLocationListMessage : public ObjectControllerMessage {
 public:
-	StartingLocationListMessage(CreatureObject* creo)
-			: ObjectControllerMessage(creo->getObjectID(), 0x1B, 0x1FC) {
-
-		//Populate with PlayerManager::sendStartingLocationListTo()
-	}
+	StartingLocationListMessage(CreatureObject* creo);
 };

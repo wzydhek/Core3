@@ -1,0 +1,47 @@
+#include "ClientRandomNameRequest.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/managers/player/PlayerManager.h"
+#include "ClientRandomNameResponse.h"
+#include "server/zone/managers/name/NameManager.h"
+
+ClientRandomNameRequest::ClientRandomNameRequest(ZoneClientSession* client, ZoneProcessServer* server) : MessageCallback(client, server) {
+}
+
+void ClientRandomNameRequest::parse(Message* message) {
+	message->parseAscii(raceFile);
+}
+
+void ClientRandomNameRequest::run() {
+	NameManager* nameManager = server->getNameManager();
+
+	int species = CreatureObject::HUMAN;
+
+	if (raceFile.indexOf("wookiee") != -1)
+		species = CreatureObject::WOOKIEE;
+	else if (raceFile.indexOf("bothan") != -1)
+		species = CreatureObject::BOTHAN;
+	else if (raceFile.indexOf("ithorian") != -1)
+		species = CreatureObject::ITHORIAN;
+	else if (raceFile.indexOf("moncal") != -1)
+		species = CreatureObject::MONCAL;
+	else if (raceFile.indexOf("rodian") != -1)
+		species = CreatureObject::RODIAN;
+	else if (raceFile.indexOf("sullustan") != -1)
+		species = CreatureObject::SULLUSTAN;
+	else if (raceFile.indexOf("trandoshan") != -1)
+		species = CreatureObject::TRANDOSHAN;
+	else if (raceFile.indexOf("twilek") != -1)
+		species = CreatureObject::TWILEK;
+	else if (raceFile.indexOf("zabrak") != -1)
+		species = CreatureObject::ZABRAK;
+
+	PlayerManager* playerManager = server->getPlayerManager();
+	String name;
+	int limiter = 0;
+	do {
+		name = nameManager->makeCreatureName(1, species);
+	} while (playerManager->existsName(name) && ++limiter < 20);
+
+	BaseMessage* msg = new ClientRandomNameResponse(raceFile, name);
+	client->sendMessage(msg);
+}

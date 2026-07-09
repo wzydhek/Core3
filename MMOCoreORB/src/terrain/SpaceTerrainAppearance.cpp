@@ -257,3 +257,7 @@ void SpaceTerrainAppearance::parseAMBI(engine::util::IffStream* iffStream) {
 	iffStream->closeChunk('0000');
 	iffStream->closeForm('AMBI');
 }
+
+float SpaceTerrainAppearance::getSize() const {
+	return 16384 * 16384;
+}

@@ -7,6 +7,9 @@
 
 #pragma once
 
+#include "engine/engine.h"
+#include "engine/service/proto/BaseMessage.h"
+
 float const PI_2 = 3.14159265358979323846f / 2.f;
 
 class PackedRotationRate {
@@ -17,27 +20,15 @@ class PackedRotationRate {
 
 	int8 rate;
 public:
-	PackedRotationRate() : rate(0) {
+	PackedRotationRate();
 
-	}
+	PackedRotationRate(float value);
 
-	PackedRotationRate(float value) {
-		set(value);
-	}
+	void set(float value);
 
-	void set(float value) {
-		rate = static_cast<int8>(clamp(-(PI_2), value, (PI_2)) * (127.f / PI_2));
-	}
+	float get();
 
-	float get() {
-		return rate*((PI_2)/127.f);
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		rate = message->readSignedByte();
-	}
-
-	void write(Message* message) {
-		message->writeSignedByte(rate);
-	}
+	void write(Message* message);
 };

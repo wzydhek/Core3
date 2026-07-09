@@ -20,42 +20,16 @@ public:
 
 	const static uint64 TIME_TO_LIVE = 28800000; // 8 hours
 
-	EventPerkDeedTemplate() {
-		perkType = UNKNOWN;
-		generatedTimeToLive = 0;
-		allowedZones.removeAll();
-	}
+	EventPerkDeedTemplate();
 
-	~EventPerkDeedTemplate() {
+	~EventPerkDeedTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		DeedTemplate::readObject(templateData);
-		perkType = templateData->getIntField("perkType");
-		generatedTimeToLive = templateData->getLongField("generatedTimeToLive");
+	int getPerkType();
 
-		LuaObject allowzones = templateData->getObjectField("allowedZones");
+	uint64 getGeneratedTimeToLive();
 
-		if (allowzones.isValidTable()) {
-			for (int i = 1; i <= allowzones.getTableSize(); ++i) {
-				allowedZones.put(allowzones.getStringAt(i));
-			}
-		}
-
-		allowzones.pop();
-    }
-
-	int getPerkType() {
-		return perkType;
-	}
-
-	uint64 getGeneratedTimeToLive() {
-		return generatedTimeToLive;
-	}
-
-	inline bool isAllowedZone(const String& zoneName) {
-		return allowedZones.isEmpty() || allowedZones.contains(zoneName);
-	}
+	bool isAllowedZone(const String& zoneName);
 
 };

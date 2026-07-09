@@ -13,26 +13,14 @@ class CamoKitTemplate : public SharedTangibleObjectTemplate {
 	String effectiveZone;
 
 public:
-	CamoKitTemplate() {
-		effectiveZone = "";
-	}
+	CamoKitTemplate();
 
-	~CamoKitTemplate() {
+	~CamoKitTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	String& getEffectiveZone();
 
-		effectiveZone = templateData->getStringField("effectiveZone");
-}
-
-	inline String& getEffectiveZone() {
-		return effectiveZone;
-	}
-
-    bool isCamoKitTemplate() {
-    	return true;
-    }
+    bool isCamoKitTemplate();
 
 };

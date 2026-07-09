@@ -13,27 +13,11 @@ namespace decorator {
 
 class AlwaysFail : public Decorator {
 public:
-	AlwaysFail(const String& className, const uint32 id, const LuaObject& args)
-			: Decorator(className, id, args) {
-	}
+	AlwaysFail(const String& className, const uint32 id, const LuaObject& args);
 
-	AlwaysFail(const AlwaysFail& b)
-			: Decorator(b) {
-	}
+	AlwaysFail(const AlwaysFail& b);
 
-	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const {
-		assert(child != nullptr);
-
-		Behavior::Status result = child->doAction(agent);
-
-		if (result == RUNNING)
-			agent->clearRunningChain();
-
-		if (result == SUCCESS || result == FAILURE || result == RUNNING)
-			return FAILURE;
-
-		return result;
-	}
+	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 }
@@ -43,3 +27,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt::decorator;

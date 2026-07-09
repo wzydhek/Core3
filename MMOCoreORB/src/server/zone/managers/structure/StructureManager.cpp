@@ -1441,3 +1441,7 @@ bool StructureManager::isInStructureFootprint(StructureObject* structure, float 
 
 	return structureFootprint.containsPoint(positionX, positionY);
 }
+
+void StructureManager::setZoneServer(ZoneServer* zoneServer) {
+	server = zoneServer;
+}

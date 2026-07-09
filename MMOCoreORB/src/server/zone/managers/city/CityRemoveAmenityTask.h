@@ -1,6 +1,5 @@
 
-#ifndef CITYREMOVEAMENITYTASK_H_
-#define CITYREMOVEAMENITYTASK_H_
+#pragma once
 
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/objects/scene/SceneObject.h"
@@ -10,26 +9,7 @@ class CityRemoveAmenityTask : public Task {
 	ManagedReference<CityRegion*> city;
 
 public:
-	CityRemoveAmenityTask(SceneObject* sceno, CityRegion* cityRegion) {
-		amenity = sceno;
-		city = cityRegion;
-	}
+	CityRemoveAmenityTask(SceneObject* sceno, CityRegion* cityRegion);
 
-	void run() {
-		if (city == nullptr || amenity == nullptr)
-			return;
-
-		Locker locker(city);
-		Locker clocker(amenity, city);
-
-		if (amenity->isMissionTerminal())
-			city->removeMissionTerminal(amenity);
-		else
-			city->removeSkillTrainers(amenity);
-
-		amenity->destroyObjectFromWorld(true);
-		amenity->destroyObjectFromDatabase(true);
-	}
+	void run();
 };
-
-#endif /* CITYREMOVEAMENITYTASK_H_ */

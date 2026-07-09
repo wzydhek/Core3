@@ -38,9 +38,7 @@ public:
 
 	friend void to_json(nlohmann::json& j, const DataObjectComponent& comp);
 
-	virtual void writeJSON(nlohmann::json& j) const {
-		j["parent"] = parent;
-	}
+	virtual void writeJSON(nlohmann::json& j) const;
 
 	virtual void initializeTransientMembers();
 
@@ -50,84 +48,44 @@ public:
 
 	SceneObject* getParent();
 
-	virtual bool isDiceData() {
-		return false;
-	}
+	virtual bool isDiceData();
 
-	virtual bool isFireworkShowData() {
-		return false;
-	}
+	virtual bool isFireworkShowData();
 
-	virtual bool isVendorData() {
-		return false;
-	}
+	virtual bool isVendorData();
 
-	virtual bool isAuctionTerminalData() {
-		return false;
-	}
+	virtual bool isAuctionTerminalData();
 
-	virtual bool isCreatureHabitatData() {
-		return false;
-	}
+	virtual bool isCreatureHabitatData();
 
-	virtual bool isBuildingData(){
-		return false;
-	}
+	virtual bool isBuildingData();
 
-	virtual bool isDestructibleBuildingData(){
-		return false;
-	}
+	virtual bool isDestructibleBuildingData();
 
-	virtual bool isTurretData(){
-		return false;
-	}
+	virtual bool isTurretData();
 
-	virtual bool isScannerData(){
-		return false;
-	}
+	virtual bool isScannerData();
 
-	virtual bool isGCWBaseData(){
-		return false;
-	}
+	virtual bool isGCWBaseData();
 
-	virtual bool isSecurityTerminalData(){
-		return false;
-	}
+	virtual bool isSecurityTerminalData();
 
-	virtual bool isMinefieldData(){
-		return false;
-	}
+	virtual bool isMinefieldData();
 
-	virtual bool isTurretControlTerminalData(){
-		return false;
-	}
+	virtual bool isTurretControlTerminalData();
 
-	virtual bool isDecoration(){
-		return false;
-	}
+	virtual bool isDecoration();
 
-	virtual bool isCoaMessageData(){
-		return false;
-	}
+	virtual bool isCoaMessageData();
 
-	virtual bool isEventPerkData() {
-		return false;
-	}
+	virtual bool isEventPerkData();
 
-	virtual bool isFlagGameData() {
-		return false;
-	}
+	virtual bool isFlagGameData();
 
-	virtual bool isDataStorageUnitData() {
-		return false;
-	}
+	virtual bool isDataStorageUnitData();
 
-	virtual bool isDroidModuleData() {
-		return false;
-	}
+	virtual bool isDroidModuleData();
 
-	virtual bool isGamblingTerminalData() {
-		return false;
-	}
+	virtual bool isGamblingTerminalData();
 
 };

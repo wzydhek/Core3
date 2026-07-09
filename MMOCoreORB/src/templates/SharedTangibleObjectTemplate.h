@@ -77,151 +77,77 @@ public:
 	void parseVariableData(const String& varName, Chunk* data);
 	void parseVariableData(const String& varName, LuaObject* data);
 
-	inline int getMaxCondition() const {
-		return maxCondition;
-	}
+	int getMaxCondition() const;
 
-	inline uint32 getOptionsBitmask() const {
-		return optionsBitmask;
-	}
+	uint32 getOptionsBitmask() const;
 
-	inline uint32 getPvpStatusBitmask() const {
-		return pvpStatusBitmask;
-	}
+	uint32 getPvpStatusBitmask() const;
 
-	void setMaxCondition(int maxCondition) {
-		this->maxCondition = maxCondition;
-	}
+	void setMaxCondition(int maxCondition);
 
-	void setOptionsBitmask(uint32 optionsBitmask) {
-		this->optionsBitmask = optionsBitmask;
-	}
+	void setOptionsBitmask(uint32 optionsBitmask);
 
-	void setPvpStatusBitmask(uint32 pvpStatusBitmask) {
-		this->pvpStatusBitmask = pvpStatusBitmask;
-	}
+	void setPvpStatusBitmask(uint32 pvpStatusBitmask);
 
-	inline const Vector<String>& getCertificationsRequired() const {
-		return certificationsRequired;
-	}
+	const Vector<String>& getCertificationsRequired() const;
 
-	inline int getLevel() const {
-		return level;
-	}
+	int getLevel() const;
 
-	inline bool isInvisible() const {
-		return invisible;
-	}
+	bool isInvisible() const;
 
-	inline int getUseCount() const {
-		return useCount;
-	}
+	int getUseCount() const;
 
-	inline uint16 getPlayerUseMask() const {
-		return playerUseMask;
-	}
+	uint16 getPlayerUseMask() const;
 
-	inline unsigned int getFaction() const {
-		return faction;
-	}
+	unsigned int getFaction() const;
 
-	inline int getJunkDealerNeeded() const {
-		return junkDealerNeeded;
-	}
+	int getJunkDealerNeeded() const;
 
-	inline int getJunkValue() const {
-		return junkValue;
-	}
+	int getJunkValue() const;
 
-	inline const StructureFootprint* getStructureFootprint() const {
-		return structureFootprint;
-	}
+	const StructureFootprint* getStructureFootprint() const;
 
-	inline bool getTargetable() const {
-		return targetable;
-	}
+	bool getTargetable() const;
 
-	void setCertificationsRequired(Vector<String> certificationsRequired) {
-		this->certificationsRequired = certificationsRequired;
-	}
+	void setCertificationsRequired(Vector<String> certificationsRequired);
 
-	void setPlayerUseMask(uint16 playerUseMask) {
-		this->playerUseMask = playerUseMask;
-	}
+	void setPlayerUseMask(uint16 playerUseMask);
 
-	void setTargetable(bool targetable) {
-		this->targetable = targetable;
-	}
+	void setTargetable(bool targetable);
 
-	inline bool getSliceable() const {
-		return sliceable;
-	}
+	bool getSliceable() const;
 
-	inline bool isInsurable() const {
-		return insurable;
-	}
+	bool isInsurable() const;
 
-	void setInsurable(bool val) {
-		this->insurable = val;
-	}
+	void setInsurable(bool val);
 
-	inline bool isJediRobe() const {
-		return jediRobe;
-	}
+	bool isJediRobe() const;
 
-	void setJediRobe(bool val) {
-		this->jediRobe = val;
-	}
+	void setJediRobe(bool val);
 
-	const Vector<short >* getNumberExperimentalProperties() const {
-		return numberExperimentalProperties;
-	}
+	const Vector<short>* getNumberExperimentalProperties() const;
 
-	const Vector<String>* getExperimentalProperties() const {
-		return experimentalProperties;
-	}
+	const Vector<String>* getExperimentalProperties() const;
 
-	const Vector<short >* getExperimentalWeights() const {
-		return experimentalWeights;
-	}
+	const Vector<short>* getExperimentalWeights() const;
 
-	const Vector<String>* getExperimentalGroups() const {
-		return experimentalGroups;
-	}
+	const Vector<String>* getExperimentalGroups() const;
 
-	const Vector<String>* getExperimentalAttributes() const {
-		return experimentalAttributes;
-	}
+	const Vector<String>* getExperimentalAttributes() const;
 
-	const Vector<float>* getExperimentalMin() const {
-		return experimentalMin;
-	}
+	const Vector<float>* getExperimentalMin() const;
 
-	const Vector<float>* getExperimentalMax() const {
-		return experimentalMax;
-	}
+	const Vector<float>* getExperimentalMax() const;
 
-	const Vector<short >* getExperimentalPrecision() const {
-		return experimentalPrecision;
-	}
+	const Vector<short>* getExperimentalPrecision() const;
 
-	const Vector<uint32>* getPlayerRaces() const {
-		return playerRaces;
-	}
+	const Vector<uint32>* getPlayerRaces() const;
 
-	const Vector<Reference<ResourceWeight* > >* getResourceWeights() const {
-		return resourceWeights;
-	}
+	const Vector<Reference<ResourceWeight*>>* getResourceWeights() const;
 
-	const VectorMap<String, int>* getSkillMods() const {
-		return &skillMods;
-	}
+	const VectorMap<String, int>* getSkillMods() const;
 
-	int getSkillMod(const String& mod) const {
-		return skillMods.get(mod);
-	}
+	int getSkillMod(const String& mod) const;
 
-	bool isSharedTangibleObjectTemplate() const override {
-		return true;
-	}
+	bool isSharedTangibleObjectTemplate() const override;
 };

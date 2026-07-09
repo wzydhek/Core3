@@ -4,10 +4,9 @@
 
 #pragma once
 
+#include "engine/service/proto/BaseMessage.h"
+
 class UnAcceptTransactionMessage : public BaseMessage {
 public:
-	UnAcceptTransactionMessage() : BaseMessage(6) {
-		insertShort(1);
-		insertInt(0xE81E4382);
-	}
+	UnAcceptTransactionMessage();
 };

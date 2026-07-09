@@ -18,33 +18,9 @@ class RemoveDisabledInvulnerableTask : public Task {
 	ManagedWeakReference<ShipAiAgent*> ship;
 
 public:
-	RemoveDisabledInvulnerableTask(ShipAiAgent* shipO) {
-		ship = shipO;
+	RemoveDisabledInvulnerableTask(ShipAiAgent* shipO);
 
-		auto zone = shipO->getZone();
-
-		if (zone != nullptr) {
-			setCustomTaskQueue(zone->getZoneName());
-		}
-	}
-
-	void run() {
-		ManagedReference<ShipAiAgent*> strongShip = ship.get();
-
-		if (strongShip == nullptr) {
-			return;
-		}
-
-		Locker locker(strongShip);
-
-		auto zone = strongShip->getZone();
-
-		if (zone == nullptr) {
-			return;
-		}
-
-		strongShip->removeShipFlag(ShipFlag::DISABLED_INVULNERABLE);
-	}
+	void run();
 };
 
 } // namespace events

@@ -69,45 +69,23 @@ namespace server {
 
    		void setContainer(SceneObject* obj);
 
-   		void setDelayedLoadOperationMode() {
-   			operationMode = DELAYED_LOAD;
-   		}
+   		void setDelayedLoadOperationMode();
 
-   		void setNormalLoadOperationMode() {
-   			operationMode = NORMAL_LOAD;
-   		}
+   		void setNormalLoadOperationMode();
 
-   		bool hasDelayedLoadOperationMode() const {
-   			return operationMode == DELAYED_LOAD;
-   		}
+   		bool hasDelayedLoadOperationMode() const;
 
-   		bool isLoaded(bool readLock = true) const {
-   			if (readLock) {
-   				ReadLocker locker(containerLock);
+   		bool isLoaded(bool readLock = true) const;
 
-   				return operationMode == NORMAL_LOAD || oids == nullptr;
-   			} else {
-   				return operationMode == NORMAL_LOAD || oids == nullptr;
-   			}
-   		}
+   		const AtomicTime* getLastAccess() const;
 
-   		const AtomicTime* getLastAccess() const {
-   			return &lastAccess;
-   		}
-
-   		ManagedWeakReference<SceneObject*> getContainer() const {
-   			return container;
-   		}
+   		ManagedWeakReference<SceneObject*> getContainer() const;
 
    		void cancelUnloadTask();
 
-		VectorMap<uint64, uint64>* getOids() const {
-			return oids.get();
-		}
+		VectorMap<uint64, uint64>* getOids() const;
 
-		const VectorMap<uint64, ManagedReference<SceneObject*> >* getContainerObjects() const {
-			return &containerObjects;
-		}
+		const VectorMap<uint64, ManagedReference<SceneObject*>>* getContainerObjects() const;
 
 
    	};

@@ -17,37 +17,17 @@ protected:
 
 
 public:
-	SchematicFragmentTemplate() {
-		totalFragments = 0;
-		fragmentBitmask = 0;
-		targetSchematic = 0;
-	}
+	SchematicFragmentTemplate();
 
-	~SchematicFragmentTemplate() {
+	~SchematicFragmentTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	int getTotalFragments();
 
-		totalFragments = templateData->getIntField("totalFragments");
-		fragmentBitmask = templateData->getIntField("fragmentBitmask");
-		targetSchematic = templateData->getStringField("targetSchematic").hashCode();
-	}
+	unsigned int getfragmentBitmask();
 
-	inline int getTotalFragments() {
-		return totalFragments;
-	}
+	bool isSchematicFragmentTemplate();
 
-	inline unsigned int getfragmentBitmask() {
-		return fragmentBitmask;
-	}
-
-	bool isSchematicFragmentTemplate() {
-		return true;
-	}
-
-	inline uint32 getTargetSchematic() {
-		return targetSchematic;
-	}
+	uint32 getTargetSchematic();
 };

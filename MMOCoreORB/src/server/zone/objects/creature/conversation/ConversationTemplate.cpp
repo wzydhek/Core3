@@ -2,6 +2,16 @@
 
 #include "server/zone/managers/conversation/ConversationManager.h"
 
+ConversationTemplate::ConversationTemplate(uint32 hashCode) : Logger("ConversationTemplate") {
+	screens.setNoDuplicateInsertPlan();
+	crc = hashCode;
+
+	conversationTemplateType = ConversationTemplateTypeNormal;
+}
+
+ConversationTemplate::~ConversationTemplate() {
+}
+
 void ConversationTemplate::readObject(LuaObject* templateData) {
 	initialScreenID = templateData->getStringField("initialScreen");
 
@@ -51,4 +61,24 @@ void ConversationTemplate::readObject(LuaObject* templateData) {
 	screensTable.pop();
 
 	ConversationManager::instance()->getConversationObserver(crc);
+}
+
+const String& ConversationTemplate::getLuaClassHandler() const {
+	return luaClassHandler;
+}
+
+ConversationScreen* ConversationTemplate::getInitialScreen() const {
+	return screens.get(initialScreenID);
+}
+
+ConversationScreen* ConversationTemplate::getScreen(const String& screenID) const {
+	return screens.get(screenID);
+}
+
+ConversationTemplate::ConversationTemplateType ConversationTemplate::getConversationTemplateType() const {
+	return conversationTemplateType;
+}
+
+uint32 ConversationTemplate::getCRC() const {
+	return crc;
 }

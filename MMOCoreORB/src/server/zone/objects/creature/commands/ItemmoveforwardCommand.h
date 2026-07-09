@@ -4,25 +4,14 @@
 
 #pragma once
 
+#include "QueueCommand.h"
+
 class ItemmoveforwardCommand : public QueueCommand {
 public:
 
-	ItemmoveforwardCommand(const String& name, ZoneProcessServer* server)
-		: QueueCommand(name, server) {
+	ItemmoveforwardCommand(const String& name, ZoneProcessServer* server);
 
-	}
-
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		creature->executeObjectControllerAction(0x4B74A403, target, "forward 10");
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };
+

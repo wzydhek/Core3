@@ -16,43 +16,19 @@ class RangedStimPackTemplate : public StimPackTemplate {
 	float rangeMod;
 
 public:
-	RangedStimPackTemplate() {
-		effectiveness = 0;
-		range = 0;
-		area = 0;
-		rangeMod = 0;
-	}
+	RangedStimPackTemplate();
 
-	~RangedStimPackTemplate() {
+	~RangedStimPackTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		StimPackTemplate::readObject(templateData);
+	float getEffectiveness();
 
-		range = templateData->getFloatField("range");
-		rangeMod = templateData->getFloatField("rangeMod");
-		area = templateData->getFloatField("area");
-		effectiveness = templateData->getFloatField("effectiveness");
-    }
+	float getRange();
 
-	inline float getEffectiveness() {
-		return effectiveness;
-	}
+	float getArea();
 
-	inline float getRange() {
-		return range;
-	}
+	float getRangeMod();
 
-	inline float getArea() {
-		return area;
-	}
-
-	inline float getRangeMod() {
-		return rangeMod;
-	}
-
-	bool isRangedStimPackTemplate() {
-		return true;
-	}
+	bool isRangedStimPackTemplate();
 };

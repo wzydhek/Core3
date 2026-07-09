@@ -14,16 +14,10 @@ protected:
 
 
 public:
-	DecorationDataComponent() {
+	DecorationDataComponent();
 
-	}
+	virtual ~DecorationDataComponent();
 
-	virtual ~DecorationDataComponent() {
-
-	}
-
-	bool isDecoration() {
-		return true;
-	}
+	bool isDecoration();
 
 };

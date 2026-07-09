@@ -6,31 +6,16 @@ class VehicleObjectTemplate : public SharedCreatureObjectTemplate {
 	int decayRate, decayCycle;
 
 public:
-	VehicleObjectTemplate() {
-		decayRate = 0;
-		decayCycle = 0;
-	}
+	VehicleObjectTemplate();
 
-	~VehicleObjectTemplate() {
+	~VehicleObjectTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedCreatureObjectTemplate::readObject(templateData);
-		decayRate = templateData->getIntField("decayRate");
-		decayCycle = templateData->getIntField("decayCycle");
-    }
+	bool isVehicleObjectTemplate();
 
-	bool isVehicleObjectTemplate() {
-		return true;
-	}
+	int getDecayRate();
 
-	int getDecayRate() {
-		return decayRate;
-	}
-
-	int getDecayCycle() {
-		return decayCycle;
-	}
+	int getDecayCycle();
 
 };

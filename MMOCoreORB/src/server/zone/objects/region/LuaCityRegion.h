@@ -22,9 +22,7 @@ namespace region {
 		int isClientRegion(lua_State* L);
 
 	protected:
-		CityRegion* _getRealCityRegion() {
-			return realObject.get();
-		}
+		CityRegion* _getRealCityRegion();
 
 	private:
 		Reference<CityRegion*> realObject;

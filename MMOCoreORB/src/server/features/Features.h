@@ -19,9 +19,7 @@ public:
 
 	bool loadFeatures();
 
-	inline bool hasFeature(const String& key) {
-		return options.containsKey(key);
-	}
+	bool hasFeature(const String& key);
 };
 
 }

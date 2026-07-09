@@ -7,8 +7,9 @@
 
 #pragma once
 
+#include "engine/engine.h"
 #include "PackedUnitVector.h"
-#include "engine/util/u3d/Vector3.h"
+#include "engine/service/proto/BaseMessage.h"
 
 class PackedPosition {
 public:
@@ -21,35 +22,15 @@ protected:
 	int16 z;
 
 public:
-	PackedPosition() {
-		x = 0;
-		y = 0;
-		z = 0;
-	}
+	PackedPosition();
 
-	PackedPosition(const Vector3& vector) {
-		set(vector);
-	}
+	PackedPosition(const Vector3& vector);
 
-	void parse(Message* message) {
-		x = message->readSignedShort();
-		z = message->readSignedShort();
-		y = message->readSignedShort();
-	}
+	void parse(Message* message);
 
-	void write(Message* message) {
-		message->writeSignedShort(x);
-		message->writeSignedShort(z);
-		message->writeSignedShort(y);
-	}
+	void write(Message* message);
 
-	void set(const Vector3& vector) {
-		x = (int16)(Math::clamp(-8000.0f, vector.getX(), 8000.f) * positionScale);
-		y = (int16)(Math::clamp(-8000.0f, vector.getY(), 8000.f) * positionScale);
-		z = (int16)(Math::clamp(-8000.0f, vector.getZ(), 8000.f) * positionScale);
-	}
+	void set(const Vector3& vector);
 
-	Vector3 get() {
-		return Vector3(x,y,z) * inversePositionScale;
-	}
+	Vector3 get();
 };

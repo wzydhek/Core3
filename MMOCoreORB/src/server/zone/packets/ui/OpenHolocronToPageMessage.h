@@ -7,13 +7,9 @@
 
 #pragma once
 
+#include "engine/service/proto/BaseMessage.h"
+
 class OpenHolocronToPageMessage : public BaseMessage {
 public:
-   OpenHolocronToPageMessage(const String& page) : BaseMessage() {
-		insertShort(0x09);
-		insertInt(0x7CB65021);  // CRC
-
-		insertAscii(page);
-		insertShort(0x00);
-   }
+	OpenHolocronToPageMessage(const String& page);
 };

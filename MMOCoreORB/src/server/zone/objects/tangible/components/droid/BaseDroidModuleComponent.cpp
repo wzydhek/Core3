@@ -97,3 +97,30 @@ Reference<DroidObject*> BaseDroidModuleComponent::getDroidObject() {
 void BaseDroidModuleComponent::updateCraftingValues(CraftingValues* values, bool firstUpdate) {
 
 }
+
+bool BaseDroidModuleComponent::isDroidModuleData() {
+	return true;
+}
+
+bool BaseDroidModuleComponent::isStackable() {
+	return false;
+}
+
+bool BaseDroidModuleComponent::isCombatModule() {
+	return false;
+}
+
+
+bool BaseDroidModuleComponent::isDetonationModule() {
+	return false;
+}
+
+void BaseDroidModuleComponent::addToStack(BaseDroidModuleComponent* other) {
+}
+
+void BaseDroidModuleComponent::copy(BaseDroidModuleComponent* other) {
+}
+
+void BaseDroidModuleComponent::setSpecies(int s) {
+	species = s;
+}

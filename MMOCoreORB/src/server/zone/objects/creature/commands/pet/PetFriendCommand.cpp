@@ -1,0 +1,45 @@
+#include "PetFriendCommand.h"
+#include "server/zone/objects/intangible/PetControlDevice.h"
+#include "server/zone/ZoneServer.h"
+#include "server/zone/objects/creature/ai/AiAgent.h"
+#include "server/zone/objects/creature/ai/DroidObject.h"
+#include "server/zone/managers/creature/PetManager.h"
+
+PetFriendCommand::PetFriendCommand(const String& name, ZoneProcessServer* server) : QueueCommand(name, server) {
+}
+
+int PetFriendCommand::doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
+	ManagedReference<PetControlDevice*> controlDevice = creature->getControlDevice().get().castTo<PetControlDevice*>();
+	if (controlDevice == nullptr)
+		return GENERALERROR;
+
+	ManagedReference<AiAgent*> pet = cast<AiAgent*>(creature);
+	if (pet == nullptr)
+		return GENERALERROR;
+
+	if (pet->hasRidingCreature())
+		return GENERALERROR;
+
+	// Check if droid has power
+	if (controlDevice->getPetType() == PetManager::DROIDPET) {
+		ManagedReference<DroidObject*> droidPet = cast<DroidObject*>(pet.get());
+		if (droidPet == nullptr)
+			return GENERALERROR;
+
+		if (!droidPet->hasPower()) {
+			pet->showFlyText("npc_reaction/flytext", "low_power", 204, 0, 0); // "*Low Power*"
+			return GENERALERROR;
+		}
+	}
+
+	Reference<CreatureObject*> player = server->getZoneServer()->getObject(target, true).castTo<CreatureObject*>();
+	if (player == nullptr || !player->isPlayerCreature() || player->isAttackableBy(pet)) {
+		pet->showFlyText("npc_reaction/flytext", "confused", 204, 0, 0); // "?!!?!?!"
+		return GENERALERROR;
+	}
+
+	Locker clocker(controlDevice, creature);
+	controlDevice->toggleFriend(player->getObjectID());
+
+	return SUCCESS;
+}

@@ -100,6 +100,115 @@ bool StringIdChatParameter::parseFromBinaryStream(ObjectInputStream* stream) {
 	return true;
 }
 
+String StringIdChatParameter::toString() const {
+	return StringId::getFullPath();
+}
+
+StringIdChatParameter& StringIdChatParameter::operator=(const StringIdChatParameter& id) {
+	if (this == &id)
+		return *this;
+
+	TT = id.TT;
+	TU = id.TU;
+	TO = id.TO;
+	NU = id.NU;
+
+	DI = id.DI;
+	DF = id.DF;
+
+	unknownByte = id.unknownByte;
+
+	ChatParameter::operator=(id);
+	StringId::operator=(id);
+
+	return *this;
+}
+
+/**
+ * Sets the TT variable of this stf string to another stf string
+ * @pre { }
+ * @post { TT variable is set }
+ * @param file stf file name that contains the stf string
+ * @param stringid stringid of stf string
+ */
+void StringIdChatParameter::setTT(const String& file, const String& stringid) {
+	TT.set(file, stringid);
+}
+
+/**
+ * Sets the TU variable of this stf string to another stf string
+ * @pre { }
+ * @post { TU variable is set }
+ * @param file stf file name that contains the stf string
+ * @param stringid stringid of stf string
+ */
+void StringIdChatParameter::setTU(const String& file, const String& stringid) {
+	TU.set(file, stringid);
+}
+
+/**
+ * Sets the TO variable of this stf string to another stf string
+ * @pre { }
+ * @post { TO variable is set }
+ * @param file stf file name that contains the stf string
+ * @param stringid stringid of stf string
+ */
+void StringIdChatParameter::setTO(const String& file, const String& stringid) {
+	TO.set(file, stringid);
+}
+
+/**
+ * Sets the DI variable
+ * @pre { }
+ * @post { DI variable is set }
+ * @param i value for DI
+ */
+void StringIdChatParameter::setDI(uint32 i) {
+	DI = i;
+}
+
+/**
+ * Sets the DF variable
+ * @pre { }
+ * @post { DF variable is set }
+ * @param f value for DF
+ */
+void StringIdChatParameter::setDF(float f) {
+	DF = f;
+}
+
+void StringIdChatParameter::setUnknownByte(uint16 val) {
+	unknownByte = val;
+}
+
+StringIdParameter* StringIdChatParameter::getTT() {
+	return &TT;
+}
+
+StringIdParameter* StringIdChatParameter::getTU() {
+	return &TU;
+}
+
+StringIdParameter* StringIdChatParameter::getTO() {
+	return &TO;
+}
+
+const StringIdParameter* StringIdChatParameter::getTT() const {
+	return &TT;
+}
+
+const StringIdParameter* StringIdChatParameter::getTU() const {
+	return &TU;
+}
+
+const StringIdParameter* StringIdChatParameter::getTO() const {
+	return &TO;
+}
+
+const StringIdParameter* StringIdChatParameter::getNU() const {
+	return &NU;
+}
+
 namespace server {
 	namespace chat {
 		void to_json(nlohmann::json& j, const StringIdChatParameter& p) {
@@ -114,4 +223,3 @@ namespace server {
 		}
 	}
 }
-

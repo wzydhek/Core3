@@ -17,68 +17,28 @@ protected:
 	int delegateRatioTo;
 
 public:
-	FactionRank() {
-		cost = 0;
-		delegateRatioFrom = 0;
-		delegateRatioTo = 0;
-	}
+	FactionRank();
 
-	FactionRank(const FactionRank& f) : Object() {
-		name = f.name;
-		cost = f.cost;
-		delegateRatioFrom = f.delegateRatioFrom;
-		delegateRatioTo = f.delegateRatioTo;
-	}
+	FactionRank(const FactionRank& f);
 
-	FactionRank& operator=(const FactionRank& f) {
-		if (this == &f)
-			return *this;
+	FactionRank& operator=(const FactionRank& f);
 
-		name = f.name;
-		cost = f.cost;
-		delegateRatioFrom = f.delegateRatioFrom;
-		delegateRatioTo = f.delegateRatioTo;
+	void readObject(DataTableRow* row);
 
-		return *this;
-	}
+	int getCost() const;
 
-	void readObject(DataTableRow* row) {
-		row->getValue(1, name);
-		row->getValue(2, cost);
-		row->getValue(3, delegateRatioFrom);
-		row->getValue(4, delegateRatioTo);
-	}
+	int getDelegateRatioFrom() const;
 
-	int getCost() const {
-		return cost;
-	}
+	int getDelegateRatioTo() const;
 
-	int getDelegateRatioFrom() const {
-		return delegateRatioFrom;
-	}
+	const String& getName() const;
 
-	int getDelegateRatioTo() const {
-		return delegateRatioTo;
-	}
+	void setCost(int cost);
 
-	const String& getName() const {
-		return name;
-	}
+	void setDelegateRatioFrom(int delegateRatioFrom);
 
-	void setCost(int cost) {
-		this->cost = cost;
-	}
+	void setDelegateRatioTo(int delegateRatioTo);
 
-	void setDelegateRatioFrom(int delegateRatioFrom) {
-		this->delegateRatioFrom = delegateRatioFrom;
-	}
-
-	void setDelegateRatioTo(int delegateRatioTo) {
-		this->delegateRatioTo = delegateRatioTo;
-	}
-
-	void setName(const String& name) {
-		this->name = name;
-	}
+	void setName(const String& name);
 
 };

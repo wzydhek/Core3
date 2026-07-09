@@ -15,45 +15,20 @@ class Outfit : public Object {
 	Vector<uint32> clothingCRC;
 
 public:
-	Outfit() : Object() {
-		outfitName = "";
+	Outfit();
 
-	}
+	Outfit(const Outfit& outfit);
 
-	Outfit(const Outfit& outfit) : Object() {
-		outfitName = outfit.outfitName;
-		clothingCRC = outfit.clothingCRC;
+	Outfit& operator=(const Outfit& outfit);
 
-	}
+	int compareTo(const Outfit& outfit) const;
 
-	Outfit& operator= (const Outfit& outfit) {
-		if (this == &outfit)
-			return *this;
+	void addClothingCRC(unsigned int clothingcrc);
 
-		outfitName = outfit.outfitName;
-		clothingCRC = outfit.clothingCRC;
+	String& getOutfitName();
 
-		return *this;
-	}
+	Vector<uint32>* getClothing();
 
-	inline int compareTo(const Outfit& outfit) const {
-		return 0;
-	}
-
-	inline void addClothingCRC(unsigned int clothingcrc) {
-		clothingCRC.add(clothingcrc);
-	}
-
-	inline String& getOutfitName() {
-		return outfitName;
-	}
-
-	inline Vector<uint32>* getClothing() {
-		return &clothingCRC;
-	}
-
-	inline int getClothingSize() {
-		return clothingCRC.size();
-	}
+	int getClothingSize();
 
 };

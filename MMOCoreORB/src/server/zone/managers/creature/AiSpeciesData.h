@@ -1,6 +1,9 @@
 
 #pragma once
 
+#include "system/lang/String.h"
+#include "system/lang/Object.h"
+
 namespace server {
 namespace zone {
 namespace managers {
@@ -15,34 +18,22 @@ protected:
 	bool canLie;
 
 public:
-	AiSpeciesData(int species, String skel, bool sit, bool liedown) : Object() {
-		speciesID = species;
-		skeleton = skel;
-		canSit = sit;
-		canLie = liedown;
-	}
+	AiSpeciesData(int species, String skel, bool sit, bool liedown);
 
-	~AiSpeciesData() {
-	}
+	~AiSpeciesData();
 
-	int getSpeciesID() const {
-		return speciesID;
-	}
+	int getSpeciesID() const;
 
-	const String& getSkeleton() const {
-		return skeleton;
-	}
+	const String& getSkeleton() const;
 
-	bool canSitDown() const {
-		return canSit;
-	}
+	bool canSitDown() const;
 
-	bool canLieDown() const {
-		return canLie;
-	}
+	bool canLieDown() const;
 };
 
 }
 }
 }
 }
+
+using namespace server::zone::managers::creature;

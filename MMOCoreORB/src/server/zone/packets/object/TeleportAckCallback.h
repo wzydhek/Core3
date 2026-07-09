@@ -7,31 +7,17 @@
 
 #pragma once
 
+#include "../MessageCallback.h"
+#include "ObjectControllerMessageCallback.h"
+
 class TeleportAckCallback : public MessageCallback {
 	uint32 movementCounter;
 	ObjectControllerMessageCallback* objectControllerMain;
 
 public:
-	TeleportAckCallback(ObjectControllerMessageCallback* objectControllerCallback) : MessageCallback(objectControllerCallback->getClient(), objectControllerCallback->getServer()), movementCounter(0), objectControllerMain(objectControllerCallback) {
-	}
+	TeleportAckCallback(ObjectControllerMessageCallback* objectControllerCallback);
 
-	void parse(Message* message) {
-		movementCounter = message->parseInt();
-	}
+	void parse(Message* message);
 
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr) {
-			return;
-		}
-
-		auto ghost = player->getPlayerObject();
-
-		if (ghost == nullptr) {
-			return;
-		}
-
-		ghost->setTeleporting(false);
-	}
+	void run();
 };

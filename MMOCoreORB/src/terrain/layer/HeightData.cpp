@@ -4,6 +4,16 @@
 
 #include "HeightData.h"
 
+HeightData::HeightData() : IffTemplateVariable() {
+}
+
+HeightData::~HeightData() {
+	for (int i = 0; i < segments.size(); ++i)
+		delete segments.get(i);
+
+	segments.removeAll();
+}
+
 void HeightData::parseFromIffStream(engine::util::IffStream* iffStream) {
 	uint32 version = iffStream->getNextFormType();
 

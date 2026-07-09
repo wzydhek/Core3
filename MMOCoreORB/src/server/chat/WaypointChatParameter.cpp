@@ -34,6 +34,24 @@ WaypointChatParameter::WaypointChatParameter(const WaypointChatParameter& par) :
 	unknownInt = par.unknownInt;
 }
 
+void WaypointChatParameter::addSerializableVariables() {
+	addSerializableVariable("waypointName", &waypointName);
+	addSerializableVariable("pointerParameter", &pointerParameter);
+	addSerializableVariable("cellID", &cellID);
+	addSerializableVariable("planetCRC", &planetCRC);
+	addSerializableVariable("unknownInt", &unknownInt);
+	addSerializableVariable("positionX", &positionX);
+	addSerializableVariable("positionY", &positionY);
+	addSerializableVariable("positionZ", &positionZ);
+	addSerializableVariable("color", &color);
+	addSerializableVariable("active", &active);
+}
+
+void WaypointChatParameter::insertHeaderToMessage(Message* message) const {
+	message->insertByte(TYPE_WAYPOINT);
+	message->insertInt(WAYPOINT);
+}
+
 void WaypointChatParameter::addToPacketStream(Message* packet) const {
 	packet->insertInt(unknownInt);
 	packet->insertFloat(positionX);
@@ -85,3 +103,78 @@ void WaypointChatParameter::set(const UnicodeString& name, float x, float z, flo
 	waypointName = name;
 	unknownInt = 0;
 }
+
+WaypointChatParameter& WaypointChatParameter::operator=(const WaypointChatParameter& par) {
+	if (this == &par)
+		return *this;
+
+	waypointName = par.waypointName;
+	pointerParameter = par.pointerParameter;
+	cellID = par.cellID;
+	planetCRC = par.planetCRC;
+	unknownInt = par.unknownInt;
+	positionX = par.positionX;
+	positionY = par.positionY;
+	positionZ = par.positionZ;
+	color = par.color;
+	active = par.active;
+
+	return *this;
+}
+
+const UnicodeString& WaypointChatParameter::getWaypointName() const {
+	return waypointName;
+}
+
+uint64 WaypointChatParameter::getPointerParameter() const {
+	return pointerParameter;
+}
+
+uint64 WaypointChatParameter::getCellID() const {
+	return cellID;
+}
+
+uint32 WaypointChatParameter::getPlanetCRC() const {
+	return planetCRC;
+}
+
+uint32 WaypointChatParameter::getUnknownInt() const {
+	return unknownInt;
+}
+
+float WaypointChatParameter::getPositionX() const {
+	return positionX;
+}
+
+float WaypointChatParameter::getPositionY() const {
+	return positionY;
+}
+
+float WaypointChatParameter::getPositionZ() const {
+	return positionZ;
+}
+
+byte WaypointChatParameter::getColor() const {
+	return color;
+}
+
+bool WaypointChatParameter::isActive() const {
+	return active;
+}
+
+namespace server {
+namespace chat {
+void to_json(nlohmann::json& j, const WaypointChatParameter& p) {
+	j["waypointName"] = p.waypointName;
+	j["pointerParameter"] = p.pointerParameter;
+	j["cellID"] = p.cellID;
+	j["planetCRC"] = p.planetCRC;
+	j["unknownInt"] = p.unknownInt;
+	j["positionX"] = p.positionX;
+	j["positionY"] = p.positionY;
+	j["positionZ"] = p.positionZ;
+	j["color"] = p.color;
+	j["active"] = p.active;
+}
+} // namespace chat
+} // namespace server

@@ -14,6 +14,7 @@
 #include "server/zone/packets/chat/ChatOnDestroyRoom.h"
 #include "server/zone/packets/chat/ChatOnLeaveRoom.h"
 #include "server/zone/managers/player/PlayerManager.h"
+#include "server/chat/ChatManager.h"
 
 void ChatRoomImplementation::init(ZoneServer* serv, ChatRoom* parent, const String& roomName) {
 	server = serv;

@@ -1,6 +1,47 @@
 #include "NavMeshJob.h"
 #include "NavMeshManager.h"
 
+NavMeshJob::NavMeshJob(NavArea* area, const RecastSettings& config, const String& targetQueue) : queue(targetQueue), running(true) {
+	this->area = area;
+	settings = config;
+}
+
+Vector<AABB>& NavMeshJob::getAreas() {
+	return areas;
+}
+
+const Vector<AABB>& NavMeshJob::getAreas() const {
+	return areas;
+}
+
+Reference<NavArea*> NavMeshJob::getNavArea() {
+	return area.get();
+}
+
+RecastSettings& NavMeshJob::getRecastConfig() {
+	return settings;
+}
+
+const RecastSettings& NavMeshJob::getRecastConfig() const {
+	return settings;
+}
+
+Mutex* NavMeshJob::getMutex() {
+	return &mutex;
+}
+
+const String& NavMeshJob::getQueue() const {
+	return queue;
+}
+
+void NavMeshJob::cancel() {
+	running.set(false);
+}
+
+const AtomicBoolean* NavMeshJob::getJobStatus() {
+	return &running;
+}
+
 void NavMeshJob::addArea(const AABB& area) {
     float size = area.extents().getX() * area.extents().getZ();
 

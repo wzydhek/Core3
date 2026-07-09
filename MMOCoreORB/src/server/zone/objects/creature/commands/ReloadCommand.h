@@ -4,25 +4,14 @@
 
 #pragma once
 
+#include "QueueCommand.h"
+
 class ReloadCommand : public QueueCommand {
 public:
 
-	ReloadCommand(const String& name, ZoneProcessServer* server)
-		: QueueCommand(name, server) {
+	ReloadCommand(const String& name, ZoneProcessServer* server);
 
-	}
-
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		creature->sendStateCombatSpam("cbt_spam", "reload", 0);
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };
+

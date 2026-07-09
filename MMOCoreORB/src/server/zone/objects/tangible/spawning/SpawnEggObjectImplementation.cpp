@@ -11,6 +11,7 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/packets/object/ObjectMenuResponse.h"
 #include "server/zone/Zone.h"
+#include "server/zone/managers/radial/RadialOptions.h"
 
 void SpawnEggObjectImplementation::fillAttributeList(AttributeListMessage* alm, CreatureObject* player){
 	if (player == nullptr || !player->isPlayerCreature()) {

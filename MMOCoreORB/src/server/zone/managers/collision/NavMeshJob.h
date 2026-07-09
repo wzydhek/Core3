@@ -20,46 +20,25 @@ protected:
 	Mutex mutex;
 
 public:
-	NavMeshJob(NavArea *area, const RecastSettings& config, const String& targetQueue) : queue(targetQueue), running(true)  {
-		this->area = area;
-		settings = config;
-	}
+	NavMeshJob(NavArea* area, const RecastSettings& config, const String& targetQueue);
 
-	Vector<AABB>& getAreas() {
-		return areas;
-	}
+	Vector<AABB>& getAreas();
 
-	const Vector<AABB>& getAreas() const {
-		return areas;
-	}
+	const Vector<AABB>& getAreas() const;
 
-	Reference<NavArea*> getNavArea() {
-		return area.get();
-	}
+	Reference<NavArea*> getNavArea();
 
-	RecastSettings& getRecastConfig() {
-		return settings;
-	}
+	RecastSettings& getRecastConfig();
 
-	const RecastSettings& getRecastConfig() const {
-		return settings;
-	}
+	const RecastSettings& getRecastConfig() const;
 
-	Mutex* getMutex() {
-		return &mutex;
-	}
+	Mutex* getMutex();
 
-	const String& getQueue() const {
-	    return queue;
-	}
+	const String& getQueue() const;
 
-	void cancel() {
-		running.set(false);
-	}
+	void cancel();
 
-	const AtomicBoolean* getJobStatus() {
-		return &running;
-	}
+	const AtomicBoolean* getJobStatus();
 
 	void addArea(const AABB& area);
 

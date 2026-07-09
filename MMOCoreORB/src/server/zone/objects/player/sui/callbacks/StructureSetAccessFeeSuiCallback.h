@@ -8,36 +8,12 @@
 #pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class StructureSetAccessFeeSuiCallback : public SuiCallback {
 
 public:
-	StructureSetAccessFeeSuiCallback(ZoneServer* serv) : SuiCallback(serv) {
+	StructureSetAccessFeeSuiCallback(ZoneServer* serv);
 
-	}
-
-	void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!sui->isInputBox() || cancelPressed || args->size() < 1)
-			return;
-
-		ManagedReference<StructureSetAccessFeeSession*> session =
-				creature->getActiveSession(SessionFacadeType::SETSTRUCTUREACCESSFEE).castTo<StructureSetAccessFeeSession*>();
-
-		if (session == nullptr)
-			return;
-
-		try {
-			int fee = Integer::valueOf(args->get(0).toString());
-
-			if(fee > 0 && fee <= 50000)
-				session->setAccessFee(fee);
-			else
-				session->promptSetAccessFee();
-		} catch(Exception& e) {
-			session->promptSetAccessFee();
-		}
-
-	}
+	void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args);
 };

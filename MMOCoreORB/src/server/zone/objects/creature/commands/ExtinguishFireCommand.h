@@ -9,9 +9,6 @@
 class ExtinguishFireCommand : public CurePackCommand {
 public:
 
-	ExtinguishFireCommand(const String& name, ZoneProcessServer* server)
-		: CurePackCommand(name, server) {
-		state = CreatureState::ONFIRE;
-	}
+	ExtinguishFireCommand(const String& name, ZoneProcessServer* server);
 
 };

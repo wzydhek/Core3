@@ -29,11 +29,7 @@ class CityManageMilitiaSuiCallback : public SuiCallback {
 	ManagedWeakReference<CityRegion*> cityRegion;
 
 public:
-	CityManageMilitiaSuiCallback(ZoneServer* server, CityRegion* city)
-		: SuiCallback(server) {
-
-		cityRegion = city;
-	}
+	CityManageMilitiaSuiCallback(ZoneServer* server, CityRegion* city);
 
 	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

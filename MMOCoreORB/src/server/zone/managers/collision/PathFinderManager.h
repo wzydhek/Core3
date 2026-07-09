@@ -33,14 +33,7 @@ protected:
 	Reference<NavArea*> area;
 public:
 
-	int compareTo(const NavCollision* rhs) const {
-		if (fabs(dist - rhs->dist) < 0.001f)
-			return 0;
-		else if (dist < rhs->dist)
-			return 1;
-		else
-			return -1;
-	}
+	int compareTo(const NavCollision* rhs) const;
 
 	NavCollision(const Vector3& p, float len, Reference<NavArea*> r) : dist(len), position(p), area(r) { }
 	float getDistance() const { return dist; }

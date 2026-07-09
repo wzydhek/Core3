@@ -12,22 +12,7 @@
 
 class GamblingRouletteSuiCallback : public SuiCallback {
 public:
-	GamblingRouletteSuiCallback(ZoneServer* server) : SuiCallback(server) {
-	}
+	GamblingRouletteSuiCallback(ZoneServer* server);
 
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!suiBox->isListBox() || player == nullptr)
-			return;
-
-		GamblingManager* manager = player->getZoneProcessServer()->getGamblingManager();
-
-		Locker locker(manager);
-
-		if (cancelPressed)
-			manager->leaveTerminal(player, 0);
-		else
-			manager->refreshRouletteMenu(player);
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

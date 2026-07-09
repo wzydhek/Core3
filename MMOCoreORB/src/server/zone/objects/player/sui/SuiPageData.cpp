@@ -13,6 +13,14 @@
 #include "server/zone/packets/ui/SuiUpdatePageMessage.h"
 #include "server/zone/objects/player/PlayerObject.h"
 
+SuiPageData::SuiPageData(const String& rootPage) : Object() {
+	init(rootPage, 0, 0);
+}
+
+SuiPageData::SuiPageData(const String& rootPage, const uint64& targetNetworkId, const float& forceCloseDistance) : Object() {
+	init(rootPage, targetNetworkId, forceCloseDistance);
+}
+
 void SuiPageData::setProperty(const String& widget, const String& property, const UnicodeString& value) {
 	SuiCommand* command = new SuiCommand(SuiCommand::SCT_setProperty);
 	command->addWideParameter(value);
@@ -158,4 +166,63 @@ void SuiPageData::sendUpdateTo(CreatureObject* creo) {
 	if (playerObject != nullptr && client != nullptr) {
 		client->sendMessage(new SuiUpdatePageMessage(this));
 	}
+}
+
+void SuiPageData::setStoredData(const String& key, const String& value) {
+	if (storedData.contains(key))
+		storedData.drop(key);
+
+	storedData.put(key, value);
+}
+
+void SuiPageData::deleteStoredData(const String& key) {
+	storedData.drop(key);
+}
+
+String SuiPageData::getStoredData(const String& key) {
+	if (!storedData.contains(key))
+		return "";
+
+	return storedData.get(key);
+}
+
+void SuiPageData::setPageId(int pageId) {
+	id = pageId;
+}
+
+int32 SuiPageData::getPageId() {
+	return id;
+}
+
+void SuiPageData::setForceCloseDistance(float dist) {
+	forceCloseDistance = dist;
+}
+
+float SuiPageData::getForceCloseDistance() {
+	return forceCloseDistance;
+}
+
+void SuiPageData::setTargetNetworkId(uint64 id) {
+	targetNetworkId = id;
+}
+
+SuiCommand* SuiPageData::getCommand(int index) {
+	return commands.get(index);
+}
+
+uint64 SuiPageData::getTargetNetworkId() {
+	return targetNetworkId;
+}
+
+String& SuiPageData::getRootPage() {
+	return rootPage;
+}
+
+void SuiPageData::init(const String& rootPage, const uint64& targetNetworkId, const float& forceCloseDistance) {
+	this->id = 0;
+
+	this->rootPage = rootPage;
+	this->targetNetworkId = targetNetworkId;
+	this->forceCloseDistance = forceCloseDistance;
+	this->unknownNetworkId = 0;
 }

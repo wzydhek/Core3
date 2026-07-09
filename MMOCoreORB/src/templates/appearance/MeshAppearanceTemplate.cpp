@@ -7,6 +7,27 @@
 
 #include "MeshAppearanceTemplate.h"
 
+MeshAppearanceTemplate::MeshAppearanceTemplate() {
+	aabbTree = nullptr;
+	boundingSphere = nullptr;
+}
+
+MeshAppearanceTemplate::~MeshAppearanceTemplate() {
+	delete aabbTree;
+	aabbTree = nullptr;
+
+	delete boundingSphere;
+	boundingSphere = nullptr;
+}
+
+uint32 MeshAppearanceTemplate::getType() const {
+	return 'MESH';
+}
+
+void MeshAppearanceTemplate::readObject(IffStream* templateData) {
+	parse(templateData);
+}
+
 void MeshAppearanceTemplate::parse(IffStream* iffStream) {
 	//file = iffStream->getFileName();
 
@@ -150,4 +171,48 @@ void MeshAppearanceTemplate::parseVertexData(IffStream* iffStream, int idx) {
 	iffStream->closeForm(nextVersion);
 
 	iffStream->closeForm(formVersion);
+}
+
+void MeshAppearanceTemplate::getTriangles(Vector<Triangle*>& triangles) const {
+	if (aabbTree != nullptr)
+		aabbTree->getTriangles(triangles);
+}
+
+const AABBTree* MeshAppearanceTemplate::getAABBTree() const {
+	return aabbTree;
+}
+
+const Sphere* MeshAppearanceTemplate::getBoundingSphere() const {
+	return boundingSphere;
+}
+
+const Vector<Reference<MeshData*>>& MeshAppearanceTemplate::getMeshes() const {
+	return meshes;
+}
+
+bool MeshAppearanceTemplate::testCollide(const Sphere& testsphere) const {
+	return aabbTree->testCollide(testsphere);
+}
+
+/**
+ * Checks for intersection against ray, stops on any intersection
+ * @return intersectionDistance, triangle which it intersects
+ */
+bool MeshAppearanceTemplate::intersects(const Ray& ray, float distance, float& intersectionDistance, Triangle*& triangle, bool checkPrimitives) const {
+	return aabbTree->intersects(ray, distance, intersectionDistance, triangle, checkPrimitives);
+}
+
+/**
+ * Checks for all intersections
+ */
+int MeshAppearanceTemplate::intersects(const Ray& ray, float maxDistance, SortedVector<IntersectionResult>& result) const {
+	return aabbTree->intersects(ray, maxDistance, result);
+}
+
+Vector<Reference<MeshData*>> MeshAppearanceTemplate::getTransformedMeshData(const Matrix4& parentTransform) const {
+	Vector<Reference<MeshData*>> newMeshes;
+	for (int i = 0; i < meshes.size(); i++) {
+		newMeshes.emplace(MeshData::makeCopyNegateZ(meshes.get(i), parentTransform));
+	}
+	return newMeshes;
 }

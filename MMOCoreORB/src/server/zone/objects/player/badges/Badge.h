@@ -27,41 +27,23 @@ public:
 	void readFromRow(DataTableRow* row);
 
 
-	inline int getIndex() const {
-		return index;
-	}
+	int getIndex() const;
 	
-	inline const String getKey() const{
-		return key;
-	}
+	const String getKey() const;
 
-	inline const String getMusic() const {
-		return music;
-	}
+	const String getMusic() const;
 
-	inline int getCategory() const {
-		return category;
-	}
+	int getCategory() const;
 	
-	inline int getShow() const {
-		return show;
-	}
+	int getShow() const;
 
-	inline const String getTypeString() const {
-		return typeString;
-	}
+	const String getTypeString() const;
 
-	inline /*Type*/uint8 getType() const {
-		return type;
-	}
+	uint8 getType() const;
 
-	inline int getTypeInt() const {
-		return static_cast<int>(type);
-	}
+	int getTypeInt() const;
 
-	inline bool getHasMusic() const {
-		return hasMusic;
-	}
+	bool getHasMusic() const;
 
 
 private:

@@ -18,35 +18,17 @@ protected:
 	String componentType;
 	String compatibility;
 public:
-	ShipComponentData() {
+	ShipComponentData();
 
-	}
+	void readObject(DataTableRow* row);
 
-	void readObject(DataTableRow* row) {
-		row->getCell(0)->getValue(name);
-		row->getCell(1)->getValue(objectTemplate);
-		row->getCell(2)->getValue(sharedObjectTemplate);
-		row->getCell(3)->getValue(componentType);
-		row->getCell(4)->getValue(compatibility);
-	}
+	const String& getCompatibility() const;
 
-	const String& getCompatibility() const {
-		return compatibility;
-	}
+	const String& getComponentType() const;
 
-	const String& getComponentType() const {
-		return componentType;
-	}
+	const String& getName() const;
 
-	const String& getName() const {
-		return name;
-	}
+	const String& getObjectTemplate() const;
 
-	const String& getObjectTemplate() const {
-		return objectTemplate;
-	}
-
-	const String& getSharedObjectTemplate() const {
-		return sharedObjectTemplate;
-	}
+	const String& getSharedObjectTemplate() const;
 };

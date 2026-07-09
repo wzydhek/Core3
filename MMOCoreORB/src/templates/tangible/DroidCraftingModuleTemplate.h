@@ -15,34 +15,17 @@ protected:
 	String attributeListString;
 
 public:
-	DroidCraftingModuleTemplate() : craftingType(0) {
+	DroidCraftingModuleTemplate();
 
-	}
+	~DroidCraftingModuleTemplate();
 
-	~DroidCraftingModuleTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
+	int getCraftingType();
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
-		craftingType = templateData->getIntField("craftingType");
-		craftingStationTemplate = templateData->getStringField("craftingStationTemplate");
-		attributeListString = templateData->getStringField("attributeListString");
-	}
+	String& getCraftingStationTemplate();
 
-	int getCraftingType() {
-		return craftingType;
-	}
+	String& getAttributeListString();
 
-	String& getCraftingStationTemplate() {
-		return craftingStationTemplate;
-	}
-
-	String& getAttributeListString() {
-		return attributeListString;
-	}
-
-	bool isDroidCraftingModuleTemplate() {
-		return true;
-	}
+	bool isDroidCraftingModuleTemplate();
 };

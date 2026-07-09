@@ -13,8 +13,7 @@
 #include "system/thread/ReadLocker.h"
 #include "system/thread/Locker.h"
 #include "engine/util/iffstream/IffStream.h"
-
-class TreeArchive;
+#include "tre3/TreeArchive.h"
 
 class DataArchiveStore : public Singleton<DataArchiveStore>, public Logger,
 		public ReadWriteLock, public Object {
@@ -30,9 +29,7 @@ public:
 
 	IffStream* openIffFile(const String& fileName) const;
 
-	const TreeArchive* getTreeArchive() const {
-		return treeDirectory;
-	}
+	const TreeArchive* getTreeArchive() const;
 
 
 };

@@ -551,3 +551,31 @@ TerrainGenerator* ProceduralTerrainAppearance::removeTerrainModification(uint64 
 
 	return layer;
 }
+
+void ProceduralTerrainAppearance::insertWaterBoundary(Boundary* boundary) {
+	waterBoundaries.add(boundary);
+}
+
+float ProceduralTerrainAppearance::getSize() const {
+	return size;
+}
+
+float ProceduralTerrainAppearance::getGlobalWaterTableHeight() const {
+	return globalWaterTableHeight;
+}
+
+bool ProceduralTerrainAppearance::getUseGlobalWaterTable() const {
+	return useGlobalWaterTable;
+}
+
+const ReadWriteLock* ProceduralTerrainAppearance::getGuard() const {
+	return &guard;
+}
+
+ReadWriteLock* ProceduralTerrainAppearance::getGuard() {
+	return &guard;
+}
+
+float ProceduralTerrainAppearance::getDistanceBetweenPoles() const {
+	return chunkSize / (tilesPerChunk * 2.0f);
+}

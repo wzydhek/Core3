@@ -31,38 +31,21 @@ protected:
 
 public:
 
-	ConversationTemplate(uint32 hashCode) : Logger("ConversationTemplate") {
-		screens.setNoDuplicateInsertPlan();
-		crc = hashCode;
+	ConversationTemplate(uint32 hashCode);
 
-		conversationTemplateType = ConversationTemplateTypeNormal;
-	}
-
-	virtual ~ConversationTemplate() {
-
-	}
+	virtual ~ConversationTemplate();
 
 	void readObject(LuaObject* templateData);
 
-	const String& getLuaClassHandler() const {
-		return luaClassHandler;
-	}
+	const String& getLuaClassHandler() const;
 
-	ConversationScreen* getInitialScreen() const {
-		return screens.get(initialScreenID);
-	}
+	ConversationScreen* getInitialScreen() const;
 
-	ConversationScreen* getScreen(const String& screenID) const {
-		return screens.get(screenID);
-	}
+	ConversationScreen* getScreen(const String& screenID) const;
 
-	ConversationTemplateType getConversationTemplateType() const {
-		return conversationTemplateType;
-	}
+	ConversationTemplateType getConversationTemplateType() const;
 
-	uint32 getCRC() const {
-		return crc;
-	}
+	uint32 getCRC() const;
 };
 
 }

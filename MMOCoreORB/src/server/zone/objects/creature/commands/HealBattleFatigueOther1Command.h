@@ -9,7 +9,5 @@
 class HealBattleFatigueOther1Command : public ForceHealQueueCommand {
 public:
 
-	HealBattleFatigueOther1Command(const String& name, ZoneProcessServer* server)
-		: ForceHealQueueCommand(name, server) {
-	}
+	HealBattleFatigueOther1Command(const String& name, ZoneProcessServer* server);
 };

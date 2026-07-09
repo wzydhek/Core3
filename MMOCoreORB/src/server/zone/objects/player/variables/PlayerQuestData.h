@@ -209,104 +209,41 @@ public:
 	};
 
 public:
-	PlayerQuestData() : Object() {
-		ownerId = 0;
-		activeStepBitmask = 0;
-		completedStepBitmask = 0;
-		completedFlag = 0;
-		questCounter = 0;
-	}
+	PlayerQuestData();
 
-	PlayerQuestData(const PlayerQuestData& data) : Object() {
-		initialize(data);
-	}
+	PlayerQuestData(const PlayerQuestData& data);
 
-	PlayerQuestData& operator=(const PlayerQuestData& data) {
-		if (this == &data)
-			return *this;
+	PlayerQuestData& operator=(const PlayerQuestData& data);
 
-		initialize(data);
+	friend void to_json(nlohmann::json& j, const PlayerQuestData& d);
 
-		return *this;
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	friend void to_json(nlohmann::json& j, const PlayerQuestData& d) {
-		j["ownerId"] = d.ownerId;
-		j["activeStepBitmask"] = d.activeStepBitmask;
-		j["completedStepBitmask"] = d.completedStepBitmask;
-		j["completedFlag"] = d.completedFlag;
-		j["questCounter"] = d.questCounter;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		stream->writeLong(ownerId);
-		stream->writeShort(activeStepBitmask);
-		stream->writeShort(completedStepBitmask);
-		stream->writeByte(completedFlag);
-		stream->writeInt(questCounter);
-
-		return true;
-	}
-
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		ownerId = stream->readLong();
-		activeStepBitmask = stream->readShort();
-		completedStepBitmask = stream->readShort();
-		completedFlag = stream->readByte();
-		questCounter = stream->readInt();
-
-		return true;
-	}
-
-	void initialize(const PlayerQuestData& data) {
-		ownerId = data.ownerId;
-		activeStepBitmask = data.activeStepBitmask;
-		completedStepBitmask = data.completedStepBitmask;
-		completedFlag = data.completedFlag;
-		questCounter = data.questCounter;
-	}
+	void initialize(const PlayerQuestData& data);
 
 	// Accessors
 
-	uint64 getOwnerId() const {
-		return ownerId;
-	}
+	uint64 getOwnerId() const;
 
-	uint16 getActiveStepBitmask() const {
-		return activeStepBitmask;
-	}
+	uint16 getActiveStepBitmask() const;
 
-	uint16 getCompletedStepBitmask() const {
-		return completedStepBitmask;
-	}
+	uint16 getCompletedStepBitmask() const;
 
-	byte getCompletedFlag() const {
-		return completedFlag;
-	}
+	byte getCompletedFlag() const;
 
-	int getQuestCounter() const {
-		return questCounter;
-	}
+	int getQuestCounter() const;
 
 	// Mutators
 
-	void setOwnerId(uint64 ownerId) {
-		this->ownerId = ownerId;
-	}
+	void setOwnerId(uint64 ownerId);
 
-	void setActiveStepBitmask(uint16 activeStepBitmask) {
-		this->activeStepBitmask = activeStepBitmask;
-	}
+	void setActiveStepBitmask(uint16 activeStepBitmask);
 
-	void setCompletedStepBitmask(uint16 completedStepBitmask) {
-		this->completedStepBitmask = completedStepBitmask;
-	}
+	void setCompletedStepBitmask(uint16 completedStepBitmask);
 
-	void setCompletedFlag(byte completedFlag) {
-		this->completedFlag = completedFlag;
-	}
+	void setCompletedFlag(byte completedFlag);
 
-	void setQuestCounter(int questCounter) {
-		this->questCounter = questCounter;
-	}
+	void setQuestCounter(int questCounter);
 };

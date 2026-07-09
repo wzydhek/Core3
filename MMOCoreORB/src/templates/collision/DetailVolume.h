@@ -11,8 +11,10 @@
 
 class DetailVolume : public CompositeVolume {
 public:
-	bool isDetailVolume() { return true; }
-	DetailVolume() { }
+	bool isDetailVolume();
+
+	DetailVolume();
+
 	virtual void read(IffStream *iff);
 
 #ifdef OSG_RENDERER

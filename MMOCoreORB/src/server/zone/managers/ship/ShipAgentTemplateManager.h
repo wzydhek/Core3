@@ -42,29 +42,17 @@ public:
 	static int addTemplate(lua_State* L);
 	static int addSpacePatrolPoints(lua_State* L);
 
-	int size() {
-		return hashTable.size();
-	}
+	int size();
 
-	HashTableIterator<uint32, Reference<ShipAgentTemplate*>> iterator() {
-		return hashTable.iterator();
-	}
+	HashTableIterator<uint32, Reference<ShipAgentTemplate*>> iterator();
 
-	ShipAgentTemplate* getTemplate(uint32 crc) {
-		return hashTable.get(crc);
-	}
+	ShipAgentTemplate* getTemplate(uint32 crc);
 
-	ShipAgentTemplate* getTemplate(const String& ascii) {
-		return hashTable.get(ascii.hashCode());
-	}
+	ShipAgentTemplate* getTemplate(const String& ascii);
 
-	SpacePatrolPoint getSpacePatrolPoint(uint32 zoneHash, uint32 pointHash) {
-		return spacePatrolPoints.get(zoneHash).get(pointHash);
-	}
+	SpacePatrolPoint getSpacePatrolPoint(uint32 zoneHash, uint32 pointHash);
 
-	bool hasSpacePatrolPoint(uint32 zoneHash, uint32 pointHash) {
-		return spacePatrolPoints.get(zoneHash).get(pointHash) != Vector3(0.f, 0.f, 0.f);
-	}
+	bool hasSpacePatrolPoint(uint32 zoneHash, uint32 pointHash);
 };
 
 } // namespace ship

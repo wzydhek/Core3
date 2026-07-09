@@ -14,12 +14,12 @@ class TerrainMap : public TemplateVariable<chunkType> {
 	byte* rawMap;
 
 public:
-	TerrainMap(){
+	TerrainMap() {
 		rawMap = nullptr;
 	}
 
 	~TerrainMap() {
-		delete [] rawMap;
+		delete[] rawMap;
 		rawMap = nullptr;
 	}
 

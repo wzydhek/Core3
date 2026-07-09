@@ -1,5 +1,10 @@
 #include "RotationLookupTable.h"
 
+RotationLookupTable::RotationLookupTable() : directionTable(YPR_TOTAL, YPR_TOTAL) {
+	setLoggingName("RotationLookupTable");
+	initialize();
+}
+
 void RotationLookupTable::initialize() {
 	for (int stepY = 0; stepY < Y_STEPS; ++stepY) {
 		for (int stepP = 0; stepP < P_STEPS; ++stepP) {

@@ -890,3 +890,21 @@ void CommandConfigManager::registerCommands() {
 	commandFactory.registerCommand<PetClearPatrolPointsCommand>(String("petClearPatrolPoints").toLowerCase());
 	commandFactory.registerCommand<PetGetPatrolPointCommand>(String("petGetPatrolPoint").toLowerCase());
 }
+
+bool CommandConfigManager::loadSlashCommandsFile() {
+	info("Loading commands...");
+
+	loadCommandData("datatables/command/command_tables_shared.iff");
+	loadCommandData("datatables/command/command_tables_shared_ground.iff");
+	loadCommandData("datatables/command/command_tables_shared_space.iff");
+	bool res = runFile("scripts/commands/commands.lua");
+
+	if (!res)
+		ERROR_CODE = GENERAL_ERROR;
+
+	return res;
+}
+
+bool CommandConfigManager::contains(String name) const {
+	return commandFactory.containsCommand(name);
+}

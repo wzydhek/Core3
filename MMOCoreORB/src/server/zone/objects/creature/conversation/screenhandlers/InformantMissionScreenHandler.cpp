@@ -97,3 +97,11 @@ ConversationScreen* InformantMissionScreenHandler::handleScreen(CreatureObject* 
 	}
 	return conversationScreen;
 }
+
+bool InformantMissionScreenHandler::toBinaryStream(ObjectOutputStream* stream) {
+	return true;
+}
+
+bool InformantMissionScreenHandler::parseFromBinaryStream(ObjectInputStream* stream) {
+	return true;
+}

@@ -9,6 +9,10 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/zone/objects/player/sessions/SlicingSession.h"
 
+ShipContainerComponent::ShipContainerComponent() {
+	setLoggingName("ShipContainerComponent");
+}
+
 bool ShipContainerComponent::checkContainerPermission(SceneObject* shipContainer, CreatureObject* creature, uint16 permission) const {
 	return ContainerComponent::checkContainerPermission(shipContainer, creature, permission);
 }

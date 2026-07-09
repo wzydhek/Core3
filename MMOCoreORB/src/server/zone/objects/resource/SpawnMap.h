@@ -17,13 +17,8 @@
 class SpawnMap : public SynchronizedVectorMap<String, SpawnDensityMap> {
 
 public:
-	SpawnMap() {
+	SpawnMap();
 
-	}
-
-	~SpawnMap() {
-
-	}
-
+	~SpawnMap();
 
 };

@@ -6,6 +6,8 @@
 #include <memory>
 #include <cassert>
 
+#include "system/lang/Object.h"
+
 namespace server {
 namespace zone {
 namespace objects {
@@ -22,8 +24,7 @@ class BlackboardData : public Object {
 private:
 	class AbstractData {
 	public:
-		virtual ~AbstractData() {
-		}
+		virtual ~AbstractData();
 		virtual bool operator==(const AbstractData&) const = 0;
 	};
 
@@ -72,29 +73,20 @@ private:
 	std::shared_ptr<AbstractData> data;
 
 public:
-	BlackboardData() : Object(), data(NULL) {
-	}
+	BlackboardData();
 
 	template <typename T>
 	BlackboardData(T&& in) : Object(), data(new Data<BlackboardType<T>>(std::forward<T>(in))) {
 	}
 
-	BlackboardData(const BlackboardData& in) : Object(), data(in.data) {
-	}
+	BlackboardData(const BlackboardData& in);
 
-	BlackboardData(BlackboardData&& in) : BlackboardData() {
-		swap(*this, in);
-	}
+	BlackboardData(BlackboardData&& in);
 
-	BlackboardData& operator=(BlackboardData in) {
-		swap(*this, in);
-		return *this;
-	}
+	BlackboardData& operator=(BlackboardData in);
 
 	// define this as a member function to avoid ambiguous operator== overloads
-	bool operator==(const BlackboardData& b) const {
-		return *data == *b.data;
-	}
+	bool operator==(const BlackboardData& b) const;
 
 	template <typename T>
 	BlackboardType<T>& get() {
@@ -138,3 +130,5 @@ inline BlackboardData::BlackboardData(BlackboardData&& in) : BlackboardData() {
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::creature::ai::bt;

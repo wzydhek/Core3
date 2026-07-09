@@ -9,6 +9,27 @@
 
 #include "server/zone/objects/player/PlayerObject.h"
 
+SchematicList::SchematicList() {
+	rewardedSchematics.setNoDuplicateInsertPlan();
+}
+
+SchematicList::SchematicList(const SchematicList& list) : DeltaVector<ManagedReference<DraftSchematic*>>(list) {
+	rewardedSchematics.setNoDuplicateInsertPlan();
+	rewardedSchematics = list.rewardedSchematics;
+}
+
+SchematicList& SchematicList::operator=(const SchematicList& list) {
+	if (this == &list) {
+		return *this;
+	}
+
+	DeltaVector<ManagedReference<DraftSchematic*>>::operator=(list);
+
+	rewardedSchematics = list.rewardedSchematics;
+
+	return *this;
+}
+
 bool SchematicList::toBinaryStream(ObjectOutputStream* stream) {
 
 	TypeInfo<VectorMap<ManagedReference<DraftSchematic* >, int > >::toBinaryStream(&rewardedSchematics, stream);

@@ -385,3 +385,18 @@ ComponentManager::ComponentManager() {
 	components.put("StarshipPaintKitObjectMenuComponent", new StarshipPaintKitObjectMenuComponent());
 	components.put("StarshipTextureKitObjectMenuComponent", new StarshipTextureKitObjectMenuComponent());
 }
+
+DataObjectComponent* ComponentManager::getDataObjectComponent(const String& name) {
+	return dataObjectFactory.createObject(name);
+}
+
+void ComponentManager::putComponent(const String& name, SceneObjectComponent* component) {
+	Locker locker(this);
+
+	if (component != nullptr)
+		components.put(name, component);
+}
+
+int ComponentManager::size() {
+	return components.size();
+}

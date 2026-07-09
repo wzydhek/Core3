@@ -20,132 +20,45 @@ protected:
 	uint32 stateLength;
 
 public:
-	StateEffect() : Object() {
-		effectType = 0;
-		stateChance = 0;
-		stateStrength = 0;
-		stateLength = 0;
-	}
+	StateEffect();
 
-	StateEffect(LuaObject state) : Object() {
-		loadState(state);
-	}
+	StateEffect(LuaObject state);
 
-	StateEffect(const StateEffect& effect) : Object() {
-		effectType = effect.effectType;
-		defenderExclusionTimers =  effect.defenderExclusionTimers;
-		defenderStateDefenseModifiers = effect.defenderStateDefenseModifiers;
-		defenderJediStateDefenseModifiers = effect.defenderJediStateDefenseModifiers;
-		stateChance = effect.stateChance;
-		stateStrength = effect.stateStrength;
-		stateLength = effect.stateLength;
-	}
+	StateEffect(const StateEffect& effect);
 
-	StateEffect& operator= (const StateEffect& effect) {
-		if (this == &effect)
-			return *this;
+	StateEffect& operator=(const StateEffect& effect);
 
-		effectType = effect.effectType;
-		defenderExclusionTimers =  effect.defenderExclusionTimers;
-		defenderStateDefenseModifiers = effect.defenderStateDefenseModifiers;
-		defenderJediStateDefenseModifiers = effect.defenderJediStateDefenseModifiers;
-		stateChance = effect.stateChance;
-		stateStrength = effect.stateStrength;
-		stateLength = effect.stateLength;
+	int compareTo(const StateEffect& effect) const;
 
-		return *this;
-	}
+	virtual ~StateEffect();
 
-	inline int compareTo(const StateEffect& effect) const {
-		return 0;
-	}
+	void loadState(LuaObject state);
 
-	virtual ~StateEffect() {}
+	const Vector<String>& getDefenderExclusionTimers() const;
 
-	void loadState(LuaObject state) {
-		effectType = state.getByteField("effectType");
-		stateChance = state.getIntField("stateChance");
-		stateStrength = state.getIntField("stateStrength");
-		stateLength = state.getIntField("stateLength");
+	const Vector<String>& getDefenderJediStateDefenseModifiers() const;
 
-		LuaObject defTimers = state.getObjectField("defenderExclusionTimers");
+	const Vector<String>& getDefenderStateDefenseModifiers() const;
 
-		for (int i = 1; i <= defTimers.getTableSize(); ++i) {
-			defenderExclusionTimers.add(defTimers.getStringAt(i));
-		}
+	uint8 getEffectType() const;
 
-		defTimers.pop();
+	uint32 getStateChance() const;
 
-		LuaObject defMods = state.getObjectField("defenderStateDefenseModifiers");
+	uint32 getStateLength() const;
 
-		for (int i = 1; i <= defMods.getTableSize(); ++i) {
-			defenderStateDefenseModifiers.add(defMods.getStringAt(i));
-		}
+	uint32 getStateStrength() const;
 
-		defMods.pop();
+	void setDefenderExclusionTimers(const Vector<String>& defenderExclusionTimers);
 
-		LuaObject jediMods = state.getObjectField("defenderJediStateDefenseModifiers");
+	void setDefenderJediStateDefenseModifiers(const Vector<String>& defenderJediStateDefenseModifiers);
 
-		for (int i = 1; i <= jediMods.getTableSize(); ++i) {
-			defenderJediStateDefenseModifiers.add(jediMods.getStringAt(i));
-		}
+	void setDefenderStateDefenseModifiers(const Vector<String>& defenderStateDefenseModifiers);
 
-		jediMods.pop();
-	}
+	void setEffectType(uint8 effectType);
 
-	const Vector<String>& getDefenderExclusionTimers() const {
-		return defenderExclusionTimers;
-	}
+	void setStateChance(uint32 stateChance);
 
-	const Vector<String>& getDefenderJediStateDefenseModifiers() const {
-		return defenderJediStateDefenseModifiers;
-	}
+	void setStateLength(uint32 stateLength);
 
-	const Vector<String>& getDefenderStateDefenseModifiers() const {
-		return defenderStateDefenseModifiers;
-	}
-
-	uint8 getEffectType() const {
-		return effectType;
-	}
-
-	uint32 getStateChance() const {
-		return stateChance;
-	}
-
-	uint32 getStateLength() const {
-		return stateLength;
-	}
-
-	uint32 getStateStrength() const {
-		return stateStrength;
-	}
-
-	void setDefenderExclusionTimers(const Vector<String>& defenderExclusionTimers) {
-		this->defenderExclusionTimers = defenderExclusionTimers;
-	}
-
-	void setDefenderJediStateDefenseModifiers(const Vector<String>& defenderJediStateDefenseModifiers) {
-		this->defenderJediStateDefenseModifiers = defenderJediStateDefenseModifiers;
-	}
-
-	void setDefenderStateDefenseModifiers(const Vector<String>& defenderStateDefenseModifiers) {
-		this->defenderStateDefenseModifiers = defenderStateDefenseModifiers;
-	}
-
-	void setEffectType(uint8 effectType) {
-		this->effectType = effectType;
-	}
-
-	void setStateChance(uint32 stateChance) {
-		this->stateChance = stateChance;
-	}
-
-	void setStateLength(uint32 stateLength) {
-		this->stateLength = stateLength;
-	}
-
-	void setStateStrength(uint32 stateStrength) {
-		this->stateStrength = stateStrength;
-	}
+	void setStateStrength(uint32 stateStrength);
 };

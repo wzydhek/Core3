@@ -38,49 +38,24 @@ public:
 	const static int SHADER = 4;
 	const static int BITMAP = 5;
 
-	FilterProceduralRule(int type, uint32 formType) : featheringType(0),
-		featheringAmount(0), filterType(0), internalType(type), formType(formType) {
-	}
+	FilterProceduralRule(int type, uint32 formType);
 
-	virtual ~FilterProceduralRule() {
+	virtual ~FilterProceduralRule();
 
-	}
+	virtual float process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator, FilterRectangle* rect);
 
-	virtual float process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator, FilterRectangle* rect) {
-		return 0;
-	}
+	void readObject(engine::util::IffStream* iffStream);
 
-	void readObject(engine::util::IffStream* iffStream) {
-		if (iffStream->openForm(formType) == nullptr)
-			throw Exception("Incorrect form type " + String::valueOf(formType));
+	virtual void parseFromIffStream(engine::util::IffStream* iffStream);
 
-		parseFromIffStream(iffStream);
+	bool isEnabled() const;
 
-		iffStream->closeForm(formType);
-	}
+	int getFeatheringType() const;
 
-	virtual void parseFromIffStream(engine::util::IffStream* iffStream) {
+	int getFilterType() const;
 
-	}
+	int getInternalType() const;
 
-	inline bool isEnabled() const {
-		return informationHeader.isEnabled();
-	}
-
-	inline int getFeatheringType() const {
-		return featheringType;
-	}
-
-	inline int getFilterType() const {
-		return filterType;
-	}
-
-	inline int getInternalType() const {
-		return internalType;
-	}
-
-	inline bool isType(int type) const {
-		return internalType == type;
-	}
+	bool isType(int type) const;
 
 };

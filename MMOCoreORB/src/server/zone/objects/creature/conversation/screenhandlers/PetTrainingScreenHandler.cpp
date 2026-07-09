@@ -121,3 +121,11 @@ ConversationScreen* PetTrainingScreenHandler::handleScreen(CreatureObject* conve
 
 	return conversationScreen;
 }
+
+bool PetTrainingScreenHandler::toBinaryStream(ObjectOutputStream* stream) {
+	return true;
+}
+
+bool PetTrainingScreenHandler::parseFromBinaryStream(ObjectInputStream* stream) {
+	return true;
+}

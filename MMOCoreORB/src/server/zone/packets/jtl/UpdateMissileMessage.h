@@ -2,6 +2,7 @@
 
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/ship/ShipObject.h"
+#include "server/zone/managers/spacecombat/projectile/ShipProjectile.h"
 
 class UpdateMissileMessage : public BaseMessage {
 public:
@@ -12,13 +13,5 @@ public:
 		COUNTERFAILED = 3
 	};
 
-	UpdateMissileMessage(ShipObject* ship, const ShipProjectile* projectile, int countermeasureType, int updateType) : BaseMessage() {
-		insertShort(0x14);
-		insertInt(String::hashCode("UpdateMissileMessage"));
-
-		insertInt(projectile->getUniqueID());
-		insertLong(ship->getObjectID());
-		insertInt(countermeasureType);
-		insertInt(updateType);
-	}
+	UpdateMissileMessage(ShipObject* ship, const ShipProjectile* projectile, int countermeasureType, int updateType);
 };

@@ -39,33 +39,18 @@ public:
 	~WorldCoordinates();
 
 #ifdef CXX11_COMPILER
-	WorldCoordinates(WorldCoordinates&& c) : Object(), point(c.point), cell(std::move(c.cell)) {
-
-	}
+	WorldCoordinates(WorldCoordinates&& c);
 #endif
 
 	WorldCoordinates& operator=(const WorldCoordinates& c);
 
 #ifdef CXX11_COMPILER
-	WorldCoordinates& operator=(WorldCoordinates&& c) {
-		if (this == &c)
-			return *this;
-
-		point = c.point;
-		cell = std::move(c.cell);
-
-		return *this;
-	}
+	WorldCoordinates& operator=(WorldCoordinates&& c);
 #endif
 
-	bool operator==(const WorldCoordinates& c) {
-		return (point == c.point) && (cell == c.cell);
-	}
+	bool operator==(const WorldCoordinates& c);
 
-	friend void to_json(nlohmann::json& j, const WorldCoordinates& c) {
-		j["point"] = c.point;
-		j["cell"] = c.cell;
-	}
+	friend void to_json(nlohmann::json& j, const WorldCoordinates& c);
 
 	bool toBinaryStream(ObjectOutputStream* stream);
 	bool parseFromBinaryStream(ObjectInputStream* stream);
@@ -74,70 +59,29 @@ public:
 
 	Vector3 getWorldPosition() const;
 
-	inline void setCell(CellObject* obj) {
-		cell = obj;
-	}
+	void setCell(CellObject* obj);
 
-	inline void setCoordinates(const Vector3& pos) {
-		point = pos;
-	}
+	void setCoordinates(const Vector3& pos);
 
-	inline void setX(float x) {
-		point.setX(x);
-	}
+	void setX(float x);
 
-	inline void setY(float y) {
-		point.setY(y);
-	}
+	void setY(float y);
 
-	inline void setZ(float z) {
-		point.setZ(z);
-	}
+	void setZ(float z);
 
-	inline const Vector3& getPoint() const {
-		return point;
-	}
+	const Vector3& getPoint() const;
 
-	inline Vector3 getPoint() {
-		return point;
-	}
+	Vector3 getPoint();
 
-	inline CellObject* getCell() const {
-		return cell;
-	}
+	CellObject* getCell() const;
 
-	inline float getX() const {
-		return point.getX();
-	}
+	float getX() const;
 
-	inline float getY() const {
-		return point.getY();
-	}
+	float getY() const;
 
-	inline float getZ() const {
-		return point.getZ();
-	}
+	float getZ() const;
 
-	inline String toString() const {
-		StringBuffer buf;
+	String toString() const;
 
-		buf <<"WorldCoordinates(x:" << point.getX()
-			<< ", y:" << point.getY()
-			<< ", z:" << point.getZ()
-			<< ", cell: ";
-
-		if (cell == nullptr) {
-			buf << "nullptr";
-		} else {
-			buf << cell->getCellNumber();
-		}
-
-		buf << ")";
-
-		return buf.toString();
-	}
-
-	String toStringData() const {
-		return toString();
-	}
+	String toStringData() const;
 };

@@ -18,32 +18,9 @@ namespace server {
 class SyncrhonizedUiListenInstallationTask : public Task, public Logger {
 	ManagedWeakReference<InstallationObject*> installation;
 public:
-	SyncrhonizedUiListenInstallationTask(InstallationObject* inso) : Task(5000), Logger("SyncrhonizedUiListenInstallationTask") {
-		installation = inso;
-	}
+	SyncrhonizedUiListenInstallationTask(InstallationObject* inso);
 
-	void run() {
-		ManagedReference<InstallationObject*> strongRef = installation.get();
-
-		if (strongRef == nullptr)
-			return;
-
-		Locker locker(strongRef);
-
-		try {
-			if (strongRef->getZone() == nullptr)
-				return;
-
-			strongRef->updateInstallationWork();
-			//strongRef->updateOperators();
-			strongRef->verifyOperators();
-			strongRef->activateUiSync();
-
-		} catch (Exception& e) {
-			error(e.getMessage());
-			e.printStackTrace();
-		}
-	}
+	void run();
 };
 
 

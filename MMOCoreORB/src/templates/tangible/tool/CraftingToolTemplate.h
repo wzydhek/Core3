@@ -16,49 +16,20 @@ private:
 	Vector<uint32> tabs;
 
 public:
-	CraftingToolTemplate() : toolType(0), complexityLevel(0), forceCritAssembly(0), forceCritExperiment(0) {
+	CraftingToolTemplate();
 
-	}
+	~CraftingToolTemplate();
 
-	~CraftingToolTemplate() {
+	void readObject(LuaObject* templateData) override;
 
-	}
+	int getToolType() const;
 
-	void readObject(LuaObject* templateData) override {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	int getComplexityLevel() const;
 
-		toolType = templateData->getIntField("toolType");
-		complexityLevel = templateData->getIntField("complexityLevel");
-		forceCritAssembly = templateData->getIntField("forceCriticalAssembly");
-		forceCritExperiment = templateData->getIntField("forceCriticalExperiment");
+	int getForceCriticalAssembly() const;
 
-		LuaObject tabList = templateData->getObjectField("enabledTabs");
+	int getForceCriticalExperiment() const;
 
-		for (int i = 1; i <= tabList.getTableSize(); ++i) {
-			tabs.add(tabList.getIntAt(i));
-		}
-
-		tabList.pop();
-	}
-
-	int getToolType() const {
-		return toolType;
-	}
-
-	int getComplexityLevel() const {
-		return complexityLevel;
-	}
-
-	int getForceCriticalAssembly() const {
-		return forceCritAssembly;
-	}
-
-	int getForceCriticalExperiment() const {
-		return forceCritExperiment;
-	}
-
-	const Vector<uint32>& getTabs() const {
-		return tabs;
-	}
+	const Vector<uint32>& getTabs() const;
 
 };

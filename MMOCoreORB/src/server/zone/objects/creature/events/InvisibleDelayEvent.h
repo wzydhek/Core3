@@ -18,59 +18,8 @@ class InvisibleDelayEvent: public Task {
 	ManagedReference<CreatureObject*> player;
 
 public:
-	InvisibleDelayEvent(CreatureObject* pl) {
-		player = pl;
-	}
+	InvisibleDelayEvent(CreatureObject* pl);
 
-	void run() {
-		Locker playerLocker(player);
-
-		PlayerObject* targetGhost = player->getPlayerObject();
-
-		try {
-			if (player->isOnline() && !targetGhost->isLoggingOut()) {
-				player->removePendingTask("invisibledelayevent");
-
-				ManagedReference<Zone*> zone = player->getZone();
-
-				if (zone == nullptr)
-					return;
-
-				PlayerCreatureTemplate* playerTemplate = dynamic_cast<PlayerCreatureTemplate*>(player->getObjectTemplate());
-
-				if (playerTemplate == nullptr)
-					return;
-
-				ManagedReference<ImageDesignSession*> session = player->getActiveSession(SessionFacadeType::IMAGEDESIGN).castTo<ImageDesignSession*>();
-
-				if (session != nullptr) {
-					session->sessionTimeout();
-				}
-
-				float height = player->getHeight();
-
-				if (!player->isInvisible()) {
-					if (playerTemplate->getMinScale() <= height) {
-						player->setHeight(height * 0.25f);
-					}
-
-					player->sendSystemMessage("You are now invisible to other players and creatures.");
-
-				} else {
-					if (playerTemplate->getMinScale() > height) {
-						player->setHeight(height * 4.0f);
-					}
-
-					player->sendSystemMessage("You are now visible to all players and creatures.");
-				}
-
-				player->switchZone(zone->getZoneName(), player->getPositionX(), player->getPositionZ(), player->getPositionY(), player->getParentID(), true);
-			}
-
-		} catch (Exception& e) {
-			player->error("unreported exception caught in InvisibleDelayEvent::run");
-		}
-
-	}
+	void run();
 
 };

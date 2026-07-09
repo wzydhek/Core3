@@ -4,6 +4,9 @@
 
 #pragma once
 
+#include "system/lang/String.h"
+#include "system/util/VectorMap.h"
+
 /**
  * Rename for clarity/convenience
  */
@@ -22,8 +25,8 @@ using Mod = VectorMapEntry<String,int>;
  */
 class ModSortingHelper : public Mod {
 public:
-	ModSortingHelper(): Mod( "", 0) {}
-	ModSortingHelper(String name, int value) : Mod(name, value) {}
+	ModSortingHelper();
+	ModSortingHelper(String name, int value);
 
 	/**
 	 * @inf
@@ -37,12 +40,5 @@ public:
 	 * will result in a vector of {A, C, D, B}. This overload results in a
 	 * vector of {A, B, C, D }.
 	 */
-	int compareTo(const Mod& e) const  {
-		// Make copies of this and e to get around getValue not being const
-		if(  Mod(*this).getValue() >= Mod(e).getValue() ) {
-			return 1;
-		} else {
-			return -1;
-		}
-	}
+	int compareTo(const Mod& e) const;
 };

@@ -9,6 +9,7 @@
 #include "server/zone/objects/auction/AuctionItem.h"
 #include "server/zone/managers/auction/AuctionsMap.h"
 #include "server/zone/managers/auction/AuctionManager.h"
+#include "server/zone/ZoneServer.h"
 
 void AuctionItemImplementation::initializeTransientMembers() {
 	ManagedObjectImplementation::initializeTransientMembers();

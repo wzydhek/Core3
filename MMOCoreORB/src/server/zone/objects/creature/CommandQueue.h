@@ -53,54 +53,21 @@ public:
 	void clearQueueAction(unsigned int actioncntr, float timer, unsigned int tab1, unsigned int tab2);
 	void clearQueueActions(bool combatOnly);
 
-	int getQueueSize() const {
-		return queueVector.size();
-	}
+	int getQueueSize() const;
 
 	void deleteQueueAction(uint32 actionCount);
 
 	String toString() const;
 
-	String toStringData() const {
-		return toString();
-	}
+	String toStringData() const;
 };
 
 class CommandQueueTask : public Task, public Logger {
-	private:
-		WeakReference<CommandQueue*> weakQueue;
+private:
+	WeakReference<CommandQueue*> weakQueue;
 
-	public:
-		CommandQueueTask(CommandQueue* queue) {
-			weakQueue = queue;
+public:
+	CommandQueueTask(CommandQueue* queue);
 
-			setLoggingName("CommandQueueTask");
-		}
-
-	void run() {
-
-		auto commandQueue = weakQueue.get();
-
-		if (commandQueue == nullptr) {
-#ifdef DEBUG_QUEUE
-			info(true) << __PRETTY_FUNCTION__ << ":" << __LINE__ << " weakQueue.get() == nullptr!";
-#endif // DEBUG_QUEUE
-			return;
-		}
-
-		try {
-#ifdef DEBUG_QUEUE
-			info(true) << "######################################## Task Start";
-#endif // DEBUG_QUEUE
-			commandQueue->run();
-#ifdef DEBUG_QUEUE
-			info(true) << "######################################## Task Complete\n";
-#endif // DEBUG_QUEUE
-
-		} catch (Exception& e) {
-			e.printStackTrace();
-		} catch (...) {
-			throw;
-		}
-	}
+	void run();
 };

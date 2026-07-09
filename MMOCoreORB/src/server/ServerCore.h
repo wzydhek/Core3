@@ -44,6 +44,8 @@ namespace engine {
 	}
 }
 
+namespace server {
+
 class ServerCore : public Core, public Logger {
 	Pipe consoleCommandPipe;
 	conf::ConfigManager* configManager;
@@ -68,23 +70,18 @@ class ServerCore : public Core, public Logger {
 	Condition waitCondition;
 
 public:
-	enum CommandResult {
-		SUCCESS = 0,
-		ERROR = 1,
-		SHUTDOWN,
-		NOTFOUND
-	};
+	enum CommandResult { SUCCESS = 0, ERROR = 1, SHUTDOWN, NOTFOUND };
 
 	enum ShutdownFlags {
-		DEFAULT   = 0,
-		FAST      = 1<<1,
-		DUMP_JSON = 1<<2,
+		DEFAULT = 0,
+		FAST = 1 << 1,
+		DUMP_JSON = 1 << 2,
 	};
 
 private:
 	ShutdownFlags nextShutdownFlags = ShutdownFlags::DEFAULT;
 
-	using CommandFunctionType = Function<CommandResult(const String & arguments)>;
+	using CommandFunctionType = Function<CommandResult(const String& arguments)>;
 
 	VectorMap<String, CommandFunctionType> consoleCommands;
 
@@ -116,27 +113,20 @@ public:
 	void signalShutdown(ShutdownFlags flags = ShutdownFlags::DEFAULT);
 
 	// getters
-	static server::zone::ZoneServer* getZoneServer() {
-		return zoneServerRef.get();
-	}
+	static server::zone::ZoneServer* getZoneServer();
 
-	static bool truncateDatabases() {
-		return truncateAllData;
-	}
+	static bool truncateDatabases();
 
-	static ServerCore* getInstance() {
-		return instance;
-	}
+	static ServerCore* getInstance();
 
-	static Logger& logger() {
-		return *instance;
-	}
+	static Logger& logger();
 
-	static bool hasArgument(const String& arg) {
-		return arguments.contains(arg);
-	}
+	static bool hasArgument(const String& arg);
 
 #ifndef WITH_SWGREALMS_API
 	static int getSchemaVersion();
 #endif // !WITH_SWGREALMS_API
 };
+} // namespace server
+
+using namespace server;

@@ -10,6 +10,7 @@
 #include "server/zone/packets/intangible/IntangibleObjectDeltaMessage3.h"
 #include "server/zone/packets/intangible/IntangibleObjectDeltaMessage6.h"
 #include "server/zone/packets/scene/IsFlattenedTheaterMessage.h"
+#include "server/zone/packets/scene/AttributeListMessage.h"
 
 void IntangibleObjectImplementation::initializeTransientMembers() {
 	SceneObjectImplementation::initializeTransientMembers();

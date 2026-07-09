@@ -12,6 +12,43 @@
 #include "server/zone/objects/installation/components/TurretFireTask.h"
 #include "server/zone/Zone.h"
 
+TurretDataComponent::TurretDataComponent() {
+	maxRange = 80.f;
+	attackSpeed = 1.f;
+
+	nextAutoFireTime.updateToCurrentTime();
+
+	templateData = nullptr;
+	controller = nullptr;
+	manualTarget = nullptr;
+	turretTask = nullptr;
+
+	maxMineRange = 32.f;
+	explodeDelay.updateToCurrentTime();
+}
+
+TurretDataComponent::~TurretDataComponent() {
+}
+
+void TurretDataComponent::writeJSON(nlohmann::json& j) const {
+	DataObjectComponent::writeJSON(j);
+
+	SERIALIZE_JSON_MEMBER(maxRange);
+	SERIALIZE_JSON_MEMBER(attackSpeed);
+	SERIALIZE_JSON_MEMBER(nextAutoFireTime);
+
+	if (templateData) {
+		j["templateData"] = templateData->getTemplateFileName();
+	} else {
+		j["templateData"] = "";
+	}
+
+	SERIALIZE_JSON_MEMBER(controller);
+	SERIALIZE_JSON_MEMBER(manualTarget);
+	SERIALIZE_JSON_MEMBER(lastAutoTarget);
+	SERIALIZE_JSON_MEMBER(numberOfPlayersInRange);
+}
+
 void TurretDataComponent::initializeTransientMembers() {
 	ManagedReference<SceneObject*> turret = getParent();
 
@@ -209,4 +246,99 @@ int TurretDataComponent::getAutoFireTimeout() {
 	}
 
 	return cooldown;
+}
+
+void TurretDataComponent::setController(CreatureObject* creature) {
+	controller = creature;
+}
+
+void TurretDataComponent::setManualTarget(CreatureObject* creature) {
+	manualTarget = creature;
+}
+
+uint32 TurretDataComponent::incrementNumberOfPlayersInRange() {
+	return numberOfPlayersInRange.increment();
+}
+
+uint32 TurretDataComponent::decrementNumberOfPlayersInRange() {
+	return numberOfPlayersInRange.decrement();
+}
+
+void TurretDataComponent::addNotifiedPlayer(const uint64 oid) {
+	notifiedPlayers.put(oid);
+}
+
+void TurretDataComponent::removeNotifiedPlayer(const uint64 oid) {
+	notifiedPlayers.drop(oid);
+}
+
+void TurretDataComponent::updateMineCooldown(uint64 cooldown) {
+	explodeDelay.updateToCurrentTime();
+	explodeDelay.addMiliTime(cooldown);
+}
+
+/*
+ * Getters
+ */
+
+int TurretDataComponent::getRescheduleDelay() {
+	int delay = 0;
+
+	if (nextAutoFireTime.isFuture()) {
+		delay = Time().miliDifference(nextAutoFireTime);
+	}
+
+	return delay;
+}
+
+CreatureObject* TurretDataComponent::getController() {
+	return controller.get();
+}
+
+CreatureObject* TurretDataComponent::getManualTarget() {
+	return manualTarget.get();
+}
+
+int TurretDataComponent::getMaxRange() {
+	return maxRange;
+}
+
+float TurretDataComponent::getAttackSpeed() {
+	return attackSpeed;
+}
+
+Task* TurretDataComponent::getFireTask() {
+	return turretTask;
+}
+
+uint32 TurretDataComponent::getNumberOfPlayersInRange() {
+	return numberOfPlayersInRange.get();
+}
+
+int TurretDataComponent::getMineCount() {
+	return mines.size();
+}
+
+float TurretDataComponent::getMaxMineRange() {
+	return maxMineRange;
+}
+
+bool TurretDataComponent::compareAndSetNumberOfPlayersInRange(uint32 oldVal, uint32 newVal) {
+	return numberOfPlayersInRange.compareAndSet(oldVal, newVal);
+}
+
+bool TurretDataComponent::canExplodeMine() {
+	return explodeDelay.isPast();
+}
+
+bool TurretDataComponent::isTurretData() {
+	return true;
+}
+
+bool TurretDataComponent::hasNotifiedPlayer(const uint64 oid) {
+	return notifiedPlayers.contains(oid);
+}
+
+void TurretDataComponent::addSerializableVariables() {
+	addSerializableVariable("mines", &mines);
 }

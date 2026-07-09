@@ -20,101 +20,35 @@ protected:
 	int componentSlot;
 
 public:
-	ChildObject() {
-		cellid = 0;
-		containmentType = 0;
-		componentSlot = -2;
-	}
+	ChildObject();
 
-	ChildObject(const Vector3 pos, const Quaternion& dir, const String& templateF, int cellID, int contType, int shipCompSlot) {
-		position = pos;
-		direction = dir;
-		templateFile = templateF;
-		cellid = cellID;
-		containmentType = contType;
-		componentSlot = shipCompSlot;
-	}
+	ChildObject(const Vector3 pos, const Quaternion& dir, const String& templateF, int cellID, int contType, int shipCompSlot);
 
-	ChildObject(const ChildObject& obj) : Object() {
-		position = obj.position;
-		direction = obj.direction;
-		templateFile = obj.templateFile;
-		cellid = obj.cellid;
-		containmentType = obj.containmentType;
-		componentSlot = obj.componentSlot;
-	}
+	ChildObject(const ChildObject& obj);
 
-	ChildObject& operator=(const ChildObject& obj) {
-		if (this == &obj) {
-			return *this;
-		}
+	ChildObject& operator=(const ChildObject& obj);
 
-		position = obj.position;
-		direction = obj.direction;
-		templateFile = obj.templateFile;
-		cellid = obj.cellid;
-		containmentType = obj.containmentType;
-		componentSlot = obj.componentSlot;
+	void parseFromLua(LuaObject* luaObject);
 
-		return *this;
-	}
+	void setPosition(float x, float z, float y);
 
-	void parseFromLua(LuaObject* luaObject) {
-		templateFile = luaObject->getStringField("templateFile");
-		position.setX(luaObject->getFloatField("x"));
-		position.setZ(luaObject->getFloatField("z"));
-		position.setY(luaObject->getFloatField("y"));
+	void setDirection(float fw, float fx, float fy, float fz);
 
-		direction.set(luaObject->getFloatField("ow"), luaObject->getFloatField("ox"), luaObject->getFloatField("oy"), luaObject->getFloatField("oz"));
+	void setCellId(int id);
 
-		cellid = luaObject->getIntField("cellid");
+	void setContainmentType(int containment);
 
-		containmentType = luaObject->getIntField("containmentType");
+	void setTemplateFile(const String& file);
 
-		componentSlot = (int)luaObject->getFloatField("componentSlot", -2.f);
-	}
+	const Vector3& getPosition() const;
 
-	inline void setPosition(float x, float z, float y) {
-		position.set(x, z, y);
-	}
+	const Quaternion& getDirection() const;
 
-	inline void setDirection(float fw, float fx, float fy, float fz) {
-		direction.set(fw, fx, fy, fz);
-	}
+	const String& getTemplateFile() const;
 
-	inline void setCellId(int id) {
-		cellid = id;
-	}
+	int getCellId() const;
 
-	inline void setContainmentType(int containment) {
-		containmentType = containment;
-	}
+	int getContainmentType() const;
 
-	inline void setTemplateFile(const String& file) {
-		templateFile = file;
-	}
-
-	inline const Vector3& getPosition() const {
-		return position;
-	}
-
-	inline const Quaternion& getDirection() const {
-		return direction;
-	}
-
-	inline const String& getTemplateFile() const {
-		return templateFile;
-	}
-
-	inline int getCellId() const {
-		return cellid;
-	}
-
-	inline int getContainmentType() const {
-		return containmentType;
-	}
-
-	inline int getComponentSlot() const {
-		return componentSlot;
-	}
+	int getComponentSlot() const;
 };

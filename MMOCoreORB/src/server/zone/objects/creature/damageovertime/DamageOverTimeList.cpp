@@ -12,6 +12,27 @@
 
 // #define DEBUG_DOTS
 
+DamageOverTimeList::DamageOverTimeList() {
+	setNoDuplicateInsertPlan();
+	setLoggingName("DamageOverTimeList");
+}
+
+DamageOverTimeList::DamageOverTimeList(const DamageOverTimeList& list) : VectorMap<uint64, Vector<DamageOverTime>>(list), Logger(), guard() {
+	setNoDuplicateInsertPlan();
+
+	nextTick = list.nextTick;
+}
+
+DamageOverTimeList& DamageOverTimeList::operator=(const DamageOverTimeList& list) {
+	if (this == &list) {
+		return *this;
+	}
+
+	nextTick = list.nextTick;
+
+	return *this;
+}
+
 uint64 DamageOverTimeList::activateDots(CreatureObject* victim) {
 	uint64 states = 0;
 	uint64 statesBefore = 0;
@@ -473,4 +494,47 @@ void DamageOverTimeList::sendDecreaseMessage(CreatureObject* victim, uint64 type
 		victim->sendSystemMessage("@dot_message:decrease_fire");
 		break;
 	}
+}
+
+void to_json(nlohmann::json& j, const DamageOverTimeList& l) {
+	const VectorMap<uint64, Vector<DamageOverTime>>& map = l;
+
+	to_json(j, map);
+}
+
+bool DamageOverTimeList::toBinaryStream(ObjectOutputStream* stream) {
+	return VectorMap<uint64, Vector<DamageOverTime>>::toBinaryStream(stream);
+}
+
+bool DamageOverTimeList::parseFromBinaryStream(ObjectInputStream* stream) {
+	return VectorMap<uint64, Vector<DamageOverTime>>::parseFromBinaryStream(stream);
+}
+
+uint64 DamageOverTimeList::generateKey(uint64 dotType, uint8 pool, uint64 parentObjectID) {
+	// System::out << "oid: " << objectID << " pool: " << pool << " dotType: " << dotType << endl;
+	uint64 key = parentObjectID;
+	key ^= Long::hashCode((uint64)pool);
+	key ^= Long::hashCode((uint64)dotType);
+	// System::out << "key " << key << endl;
+	return key;
+}
+
+void DamageOverTimeList::setNextTick(Time time) {
+	nextTick = time;
+}
+
+void DamageOverTimeList::setNextTick(uint32 delay) {
+	nextTick.addMiliTime(delay * 1000);
+}
+
+Time DamageOverTimeList::getNextTick() {
+	return nextTick;
+}
+
+bool DamageOverTimeList::hasDot() {
+	return !isEmpty();
+}
+
+bool DamageOverTimeList::isNextTickPast() {
+	return nextTick.isPast();
 }

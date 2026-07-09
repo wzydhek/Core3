@@ -11,7 +11,4 @@
 
 class PowerupStatVector : public Vector<PowerupStat> {
 public:
-	PowerupStatVector() {
-
-	}
 };

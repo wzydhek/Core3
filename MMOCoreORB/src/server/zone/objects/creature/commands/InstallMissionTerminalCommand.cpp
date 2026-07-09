@@ -1,0 +1,50 @@
+#include "InstallMissionTerminalCommand.h"
+#include "server/zone/objects/player/PlayerObject.h"
+#include "server/zone/objects/player/sui/listbox/SuiListBox.h"
+#include "server/zone/objects/creature/commands/sui/InstallMissionTerminalSuiCallback.h"
+#include "server/zone/objects/region/CityRegion.h"
+
+InstallMissionTerminalCommand::InstallMissionTerminalCommand(const String& name, ZoneProcessServer* server) : QueueCommand(name, server) {
+}
+
+int InstallMissionTerminalCommand::doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
+	if (!checkStateMask(creature))
+		return INVALIDSTATE;
+
+	if (!checkInvalidLocomotions(creature))
+		return INVALIDLOCOMOTION;
+
+	PlayerObject* ghost = creature->getPlayerObject();
+	if (ghost == nullptr)
+		return GENERALERROR;
+
+	if (!ghost->hasAbility("installmissionterminal"))
+		return GENERALERROR;
+
+	ManagedReference<CityRegion*> city = creature->getCityRegion().get();
+
+	if (city == nullptr)
+		return GENERALERROR;
+
+	if (!city->isMayor(creature->getObjectID()))
+		return GENERALERROR;
+
+	ManagedReference<SuiListBox*> suiTerminalType = new SuiListBox(creature, SuiWindowType::INSTALL_MISSION_TERMINAL, 0);
+	suiTerminalType->setCallback(new InstallMissionTerminalSuiCallback(server->getZoneServer()));
+
+	suiTerminalType->setPromptTitle("@city/city:job_n"); // Install Mission Terminal
+	suiTerminalType->setPromptText("@city/city:job_d");
+
+	suiTerminalType->addMenuItem("@city/city:mt_generic", 0);
+	suiTerminalType->addMenuItem("@city/city:mt_artisan", 1);
+	suiTerminalType->addMenuItem("@city/city:mt_bounty", 2);
+	suiTerminalType->addMenuItem("@city/city:mt_entertainer", 3);
+	suiTerminalType->addMenuItem("@city/city:mt_scout", 4);
+	suiTerminalType->addMenuItem("@city/city:mt_imperial", 5);
+	suiTerminalType->addMenuItem("@city/city:mt_rebel", 6);
+
+	ghost->addSuiBox(suiTerminalType);
+	creature->sendMessage(suiTerminalType->generateMessage());
+
+	return SUCCESS;
+}

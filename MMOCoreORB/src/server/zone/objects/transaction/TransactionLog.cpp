@@ -34,6 +34,8 @@
 
 AtomicInteger TransactionLog::exportBacklog;
 
+TransactionLog::TransactionLog(){};
+
 TransactionLog::TransactionLog(SceneObject* src, SceneObject* dst, SceneObject* subject, TrxCode code, bool exportSubject, CAPTURE_CALLER_ARGS) {
 	if (!isEnabled()) {
 		return;
@@ -99,6 +101,32 @@ TransactionLog::TransactionLog(CreditObject* creditObject, SceneObject* dst, Trx
 	addStateCreditBalances("src", "Before");
 }
 
+TransactionLog::TransactionLog(SceneObject* src, SceneObject* dst, TrxCode code, bool exportSubject, CAPTURE_CALLER_ARGS) : TransactionLog(src, dst, (SceneObject*)nullptr, code, exportSubject, file, function, line) {
+	setType("apply");
+}
+
+TransactionLog::TransactionLog(TrxCode code, SceneObject* dst, SceneObject* subject, bool exportSubject, CAPTURE_CALLER_ARGS) : TransactionLog((SceneObject*)nullptr, dst, subject, code, exportSubject, file, function, line) {
+}
+
+TransactionLog::TransactionLog(SceneObject* src, TrxCode code, SceneObject* subject, bool exportSubject, CAPTURE_CALLER_ARGS) : TransactionLog(src, (SceneObject*)nullptr, subject, code, exportSubject, file, function, line) {
+}
+
+TransactionLog::TransactionLog(TrxCode code, SceneObject* dst, CAPTURE_CALLER_ARGS) : TransactionLog((SceneObject*)nullptr, dst, (SceneObject*)nullptr, code, false, file, function, line) {
+	if (!isStat(code)) {
+		mAutoCommit = false;
+	}
+}
+
+TransactionLog::TransactionLog(SceneObject* src, TrxCode code, uint amount, bool isCash, CAPTURE_CALLER_ARGS) : TransactionLog(src, nullptr, code, amount, isCash, file, function, line) {
+}
+
+TransactionLog::TransactionLog(TrxCode code, SceneObject* dst, uint amount, bool isCash, CAPTURE_CALLER_ARGS) : TransactionLog((SceneObject*)nullptr, dst, code, amount, isCash, file, function, line) {
+}
+
+TransactionLog::TransactionLog(const TransactionLog& rhs) {
+	*this = rhs;
+}
+
 TransactionLog::~TransactionLog() {
 	if (!isEnabled()) {
 		return;
@@ -117,6 +145,51 @@ TransactionLog::~TransactionLog() {
 			writeLog();
 		}
 	}
+}
+
+TransactionLog& TransactionLog::operator=(const TransactionLog& rhs) {
+	if (this == &rhs) {
+		return *this;
+	}
+
+	mStartTime = rhs.mStartTime;
+	mEnabled = rhs.mEnabled;
+	mDebug = rhs.mDebug;
+	mCommitted = rhs.mCommitted;
+	mAborted = rhs.mAborted;
+	mExportRelated = rhs.mExportRelated;
+	mError << rhs.mError;
+	mWorldPosition = rhs.mWorldPosition;
+	mWorldPositionContext = rhs.mWorldPositionContext;
+	mZoneName = rhs.mZoneName;
+	mRelatedObjects = rhs.mRelatedObjects;
+	mChildObjects = rhs.mChildObjects;
+	mState = rhs.mState;
+	mContext = rhs.mContext;
+	mTransaction = rhs.mTransaction;
+
+	return *this;
+}
+
+TransactionLog TransactionLog::newChild() {
+	TransactionLog child;
+
+	// Copy limited properties from parent
+	child.mEnabled = mEnabled;
+	child.mDebug = mDebug;
+	child.mExportRelated = mExportRelated;
+	child.mWorldPosition = mWorldPosition;
+	child.mWorldPositionContext = mWorldPositionContext;
+	child.mZoneName = mZoneName;
+	child.mContext = mContext;
+	child.mTransaction["trxId"] = getNewTrxID();
+	child.mTransaction["trxGroup"] = getTrxGroup();
+	child.mTransaction["code"] = mTransaction["code"];
+	child.mTransaction["src"] = mTransaction["src"];
+	child.mTransaction["dst"] = mTransaction["dst"];
+	child.mTransaction["subject"] = mTransaction["subject"];
+
+	return child;
 }
 
 void TransactionLog::commit(bool discardEmpty) {
@@ -1030,4 +1103,125 @@ const String TransactionLog::trxCodeToString(TrxCode code) {
 	StringBuffer buf;
 	buf << "TrxCode(" << (int)(code) << ")";
 	return buf.toString();
+}
+
+bool TransactionLog::isEnabled() const {
+	return getEnabled() && mEnabled;
+}
+
+void TransactionLog::setEnabled(bool enabled) {
+	mEnabled = enabled;
+}
+
+void TransactionLog::setWriteLog(bool enabled) {
+	mEnabled = enabled;
+}
+
+void TransactionLog::discard() {
+	mEnabled = false;
+}
+
+void TransactionLog::setExportRelatedObjects(bool exportRelated) {
+	mExportRelated = exportRelated;
+}
+
+bool TransactionLog::getExportRealtedObjects() const {
+	return mExportRelated;
+}
+
+const String TransactionLog::getNewTrxGroup() {
+	return "G" + getNewTrxID().toUpperCase();
+}
+
+void TransactionLog::setTrxGroup(const String& groupTrxId) {
+	mTransaction["trxGroup"] = groupTrxId;
+}
+
+const String TransactionLog::getTrxGroup() {
+	if (!mTransaction.contains("trxGroup")) {
+		mTransaction["trxGroup"] = getNewTrxGroup();
+	}
+
+	return String(mTransaction["trxGroup"]);
+}
+
+void TransactionLog::groupWith(TransactionLog& leadTrx) {
+	mTransaction["trxGroup"] = leadTrx.getTrxGroup();
+}
+
+void TransactionLog::setAutoCommit(bool autocommit) {
+	mAutoCommit = autocommit;
+}
+
+void TransactionLog::setAmount(int amount, bool isCash) {
+	mTransaction["isCash"] = isCash;
+	mTransaction["amount"] = amount;
+}
+
+void TransactionLog::setType(const String& type) {
+	mContext["type"] = type;
+}
+
+const String TransactionLog::getType() const {
+	return String(mContext["type"]);
+}
+
+bool TransactionLog::getAutoCommit() const {
+	return mAutoCommit;
+}
+
+void TransactionLog::setDebug(bool debug) {
+	mDebug = debug;
+}
+
+bool TransactionLog::getDebug() const {
+	return mDebug;
+}
+
+bool TransactionLog::isAborted() const {
+	return mAborted;
+}
+
+bool TransactionLog::isVerbose() const {
+	return getVerbose();
+}
+
+void TransactionLog::setMaxDepth(int maxDepth) {
+	mMaxDepth = maxDepth;
+}
+
+int TransactionLog::getMaxDepth() const {
+	return mMaxDepth;
+}
+
+const String TransactionLog::getTrxID() const {
+	if (!isEnabled())
+		return "disabled";
+
+	return String(mTransaction["trxId"].get<std::string>());
+}
+
+bool TransactionLog::isStat(TrxCode code) {
+	switch (code) {
+		case TrxCode::COMBATSTATS:
+		case TrxCode::CORPSEEXPIRATION:
+		case TrxCode::CRAFTINGSESSION:
+		case TrxCode::DATABASECOMMIT:
+		case TrxCode::EXPERIENCE:
+		case TrxCode::JABBASPALACE:
+		case TrxCode::NEWBIETUTORIAL:
+		case TrxCode::PLAYERDIED:
+		case TrxCode::PLAYERLINKDEAD:
+		case TrxCode::PLAYERLOGGINGOUT:
+		case TrxCode::PLAYEROFFLINE:
+		case TrxCode::PLAYERONLINE:
+		case TrxCode::SESSIONSTATS:
+		case TrxCode::POISYSTEM:
+		case TrxCode::SKILLTRAININGSYSTEM:
+		case TrxCode::TESTACCOUNT:
+			return true;
+
+		default:
+			return false;
+	}
 }

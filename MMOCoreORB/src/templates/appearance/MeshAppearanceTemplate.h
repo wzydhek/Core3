@@ -19,27 +19,15 @@ class MeshAppearanceTemplate : public AppearanceTemplate {
 	//String file;
 
 public:
-	virtual uint32 getType() const {
-		return 'MESH';
-	}
-	MeshAppearanceTemplate() {
-		aabbTree = nullptr;
-		boundingSphere = nullptr;
-	}
+	virtual uint32 getType() const;
 
-	~MeshAppearanceTemplate() {
-		delete aabbTree;
-		aabbTree = nullptr;
+	MeshAppearanceTemplate();
 
-		delete boundingSphere;
-		boundingSphere = nullptr;
-	}
+	~MeshAppearanceTemplate();
 
 	void createAABB();
 
-	void readObject(IffStream* templateData) {
-		parse(templateData);
-	}
+	void readObject(IffStream* templateData);
 
 	void parse(IffStream* iffStream);
 	void parseSPS(IffStream* iffStream);
@@ -47,51 +35,26 @@ public:
 
 	bool testCollide(float x, float z, float y, float radius) const;
 
-	inline void getTriangles(Vector<Triangle*>& triangles) const {
-		if (aabbTree != nullptr)
-			aabbTree->getTriangles(triangles);
-	}
+	void getTriangles(Vector<Triangle*>& triangles) const;
 
-	/*inline String& getFileName() {
-		return file;
-	}*/
+	const AABBTree* getAABBTree() const;
 
-	inline const AABBTree* getAABBTree() const {
-		return aabbTree;
-	}
+	const Sphere* getBoundingSphere() const;
 
-	inline const Sphere* getBoundingSphere() const {
-		return boundingSphere;
-	}
+	const Vector<Reference<MeshData*>>& getMeshes() const;
 
-	const Vector<Reference<MeshData*> >& getMeshes() const {
-		return meshes;
-	}
-
-	virtual bool testCollide(const Sphere& testsphere) const {
-		return aabbTree->testCollide(testsphere);
-	}
+	virtual bool testCollide(const Sphere& testsphere) const;
 
 	/**
 	 * Checks for intersection against ray, stops on any intersection
 	 * @return intersectionDistance, triangle which it intersects
 	 */
-	virtual bool intersects(const Ray& ray, float distance, float& intersectionDistance, Triangle*& triangle, bool checkPrimitives = false) const {
-		return aabbTree->intersects(ray, distance, intersectionDistance, triangle, checkPrimitives);
-	}
+	virtual bool intersects(const Ray& ray, float distance, float& intersectionDistance, Triangle*& triangle, bool checkPrimitives = false) const;
 
 	/**
 	 * Checks for all intersections
 	 */
-	virtual int intersects(const Ray& ray, float maxDistance, SortedVector<IntersectionResult>& result) const {
-		return aabbTree->intersects(ray, maxDistance, result);
-	}
+	virtual int intersects(const Ray& ray, float maxDistance, SortedVector<IntersectionResult>& result) const;
 
-	virtual Vector<Reference<MeshData* > > getTransformedMeshData(const Matrix4& parentTransform) const {
-		Vector<Reference<MeshData* > > newMeshes;
-		for(int i=0; i<meshes.size(); i++) {
-			newMeshes.emplace(MeshData::makeCopyNegateZ(meshes.get(i), parentTransform));
-		}
-		return newMeshes;
-	}
+	virtual Vector<Reference<MeshData*>> getTransformedMeshData(const Matrix4& parentTransform) const;
 };

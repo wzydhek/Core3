@@ -37,37 +37,20 @@ public:
 	 * @param idx The index of the column to retrieve the header name for.
 	 * @return Returns the header name as a String.
 	 */
-	String getColumnNameByIndex(int idx) const {
-		return columns.get(idx);
-	}
+	String getColumnNameByIndex(int idx) const;
 
 	/**
 	 * Returns the index of the column with the header name passed.
 	 * @param name The name of the column header to retrieve the index of.
 	 * @return The index of the column, or -1 if it wasn't found.
 	 */
-	int getColumnIndexByName(const String& name) const {
-		for (int i = 0; i < columns.size(); ++i) {
-			if (columns.get(i) == name)
-				return i;
-		}
+	int getColumnIndexByName(const String& name) const;
 
-		return -1;
-	}
+	const DataTableRow* getRow(int idx) const;
 
-	inline const DataTableRow* getRow(int idx) const {
-		return rows.get(idx);
-	}
+	DataTableRow* getRow(int idx);
 
-	inline DataTableRow* getRow(int idx) {
-		return rows.get(idx);
-	}
+	int getTotalRows() const;
 
-	inline int getTotalRows() const {
-		return rows.size();
-	}
-
-	inline int getTotalColumns() const {
-		return columns.size();
-	}
+	int getTotalColumns() const;
 };

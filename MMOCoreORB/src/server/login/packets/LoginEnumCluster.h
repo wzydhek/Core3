@@ -14,42 +14,15 @@ class LoginEnumCluster : public BaseMessage {
 protected:
 	int galaxyCount;
 public:
-	LoginEnumCluster(uint32 galcnt) : BaseMessage(100) {
-		insertShort(0x02);
-		insertInt(0xC11C63B9);
+	LoginEnumCluster(uint32 galcnt);
 
-		insertInt(galcnt); //Galaxy count
+	LoginEnumCluster* clone();
 
-		galaxyCount = galcnt;
-	}
+	void addGalaxy(uint32 gid, const String& name);
 
-	LoginEnumCluster* clone() {
-		LoginEnumCluster* pack = new LoginEnumCluster(galaxyCount);
-		copy(pack, 0);
+	void finish();
 
-		pack->doSeq = doSeq;
-		pack->doEncr = doEncr;
-		pack->doComp = doComp;
-		pack->doCRCTest = doCRCTest;
-
-		return pack;
-	}
-
-	void addGalaxy(uint32 gid, const String& name) {
-		insertInt(gid); //Zone Server ID
-
-		insertAscii(name); //IP Address
-
-		insertInt(0xFFFF8F80);
-	}
-
-	void finish() {
-		insertInt(0x00000008);
-	}
-
-	static void parse(Packet* pack) {
-		uint16 ackSequence = pack->parseShort();
-	}
+	static void parse(Packet* pack);
 
 };
 

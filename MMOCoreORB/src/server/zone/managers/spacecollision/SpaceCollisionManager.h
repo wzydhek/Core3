@@ -9,9 +9,7 @@ class SpaceCollisionManager : public Singleton<SpaceCollisionManager>, public Lo
 public:
 	const static constexpr float MISS = FLT_MAX;
 
-	SpaceCollisionManager() {
-		setLoggingName("SpaceCollisionManager");
-	}
+	SpaceCollisionManager();
 
 	float getProjectileCollision(ShipObject* ship, const ShipProjectile* projectile, SpaceCollisionResult& result, Vector<ManagedReference<SceneObject*>>& targetVectorCopy);
 

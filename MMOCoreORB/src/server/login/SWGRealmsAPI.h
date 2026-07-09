@@ -119,171 +119,61 @@ namespace server {
 			String toStringData() const;
 			String getLogMessage() const;
 
-			String actionToString(ApprovalAction action) const {
-				switch (action) {
-				case ApprovalAction::UNKNOWN:	return String("UNKNOWN");
-				case ApprovalAction::TEMPFAIL:	return String("TEMPFAIL");
-				case ApprovalAction::ALLOW:		return String("ALLOW");
-				case ApprovalAction::WARN:		return String("WARN");
-				case ApprovalAction::REJECT:	return String("REJECT");
-				case ApprovalAction::BAN:		return String("BAN");
-				case ApprovalAction::DEBUG:		return String("DEBUG");
-				}
+			String actionToString(ApprovalAction action) const;
 
-				return String("UNKOWN(" + String::valueOf((int)action) + ")");
-			}
+			void setAction(const String& stringAction);
 
-			void setAction(const String& stringAction) {
-				if (stringAction == "TEMPFAIL") {
-					resultAction = ApprovalAction::TEMPFAIL;
-					return;
-				}
+			void setJSONObject(const web::json::value& json);
 
-				if (stringAction == "ALLOW") {
-					resultAction = ApprovalAction::ALLOW;
-					return;
-				}
+			const web::json::value& getJSONObject() const;
 
-				if (stringAction == "WARN") {
-					resultAction = ApprovalAction::WARN;
-					return;
-				}
+			String getRawJSON() const;
 
-				if (stringAction == "REJECT") {
-					resultAction = ApprovalAction::REJECT;
-					return;
-				}
+			void setClientTrxId(const String& clientTrxId);
 
-				if (stringAction == "BAN") {
-					resultAction = ApprovalAction::BAN;
-					return;
-				}
+			const String& getClientTrxId() const;
 
-				if (stringAction == "DEBUG") {
-					resultAction = ApprovalAction::DEBUG;
-					return;
-				}
+			void setAction(ApprovalAction action);
 
-				resultAction = ApprovalAction::UNKNOWN;
-			}
+			ApprovalAction getAction() const;
 
-			inline void setJSONObject(const web::json::value& json) {
-				jsonData = json;
-			}
+			bool isActionTemporaryFailure() const;
 
-			inline const web::json::value& getJSONObject() const {
-				return jsonData;
-			}
+			bool isActionAllowed() const;
 
-			inline String getRawJSON() const {
-				if (jsonData.is_null()) return "";
-				return String(jsonData.serialize().c_str());
-			}
+			bool isActionWarning() const;
 
-			inline void setClientTrxId(const String& clientTrxId) {
-				resultClientTrxId = clientTrxId;
-			}
+			bool isActionRejected() const;
 
-			inline const String& getClientTrxId() const {
-				return resultClientTrxId;
-			}
+			bool isActionBan() const;
 
-			inline void setAction(ApprovalAction action) {
-				resultAction = action;
-			}
+			bool isActionDebug() const;
 
-			inline ApprovalAction getAction() const {
-				return resultAction;
-			}
+			void setTitle(const String& title);
 
-			inline bool isActionTemporaryFailure() const {
-				return resultAction == ApprovalAction::TEMPFAIL;
-			}
+			const String& getTitle() const;
 
-			inline bool isActionAllowed() const {
-				return resultAction == ApprovalAction::ALLOW || resultAction == ApprovalAction::DEBUG;
-			}
+			void setMessage(const String& message);
 
-			inline bool isActionWarning() const {
-				return resultAction == ApprovalAction::WARN;
-			}
+			String getMessage(bool appendTrxId = false) const;
 
-			inline bool isActionRejected() const {
-				return resultAction == ApprovalAction::REJECT;
-			}
+			void setDetails(const String& details);
 
-			inline bool isActionBan() const {
-				return resultAction == ApprovalAction::BAN;
-			}
+			const String& getDetails() const;
 
-			inline bool isActionDebug() const {
-				return resultAction == ApprovalAction::DEBUG;
-			}
+			void setElapsedTimeMS(uint64 elapsedTimeMS);
 
-			inline void setTitle(const String& title) {
-				resultTitle = title;
-			}
+			uint64 getElapsedTimeMS() const;
 
-			inline const String& getTitle() const {
-				return resultTitle;
-			}
+			void setDebugValue(const String& key, const String& value);
 
-			inline void setMessage(const String& message) {
-				resultMessage = message;
-			}
+			const String& getDebugValue(const String& key) const;
 
-			inline String getMessage(bool appendTrxId = false) const {
-				auto entry = resultDebug.getEntry("trx_id");
+			const HashTable<String, String>& getDebugHashTable() const;
 
-				if (!appendTrxId || !entry) {
-					return resultMessage;
-				}
+			void setTrxId(const String& trxId);
 
-				return resultMessage + "\n\ntrx_id: " + entry->getValue();
-			}
-
-			inline void setDetails(const String& details) {
-				resultDetails = details;
-			}
-
-			inline const String& getDetails() const {
-				return resultDetails;
-			}
-
-			inline void setElapsedTimeMS(uint64 elapsedTimeMS) {
-				resultElapsedTimeMS = elapsedTimeMS;
-			}
-
-			inline uint64 getElapsedTimeMS() const {
-				return resultElapsedTimeMS;
-			}
-
-			inline void setDebugValue(const String& key, const String& value) {
-				resultDebug.put(key, value);
-			}
-
-			inline const String& getDebugValue(const String& key) const {
-				auto entry = resultDebug.getEntry(key);
-
-				if (entry) {
-					return entry->getValue();
-				} else {
-					const static String empty;
-					return empty;
-				}
-			}
-
-			inline const HashTable<String, String>& getDebugHashTable() const {
-				return resultDebug;
-			}
-
-			inline void setTrxId(const String& trxId) {
-				resultDebug.put("trx_id", trxId);
-			}
-
-			inline const String& getTrxId() const {
-				return resultDebug.get("trx_id");
-			}
+			const String& getTrxId() const;
 		};
 
 		// Forward declare for SessionApprovalResult constructor

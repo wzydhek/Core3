@@ -12,14 +12,7 @@
 
 class GamblingSlotPayoutSuiCallback : public SuiCallback {
 public:
-	GamblingSlotPayoutSuiCallback(ZoneServer* server)
-		: SuiCallback(server) {
-	}
+	GamblingSlotPayoutSuiCallback(ZoneServer* server);
 
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		if (!suiBox->isListBox() || player == nullptr)
-			return;
-
-		player->sendMessage(suiBox->generateCloseMessage());
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

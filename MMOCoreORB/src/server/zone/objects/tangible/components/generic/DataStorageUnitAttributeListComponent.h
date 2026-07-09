@@ -8,6 +8,8 @@
 #pragma once
 
 #include "server/zone/objects/tangible/components/generic/DataStorageUnitDataComponent.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/scene/components/AttributeListComponent.h"
 
 class DataStorageUnitAttributeListComponent: public AttributeListComponent {
 public:
@@ -18,27 +20,6 @@ public:
 	 * @post { this object is locked, menuResponse is complete}
 	 * @param menuResponse ObjectMenuResponse that will be sent to the client
 	 */
-	void fillAttributeList(AttributeListMessage* alm, CreatureObject* player, SceneObject* sceneObject) const {
-
-		if(!sceneObject->isTangibleObject())
-			return;
-
-		ManagedReference<TangibleObject*> tano = cast<TangibleObject*>(sceneObject);
-
-		if (!player->isPlayerCreature())
-			return;
-
-		DataObjectComponent* data = tano->getDataObjectComponent()->get();
-		if(data == nullptr || !data->isDataStorageUnitData())
-			return;
-
-		DataStorageUnitDataComponent* dsuData = cast<DataStorageUnitDataComponent*>(data);
-		if( dsuData == nullptr )
-			return;
-
-		// ID is an integer from 1 to 12
-		String title = "@theme_park/book_text:title_" + String::valueOf( dsuData->getId() );
-		alm->insertAttribute("contents", title);
-	}
+	void fillAttributeList(AttributeListMessage* alm, CreatureObject* player, SceneObject* sceneObject) const;
 
 };

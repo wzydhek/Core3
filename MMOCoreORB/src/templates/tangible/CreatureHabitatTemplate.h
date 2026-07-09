@@ -12,21 +12,12 @@
 class CreatureHabitatTemplate: public SharedTangibleObjectTemplate {
 
 public:
-	CreatureHabitatTemplate() {
+	CreatureHabitatTemplate();
 
-	}
+	~CreatureHabitatTemplate();
 
-	~CreatureHabitatTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
-
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
-
-	}
-
-	bool isCreatureHabitatTemplate() const {
-		return true;
-	}
+	bool isCreatureHabitatTemplate() const;
 
 };

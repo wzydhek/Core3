@@ -30,31 +30,7 @@ class CityAdjustTaxSuiCallback : public SuiCallback {
 	ManagedWeakReference<CityRegion*> cityRegion;
 
 public:
-	CityAdjustTaxSuiCallback(ZoneServer* server, CityRegion* city)
-		: SuiCallback(server) {
+	CityAdjustTaxSuiCallback(ZoneServer* server, CityRegion* city);
 
-		cityRegion = city;
-	}
-
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		ManagedReference<CityRegion*> city = cityRegion.get();
-
-		if (city == nullptr || !suiBox->isListBox() || player == nullptr || cancelPressed || args->size() <= 0) {
-			return;
-		}
-
-		SuiListBox* listbox = cast<SuiListBox*>(suiBox);
-
-		int idx = Integer::valueOf(args->get(0).toString());
-
-		if (idx > listbox->getMenuSize() - 1 || idx < 0)
-			return;
-
-		int taxSelected = listbox->getMenuObjectID(idx);
-
-		CityManager* cityManager = server->getCityManager();
-		cityManager->promptSetTax(city, player, taxSelected, listbox->getUsingObject().get());
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

@@ -4,52 +4,14 @@
 
 #pragma once
 
-#include "server/zone/objects/scene/SceneObject.h"
+#include "QueueCommand.h"
 
 class ResetJediCommand : public QueueCommand {
 public:
 
-	ResetJediCommand(const String& name, ZoneProcessServer* server)
-		: QueueCommand(name, server) {
+	ResetJediCommand(const String& name, ZoneProcessServer* server);
 
-	}
-
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
-
-		if (object == nullptr || !object->isCreatureObject())
-			return INVALIDTARGET;
-
-		CreatureObject* targetCreature = cast<CreatureObject*>( object.get());
-
-		Locker clocker(targetCreature, creature);
-
-		const SkillList* skillList = targetCreature->getSkillList();
-
-		for (int i = 0; i < skillList->size(); ++i) {
-			Skill* skill = skillList->get(i);
-			if (skill->getSkillName().indexOf("force_") != -1){
-				SkillManager::instance()->surrenderSkill(skill->getSkillName(), targetCreature, true);
-			}
-		}
-
-		// Jedi State.s
-
-		ManagedReference<PlayerObject*> targetGhost = targetCreature->getPlayerObject();
-
-		if (targetGhost == nullptr)
-			return GENERALERROR;
-
-		targetGhost->setJediState(0);
-
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };
+

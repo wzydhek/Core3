@@ -1,5 +1,7 @@
 #pragma once
 
+#include "system/lang.h"
+
 class HeightMapPlane {
 	byte* buffer;
 
@@ -8,37 +10,17 @@ class HeightMapPlane {
 	int planeSize;
 
 public:
-	HeightMapPlane(int idx, int size = 256) {
-		buffer = new byte[size * size * sizeof(float)];
+	HeightMapPlane(int idx, int size = 256);
 
-		index = idx;
-		planeSize = size;
-	}
-
-	~HeightMapPlane() {
-		delete [] buffer;
-	}
+	~HeightMapPlane();
 
 	// getters
-	inline byte* getBuffer() {
-		return buffer;
-	}
+	byte* getBuffer();
 
-	inline float getHeight(int x, int y) {
-		int offset = x + planeSize * y;
+	float getHeight(int x, int y);
 
-		if (x > planeSize || x < 0 || y > planeSize || y < 0)
-			throw ArrayIndexOutOfBoundsException(offset);
-
-		return ((float*)buffer)[offset];
-	}
-
-	inline int getIndex() {
-		return index;
-	}
+	int getIndex();
 
 	// setters
-	inline void setIndex(int idx) {
-		index = idx;
-	}
+	void setIndex(int idx);
 };

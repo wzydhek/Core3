@@ -57,9 +57,7 @@ namespace server {
 		Object* clone();
 		Object* clone(void* object);
 
-		void free() {
-			TransactionalMemoryManager::instance()->destroy(this);
-		}
+		void free();
 
 		/**
 		 * Clear all the objects from the quadtree and set it to have
@@ -145,13 +143,9 @@ namespace server {
 		void copyObjects(const Reference<TreeNode*>& node, float x, float y, float range, SortedVector<TreeEntry*>& objects);
 
 	public:
-		static void setLogging(bool doLog) {
-			logTree = doLog;
-		}
+		static void setLogging(bool doLog);
 
-		inline static bool doLog() {
-			return logTree;
-		}
+		static bool doLog();
 	};
   } // namespace zone
 } // namespace server

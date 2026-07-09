@@ -14,11 +14,12 @@ protected:
 	Vector<Reference<BaseBoundingVolume*> > volumes;
 	AABB bbox;
 public:
-	bool isCompositeVolume() { return true; }
-	CompositeVolume() : bbox(Vector3(0, 0, 0), Vector3(0, 0, 0)){ }
-	const AABB& getBoundingBox() const {
-		return bbox;
-	}
+	bool isCompositeVolume();
+
+	CompositeVolume();
+
+	const AABB& getBoundingBox() const;
+
 	virtual void read(IffStream *iff);
 #ifdef OSG_RENDERER
 	virtual osg::ref_ptr<osg::Node> draw() const;

@@ -12,13 +12,6 @@ using server::zone::objects::tangible::weapon::WeaponObject;
 
 class WeaponRanges : public ObjectControllerMessage {
 public:
-	WeaponRanges(CreatureObject* creo, WeaponObject* weao) : ObjectControllerMessage(creo->getObjectID(), 0x1B, 0x140) {
-		insertLong(weao->getObjectID());
-		insertFloat(weao->getIdealRange());
-		insertFloat(weao->getMaxRange());
-		insertInt(weao->getPointBlankAccuracy());
-		insertInt(weao->getIdealAccuracy());
-		insertInt(weao->getMaxRangeAccuracy());
-	}
+	WeaponRanges(CreatureObject* creo, WeaponObject* weao);
 
 };

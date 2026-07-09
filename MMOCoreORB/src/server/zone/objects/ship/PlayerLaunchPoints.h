@@ -9,61 +9,21 @@ protected:
 	VectorMap<String, Vector<Vector3>> spawnLocations;
 
 public:
-	PlayerLaunchPoints() {
-	}
+	PlayerLaunchPoints();
 
-	PlayerLaunchPoints(const PlayerLaunchPoints& points) : Object() {
-		spawnLocations = points.spawnLocations;
-	}
+	PlayerLaunchPoints(const PlayerLaunchPoints& points);
 
-	PlayerLaunchPoints& operator=(const PlayerLaunchPoints& points) {
-		if (this == &points)
-			return *this;
+	PlayerLaunchPoints& operator=(const PlayerLaunchPoints& points);
 
-		spawnLocations = points.spawnLocations;
+	void addLaunchPoint(String cellName, Vector3 location);
 
-		return *this;
-	}
+	int getTotalLaunchCells();
 
-	void addLaunchPoint(String cellName, Vector3 location) {
-		Vector<Vector3> cellLocs = spawnLocations.get(cellName);
+	const String getRandomCell();
 
-		cellLocs.add(location);
-		spawnLocations.put(cellName, cellLocs);
-	}
+	const Vector<Vector3>& getSpawnLocations(String cellName);
 
-	inline int getTotalLaunchCells() {
-		return spawnLocations.size();
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	const inline String getRandomCell() {
-		int totalCells = getTotalLaunchCells();
-
-		if (totalCells <= 0) {
-			return "";
-		} else if (totalCells == 1) {
-			return spawnLocations.elementAt(0).getKey();
-		}
-
-		int random = System::random((totalCells - 1));
-		String cellName = spawnLocations.elementAt(random).getKey();
-
-		return cellName;
-	}
-
-	const inline Vector<Vector3>& getSpawnLocations(String cellName) {
-		return spawnLocations.get(cellName);
-	}
-
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		spawnLocations.toBinaryStream(stream);
-
-		return true;
-	}
-
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		spawnLocations.parseFromBinaryStream(stream);
-
-		return true;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 };

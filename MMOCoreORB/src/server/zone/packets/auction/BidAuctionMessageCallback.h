@@ -8,7 +8,6 @@
 #pragma once
 
 #include "server/zone/packets/MessageCallback.h"
-#include "server/zone/managers/auction/AuctionManager.h"
 
 class BidAuctionMessageCallback : public MessageCallback {
 	uint64 objectid;
@@ -16,33 +15,10 @@ class BidAuctionMessageCallback : public MessageCallback {
 	uint32 price2;
 
 public:
-	BidAuctionMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-			MessageCallback(client, server), objectid(0), price1(0), price2(0) {
+	BidAuctionMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-		setCustomTaskQueue("slowQueue");
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		objectid = message->parseLong();
-		price1 = message->parseInt();
-		price2 = message->parseInt();
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player == nullptr)
-			return;
-
-		Locker locker(player);
-
-		AuctionManager* auctionManager = server->getZoneServer()->getAuctionManager();
-
-		if (auctionManager != nullptr) {
-			Locker clocker(auctionManager, player);
-
-			auctionManager->buyItem(player, objectid, price1, price2);
-		}
-	}
+	void run();
 
 };

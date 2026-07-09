@@ -5,6 +5,12 @@
 
 #include "VendorOutfitManager.h"
 
+VendorOutfitManager::VendorOutfitManager() {
+}
+
+VendorOutfitManager::~VendorOutfitManager() {
+}
+
 void VendorOutfitManager::initialize() {
 
 	setLoggingName("VendorOutfitManager");
@@ -57,3 +63,18 @@ void VendorOutfitManager::loadLuaOutfits() {
 	Luaoutfits.pop();
 }
 
+VectorMap<String, Reference<Outfit*>>* VendorOutfitManager::getOutfits() {
+	return &outfits;
+}
+
+String& VendorOutfitManager::getOutfitName(int idx) {
+	return outfits.elementAt(idx).getKey();
+}
+
+Reference<Outfit*> VendorOutfitManager::getOutfit(int idx) {
+	return outfits.get(idx);
+}
+
+ Reference<Outfit*> VendorOutfitManager::getOutfit(const String& key) {
+	return outfits.get(key);
+}

@@ -18,35 +18,9 @@ class FishingSplashEvent : public Task {
 	ManagedWeakReference<SceneObject*> splashWeak;
 
 public:
-	FishingSplashEvent(SceneObject* splashObj) : Task(1000) {
-		splashWeak = splashObj;
-	}
+	FishingSplashEvent(SceneObject* splashObj);
 
-	void run() {
-		auto splash = splashWeak.get();
-
-		if (splash == nullptr)
-			return;
-
-		auto zoneProcServer = splash->getZoneProcessServer();
-
-		if (zoneProcServer == nullptr)
-			return;
-
-		ManagedReference<FishingManager*> fishingManager = zoneProcServer->getFishingManager();
-
-		if (fishingManager == nullptr)
-			return;
-
-		try {
-			Locker splashLocker(splash);
-
-			fishingManager->removeSplash(splash);
-		} catch (...) {
-
-			throw;
-		}
-	}
+	void run();
 };
 } // namespace events
 } // namespace minigames

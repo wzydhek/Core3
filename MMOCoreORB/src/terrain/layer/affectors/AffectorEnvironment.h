@@ -8,6 +8,7 @@
 #pragma once
 
 #include "../ProceduralRule.h"
+#include "AffectorProceduralRule.h"
 
 class AffectorEnvironment : public ProceduralRule<'AENV'>, public AffectorProceduralRule {
 	int environmentId;
@@ -15,45 +16,13 @@ class AffectorEnvironment : public ProceduralRule<'AENV'>, public AffectorProced
 	float weight;
 
 public:
-	AffectorEnvironment(): environmentId(0), var2(0), weight(0) {
-		affectorType = ENVIRONMENT;
-	}
+	AffectorEnvironment();
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		uint32 version = iffStream->getNextFormType();
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-		iffStream->openForm(version);
+	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>);
 
-		switch (version) {
-		case '0000':
-			parseFromIffStream(iffStream, Version<'0000'>());
-			break;
-		default:
-			System::out << "unknown AffectorEnvironment version 0x" << hex << version << endl;
-			break;
-		}
+	void process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator);
 
-		iffStream->closeForm(version);
-	}
-
-	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>) {
-		informationHeader.readObject(iffStream);
-
-		iffStream->openChunk('DATA');
-
-		environmentId = iffStream->getInt();
-		var2 = iffStream->getInt();
-		weight = iffStream->getFloat();
-
-		iffStream->closeChunk('DATA');
-	}
-
-	void process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator) {
-		//System::out << "processing AffectorEnvironment value:" << environmentId << endl;
-		baseValue = (float)environmentId;
-	}
-
-	bool isEnabled() {
-		return informationHeader.isEnabled();
-	}
+	bool isEnabled();
 };

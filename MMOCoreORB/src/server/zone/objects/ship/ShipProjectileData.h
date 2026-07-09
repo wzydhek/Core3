@@ -20,66 +20,27 @@ protected:
 	bool mining;
 	bool tractor;
 public:
-	ShipProjectileData() {
+	ShipProjectileData();
 
-	}
+	void readObject(DataTableRow *row);
 
-	void readObject(DataTableRow *row) {
-		int temp;
-		row->getCell(0)->getValue(name);
-		row->getCell(1)->getValue(index);
-		row->getCell(2)->getValue(range);
-		squaredRange = range * range;
-		row->getCell(3)->getValue(speed);
-		row->getCell(4)->getValue(usesAmmo);
-		row->getCell(5)->getValue(missile);
-		row->getCell(6)->getValue(countermeasure);
-		row->getCell(7)->getValue(mining);
-		row->getCell(8)->getValue(tractor);
-		//StringBuffer buffer;
-	   // buffer << "Loaded Projectile- Speed: " << speed << endl;
-		//static Logger logger;
-	   // logger.info(buffer.toString(), true);
-	}
+	String getName() const;
 
-	String getName() const {
-		return name;
-	}
+	int getIndex() const;
 
-	int getIndex() const {
-		return index;
-	}
+	bool isTractorBeam() const;
 
-	bool isTractorBeam() const {
-		return tractor;
-	}
+	bool isMiningLaser() const;
 
-	bool isMiningLaser() const {
-		return mining;
-	}
+	bool isCountermeasure() const;
 
-	bool isCountermeasure() const {
-		return countermeasure;
-	}
+	bool isMissile() const;
 
-	bool isMissile() const {
-		return missile;
-	}
+	bool consumesAmmo() const;
 
-	bool consumesAmmo() const {
-		return usesAmmo;
-	}
+	float getSpeed() const;
 
-	float getSpeed() const {
-		return speed;
-	}
+	float getRange() const;
 
-	float getRange() const {
-		return range;
-	}
-
-	float getSquaredRange() const {
-		return squaredRange;
-	}
-
+	float getSquaredRange() const;
 };

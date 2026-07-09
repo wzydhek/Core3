@@ -58,9 +58,7 @@ namespace server {
 	  	void sendTransferBox(SceneObject* usingObject, SceneObject* player, const String& title, const String& text, LuaObject& optionsAddFrom, LuaObject& optionsAddTo, const String& screenplay, const String& callback);
 	  	int32 sendSuiPage(CreatureObject* creature, SuiPageData* pageData, const String& play, const String& callback, unsigned int windowType);
 
-	  	void setZoneProcessServer(ZoneProcessServer* srv) {
-	  		server = srv;
-	  	}
+	  	void setZoneProcessServer(ZoneProcessServer* srv);
 	  };
    }
   }

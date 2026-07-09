@@ -106,3 +106,15 @@ void DroidCombatModuleDataComponent::initialize(DroidObject* droid) {
 	droid->setMinDamage(minDmg);
 	droid->setAttackSpeed(speed);
 }
+
+int DroidCombatModuleDataComponent::getBatteryDrain() {
+	return 0;
+}
+
+bool DroidCombatModuleDataComponent::isStackable() {
+	return true;
+}
+
+bool DroidCombatModuleDataComponent::isCombatModule() {
+	return true;
+}

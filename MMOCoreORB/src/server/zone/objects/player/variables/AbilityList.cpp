@@ -130,3 +130,17 @@ bool AbilityList::add(Ability* const& ability, DeltaMessage* message, int update
 
 	return val;
 }
+
+bool AbilityListMigrator::toBinaryStream(ObjectOutputStream* stream) {
+	TypeInfo<uint32>::toBinaryStream(&updateCounter, stream);
+	names.toBinaryStream(stream);
+
+	return true;
+}
+
+bool AbilityListMigrator::parseFromBinaryStream(ObjectInputStream* stream) {
+	TypeInfo<uint32>::parseFromBinaryStream(&updateCounter, stream);
+	names.parseFromBinaryStream(stream);
+
+	return true;
+}

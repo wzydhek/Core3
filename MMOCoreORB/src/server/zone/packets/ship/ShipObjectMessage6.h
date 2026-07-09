@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "server/zone/packets/tangible/TangibleObjectMessage6.h"
+#include "../BaseLineMessage.h"
 #include "server/zone/objects/ship/ShipObject.h"
 
 class ShipObjectMessage6 : public BaseLineMessage {
@@ -36,53 +36,9 @@ protected:
 	};
 
 public:
-	ShipObjectMessage6(ShipObject* ship) : BaseLineMessage(ship, 0x53484950, 6, 23) {
-		insertInt(0x76); // 0x3D in creos
+	ShipObjectMessage6(ShipObject* ship);
 
-		ship->getDefenderList()->insertToMessage(this);
+	int getGuildID(ShipObject* ship);
 
-		insertShort(ship->getUniqueID());
-		insertFloat(ship->getActualAccelerationRate());
-		insertFloat(ship->getActualDecelerationRate());
-
-		insertFloat(ship->getActualPitchAccelerationRate());
-		insertFloat(ship->getActualYawAccelerationRate());
-		insertFloat(ship->getActualRollAccelerationRate());
-
-		insertFloat(ship->getActualPitchRate());
-		insertFloat(ship->getActualYawRate());
-		insertFloat(ship->getActualRollRate());
-		insertFloat(ship->getActualMaxSpeed());
-
-		insertLong(ship->getShipTargetID());
-		insertInt(ship->getShipTargetSlot());
-
-		ship->getTargetableBitfield()->insertToMessage(this);
-		ship->getShipComponentMap()->insertToMessage(this);
-
-		insertAscii(""); // wingName
-		insertAscii(getShipTypeName(ship));
-		insertAscii(ship->getShipDifficulty());
-		insertAscii(ship->getShipFactionString());
-
-		insertFloat(ship->getFrontShield());
-		insertFloat(ship->getRearShield());
-
-		insertInt(getGuildID(ship));
-
-		setSize();
-	}
-
-	int getGuildID(ShipObject* ship) {
-		auto owner = ship->getOwner().get();
-		return owner != nullptr && owner->isInGuild() ? owner->getGuildID() : 0;
-	}
-
-	String getShipTypeName(ShipObject* ship) {
-		if (ship->isShipAiAgent()) {
-			return ship->getShipType();
-		} else {
-			return "";
-		}
-	}
+	String getShipTypeName(ShipObject* ship);
 };

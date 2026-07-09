@@ -129,24 +129,15 @@ public:
 
 	String addParentNodeToListBox(SuiListBox* sui, const String& currentNode) const;
 
-	inline ResourceMap* getResourceMap() {
-		return resourceMap;
-	}
+	ResourceMap* getResourceMap();
 
-	inline const ResourceMap* getResourceMap() const {
-		return resourceMap;
-	}
+	const ResourceMap* getResourceMap() const;
 
 	void listResourcesForPlanetOnScreen(CreatureObject* creature, const String& planet) const;
 
 	String healthCheck();
 
-	String dumpResources() {
-		if(writeAllSpawnsToScript())
-			return "Resources Dumped";
-
-		return "Error Dumping resources";
-	}
+	String dumpResources();
 
 	String getPlanetByIndex(int index) const;
 private:

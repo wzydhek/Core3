@@ -15,33 +15,15 @@ class MapFamily : public TemplateVariable<'MFAM'> {
 	String var2;
 	MapFractal mfrc;
 public:
-	MapFamily() : var1(0) {
-	}
+	MapFamily();
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		iffStream->openChunk('DATA');
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-		var1 = iffStream->getInt();
-		iffStream->getString(var2);
+	MapFractal* getMfrc();
 
-		iffStream->closeChunk('DATA');
+	const MapFractal* getMfrc() const;
 
-		mfrc.readObject(iffStream);
-	}
+	int getVar1() const;
 
-	inline MapFractal* getMfrc() {
-		return &mfrc;
-	}
-
-	inline const MapFractal* getMfrc() const {
-		return &mfrc;
-	}
-
-	inline int getVar1() const {
-		return var1;
-	}
-
-	inline const String& getName() const {
-		return var2;
-	}
+	const String& getName() const;
 };

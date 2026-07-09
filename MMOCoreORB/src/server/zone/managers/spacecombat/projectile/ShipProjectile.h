@@ -37,188 +37,59 @@ protected:
 	uint64 lastUpdate;
 
 public:
-	ShipProjectile() {
-		setLoggingName("ShipProjectile");
+	ShipProjectile();
 
-		uniqueID = 0;
+	ShipProjectile(ShipObject* ship, uint8 weapon, uint8 projectile, uint8 component, Vector3 start, Vector3 end, float projectileSpeed, float projectileRange, float projectileRadius, uint64 miliTime);
 
-		weaponSlot = 0;
-		projectileType = 0;
-		componentSlot = 0;
+	virtual bool isMissile() const;
 
-		distance = 0.f;
-		speed = 0.f;
-		range = 0.f;
-		radius = 0.f;
-
-		deltaMax = 0;
-
-		firstUpdate = 0;
-		lastUpdate = 0;
-	}
-
-	ShipProjectile(ShipObject* ship, uint8 weapon, uint8 projectile, uint8 component, Vector3 start, Vector3 end, float projectileSpeed, float projectileRange, float projectileRadius, uint64 miliTime) {
-		setLoggingName("ShipProjectile");
-
-		this->shipRef = ship;
-
-		uniqueID = 0;
-
-		weaponSlot = weapon;
-		projectileType = projectile;
-		componentSlot = component;
-
-		thisPosition = start;
-		lastPosition = start;
-		direction = end * invPositionScale;
-
-		distance = 0.f;
-		speed = projectileSpeed;
-		range = projectileRange;
-		radius = projectileRadius;
-
-		deltaMax = (projectileRange / projectileSpeed) * 1000.f;
-		firstUpdate = miliTime - 200; //SpaceCombatManager::CheckProjectilesTask::INTERVAL;
-		lastUpdate = firstUpdate;
-	}
-
-	virtual bool isMissile() const {
-		return false;
-	}
-
-	virtual bool isCountermeasure() const {
-		return false;
-	}
+	virtual bool isCountermeasure() const;
 
 // get
-	ManagedWeakReference<ShipObject*> getShip() const {
-		return shipRef;
-	}
+	ManagedWeakReference<ShipObject*> getShip() const;
 
-	uint32 getUniqueID() const {
-		return uniqueID;
-	}
+	uint32 getUniqueID() const;
 
-	uint8 getWeaponSlot() const {
-		return weaponSlot;
-	}
+	uint8 getWeaponSlot() const;
 
-	uint8 getProjectileType() const {
-		return projectileType;
-	}
+	uint8 getProjectileType() const;
 
-	uint8 getComponentSlot() const {
-		return componentSlot;
-	}
+	uint8 getComponentSlot() const;
 
-	const Vector3& getThisPosition() const {
-		return thisPosition;
-	}
+	const Vector3& getThisPosition() const;
 
-	const Vector3& getLastPosition() const {
-		return lastPosition;
-	}
+	const Vector3& getLastPosition() const;
 
-	const Vector3& getDirection() const {
-		return direction;
-	}
+	const Vector3& getDirection() const;
 
-	float getDistance() const {
-		return distance;
-	}
+	float getDistance() const;
 
-	float getSpeed() const {
-		return speed;
-	}
+	float getSpeed() const;
 
-	float getRange() const {
-		return range;
-	}
+	float getRange() const;
 
-	float getRadius() const {
-		return radius;
-	}
+	float getRadius() const;
 
-	uint32 getDeltaMax() const {
-		return deltaMax;
-	}
+	uint32 getDeltaMax() const;
 
-	uint64 getFirstUpdateTime() const {
-		return firstUpdate;
-	}
+	uint64 getFirstUpdateTime() const;
 
-	uint64 getLastUpdateTime() const {
-		return lastUpdate;
-	}
+	uint64 getLastUpdateTime() const;
 
 // set
-	void setLastUpdateTime(const uint64& miliTime) {
-		lastUpdate = miliTime;
-	}
+	void setLastUpdateTime(const uint64& miliTime);
 
-	void readProjectileData(const ShipProjectileData* data) {
-		projectileType = data->getIndex();
+	void readProjectileData(const ShipProjectileData* data);
 
-		speed = data->getSpeed();
-		range = data->getRange();
+	virtual void updatePosition(int deltaTime, int totalTime);
 
-		deltaMax = (range / speed) * 1000.f;
-	}
-
-	virtual void updatePosition(int deltaTime, int totalTime) {
-		distance = deltaTime * speed * 0.001f;
-
-		lastPosition = thisPosition;
-		thisPosition = thisPosition + (distance * direction);
-	}
-
-	bool validatePosition() const {
-		if (thisPosition.getX() > 7999.f || thisPosition.getX() < -7999.f
-		 || thisPosition.getY() > 7999.f || thisPosition.getY() < -7999.f
-		 || thisPosition.getZ() > 7999.f || thisPosition.getZ() < -7999.f) {
-			return false;
-		}
-
-		return distance > 0.f;
-	}
+	bool validatePosition() const;
 
 #ifdef SHIPPROJECTILE_DEBUG
-	virtual void debugProjectile(ShipObject* ship, int hitResult) {
-		debugProjectileMessage(ship, hitResult);
-		debugProjectilePath(ship);
-	}
+	virtual void debugProjectile(ShipObject* ship, int hitResult);
 
-	virtual void debugProjectileMessage(ShipObject* ship, int hitResult) {
-		StringBuffer msg;
+	virtual void debugProjectileMessage(ShipObject* ship, int hitResult);
 
-		msg << "Projectile:     " << (hitResult == 1 ? "HIT" : hitResult == 0 ? "MISS" : "EXPIRE") << endl
-			<< " weaponSlot     " << weaponSlot << endl
-			<< " projectileType " << projectileType << endl
-			<< " componentSlot  " << componentSlot << endl
-			<< " thisPosition   " << thisPosition.toString() << endl
-			<< " lastPosition   " << lastPosition.toString() << endl
-			<< " direction      " << direction.toString() << endl
-			<< " distance       " << distance << endl
-			<< " speed          " << speed << endl
-			<< " range          " << range << endl
-			<< " radius         " << radius << endl
-			<< " deltaMax       " << deltaMax << endl
-			<< " totalTime      " << (System::getMiliTime() - firstUpdate) << endl
-			<< " deltaTime      " << (System::getMiliTime() - lastUpdate) << endl
-			<< "--------------------------------";
-
-		auto smsg = new ChatSystemMessage(msg.toString());
-		ship->broadcastMessage(smsg, true);
-	}
-
-	virtual void debugProjectilePath(ShipObject* ship) {
-		auto path = new CreateClientPathMessage();
-
-		path->addCoordinate(lastPosition);
-		path->drawBoundingSphere(thisPosition, Matrix4(), Sphere(Vector3::ZERO, radius));
-		path->addCoordinate(thisPosition);
-
-		ship->broadcastMessage(path, true);
-	}
+	virtual void debugProjectilePath(ShipObject* ship);
 #endif //SHIPPROJECTILE_DEBUG
 };

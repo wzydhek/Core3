@@ -14,30 +14,7 @@ class DespawnCreatureTask : public Task {
 	ManagedReference<AiAgent*> agent;
 
 public:
-	DespawnCreatureTask(AiAgent* creature) {
-		agent = creature;
+	DespawnCreatureTask(AiAgent* creature);
 
-		auto zone = creature->getZone();
-
-		if (zone != nullptr) {
-			setCustomTaskQueue(zone->getZoneName());
-		}
-	}
-
-	void run() {
-		Locker locker(agent);
-
-		Zone* zone = agent->getZone();
-
-		agent->removePendingTask("despawn");
-
-		if (zone == nullptr) {
-			agent->destroyAllWeapons();
-
-			return;
-		}
-
-		agent->destroyObjectFromWorld(false);
-		agent->notifyDespawn(zone);
-	}
+	void run();
 };

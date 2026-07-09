@@ -9,34 +9,8 @@
 
 class UpdateContainmentMessage : public BaseMessage {
 public:
-	UpdateContainmentMessage(SceneObject* object, SceneObject* container, uint32 type) : BaseMessage(30) {
-		uint64 parId = 0;
+	UpdateContainmentMessage(SceneObject* object, SceneObject* container, uint32 type);
 
-		if (container != nullptr)
-			parId = container->getObjectID();
-
-		insertShort(0x04);
-		insertInt(0x56CBDE9E);  // CRC
-		insertLong(object->getObjectID());  // ObjectID
-		insertLong(parId);  // ObjectID
-		insertInt(type);
-
-		/*StringBuffer msg;
-		msg << hex << "UpdateContainmentMessage [Object = " << object->getObjectID() << "]" << " container to (" << container->getObjectID() <<  ")\n";
-		System::out << msg.toString();*/
-	}
-
-	UpdateContainmentMessage(uint64 object, uint64 container, uint32 type) : BaseMessage(30) {
-		insertShort(0x04);
-		insertInt(0x56CBDE9E);  // CRC
-		insertLong(object);  // ObjectID
-		insertLong(container);  // ObjectID
-		insertInt(type);
-
-		/*StringBuffer msg;
-		msg << hex << "UpdateContainmentMessage [Object = " << object << "]" << " container to (" << container <<  ")\n";
-		System::out << msg.toString();*/
-
-	}
+	UpdateContainmentMessage(uint64 object, uint64 container, uint32 type);
 
 };

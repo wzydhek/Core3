@@ -5,6 +5,41 @@
 
 #include "PlayerCreatureTemplate.h"
 
+PlayerCreatureTemplate::PlayerCreatureTemplate() {
+	defaultLanguage = 0;
+}
+
+PlayerCreatureTemplate::~PlayerCreatureTemplate() {
+}
+
+const CustomizationDataMap& PlayerCreatureTemplate::getCustomizationDataMap() const {
+	return dataMap;
+}
+
+CustomizationDataMap& PlayerCreatureTemplate::getCustomizationDataMap() {
+	return dataMap;
+}
+
+const Vector<CustomizationData>& PlayerCreatureTemplate::getCustomizationData(const String& customizationName) const {
+	return dataMap.get(customizationName);
+}
+
+const Vector<String>& PlayerCreatureTemplate::getStartingSkills() const {
+	return startingSkills;
+}
+
+const Vector<String>& PlayerCreatureTemplate::getStartingItems() const {
+	return startingItems;
+}
+
+uint8 PlayerCreatureTemplate::getDefaultLanguage() const {
+	return defaultLanguage;
+}
+
+void PlayerCreatureTemplate::setCustomizationDataMap(const CustomizationDataMap& map) {
+	dataMap = map;
+}
+
 void PlayerCreatureTemplate::parseVariableData(const String& varName, LuaObject* templateData) {
 	lua_State* state = templateData->getLuaState();
 	if (varName == "defaultLanguage")
@@ -67,3 +102,6 @@ void PlayerCreatureTemplate::readObject(LuaObject* templateData) {
 	return;
 }
 
+bool PlayerCreatureTemplate::isPlayerCreatureTemplate() const {
+	return true;
+}

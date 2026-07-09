@@ -23,68 +23,23 @@ protected:
 	Vector<Reference<LairSpawn*> > spawnList;
 
 public:
-	SpawnGroup() {
-		minLevelCeiling = 20;
-	}
+	SpawnGroup();
 
-	SpawnGroup(const String& tempName, LuaObject& group) {
-		templateName = tempName;
-		minLevelCeiling = group.getIntField("minLevelCeiling");
+	SpawnGroup(const String& tempName, LuaObject& group);
 
-		LuaObject lairSpawns = group.getObjectField("lairSpawns");
+	SpawnGroup(const SpawnGroup& gr);
 
-		for (int i = 1; i <= lairSpawns.getTableSize(); ++i) {
-			lua_rawgeti(lairSpawns.getLuaState(), -1, i);
-			LuaObject spawn(lairSpawns.getLuaState());
+	virtual ~SpawnGroup();
 
-			if (spawn.isValidTable()) {
-				Reference<LairSpawn*> lairSpawn = new LairSpawn();
-				lairSpawn->readObject(spawn);
+	SpawnGroup& operator=(const SpawnGroup& gr);
 
-				spawnList.add(lairSpawn);
-			}
+	const String& getTemplateName() const;
 
-			spawn.pop();
-		}
+	const Vector<Reference<LairSpawn*>>& getSpawnList();
 
-		lairSpawns.pop();
+	void setTemplateName(const String& templateName);
 
-	}
-
-	SpawnGroup(const SpawnGroup& gr) : Object() {
-		templateName = gr.templateName;
-		spawnList = gr.spawnList;
-		minLevelCeiling = gr.minLevelCeiling;
-	}
-
-	virtual ~SpawnGroup() {}
-
-	SpawnGroup& operator=(const SpawnGroup& gr) {
-		if (this == &gr)
-			return *this;
-
-		templateName = gr.templateName;
-		spawnList = gr.spawnList;
-		minLevelCeiling = gr.minLevelCeiling;
-
-		return *this;
-	}
-
-	const String& getTemplateName() const {
-		return templateName;
-	}
-
-	const Vector<Reference<LairSpawn*> >& getSpawnList() {
-		return spawnList;
-	}
-
-	void setTemplateName(const String& templateName) {
-		this->templateName = templateName;
-	}
-
-	int getMinLevelCeiling() const {
-		return minLevelCeiling;
-	}
+	int getMinLevelCeiling() const;
 };
 
 }

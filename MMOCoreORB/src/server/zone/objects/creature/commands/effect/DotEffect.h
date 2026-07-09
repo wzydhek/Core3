@@ -23,152 +23,54 @@ protected:
 	float secondaryPercent;
 
 public:
-	DotEffect() : Object() {
-		dotType = 0;
-		dotPool = 0;
-		dotDamageofHit = 0;
-		dotDuration = 0;
-		dotStrength = 0;
-		dotPotency = 0;
-		dotChance = 0;
-		primaryPercent = 100;
-		secondaryPercent = 0;
-	}
+	DotEffect();
 
-	DotEffect(LuaObject& dot) : Object() {
-		loadDot(dot);
-	}
+	DotEffect(LuaObject& dot);
 
-	DotEffect(const DotEffect & effect) : Object() {
-		dotType = effect.dotType;
-		defenderStateDefenseModifiers = effect.defenderStateDefenseModifiers;
-		dotPool = effect.dotPool;
-		dotDamageofHit = effect.dotDamageofHit;
-		dotDuration = effect.dotDuration;
-		dotStrength = effect.dotStrength;
-		dotPotency = effect.dotPotency;
-		dotChance = effect.dotChance;
-		primaryPercent = effect.primaryPercent;
-		secondaryPercent = effect.secondaryPercent;
-	}
+	DotEffect(const DotEffect& effect);
 
-	virtual ~DotEffect() {
-	}
+	virtual ~DotEffect();
 
-	DotEffect & operator =(const DotEffect & effect) {
-		if(this == &effect)
-			return *this;
+	DotEffect& operator=(const DotEffect& effect);
 
-		dotType = effect.dotType;
-		defenderStateDefenseModifiers = effect.defenderStateDefenseModifiers;
-		dotPool = effect.dotPool;
-		dotDamageofHit = effect.dotDamageofHit;
-		dotDuration = effect.dotDuration;
-		dotStrength = effect.dotStrength;
-		dotPotency = effect.dotPotency;
-		dotChance = effect.dotChance;
-		primaryPercent = effect.primaryPercent;
-		secondaryPercent = effect.secondaryPercent;
+	inline int compareTo(const DotEffect& effect);
 
-		return *this;
-	}
+	void loadDot(LuaObject& dot);
 
-	inline int compareTo(const DotEffect & effect) {
-		return 0;
-	}
+	const Vector<String>& getDefenderStateDefenseModifiers() const;
 
-	void loadDot(LuaObject& dot) {
-		dotType = dot.getIntField("dotType");
-		dotPool = dot.getByteField("dotPool");
-		LuaObject dohBool = dot.getObjectField("dotDamageofHit");
-		lua_State *L = dohBool.getLuaState();
-		dotDamageofHit = (bool)((lua_toboolean(L, -1)));
-		dohBool.pop();
-		dotDuration = dot.getIntField("dotDuration");
-		dotStrength = dot.getIntField("dotStrength");
-		dotPotency = dot.getIntField("dotPotency");
-		dotChance = dot.getIntField("dotChance");
-		primaryPercent = dot.getFloatField("primaryPercent");
-		secondaryPercent = dot.getFloatField("secondaryPercent");
+	uint32 getDotDuration() const;
 
-		LuaObject defMods = dot.getObjectField("defenderStateDefenseModifiers");
-		for(int i = 1;i <= defMods.getTableSize();++i){
-			defenderStateDefenseModifiers.add(defMods.getStringAt(i));
-		}
+	uint8 getDotPool() const;
 
-		defMods.pop();
-	}
+	int getDotPotency() const;
 
-	const Vector<String>& getDefenderStateDefenseModifiers() const {
-		return defenderStateDefenseModifiers;
-	}
+	uint32 getDotStrength() const;
 
-	uint32 getDotDuration() const {
-		return dotDuration;
-	}
+	uint32 getDotType() const;
 
-	uint8 getDotPool() const {
-		return dotPool;
-	}
+	bool isDotDamageofHit() const;
 
-	int getDotPotency() const {
-		return dotPotency;
-	}
+	void setDefenderStateDefenseModifiers(const Vector<String>& defenderStateDefenseModifiers);
 
-	uint32 getDotStrength() const {
-		return dotStrength;
-	}
+	void setDotDamageofHit(bool dotDamageofHit);
 
-	uint32 getDotType() const {
-		return dotType;
-	}
+	void setDotDuration(uint32 dotDuration);
 
-	bool isDotDamageofHit() const {
-		return dotDamageofHit;
-	}
+	void setDotPool(uint8 dotPool);
 
-	void setDefenderStateDefenseModifiers(const Vector<String>& defenderStateDefenseModifiers) {
-		this->defenderStateDefenseModifiers = defenderStateDefenseModifiers;
-	}
+	void setDotPotency(int dotPotency);
 
-	void setDotDamageofHit(bool dotDamageofHit) {
-		this->dotDamageofHit = dotDamageofHit;
-	}
+	void setDotStrength(uint32 dotStrength);
 
-	void setDotDuration(uint32 dotDuration) {
-		this->dotDuration = dotDuration;
-	}
+	void setDotType(uint32 dotType);
 
-	void setDotPool(uint8 dotPool) {
-		this->dotPool = dotPool;
-	}
+	uint32 getDotChance() const;
 
-	void setDotPotency(int dotPotency) {
-		this->dotPotency = dotPotency;
-	}
+	void setDotChance(uint32 dotChance);
 
-	void setDotStrength(uint32 dotStrength) {
-		this->dotStrength = dotStrength;
-	}
+	float getPrimaryPercent() const;
 
-	void setDotType(uint32 dotType) {
-		this->dotType = dotType;
-	}
-
-	uint32 getDotChance() const {
-		return dotChance;
-	}
-
-	void setDotChance(uint32 dotChance) {
-		this->dotChance = dotChance;
-	}
-
-	float getPrimaryPercent() const {
-		return primaryPercent;
-	}
-
-	float getSecondaryPercent() const {
-		return secondaryPercent;
-	}
+	float getSecondaryPercent() const;
 
 };

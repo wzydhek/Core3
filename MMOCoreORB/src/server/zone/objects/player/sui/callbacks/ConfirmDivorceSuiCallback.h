@@ -13,20 +13,7 @@ class ConfirmDivorceSuiCallback : public SuiCallback {
 
 public:
 
-	ConfirmDivorceSuiCallback(ZoneServer* server)
-		: SuiCallback(server) {
-	}
+	ConfirmDivorceSuiCallback(ZoneServer* server);
 
-	void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		PlayerManager* playerManager = creature->getZoneServer()->getPlayerManager();
-		if( playerManager == nullptr )
-			return;
-
-		if( !cancelPressed ){
-			playerManager->grantDivorce( creature );
-		}
-
-	}
+	void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args);
 };

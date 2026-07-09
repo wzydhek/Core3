@@ -29,74 +29,27 @@ protected:
 public:
 	ActiveAreaQuadTreeNode(float minx, float miny, float maxx, float maxy, const ActiveAreaQuadTreeNode* parent);
 
-	bool isEmpty() const {
-		return areas.isEmpty();
-	}
+	bool isEmpty() const;
 
-	void insertArea(ActiveArea* area) {
-		areas.put(area);
-	}
+	void insertArea(ActiveArea* area);
 
-	void dropArea(ActiveArea* area) {
-		areas.drop(area);
-	}
+	void dropArea(ActiveArea* area);
 
-	bool testInside(float x, float y) const {
-		return x >= minX && x < maxX && y >= minY && y < maxY;
-	}
+	bool testInside(float x, float y) const;
 
-	bool testAreaInside(float x, float y, float radius) const {
-		float xDelta1 = x - radius;
-		float xDelta2 = x + radius;
-		float yDelta1 = y - radius;
-		float yDelta2 = y + radius;
+	bool testAreaInside(float x, float y, float radius) const;
 
-		bool runTest = (xDelta1 >= minX && xDelta2 < maxX && yDelta1 >= minY && yDelta2 < maxY);
-		return runTest;
-	}
+	bool testAreaInsideRectangle(ActiveArea* area) const;
 
-	bool testAreaInsideRectangle(ActiveArea* area) const {
-		if (area == nullptr)
-			return false;
+	bool hasSubNodes() const;
 
-		Vector3 center = area->getAreaCenter();
-		Vector4 bounds = area->getRectangularDimensions();
+	bool testInSWArea(float x, float y, float radius) const;
 
-		float width = area->getWidth();
-		float height = area->getHeight();
-		float radius = area->getRadius();
+	bool testInSEArea(float x, float y, float radius) const;
 
-		float llX = bounds[0];
-		float llY = bounds[1];
-		float urX = bounds[2];
-		float urY = bounds[3];
+	bool testInNWArea(float x, float y, float radius) const;
 
-		bool runTest = (llX >= minX && urX < maxX && llY >= minY && urY < maxY);
-
-		//info(true) << "testAreaInside -- llX = " << llX << " llY = " << llY << " urX = " << urX << " urY = " << urY;
-
-		return runTest;
-	}
-
-	bool hasSubNodes() const {
-		return nwNode || neNode || swNode || seNode;
-	}
-
-	bool testInSWArea(float x, float y, float radius) const {
-		return (x - radius) >= minX && (x + radius) < dividerX && (y - radius) >= minY && (y + radius) < dividerY;
-	}
-
-	bool testInSEArea(float x, float y, float radius) const {
-		return (x - radius) >= dividerX && (x + radius) < maxX && (y - radius) >= minY && (y + radius) < dividerY;
-	}
-
-	bool testInNWArea(float x, float y, float radius) const {
-		return (x - radius) >= minX && (x + radius) < dividerX && (y - radius) >= dividerY && (y + radius) < maxY;
-	}
-
-	bool testInNEArea(float x, float y, float radius) const {
-		return (x - radius) >= dividerX && (x + radius) < maxX && (y - radius) >= dividerY && (y + radius) < maxY;
-	}
+	bool testInNEArea(float x, float y, float radius) const;
 
 	friend class ActiveAreaQuadTree;
 };
@@ -109,15 +62,7 @@ class ActiveAreaQuadTree : public Object, public Logger {
 #endif
 
 public:
-	ActiveAreaQuadTree(float minx, float miny, float maxx, float maxy) {
-#ifndef AREA_TREE_SIMPLE
-		root = makeUnique<ActiveAreaQuadTreeNode>(minx, miny, maxx, maxy, nullptr);
-#else
-		areas.setNoDuplicateInsertPlan();
-#endif
-
-		setLoggingName("ActiveAreaQuadTree");
-	}
+	ActiveAreaQuadTree(float minx, float miny, float maxx, float maxy);
 
 	template <typename AreaType>
 	void getActiveAreas(float x, float y, ArrayList<AreaType>& areas) const {
@@ -132,21 +77,9 @@ public:
 #endif
 	}
 
-	void insert(Reference<ActiveArea*> area) {
-#ifndef AREA_TREE_SIMPLE
-		insert(*root, area);
-#else
-		areas.put(std::move(area));
-#endif
-	}
+	void insert(Reference<ActiveArea*> area);
 
-#ifdef AREA_TREE_SIMPLE
-	void remove(Reference<ActiveArea*> area) {
-		areas.drop(area);
-	}
-#else
 	void remove(Reference<ActiveArea*> area);
-#endif
 
 protected:
 #ifndef AREA_TREE_SIMPLE

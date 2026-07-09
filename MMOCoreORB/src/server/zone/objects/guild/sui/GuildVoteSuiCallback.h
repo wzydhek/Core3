@@ -7,50 +7,12 @@
 #include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/tangible/terminal/guild/GuildTerminal.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/sui/SuiBox.h"
 
 class GuildVoteSuiCallback : public SuiCallback {
 public:
-	GuildVoteSuiCallback(ZoneServer* server)
-		: SuiCallback(server) {
-	}
+	GuildVoteSuiCallback(ZoneServer* server);
 
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!suiBox->isListBox() || cancelPressed)
-			return;
-
-		if (args->size() < 1)
-			return;
-
-		int index = Integer::valueOf(args->get(0).toString());
-
-		if (index == -1)
-			return;
-
-		ManagedReference<GuildManager*> guildManager = server->getGuildManager();
-
-		if (guildManager == nullptr)
-			return;
-
-		ManagedReference<SceneObject*> obj = suiBox->getUsingObject().get();
-
-		if (obj == nullptr || !obj->isTerminal())
-			return;
-
-		Terminal* terminal = cast<Terminal*>( obj.get());
-
-		if (!terminal->isGuildTerminal())
-			return;
-
-		GuildTerminal* guildTerminal = cast<GuildTerminal*>( terminal);
-
-		ManagedReference<GuildObject*> guild = player->getGuildObject().get();
-
-		SuiListBox* listBox = cast<SuiListBox*>( suiBox);
-
-		uint64 candidateID = listBox->getMenuObjectID(index);
-
-		guildManager->castVote(guild, player, candidateID);
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

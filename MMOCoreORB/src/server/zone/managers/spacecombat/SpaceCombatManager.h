@@ -9,19 +9,9 @@
 
 class SpaceCombatManager : public Singleton<SpaceCombatManager>, public Logger, public Object {
 public:
-	SpaceCombatManager() {
-		setLoggingName("SpaceCombatManager");
+	SpaceCombatManager();
 
-		checkProjectilesTask = new CheckProjectilesTask(this);
-		checkProjectilesTask->execute();
-	}
-
-	~SpaceCombatManager() {
-		checkProjectilesTask->cancel();
-
-		delete checkProjectilesTask;
-		checkProjectilesTask = nullptr;
-	}
+	~SpaceCombatManager();
 
 	enum ProjectileResult : int {
 		HIT = 1,
@@ -37,14 +27,7 @@ public:
 		SIZE = 4,
 	};
 
-	static String shipHitTypeToString(int ShipHitType) {
-		switch (ShipHitType) {
-			case HITSHIELD:	return "shield";
-			case HITARMOR:	return "armor";
-			case HITCOMPONENT:	return "component";
-			default:	return "chassis";
-		}
-	}
+	static String shipHitTypeToString(int ShipHitType);
 
 private:
 	class CheckProjectilesTask: public Task, public Logger {
@@ -56,26 +39,9 @@ private:
 		const static int INTERVALMIN = 100;
 		const static int INTERVALMAX = 2000;
 
-		CheckProjectilesTask(SpaceCombatManager* manager) : Task() {
-			setLoggingName("CheckProjectilesTask");
+		CheckProjectilesTask(SpaceCombatManager* manager);
 
-			this->combatManager = manager;
-		}
-
-		void run() {
-			if (combatManager == nullptr) {
-				return;
-			}
-
-			int delta = combatManager->updateProjectiles();
-			int interval = INTERVAL - delta;
-
-			if (interval < INTERVALMIN) {
-				interval = INTERVALMIN;
-			}
-
-			reschedule(interval);
-		}
+		void run();
 	};
 
 	Reference<CheckProjectilesTask*> checkProjectilesTask;

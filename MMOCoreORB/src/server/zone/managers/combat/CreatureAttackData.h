@@ -67,169 +67,87 @@ public:
 	const String& getCommandName() const;
 	uint32 getCommandCRC() const;
 
-	float getActionDamageMultiplier() const {
-		return actionDamageMultiplier;
-	}
+	float getActionDamageMultiplier() const;
 
-	void setActionDamageMultiplier(float actionDamageMultiplier) {
-		this->actionDamageMultiplier = actionDamageMultiplier;
-	}
+	void setActionDamageMultiplier(float actionDamageMultiplier);
 
-	float getHealthDamageMultiplier() const {
-		return healthDamageMultiplier;
-	}
+	float getHealthDamageMultiplier() const;
 
-	void setHealthDamageMultiplier(float healthDamageMultiplier) {
-		this->healthDamageMultiplier = healthDamageMultiplier;
-	}
+	void setHealthDamageMultiplier(float healthDamageMultiplier);
 
-	float getMindDamageMultiplier() const {
-		return mindDamageMultiplier;
-	}
+	float getMindDamageMultiplier() const;
 
-	void setMindDamageMultiplier(float mindDamageMultiplier) {
-		this->mindDamageMultiplier = mindDamageMultiplier;
-	}
+	void setMindDamageMultiplier(float mindDamageMultiplier);
 
-	const CombatQueueCommand* getCommand() const {
-		return baseCommand;
-	}
+	const CombatQueueCommand* getCommand() const;
 
-	float getMinDamage() const {
-		return minDamage;
-	}
+	float getMinDamage() const;
 
-	float getMaxDamage() const {
-		return maxDamage;
-	}
+	float getMaxDamage() const;
 
-	int getDamageType() const {
-		return damageType;
-	}
+	int getDamageType() const;
 
-	int getAccuracyBonus() const {
-		return accuracyBonus;
-	}
+	int getAccuracyBonus() const;
 
-	float getActionCostMultiplier() const {
-		return actionCostMultiplier;
-	}
+	float getActionCostMultiplier() const;
 
-	void setSplashDamage(bool b) {
-		splashDamage = b;
-	}
+	void setSplashDamage(bool b);
 
-	bool isSplashDamage() const {
-		return splashDamage;
-	}
+	bool isSplashDamage() const;
 
-	bool getHitIncapTarget() const {
-		return hitIncapTarget;
-	}
+	bool getHitIncapTarget() const;
 
-	int getAreaRange() const {
-		return areaRange;
-	}
+	int getAreaRange() const;
 
-	int getConeAngle() const {
-		return coneAngle;
-	}
+	int getConeAngle() const;
 
-	float getDamageMultiplier() const {
-		return damageMultiplier;
-	}
+	float getDamageMultiplier() const;
 
-	float getForceCostMultiplier() const {
-		return forceCostMultiplier;
-	}
+	float getForceCostMultiplier() const;
 
-	float getHealthCostMultiplier() const {
-		return healthCostMultiplier;
-	}
+	float getHealthCostMultiplier() const;
 
-	float getMindCostMultiplier() const {
-		return mindCostMultiplier;
-	}
+	float getMindCostMultiplier() const;
 
-	int getPoolsToDamage() const {
-		return poolsToDamage;
-	}
+	int getPoolsToDamage() const;
 
-	int getConeRange() const {
-		return coneRange;
-	}
+	int getConeRange() const;
 
-	int getRange() const {
-		return range;
-	}
+	int getRange() const;
 
-	float getSpeedMultiplier() const {
-		return speedMultiplier;
-	}
+	float getSpeedMultiplier() const;
 
-	const VectorMap<uint8, StateEffect>* getStateEffects() const {
-		return stateEffects;
-	}
+	const VectorMap<uint8, StateEffect>* getStateEffects() const;
 
-	const Vector<DotEffect>* getDotEffects() const {
-		return dotEffects;
-	}
+	const Vector<DotEffect>* getDotEffects() const;
 
-	bool isForceAttack() const {
-		return forceAttack;
-	}
+	bool isForceAttack() const;
 
-	float getFrsLightMinDamageModifier() const {
-		return frsLightMinDamageModifier;
-	}
+	float getFrsLightMinDamageModifier() const;
 
-	float getFrsLightMaxDamageModifier() const {
-		return frsLightMaxDamageModifier;
-	}
+	float getFrsLightMaxDamageModifier() const;
 
-	float getFrsDarkMinDamageModifier() const {
-		return frsDarkMinDamageModifier;
-	}
+	float getFrsDarkMinDamageModifier() const;
 
-	float getFrsDarkMaxDamageModifier() const {
-		return frsDarkMaxDamageModifier;
-	}
+	float getFrsDarkMaxDamageModifier() const;
 
-	void setForceAttack(bool forceAttack) {
-		this->forceAttack = forceAttack;
-	}
+	void setForceAttack(bool forceAttack);
 
-	uint8 getTrails() const {
-		return trails;
-	}
+	uint8 getTrails() const;
 
-	uint64 getPrimaryTarget() const {
-		return targetID;
-	}
+	uint64 getPrimaryTarget() const;
 
-	void setTrails(uint8 trails) {
-		this->trails = trails;
-	}
+	void setTrails(uint8 trails);
 
-	const String& getCombatSpam() const {
-		return combatSpam;
-	}
+	const String& getCombatSpam() const;
 
-	void setCombatSpam(const String& spam) {
-		this->combatSpam = spam;
-	}
+	void setCombatSpam(const String& spam);
 
-	bool isStateOnlyAttack() const {
-		return poolsToDamage == 0;
-	}
+	bool isStateOnlyAttack() const;
 
-	int getStateAccuracyBonus() const {
-		return stateAccuracyBonus;
-	}
+	int getStateAccuracyBonus() const;
 
-	void setStateAccuracyBonus(int stateAccuracyBonus) {
-		this->stateAccuracyBonus = stateAccuracyBonus;
-	}
+	void setStateAccuracyBonus(int stateAccuracyBonus);
 
 	bool changesDefenderPosture() const;
 	bool changesAttackerPosture() const;

@@ -47,9 +47,7 @@ public:
 
 	Reference<Task*> get(const String& name) const;
 
-	uint64 decrementPendingTasks() {
-		return pendingTasksSize.decrement();
-	}
+	uint64 decrementPendingTasks();
 
 	template <class Owner>
 	void putOrdered(Task* task, Owner* owner) {

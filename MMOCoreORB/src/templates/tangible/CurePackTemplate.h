@@ -17,48 +17,21 @@ class CurePackTemplate : public SharedTangibleObjectTemplate {
 	int medicineUse;
 
 public:
-	CurePackTemplate() {
-		effectiveness = 0;
-		state = 0;
-		area = 0;
-		medicineUse = 0;
-	}
+	CurePackTemplate();
 
-	~CurePackTemplate() {
+	~CurePackTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	float getEffectiveness();
 
-		medicineUse = templateData->getIntField("medicineUse");
-		state = templateData->getLongField("state");
-		commandToExecute = templateData->getStringField("commandToExecute");
-		area = templateData->getFloatField("area");
-		effectiveness = templateData->getFloatField("effectiveness");
-    }
+	uint64 getState();
 
-	inline float getEffectiveness() {
-		return effectiveness;
-	}
+	float getArea();
 
-	inline uint64 getState() {
-		return state;
-	}
+	int getMedicineUse();
 
-	inline float getArea() {
-		return area;
-	}
+	String& getCommandToExecute();
 
-	inline int getMedicineUse() {
-		return medicineUse;
-	}
-
-	inline String& getCommandToExecute() {
-		return commandToExecute;
-	}
-
-	bool isCurePackTemplate() {
-		return true;
-	}
+	bool isCurePackTemplate();
 };

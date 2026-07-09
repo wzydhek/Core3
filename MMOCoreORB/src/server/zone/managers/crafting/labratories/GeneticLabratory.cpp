@@ -705,3 +705,24 @@ void GeneticLabratory::experimentRow(CraftingValues* craftingValues,int rowEffec
 	info(true) << "---------- END Experiment Row ----------";
 #endif
 }
+
+float GeneticLabratory::calcResistMin(float input, float mod) {
+	if (input < 0)
+		input = -1;
+	return (input * ((input / 100) + 0.15)) * mod;
+}
+
+// 12/22 == 12/22 = 0.5
+float GeneticLabratory::calcMaxPercentage(uint32 value, uint32 diff) {
+	float percent = ((float)diff / (float)value);
+
+	if (percent > 1)
+		percent = 1;
+
+	return percent;
+}
+
+float GeneticLabratory::getPercentagOfValue(int number, float percentage) {
+	float intermediate = ((float)number) * percentage;
+	return (float)ceil(intermediate);
+}

@@ -16,51 +16,17 @@ class MapGroup : public TemplateVariable<'MGRP'> {
 
 public:
 
-	MapGroup() {
-		mfrcs.setNullValue(nullptr);
-		mfrcs.setNoDuplicateInsertPlan();
-	}
+	MapGroup();
 
-	~MapGroup() {
-		while (mfams.size() > 0)
-			delete mfams.remove(0);
-	}
+	~MapGroup();
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		uint32 version = iffStream->getNextFormType();
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-		iffStream->openForm(version);
+	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>);
 
-		switch (version) {
-		case '0000':
-			parseFromIffStream(iffStream, Version<'0000'>());
-			break;
-		default:
-			System::out << "unknown MGRP version " << version << endl;
-			break;
-		}
+	MapFractal* getMfrc(int index);
 
-		iffStream->closeForm(version);
-	}
-
-	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>) {
-		int number = iffStream->getSubChunksNumber();
-
-		for (int i = 0; i < number; ++i) {
-			MapFamily* sfam = new MapFamily();
-			sfam->readObject(iffStream);
-			mfams.add(sfam);
-			mfrcs.put(sfam->getVar1(), sfam->getMfrc());
-		}
-	}
-
-	inline MapFractal* getMfrc(int index) {
-		return mfrcs.get((uint32)index);
-	}
-
-	inline const MapFractal* getMfrc(int index) const {
-		return mfrcs.get((uint32)index);
-	}
+	const MapFractal* getMfrc(int index) const;
 
 
 };

@@ -25,42 +25,21 @@ class ConversationOption : public Object {
 	String linkedScreenID;
 
 public:
-	ConversationOption(const StringIdChatParameter& opttext, const String& screenid) {
-		optionText = opttext;
-		linkedScreenID = screenid;
-	}
+	ConversationOption(const StringIdChatParameter& opttext, const String& screenid);
 
-	ConversationOption(const UnicodeString& customopt, const String& screenid) {
-		customOption = customopt;
-		linkedScreenID = screenid;
-	}
+	ConversationOption(const UnicodeString& customopt, const String& screenid);
 
-	inline String& getLinkedScreenID() {
-		return linkedScreenID;
-	}
+	String& getLinkedScreenID();
 
-	inline StringIdChatParameter& getOptionText() {
-		return optionText;
-	}
+	StringIdChatParameter& getOptionText();
 
-	inline UnicodeString& getCustomOption() {
-		return customOption;
-	}
+	UnicodeString& getCustomOption();
 
-	inline String getDisplayedName() {
-		if (customOption.isEmpty())
-			return optionText.getFullPath();
-		else
-			return customOption.toString();
-	}
+	String getDisplayedName();
 
-	inline bool isLinked() {
-		return !linkedScreenID.isEmpty();
-	}
+	bool isLinked();
 
-	inline void setOptionText(const StringIdChatParameter& optionText) {
-		this->optionText = optionText;
-	}
+	void setOptionText(const StringIdChatParameter& optionText);
 };
 
 class ConversationScreen : public Object {
@@ -79,202 +58,46 @@ class ConversationScreen : public Object {
 	bool stopConversation, readOnly;
 
 public:
-	ConversationScreen() {
-		stopConversation = false;
-		readOnly = false;
-	}
+	ConversationScreen();
 
-	ConversationScreen(StringIdChatParameter dialogue, bool stopConv) {
-		dialogText = dialogue;
-		stopConversation = stopConv;
-	}
+	ConversationScreen(StringIdChatParameter dialogue, bool stopConv);
 
 	/**
 	 * Copy constructor.
 	 */
-	ConversationScreen(const ConversationScreen& objectToCopy) : Object() {
-		screenID = objectToCopy.screenID;
-		dialogText = objectToCopy.dialogText;
-		options = objectToCopy.options;
-		stopConversation = objectToCopy.stopConversation;
-		readOnly = objectToCopy.readOnly;
-		customText = objectToCopy.customText;
-		animation = objectToCopy.animation;
-		playerAnimation = objectToCopy.playerAnimation;
-	}
+	ConversationScreen(const ConversationScreen& objectToCopy);
 
-	ConversationScreen* cloneScreen() {
-		ConversationScreen* clone = new ConversationScreen(*this);
-		clone->readOnly = false;
-
-		return clone;
-	}
+	ConversationScreen* cloneScreen();
 
 	/**
 	 * Adds an option to this conversation screen.
 	 * @param optionText The text to be displayed for the option.
 	 * @param linkedScreenID The ID of the screen this option is linked.
 	 */
-	void addOption(const String& optionText, const String& linkedScreenID) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
+	void addOption(const String& optionText, const String& linkedScreenID);
 
-		if (optionText.beginsWith("@"))
-			options.add(new ConversationOption(StringIdChatParameter(optionText), linkedScreenID));
-		else
-			options.add(new ConversationOption(UnicodeString(optionText), linkedScreenID));
-	}
+	void removeOption(int idx);
 
-	void removeOption(int idx) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
+	void removeAllOptions();
 
-		options.remove(idx);
-	}
+	ConversationOption* getOption(int idx);
 
-	void removeAllOptions() {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
+	String getOptionText(int idx) const;
 
-		options.removeAll();
-	}
+	String getOptionLink(int idx) const;
 
-	ConversationOption* getOption(int idx) {
-		return options.get(idx);
-	}
-
-	String getOptionText(int idx) const {
-		String text;
-
-		Reference<ConversationOption*> opt = options.get(idx);
-
-		if (opt != nullptr)
-			text = opt->getOptionText().getFullPath();
-
-		return text;
-	}
-
-	String getOptionLink(int idx) const {
-		String link;
-
-		Reference<ConversationOption*> opt = options.get(idx);
-
-		if (opt != nullptr)
-			link = opt->getLinkedScreenID();
-
-		return link;
-	}
-
-	inline int getOptionCount() {
-		return options.size();
-	}
+	int getOptionCount();
 
 	/**
 	 * Sends this ConversationScreen to the creature passed in.
 	 * @param player The player receiving the message.
 	 * @param npc The npc the player is talking to.
 	 */
-	void sendTo(CreatureObject* player, SceneObject* npc) {
-		NpcConversationMessage* message;
+	void sendTo(CreatureObject* player, SceneObject* npc);
 
-		if (customText.isEmpty())
-			message = new NpcConversationMessage(player, dialogText);
-		else
-			message = new NpcConversationMessage(player, customText);
+	String& getScreenID();
 
-		//Encapsulate this logic better?
-		StringList* optionsList = new StringList(player);
-
-		for (int i = 0; i < options.size(); ++i) {
-			Reference<ConversationOption*> option = options.get(i);
-
-			if (option == nullptr)
-				continue;
-
-			optionsList->insertOption(option->getDisplayedName());
-		}
-
-		player->sendMessage(message);
-		player->sendMessage(optionsList);
-
-		CreatureObject* creo = npc->asCreatureObject();
-
-		if (!animation.isEmpty() && creo != nullptr) {
-			creo->doAnimation(animation);
-		}
-
-		if (!playerAnimation.isEmpty()) {
-			player->doAnimation(playerAnimation);
-		}
-
-		ConversationScreen* screenToSave = this;
-
-		//Check if the conversation should be stopped.
-		if (stopConversation) {
-			if (npc->isShipAiAgent()) {
-				auto task = new SpaceCommTimerTask(player, npc->getObjectID());
-
-				if (task != nullptr) {
-					player->addPendingTask("SpaceCommTimer", task, 3000);
-				}
-			} else {
-				player->sendMessage(new StopNpcConversation(player, npc->getObjectID()));
-				npc->notifyObservers(ObserverEventType::STOPCONVERSATION, player);
-			}
-
-			screenToSave = nullptr;
-		}
-
-		Reference<ConversationSession*> session = player->getActiveSession(SessionFacadeType::CONVERSATION).castTo<ConversationSession* >();
-
-		if (session != nullptr) {
-			session->setLastConversationScreen(screenToSave);
-		}
-	}
-
-	inline String& getScreenID() {
-		return screenID;
-	}
-
-	void readObject(LuaObject* luaObject) {
-		screenID = luaObject->getStringField("id");
-		dialogText.setStringId(luaObject->getStringField("leftDialog"));
-		customText = luaObject->getStringField("customDialogText");
-		animation = luaObject->getStringField("animation");
-		playerAnimation = luaObject->getStringField("playerAnimation");
-
-		if (luaObject->getStringField("stopConversation").toLowerCase() == "true") {
-			stopConversation = true;
-		} else {
-			stopConversation = false;
-		}
-
-		LuaObject optionsTable = luaObject->getObjectField("options");
-
-		for (int i = 1; i <= optionsTable.getTableSize(); ++i) {
-			lua_rawgeti(luaObject->getLuaState(), -1, i);
-
-			LuaObject luaObj(luaObject->getLuaState());
-
-			String optionString = luaObj.getStringAt(1);
-			String linkedId = luaObj.getStringAt(2);
-
-			Reference<ConversationOption*> option = nullptr;
-
-			if (optionString.beginsWith("@"))
-				option = new ConversationOption(StringIdChatParameter(optionString), linkedId);
-			else
-				option = new ConversationOption(UnicodeString(optionString), linkedId);
-
-			options.add(option);
-
-			luaObj.pop();
-		}
-
-		optionsTable.pop();
-
-		readOnly = true;
-	}
+	void readObject(LuaObject* luaObject);
 
 	template<class T>
 	inline void setDialogTextTT(const T& obj) {
@@ -284,12 +107,7 @@ public:
 		dialogText.setTT(obj);
 	}
 
-	inline void setDialogTextTT(const String& file, const String& id) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
-
-		dialogText.setTT(file, id);
-	}
+	void setDialogTextTT(const String& file, const String& id);
 
 	template<class T>
 	inline void setDialogTextTO(const T& obj) {
@@ -299,12 +117,7 @@ public:
 		dialogText.setTO(obj);
 	}
 
-	inline void setDialogTextTO(const String& file, const String& id) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
-
-		dialogText.setTO(file, id);
-	}
+	void setDialogTextTO(const String& file, const String& id);
 
 	template<class T>
 	inline void setDialogTextTU(const T& obj) {
@@ -314,58 +127,21 @@ public:
 		dialogText.setTO(obj);
 	}
 
-	inline void setDialogTextTU(const String& file, const String& id) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
+	void setDialogTextTU(const String& file, const String& id);
 
-		dialogText.setTU(file, id);
-	}
+	void setDialogTextDI(uint32 val);
 
-	inline void setDialogTextDI(uint32 val) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
+	void setDialogTextDF(float val);
 
-		dialogText.setDI(val);
-	}
+	void setDialogText(const String& fullPath);
 
-	inline void setDialogTextDF(float val) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
+	void setCustomDialogText(const UnicodeString& custom);
 
-		dialogText.setDF(val);
-	}
+	void setDialogText(const StringIdChatParameter& param);
 
-	inline void setDialogText(const String& fullPath) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
+	void setStopConversation(bool stopConversation);
 
-		dialogText.setStringId(fullPath);
-	}
-
-	inline void setCustomDialogText(const UnicodeString& custom) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
-
-		customText = custom;
-	}
-
-	inline void setDialogText(const StringIdChatParameter& param) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
-
-		dialogText = param;
-	}
-
-	inline void setStopConversation(bool stopConversation) {
-		if (readOnly)
-			throw Exception("Can't modify read only Conversation Screen!");
-
-		this->stopConversation = stopConversation;
-	}
-
-	inline StringIdChatParameter* getDialogText() {
-		return &dialogText;
-	}
+	StringIdChatParameter* getDialogText();
 };
 
 }

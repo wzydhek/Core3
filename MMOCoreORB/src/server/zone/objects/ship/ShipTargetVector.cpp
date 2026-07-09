@@ -1,6 +1,11 @@
 #include "server/zone/objects/ship/ShipObject.h"
 #include "server/zone/objects/ship/ShipTargetVector.h"
 
+ShipTargetVector::ShipTargetVector(ShipObject* ship) : Object() {
+	setLoggingName("ShipTargetVector");
+	serverTime = 0;
+}
+
 void ShipTargetVector::update(ShipObject* ship) {
 	if (!isScheduled()) {
 		return;
@@ -108,4 +113,44 @@ int ShipTargetVector::size() const {
 	ReadLocker tLock(&targetLock);
 
 	return targetMap.size();
+}
+
+bool ShipTargetVector::isScheduled() const {
+	return (System::getMiliTime() - serverTime) >= UPDATE_INTERVAL;
+}
+
+void ShipTargetVector::setServerTime() {
+	serverTime = System::getMiliTime();
+}
+
+bool ShipTargetVector::isCollidableType(uint32 objectType) const {
+	switch (objectType) {
+		case SceneObjectType::SHIPCAPITAL:
+		case SceneObjectType::SPACESTATION:
+		case SceneObjectType::ASTEROID:
+		case SceneObjectType::SPACEOBJECT: {
+			return true;
+		}
+		default: {
+			return false;
+		}
+	}
+}
+
+String ShipTargetVector::toDebugString() const {
+	StringBuffer msg;
+	msg << "ShipTargetVector: " << targetMap.size() << endl;
+
+	for (int i = 0; i < targetMap.size(); ++i) {
+		auto entry = targetMap.elementAt(i).getValue().get();
+
+		if (entry != nullptr) {
+			continue;
+		}
+
+		float distance = sqrtf(targetMap.elementAt(i).getKey());
+		msg << i << " distance: " << distance << " entry: " << entry->getDisplayedName() << endl;
+	}
+
+	return msg.toString();
 }

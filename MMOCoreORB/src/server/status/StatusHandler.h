@@ -13,33 +13,19 @@ class StatusHandler: public ServiceHandler {
 	StatusServer* statusServerRef;
 
 public:
-	StatusHandler(StatusServer* server) {
-		statusServerRef = server;
-	}
+	StatusHandler(StatusServer* server);
 
-	void initialize() {
+	void initialize();
 
-	}
+	ServiceClient* createConnection(Socket* sock, SocketAddress& addr);
 
-	ServiceClient* createConnection(Socket* sock, SocketAddress& addr) {
-		return statusServerRef->createConnection(sock, addr);
-	}
+	bool deleteConnection(ServiceClient* client);
 
-	bool deleteConnection(ServiceClient* client) {
-		return false;
-	}
+	void handleMessage(ServiceClient* client, Packet* message);
 
-	void handleMessage(ServiceClient* client, Packet* message) {
+	void processMessage(Message* message);
 
-	}
-
-	void processMessage(Message* message) {
-
-	}
-
-	bool handleError(ServiceClient* client, Exception& e) {
-		return false;
-	}
+	bool handleError(ServiceClient* client, Exception& e);
 
 };
 

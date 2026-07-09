@@ -43,17 +43,7 @@ class AbilityListMigrator : public DeltaVector<Ability*> {
 		Vector<String> names;
 		uint32 updateCounter;
 
-		bool toBinaryStream(ObjectOutputStream* stream) {
-			TypeInfo<uint32>::toBinaryStream(&updateCounter, stream);
-			names.toBinaryStream(stream);
+		bool toBinaryStream(ObjectOutputStream* stream);
 
-			return true;
-		}
-
-		bool parseFromBinaryStream(ObjectInputStream* stream) {
-			TypeInfo<uint32>::parseFromBinaryStream(&updateCounter, stream);
-			names.parseFromBinaryStream(stream);
-
-			return true;
-		}
+		bool parseFromBinaryStream(ObjectInputStream* stream);
 	};

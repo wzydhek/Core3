@@ -492,3 +492,357 @@ bool SharedObjectTemplate::isDerivedFrom(const String& iffPath, bool includeSelf
 	return false;
 }
 
+const String& SharedObjectTemplate::getAppearanceFilename() const {
+	return appearanceFilename.get();
+}
+
+float SharedObjectTemplate::getClearFloraRadius() const {
+	return clearFloraRadius;
+}
+
+const String& SharedObjectTemplate::getClientDataFile() const {
+	return clientDataFile.get();
+}
+
+int SharedObjectTemplate::getCollisionActionBlockFlags() const {
+	return collisionActionBlockFlags;
+}
+
+int SharedObjectTemplate::getCollisionActionFlags() const {
+	return collisionActionFlags;
+}
+
+int SharedObjectTemplate::getCollisionActionPassFlags() const {
+	return collisionActionPassFlags;
+}
+
+int SharedObjectTemplate::getCollisionMaterialBlockFlags() const {
+	return collisionMaterialBlockFlags;
+}
+
+int SharedObjectTemplate::getCollisionMaterialFlags() const {
+	return collisionMaterialFlags;
+}
+
+int SharedObjectTemplate::getCollisionMaterialPassFlags() const {
+	return collisionMaterialPassFlags;
+}
+
+int SharedObjectTemplate::getContainerType() const {
+	return containerType;
+}
+
+int SharedObjectTemplate::getContainerVolumeLimit() const {
+	return containerVolumeLimit;
+}
+
+String SharedObjectTemplate::getDetailedDescription() const {
+	return detailedDescription.getFullString();
+}
+
+int SharedObjectTemplate::getGameObjectType() const {
+	return gameObjectType;
+}
+
+int SharedObjectTemplate::getClientGameObjectType() const {
+	return clientGameObjectType;
+}
+
+float SharedObjectTemplate::getLocationReservationRadius() const {
+	return locationReservationRadius;
+}
+
+String SharedObjectTemplate::getLookAtText() const {
+	return lookAtText.getFullString();
+}
+
+float SharedObjectTemplate::getNoBuildRadius() const {
+	return noBuildRadius;
+}
+
+String SharedObjectTemplate::getObjectName() const {
+	return objectName.getFullString();
+}
+
+const String& SharedObjectTemplate::getCustomName() const {
+	return customName;
+}
+
+bool SharedObjectTemplate::getOnlyVisibleInTools() const {
+	return onlyVisibleInTools;
+}
+
+const String& SharedObjectTemplate::getPortalLayoutFilename() const {
+	return portalLayoutFilename.get();
+}
+
+const Vector<Vector<String>>& SharedObjectTemplate::getArrangementDescriptors() const {
+	if (arrangementDescriptors == nullptr) {
+		const static Vector<Vector<String>> EMPTY_DESCRIPTORS;
+		return EMPTY_DESCRIPTORS;
+	} else
+		return arrangementDescriptors->getArrangementSlots();
+}
+
+/*inline Vector<float>* getScale() {
+	return &scale;
+}*/
+
+void SharedObjectTemplate::addDerivedFile(const String& name) {
+	loadedDerivedFiles.put(name);
+}
+
+float SharedObjectTemplate::getMinScale() const {
+	return scale.getMin();
+}
+
+float SharedObjectTemplate::getMaxScale() const {
+	return scale.getMax();
+}
+
+bool SharedObjectTemplate::isNoTrade() const {
+	return noTrade;
+}
+
+bool SharedObjectTemplate::isForceNoTrade() const {
+	return forceNoTrade;
+}
+
+float SharedObjectTemplate::getScaleThresholdBeforeExtentTest() const {
+	return scaleThresholdBeforeExtentTest;
+}
+
+bool SharedObjectTemplate::getSendToClient() const {
+	return sendToClient;
+}
+
+const Vector<String>* SharedObjectTemplate::getSlotDescriptors() const {
+	if (slotDescriptors == nullptr)
+		return nullptr;
+	else
+		return slotDescriptors->getSlots();
+}
+
+bool SharedObjectTemplate::getSnapToTerrain() const {
+	return snapToTerrain;
+}
+
+int SharedObjectTemplate::getSurfaceType() const {
+	return surfaceType;
+}
+
+const String& SharedObjectTemplate::getTintPallete() const {
+	return tintPallete.get();
+}
+
+int SharedObjectTemplate::getTotalCellNumber() const {
+	return totalCellNumber;
+}
+
+uint32 SharedObjectTemplate::getClientObjectCRC() const {
+	return clientTemplateFileName.hashCode();
+}
+
+const String& SharedObjectTemplate::getClientTemplateFileName() const {
+	return clientTemplateFileName;
+}
+
+uint32 SharedObjectTemplate::getServerObjectCRC() const {
+	return fullTemplateString.hashCode();
+}
+
+const String& SharedObjectTemplate::getFullTemplateString() const {
+	return fullTemplateString;
+}
+
+const String& SharedObjectTemplate::getDataObjectComponent() const {
+	return dataObjectComponent;
+}
+
+const String& SharedObjectTemplate::getTemplateFileName() const {
+	return templateFileName;
+}
+
+const String& SharedObjectTemplate::getContainerComponent() const {
+	return containerComponent;
+}
+
+const String& SharedObjectTemplate::getGroundZoneComponent() const {
+	return groundZoneComponent;
+}
+
+const String& SharedObjectTemplate::getSpaceZoneComponent() const {
+	return spaceZoneComponent;
+}
+
+const String& SharedObjectTemplate::getObjectMenuComponent() const {
+	return objectMenuComponent;
+}
+
+const String& SharedObjectTemplate::getAttributeListComponent() const {
+	return attributeListComponent;
+}
+
+const PlanetMapCategory* SharedObjectTemplate::getPlanetMapCategory() const {
+	return planetMapCategory;
+}
+
+const PlanetMapSubCategory* SharedObjectTemplate::getPlanetMapSubCategory() const {
+	return planetMapSubCategory;
+}
+
+bool SharedObjectTemplate::isAutoRegistering() const {
+	return autoRegisterWithPlanetMap;
+}
+
+int SharedObjectTemplate::getChildObjectsSize() const {
+	return childObjects.size();
+}
+
+const ChildObject* SharedObjectTemplate::getChildObject(int idx) const {
+	return &childObjects.get(idx);
+}
+
+bool SharedObjectTemplate::hasInheritPermissionsFromParent() const {
+	return inheritPermissionsFromParent;
+}
+
+const HashTable<uint32, uint32>* SharedObjectTemplate::getGroupPermissions() const {
+	return &groupPermissions;
+}
+
+bool SharedObjectTemplate::hasArrangementDescriptor(const String& s) const {
+	const auto& hAD = getArrangementDescriptors();
+
+	for (int i = 0; i < hAD.size(); ++i) {
+		const auto& slotItems = hAD.get(i);
+
+		if (slotItems.contains(s)) {
+			return true;
+		}
+	}
+
+	return false;
+}
+
+bool SharedObjectTemplate::getDelayedContainerLoad() const {
+	return delayedContainerLoad;
+}
+
+void SharedObjectTemplate::setAppearanceFilename(const String& appearanceFilename) {
+	this->appearanceFilename = appearanceFilename;
+}
+
+void SharedObjectTemplate::setClearFloraRadius(float clearFloraRadius) {
+	this->clearFloraRadius = clearFloraRadius;
+}
+
+void SharedObjectTemplate::setClientDataFile(const String& clientDataFile) {
+	this->clientDataFile = clientDataFile;
+}
+
+void SharedObjectTemplate::setCollisionActionBlockFlags(int collisionActionBlockFlags) {
+	this->collisionActionBlockFlags = collisionActionBlockFlags;
+}
+
+void SharedObjectTemplate::setCollisionActionFlags(int collisionActionFlags) {
+	this->collisionActionFlags = collisionActionFlags;
+}
+
+void SharedObjectTemplate::setCollisionActionPassFlags(int collisionActionPassFlags) {
+	this->collisionActionPassFlags = collisionActionPassFlags;
+}
+
+void SharedObjectTemplate::setCollisionMaterialBlockFlags(int collisionMaterialBlockFlags) {
+	this->collisionMaterialBlockFlags = collisionMaterialBlockFlags;
+}
+
+void SharedObjectTemplate::setCollisionMaterialFlags(int collisionMaterialFlags) {
+	this->collisionMaterialFlags = collisionMaterialFlags;
+}
+
+void SharedObjectTemplate::setCollisionMaterialPassFlags(int collisionMaterialPassFlags) {
+	this->collisionMaterialPassFlags = collisionMaterialPassFlags;
+}
+
+void SharedObjectTemplate::setContainerType(int containerType) {
+	this->containerType = containerType;
+}
+
+void SharedObjectTemplate::setContainerVolumeLimit(int containerVolumeLimit) {
+	this->containerVolumeLimit = containerVolumeLimit;
+}
+
+void SharedObjectTemplate::setDetailedDescription(String detailedDescription) {
+	this->detailedDescription = detailedDescription;
+}
+
+void SharedObjectTemplate::setGameObjectType(int gameObjectType) {
+	this->gameObjectType = gameObjectType;
+}
+
+void SharedObjectTemplate::setLocationReservationRadius(float locationReservationRadius) {
+	this->locationReservationRadius = locationReservationRadius;
+}
+
+void SharedObjectTemplate::setLookAtText(const String& lookAtText) {
+	this->lookAtText = lookAtText;
+}
+
+void SharedObjectTemplate::setNoBuildRadius(float noBuildRadius) {
+	this->noBuildRadius = noBuildRadius;
+}
+
+void SharedObjectTemplate::setObjectName(const String& objectName) {
+	this->objectName = objectName;
+}
+
+void SharedObjectTemplate::setOnlyVisibleInTools(bool onlyVisibleInTools) {
+	this->onlyVisibleInTools = onlyVisibleInTools;
+}
+
+void SharedObjectTemplate::setPortalLayoutFilename(const String& portalLayoutFilename) {
+	this->portalLayoutFilename = portalLayoutFilename;
+}
+
+void SharedObjectTemplate::setScale(float scale) {
+	this->scale = scale;
+}
+
+void SharedObjectTemplate::setScaleThresholdBeforeExtentTest(float scaleThresholdBeforeExtentTest) {
+	this->scaleThresholdBeforeExtentTest = scaleThresholdBeforeExtentTest;
+}
+
+void SharedObjectTemplate::setSendToClient(bool sendToClient) {
+	this->sendToClient = sendToClient;
+}
+
+void SharedObjectTemplate::setSnapToTerrain(bool snapToTerrain) {
+	this->snapToTerrain = snapToTerrain;
+}
+
+void SharedObjectTemplate::setSurfaceType(int surfaceType) {
+	this->surfaceType = surfaceType;
+}
+
+void SharedObjectTemplate::setTintPallete(const String& tintPallete) {
+	this->tintPallete = tintPallete;
+}
+
+void SharedObjectTemplate::setTotalCellNumber(int totalCellNumber) {
+	this->totalCellNumber = totalCellNumber;
+}
+
+void SharedObjectTemplate::setFullTemplateString(const String& str) {
+	fullTemplateString = str;
+}
+
+void SharedObjectTemplate::setTemplateFileName(const String& str) {
+	templateFileName = str;
+
+	Logger::setLoggingName("SharedObjectTemplate " + templateFileName);
+}
+
+bool SharedObjectTemplate::isNavUpdatesEnabled() {
+	return updatesNavMesh;
+}

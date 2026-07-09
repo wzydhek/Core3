@@ -15,12 +15,13 @@ protected:
 	Vector<unsigned int> indicies;
 	AABB bbox;
 public:
-	bool isCollisionMesh() { return true; }
-	CollisionMeshVolume() : bbox(Vector3(0, 0, 0), Vector3(0, 0, 0)){ }
+	bool isCollisionMesh();
+	
+	CollisionMeshVolume();
+	
 	virtual void read(IffStream* iff);
-	const AABB& getBoundingBox() const {
-		return bbox;
-	}
+
+	const AABB& getBoundingBox() const;
 
 #ifdef OSG_RENDERER
 	virtual osg::ref_ptr<osg::Node> draw() const;

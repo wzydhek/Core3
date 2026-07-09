@@ -210,3 +210,35 @@ void DroidDetonationModuleDataComponent::copy(BaseDroidModuleComponent* other) {
 		droidComponent->addProperty("module_count", (float)moduleCount, 0, "hidden", true);
 	}
 }
+
+int DroidDetonationModuleDataComponent::getBatteryDrain() {
+	return 0;
+}
+
+bool DroidDetonationModuleDataComponent::isStackable() {
+	return true;
+}
+
+bool DroidDetonationModuleDataComponent::readyForDetonation() {
+	return initialized;
+}
+
+void DroidDetonationModuleDataComponent::setReadyForDetonation() {
+	initialized = true;
+}
+
+bool DroidDetonationModuleDataComponent::countdownInProgress() {
+	return started;
+}
+
+void DroidDetonationModuleDataComponent::startCountDown() {
+	started = true;
+}
+
+void DroidDetonationModuleDataComponent::stopCountDown() {
+	started = false;
+}
+
+bool DroidDetonationModuleDataComponent::isDetonationModule() {
+	return true;
+}

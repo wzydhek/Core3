@@ -117,40 +117,9 @@ public:
 	};
 
 
-	SharedWeaponObjectTemplate() {
-		damageType = 0;
+	SharedWeaponObjectTemplate();
 
-		armorPiercing = 0;
-
-		healthAttackCost = 0;
-		actionAttackCost = 0;
-		mindAttackCost = 0;
-		forceCost = 0.0;
-
-		pointBlankAccuracy = 0;
-		pointBlankRange = 0;
-
-		idealRange = 0;
-		idealAccuracy = 0;
-
-		maxRange = 0;
-		maxRangeAccuracy = 0;
-
-		minDamage = 0;
-		maxDamage = 0;
-
-		woundsRatio = 0;
-
-		area = 0;
-
-		attackSpeed = 0;
-
-		weaponType = 0xFFFFFFFF;
-	}
-
-	~SharedWeaponObjectTemplate() {
-
-	}
+	~SharedWeaponObjectTemplate();
 
 	void readObject(LuaObject* templateData);
 	void readObject(IffStream* iffStream);
@@ -160,247 +129,125 @@ public:
 
 	void parseFileData(IffStream* iffStream);
 
-	inline String getXpType() const {
-		return xpType;
-	}
+	String getXpType() const;
 
-	inline int getActionAttackCost() const {
-		return actionAttackCost;
-	}
+	int getActionAttackCost() const;
 
-	inline int getArea() const {
-		return area;
-	}
+	int getArea() const;
 
-	inline int getArmorPiercing() const {
-		return armorPiercing;
-	}
+	int getArmorPiercing() const;
 
-	float getAttackSpeed() const {
-		return attackSpeed;
-	}
+	float getAttackSpeed() const;
 
-	inline float getForceCost() const {
-		return forceCost;
-	}
+	float getForceCost() const;
 
-	inline int getHealthAttackCost() const {
-		return healthAttackCost;
-	}
+	int getHealthAttackCost() const;
 
-	inline int getIdealAccuracy() const {
-		return idealAccuracy;
-	}
+	int getIdealAccuracy() const;
 
-	inline int getIdealRange() const {
-		return idealRange;
-	}
+	int getIdealRange() const;
 
-	inline int getMaxDamage() const {
-		return maxDamage;
-	}
+	int getMaxDamage() const;
 
-	inline int getMaxRange() const {
-		return maxRange;
-	}
+	int getMaxRange() const;
 
-	inline int getMaxRangeAccuracy() const {
-		return maxRangeAccuracy;
-	}
+	int getMaxRangeAccuracy() const;
 
-	inline int getMinDamage() const {
-		return minDamage;
-	}
+	int getMinDamage() const;
 
-	inline int getMindAttackCost() const {
-		return mindAttackCost;
-	}
+	int getMindAttackCost() const;
 
-	inline int getPointBlankAccuracy() const {
-		return pointBlankAccuracy;
-	}
+	int getPointBlankAccuracy() const;
 
-	inline int getPointBlankRange() const {
-		return pointBlankRange;
-	}
+	int getPointBlankRange() const;
 
-	float getWoundsRatio() const {
-		return woundsRatio;
-	}
+	float getWoundsRatio() const;
 
-	void setActionAttackCost(int actionAttackCost) {
-		this->actionAttackCost = actionAttackCost;
-	}
+	void setActionAttackCost(int actionAttackCost);
 
-	void setArea(int area) {
-		this->area = area;
-	}
+	void setArea(int area);
 
-	void setArmorPiercing(int armorPiercing) {
-		this->armorPiercing = armorPiercing;
-	}
+	void setArmorPiercing(int armorPiercing);
 
-	void setAttackSpeed(float attackSpeed) {
-		this->attackSpeed = attackSpeed;
-	}
+	void setAttackSpeed(float attackSpeed);
 
-	void setForceCost(float forceCost) {
-		this->forceCost = forceCost;
-	}
+	void setForceCost(float forceCost);
 
-	void setHealthAttackCost(int healthAttackCost) {
-		this->healthAttackCost = healthAttackCost;
-	}
+	void setHealthAttackCost(int healthAttackCost);
 
-	void setIdealAccuracy(int idealAccuracy) {
-		this->idealAccuracy = idealAccuracy;
-	}
+	void setIdealAccuracy(int idealAccuracy);
 
-	void setIdealRange(int idealRange) {
-		this->idealRange = idealRange;
-	}
+	void setIdealRange(int idealRange);
 
-	void setMaxDamage(int maxDamage) {
-		this->maxDamage = maxDamage;
-	}
+	void setMaxDamage(int maxDamage);
 
-	void setMaxRange(int maxRange) {
-		this->maxRange = maxRange;
-	}
+	void setMaxRange(int maxRange);
 
-	void setMaxRangeAccuracy(int maxRangeAccuracy) {
-		this->maxRangeAccuracy = maxRangeAccuracy;
-	}
+	void setMaxRangeAccuracy(int maxRangeAccuracy);
 
-	void setMinDamage(int minDamage) {
-		this->minDamage = minDamage;
-	}
+	void setMinDamage(int minDamage);
 
-	void setMindAttackCost(int mindAttackCost) {
-		this->mindAttackCost = mindAttackCost;
-	}
+	void setMindAttackCost(int mindAttackCost);
 
-	void setPointBlankAccuracy(int pointBlankAccuracy) {
-		this->pointBlankAccuracy = pointBlankAccuracy;
-	}
+	void setPointBlankAccuracy(int pointBlankAccuracy);
 
-	void setPointBlankRange(int pointBlankRange) {
-		this->pointBlankRange = pointBlankRange;
-	}
+	void setPointBlankRange(int pointBlankRange);
 
-	void setWoundsRatio(float woundsRatio) {
-		this->woundsRatio = woundsRatio;
-	}
+	void setWoundsRatio(float woundsRatio);
 
-	const Vector<String>* getCertificationsRequired() const {
-		return &certificationsRequired;
-	}
+	const Vector<String>* getCertificationsRequired() const;
 
-	const Vector<String>* getCreatureAccuracyModifiers() const {
-		return &creatureAccuracyModifiers;
-	}
+	const Vector<String>* getCreatureAccuracyModifiers() const;
 
-	const Vector<String>* getCreatureAimModifiers() const {
-		return &creatureAimModifiers;
-	}
+	const Vector<String>* getCreatureAimModifiers() const;
 
-	const Vector<String>* getDamageModifiers() const {
-		return &damageModifiers;
-	}
+	const Vector<String>* getDamageModifiers() const;
 
-	inline int getDamageType() const {
-		return damageType;
-	}
+	int getDamageType() const;
 
-	const Vector<String>* getDefenderDefenseModifiers() const {
-		return &defenderDefenseModifiers;
-	}
+	const Vector<String>* getDefenderDefenseModifiers() const;
 
-	const Vector<String>* getDefenderSecondaryDefenseModifiers() const {
-		return &defenderSecondaryDefenseModifiers;
-	}
+	const Vector<String>* getDefenderSecondaryDefenseModifiers() const;
 
-	const Vector<String>* getDefenderToughnessModifiers() const {
-		return &defenderToughnessModifiers;
-	}
+	const Vector<String>* getDefenderToughnessModifiers() const;
 
-	const Vector<String>* getSpeedModifiers() const {
-		return &speedModifiers;
-	}
+	const Vector<String>* getSpeedModifiers() const;
 
-	void setCertificationsRequired(Vector<String> certificationsRequired) {
-		this->certificationsRequired = certificationsRequired;
-	}
+	void setCertificationsRequired(Vector<String> certificationsRequired);
 
-	void setCreatureAccuracyModifiers(Vector<String> creatureAccuracyModifiers) {
-		this->creatureAccuracyModifiers = creatureAccuracyModifiers;
-	}
+	void setCreatureAccuracyModifiers(Vector<String> creatureAccuracyModifiers);
 
-	void setCreatureAimModifiers(Vector<String> creatureAimModifiers) {
-		this->creatureAimModifiers = creatureAimModifiers;
-	}
+	void setCreatureAimModifiers(Vector<String> creatureAimModifiers);
 
-	void setDamageModifiers(Vector<String> damageModifiers) {
-		this->damageModifiers = damageModifiers;
-	}
+	void setDamageModifiers(Vector<String> damageModifiers);
 
-	void setDamageType(int damageType) {
-		this->damageType = damageType;
-	}
+	void setDamageType(int damageType);
 
-	void setDefenderDefenseModifiers(Vector<String> defenderDefenseModifiers) {
-		this->defenderDefenseModifiers = defenderDefenseModifiers;
-	}
+	void setDefenderDefenseModifiers(Vector<String> defenderDefenseModifiers);
 
-	void setDefenderSecondaryDefenseModifiers(Vector<String> defenderSecondaryDefenseModifiers) {
-		this->defenderSecondaryDefenseModifiers	= defenderSecondaryDefenseModifiers;
-	}
+	void setDefenderSecondaryDefenseModifiers(Vector<String> defenderSecondaryDefenseModifiers);
 
-	void setDefenderToughnessModifiers(Vector<String> defenderToughnessModifiers) {
-		this->defenderToughnessModifiers = defenderToughnessModifiers;
-	}
+	void setDefenderToughnessModifiers(Vector<String> defenderToughnessModifiers);
 
-	void setSpeedModifiers(Vector<String> speedModifiers) {
-		this->speedModifiers = speedModifiers;
-	}
+	void setSpeedModifiers(Vector<String> speedModifiers);
 
-	inline int getAttackType() const {
-		return attackType;
-	}
+	int getAttackType() const;
 
-	const String& getWeaponEffect() const {
-		return weaponEffect.get();
-	}
+	const String& getWeaponEffect() const;
 
-	inline int getWeaponEffectIndex() const {
-		return weaponEffectIndex;
-	}
+	int getWeaponEffectIndex() const;
 
-	void setAttackType(int attackType) {
-		this->attackType = attackType;
-	}
+	void setAttackType(int attackType);
 
-	void setWeaponEffect(String weaponEffect) {
-		this->weaponEffect = weaponEffect;
-	}
+	void setWeaponEffect(String weaponEffect);
 
-	void setWeaponEffectIndex(int weaponEffectIndex) {
-		this->weaponEffectIndex = weaponEffectIndex;
-	}
+	void setWeaponEffectIndex(int weaponEffectIndex);
 
-	const String& getCombatSpam() const {
-		return combatSpam;
-	}
+	const String& getCombatSpam() const;
 
-	const String& getAnimationType() const {
-		return animationType;
-	}
+	const String& getAnimationType() const;
 
-	uint32 getWeaponType() const {
-		return weaponType;
-	}
+	uint32 getWeaponType() const;
 
-	void setWeaponType(uint32 weaponType) {
-		this->weaponType = weaponType;
-	}
+	void setWeaponType(uint32 weaponType);
 };

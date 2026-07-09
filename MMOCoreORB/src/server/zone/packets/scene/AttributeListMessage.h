@@ -17,120 +17,30 @@ class AttributeListMessage : public BaseMessage {
 	int countLocation;
 
 public:
-	AttributeListMessage(SceneObject* object) : BaseMessage() {
-		insertShort(0x04);
-		insertInt(0xF3F12F2A); // opcode
+	AttributeListMessage(SceneObject* object);
 
-		insertLong(object->getObjectID());
-		insertInt(0); // list count
+	AttributeListMessage(uint64 objectID, int listCount);
 
-		setCompression(true);
-
-		listcount = 0;
-		countLocation = 18;
-	}
-
-	AttributeListMessage(uint64 objectID, int listCount) : BaseMessage(), listcount(listCount),
-			countLocation(18) {
-		insertShort(0x04);
-		insertInt(0xF3F12F2A); // opcode
-
-		insertLong(objectID);
-		insertInt(listCount); // list count
-		setCompression(true);
-	}
-
-	AttributeListMessage(uint64 objectID) : BaseMessage() {
-		insertShort(0x04);
-		insertInt(0xF3F12F2A);
-		insertLong(objectID);
-		insertInt(0); // list count
-		listcount = 0;
-		countLocation = 18;
-		setCompression(true);
-	}
+	AttributeListMessage(uint64 objectID);
 
 	// For bazaar/vendor items
-	AttributeListMessage(uint64 objectid, UnicodeString& description) : BaseMessage() {
-		insertShort(2);
-		insertInt(0xFE0E644B);
+	AttributeListMessage(uint64 objectid, UnicodeString& description);
 
-		insertLong(objectid);
+	void insertAttribute(const String& attribute, UnicodeString& value);
 
-		insertUnicode(description);
+	void insertAttribute(const String& attribute, String& value);
 
-		insertInt(0); // list count
-		listcount = 0;
-		countLocation = 22 + description.length() * 2;
-		setCompression(true);
-	}
+	void insertAttribute(const String& attribute, const String& value);
 
-	void insertAttribute(const String& attribute, UnicodeString& value) {
-		insertAscii(attribute);
-		insertUnicode(value);
+	void insertAttribute(const String& attribute, StringBuffer& value);
 
-		updateListCount();
-	}
+	void insertAttribute(const String& attribute, float value);
 
-	void insertAttribute(const String& attribute, String& value) {
-		UnicodeString Value = UnicodeString(value);
-		insertAscii(attribute);
-		insertUnicode(Value);
+	void insertAttribute(const String& attribute, int value);
 
-		updateListCount();
-	}
+	void insertAttribute(const String& attribute, int value, bool asInt);
 
-	void insertAttribute(const String& attribute, const String& value) {
-		UnicodeString Value = UnicodeString(value);
-		insertAscii(attribute);
-		insertUnicode(Value);
-
-		updateListCount();
-	}
-
-	void insertAttribute(const String& attribute, StringBuffer& value) {
-		UnicodeString Value = UnicodeString(value.toString());
-
-		insertAscii(attribute);
-		insertUnicode(Value);
-
-		updateListCount();
-	}
-
-	void insertAttribute(const String& attribute, float value) {
-		StringBuffer t;
-		t << value;
-
-		UnicodeString Value = UnicodeString(t.toString());
-
-		insertAscii(attribute);
-		insertUnicode(Value);
-
-		updateListCount();
-	}
-
-	void insertAttribute(const String& attribute, int value) {
-		StringBuffer t;
-		t << value;
-
-		UnicodeString Value = UnicodeString(t.toString());
-
-		insertAscii(attribute.toCharArray());
-		insertUnicode(Value);
-
-		updateListCount();
-	}
-
-	void insertAttribute(const String& attribute, int value, bool asInt) {
-		insertAscii(attribute);
-		insertInt(value);
-
-		updateListCount();
-	}
-
-	void updateListCount() {
-		insertInt(countLocation, ++listcount);
-	}
+	void updateListCount();
 
 };
 

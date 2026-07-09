@@ -13,22 +13,9 @@ class ClientInactivityMessageCallback : public MessageCallback {
 	byte flag;
 
 public:
-	ClientInactivityMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), flag(0) {
+	ClientInactivityMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		flag = message->parseByte();
-	}
-
-	void run() {
-		ManagedReference<CreatureObject*> player = client->getPlayer();
-
-		if (player != nullptr) {
-			StringBuffer msg;
-			msg << "ClientInactivityMessage with flag " << hex << flag << " received";
-			player->info(msg.toString());
-		}
-	}
+	void run();
 };

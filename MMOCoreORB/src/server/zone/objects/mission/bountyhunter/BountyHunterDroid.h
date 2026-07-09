@@ -32,8 +32,7 @@ public:
 		FINDANDTRACKTARGET
 	};
 
-	BountyHunterDroid() : Logger("BountyHunterDroid") {
-	}
+	BountyHunterDroid();
 
 	Reference<Task*> performAction(int action, SceneObject* droidObject, CreatureObject* player, MissionObject* mission);
 

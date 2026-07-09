@@ -12,6 +12,10 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/player/sessions/CityRemoveMilitiaSession.h"
 
+CityManageMilitiaSuiCallback::CityManageMilitiaSuiCallback(ZoneServer* server, CityRegion* city) : SuiCallback(server) {
+	cityRegion = city;
+}
+
 void CityManageMilitiaSuiCallback::run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
 	bool cancelPressed = (eventIndex == 1);
 

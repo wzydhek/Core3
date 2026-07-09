@@ -1,0 +1,63 @@
+#include "GuildTransferLeaderAckSuiCallback.h"
+#include "server/zone/objects/player/PlayerObject.h"
+
+GuildTransferLeaderAckSuiCallback::GuildTransferLeaderAckSuiCallback(ZoneServer* server) : SuiCallback(server) {
+}
+
+void GuildTransferLeaderAckSuiCallback::run(CreatureObject* newLeader, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
+	bool cancelPressed = (eventIndex == 1);
+
+	ManagedReference<SceneObject*> sceoTerminal = suiBox->getUsingObject().get();
+	if (sceoTerminal == nullptr || !sceoTerminal->isTerminal())
+		return;
+
+	Terminal* terminal = sceoTerminal.castTo<Terminal*>();
+	if (!terminal->isGuildTerminal())
+		return;
+
+	GuildTerminal* guildTerminal = cast<GuildTerminal*>(terminal);
+	if (guildTerminal == nullptr)
+		return;
+
+	ManagedReference<BuildingObject*> buildingObject = guildTerminal->getParentRecursively(SceneObjectType::BUILDING).castTo<BuildingObject*>();
+	if (buildingObject == nullptr)
+		return;
+
+	ManagedReference<CreatureObject*> owner = buildingObject->getOwnerCreatureObject();
+	if (owner == nullptr || !owner->isPlayerCreature()) {
+		return;
+	}
+
+	ManagedReference<GuildObject*> guild = owner->getGuildObject().get();
+	if (guild == nullptr || !guild->isTransferPending())
+		return;
+
+	Locker clocker(guild, newLeader);
+
+	if (guild->getGuildLeaderID() != owner->getObjectID() || guild != newLeader->getGuildObject().get()) {
+		guild->setTransferPending(false);
+		return;
+	}
+
+	if (cancelPressed) {
+		guild->setTransferPending(false);
+		owner->sendSystemMessage("@guild:ml_rejected"); // That player does not want to become guild leader
+		return;
+	}
+
+	ManagedReference<GuildManager*> guildManager = server->getGuildManager();
+
+	if (guildManager != nullptr) {
+		ManagedReference<CreatureObject*> newOwner = newLeader;
+
+		Core::getTaskManager()->executeTask(
+			[=]() {
+				// transfer structure to new leader
+				if (guildManager->transferGuildHall(newOwner, sceoTerminal)) {
+					// change leadership of guild
+					guildManager->transferLeadership(newOwner, owner, false);
+				}
+			},
+			"TransferGuildLambda");
+	}
+}

@@ -71,187 +71,96 @@ public:
 	CreatureObject* getPlayer();
 
 	// new Implementation of AttributesMap
-	void addExperimentalAttribute(const String& attribute, const String& group, const float min, const float max, const int precision, const bool filler, const int combine) {
-		attributesMap.addExperimentalAttribute(attribute, group, min, max, precision, filler, combine);
-	}
+	void addExperimentalAttribute(const String& attribute, const String& group, const float min, const float max, const int precision, const bool filler, const int combine);
 
-	const String& getAttribute(const int i) const {
-		return attributesMap.getAttribute(i);
-	}
+	const String& getAttribute(const int i) const;
 
-	const String& getAttributeGroup(const String& attribute) const {
-		return attributesMap.getAttributeGroup(attribute);
-	}
+	const String& getAttributeGroup(const String& attribute) const;
 
-	const String& getVisibleAttributeGroup(const int i) const {
-		return attributesMap.getVisibleAttributeGroup(i);
-	}
+	const String& getVisibleAttributeGroup(const int i) const;
 
-	int getTotalExperimentalAttributes() const {
-		return attributesMap.getSize();
-	}
+	int getTotalExperimentalAttributes() const;
 
-	bool hasExperimentalAttribute(const String& attribute) const {
-		return attributesMap.hasExperimentalAttribute(attribute);
-	}
+	bool hasExperimentalAttribute(const String& attribute) const;
 
-	bool isHidden(const String& attribute) const {
-		return attributesMap.isHidden(attribute);
-	}
+	bool isHidden(const String& attribute) const;
 
-	void setHidden(const String& attribute) {
-		attributesMap.setHidden(attribute);
-	}
+	void setHidden(const String& attribute);
 
-	void unsetHidden(const String& attribute) {
-		attributesMap.unsetHidden(attribute);
-	}
+	void unsetHidden(const String& attribute);
 
-	short getCombineType(const String& attribute) const {
-		return attributesMap.getCombineType(attribute);
-	}
+	short getCombineType(const String& attribute) const;
 
-	void setCurrentValue(const String& attribute, const float value) {
-		attributesMap.setCurrentValue(attribute, value);
-	}
+	void setCurrentValue(const String& attribute, const float value);
 
-	void setCurrentValue(const String& attribute, const float value, const float min, const float max) {
-		attributesMap.setCurrentValue(attribute, value, min, max);
-	}
+	void setCurrentValue(const String& attribute, const float value, const float min, const float max);
 
-	float getCurrentValue(const String& attribute) const {
-		return attributesMap.getCurrentValue(attribute);
-	}
+	float getCurrentValue(const String& attribute) const;
 
-	float getCurrentValue(const int i) const {
-		return attributesMap.getCurrentValue(i);
-	}
+	float getCurrentValue(const int i) const;
 
-	void lockValue(const String& attribute) {
-		attributesMap.lockValue(attribute);
-	}
+	void lockValue(const String& attribute);
 
-	void unlockValue(const String& attribute) {
-		attributesMap.unlockValue(attribute);
-	}
+	void unlockValue(const String& attribute);
 
-	void resetValue(const String& attribute) {
-		attributesMap.resetValue(attribute);
-	}
+	void resetValue(const String& attribute);
 
-	void setCurrentPercentage(const String& subtitle, const float value) {
-		attributesMap.setCurrentPercentage(subtitle, value);
-	}
+	void setCurrentPercentage(const String& subtitle, const float value);
 
-	void setCurrentPercentage(const String& subtitle, const float value, const float max) {
-		attributesMap.setCurrentPercentage(subtitle, value, max);
-	}
+	void setCurrentPercentage(const String& subtitle, const float value, const float max);
 
-	float getCurrentPercentage(const String& attribute) const {
-		return attributesMap.getCurrentPercentage(attribute);
-	}
+	float getCurrentPercentage(const String& attribute) const;
 
-	float getCurrentPercentage(const int i) const {
-		return attributesMap.getCurrentPercentage(i);
-	}
+	float getCurrentPercentage(const int i) const;
 
-	float getCurrentVisiblePercentage(const String title) const {
-		return attributesMap.getCurrentVisiblePercentage(title);
-	}
+	float getCurrentVisiblePercentage(const String title) const;
 
-	void setMaxPercentage(const String& attribute, const float value) {
-		attributesMap.setMaxPercentage(attribute, value);
-	}
+	void setMaxPercentage(const String& attribute, const float value);
 
-	float getMaxPercentage(const String& attribute) const {
-		return attributesMap.getMaxPercentage(attribute);
-	}
+	float getMaxPercentage(const String& attribute) const;
 
-	float getMaxPercentage(const int i) const {
-		return attributesMap.getMaxPercentage(i);
-	}
+	float getMaxPercentage(const int i) const;
 
-	float getMaxVisiblePercentage(const int i) const {
-		return attributesMap.getMaxVisiblePercentage(i);
-	}
+	float getMaxVisiblePercentage(const int i) const;
 
-	float getMinValue(const String& attribute) const {
-		return attributesMap.getMinValue(attribute);
-	}
+	float getMinValue(const String& attribute) const;
 
-	float getMaxValue(const String& attribute) const {
-		return attributesMap.getMaxValue(attribute);
-	}
+	float getMaxValue(const String& attribute) const;
 
-	float getCapValue(const String& attribute) const {
-		return attributesMap.getCapValue(attribute);
-	}
+	float getCapValue(const String& attribute) const;
 
-	void setMinValue(const String& attribute, const float value) {
-		attributesMap.setMinValue(attribute, value);
-	}
+	void setMinValue(const String& attribute, const float value);
 
-	void setMaxValue(const String& attribute, const float value) {
-		attributesMap.setMaxValue(attribute, value);
-	}
+	void setMaxValue(const String& attribute, const float value);
 
-	void setCapValue(const String& attribute, const float value) {
-		attributesMap.setCapValue(attribute, value);
-	}
+	void setCapValue(const String& attribute, const float value);
 
-	int getPrecision(const String& attribute) const {
-		return attributesMap.getPrecision(attribute);
-	}
+	int getPrecision(const String& attribute) const;
 
-	void setPrecision(const String& attribute, const int precision) {
-		attributesMap.setPrecision(attribute, precision);
-	}
+	void setPrecision(const String& attribute, const int precision);
 
-	inline int getTotalVisibleAttributeGroups() const {
-		return attributesMap.getTotalVisibleAttributeGroups();
-	}
+	int getTotalVisibleAttributeGroups() const;
 
 	void recalculateValues(bool initial);
 
 	String toString() const;
 
-	inline void setSlot(const String& value, bool filled) {
-		slots.put(value, filled);
-	}
+	void setSlot(const String& value, bool filled);
 
-	inline void clearSlots() {
-		slots.removeAll();
-	}
+	void clearSlots();
 
-	inline bool hasSlotFilled(const String& name) const {
-		if (!slots.contains(name))
-			return false;
+	bool hasSlotFilled(const String& name) const;
 
-		return slots.get(name);
-	}
+	void addValueToSend(const String& name);
 
-	inline void addValueToSend(const String& name) {
-		valuesToSend.add(name);
-	}
+	int getValuesToSendSize() const;
 
-	inline int getValuesToSendSize() const {
-		return valuesToSend.size();
-	}
+	const String& getValuesToSend(const int i) const;
 
-	const String& getValuesToSend(const int i) const {
-		return valuesToSend.get(i);
-	}
-
-	float getAttributeAndValue(const String& attribute, const int i) const {
-		String attributeName = getAttribute(i);
-
-		return getCurrentValue(attributeName);
-	}
+	float getAttributeAndValue(const String& attribute, const int i) const;
 
 	// Clear
-	inline void clear() {
-		valuesToSend.removeAll();
-	}
+	void clear();
 
 	void clearAll();
 };

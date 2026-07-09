@@ -131,23 +131,9 @@ public:
 
 	void registerSpecialCommands(CommandList* sCommands);
 
-	bool loadSlashCommandsFile() {
-		info("Loading commands...");
+	bool loadSlashCommandsFile();
 
-		loadCommandData("datatables/command/command_tables_shared.iff");
-		loadCommandData("datatables/command/command_tables_shared_ground.iff");
-		loadCommandData("datatables/command/command_tables_shared_space.iff");
-		bool res = runFile("scripts/commands/commands.lua");
-
-		if (!res)
-			ERROR_CODE = GENERAL_ERROR;
-
-		return res;
-	}
-
-	bool contains(String name) const {
-		return commandFactory.containsCommand(name);
-	}
+	bool contains(String name) const;
 
 	void loadCommandData(const String& filename);
 	QueueCommand* createCommand(const String& name);

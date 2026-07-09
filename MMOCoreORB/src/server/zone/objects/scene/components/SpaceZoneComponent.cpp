@@ -12,6 +12,12 @@
 #include "server/zone/packets/object/DataTransform.h"
 #include "server/zone/packets/object/DataTransformWithParent.h"
 #include "templates/params/creature/PlayerArrangement.h"
+#include "server/zone/packets/scene/LightUpdateTransformWithParentMessage.h"
+#include "server/zone/packets/scene/UpdateTransformWithParentMessage.h"
+
+SpaceZoneComponent::SpaceZoneComponent() {
+	setLoggingName("SpaceZoneComponent");
+}
 
 void SpaceZoneComponent::notifyInsertToZone(SceneObject* sceneObject, SpaceZone* newSpaceZone) const {
 	if (newSpaceZone == nullptr)

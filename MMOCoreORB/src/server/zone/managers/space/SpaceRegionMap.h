@@ -13,31 +13,13 @@ class SpaceRegionMap : public ReadWriteLock, public Object, public Logger {
 	VectorMap<String, ManagedReference<SpaceRegion*> > regions;
 
 public:
-	SpaceRegionMap() {
-		regions.setNoDuplicateInsertPlan();
-		regions.setNullValue(nullptr);
+	SpaceRegionMap();
 
-		setLoggingName("SpaceRegionMap");
-	}
+	~SpaceRegionMap();
 
-	~SpaceRegionMap() {
-	}
+	void addRegion(SpaceRegion* region);
 
-	inline void addRegion(SpaceRegion* region) {
-		wlock();
-
-		regions.put(region->getAreaName(), region);
-
-		unlock();
-	}
-
-	inline void dropRegion(const String& regionName) {
-		wlock();
-
-		regions.drop(regionName);
-
-		unlock();
-	}
+	void dropRegion(const String& regionName);
 
 	/**
 	 * Gets the first region in the region map found at the specified coordinates.
@@ -45,36 +27,13 @@ public:
 	 * @param y The y coordinate.
 	 * @return Returns a city region or nullptr if one was not found.
 	 */
-	SpaceRegion* getRegionAt(float x, float y) {
-		rlock();
+	SpaceRegion* getRegionAt(float x, float y);
 
-		for (int i = 0; i < regions.size(); ++i) {
-			SpaceRegion* region = regions.get(i);
+	bool containsRegion(const String& name);
 
-			if (region->containsPoint(x, y)) {
-				runlock();
-				return region;
-			}
-		}
+	SpaceRegion* getRegion(int index);
 
-		runlock();
+	SpaceRegion* getRegion(const String& name);
 
-		return nullptr;
-	}
-
-	inline bool containsRegion(const String& name) {
-		return regions.contains(name);
-	}
-
-	inline SpaceRegion* getRegion(int index) {
-		return regions.get(index);
-	}
-
-	inline SpaceRegion* getRegion(const String& name) {
-		return regions.get(name);
-	}
-
-	inline int getTotalRegions() {
-		return regions.size();
-	}
+	int getTotalRegions();
 };

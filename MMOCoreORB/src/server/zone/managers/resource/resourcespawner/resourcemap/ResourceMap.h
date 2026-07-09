@@ -34,12 +34,9 @@ using namespace server::zone::objects::player::sui::listbox;
  */
 class TypeResourceMap : public Vector<ManagedReference<ResourceSpawn* > > {
 public:
-	TypeResourceMap() {
+	TypeResourceMap();
 
-	}
-	~TypeResourceMap() {
-
-	}
+	~TypeResourceMap();
 };
 
 /**
@@ -47,13 +44,9 @@ public:
  */
 class ZoneResourceMap : public VectorMap<String, ManagedReference<ResourceSpawn* > > {
 public:
-	ZoneResourceMap() {
-		setNoDuplicateInsertPlan();
-		setNullValue(nullptr);
-	}
-	~ZoneResourceMap() {
+	ZoneResourceMap();
 
-	}
+	~ZoneResourceMap();
 };
 
 /**
@@ -108,25 +101,17 @@ public:
 	 * \param zoneid ID of zone being requesting
 	 * \return ZoneResourceMap* value of the zoneid requested
 	*/
-	inline ZoneResourceMap* getZoneResourceList(String zoneName) {
-		if(zoneResourceMap.contains(zoneName))
-			return zoneResourceMap.get(zoneName);
-		else
-			return nullptr;
-	}
+	ZoneResourceMap* getZoneResourceList(String zoneName);
 
 	/**
 	 * Checks to see if the type resource map contains the specified type or not.
 	 * @param typeName The type to check. For example, "aluminum_phrik".
 	 * @return Returns true if the map contains the type.
 	 */
-	bool containsType(const String& typeName) {
-		return typeResourceMap.contains(typeName);
-	}
+	bool containsType(const String& typeName);
 
-	bool containsSpawn(const String& spawnName) {
-		return contains(spawnName.toLowerCase());
-	}
+	bool containsSpawn(const String& spawnName);
+
 	/**
 	 * Adds the resources in particular map to SUI for resource deed
 	 * @param sui Listbox

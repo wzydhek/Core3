@@ -15,11 +15,10 @@
 #include "server/zone/objects/tangible/components/droid/DroidHarvestModuleDataComponent.h"
 #include "server/zone/objects/creature/ai/DroidObject.h"
 #include "server/zone/managers/creature/observers/CreatureHerdObserver.h"
+#include "templates/params/creature/CreatureAttribute.h"
 
 // full template specializations need to go in cpp so they don't get
 // defined multiple times.
-
-using namespace server::zone::objects::creature::ai::bt::leaf;
 
 template<> bool CheckPosture::check(AiAgent* agent) const {
 	return agent->getPosture() == checkVar;

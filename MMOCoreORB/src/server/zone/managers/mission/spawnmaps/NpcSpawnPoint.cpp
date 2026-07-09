@@ -137,3 +137,56 @@ void NpcSpawnPoint::despawnNpc() {
 		npc = nullptr;
 	}
 }
+
+/**
+ * Get the in use information.
+ * @return true if spawn already is in use, false if it is free to use.
+ */
+int NpcSpawnPoint::getInUse() const {
+	return inUseByNumberOfMissions;
+}
+
+/**
+ * Get the spawn type bit mask.
+ * @return the spawn type bit mask.
+ */
+int NpcSpawnPoint::getSpawnType() const {
+	return spawnType;
+}
+
+/**
+ * Get the position for the spawn on the planet.
+ * @return the position for the spawn on the planet.
+ */
+const Vector3* NpcSpawnPoint::getPosition() const {
+	return &position;
+}
+
+/**
+ * Get the direction the spawn point npc should face.
+ * @return the direction the spawn point npc should face.
+ */
+const Quaternion* NpcSpawnPoint::getDirection() const {
+	return &direction;
+}
+
+/**
+ * Get the spawned npc pointer.
+ * @return a pointer to the spawned npc.
+ */
+AiAgent* NpcSpawnPoint::getNpc() const {
+	return npc;
+}
+
+/**
+ * Saves the spawn points to a file.
+ * @param file the file stream to save the spawn points to.
+ */
+void NpcSpawnPoint::saveSpawnPoint(std::ofstream& file) {
+	file << "\t\t{ " << position.getX() << ", " << position.getY();
+	file << ", " << direction.getRadians() << ", " << spawnType << " }";
+}
+
+String NpcSpawnPoint::toString() const {
+	return "NpcSpawnPoint at " + position.toString() + " of spawntype " + String::valueOf(spawnType) + " is " + (inUseByNumberOfMissions > 0 ? " in use." : "free.");
+}

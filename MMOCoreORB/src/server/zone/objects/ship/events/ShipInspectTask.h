@@ -19,12 +19,7 @@ protected:
 	ManagedWeakReference<ShipObject*> weakTargetShip;
 
 public:
-	ShipInspectTask(CreatureObject* player, ShipObject* targetShip) : Task() {
-		setLoggingName("ShipInspectTask");
-
-		weakPlayer = player;
-		weakTargetShip = targetShip;
-	}
+	ShipInspectTask(CreatureObject* player, ShipObject* targetShip);
 
 	void run();
 };

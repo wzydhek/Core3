@@ -63,3 +63,8 @@ void server::zone::to_json(nlohmann::json& j, const ZoneReference& p) {
 #endif
 }
 
+#ifdef ODB_SERIALIZATION
+const String& ZoneReference::getZoneName() const {
+	return zoneName;
+}
+#endif

@@ -9,21 +9,8 @@
 class AccountVersionMessage : public BaseMessage {
 
 public:
-	AccountVersionMessage(const String& username, const String& password, const String& version) : BaseMessage() {
-		insertShort(0x04);
-		insertInt(0x41131F96);
+	AccountVersionMessage(const String& username, const String& password, const String& version);
 
-		insertAscii(username);
-		insertAscii(password);
-		insertAscii(version);
-		insertInt(STRING_HASHCODE("SWGEmu")); // required for SWGEmu login server
-	}
-
-	static void parse(Packet* pack, String& username, String& password, String& version) {
-		pack->parseAscii(username);
-		pack->parseAscii(password);
-
-		pack->parseAscii(version);
-	}
+	static void parse(Packet* pack, String& username, String& password, String& version);
 
 };

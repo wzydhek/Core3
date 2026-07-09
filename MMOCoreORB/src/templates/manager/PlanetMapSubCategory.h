@@ -17,91 +17,27 @@ class PlanetMapSubCategory : public Object {
 	bool factionVisibleOnly;
 
 public:
-	PlanetMapSubCategory() {
-		name = "";
-		nameCRC = 0;
-		index = 0;
+	PlanetMapSubCategory();
 
-		activatable = false;
-		factionVisibleOnly = false;
-	}
+	PlanetMapSubCategory(const PlanetMapSubCategory& pmc);
 
-	PlanetMapSubCategory(const PlanetMapSubCategory& pmc) : Object() {
-		name = pmc.name;
-		nameCRC = pmc.nameCRC;
-		index = pmc.index;
+	PlanetMapSubCategory& operator=(const PlanetMapSubCategory& pmc);
 
-		activatable = pmc.activatable;
-		faction = pmc.faction;
-		factionVisibleOnly = pmc.factionVisibleOnly;
-	}
+	~PlanetMapSubCategory();
 
-	PlanetMapSubCategory& operator=(const PlanetMapSubCategory& pmc) {
-		if (this == &pmc)
-			return *this;
+	int compareTo(const PlanetMapSubCategory& pmc) const;
 
-		name = pmc.name;
-		nameCRC = pmc.nameCRC;
-		index = pmc.index;
+	void parseFromDataTableRow(const DataTableRow* row);
 
-		activatable = pmc.activatable;
-		faction = pmc.faction;
-		factionVisibleOnly = pmc.factionVisibleOnly;
+	const String& getName() const;
 
-		return *this;
-	}
+	int getCrc() const;
 
-	inline ~PlanetMapSubCategory() {
-	}
+	int getIndex() const;
 
-	int compareTo(const PlanetMapSubCategory& pmc) const {
-		return name.compareTo(pmc.name);
-	}
+	bool canBeActive() const;
 
-	void parseFromDataTableRow(const DataTableRow* row) {
-		try {
-			bool subCheck = false;
-			row->getValue(3, subCheck);
+	const String& getFaction() const;
 
-			// These should only be sub categories
-			if (!subCheck)
-				return;
-
-			row->getValue(0, name);
-			nameCRC = name.hashCode();
-			row->getValue(1, index);
-			//row->getValue(2, category);
-			//row->getValue(3, subCategory);
-			row->getValue(4, activatable);
-			row->getValue(5, faction);
-			row->getValue(6, factionVisibleOnly);
-
-		} catch (const Exception& ex) {
-			System::out << "Error parsing PlanetMapSubCategory: " + ex.getMessage() << endl;
-		}
-	}
-
-	inline const String& getName() const {
-		return name;
-	}
-
-	inline int getCrc() const {
-		return nameCRC;
-	}
-
-	inline int getIndex() const {
-		return index;
-	}
-
-	inline bool canBeActive() const {
-		return activatable;
-	}
-
-	inline const String& getFaction() const {
-		return faction;
-	}
-
-	inline bool isFactionVisibleOnly() const {
-		return factionVisibleOnly;
-	}
+	bool isFactionVisibleOnly() const;
 };

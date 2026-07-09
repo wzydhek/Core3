@@ -7,6 +7,64 @@
 
 #include "MeshData.h"
 
+MeshTriangle::MeshTriangle() {
+	verts[0] = 0;
+	verts[1] = 1;
+	verts[2] = 2;
+}
+
+MeshTriangle::MeshTriangle(int a, int b, int c) {
+	verts[0] = a;
+	verts[1] = b;
+	verts[2] = c;
+}
+
+MeshTriangle::MeshTriangle(const MeshTriangle& mesh) {
+	verts[0] = mesh.verts[0];
+	verts[1] = mesh.verts[1];
+	verts[2] = mesh.verts[2];
+}
+
+MeshTriangle& MeshTriangle::operator=(const MeshTriangle& mesh) {
+	if (this == &mesh) {
+		return *this;
+	}
+
+	verts[0] = mesh.verts[0];
+	verts[1] = mesh.verts[1];
+	verts[2] = mesh.verts[2];
+
+	return *this;
+}
+
+const int* MeshTriangle::getVerts() const {
+	return verts;
+}
+
+const int* MeshTriangle::getVerts() {
+	return verts;
+}
+
+void MeshTriangle::set(uint8 index, uint32 value) {
+	verts[index] = value;
+}
+
+bool MeshTriangle::toBinaryStream(ObjectOutputStream* stream) {
+	return false;
+}
+
+bool MeshTriangle::parseFromBinaryStream(ObjectInputStream* stream) {
+	return false;
+}
+
+MeshData::MeshData() {
+}
+
+MeshData::MeshData(const MeshData& data) : Object() {
+	vertices = data.vertices;
+	triangles = data.triangles;
+}
+
 AABB MeshData::buildAABB() const {
 	float minx = 100000;
 	float miny = 100000;
@@ -146,4 +204,36 @@ void MeshData::readObject(IffStream* iffStream) {
 	}
 
 	iffStream->closeChunk();
+}
+
+Vector<Vector3>* MeshData::getVerts() {
+	return &vertices;
+}
+
+const Vector<Vector3>* MeshData::getVerts() const {
+	return &vertices;
+}
+
+Vector<MeshTriangle>* MeshData::getTriangles() {
+	return &triangles;
+}
+
+Reference<MeshData*> MeshData::makeCopyNegateZ(const MeshData* mesh, const Matrix4& parentTransform) {
+	Reference<MeshData*> newData = new MeshData(*mesh);
+	for (auto& vert : newData->vertices) {
+		vert.setZ(-vert.getZ());
+		vert = vert * parentTransform;
+	}
+	return newData;
+}
+
+void MeshData::transformMeshData(const Matrix4& transform) {
+	for (int i = 0; i < vertices.size(); i++) {
+		Vector3& vert = vertices.get(i);
+		vert = Vector3(vert.getX(), vert.getY(), vert.getZ()) * transform;
+	}
+}
+
+const Vector<MeshTriangle>* MeshData::getTriangles() const {
+	return &triangles;
 }

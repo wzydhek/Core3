@@ -10,6 +10,7 @@
 #include "server/zone/managers/collision/PathFinderManager.h"
 #include "server/zone/managers/planet/PlanetManager.h"
 #include "server/zone/Zone.h"
+#include "server/zone/objects/mission/BountyMissionObjective.h"
 
 namespace server {
 namespace zone {
@@ -29,209 +30,22 @@ class BountyHunterTargetTask: public Task, public Logger {
 	String zoneName;
 
 public:
-	BountyHunterTargetTask(MissionObject* mission, CreatureObject* player, const String& zoneName) :
-		Logger("BountyHunterTargetTask") {
-		this->mission = mission;
-		this->player = player;
-		this->zoneName = zoneName;
-		this->movedOffPlanet = false;
-		this->movingToStarport = false;
-		this->targetSpawned = false;
-		this->destination = Vector3(0, 0, 0);
+	BountyHunterTargetTask(MissionObject* mission, CreatureObject* player, const String& zoneName);
 
-		objective = cast<BountyMissionObjective*> (mission->getMissionObjective());
+	~BountyHunterTargetTask();
 
-		currentPosition.setX(mission->getEndPositionX());
-		currentPosition.setY(mission->getEndPositionY());
-		currentPosition.setZ(0);
+	void run();
 
-		if (mission->getMissionLevel() > 1) {
-			move = true;
-		} else {
-			move = false;
-		}
-	}
+	Vector3 getTargetPosition();
 
-	~BountyHunterTargetTask() {
-	}
-
-	void run() {
-		ManagedReference<BountyMissionObjective*> objectiveRef = objective.get();
-
-		if (objectiveRef == nullptr)
-			return;
-
-		ManagedReference<CreatureObject*> playerRef = player.get();
-
-		if (playerRef == nullptr)
-			return;
-
-		ZoneServer* zoneServer = playerRef->getZoneServer();
-
-		Zone* zone = zoneServer->getZone(zoneName);
-
-		if (zone == nullptr)
-			return;
-
-		ManagedReference<MissionObject*> strongMissionRef = mission.get();
-
-		if (strongMissionRef == nullptr)
-			return;
-
-		if (destination == Vector3(0, 0, 0)) {
-			ManagedReference<PlanetManager*> planetManager = zone->getPlanetManager();
-
-			if (strongMissionRef->getMissionLevel() > 2) {
-				Reference<PlanetTravelPoint*> randomStarport = planetManager->getRandomStarport();
-				destination = randomStarport->getDeparturePosition();
-				destination.setZ(0);
-				movingToStarport = true;
-			} else {
-				destination = zoneServer->getMissionManager()->getRandomBountyTargetPosition(playerRef, zoneName);
-			}
-		}
-
-		Locker locker(playerRef);
-
-		if (move && !targetSpawned)
-			updatePosition(playerRef);
-
-		Zone* playerZone = playerRef->getZone();
-
-		if (!targetSpawned && playerZone != nullptr && playerZone->getZoneName() == zoneName) {
-			Vector3 playerPosition = playerRef->getWorldPosition();
-			playerPosition.setZ(0);
-
-			if (playerPosition.distanceTo(currentPosition) < 256.0f) {
-				updateToSpawnableTargetPosition();
-				if (playerPosition.distanceTo(currentPosition) < 256.0f) {
-					targetSpawned = true;
-					Locker olocker(objectiveRef);
-					objectiveRef->spawnTarget(zoneName);
-				}
-			}
-		}
-
-		reschedule(10 * 1000);
-	}
-
-	Vector3 getTargetPosition() {
-		return currentPosition;
-	}
-
-	const String& getTargetZoneName() {
-		return zoneName;
-	}
+	const String& getTargetZoneName();
 
 private:
-	void updatePosition(CreatureObject* player) {
-		Vector3 direction = destination - currentPosition;
-		float distToDest = direction.length();
-		int distPerSec = Math::min(4, 1 + mission.get()->getMissionLevel());
-		float distToTravel = distPerSec * 10.f;
+	void updatePosition(CreatureObject* player);
 
-		if (distToDest <= distToTravel) {
-			currentPosition = destination;
+	void updateToSpawnableTargetPosition();
 
-			if (movingToStarport && !movedOffPlanet) {
-				zoneName = player->getZoneServer()->getMissionManager()->getRandomBountyPlanet();
-				movedOffPlanet = true;
-				movingToStarport = false;
-
-				ZoneServer* zoneServer = player->getZoneServer();
-				Zone* zone = zoneServer->getZone(zoneName);
-
-				if (zone == nullptr)
-					return;
-
-				ManagedReference<MissionObject*> strongMissionRef = mission.get();
-
-				if (strongMissionRef == nullptr)
-					return;
-
-				Locker clocker(strongMissionRef, player);
-				strongMissionRef->setEndPlanet(zoneName);
-
-				ManagedReference<PlanetManager*> planetManager = zone->getPlanetManager();
-				Reference<PlanetTravelPoint*> randomStarport = planetManager->getRandomStarport();
-				currentPosition = randomStarport->getDeparturePosition();
-			}
-
-			destination = player->getZoneServer()->getMissionManager()->getRandomBountyTargetPosition(player, zoneName);
-		} else {
-			Vector3 movementUpdate = direction;
-			movementUpdate.normalize();
-			movementUpdate = movementUpdate * distToTravel;
-
-			currentPosition = currentPosition + movementUpdate;
-		}
-	}
-
-	void updateToSpawnableTargetPosition() {
-		ManagedReference<CreatureObject*> playerRef = player.get();
-
-		if (playerRef == nullptr || playerRef->getZone() == nullptr)
-			return;
-
-		Zone* zone = playerRef->getZone();
-		SortedVector<ManagedReference<NavArea*> > areas;
-
-		Sphere sphere(Vector3(currentPosition.getX(), currentPosition.getY(), zone->getHeightNoCache(currentPosition.getX(), currentPosition.getY())), 20);
-		Vector3 result;
-
-		if (PathFinderManager::instance()->getSpawnPointInArea(sphere, zone, result)) {
-			currentPosition.setX(result.getX());
-			currentPosition.setY(result.getY());
-			return;
-		}
-
-		if (canSpawnTargetAt(currentPosition)) {
-			return;
-		}
-
-		//Spawning at coordinates failed, try to find new coordinates.
-		int radius = 50;
-		while (radius <= 1600) {
-			//Max 20 retries per radius, total 120 retries.
-			int retries = 20;
-
-			while (retries > 0) {
-				//Generate a random direction and move the target position in that direction within the radius.
-				Vector3 direction;
-				direction.setX((float)System::random(2 * radius) - radius);
-				direction.setY((float)System::random(2 * radius) - radius);
-				direction.normalize();
-				direction = direction * System::random(radius);
-
-				if (canSpawnTargetAt(currentPosition + direction)) {
-					currentPosition = currentPosition + direction;
-					return;
-				}
-
-				retries--;
-			}
-
-			radius *= 2;
-		}
-
-		//Failed to find new spawn for the target, spawn at current position.
-	}
-
-	bool canSpawnTargetAt(const Vector3& position) {
-		ManagedReference<CreatureObject*> playerRef = player.get();
-
-		if (playerRef == nullptr || playerRef->getZone() == nullptr) {
-			return false;
-		}
-
-		Zone* zone = playerRef->getZone();
-
-		if (zone->getPlanetManager()->isBuildingPermittedAt(position.getX(), position.getY(), nullptr)) {
-			return true;
-		}
-
-		return true;
-	}
+	bool canSpawnTargetAt(const Vector3& position);
 };
 
 } // namespace events

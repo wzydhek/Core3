@@ -21,24 +21,13 @@ protected:
 	const uint32 formType;
 
 public:
-	Boundary(uint32 formType) : formType(formType) {
-	}
+	Boundary(uint32 formType);
 
-	virtual ~Boundary() {
-	}
+	virtual ~Boundary();
 
-	virtual void executeRule(ProceduralTerrainAppearance* generator) {
+	virtual void executeRule(ProceduralTerrainAppearance* generator);
 
-	}
-
-	void readObject(engine::util::IffStream* iffStream) {
-		if (iffStream->openForm(formType) == nullptr)
-			throw Exception("Incorrect form type " + String::valueOf(formType));
-
-		parseFromIffStream(iffStream);
-
-		iffStream->closeForm(formType);
-	}
+	void readObject(engine::util::IffStream* iffStream);
 
 	virtual void parseFromIffStream(engine::util::IffStream* iffStream) = 0;
 
@@ -47,15 +36,11 @@ public:
 
 	virtual float checkInfluence(float x, float y) const = 0;
 
-	virtual float getLocalWaterTableHeight() const {
-		return -16000;
-	}
+	virtual float getLocalWaterTableHeight() const;
 
 	virtual float process(float x, float y) const = 0;
 
-	inline int getFeatheringType() const {
-		return featheringType;
-	}
+	int getFeatheringType() const;
 
 	virtual float getMinX() const = 0;
 	virtual float getMaxX() const = 0;
@@ -64,7 +49,5 @@ public:
 
 	virtual void translateBoundary(float x, float y) = 0;
 
-	inline bool isEnabled() const {
-		return informationHeader.isEnabled();
-	}
+	bool isEnabled() const;
 };

@@ -14,6 +14,34 @@
 #include "server/zone/packets/ship/DestroyShipComponentMessage.h"
 #include "templates/params/ship/ShipFlag.h"
 #include "server/zone/objects/ship/ai/events/RemoveDisabledInvulnerableTask.h"
+#include "server/zone/objects/tangible/threat/ThreatMap.h"
+
+SpaceCombatManager::SpaceCombatManager() {
+	setLoggingName("SpaceCombatManager");
+
+	checkProjectilesTask = new CheckProjectilesTask(this);
+	checkProjectilesTask->execute();
+}
+
+SpaceCombatManager::~SpaceCombatManager() {
+	checkProjectilesTask->cancel();
+
+	delete checkProjectilesTask;
+	checkProjectilesTask = nullptr;
+}
+
+String SpaceCombatManager::shipHitTypeToString(int ShipHitType) {
+	switch (ShipHitType) {
+		case HITSHIELD:
+			return "shield";
+		case HITARMOR:
+			return "armor";
+		case HITCOMPONENT:
+			return "component";
+		default:
+			return "chassis";
+	}
+}
 
 void SpaceCombatManager::broadcastProjectile(ShipObject* ship, const ShipProjectile* projectile, CreatureObject* player) const {
 	auto cov = ship == nullptr ? nullptr : ship->getCloseObjects();
@@ -882,4 +910,25 @@ void SpaceCombatManager::addCountermeasure(ShipObject* ship, ShipCountermeasure*
 
 	projectileMap.addProjectile(ship, counter);
 	broadcastCountermeasure(ship, counter, UpdateMissileMessage::UpdateType::COUNTERFAILED);
+}
+
+SpaceCombatManager::CheckProjectilesTask::CheckProjectilesTask(SpaceCombatManager* manager) : Task() {
+	setLoggingName("CheckProjectilesTask");
+
+	this->combatManager = manager;
+}
+
+void SpaceCombatManager::CheckProjectilesTask::run() {
+	if (combatManager == nullptr) {
+		return;
+	}
+
+	int delta = combatManager->updateProjectiles();
+	int interval = INTERVAL - delta;
+
+	if (interval < INTERVALMIN) {
+		interval = INTERVALMIN;
+	}
+
+	reschedule(interval);
 }

@@ -18,13 +18,9 @@ namespace variables {
 
 class StringIdDeltaVector: public DeltaVector<StringId> {
 public:
-	StringIdDeltaVector() {
-		
-	}
+	StringIdDeltaVector();
 	
-	~StringIdDeltaVector() {
-		
-	}
+	~StringIdDeltaVector();
 
 };
 

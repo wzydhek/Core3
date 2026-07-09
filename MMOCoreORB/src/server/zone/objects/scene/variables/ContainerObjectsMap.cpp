@@ -316,3 +316,41 @@ void server::zone::objects::scene::to_json(nlohmann::json& j, const server::zone
 	else
 		j = *map.getContainerObjects();
 }
+
+void ContainerObjectsMap::setDelayedLoadOperationMode() {
+	operationMode = DELAYED_LOAD;
+}
+
+void ContainerObjectsMap::setNormalLoadOperationMode() {
+	operationMode = NORMAL_LOAD;
+}
+
+bool ContainerObjectsMap::hasDelayedLoadOperationMode() const {
+	return operationMode == DELAYED_LOAD;
+}
+
+bool ContainerObjectsMap::isLoaded(bool readLock) const {
+	if (readLock) {
+		ReadLocker locker(containerLock);
+
+		return operationMode == NORMAL_LOAD || oids == nullptr;
+	} else {
+		return operationMode == NORMAL_LOAD || oids == nullptr;
+	}
+}
+
+const AtomicTime* ContainerObjectsMap::getLastAccess() const {
+	return &lastAccess;
+}
+
+ManagedWeakReference<SceneObject*> ContainerObjectsMap::getContainer() const {
+	return container;
+}
+
+VectorMap<uint64, uint64>* ContainerObjectsMap::getOids() const {
+	return oids.get();
+}
+
+const VectorMap<uint64, ManagedReference<SceneObject*>>* ContainerObjectsMap::getContainerObjects() const {
+	return &containerObjects;
+}

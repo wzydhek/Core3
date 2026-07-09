@@ -46,120 +46,39 @@ protected:
 	PathGraph* pathGraph;
 
 public:
-	PathNode(PathGraph* graph) {
-		pathGraph = graph;
-		id = 0;
-		var2 = globalGraphNodeID = 0;
-		type = Invalid;
-		x = z = y = radius = 0;
-	}
+	PathNode(PathGraph* graph);
 
-	inline void addChild(PathNode* node) {
-		children.add(node);
-	}
+	void addChild(PathNode* node);
 
-	void readObject(IffStream* iffStream) {
-		id = iffStream->getInt(); // index
-		var2 = iffStream->getInt(); // ID
-		globalGraphNodeID = iffStream->getInt(); // Key
-		type = static_cast<PathNodeType>(iffStream->getInt()); // type
+	void readObject(IffStream* iffStream);
 
-		x = iffStream->getFloat(); // position
-		z = iffStream->getFloat();
-		y = iffStream->getFloat();
-		radius = iffStream->getFloat(); //radius
-		if(radius == 0.0f)
-			radius = 0.5f;
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return false;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		return false;
-	}
+	float getX() const;
 
-	inline float getX() const {
-		return x;
-	}
+	float getY() const;
 
-	inline float getY() const {
-		return y;
-	}
-
-	inline float getZ() const {
-		return z;
-	}
-
-	/*inline uint32 getID() {
-		return id;
-	}*/
+	float getZ() const;
 
 	uint32 getID() const;
 
-	inline Vector3 getPosition() const {
-		return Vector3(x, y, z);
-	}
+	Vector3 getPosition() const;
 
-	inline float getRadius() const {
-		return radius;
-	}
+	float getRadius() const;
 
-	inline PathNodeType getType() const {
-		return type;
-	}
+	PathNodeType getType() const;
 
-	const Vector<PathNode*>* getNeighbors() const {
-		return &children;
-	}
+	const Vector<PathNode*>* getNeighbors() const;
 
-	inline int getGlobalGraphNodeID() const {
-		return globalGraphNodeID;
-	}
+	int getGlobalGraphNodeID() const;
 
-	inline const PathGraph* getPathGraph() const {
-		return pathGraph;
-	}
+	const PathGraph* getPathGraph() const;
 
-	inline static String typeToString(PathNodeType nodeType) {
-		switch (nodeType) {
-		case CellPortal:           return "CellPortal";
-		case CellWaypoint:         return "CellWaypoint";
-		case CellPOI:              return "CellPOI";
-		case BuildingEntrance:     return "BuildingEntrance";
-		case BuildingCell:         return "BuildingCell";
-		case BuildingPortal:       return "BuildingPortal";
-		case CityBuildingEntrance: return "CityBuildingEntrance";
-		case CityWaypoint:         return "CityWaypoint";
-		case CityPOI:              return "CityPOI";
-		case CityBuilding:         return "CityBuilding";
-		case CityEntrance:         return "CityEntrance";
-		case BuildingCellPart:     return "BuildingCellPart";
-		case Invalid:              return "Invalid";
-		default:
-			StringBuffer buf;
-			buf << "UnknownType(" << nodeType << ")";
-			return buf.toString();
-		}
-	}
+	static String typeToString(PathNodeType nodeType);
 
-	inline String toString() const {
-		StringBuffer buf;
+	String toString() const;
 
-		buf << "PathNode(id: " << id
-			<< ", type: " << typeToString(type)
-			<< ", x: " << x
-			<< ", y: " << y
-			<< ", z: " << z
-			<< ", radius: " << radius
-			<< ", globalGraphNodeID: " << globalGraphNodeID
-			<< ")";
-
-		return buf.toString();
-	}
-
-	String toStringData() const {
-		return toString();
-	}
+	String toStringData() const;
 };

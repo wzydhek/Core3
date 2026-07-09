@@ -15,32 +15,19 @@ class ChatRoomMap : public Object {
 	HashTable<uint32, ManagedReference<ChatRoom*> > rooms;
 
 public:
-	ChatRoomMap(int initsize) : rooms(initsize) {
-	}
+	ChatRoomMap(int initsize);
 
-	ChatRoomMap(const ChatRoomMap& c) : Object(), rooms(c.rooms) {
+	ChatRoomMap(const ChatRoomMap& c);
 
-	}
+	void put(uint32 key, ChatRoom* room);
 
-	void put(uint32 key, ChatRoom* room) {
-		rooms.put(key, room);
-	}
+	Reference<ChatRoom*> get(uint32 key);
 
-	Reference<ChatRoom*> get(uint32 key) {
-		return rooms.get(key);
-	}
+	void remove(uint32 key);
 
-	void remove(uint32 key) {
-		rooms.remove(key);
-	}
+	void removeAll();
 
-	void removeAll() {
-		rooms.removeAll();
-	}
-
-	HashTableIterator<uint32, ManagedReference<ChatRoom*> > iterator() {
-		return rooms.iterator();
-	}
+	HashTableIterator<uint32, ManagedReference<ChatRoom*>> iterator();
 };
 
 

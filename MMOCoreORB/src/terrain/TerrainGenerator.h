@@ -31,9 +31,7 @@ class TerrainGenerator : public TemplateVariable<'TGEN'> {
 	LayersGroup layers;
 
 public:
-	TerrainGenerator(ProceduralTerrainAppearance* ptat) {
-		terrain = ptat;
-	}
+	TerrainGenerator(ProceduralTerrainAppearance* ptat);
 
 	void processLayers();
 	void processLayer(Layer* layer);
@@ -48,36 +46,20 @@ public:
 
 	void getFullBoundaryCircle(const Layer* layer, float& minX, float& minY, float& maxX, float& maxY) const;
 
-	inline MapGroup* getMapGroup() {
-		return &mapGroup;
-	}
+	MapGroup* getMapGroup();
 
-	inline LayersGroup* getLayersGroup() {
-		return &layers;
-	}
+	LayersGroup* getLayersGroup();
 
-	inline BitmapGroup* getBitmapGroup() {
-		return &bitmapGroup;
-	}
+	BitmapGroup* getBitmapGroup();
 
-	inline MapFractal* getMfrc(int idx) {
-		return mapGroup.getMfrc(idx);
-	}
+	MapFractal* getMfrc(int idx);
 
-	inline const MapGroup* getMapGroup() const {
-		return &mapGroup;
-	}
+	const MapGroup* getMapGroup() const;
 
-	inline const LayersGroup* getLayersGroup() const {
-		return &layers;
-	}
+	const LayersGroup* getLayersGroup() const;
 
-	inline const BitmapGroup* getBitmapGroup() const {
-		return &bitmapGroup;
-	}
+	const BitmapGroup* getBitmapGroup() const;
 
-	inline const MapFractal* getMfrc(int idx) const {
-		return mapGroup.getMfrc(idx);
-	}
+	const MapFractal* getMfrc(int idx) const;
 
 };

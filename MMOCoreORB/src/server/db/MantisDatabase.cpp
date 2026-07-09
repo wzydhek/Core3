@@ -46,3 +46,18 @@ MantisDatabase::MantisDatabase(ConfigManager* configManager) {
 
 MantisDatabase::~MantisDatabase() {
 }
+
+Database* MantisDatabase::instance() {
+	if (databases->size() == 0)
+		return nullptr;
+
+	int i = currentDB.get() % databases->size();
+
+	currentDB.increment();
+
+	return databases->get(i).get();
+}
+
+const String& MantisDatabase::getTablePrefix() {
+	return tablePrefix;
+}

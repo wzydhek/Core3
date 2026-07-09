@@ -37,19 +37,11 @@ class MapLocationEntry : public Object {
 	byte icon; // 0 = None, 1 = Moon, 2 = Star
 
 public:
-	MapLocationEntry() {
-		icon = 0;
-	}
+	MapLocationEntry();
 
-	MapLocationEntry(SceneObject* obj) {
-		setObject(obj);
-	}
+	MapLocationEntry(SceneObject* obj);
 
-	MapLocationEntry(const MapLocationEntry& entry) : Object() {
-		object = entry.object;
-		icon = entry.icon;
-		displayName = entry.displayName;
-	}
+	MapLocationEntry(const MapLocationEntry& entry);
 
 	int compareTo(const MapLocationEntry& entry) const;
 
@@ -61,19 +53,13 @@ public:
 
 	void setObject(SceneObject* obj);
 
-	inline SceneObject* getObject() const {
-		return object;
-	}
+	SceneObject* getObject() const;
 
-	inline byte getIcon() const {
-		return icon;
-	}
+	byte getIcon() const;
 
 	/**
 	 * Sets the icon used at this location: 0 = None, 1 = Moon, 2 = Star
 	 * @param ico The icon to use
 	 */
-	inline void setIcon(byte ico) {
-		icon = ico;
-	}
+	void setIcon(byte ico);
 };

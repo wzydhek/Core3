@@ -58,3 +58,39 @@ uint8 Badge::getTypeFromString(const String& typeString) {
 		throw Exception(buffer.toString());
 	}
 }
+
+int Badge::getIndex() const {
+	return index;
+}
+
+const String Badge::getKey() const {
+	return key;
+}
+
+const String Badge::getMusic() const {
+	return music;
+}
+
+int Badge::getCategory() const {
+	return category;
+}
+
+int Badge::getShow() const {
+	return show;
+}
+
+const String Badge::getTypeString() const {
+	return typeString;
+}
+
+uint8 Badge::getType() const {
+	return type;
+}
+
+int Badge::getTypeInt() const {
+	return static_cast<int>(type);
+}
+
+bool Badge::getHasMusic() const {
+	return hasMusic;
+}

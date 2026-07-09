@@ -13,27 +13,11 @@ namespace decorator {
 
 class Not : public Decorator {
 public:
-	Not(const String& className, const uint32 id, const LuaObject& args)
-			: Decorator(className, id, args) {
-	}
+	Not(const String& className, const uint32 id, const LuaObject& args);
 
-	Not(const Not& b)
-			: Decorator(b) {
-	}
+	Not(const Not& b);
 
-	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const {
-		assert(child != nullptr);
-
-		Behavior::Status result = child->doAction(agent);
-
-		if (result == FAILURE)
-			return SUCCESS;
-
-		if (result == SUCCESS)
-			return FAILURE;
-
-		return result;
-	}
+	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 }
@@ -43,3 +27,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt::decorator;

@@ -259,3 +259,11 @@ void ResourceTree::setRecycleToolType(ResourceTreeEntry* entry) {
 void ResourceTree::toString() const {
 	baseNode->toString();
 }
+
+ResourceTreeNode* ResourceTree::getBaseNode() {
+	return baseNode;
+}
+
+const ResourceTreeNode* ResourceTree::getBaseNode() const {
+	return baseNode;
+}

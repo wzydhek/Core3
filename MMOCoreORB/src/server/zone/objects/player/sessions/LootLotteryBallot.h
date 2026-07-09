@@ -9,6 +9,7 @@
 
 #include "engine/engine.h"
 #include "system/util/Vector.h"
+#include "server/zone/objects/creature/CreatureObject.h"
 
 class LootLotteryBallot : public Object {
 
@@ -19,17 +20,10 @@ protected:
 
 public:
 
-     LootLotteryBallot(CreatureObject* pl, Vector<uint64> selection) {
-    	 player = pl;
-    	 selection.clone(lootSelections);
-     }
+     LootLotteryBallot(CreatureObject* pl, Vector<uint64> selection);
 
-     bool hasSelection(uint64 objectID) {
-    	 return lootSelections.contains(objectID);
-     }
+     bool hasSelection(uint64 objectID);
 
-     CreatureObject* getPlayer() {
-    	 return player.get();
-     }
+     CreatureObject* getPlayer();
 
 };

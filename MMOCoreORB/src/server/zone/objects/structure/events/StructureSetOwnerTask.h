@@ -8,17 +8,7 @@ class StructureSetOwnerTask : public Task {
 	uint64 newOwnerID;
 
 public:
-	StructureSetOwnerTask(StructureObject* structureObject, uint64 newID) : Task() {
-		structure = structureObject;
-		newOwnerID = newID;
-	}
+	StructureSetOwnerTask(StructureObject* structureObject, uint64 newID);
 
-	void run() {
-		if (structure == nullptr)
-			return;
-
-		Locker locker(structure);
-
-		structure->setOwner(newOwnerID);
-	}
+	void run();
 };

@@ -22,44 +22,11 @@ class FilterBitmap : public FilterProceduralRule {
 	TargaBitmap* map;
 
 public:
-	FilterBitmap() : FilterProceduralRule(5, 'FBIT'), bitmapId(0), min(0), max(0), map(nullptr) { //magic numbers from the client
-	}
+	FilterBitmap();
 
-	void parseFromIffStream(engine::util::IffStream* iffStream) {
-		uint32 version = iffStream->getNextFormType();
+	void parseFromIffStream(engine::util::IffStream* iffStream);
 
-		iffStream->openForm(version);
-
-		switch (version) {
-		case '0000':
-			parseFromIffStream(iffStream, Version<'0000'>());
-			break;
-		default:
-			System::out << "unknown FilterBIT version 0x" << hex << version << endl;
-			break;
-		}
-
-		iffStream->closeForm(version);
-	}
-
-	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>) {
-		informationHeader.readObject(iffStream);
-
-		iffStream->openForm('DATA');
-
-		iffStream->openChunk('PARM');
-
-		//5 vars
-		bitmapId = iffStream->getInt();
-		featheringType = iffStream->getInt();
-		featheringAmount = iffStream->getFloat();
-		min = iffStream->getFloat();
-		max = iffStream->getFloat();
-
-		iffStream->closeChunk('PARM');
-
-		iffStream->closeForm('DATA');
-	}
+	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>);
 
 	float process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator, FilterRectangle* rect);
 };

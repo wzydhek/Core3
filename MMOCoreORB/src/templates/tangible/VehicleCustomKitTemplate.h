@@ -12,21 +12,12 @@
 class VehicleCustomKitTemplate : public SharedTangibleObjectTemplate {
 
 public:
-	VehicleCustomKitTemplate() {
+	VehicleCustomKitTemplate();
 
-	}
+	~VehicleCustomKitTemplate();
 
-	~VehicleCustomKitTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
-
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
-
-    }
-
-	bool isVehicleCustomKitTemplate() {
-		return true;
-	}
+	bool isVehicleCustomKitTemplate();
 
 };

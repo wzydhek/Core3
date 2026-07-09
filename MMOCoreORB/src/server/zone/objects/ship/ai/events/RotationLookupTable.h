@@ -22,10 +22,7 @@ protected:
 	Vector<PackedQuaternion> directionTable;
 
 public:
-	RotationLookupTable() : directionTable(YPR_TOTAL, YPR_TOTAL) {
-		setLoggingName("RotationLookupTable");
-		initialize();
-	}
+	RotationLookupTable();
 
 	void initialize();
 

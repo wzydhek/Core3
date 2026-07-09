@@ -125,21 +125,9 @@ class AffectorRoad : public ProceduralRule<'AROA'>, public AffectorProceduralRul
 	static const int OUT_OF_RANGE = 500;
 
 public:
-	AffectorRoad() : coordinateCount(0), width(0.f), familyID(0), featheringType(0), featheringAmount(0), featheringShader(0), featheringShaderDistance(0.5f) {
-		affectorType = HEIGHTROAD;
-	}
+	AffectorRoad();
 
-	~AffectorRoad() {
-		for (int i = 0; i < midPositions.size(); ++i)
-			delete midPositions.get(i);
-
-		midPositions.removeAll();
-
-		for (int i = 0; i < rectangles.size(); ++i)
-			delete rectangles.get(i);
-
-		rectangles.removeAll();
-	}
+	~AffectorRoad();
 
 	void process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator);
 
@@ -149,11 +137,7 @@ public:
 	void generateRectangles();
 	void sendDebugMessage(String message);
 
-	inline int getFamilyID() {
-		return familyID;
-	}
+	int getFamilyID();
 
-	bool isEnabled() {
-		return informationHeader.isEnabled();
-	}
+	bool isEnabled();
 };

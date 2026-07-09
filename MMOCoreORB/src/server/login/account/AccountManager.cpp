@@ -609,3 +609,26 @@ void AccountManager::expireSession(Reference<Account*> account, const String& se
 	}
 }
 #endif // !WITH_SWGREALMS_API
+
+void AccountManager::setRequiredVersion(const String& version) {
+	requiredVersion = version;
+}
+
+void AccountManager::setAutoRegistrationEnabled(bool enabled) {
+	autoRegistration = enabled;
+}
+
+void AccountManager::setDBSecret(const String& secret) {
+	dbSecret = secret;
+}
+
+bool AccountManager::isRequiredVersion(const String& version) {
+	if (requiredVersion.isEmpty())
+		return true;
+
+	return (requiredVersion == version);
+}
+
+bool AccountManager::isAutoRegistrationEnabled() {
+	return autoRegistration;
+}

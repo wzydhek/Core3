@@ -7,35 +7,18 @@ class HeroRingDataComponent : public DataObjectComponent {
 protected:
 	int charges;
 public:
-	HeroRingDataComponent() {
-		charges = 50;
-		addSerializableVariables();
-	}
+	HeroRingDataComponent();
 
-	virtual ~HeroRingDataComponent() {
+	virtual ~HeroRingDataComponent();
 
-	}
+	void writeJSON(nlohmann::json& j) const;
 
-	void writeJSON(nlohmann::json& j) const {
-		DataObjectComponent::writeJSON(j);
+	void setCharges(int num);
 
-		SERIALIZE_JSON_MEMBER(charges);
-	}
+	int getCharges();
 
-	void setCharges(int num) {
-		charges = num;
-	}
-
-	int getCharges() {
-		return charges;
-	}
-
-	bool isHeroRingData() {
-		return true;
-	}
+	bool isHeroRingData();
 
 private:
-	void addSerializableVariables() {
-		addSerializableVariable("charges", &charges);
-	}
+	void addSerializableVariables();
 };

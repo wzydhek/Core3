@@ -17,27 +17,15 @@ public:
 		String hardpointName;
 		float range;
 	public:
-		ComponentHardpoint(const String& tmpl, const String& hardpoint, float collisionDistance) {
-			templateName = tmpl;
-			hardpointName = hardpoint;
-			range = collisionDistance;
-		}
+		ComponentHardpoint(const String& tmpl, const String& hardpoint, float collisionDistance);
 
-		float getRange() const {
-			return range;
-		}
+		float getRange() const;
 
-		bool isVisible() const {
-			return !templateName.isEmpty();
-		}
+		bool isVisible() const;
 
-		const String& getTemplateName() const {
-			return templateName;
-		}
+		const String& getTemplateName() const;
 
-		const String& getHardpointName() const {
-			return hardpointName;
-		}
+		const String& getHardpointName() const;
 	};
 
 	class ComponentSlotData : public Object {
@@ -47,48 +35,23 @@ public:
 		bool targetable;
 		VectorMap<String, Vector<const ComponentHardpoint*>> componentHardpoints;
 	public:
-		ComponentSlotData(const String& slotName, const String& slotCompatability, float weight, bool isTargetable) {
-			name = slotName;
-			compatability = slotCompatability;
-			hitWeight = weight;
-			targetable = isTargetable;
-		}
+		ComponentSlotData(const String& slotName, const String& slotCompatability, float weight, bool isTargetable);
 
-		ComponentSlotData(const ComponentSlotData& rhs) : Object(rhs) {
-			name = rhs.name;
-			compatability = rhs.compatability;
-			hitWeight = rhs.hitWeight;
-			targetable = rhs.targetable;
-			componentHardpoints = rhs.componentHardpoints;
-		}
+		ComponentSlotData(const ComponentSlotData& rhs);
 
-		const VectorMap<String, Vector<const ComponentHardpoint*>>& getComponentHardpoints() const {
-			return componentHardpoints;
-		}
+		const VectorMap<String, Vector<const ComponentHardpoint*>>& getComponentHardpoints() const;
 
-		const Vector<const ComponentHardpoint*>& getHardpoint(const String& name) const {
-			return componentHardpoints.get(name);
-		}
+		const Vector<const ComponentHardpoint*>& getHardpoint(const String& name) const;
 
-		void addHardpointData(String componentName, Vector<const ComponentHardpoint*>& hardpoints) {
-			componentHardpoints.put(componentName, hardpoints);
-		}
+		void addHardpointData(String componentName, Vector<const ComponentHardpoint*>& hardpoints);
 
-		const String& getName() const {
-			return name;
-		}
+		const String& getName() const;
 
-		const String& getCompatability() const {
-			return compatability;
-		}
+		const String& getCompatability() const;
 
-		float getHitWeight() const {
-			return hitWeight;
-		}
+		float getHitWeight() const;
 
-		bool isTargetable() const {
-			return targetable;
-		}
+		bool isTargetable() const;
 	};
 
 protected:
@@ -103,14 +66,9 @@ public:
 
 	~ShipChassisData();
 
-	const String& getName() const {
-		return name;
-	}
-	float getWingOpenSpeed() const {
-		return wingOpenSpeed;
-	}
+	const String& getName() const;
 
-	const ComponentSlotData* getComponentSlotData(int slotIndex) const {
-		return componentMap.get(Components::shipComponentSlotToString(slotIndex));
-	}
+	float getWingOpenSpeed() const;
+
+	const ComponentSlotData* getComponentSlotData(int slotIndex) const;
 };

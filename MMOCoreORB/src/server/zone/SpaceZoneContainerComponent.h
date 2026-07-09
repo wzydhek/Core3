@@ -30,9 +30,7 @@ protected:
 	bool insertActiveArea(Zone* zone, ActiveArea* activeArea) const;
 	bool removeActiveArea(Zone* zone, ActiveArea* activeArea) const;
 public:
-	SpaceZoneContainerComponent() {
-		setLoggingName("SpaceZoneContainerComponent");
-	}
+	SpaceZoneContainerComponent();
 
 	virtual bool transferObject(SceneObject* sceneObject, SceneObject* object, int containmentType, bool notifyClient = false, bool allowOverflow = false, bool notifyRoot = true) const;
 

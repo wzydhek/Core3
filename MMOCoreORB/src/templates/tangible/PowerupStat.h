@@ -18,49 +18,15 @@ protected:
 	float value;
 public:
 
-	PowerupStat() {
-		value = 0;
+	PowerupStat();
 
-		addSerializableVariables();
-	}
+	PowerupStat(const PowerupStat& p);
 
-	PowerupStat(const PowerupStat& p) : Object(), Serializable() {
-		attributeToModify = p.attributeToModify;
-		name = p.name;
-		pupAttribute = p.pupAttribute;
-		value = p.value;
+	PowerupStat(const String& att, const String& n, const String& p);
 
-		addSerializableVariables();
-	}
+	PowerupStat& operator=(const PowerupStat& p);
 
-	PowerupStat(const String& att, const String& n, const String& p) {
-		attributeToModify = att;
-		name = n;
-		pupAttribute = p;
-		value = 0;
-
-		addSerializableVariables();
-	}
-
-	PowerupStat& operator=(const PowerupStat& p) {
-		if (this == &p)
-			return *this;
-
-		attributeToModify = p.attributeToModify;
-		name = p.name;
-		pupAttribute = p.pupAttribute;
-		value = p.value;
-
-		return *this;
-	}
-
-	bool operator==(const PowerupStat& stat) {
-		if (this == &stat)
-			return true;
-
-		return ((attributeToModify == stat.attributeToModify)
-				&& (name == stat.name) && (pupAttribute == stat.pupAttribute));
-	}
+	bool operator==(const PowerupStat& stat);
 
 	friend void to_json(nlohmann::json& j, const PowerupStat& s) {
 		j["attributeToModify"] = s.attributeToModify;
@@ -69,30 +35,15 @@ public:
 		j["value"] = s.value;
 	}
 
-	void addSerializableVariables() {
-		addSerializableVariable("attributeToModify", &attributeToModify);
-		addSerializableVariable("name", &name);
-		addSerializableVariable("pupAttribute", &pupAttribute);
-		addSerializableVariable("value", &value);
-	}
+	void addSerializableVariables();
 
-	const String& getAttributeToModify() const {
-		return attributeToModify;
-	}
+	const String& getAttributeToModify() const;
 
-	const String& getName() const {
-		return name;
-	}
+	const String& getName() const;
 
-	const String& getPupAttribute() const {
-		return pupAttribute;
-	}
+	const String& getPupAttribute() const;
 
-	float getValue() const {
-		return value;
-	}
+	float getValue() const;
 
-	void setValue(float v) {
-		value = v;
-	}
+	void setValue(float v);
 };

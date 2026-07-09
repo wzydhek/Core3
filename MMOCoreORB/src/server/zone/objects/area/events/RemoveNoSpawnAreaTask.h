@@ -14,23 +14,7 @@ class RemoveNoSpawnAreaTask : public Task {
 	ManagedWeakReference<ActiveArea*> area;
 
 public:
-	RemoveNoSpawnAreaTask(ActiveArea* camp) {
-		area = camp;
-	}
+	RemoveNoSpawnAreaTask(ActiveArea* camp);
 
-	void run() {
-		ManagedReference<ActiveArea*> strongArea = area.get();
-
-		if (strongArea == nullptr)
-			return;
-
-		ZoneServer* zoneServer = strongArea->getZoneServer();
-
-		if (zoneServer == nullptr || zoneServer->isServerShuttingDown())
-			return;
-
-		Locker locker(strongArea);
-
-		strongArea->destroyObjectFromWorld(true);
-	}
+	void run();
 };

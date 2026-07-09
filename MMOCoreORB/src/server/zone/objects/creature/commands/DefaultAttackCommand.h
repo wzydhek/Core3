@@ -9,21 +9,8 @@
 class DefaultAttackCommand : public CombatQueueCommand {
 public:
 
-	DefaultAttackCommand(const String& name, ZoneProcessServer* server) : CombatQueueCommand(name, server) {
-	}
+	DefaultAttackCommand(const String& name, ZoneProcessServer* server);
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		if (!creature->isAiAgent())
-			return GENERALERROR;
-
-		return doCombatAction(creature, target, arguments);
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 };

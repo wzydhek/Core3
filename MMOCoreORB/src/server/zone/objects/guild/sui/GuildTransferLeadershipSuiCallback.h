@@ -9,30 +9,13 @@
 
 //#include "server/zone/managers/guild/GuildManager.h"
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/sui/SuiBox.h"
 
 class GuildTransferLeadershipSuiCallback : public SuiCallback {
 public:
-	GuildTransferLeadershipSuiCallback(ZoneServer* server)
-		: SuiCallback(server) {
-	}
+	GuildTransferLeadershipSuiCallback(ZoneServer* server);
 
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!suiBox->isInputBox() || cancelPressed)
-			return;
-
-		if (args->size() < 1)
-					return;
-
-		String newOwnerName = args->get(0).toString();
-
-		ManagedReference<GuildManager*> guildManager = server->getGuildManager();
-
-		if (guildManager == nullptr)
-			return;
-
-		guildManager->sendTransferAckTo(player, newOwnerName, suiBox->getUsingObject().get());
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 
 };

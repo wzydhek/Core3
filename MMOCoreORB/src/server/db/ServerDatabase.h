@@ -21,18 +21,10 @@ public:
 	ServerDatabase(conf::ConfigManager* configManager);
 	~ServerDatabase();
 
-	inline static Database* instance() {
-		if (databases == nullptr)
-			throw DatabaseException("No Server Database initiated");
+	static Database* instance();
 
-		int i = currentDB.postIncrement() % databases->size();
+	int getSchemaVersion() const;
 
-		return databases->get(i);
-	}
-
-	inline int getSchemaVersion() const {
-		return dbSchemaVersion;
-	}
 private:
 	void alterDatabase(int nextVersion, const String& alterSql);
 	void updateDatabaseSchema();

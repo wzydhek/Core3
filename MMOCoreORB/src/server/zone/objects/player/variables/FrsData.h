@@ -12,62 +12,25 @@ class FrsData : public Object {
 	int rank;
 
 public:
-	FrsData() : Object() {
-		councilType = 0;
-		rank = -1;
-	}
+	FrsData();
 
-	FrsData(const FrsData& data) : Object() {
-		councilType = data.councilType;
-		rank = data.rank;
-	}
+	FrsData(const FrsData& data);
 
-	FrsData& operator=(const FrsData& data) {
-		if (this == &data)
-			return *this;
+	FrsData& operator=(const FrsData& data);
 
-		councilType = data.councilType;
-		rank = data.rank;
+	friend void to_json(nlohmann::json& j, const FrsData& f);
 
-		return *this;
-	}
+	bool operator==(const FrsData& data) const;
 
-	friend void to_json(nlohmann::json& j, const FrsData& f) {
-		j["councilType"] = f.councilType;
-		j["rank"] = f.rank;
-	}
+	void setCouncilType(int type);
 
-	bool operator==(const FrsData& data) const {
-		return
-			councilType == data.councilType &&
-			rank == data.rank;
-	}
+	int getCouncilType() const;
 
-	void setCouncilType(int type) {
-		councilType = type;
-	}
+	void setRank(int newRank);
 
-	int getCouncilType() const {
-		return councilType;
-	}
+	int getRank() const;
 
-	void setRank(int newRank) {
-		rank = newRank;
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	int getRank() const {
-		return rank;
-	}
-
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return TypeInfo<int >::toBinaryStream(&councilType, stream) &&
-				TypeInfo<int >::toBinaryStream(&rank, stream);
-	}
-
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		TypeInfo<int >::parseFromBinaryStream(&councilType, stream);
-		TypeInfo<int >::parseFromBinaryStream(&rank, stream);
-
-		return true;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 };

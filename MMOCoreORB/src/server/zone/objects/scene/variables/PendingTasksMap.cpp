@@ -65,3 +65,6 @@ Reference<Task*> PendingTasksMap::popNextOrderedTask() {
 	return strongTaskReference;
 }
 
+uint64 PendingTasksMap::decrementPendingTasks() {
+	return pendingTasksSize.decrement();
+}

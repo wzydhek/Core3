@@ -1,0 +1,45 @@
+#include "UninviteCommand.h"
+#include "server/zone/ZoneServer.h"
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/chat/StringIdChatParameter.h"
+
+UninviteCommand::UninviteCommand(const String& name, ZoneProcessServer* server) : QueueCommand(name, server) {
+}
+
+int UninviteCommand::doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
+	if (!checkStateMask(creature))
+		return INVALIDSTATE;
+
+	if (!checkInvalidLocomotions(creature))
+		return INVALIDLOCOMOTION;
+
+	ManagedReference<SceneObject*> object = server->getZoneServer()->getObject(target);
+
+	if (object == nullptr || !object->isPlayerCreature())
+		return GENERALERROR;
+
+	CreatureObject* play = cast<CreatureObject*>(object.get());
+
+	try {
+		Locker clocker(play, creature);
+
+		if (play->getGroupInviterID() != creature->getObjectID()) {
+			creature->sendSystemMessage("@group:must_be_leader");
+			return GENERALERROR;
+		} else {
+			play->updateGroupInviterID(0);
+			play->sendSystemMessage("@group:uninvite_self");
+
+			StringIdChatParameter stringId;
+			stringId.setStringId("group", "uninvite_target");
+			stringId.setTT(play->getObjectID());
+			creature->sendSystemMessage(stringId);
+		}
+
+	} catch (Exception& e) {
+		System::out << "Exception in parseGroupUninvite(CreatureObject* player, Message* pack)\n";
+		return GENERALERROR;
+	}
+
+	return SUCCESS;
+}

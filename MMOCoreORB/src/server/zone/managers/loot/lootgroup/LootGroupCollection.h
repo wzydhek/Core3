@@ -13,37 +13,11 @@ class LootGroupCollection {
 	Vector<LootGroupCollectionEntry> entries;
 
 public:
-	LootGroupCollection() {
-	}
+	LootGroupCollection();
 
-	void readObject(LuaObject* obj, int level) {
-		if (!obj->isValidTable())
-			return;
+	void readObject(LuaObject* obj, int level);
 
-		lua_State* L = obj->getLuaState();
+	int count() const;
 
-		for (int i = 1; i <= obj->getTableSize(); ++i) {
-			lua_rawgeti(L, -1, i);
-
-			LuaObject luacollection(L);
-
-			LootGroupCollectionEntry entry;
-			entry.readObject(&luacollection, level);
-
-			entries.add(entry);
-
-			luacollection.pop();
-		}
-	}
-
-	inline int count() const {
-		return entries.size();
-	}
-
-	const LootGroupCollectionEntry* get(int i) const {
-		if (i < 0 || i >= entries.size())
-			return nullptr;
-
-		return &entries.get(i);
-	}
+	const LootGroupCollectionEntry* get(int i) const;
 };

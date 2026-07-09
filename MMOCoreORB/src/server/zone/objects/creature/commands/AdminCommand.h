@@ -5,10 +5,7 @@
 class AdminCommand : public QueueCommand {
 
 public:
-	AdminCommand(const String& skillName, ZoneProcessServer* serv) : QueueCommand(skillName, serv) {
-	}
+	AdminCommand(const String& skillName, ZoneProcessServer* serv);
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-		return SUCCESS;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 };

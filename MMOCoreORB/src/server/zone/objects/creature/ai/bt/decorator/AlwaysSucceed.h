@@ -13,27 +13,11 @@ namespace decorator {
 
 class AlwaysSucceed: public Decorator {
 public:
-	AlwaysSucceed(const String& className, const uint32 id, const LuaObject& args)
-			: Decorator(className, id, args) {
-	}
+	AlwaysSucceed(const String& className, const uint32 id, const LuaObject& args);
 
-	AlwaysSucceed(const AlwaysSucceed& b)
-			: Decorator(b) {
-	}
+	AlwaysSucceed(const AlwaysSucceed& b);
 
-	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const {
-		assert(child != nullptr);
-
-		Behavior::Status result = child->doAction(agent);
-
-		if (result == RUNNING)
-			agent->clearRunningChain();
-
-		if (result == SUCCESS || result == FAILURE || result == RUNNING)
-			return SUCCESS;
-
-		return result;
-	}
+	Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 }
@@ -43,3 +27,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt::decorator;

@@ -17,14 +17,9 @@ class LootLotteryTimeoutTask : public Task {
 	ManagedReference<LootLotterySession*> session;
 
 public:
-	LootLotteryTimeoutTask(LootLotterySession* ses) : Task() {
-		session = ses;
-	}
+	LootLotteryTimeoutTask(LootLotterySession* ses);
 
-	void run() {
-		if (session != nullptr)
-			session->doLotteryDraw();
-	}
+	void run();
 
 };
 

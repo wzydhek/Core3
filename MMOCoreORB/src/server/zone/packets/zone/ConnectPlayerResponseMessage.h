@@ -12,27 +12,15 @@
 
 class ConnectPlayerResponseMessage : public BaseMessage {
 public:
-   ConnectPlayerResponseMessage() : BaseMessage() {
-		    insertShort(0x02);
-	   		insertInt(0x6137556F);
-
-	   		insertInt(0);
-   }
+	ConnectPlayerResponseMessage();
 
 };
 
 class ConnectPlayerMessageCallback : public MessageCallback {
 public:
-	ConnectPlayerMessageCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server) {
+	ConnectPlayerMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-	}
-
-	void run() {
-		ConnectPlayerResponseMessage* cprm = new ConnectPlayerResponseMessage();
-		client->sendMessage(cprm);
-	}
+	void run();
 };

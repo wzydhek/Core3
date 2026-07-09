@@ -87,67 +87,31 @@ public:
 	 */
 	Behavior(const String& className, const uint32 id, const LuaObject& args);
 
-	Behavior(const Behavior& b) :
-			Object(), className(b.className), id(b.id), parent(b.parent) {
-	}
+	Behavior(const Behavior& b);
 
-	Behavior& operator=(const Behavior& b) {
-		if (this == &b)
-			return *this;
+	Behavior& operator=(const Behavior& b);
 
-		className = b.className;
-		id = b.id;
-		parent = b.parent;
+	virtual ~Behavior();
 
-		return *this;
-	}
+	virtual String print() const;
 
-	virtual ~Behavior() {
-	}
+	virtual bool isComposite() const;
 
-	virtual String print() const {
-		return className;
-	}
+	virtual bool isDecorator() const;
 
-	virtual bool isComposite() const {
-		return false;
-	}
+	virtual bool isSocket() const;
 
-	virtual bool isDecorator() const {
-		return false;
-	}
+	void setParent(Behavior* parent_);
 
-	virtual bool isSocket() const {
-		return false;
-	}
+	uint32 getID() const;
 
-	void setParent(Behavior* parent_) {
-		assert(parent_ != nullptr);
-		assert(parent_->isComposite() || parent_->isDecorator());
-		parent = parent_;
-	}
+	Behavior* getParent() const;
 
-	uint32 getID() const {
-		return id;
-	}
+	virtual Behavior* getChild(uint32) const;
 
-	Behavior* getParent() const {
-		return parent.get();
-	}
+	virtual bool hasChild(Behavior*) const;
 
-	virtual Behavior* getChild(uint32) const {
-		return NULL;
-	}
-
-	virtual bool hasChild(Behavior*) const {
-		return false;
-	}
-
-	virtual Vector<const Behavior*> getRecursiveChildList() const {
-		Vector<const Behavior*> retVal;
-		retVal.add(this);
-		return retVal;
-	}
+	virtual Vector<const Behavior*> getRecursiveChildList() const;
 
 protected:
 	/**

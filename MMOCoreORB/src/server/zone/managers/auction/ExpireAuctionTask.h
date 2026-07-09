@@ -14,18 +14,7 @@ class ExpireAuctionTask : public Task {
 	ManagedWeakReference<AuctionItem*> item;
 
 public:
-	ExpireAuctionTask(AuctionManager* manager, AuctionItem* it) {
-		auctionManager = manager;
-		item = it;
-	}
+	ExpireAuctionTask(AuctionManager* manager, AuctionItem* it);
 
-	void run() {
-		ManagedReference<AuctionManager*> strongRef = auctionManager.get();
-		ManagedReference<AuctionItem*> strongRefItem = item.get();
-
-		if (strongRef == nullptr || strongRefItem == nullptr)
-			return;
-
-		strongRef->expireAuction(strongRefItem);
-	}
+	void run();
 };

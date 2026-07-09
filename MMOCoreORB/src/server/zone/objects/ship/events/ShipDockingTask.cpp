@@ -1,5 +1,21 @@
 #include "ShipDockingTask.h"
 
+ShipDockingTask::ShipDockingTask(ShipObject* ship, ShipObject* target) : Task() {
+	setLoggingName("ShipDockingTask");
+
+	shipRef = ship;
+	targetRef = target;
+
+	timeStart = System::getMiliTime();
+	timeTotal = 0;
+
+	rotationTime = 0.f;
+	positionTime = 0.f;
+
+	dockingStage = INITIALIZE;
+	interlockStatus = false;
+}
+
 void ShipDockingTask::run() {
 	auto ship = shipRef.get();
 	auto target = targetRef.get();
@@ -262,4 +278,52 @@ Vector3 ShipDockingTask::getRotationAxis(const Vector3& boundingAxis) {
 	}
 
 	return Vector3(0,0,0);
+}
+
+uint64 ShipDockingTask::getTimeElapsed() const {
+	return System::getMiliTime() - timeStart;
+}
+
+void ShipDockingTask::setSpeed(ShipObject* ship) {
+	float throttle = 1.f;
+
+	if (rotationTime > 0.f && rotationTime > positionTime) {
+		throttle = Math::clamp(0.f, positionTime / rotationTime, 1.f);
+	}
+
+	dockTransform.setSpeed(Math::clamp((float)SPEED_MIN, ship->getEngineMaxSpeed() * throttle, (float)SPEED_MAX));
+}
+
+void ShipDockingTask::setTimeTotal(ShipObject* ship) {
+	const auto& sTransform = ship->getCurrentTransform();
+	const auto& sPosition = sTransform.getPosition();
+	const auto& sRotation = sTransform.getRotation();
+	const auto& dPosition = dockTransform.getPosition();
+	const auto& dRotation = dockTransform.getRotation();
+
+	if (sPosition != dPosition) {
+		positionTime = sPosition.distanceTo(dPosition) / Math::max(ship->getEngineMaxSpeed() * 0.5f, 1.f);
+	}
+
+	if (sRotation != dRotation) {
+		float tY = SpaceMath::getRotationRate(dRotation[0], sRotation[0]) / Math::max(ship->getEngineYawRate() * 0.5f, 1.f);
+		float tP = SpaceMath::getRotationRate(dRotation[1], sRotation[1]) / Math::max(ship->getEnginePitchRate() * 0.5f, 1.f);
+		float tR = SpaceMath::getRotationRate(dRotation[2], sRotation[2]) / Math::max(ship->getEngineRollRate() * 0.5f, 1.f);
+
+		rotationTime = Math::max(tY, Math::max(tP, tR));
+	}
+
+	timeTotal = Math::clamp((float)DURATION_MIN, Math::max(positionTime, rotationTime), (float)DURATION_MAX);
+}
+
+bool ShipDockingTask::isShipValid(ShipObject* ship) {
+	return ship != nullptr && ship->isShipLaunched() && !ship->isHyperspacing() && !ship->isShipDestroyed() && !ship->isShipDisabled();
+}
+
+bool ShipDockingTask::isTargetValid(ShipObject* ship) {
+	return ship != nullptr && ship->isShipLaunched() && !ship->isHyperspacing() && !ship->isShipDestroyed() && ship->getCurrentSpeed() <= 0.f;
+}
+
+bool ShipDockingTask::isDocking(ShipObject* ship) {
+	return ship != nullptr && (ship->getOptionsBitmask() & OptionBitmask::DOCKING);
 }

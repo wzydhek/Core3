@@ -57,28 +57,15 @@ namespace server {
 				//Account* lookupAccount(uint64 characterID);
 				//Account* lookupAccount(const String& username);
 
-				inline void setRequiredVersion(const String& version) {
-					requiredVersion = version;
-				}
+				void setRequiredVersion(const String& version);
 
-				inline void setAutoRegistrationEnabled(bool enabled) {
-					autoRegistration = enabled;
-				}
+				void setAutoRegistrationEnabled(bool enabled);
 
-				inline void setDBSecret(const String& secret) {
-					dbSecret = secret;
-				}
+				void setDBSecret(const String& secret);
 
-				inline bool isRequiredVersion(const String& version) {
-					if (requiredVersion.isEmpty())
-						return true;
+				bool isRequiredVersion(const String& version);
 
-					return (requiredVersion == version);
-				}
-
-				inline bool isAutoRegistrationEnabled() {
-					return autoRegistration;
-				}
+				bool isAutoRegistrationEnabled();
 
 #ifndef WITH_SWGREALMS_API
 				static void expireSession(Reference<Account*> account, const String& sessionID);

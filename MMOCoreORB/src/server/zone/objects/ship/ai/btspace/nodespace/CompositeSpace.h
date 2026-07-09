@@ -18,89 +18,30 @@ class CompositeSpace : public BehaviorSpace {
 protected:
 	Vector<Reference<BehaviorSpace*>> children;
 
-	Vector<Reference<BehaviorSpace*>> shuffleChildren() const {
-		Vector<Reference<BehaviorSpace*>> ran = children;
-
-		for (int i = 0; i < ran.size(); ++i) {
-			int index = (int)System::random(ran.size() - 1 - i) + i;
-
-			Reference<BehaviorSpace*> temp = ran.set(i, ran.get(index));
-
-			ran.set(index, temp);
-		}
-
-		return ran;
-	}
+	Vector<Reference<BehaviorSpace*>> shuffleChildren() const;
 
 public:
-	CompositeSpace(const String& className, const uint32 id, const LuaObject& args) : BehaviorSpace(className, id, args) {
-	}
+	CompositeSpace(const String& className, const uint32 id, const LuaObject& args);
 
-	CompositeSpace(const CompositeSpace& b) : BehaviorSpace(b), children(b.children) {
-	}
+	CompositeSpace(const CompositeSpace& b);
 
-	CompositeSpace& operator=(const CompositeSpace& b) {
-		if (this == &b)
-			return *this;
+	CompositeSpace& operator=(const CompositeSpace& b);
 
-		BehaviorSpace::operator=(b);
-		children = b.children;
+	virtual ~CompositeSpace();
 
-		return *this;
-	}
+	bool isCompositeSpace() const;
 
-	virtual ~CompositeSpace() {
-	}
+	bool hasChild(BehaviorSpace* c) const;
 
-	bool isCompositeSpace() const {
-		return true;
-	}
+	BehaviorSpace* getChild(uint32 cID) const;
 
-	bool hasChild(BehaviorSpace* c) const {
-		for (int idx = 0; idx < children.size(); ++idx)
-			if (children.get(idx) == c)
-				return true;
+	Vector<const BehaviorSpace*> getRecursiveChildList() const;
 
-		return false;
-	}
-
-	BehaviorSpace* getChild(uint32 cID) const {
-		for (int idx = 0; idx < children.size(); ++idx)
-			if (children.get(idx)->getID() == cID)
-				return children.get(idx);
-
-		return NULL;
-	}
-
-	Vector<const BehaviorSpace*> getRecursiveChildList() const {
-		Vector<const BehaviorSpace*> retVal;
-		retVal.add(this);
-
-		for (int idx = 0; idx < children.size(); ++idx) {
-			retVal.addAll(children.get(idx)->getRecursiveChildList());
-		}
-
-		return retVal;
-	}
-
-	virtual void addChild(Reference<BehaviorSpace*> child) {
-		assert(child != this);
-
-		children.add(child);
-	}
+	virtual void addChild(Reference<BehaviorSpace*> child);
 
 	String print() const;
 
-	virtual bool checkConditions(ShipAiAgent* agent) const {
-		if (children.size() <= 0)
-			return false;
-
-		if (!BehaviorSpace::checkConditions(agent)) {
-			return true;
-		}
-
-		return true;
-	}
+	virtual bool checkConditions(ShipAiAgent* agent) const;
 
 	BehaviorSpace::Status doAction(ShipAiAgent* agent) const;
 };
@@ -112,3 +53,5 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace::nodespace;

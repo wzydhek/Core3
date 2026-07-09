@@ -14,32 +14,15 @@ class ShipDeedTemplate : public DeedTemplate {
 	int shipType;
 
 public:
-	ShipDeedTemplate() {
-		shipControlDevice = "";
-		shipType = 0;
+	ShipDeedTemplate();
 
-		setLoggingName("ShipDeedTemplate");
-	}
+	~ShipDeedTemplate();
 
-	~ShipDeedTemplate() {
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		DeedTemplate::readObject(templateData);
+	const String& getShipControlDeviceTemplate();
 
-		shipControlDevice = templateData->getStringField("shipControlDevice");
-		shipType = templateData->getIntField("shipType");
-	}
+	int getShipType();
 
-	inline const String& getShipControlDeviceTemplate() {
-		return shipControlDevice;
-	}
-
-	inline int getShipType() {
-		return shipType;
-	}
-
-	bool isShipDeedTemplate() {
-		return true;
-	}
+	bool isShipDeedTemplate();
 };

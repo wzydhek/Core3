@@ -10,55 +10,25 @@ protected:
 	bool sendSystemMessage;
 
 public:
-	QuestInfo() {
-		sendSystemMessage = true;
-	}
+	QuestInfo();
 
-	String getQuestName() {
-		return questName;
-	}
+	String getQuestName();
 
-	String getQuestParent() {
-		return questParent;
-	}
+	String getQuestParent();
 
-	String getQuestParameter() {
-		return questParameter;
-	}
+	String getQuestParameter();
 
-	String getJournalSummary() {
-		return journalSummary;
-	}
+	String getJournalSummary();
 
-	String getAttachScript() {
-		return attachScript;
-	}
+	String getAttachScript();
 
-	String getTaskOnComplete() {
-		return taskOnComplete;
-	}
+	String getTaskOnComplete();
 
-	String getTaskOnFail() {
-		return taskOnFail;
-	}
+	String getTaskOnFail();
 
-	String getQuestTarget() {
-		return questTarget;
-	}
+	String getQuestTarget();
 
-	bool shouldSendSystemMessage() {
-		return sendSystemMessage;
-	}
+	bool shouldSendSystemMessage();
 
-	void parseDataTableRow(DataTableRow* row) {
-		row->getValue(0, questName);
-		row->getValue(1, questParent);
-		row->getValue(2, attachScript);
-		row->getValue(3, journalSummary);
-		row->getValue(5, taskOnComplete);
-		row->getValue(6, taskOnFail);
-		row->getValue(7, questTarget);
-		row->getValue(8, questParameter);
-		row->getValue(11, sendSystemMessage);
-	}
+	void parseDataTableRow(DataTableRow* row);
 };

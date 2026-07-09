@@ -13,7 +13,6 @@ class VeteranRewardList : public Vector<VeteranReward> {
 
 public:
 
-	VeteranRewardList() : Vector<VeteranReward>() {
-	}
+	VeteranRewardList();
 
 };

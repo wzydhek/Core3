@@ -11,48 +11,21 @@
 
 class BoolParam : public TemplateBase<bool> {
 public:
-	BoolParam() : TemplateBase<bool>(false) {
-		setType(BOOL);
-	}
+	BoolParam();
 
-	BoolParam(bool b) : TemplateBase<bool>(b) {
-		setType(BOOL);
-	}
+	BoolParam(bool b);
 
-	BoolParam& operator= (bool val) {
-		create(val);
+	BoolParam& operator=(bool val);
 
-		return *this;
-	}
+	String toString() const;
 
-	String toString() const {
-		return String::valueOf((int)get());
-	}
-
-	static bool toBinaryStream(ObjectOutputStream* stream) {
-		return false;
-	}
+	static bool toBinaryStream(ObjectOutputStream* stream);
 
 	/*static bool parseFromString(T* address, const sys::lang::String& value, int version = 0) {
 		return address->parseFromString(value, version);
 	}*/
 
-	static bool parseFromBinaryStream(ObjectInputStream* stream) {
-		return false;
-	}
+	static bool parseFromBinaryStream(ObjectInputStream* stream);
 
-	virtual bool parse(engine::util::Chunk* source) {
-		uint8 readCase = source->readByte();
-
-		if (readCase == 1) {
-			create(source->readByte());
-
-			return true;
-		}
-
-		return false;
-		/*else {
-			create(false);
-		}*/
-	}
+	virtual bool parse(engine::util::Chunk* source);
 };

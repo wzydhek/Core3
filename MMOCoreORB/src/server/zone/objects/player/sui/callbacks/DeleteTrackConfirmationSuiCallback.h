@@ -8,35 +8,14 @@
 #include "server/zone/objects/player/sui/SuiCallback.h"
 #include "server/zone/objects/tangible/components/droid/DroidPlaybackModuleDataComponent.h"
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
+#include "server/zone/objects/creature/ai/DroidObject.h"
 
 class DeleteTrackConfirmationSuiCallback : public SuiCallback {
 public:
 	Reference<DroidPlaybackModuleDataComponent*> module;
 	int track;
-	DeleteTrackConfirmationSuiCallback(ZoneServer* server, DroidPlaybackModuleDataComponent* m, int index)
-		: SuiCallback(server) {
-		track = index;
-		module = m;
-	}
 
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
+	DeleteTrackConfirmationSuiCallback(ZoneServer* server, DroidPlaybackModuleDataComponent* m, int index);
 
-		if (!suiBox->isMessageBox())
-			return;
-
-		SuiMessageBox* listBox = cast<SuiMessageBox*>( suiBox);
-		ManagedReference<SceneObject*> object = suiBox->getUsingObject().get();
-
-		if (object == nullptr)
-			return;
-
-		DroidObject* droid = cast<DroidObject*>(object.get());
-
-		if (droid == nullptr || module == nullptr || cancelPressed)
-			return;
-
-		Locker crosslock(droid, player);
-		module->deleteTrack(player, track);
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

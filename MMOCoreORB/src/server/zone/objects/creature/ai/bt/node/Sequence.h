@@ -19,27 +19,21 @@ namespace node {
 
 class Sequence : public Composite {
 public:
-	Sequence(const String& className, const uint32 id, const LuaObject& args)
-			: Composite(className, id, args) {
-	}
+	Sequence(const String& className, const uint32 id, const LuaObject& args);
 
 	virtual Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 class ParallelSequence : public Composite {
 public:
-	ParallelSequence(const String& className, const uint32 id, const LuaObject& args)
-			: Composite(className, id, args) {
-	}
+	ParallelSequence(const String& className, const uint32 id, const LuaObject& args);
 
 	virtual Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 class RandomSequence : public Composite {
 public:
-	RandomSequence(const String& className, const uint32 id, const LuaObject& args)
-			: Composite(className, id, args) {
-	}
+	RandomSequence(const String& className, const uint32 id, const LuaObject& args);
 
 	virtual Behavior::Status execute(AiAgent* agent, unsigned int startIdx = 0) const;
 };
@@ -51,3 +45,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt::node;

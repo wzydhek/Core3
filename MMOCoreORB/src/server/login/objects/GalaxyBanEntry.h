@@ -18,78 +18,33 @@ private:
 public:
 	GalaxyBanEntry() = default;
 
-	GalaxyBanEntry(const GalaxyBanEntry& e) : Object() {
-		accountID = e.accountID;
-		creationDate = e.creationDate;
-		galaxyID = e.galaxyID;
-		banReason = e.banReason;
-		banAdmin = e.banAdmin;
-		banExpiration = e.banExpiration;
-	}
+	GalaxyBanEntry(const GalaxyBanEntry& e);
 
-	GalaxyBanEntry& operator=(const GalaxyBanEntry& e) {
-		if (this == &e)
-			return *this;
+	GalaxyBanEntry& operator=(const GalaxyBanEntry& e);
 
-		accountID = e.accountID;
-		creationDate = e.creationDate;
-		galaxyID = e.galaxyID;
-		banReason = e.banReason;
-		banAdmin = e.banAdmin;
-		banExpiration = e.banExpiration;
+	~GalaxyBanEntry();
 
-		return *this;
-	}
+	uint32 getAccountID() const;
 
-	~GalaxyBanEntry() {
+	const Time& getCreationDate() const;
 
-	}
+	uint32 getGalaxyID() const;
 
-	uint32 getAccountID() const {
-		return accountID;
-	}
+	void setAccountID(uint32 accountID);
 
-	const Time& getCreationDate() const {
-		return creationDate;
-	}
+	void setCreationDate(Time creationDate);
 
-	uint32 getGalaxyID() const {
-		return galaxyID;
-	}
+	void setGalaxyID(uint32 galaxyID);
 
-	void setAccountID(uint32 accountID) {
-		this->accountID = accountID;
-	}
+	void setBanReason(String banReason);
 
-	void setCreationDate(Time creationDate) {
-		this->creationDate = creationDate;
-	}
+	const String& getBanReason() const;
 
-	void setGalaxyID(uint32 galaxyID) {
-		this->galaxyID = galaxyID;
-	}
+	void setBanExpiration(Time banExpiration);
 
-	void setBanReason(String banReason) {
-		this->banReason = banReason;
-	}
+	uint32 getBanExpiration() const;
 
-	const String& getBanReason() const {
-		return banReason;
-	}
+	void setBanAdmin(uint32 banAdmin);
 
-	void setBanExpiration(Time banExpiration) {
-		this->banExpiration = banExpiration;
-	}
-
-	uint32 getBanExpiration() const {
-		return banExpiration.getTime();
-	}
-
-	void setBanAdmin(uint32 banAdmin) {
-		this->banAdmin = banAdmin;
-	}
-
-	uint32 getBanAdmin() const {
-		return banAdmin;
-	}
+	uint32 getBanAdmin() const;
 };

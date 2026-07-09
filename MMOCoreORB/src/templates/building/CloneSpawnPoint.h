@@ -9,67 +9,30 @@
 
 #include "engine/util/u3d/Coordinate.h"
 #include "engine/util/u3d/Quaternion.h"
+#include "engine/lua/LuaObject.h"
 
 class CloneSpawnPoint : public Object {
 	Coordinate coordinate;
 	Quaternion direction;
 	int cellid;
 public:
-	CloneSpawnPoint() : cellid(0) {
-	}
+	CloneSpawnPoint();
 
-	CloneSpawnPoint(const CloneSpawnPoint& p) : Object() {
-		coordinate.setPositionX(p.getPositionX());
-		coordinate.setPositionZ(p.getPositionZ());
-		coordinate.setPositionY(p.getPositionY());
+	CloneSpawnPoint(const CloneSpawnPoint& p);
 
-		direction.set(p.direction.getW(), p.direction.getZ(), p.direction.getY(), p.direction.getZ());
-		cellid = p.cellid;
-	}
+	CloneSpawnPoint& operator=(const CloneSpawnPoint& p);
 
-	CloneSpawnPoint& operator=(const CloneSpawnPoint& p) {
-		if (this == &p) {
-			return *this;
-		}
+	void parseFromLua(LuaObject* luaObject);
 
-		coordinate = p.coordinate;
-		direction = p.direction;
-		cellid = p.cellid;
+	float getPositionX() const;
 
-		return *this;
-	}
+	float getPositionY() const;
 
-	void parseFromLua(LuaObject* luaObject) {
-		coordinate.setPositionX(luaObject->getFloatField("x"));
-		coordinate.setPositionZ(luaObject->getFloatField("z"));
-		coordinate.setPositionY(luaObject->getFloatField("y"));
+	float getPositionZ() const;
 
-		direction.set(luaObject->getFloatField("ow"), luaObject->getFloatField("ox"), luaObject->getFloatField("oy"), luaObject->getFloatField("oz"));
+	Coordinate* getCoordinate();
 
-		cellid = luaObject->getIntField("cellid");
-	}
+	Quaternion* getDirection();
 
-	float getPositionX() const {
-		return coordinate.getPositionX();
-	}
-
-	float getPositionY() const {
-		return coordinate.getPositionY();
-	}
-
-	float getPositionZ() const {
-		return coordinate.getPositionZ();
-	}
-
-	inline Coordinate* getCoordinate() {
-		return &coordinate;
-	}
-
-	inline Quaternion* getDirection() {
-		return &direction;
-	}
-
-	inline int getCellID() {
-		return cellid;
-	}
+	int getCellID();
 };

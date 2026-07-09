@@ -27,21 +27,13 @@ class MapLocationTable : public Object, public ReadWriteLock {
 	VectorMap<String, SortedVector<MapLocationEntry> > locations;
 
 public:
-	MapLocationTable() {
-		locations.setNoDuplicateInsertPlan();
-	}
+	MapLocationTable();
 
-	MapLocationTable(const MapLocationTable& t) : Object(), ReadWriteLock() {
-		locations = t.locations;
-	}
+	MapLocationTable(const MapLocationTable& t);
 
-	Object* clone() {
-		return ObjectCloner<MapLocationTable>::clone(this);
-	}
+	Object* clone();
 
-	Object* clone(void* object) {
-		return TransactionalObjectCloner<MapLocationTable>::clone(this);
-	}
+	Object* clone(void* object);
 
 	void transferObject(SceneObject* object);
 
@@ -53,13 +45,9 @@ public:
 
 	const SortedVector<MapLocationEntry> getLocation(const String& name) const;
 
-	const SortedVector<MapLocationEntry>& get(int index) const {
-		return locations.elementAt(index).getValue();
-	}
+	const SortedVector<MapLocationEntry>& get(int index) const;
 
 	int findLocation(const String& name) const;
 
-	int size() const {
-		return locations.size();
-	}
+	int size() const;
 };

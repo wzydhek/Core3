@@ -8,15 +8,7 @@
 
 class SelectCharacter : public BaseMessage {
 public:
-	SelectCharacter(uint64 characterID) {
-		insertShort(0x02);
-		insertInt(STRING_HASHCODE("SelectCharacter"));
+	SelectCharacter(uint64 characterID);
 
-		insertLong(characterID);
-		insertInt(STRING_HASHCODE("SWGEmu")); // required for SWGEmu servers
-	}
-
-	static uint64 parse(Packet* pack) {
-		return pack->parseInt(10);
-	}
+	static uint64 parse(Packet* pack);
 };

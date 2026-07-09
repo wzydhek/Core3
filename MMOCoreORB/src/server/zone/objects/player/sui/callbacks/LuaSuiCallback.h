@@ -15,10 +15,7 @@ class LuaSuiCallback : public SuiCallback {
 	String screenPlayCallback;
 
 public:
-	LuaSuiCallback(ZoneServer* zserv, const String& play, const String& callback) : SuiCallback(zserv) {
-		screenPlay = play;
-		screenPlayCallback = callback;
-	}
+	LuaSuiCallback(ZoneServer* zserv, const String& play, const String& callback);
 
 	void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args);
 };

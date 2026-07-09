@@ -13,17 +13,9 @@ class CampKitTemplate : public SharedTangibleObjectTemplate {
 	String spawnObjectTemplate;
 
 public:
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	void readObject(LuaObject* templateData);
 
-		spawnObjectTemplate = templateData->getStringField("spawnObjectTemplate");
-	}
+	const String& getSpawnObjectTemplate();
 
-	inline const String& getSpawnObjectTemplate() {
-		return spawnObjectTemplate;
-	}
-
-	bool isCampKitTemplate() {
-		return true;
-	}
+	bool isCampKitTemplate();
 };

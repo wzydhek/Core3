@@ -9,25 +9,9 @@
 class Melee1hLunge1Command : public CombatQueueCommand {
 public:
 
-	Melee1hLunge1Command(const String& name, ZoneProcessServer* server)
-		: CombatQueueCommand(name, server) {
-	}
+	Melee1hLunge1Command(const String& name, ZoneProcessServer* server);
 
-	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const {
-
-		if (!checkStateMask(creature))
-			return INVALIDSTATE;
-
-		if (!checkInvalidLocomotions(creature))
-			return INVALIDLOCOMOTION;
-
-		int result = doCombatAction(creature, target);
-
-		if (result == SUCCESS)
-			creature->notifyObservers(ObserverEventType::ABILITYUSED, nullptr, STRING_HASHCODE("melee1hlunge1"));
-
-		return result;
-	}
+	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 
 
 };

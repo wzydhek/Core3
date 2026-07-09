@@ -14,15 +14,7 @@ class RemoveAggroTask : public Task {
 	ManagedReference<TangibleObject*> target;
 	int value;
 public:
-	RemoveAggroTask(TangibleObject* me, TangibleObject* cr, int va) {
-		self = me;
-		target = cr;
-		value = va;
-	}
+	RemoveAggroTask(TangibleObject* me, TangibleObject* cr, int va);
 
-	void run() {
-		Locker locker(self);
-		ThreatMap* threatMap = self->getThreatMap();
-		threatMap->removeAggro(target, value);
-	}
+	void run();
 };

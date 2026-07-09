@@ -19,15 +19,9 @@ public:
 
 	void readObject(IffStream* iffStream);
 
-	inline int getNodeCount() {
-		return nodes.size();
-	}
+	int getNodeCount();
 
-	inline WorldSnapshotNode* getNode(int idx) {
-		return &nodes.get(idx);
-	}
+	WorldSnapshotNode* getNode(int idx);
 
-	inline String getObjectTemplateName(int idx) const {
-		return objectTemplateNameList.get(idx);
-	}
+	String getObjectTemplateName(int idx) const;
 };

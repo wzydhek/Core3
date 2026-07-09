@@ -18,8 +18,7 @@ namespace server {
 
 	class APIProxyGuildManager : public BaseAPIProxy {
 	public:
-		APIProxyGuildManager() : BaseAPIProxy("PlayerManager")  {
-		}
+		APIProxyGuildManager();
 
 		server::zone::managers::guild::GuildManager* getGuildManager();
 		void handle(APIRequest& apiRequest);

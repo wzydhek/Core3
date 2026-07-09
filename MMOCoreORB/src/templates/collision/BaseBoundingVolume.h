@@ -17,9 +17,7 @@ public:
 	virtual ~BaseBoundingVolume() { }
 	virtual const AABB& getBoundingBox() const = 0;
 
-	virtual const Sphere& getBoundingSphere() const {
-		return bsphere;
-	}
+	virtual const Sphere& getBoundingSphere() const;
 
 #ifdef OSG_RENDERER
 	virtual osg::ref_ptr<osg::Node> draw() const = 0;

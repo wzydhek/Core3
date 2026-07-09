@@ -13,21 +13,11 @@ class InstrumentObjectTemplate : public SharedTangibleObjectTemplate {
 	int instrumentType;
 
 public:
-	InstrumentObjectTemplate() {
-		instrumentType = 0;
-	}
+	InstrumentObjectTemplate();
 
-	void readObject(LuaObject* templateData) override {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	void readObject(LuaObject* templateData) override;
 
-		instrumentType = templateData->getIntField("instrumentType");
-	}
+	int getInstrumentType() const;
 
-	inline int getInstrumentType() const {
-		return instrumentType;
-	}
-
-	bool isInstrumentObjectTemplate() const override {
-		return true;
-	}
+	bool isInstrumentObjectTemplate() const override;
 };

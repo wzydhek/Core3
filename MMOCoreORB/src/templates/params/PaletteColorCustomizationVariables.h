@@ -16,31 +16,15 @@ protected:
 	Vector<PaletteColorCustomizationVariable*> variables;
 
 public:
-	PaletteColorCustomizationVariables() : Param() {
-	}
+	PaletteColorCustomizationVariables();
 
-	PaletteColorCustomizationVariables(const PaletteColorCustomizationVariables& p) : Param() {
-		variables = p.variables;
-	}
+	PaletteColorCustomizationVariables(const PaletteColorCustomizationVariables& p);
 
-	~PaletteColorCustomizationVariables() {
-		/*QMap<QString, PaletteColorCustomizationVariable*>::const_iterator i;
-
-		for (i = variables.constBegin(); i != variables.constEnd(); ++i)
-			delete i.value();*/
-
-		for (int i = 0; i < variables.size(); ++i)
-			delete variables.get(i);
-
-		//std::cout << "DELETING PaletteColorCustomizationVariables\n";
-	}
+	~PaletteColorCustomizationVariables();
 
 	String toString() const;
 
-	void toString(String& str) const {
-		//std::cout << "entering void toString(QString& str)\n";
-		//str = test;
-	}
+	void toString(String& str) const;
 
 	bool parse(Chunk* source);
 

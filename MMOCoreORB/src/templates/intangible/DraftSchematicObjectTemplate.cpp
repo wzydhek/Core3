@@ -258,3 +258,119 @@ const Vector<Reference<ResourceWeight*> >* DraftSchematicObjectTemplate::getReso
 	return tangibleTemplate->getResourceWeights();
 
 }
+
+const Vector<Reference<DraftSlot*>>* DraftSchematicObjectTemplate::getDraftSlots() const {
+	return draftSlots;
+}
+
+void DraftSchematicObjectTemplate::addSlot(DraftSlot* slot) {
+	draftSlots->add(slot);
+}
+
+bool DraftSchematicObjectTemplate::getIsMagic() const {
+	return isMagic;
+}
+
+const String& DraftSchematicObjectTemplate::getAssemblySkill() const {
+	return assemblySkill;
+}
+
+short DraftSchematicObjectTemplate::getComplexity() const {
+	return complexity;
+}
+
+const Vector<short>* DraftSchematicObjectTemplate::getContribution() const {
+	return contribution;
+}
+
+int DraftSchematicObjectTemplate::getCraftingToolTab() const {
+	return craftingToolTab;
+}
+
+const String& DraftSchematicObjectTemplate::getExperimentingSkill() const {
+	return experimentingSkill;
+}
+
+const String& DraftSchematicObjectTemplate::getCustomizationSkill() const {
+	return customizationSkill;
+}
+
+const Vector<short>* DraftSchematicObjectTemplate::getIngredientSlotType() const {
+	return ingredientSlotType;
+}
+
+const Vector<String>* DraftSchematicObjectTemplate::getIngredientAppearance() const {
+	return ingredientAppearance;
+}
+
+const String& DraftSchematicObjectTemplate::getIngredientAppearance(int i) const {
+	return ingredientAppearance->get(i);
+}
+
+const Vector<String>* DraftSchematicObjectTemplate::getIngredientTemplateNames() const {
+	return ingredientTemplateNames;
+}
+
+const Vector<String>* DraftSchematicObjectTemplate::getIngredientTitleNames() const {
+	return ingredientTitleNames;
+}
+
+const Vector<int>* DraftSchematicObjectTemplate::getResourceQuantities() const {
+	return resourceQuantities;
+}
+
+const Vector<String>* DraftSchematicObjectTemplate::getResourceTypes() const {
+	return resourceTypes;
+}
+
+short DraftSchematicObjectTemplate::getSize() const {
+	return size;
+}
+
+uint32 DraftSchematicObjectTemplate::getTanoCRC() const {
+	return tanoCRC;
+}
+
+int DraftSchematicObjectTemplate::getXp() const {
+	return xp;
+}
+
+const String& DraftSchematicObjectTemplate::getXpType() const {
+	return xpType;
+}
+
+const String& DraftSchematicObjectTemplate::getCustomObjectName() const {
+	return customObjectName;
+}
+
+int DraftSchematicObjectTemplate::getTemplateListSize() const {
+	return additionalTemplates->size();
+}
+
+const String& DraftSchematicObjectTemplate::getTemplate(int i) const {
+	return additionalTemplates->get(i);
+}
+
+const VectorMap<String, int>* DraftSchematicObjectTemplate::getSkillMods() const {
+	return &skillMods;
+}
+
+int DraftSchematicObjectTemplate::getSkillMod(const String& mod) const {
+	return skillMods.get(mod);
+}
+
+const Vector<VectorMap<String, int>>* DraftSchematicObjectTemplate::getWeaponDots() const {
+	return &weaponDots;
+}
+
+int DraftSchematicObjectTemplate::getLabratory() const {
+	return labratory;
+}
+
+int DraftSchematicObjectTemplate::getFactoryCrateSize() const {
+	return factoryCrateSize;
+}
+
+const String& DraftSchematicObjectTemplate::getFactoryCrateType() const {
+	return factoryCrateType;
+}

@@ -16,6 +16,11 @@ WorldCoordinates::WorldCoordinates(const WorldCoordinates& c) : Object() {
 	cell = c.cell;
 }
 
+#ifdef CXX11_COMPILER
+WorldCoordinates::WorldCoordinates(WorldCoordinates&& c) : Object(), point(c.point), cell(std::move(c.cell)) {
+}
+#endif
+
 WorldCoordinates& WorldCoordinates::operator=(const WorldCoordinates& c) {
 	if (this == &c) {
 		return *this;
@@ -26,6 +31,18 @@ WorldCoordinates& WorldCoordinates::operator=(const WorldCoordinates& c) {
 
 	return *this;
 }
+
+#ifdef CXX11_COMPILER
+WorldCoordinates& WorldCoordinates::operator=(WorldCoordinates&& c) {
+	if (this == &c)
+		return *this;
+
+	point = c.point;
+	cell = std::move(c.cell);
+
+	return *this;
+}
+#endif
 
 WorldCoordinates::WorldCoordinates(SceneObject* obj) : Object() {
 	point = obj->getPosition();
@@ -98,4 +115,77 @@ bool WorldCoordinates::isInRange(const WorldCoordinates& obj, float range) const
 	Vector3 objWorldPos = obj.getWorldPosition();
 
 	return thisWorldPos.squaredDistanceTo(objWorldPos) <= (range * range);
+}
+
+bool WorldCoordinates::operator==(const WorldCoordinates& c) {
+	return (point == c.point) && (cell == c.cell);
+}
+
+void to_json(nlohmann::json& j, const WorldCoordinates& c) {
+	j["point"] = c.point;
+	j["cell"] = c.cell;
+}
+
+void WorldCoordinates::setCell(CellObject* obj) {
+	cell = obj;
+}
+
+void WorldCoordinates::setCoordinates(const Vector3& pos) {
+	point = pos;
+}
+
+void WorldCoordinates::setX(float x) {
+	point.setX(x);
+}
+
+void WorldCoordinates::setY(float y) {
+	point.setY(y);
+}
+
+void WorldCoordinates::setZ(float z) {
+	point.setZ(z);
+}
+
+const Vector3& WorldCoordinates::getPoint() const {
+	return point;
+}
+
+Vector3 WorldCoordinates::getPoint() {
+	return point;
+}
+
+CellObject* WorldCoordinates::getCell() const {
+	return cell;
+}
+
+float WorldCoordinates::getX() const {
+	return point.getX();
+}
+
+float WorldCoordinates::getY() const {
+	return point.getY();
+}
+
+float WorldCoordinates::getZ() const {
+	return point.getZ();
+}
+
+String WorldCoordinates::toString() const {
+	StringBuffer buf;
+
+	buf << "WorldCoordinates(x:" << point.getX() << ", y:" << point.getY() << ", z:" << point.getZ() << ", cell: ";
+
+	if (cell == nullptr) {
+		buf << "nullptr";
+	} else {
+		buf << cell->getCellNumber();
+	}
+
+	buf << ")";
+
+	return buf.toString();
+}
+
+String WorldCoordinates::toStringData() const {
+	return toString();
 }

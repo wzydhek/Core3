@@ -38,23 +38,9 @@ protected:
 	byte color;
 	bool active;
 
-	inline void addSerializableVariables() {
-		addSerializableVariable("waypointName", &waypointName);
-		addSerializableVariable("pointerParameter", &pointerParameter);
-		addSerializableVariable("cellID", &cellID);
-		addSerializableVariable("planetCRC", &planetCRC);
-		addSerializableVariable("unknownInt", &unknownInt);
-		addSerializableVariable("positionX", &positionX);
-		addSerializableVariable("positionY", &positionY);
-		addSerializableVariable("positionZ", &positionZ);
-		addSerializableVariable("color", &color);
-		addSerializableVariable("active", &active);
-	}
+	void addSerializableVariables();
 
-	void insertHeaderToMessage(Message* message) const override {
-		message->insertByte(TYPE_WAYPOINT);
-		message->insertInt(WAYPOINT);
-	}
+	void insertHeaderToMessage(Message* message) const override;
 
 	void addToPacketStream(Message* packet) const override;
 
@@ -63,81 +49,34 @@ public:
 	WaypointChatParameter(WaypointObject* waypoint);
 	WaypointChatParameter(const WaypointChatParameter& custom);
 
-	friend void to_json(nlohmann::json& j, const WaypointChatParameter& p) {
-		j["waypointName"] = p.waypointName;
-		j["pointerParameter"] = p.pointerParameter;
-		j["cellID"] = p.cellID;
-		j["planetCRC"] = p.planetCRC;
-		j["unknownInt"] = p.unknownInt;
-		j["positionX"] = p.positionX;
-		j["positionY"] = p.positionY;
-		j["positionZ"] = p.positionZ;
-		j["color"] = p.color;
-		j["active"] = p.active;
-       	}
+	friend void to_json(nlohmann::json& j, const WaypointChatParameter& p);
 
-	WaypointChatParameter& operator=(const WaypointChatParameter& par) {
-		if (this == &par)
-			return *this;
-
-		waypointName = par.waypointName;
-		pointerParameter = par.pointerParameter;
-		cellID = par.cellID;
-		planetCRC = par.planetCRC;
-		unknownInt = par.unknownInt;
-		positionX = par.positionX;
-		positionY = par.positionY;
-		positionZ = par.positionZ;
-		color = par.color;
-		active = par.active;
-
-		return *this;
-	}
+	WaypointChatParameter& operator=(const WaypointChatParameter& par);
 
 	void parse(Message* message) override;
 
 	void set(WaypointObject* waypoint);
 	void set(const UnicodeString& name, float x, float z, float y, uint32 planetcrc, uint64 pointer = 0, uint64 cellid = 0, byte clr = 1, bool actv = false);
 
-	inline const UnicodeString& getWaypointName() const {
-		return waypointName;
-	}
+	const UnicodeString& getWaypointName() const;
 
-	inline uint64 getPointerParameter() const {
-		return pointerParameter;
-	}
+	uint64 getPointerParameter() const;
 
-	inline uint64 getCellID() const {
-		return cellID;
-	}
+	uint64 getCellID() const;
 
-	inline uint32 getPlanetCRC() const {
-		return planetCRC;
-	}
+	uint32 getPlanetCRC() const;
 
-	inline uint32 getUnknownInt() const {
-		return unknownInt;
-	}
+	uint32 getUnknownInt() const;
 
-	inline float getPositionX() const {
-		return positionX;
-	}
+	float getPositionX() const;
 
-	inline float getPositionY() const {
-		return positionY;
-	}
+	float getPositionY() const;
 
-	inline float getPositionZ() const {
-		return positionZ;
-	}
+	float getPositionZ() const;
 
-	inline byte getColor() const {
-		return color;
-	}
+	byte getColor() const;
 
-	inline bool isActive() const {
-		return active;
-	}
+	bool isActive() const;
 };
 
 }

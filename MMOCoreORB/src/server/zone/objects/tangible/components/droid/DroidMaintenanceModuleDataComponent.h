@@ -37,11 +37,11 @@ public:
 	int getBatteryDrain();
 	String toString() const;
 	void copy(BaseDroidModuleComponent* other);
-	bool isStackable() { return true; }
+	bool isStackable();
 	void addToStack(BaseDroidModuleComponent* other);
 	void updateCraftingValues(CraftingValues* values, bool firstUpdate);
 	void onCall();
-	void inline onStore() {}
+	void inline onStore();
 	bool toBinaryStream(ObjectOutputStream* stream);
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 	bool assignStructure( uint64 objectID );
@@ -51,13 +51,8 @@ public:
 	void payStructures(CreatureObject* player,VectorMap<unsigned long long, int> assignments);
 	long calculateRunTime(const VectorMap<unsigned long long, int>& assignments, const String& localPlanet, DroidObject* droid);
 
-	void writeJSON(nlohmann::json& j) const {
-		BaseDroidModuleComponent::writeJSON(j);
+	void writeJSON(nlohmann::json& j) const;
 
-		SERIALIZE_JSON_MEMBER(moduleRating);
-		SERIALIZE_JSON_MEMBER(maxStructures);
-		SERIALIZE_JSON_MEMBER(assignedStructures);
-	}
 private:
 	void validateStructures();
 	bool isValidStructure(uint64 objectID);

@@ -13,34 +13,12 @@ class ForceMeditateTask: public Task {
 	String moodString;
 
 public:
-	ForceMeditateTask(CreatureObject* pl) {
-		player = pl;
-	}
+	ForceMeditateTask(CreatureObject* pl);
 
-	void setMoodString(const String& ms) {
-		moodString = ms;
-	}
+	void setMoodString(const String& ms);
 
-	String getMoodString() {
-		return moodString;
-	}
+	String getMoodString();
 
-	void run() {
-		Locker playerLocker(player);
-
-		try {
-			Reference<ForceMeditateTask*> fmeditateTask = player->getPendingTask("forcemeditate").castTo<ForceMeditateTask*>();
-
-			if (!player->isMeditating())
-				return;
-
-
-			if (fmeditateTask != nullptr)
-				fmeditateTask->reschedule(5000);
-
-		} catch (Exception& e) {
-			player->error("unreported exception caught in ForceMeditateTask::activate");
-		}
-	}
+	void run();
 
 };

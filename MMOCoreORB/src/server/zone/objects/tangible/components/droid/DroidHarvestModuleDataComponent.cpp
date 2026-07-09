@@ -341,3 +341,45 @@ void DroidHarvestModuleDataComponent::setActive(bool newActive) {
 
 	droidComponent->changeAttributeValue("harvest_active", active ? 1.0 : 0.0);
 }
+
+int DroidHarvestModuleDataComponent::getHarvestInterest() {
+	return interest;
+}
+
+bool DroidHarvestModuleDataComponent::isActive() {
+	return active;
+}
+
+float DroidHarvestModuleDataComponent::getHarvestPower() {
+	return harvestBonus;
+}
+
+bool DroidHarvestModuleDataComponent::isStackable() {
+	return true;
+}
+
+bool DroidHarvestModuleDataComponent::hasMoreTargets() {
+	return harvestTargets.size() > 0;
+}
+
+void DroidHarvestModuleDataComponent::addHarvestTarget(uint64 target, bool first) {
+	if (first)
+		harvestTargets.add(0, target);
+	else
+		harvestTargets.add(target);
+}
+
+void DroidHarvestModuleDataComponent::removeHarvestTarget(uint64 target) {
+	harvestTargets.remove(target);
+}
+
+uint64 DroidHarvestModuleDataComponent::getNextHarvestTarget() {
+	uint64 harvTar = 0;
+
+	if (harvestTargets.size() > 0) {
+		harvTar = harvestTargets.get(0);
+		harvestTargets.remove(0);
+	}
+
+	return harvTar;
+}

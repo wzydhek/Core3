@@ -277,3 +277,15 @@ void to_json(nlohmann::json& j, const CustomizationVariables& vars) {
 
 	j = ascii;
 }
+
+int16 CustomizationVariables::getVariable(uint8 type) const {
+	return get(type);
+}
+
+int16 CustomizationVariables::getVariable(int idx) const {
+	return get(idx);
+}
+
+int CustomizationVariables::getSize() const {
+	return size();
+}

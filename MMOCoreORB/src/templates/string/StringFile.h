@@ -19,13 +19,9 @@ public:
 
 	bool load(ObjectInputStream* inputFile);
 
-	const auto& getStringMap() const {
-		return stringMap;
-	}
+	const HashTable<String, UnicodeString>& getStringMap() const;
 
-	UnicodeString getValue(const String& id) const {
-		return stringMap.get(id);
-	}
+	UnicodeString getValue(const String& id) const;
 
 protected:
 	bool checkHeader(ObjectInputStream* inputFile);

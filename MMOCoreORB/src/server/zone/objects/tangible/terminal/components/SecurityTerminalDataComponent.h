@@ -14,16 +14,10 @@ protected:
 
 
 public:
-	SecurityTerminalDataComponent() {
+	SecurityTerminalDataComponent();
 
-	}
+	virtual ~SecurityTerminalDataComponent();
 
-	virtual ~SecurityTerminalDataComponent() {
-
-	}
-
-	bool isSecurityTerminalData() {
-		return true;
-	}
+	bool isSecurityTerminalData();
 
 };

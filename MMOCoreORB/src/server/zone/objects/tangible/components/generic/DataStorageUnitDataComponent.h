@@ -13,33 +13,16 @@ class DataStorageUnitDataComponent : public DataObjectComponent {
 protected:
 	byte id;
 public:
-	DataStorageUnitDataComponent() {
+	DataStorageUnitDataComponent();
 
-		// There are 12 text options (1-12).  Pick one at random
-		id = System::random(11) + 1;
-		addSerializableVariables();
-	}
+	virtual ~DataStorageUnitDataComponent();
 
-	virtual ~DataStorageUnitDataComponent() {
+	void writeJSON(nlohmann::json& j) const;
 
-	}
+	byte getId() const;
 
-	void writeJSON(nlohmann::json& j) const {
-		DataObjectComponent::writeJSON(j);
-
-		SERIALIZE_JSON_MEMBER(id);
-	}
-
-	byte getId() const {
-		return id;
-	}
-
-	bool isDataStorageUnitData() {
-		return true;
-	}
+	bool isDataStorageUnitData();
 
 private:
-	void addSerializableVariables() {
-		addSerializableVariable("id", &id);
-	}
+	void addSerializableVariables();
 };

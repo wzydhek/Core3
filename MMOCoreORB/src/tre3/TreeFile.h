@@ -10,6 +10,7 @@
 #include "TreeFileRecord.h"
 #include "TreeDataBlock.h"
 
+namespace tre3 {
 class TreeArchive;
 
 class TreeFile : public Logger {
@@ -35,5 +36,7 @@ public:
 	~TreeFile();
 
 	void read(const String& path);
-	//void write(const String& filePath);
 };
+} // namespace tre3
+
+using namespace tre3;

@@ -10,6 +10,9 @@
 #include "server/zone/Zone.h"
 #include "server/zone/managers/creature/CreatureManager.h"
 
+BountyHunterDroid::BountyHunterDroid() : Logger("BountyHunterDroid") {
+}
+
 Reference<Task*> BountyHunterDroid::performAction(int action, SceneObject* droidObject, CreatureObject* player, MissionObject* mission) {
 	if (player == nullptr)
 		return nullptr;

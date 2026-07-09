@@ -22,26 +22,11 @@ protected:
 public:
 	enum {MISSION = 0, LOOT, QUEST};
 
-	SchematicList() {
-		rewardedSchematics.setNoDuplicateInsertPlan();
-	}
+	SchematicList();
 
-	SchematicList(const SchematicList& list) : DeltaVector<ManagedReference<DraftSchematic* > >(list) {
-		rewardedSchematics.setNoDuplicateInsertPlan();
-		rewardedSchematics = list.rewardedSchematics;
-	}
+	SchematicList(const SchematicList& list);
 
-	SchematicList& operator=(const SchematicList& list) {
-		if (this == &list) {
-			return *this;
-		}
-
-		DeltaVector<ManagedReference<DraftSchematic*>>::operator=(list);
-
-		rewardedSchematics = list.rewardedSchematics;
-
-		return *this;
-	}
+	SchematicList& operator=(const SchematicList& list);
 
 	friend void to_json(nlohmann::json& j, const SchematicList& l);
 

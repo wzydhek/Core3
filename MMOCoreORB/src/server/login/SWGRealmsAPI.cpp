@@ -2459,6 +2459,180 @@ void SWGRealmsAPI::scheduleMetricsPublish() {
 	info(true) << "Scheduled metrics publishing every " << intervalSec << " seconds";
 }
 
+String SWGRealmsAPIResult::actionToString(ApprovalAction action) const {
+	switch (action) {
+		case ApprovalAction::UNKNOWN:
+			return String("UNKNOWN");
+		case ApprovalAction::TEMPFAIL:
+			return String("TEMPFAIL");
+		case ApprovalAction::ALLOW:
+			return String("ALLOW");
+		case ApprovalAction::WARN:
+			return String("WARN");
+		case ApprovalAction::REJECT:
+			return String("REJECT");
+		case ApprovalAction::BAN:
+			return String("BAN");
+		case ApprovalAction::DEBUG:
+			return String("DEBUG");
+	}
+
+	return String("UNKOWN(" + String::valueOf((int)action) + ")");
+}
+
+void SWGRealmsAPIResult::setAction(const String& stringAction) {
+	if (stringAction == "TEMPFAIL") {
+		resultAction = ApprovalAction::TEMPFAIL;
+		return;
+	}
+
+	if (stringAction == "ALLOW") {
+		resultAction = ApprovalAction::ALLOW;
+		return;
+	}
+
+	if (stringAction == "WARN") {
+		resultAction = ApprovalAction::WARN;
+		return;
+	}
+
+	if (stringAction == "REJECT") {
+		resultAction = ApprovalAction::REJECT;
+		return;
+	}
+
+	if (stringAction == "BAN") {
+		resultAction = ApprovalAction::BAN;
+		return;
+	}
+
+	if (stringAction == "DEBUG") {
+		resultAction = ApprovalAction::DEBUG;
+		return;
+	}
+
+	resultAction = ApprovalAction::UNKNOWN;
+}
+
+void SWGRealmsAPIResult::setJSONObject(const web::json::value& json) {
+	jsonData = json;
+}
+
+const web::json::value& SWGRealmsAPIResult::getJSONObject() const {
+	return jsonData;
+}
+
+String SWGRealmsAPIResult::getRawJSON() const {
+	if (jsonData.is_null())
+		return "";
+	return String(jsonData.serialize().c_str());
+}
+
+void SWGRealmsAPIResult::setClientTrxId(const String& clientTrxId) {
+	resultClientTrxId = clientTrxId;
+}
+
+const String& SWGRealmsAPIResult::getClientTrxId() const {
+	return resultClientTrxId;
+}
+
+void SWGRealmsAPIResult::setAction(ApprovalAction action) {
+	resultAction = action;
+}
+
+ApprovalAction SWGRealmsAPIResult::getAction() const {
+	return resultAction;
+}
+
+bool SWGRealmsAPIResult::isActionTemporaryFailure() const {
+	return resultAction == ApprovalAction::TEMPFAIL;
+}
+
+bool SWGRealmsAPIResult::isActionAllowed() const {
+	return resultAction == ApprovalAction::ALLOW || resultAction == ApprovalAction::DEBUG;
+}
+
+bool SWGRealmsAPIResult::isActionWarning() const {
+	return resultAction == ApprovalAction::WARN;
+}
+
+bool SWGRealmsAPIResult::isActionRejected() const {
+	return resultAction == ApprovalAction::REJECT;
+}
+
+bool SWGRealmsAPIResult::isActionBan() const {
+	return resultAction == ApprovalAction::BAN;
+}
+
+bool SWGRealmsAPIResult::isActionDebug() const {
+	return resultAction == ApprovalAction::DEBUG;
+}
+
+void SWGRealmsAPIResult::setTitle(const String& title) {
+	resultTitle = title;
+}
+
+const String& SWGRealmsAPIResult::getTitle() const {
+	return resultTitle;
+}
+
+void SWGRealmsAPIResult::setMessage(const String& message) {
+	resultMessage = message;
+}
+
+String SWGRealmsAPIResult::getMessage(bool appendTrxId) const {
+	auto entry = resultDebug.getEntry("trx_id");
+
+	if (!appendTrxId || !entry) {
+		return resultMessage;
+	}
+
+	return resultMessage + "\n\ntrx_id: " + entry->getValue();
+}
+
+void SWGRealmsAPIResult::setDetails(const String& details) {
+	resultDetails = details;
+}
+
+const String& SWGRealmsAPIResult::getDetails() const {
+	return resultDetails;
+}
+
+void SWGRealmsAPIResult::setElapsedTimeMS(uint64 elapsedTimeMS) {
+	resultElapsedTimeMS = elapsedTimeMS;
+}
+
+uint64 SWGRealmsAPIResult::getElapsedTimeMS() const {
+	return resultElapsedTimeMS;
+}
+
+void SWGRealmsAPIResult::setDebugValue(const String& key, const String& value) {
+	resultDebug.put(key, value);
+}
+
+const String& SWGRealmsAPIResult::getDebugValue(const String& key) const {
+	auto entry = resultDebug.getEntry(key);
+
+	if (entry) {
+		return entry->getValue();
+	} else {
+		const static String empty;
+		return empty;
+	}
+}
+
+const HashTable<String, String>& SWGRealmsAPIResult::getDebugHashTable() const {
+	return resultDebug;
+}
+
+void SWGRealmsAPIResult::setTrxId(const String& trxId) {
+	resultDebug.put("trx_id", trxId);
+}
+
+const String& SWGRealmsAPIResult::getTrxId() const {
+	return resultDebug.get("trx_id");
+}
+
 // ============================================================================
 // SWGRealmsStreamer Implementation
 // ============================================================================

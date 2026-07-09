@@ -23,18 +23,9 @@ class ImageDesignTimeoutEvent: public Task {
 	ManagedWeakReference<ImageDesignSession*> idSession;
 
 public:
-	ImageDesignTimeoutEvent(ImageDesignSession* session) {
-		idSession = session;
-	}
+	ImageDesignTimeoutEvent(ImageDesignSession* session);
 
-	void run() {
-		ManagedReference<ImageDesignSession*> session = idSession.get();
-
-		if (session == nullptr)
-			return;
-
-		session->sessionTimeout();
-	}
+	void run();
 
 };
 

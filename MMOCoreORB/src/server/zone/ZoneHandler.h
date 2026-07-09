@@ -15,23 +15,11 @@ namespace server {
 		int maxConnections;
 
 	public:
-		ZoneSessionMap(int maxconn = 10000) : HashTable<uint64, Reference<ZoneClientSession*> >((int) (maxconn * 1.25f)) {
-			maxConnections = maxconn;
-		}
+		ZoneSessionMap(int maxconn = 10000);
 
-		bool add(ZoneClientSession* client) {
-			if (HashTable<uint64, Reference<ZoneClientSession*> >::put(client->getSession()->getNetworkID(), client) == nullptr) {
-				return true;
-			} else
-				return false;
-		}
+		bool add(ZoneClientSession* client);
 
-		bool remove(ZoneClientSession* client) {
-			if (HashTable<uint64, Reference<ZoneClientSession*> >::remove(client->getSession()->getNetworkID()) != nullptr) {
-				return true;
-			} else
-				return false;
-		}
+		bool remove(ZoneClientSession* client);
 
 	};
 
@@ -43,68 +31,21 @@ namespace server {
 		ReadWriteLock guard;
 
 	public:
-		ZoneHandler(ZoneServer* server) {
-			zoneServerRef = server;
-		}
+		ZoneHandler(ZoneServer* server);
 
-		void initialize() {
-			ZoneServer* server =  zoneServerRef.getForUpdate();
+		void initialize();
 
-			server->initialize();
-		}
+		ServiceClient* createConnection(Socket* sock, SocketAddress& addr);
 
-		ServiceClient* createConnection(Socket* sock, SocketAddress& addr) {
-			ZoneServer* server =  zoneServerRef.getForUpdate();
+		bool deleteConnection(ServiceClient* session);
 
-			Reference<ZoneClientSession*> client = server->createConnection(sock, addr);
+		void handleMessage(ServiceClient* session, Packet* message);
 
-			Locker locker(&guard);
+		void processMessage(Message* message);
 
-			clients.add(client);
+		bool handleError(ServiceClient* session, Exception& e);
 
-			return client->getSession();
-		}
-
-		bool deleteConnection(ServiceClient* session) {
-			Reference<ZoneClientSession*> client = getClientSession(session);
-
-			client->disconnect();
-			client->disconnect(true);
-
-			Locker locker(&guard);
-
-			clients.remove(client);
-
-			return false;
-		}
-
-		void handleMessage(ServiceClient* session, Packet* message) {
-			ZoneServer* server =  zoneServerRef.getForUpdate();
-
-			ManagedReference<ZoneClientSession*> client = getClientSession(session);
-
-			if (client != nullptr)
-				server->handleMessage(client, message);
-		}
-
-		void processMessage(Message* message) {
-			ZoneServer* server =  zoneServerRef.getForUpdate();
-
-			return server->processMessage(message);
-		}
-
-		bool handleError(ServiceClient* session, Exception& e) {
-			ZoneServer* server =  zoneServerRef.getForUpdate();
-
-			Reference<ZoneClientSession*> client = getClientSession(session);
-
-			return server->handleError(client, e);
-		}
-
-		Reference<ZoneClientSession*> getClientSession(ServiceClient* session) {
-			ReadLocker locker(&guard);
-			return clients.get(session->getNetworkID());
-		}
+		Reference<ZoneClientSession*> getClientSession(ServiceClient* session);
 	};
 
   } // namespace zone

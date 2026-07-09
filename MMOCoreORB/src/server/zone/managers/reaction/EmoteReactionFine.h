@@ -1,6 +1,9 @@
 
 #pragma once
 
+#include "system/lang/Object.h"
+#include "system/lang/String.h"
+
 namespace server {
 namespace zone {
 namespace managers {
@@ -14,61 +17,27 @@ protected:
 	String emoteResponse;
 
 public:
-	EmoteReactionFine(int level, bool imperial, bool human, int rankCompare, int creditamount, int factionamount, bool knockdown, int minquip, int maxquip, String emoterespond) : Object() {
-		reactionLevel = level;
-		isImp = imperial;
-		isHumanSpecies = human;
-		rankComparison = rankCompare;
-		creditFine = creditamount;
-		factionFine = factionamount;
-		doKnockdown = knockdown;
-		minQuip = minquip;
-		maxQuip = maxquip;
-		emoteResponse = emoterespond;
-	}
+	EmoteReactionFine(int level, bool imperial, bool human, int rankCompare, int creditamount, int factionamount, bool knockdown, int minquip, int maxquip, String emoterespond);
 
-	~EmoteReactionFine() {
+	~EmoteReactionFine();
 
-	}
+	String getEmoteResponse();
 
-	String getEmoteResponse() {
-		return emoteResponse;
-	}
+	bool isImperial();
 
-	bool isImperial() {
-		return isImp;
-	}
+	bool isHuman();
 
-	bool isHuman() {
-		return isHumanSpecies;
-	}
+	bool shouldKnockdown();
 
-	bool shouldKnockdown() {
-		return doKnockdown;
-	}
+	int getRankComparison();
 
-	int getRankComparison() {
-		return rankComparison;
-	}
+	int getReactionLevel();
 
-	int getReactionLevel() {
-		return reactionLevel;
-	}
+	int getCreditFine();
 
-	int getCreditFine() {
-		return creditFine;
-	}
+	int getFactionFine();
 
-	int getFactionFine() {
-		return factionFine;
-	}
-
-	int getRandomQuip() {
-		if (maxQuip == -1 || minQuip == -1)
-			return -1;
-
-		return minQuip + System::random(maxQuip - minQuip);
-	}
+	int getRandomQuip();
 
 };
 
@@ -76,3 +45,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::managers::reaction;

@@ -1108,3 +1108,6 @@ int LuaSceneObject::isShipComponentRepairKit(lua_State* L) {
 
 	return 1;
 }
+SceneObject* LuaSceneObject::_getRealSceneObject() {
+	return realObject.get();
+}

@@ -1,0 +1,47 @@
+#include "GuildChangeNameResponseSuiCallback.h"
+#include "server/zone/objects/player/PlayerObject.h"
+
+GuildChangeNameResponseSuiCallback::GuildChangeNameResponseSuiCallback(ZoneServer* server, GuildObject* guild) : SuiCallback(server) {
+	guildObject = guild;
+}
+
+void GuildChangeNameResponseSuiCallback::run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
+	bool cancelPressed = (eventIndex == 1);
+
+	uint64 playerID = player->getObjectID();
+
+	ManagedReference<GuildObject*> guild = guildObject.get();
+	if (guild == nullptr)
+		return;
+
+	if (!guild->hasNamePermission(playerID) && !player->getPlayerObject()->isPrivileged()) {
+		player->sendSystemMessage("@guild:generic_fail_no_permission"); // You do not have permission to perform that operation.
+		return;
+	}
+
+	if (!suiBox->isInputBox() || cancelPressed)
+		return;
+
+	if (args->size() < 1)
+		return;
+
+	String guildName = args->get(0).toString();
+
+	ManagedReference<GuildManager*> guildManager = server->getGuildManager();
+
+	// Check if this player is already creating a guild...
+	if (guildManager->isCreatingGuild(playerID))
+		return;
+
+	if (guildManager->validateGuildName(player, guildName, guild)) {
+		Locker glocker(guild, player);
+
+		guild->setPendingNewName(guildName);
+		guildManager->sendGuildChangeAbbrevTo(player, guild);
+		return;
+	}
+
+	// Resend the create name box.
+	player->getPlayerObject()->addSuiBox(suiBox);
+	player->sendMessage(suiBox->generateMessage());
+}

@@ -42,9 +42,7 @@ public:
 	void sendDraftSlotsTo(CreatureObject* player, uint32 schematicID);
 	void sendResourceWeightsTo(CreatureObject* player, uint32 schematicID);
 
-	DraftSchematic* get(uint32 schemid) {
-		return schematicCrcMap.get(schemid);
-	}
+	DraftSchematic* get(uint32 schemid);
 
 private:
 

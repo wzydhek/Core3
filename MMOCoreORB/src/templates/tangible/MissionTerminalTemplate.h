@@ -13,23 +13,13 @@ class MissionTerminalTemplate : public SharedTangibleObjectTemplate {
 	String missionTerminalType;
 
 public:
-	MissionTerminalTemplate() {
-	}
+	MissionTerminalTemplate();
 
-	~MissionTerminalTemplate() {
-	}
+	~MissionTerminalTemplate();
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	void readObject(LuaObject* templateData);
 
-		missionTerminalType = templateData->getStringField("missionTerminalType");
-    }
+	String& getMissionTerminalType();
 
-	inline String& getMissionTerminalType() {
-		return missionTerminalType;
-	}
-
-	bool isMissionTerminalTemplate() {
-		return true;
-	}
+	bool isMissionTerminalTemplate();
 };

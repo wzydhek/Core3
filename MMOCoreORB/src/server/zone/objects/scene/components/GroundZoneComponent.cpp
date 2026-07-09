@@ -16,6 +16,11 @@
 #include "server/zone/packets/scene/LightUpdateTransformWithParentMessage.h"
 #include "templates/building/SharedBuildingObjectTemplate.h"
 #include "server/zone/objects/intangible/TheaterObject.h"
+#include "server/zone/managers/planet/PlanetManager.h"
+
+GroundZoneComponent::GroundZoneComponent() {
+	setLoggingName("GroundZoneComponent");
+}
 
 void GroundZoneComponent::notifyInsertToZone(SceneObject* sceneObject, Zone* newZone) const {
 	debug("inserting to zone");

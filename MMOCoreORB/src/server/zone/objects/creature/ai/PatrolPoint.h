@@ -20,78 +20,25 @@ class PatrolPoint : public Serializable {
 	float direction;
 
 public:
-	PatrolPoint() {
-		reached = true;
+	PatrolPoint();
 
-		addSerializableVariables();
-	}
+	PatrolPoint(const Vector3& pos, CellObject* cell = nullptr);
 
-	PatrolPoint(const Vector3& pos, CellObject* cell = nullptr) : position(pos, cell) {
-		reached = false;
+	PatrolPoint(float posX, float posZ, float posY, CellObject* cell = nullptr);
 
-		addSerializableVariables();
-	}
-
-	PatrolPoint(float posX, float posZ, float posY, CellObject* cell = nullptr) : position(Vector3(posX, posY, posZ), cell) {
-		reached = false;
-
-		addSerializableVariables();
-	}
-
-	PatrolPoint(const PatrolPoint& point) : Object(), Serializable() {
-		position = point.position;
-
-		reached = point.reached;
-
-		addSerializableVariables();
-	}
+	PatrolPoint(const PatrolPoint& point);
 
 #ifdef CXX11_COMPILER
-	PatrolPoint(PatrolPoint&& point) : Object(), Serializable(),
-			position(std::move(point.position)), reached(point.reached), estimatedTimeOfArrival(point.estimatedTimeOfArrival) {
-
-		addSerializableVariables();
-	}
+	PatrolPoint(PatrolPoint&& point);
 #endif
 
-	PatrolPoint& operator=(const PatrolPoint& p) {
-		if (this == &p)
-			return *this;
-
-		position = p.position;
-
-		reached = p.reached;
-
-		direction = p.direction;
-
-		estimatedTimeOfArrival = p.estimatedTimeOfArrival;
-
-		return *this;
-	}
+	PatrolPoint& operator=(const PatrolPoint& p);
 
 #ifdef CXX11_COMPILER
-	PatrolPoint& operator=(PatrolPoint&& p) {
-		if (this == &p)
-			return *this;
-
-		position = std::move(p.position);
-
-		reached = p.reached;
-
-		direction = p.direction;
-
-		estimatedTimeOfArrival = p.estimatedTimeOfArrival;
-
-		return *this;
-	}
+	PatrolPoint& operator=(PatrolPoint&& p);
 #endif
 
-	inline void addSerializableVariables() {
-		addSerializableVariable("position", &position);
-		addSerializableVariable("reached", &reached);
-		addSerializableVariable("direction", &direction);
-		addSerializableVariable("estimatedTimeOfArrival", &estimatedTimeOfArrival);
-	}
+	void addSerializableVariables();
 
 	friend void to_json(nlohmann::json& j, const PatrolPoint& p) {
 		j["position"] = p.position;
@@ -100,99 +47,50 @@ public:
 		j["estimatedTimeOfArrival"] = p.estimatedTimeOfArrival;
 	}
 
-	Vector3 getWorldPosition() {
-		return position.getWorldPosition();
-	}
+	Vector3 getWorldPosition();
 
-	virtual bool isInRange(SceneObject* obj, float range) {
-		Vector3 thisWorldPos = getWorldPosition();
-		Vector3 objWorldPos = obj->getWorldPosition();
+	virtual bool isInRange(SceneObject* obj, float range);
 
-		return thisWorldPos.squaredDistanceTo(objWorldPos) < (range * range);
-	}
+	bool isInRange(PatrolPoint* obj, float range);
 
-	bool isInRange(PatrolPoint* obj, float range) {
-		Vector3 thisWorldPos = getWorldPosition();
-		Vector3 objWorldPos = obj->getWorldPosition();
-
-		return thisWorldPos.squaredDistanceTo(objWorldPos) <= (range * range);
-	}
-
-	inline const WorldCoordinates& getCoordinates() const {
-		return position;
-	}
+	const WorldCoordinates& getCoordinates() const;
 
 	//getters
-	inline float getPositionX() const {
-		return position.getX();
-	}
+	float getPositionX() const;
 
-	inline float getPositionY() const {
-		return position.getY();
-	}
+	float getPositionY() const;
 
-	inline float getPositionZ() const {
-		return position.getZ();
-	}
+	float getPositionZ() const;
 
-	inline CellObject* getCell() const {
-		return position.getCell();
-	}
+	CellObject* getCell() const;
 
-	inline float getDirection() const {
-		return direction;
-	}
+	float getDirection() const;
 
-	inline Time* getEstimatedTimeOfArrival() {
-		return &estimatedTimeOfArrival;
-	}
+	Time* getEstimatedTimeOfArrival();
 
-	inline bool isReached() const {
-		return reached;
-	}
+	bool isReached() const;
 
-	inline bool isPastTimeOfArrival() {
-		return estimatedTimeOfArrival.isPast() || estimatedTimeOfArrival.isPresent();
-	}
+	bool isPastTimeOfArrival();
 
 	//setters
-	inline void setPosition(float x, float z, float y) {
-		position.setCoordinates(Vector3(x, y, z));
-	}
+	void setPosition(float x, float z, float y);
 
-	inline void setPositionX(float x) {
-		position.setX(x);
-	}
+	void setPositionX(float x);
 
-	inline void setPositionZ(float z) {
-		position.setZ(z);
-	}
+	void setPositionZ(float z);
 
-	inline void setPositionY(float y) {
-		position.setY(y);
-	}
+	void setPositionY(float y);
 
-	inline void setCell(CellObject* cell) {
-		position.setCell(cell);
-	}
+	void setCell(CellObject* cell);
 
-	inline void setDirection(float dir) {
-		direction = dir;
-	}
+	void setDirection(float dir);
 
-	inline void setReached(bool value) {
-		reached = value;
-	}
+	void setReached(bool value);
 
-	inline void addEstimatedTimeOfArrival(uint32 mili) {
-		estimatedTimeOfArrival.updateToCurrentTime();
-		estimatedTimeOfArrival.addMiliTime(mili);
-	}
+	void addEstimatedTimeOfArrival(uint32 mili);
 
 	/**
 	 * Returns the string representation of the vector in (x, y, z) format plus the cellID.
 	 */
-	inline String toString() const {
-		return position.toString();
-	}
+	String toString() const;
 };

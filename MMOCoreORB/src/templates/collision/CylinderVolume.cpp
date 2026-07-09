@@ -1,5 +1,12 @@
 #include "CylinderVolume.h"
 
+CylinderVolume::CylinderVolume() : bbox(Vector3(0, 0, 0), Vector3(0, 0, 0)), base(Vector3(0, 0, 0), 0), height(0) {
+}
+
+const AABB& CylinderVolume::getBoundingBox() const {
+	return bbox;
+}
+
 void CylinderVolume::read(IffStream *iff) {
 	iff->openForm('0000');
 	iff->openChunk('CYLN');
@@ -12,6 +19,7 @@ void CylinderVolume::read(IffStream *iff) {
 	iff->closeChunk('CYLN');
 	iff->closeForm('0000');
 }
+
 #ifdef OSG_RENDERER
 osg::ref_ptr<osg::Node> CylinderVolume::draw() const {
 	osg::Group* group = new osg::Group();

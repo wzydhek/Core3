@@ -11,8 +11,7 @@
 
 class FactionMap : public VectorMap<String, Faction> {
 public:
-	FactionMap() : VectorMap<String, Faction>() {
-	}
+	FactionMap();
 
 	void addFaction(const Faction& faction);
 

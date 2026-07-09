@@ -418,3 +418,18 @@ bool DroidMaintenanceModuleDataComponent::parseFromBinaryStream(ObjectInputStrea
 	}
 	return true;
 }
+
+bool DroidMaintenanceModuleDataComponent::isStackable() {
+	return true;
+}
+
+void DroidMaintenanceModuleDataComponent::onStore() {
+}
+
+void DroidMaintenanceModuleDataComponent::writeJSON(nlohmann::json& j) const {
+	BaseDroidModuleComponent::writeJSON(j);
+
+	SERIALIZE_JSON_MEMBER(moduleRating);
+	SERIALIZE_JSON_MEMBER(maxStructures);
+	SERIALIZE_JSON_MEMBER(assignedStructures);
+}

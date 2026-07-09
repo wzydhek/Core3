@@ -86,9 +86,7 @@ public:
 	void parseFromIffStream(engine::util::IffStream* iffStream) override;
 	void parseFromIffStream(engine::util::IffStream* iffStream, uint32 version);
 
-	void insertWaterBoundary(Boundary* boundary) {
-		waterBoundaries.add(boundary);
-	}
+	void insertWaterBoundary(Boundary* boundary);
 
 	void getWaterBoundariesInAABB(const AABB& bounds, Vector<const Boundary*>* boundariesOut) const;
 
@@ -96,33 +94,21 @@ public:
 	 * Returns the size of the terrain.
 	 * @return float The size of the terrain.
 	 */
-	float getSize() const override {
-		return size;
-	}
+	float getSize() const override;
 
 	bool getWater(float x, float y, float& waterHeight) const override;
 	float getHeight(float x, float y) const override;
 	int getEnvironmentID(float x, float y) const;
 
-	float getGlobalWaterTableHeight() const {
-		return globalWaterTableHeight;
-	}
+	float getGlobalWaterTableHeight() const;
 
-	bool getUseGlobalWaterTable() const {
-		return useGlobalWaterTable;
-	}
+	bool getUseGlobalWaterTable() const;
 
-	const ReadWriteLock* getGuard() const {
-		return &guard;
-	}
+	const ReadWriteLock* getGuard() const;
 
-	ReadWriteLock* getGuard() {
-		return &guard;
-	}
+	ReadWriteLock* getGuard();
 
-	float getDistanceBetweenPoles() const {
-		return chunkSize / (tilesPerChunk * 2.0f);
-	}
+	float getDistanceBetweenPoles() const;
 
 	TerrainGenerator* addTerrainModification(engine::util::IffStream* terrainGeneratorIffStream, float x, float y, uint64 objectid);
 	TerrainGenerator* removeTerrainModification(uint64 objectid);

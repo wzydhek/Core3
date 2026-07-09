@@ -24,149 +24,45 @@ class Galaxy {
 public:
 	Galaxy() = default;
 
-	Galaxy(ResultSet *result) {
-		id = result->getUnsignedInt(0);
-		name = result->getString(1);
-		address = result->getString(2);
-		port = result->getUnsignedInt(3);
-		pingPort = result->getUnsignedInt(4);
-		population = result->getUnsignedInt(5);
-#ifdef USE_RANDOM_EXTRA_PORTS
-		extraPorts.add(port);
+	Galaxy(ResultSet* result);
 
-		try {
-			String extraPortStrings = result->getString(6);
+	Galaxy(uint32 id);
 
-			if (!extraPortStrings.isEmpty()) {
-				StringTokenizer tokenizer(extraPortStrings);
-				tokenizer.setDelimiter(",");
+	void setID(uint32 id);
 
-				while (tokenizer.hasMoreTokens() && extraPorts.size() < 256) {
-					try {
-						uint32 newPort = tokenizer.getIntToken();
+	void setName(const String& name);
 
-						if (newPort != 0)
-							extraPorts.add(newPort);
-					} catch (Exception e) {
-						// Do nothing
-					}
-				}
-			}
-		} catch (Exception e) {
-			// Do Nothing
-		}
-#endif // USE_RANDOM_EXTRA_PORTS
-	}
+	void setAddress(const String& address);
 
-	Galaxy(uint32 id) {
-		this->id = id;
-	}
+	void setPort(uint32 port);
 
-	void setID(uint32 id) {
-		this->id = id;
-	}
+	void setPingPort(uint32 pingPort);
 
-	void setName(const String& name) {
-		this->name = name;
-	}
+	void setPopulation(uint32 population);
 
-	void setAddress(const String& address) {
-		this->address = address;
-	}
+	uint32 getID() const;
 
-	void setPort(uint32 port) {
-		this->port = port;
-#ifdef USE_RANDOM_EXTRA_PORTS
-		extraPorts.add(port);
-#endif // USE_RANDOM_EXTRA_PORTS
-	}
+	const String& getName() const;
 
-	void setPingPort(uint32 pingPort) {
-		this->pingPort = pingPort;
-	}
+	const String& getAddress() const;
 
-	void setPopulation(uint32 population) {
-		this->population = population;
-	}
+	uint32 getPort() const;
 
-	uint32 getID() const {
-		return id;
-	}
+	uint32 getPingPort() const;
 
-	const String& getName() const {
-		return name;
-	}
-
-	const String& getAddress() const {
-		return address;
-	}
-
-	uint32 getPort() const {
-		return port;
-	}
-
-	uint32 getPingPort() const {
-		return pingPort;
-	}
-
-	uint32 getPopulation() const {
-		return population;
-	}
+	uint32 getPopulation() const;
 
 #ifdef USE_RANDOM_EXTRA_PORTS
-	void addPort(uint32 port) {
-		extraPorts.add(port);
-	}
+	void addPort(uint32 port);
 #endif // USE_RANDOM_EXTRA_PORTS
 
-	uint16 getRandomPort() const {
-#ifdef USE_RANDOM_EXTRA_PORTS
-		const static auto type = ConfigManager::instance()->getInt("Core3.ZonePortsBalancer", 1);
+	uint16 getRandomPort() const;
 
-		if (type == 1) {
-			static AtomicInteger roundRobin;
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-			return (uint16)extraPorts.get(roundRobin.increment() % extraPorts.size());
-		} else {
-			return (uint16)extraPorts.get(System::random(extraPorts.size() - 1));
-		}
-#else // USE_RANDOM_EXTRA_PORTS
-		return port;
-#endif // USE_RANDOM_EXTRA_PORTS
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return false;
-	}
+	String toString() const;
 
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		return false;
-	}
-
-	String toString() const {
-		StringBuffer buf;
-
-		buf << "Galaxy("
-			<< "id: " << id
-			<< ", name: " << name
-			<< ", address: " << address
-			<< ", port: " << port
-			<< ", pingPort: " << pingPort
-			<< ", population: " << population
-		;
-#ifdef USE_RANDOM_EXTRA_PORTS
-
-		buf << ", extraPorts:";
-
-		for (auto port : extraPorts)
-			buf << " " << port;
-#endif
-		buf << ")";
-
-		return buf.toString();
-	}
-
-	String toStringData() const {
-		return toString();
-	}
+	String toStringData() const;
 };

@@ -13,41 +13,19 @@ class Ability : public Object {
 	String abilityName;
 
 public:
-	Ability() : Object() {
-	}
+	Ability();
 
-	Ability(const String& name) : Object() {
-		abilityName = name;
-	}
+	Ability(const String& name);
 
-	Ability(const Ability& a) : Object() {
-		abilityName = a.abilityName;
-	}
+	Ability(const Ability& a);
 
-	Ability& operator=(const Ability& a) {
-		if (this == &a)
-			return *this;
+	Ability& operator=(const Ability& a);
 
-		abilityName = a.abilityName;
+	int compareTo(const Ability& a);
 
-		return *this;
-	}
+	const String& getAbilityName() const;
 
-	int compareTo(const Ability& a) {
-		return abilityName.compareTo(a.abilityName);
-	}
+	void setAbilityName(const String& name);
 
-	const String& getAbilityName() const {
-		return abilityName;
-	}
-
-	void setAbilityName(const String& name) {
-		abilityName = name;
-	}
-
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		abilityName.toBinaryStream(stream);
-
-		return true;
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 };

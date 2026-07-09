@@ -12,6 +12,8 @@
 
 #include "server/zone/objects/tangible/tool/SurveyTool.h"
 #include "server/zone/objects/player/sessions/survey/SurveySession.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+
 
 class SampleTask : public Task {
 
@@ -21,37 +23,13 @@ protected:
 	bool cancelled;
 
 public:
-	SampleTask(CreatureObject* play, SurveyTool* tool) {
-		playerCreature = play;
-		surveyTool = tool;
-		cancelled = false;
-	}
+	SampleTask(CreatureObject* play, SurveyTool* tool);
 
-	void run() {
-		Locker playerLocker(playerCreature);
-
-		if (!cancelled && playerCreature->getPendingTask("sample") != nullptr) {
-			playerCreature->removePendingTask("sample");
-
-			ManagedReference<SurveySession*> session = playerCreature->getActiveSession(SessionFacadeType::SURVEY).castTo<SurveySession*>();
-			if(session != nullptr) {
-				session->reSample();
-			}
-			return;
-		}
-
-		playerCreature->removePendingTask("sample");
-		cancelled = false;
-	}
+	void run();
 
 
-	void stopSampling() {
-		cancelled = true;
+	void stopSampling();
 
-	}
-
-	bool isCancelled() {
-		return cancelled;
-	}
+	bool isCancelled();
 
 };

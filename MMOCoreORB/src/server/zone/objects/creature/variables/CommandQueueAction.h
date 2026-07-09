@@ -60,52 +60,24 @@ public:
 
 	void run();
 
-	void clearError(uint32 tab1, uint32 tab2 = 0) {
-		clear(0.0f, tab1, tab2);
-	}
+	void clearError(uint32 tab1, uint32 tab2 = 0);
 
 	void clear(float timer, uint32 tab1 = 0, uint32 tab2 = 0);
 
-	int compareTo(CommandQueueAction* action) {
-		if (compareToCounter == action->compareToCounter) {
-			if (this == action)
-				return 0;
-			else if (this < action)
-				return 1;
-			else
-				return -1;
-		} else if (compareToCounter < action->compareToCounter)
-			return 1;
-		else
-			return -1;
-	}
+	int compareTo(CommandQueueAction* action);
 
-	inline void setCompareToCounter(int c) {
-		compareToCounter = c;
-	}
+	void setCompareToCounter(int c);
 
-	inline int getCompareToCounter() {
-		return compareToCounter;
-	}
+	int getCompareToCounter();
 
-	inline CreatureObject* getCreature() {
-		return creature;
-	}
+	CreatureObject* getCreature();
 
-	inline uint32 getCommand() {
-		return queueCommand;
-	}
+	uint32 getCommand();
 
-	inline uint64 getTarget() {
-		return target;
-	}
+	uint64 getTarget();
 
-	inline uint32 getActionCounter() {
-		return actionCounter;
-	}
+	uint32 getActionCounter();
 
-	inline UnicodeString getArguments() {
-		return arguments;
-	}
+	UnicodeString getArguments();
 
 };

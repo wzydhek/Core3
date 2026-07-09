@@ -8,6 +8,9 @@
 #include "Faction.h"
 #include "FactionMap.h"
 
+FactionMap::FactionMap() : VectorMap<String, Faction>() {
+}
+
 void FactionMap::addFaction(const Faction& faction) {
 	String factionName = faction.getFactionName();
 

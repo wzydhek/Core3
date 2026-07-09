@@ -13,21 +13,11 @@ class DeedTemplate : public SharedTangibleObjectTemplate {
 	String generatedObjectTemplate;
 
 public:
-	DeedTemplate() {
+	DeedTemplate();
 
-	}
+	~DeedTemplate();
 
-	~DeedTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
-
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
-
-		generatedObjectTemplate = templateData->getStringField("generatedObjectTemplate");
-	}
-
-	inline const String& getGeneratedObjectTemplate() const {
-		return generatedObjectTemplate;
-	}
+	const String& getGeneratedObjectTemplate() const;
 };

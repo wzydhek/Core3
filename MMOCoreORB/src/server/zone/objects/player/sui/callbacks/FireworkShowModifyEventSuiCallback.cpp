@@ -1,0 +1,57 @@
+#include "FireworkShowModifyEventSuiCallback.h"
+#include "server/zone/objects/player/PlayerObject.h"
+
+FireworkShowModifyEventSuiCallback::FireworkShowModifyEventSuiCallback(ZoneServer* server) : SuiCallback(server) {
+}
+
+void FireworkShowModifyEventSuiCallback::run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
+	bool cancelPressed = (eventIndex == 1);
+
+	if (!suiBox->isListBox() || cancelPressed)
+		return;
+
+	if (args->size() < 1)
+		return;
+
+	int index = Integer::valueOf(args->get(0).toString());
+
+	if (index == -1)
+		return;
+
+	SuiListBox* listBox = cast<SuiListBox*>(suiBox);
+	uint64 fireworkObjectID = listBox->getMenuObjectID(index);
+
+	ManagedReference<FireworkObject*> firework = (server->getObject(fireworkObjectID)).castTo<FireworkObject*>();
+
+	if (firework == nullptr || !firework->isFireworkObject())
+		return;
+
+	ManagedReference<SceneObject*> fireworkShow = suiBox->getUsingObject().get();
+
+	if (fireworkShow == nullptr || !fireworkShow->isFireworkObject())
+		return;
+
+	DataObjectComponent* data = fireworkShow->getDataObjectComponent()->get();
+
+	if (data == nullptr || !data->isFireworkShowData())
+		return;
+
+	FireworkShowDataComponent* fireworkShowData = cast<FireworkShowDataComponent*>(data);
+
+	int fireworkIndex = fireworkShowData->getIndexOfFirework(firework);
+	int fireworkDelay = fireworkShowData->getFireworkDelay(fireworkIndex);
+
+	if (fireworkIndex == -1)
+		return;
+
+	ManagedReference<SuiFireworkDelayBox*> suiDelayBox = new SuiFireworkDelayBox(player, SuiWindowType::FIREWORK_SHOW_DELAYSELECTION, fireworkIndex);
+	suiDelayBox->setPromptTitle("@firework:modify_delay_title");																		// Delay Selection
+	suiDelayBox->setPromptText("@firework:modify_delay_prompt");																		// Select the amount of time (in tenths of a second) you would like to have as a delay between this event and the prior event.
+	suiDelayBox->addFrom("Available", String::valueOf(100 - (fireworkDelay / 100)), String::valueOf(100 - (fireworkDelay / 100)), "1"); // SUI expects delay in tenths of a second
+	suiDelayBox->addTo("Delay", String::valueOf(fireworkDelay / 100), String::valueOf(fireworkDelay / 100), "1");
+	suiDelayBox->setUsingObject(fireworkShow);
+
+	suiDelayBox->setCallback(new FireworkShowDelaySelectionSuiCallback(server));
+	player->getPlayerObject()->addSuiBox(suiDelayBox);
+	player->sendMessage(suiDelayBox->generateMessage());
+}

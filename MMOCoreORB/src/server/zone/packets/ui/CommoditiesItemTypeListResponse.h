@@ -7,34 +7,21 @@
 
 #pragma once
 
+#include "engine/service/proto/BaseMessage.h"
+#include "../MessageCallback.h"
+
 class CommoditiesItemTypeListResponse : public BaseMessage {
 public:
-   CommoditiesItemTypeListResponse() : BaseMessage() {
-		insertShort(0x02);
-		insertInt(0xD4E937FC);  // CRC
-
-		insertAscii("Core3.0");
-		insertInt(0);
-
-		setCompression(true);
-   }
+	CommoditiesItemTypeListResponse();
 
 };
 
 class CommoditiesItemTypeListRequestCallback : public MessageCallback {
 	String request;
 public:
-	CommoditiesItemTypeListRequestCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server) {
+	CommoditiesItemTypeListRequestCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		message->parseAscii(request);
-	}
-
-	void run() {
-		CommoditiesItemTypeListResponse* citlr = new CommoditiesItemTypeListResponse();
-		client->sendMessage(citlr);
-	}
+	void run();
 };

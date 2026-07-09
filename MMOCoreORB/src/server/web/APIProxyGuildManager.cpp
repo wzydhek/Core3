@@ -22,7 +22,10 @@
 namespace server {
  namespace web3 {
 
-server::zone::managers::guild::GuildManager* APIProxyGuildManager::getGuildManager() {
+APIProxyGuildManager::APIProxyGuildManager() : BaseAPIProxy("PlayerManager") {
+ }
+
+ server::zone::managers::guild::GuildManager* APIProxyGuildManager::getGuildManager() {
 	auto server = getZoneServer();
 
 	if (server == nullptr) {

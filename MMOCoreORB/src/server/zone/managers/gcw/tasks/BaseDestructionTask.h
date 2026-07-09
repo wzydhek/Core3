@@ -14,25 +14,9 @@ class BaseDestructionTask : public Task {
 	ManagedWeakReference<BuildingObject*> buildingObject;
 	int countDown;
 public:
-	BaseDestructionTask(GCWManager* manager, BuildingObject* building) {
-		gcwManager = manager;
-		buildingObject = building;
-		countDown = manager->getDestructionTimer() / 60;
-	}
+	BaseDestructionTask(GCWManager* manager, BuildingObject* building);
 
-	void run() {
-		countDown--;
-		ManagedReference<GCWManager*> strongRef = gcwManager.get();
-		ManagedReference<BuildingObject*> building = buildingObject.get();
-		if (strongRef == nullptr){
-			return;
-		}
+	void run();
 
-		strongRef->doBaseDestruction(building);
-
-	}
-
-	int getCountdown(){
-		return countDown;
-	}
+	int getCountdown();
 };

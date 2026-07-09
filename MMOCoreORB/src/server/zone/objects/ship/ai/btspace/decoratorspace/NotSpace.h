@@ -13,25 +13,11 @@ namespace decoratorspace {
 
 class NotSpace : public DecoratorSpace {
 public:
-	NotSpace(const String& className, const uint32 id, const LuaObject& args) : DecoratorSpace(className, id, args) {
-	}
+	NotSpace(const String& className, const uint32 id, const LuaObject& args);
 
-	NotSpace(const NotSpace& b) : DecoratorSpace(b) {
-	}
+	NotSpace(const NotSpace& b);
 
-	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const {
-		assert(child != nullptr);
-
-		BehaviorSpace::Status result = child->doAction(agent);
-
-		if (result == FAILURE)
-			return SUCCESS;
-
-		if (result == SUCCESS)
-			return FAILURE;
-
-		return result;
-	}
+	BehaviorSpace::Status execute(ShipAiAgent* agent, unsigned int startIdx = 0) const;
 };
 
 } // namespace decoratorspace
@@ -41,3 +27,5 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::ship::ai::btspace::decoratorspace;

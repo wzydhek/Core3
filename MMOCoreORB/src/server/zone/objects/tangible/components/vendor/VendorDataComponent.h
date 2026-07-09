@@ -66,9 +66,7 @@ public:
 public:
 	VendorDataComponent();
 
-	virtual ~VendorDataComponent() {
-
-	}
+	virtual ~VendorDataComponent();
 
 	void initializeTransientMembers();
 
@@ -78,182 +76,71 @@ public:
 
 	void writeJSON(nlohmann::json& j) const;
 
-	void setOwnerId(uint64 id) {
-		ownerId = id;
-	}
+	void setOwnerId(uint64 id);
 
-	uint64 getOwnerId() {
-		return ownerId;
-	}
+	uint64 getOwnerId();
 
-	bool isVendorData() {
-		return true;
-	}
+	bool isVendorData();
 
-	inline void setInitialized(bool val) {
-		initialized = val;
-		updateUID();
-
-		ManagedReference<SceneObject*> strongParent = parent.get();
-		if (strongParent == nullptr)
-			return;
-
-		originalDirection = strongParent->getDirectionAngle();
-		setVendorSearchEnabled(true);
-	}
+	void setInitialized(bool val);
 
 	void setVendorSearchEnabled(bool enabled);
 
-	inline void setDisabled(bool isDisabled) {
-		disabled = isDisabled;
-	}
+	void setDisabled(bool isDisabled);
 
-	inline void setRegistered(bool reg) {
-		registered = reg;
+	void setRegistered(bool reg);
 
-		/// This is just a precaution in case somehow items get lost
-		/// and this would link up a missing auction list unless it was totally
-		/// gone
-		if (registered)
-			updateUID();
-	}
+	int getOwnershipRightsOf(CreatureObject* player);
 
-	inline int getOwnershipRightsOf(CreatureObject* player) {
-		if (!initialized)
-			return 2; // mark not initalized
+	bool isVendorOwner(CreatureObject* player);
 
-		if (player->getObjectID() == ownerId) // Player owns this vendor
-			return 0;
-		else if (ownerId != 0) // someone else owns the vendor and its not a bazaar
-			return 1;
-		else
-			return 2; // the vendor hasn't been initalized yet or it belongs to no one (bazaar)
-	}
+	bool isInitialized();
 
-	inline bool isVendorOwner(CreatureObject* player) {
-		return player->getObjectID() == ownerId;
-	}
+	bool isVendorSearchEnabled();
 
-	inline bool isInitialized() {
-		return initialized;
-	}
+	bool isDisabled();
 
-	inline bool isVendorSearchEnabled() {
-		return vendorSearchEnabled;
-	}
+	bool isRegistered();
 
-	inline bool isDisabled() {
-		return disabled;
-	}
+	void awardUseXP();
 
-	inline bool isRegistered() {
-		return registered;
-	}
+	bool isAdBarkingEnabled();
 
-	inline void awardUseXP() {
-		if (time(0) - lastXpAward.getTime() > USEXPINTERVAL * 60) {
-			awardUsageXP++;
-			lastXpAward.updateToCurrentTime();
-		}
-	}
+	void setAdBarking(bool value);
 
-	inline bool isAdBarkingEnabled() {
-		Locker locker(&adBarkingMutex);
-		return adBarking;
-	}
+	bool isEmpty();
 
-	inline void setAdBarking(bool value) {
-		Locker locker(&adBarkingMutex);
-		vendorBarks.removeAll();
-		adBarking = value;
-	}
+	void setEmpty();
 
-	inline bool isEmpty() {
-		ManagedReference<AuctionManager*> auctionManager = auctionMan.get();
+	int getMaint();
 
-		if (auctionManager == nullptr)
-			return false;
+	bool isOnStrike();
 
-		ManagedReference<AuctionsMap*> auctionsMap =
-				auctionManager->getAuctionMap();
-		if (auctionsMap == nullptr) {
-			return false;
-		}
+	void setAdPhrase(const String& message);
 
-		return auctionsMap->getVendorItemCount(parent.get(), true) == 0;
-	}
+	void setAdMood(const String& mood);
 
-	inline void setEmpty() {
-		mail1Sent = false;
+	void setAdAnimation(const String& animation);
 
-		emptyTimer.updateToCurrentTime();
-	}
+	String getAdPhrase();
 
-	inline int getMaint() {
-		return maintAmount;
-	}
+	String getAdMood();
 
-	inline bool isOnStrike() {
-		return maintAmount <= 0;
-	}
+	String getAdAnimation();
 
-	void setAdPhrase(const String& message) {
-		barkMessage = message;
-	}
+	bool hasBarkTarget(uint64 targetID);
 
-	void setAdMood(const String& mood) {
-		barkMood = mood;
-	}
+	void addBarkTarget(uint64 targetID);
 
-	void setAdAnimation(const String& animation) {
-		barkAnimation = animation;
-	}
+	bool canBark();
 
-	String getAdPhrase() {
-		return barkMessage;
-	}
+	void resetLastBark();
 
-	String getAdMood() {
-		return barkMood;
-	}
+	void removeBarkTarget(uint64 targetID);
 
-	String getAdAnimation() {
-		return barkAnimation;
-	}
+	void removeAllVendorBarks();
 
-	bool hasBarkTarget(uint64 targetID) {
-		Locker locker(&adBarkingMutex);
-		return vendorBarks.contains(targetID);
-	}
-
-	void addBarkTarget(uint64 targetID) {
-		Locker locker(&adBarkingMutex);
-		vendorBarks.add(targetID);
-	}
-
-	bool canBark() {
-		Locker locker(&adBarkingMutex);
-		return (time(0) - lastBark > BARKINTERVAL);
-	}
-
-	void resetLastBark() {
-		Locker locker(&adBarkingMutex);
-		lastBark = time(0);
-	}
-
-	void removeBarkTarget(uint64 targetID) {
-		Locker locker(&adBarkingMutex);
-		vendorBarks.removeElement(targetID);
-	}
-
-	void removeAllVendorBarks() {
-		Locker locker(&adBarkingMutex);
-		vendorBarks.removeAll();
-	}
-
-	float getOriginalDirection() {
-		return originalDirection;
-	}
+	float getOriginalDirection();
 
 	float getMaintenanceRate();
 

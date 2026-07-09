@@ -23,7 +23,7 @@ protected:
 
 
 	void startJob(Reference<NavMeshJob*> job);
-    	void checkJobs();
+    void checkJobs();
 
 public:
 	NavMeshManager();
@@ -36,9 +36,7 @@ public:
 	void cancelAllJobs();
 	void stop();
 
-	bool isStopped() const {
-		return stopped;
-	}
+	bool isStopped() const;
 
 	void dumpMeshesToFiles();
 

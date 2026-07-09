@@ -11,151 +11,48 @@ class DeltaMessage : public BaseMessage {
 	int updateCount;
 
 public:
-	DeltaMessage(uint64 oid, uint32 name, uint8 type) {
-		insertShort(0x05);
-		insertInt(0x12862153);
-		insertLong(oid);
-		insertInt(name);
-		insertByte(type);
-		insertInt(0);
+	DeltaMessage(uint64 oid, uint32 name, uint8 type);
 
-		setCompression(true);
+	void startUpdate(uint16 type);
 
-		updateCount = 0;
-		insertShort(updateCount);
-	}
+	void addByteUpdate(uint16 type, uint8 value);
 
-	inline void startUpdate(uint16 type) {
-		++updateCount;
-		insertShort(type);
-	}
+	void addShortUpdate(uint16 type, uint16 value);
 
-	/*template<class E> void addToDeltaVectorUpdate(uint16 type, DeltaVector<E>* vector) {
-		startUpdate(type);
+	void addIntUpdate(uint16 type, uint32 value);
 
-		startList(1, vector->getNewUpdateCounter(1));
+	void addLongUpdate(uint16 type, uint64 value);
 
-		insertByte(1);
-		insertShort(vector->size() - 1);
-		E& object = vector->get(vector->size() - 1);
-		TypeInfo<E>::toBinaryStream(&object, this);
-	}
+	void addFloatUpdate(uint16 type, float value);
 
-	template<class E> void removeFromDeltaVectorUpdate(uint16 type, DeltaVector<E>* vector, int removedIndex) {
-		startUpdate(type);
+	void addAsciiUpdate(uint16 type, const String& val);
 
-		startList(1, grup->getNewUpdateCounter(1));
-		insertByte(0);
-		insertShort(removedIndex);
-	}*/
+	void addStringIdUpdate(uint16 type, const StringId& val);
 
-	inline void addByteUpdate(uint16 type, uint8 value) {
-		startUpdate(type);
-		insertByte(value);
-	}
+	void addUnicodeUpdate(uint16 type, const String& val);
 
-	inline void addShortUpdate(uint16 type, uint16 value) {
-		startUpdate(type);
-		insertShort(value);
-	}
+	void addUnicodeUpdate(uint16 type, const UnicodeString& val);
 
-	inline void addIntUpdate(uint16 type, uint32 value) {
-		startUpdate(type);
-		insertInt(value);
-	}
+	void startList(uint32 cnt, uint32 updcnt);
 
-	inline void addLongUpdate(uint16 type, uint64 value) {
-		startUpdate(type);
-		insertLong(value);
-	}
+	void addListIntElement(uint16 index, uint32 value);
 
-	inline void addFloatUpdate(uint16 type, float value) {
-		startUpdate(type);
-		insertFloat(value);
-	}
+	void addListFloatElement(uint16 index, float value);
 
-	inline void addAsciiUpdate(uint16 type, const String& val) {
-		startUpdate(type);
-		insertAscii(val.toCharArray());
-	}
+	void addListLongElement(uint16 index, uint64 value);
 
-	inline void addStringIdUpdate(uint16 type, const StringId& val) {
-		startUpdate(type);
-		insertAscii(val.getFile());
-		insertInt(0);
-		insertAscii(val.getStringID());
-	}
+	void addListAsciiElement(const String& value);
 
-	inline void addUnicodeUpdate(uint16 type, const String& val) {
-		startUpdate(type);
-		UnicodeString v = UnicodeString(val);
-		insertUnicode(v);
-	}
+	void removeListIntElement(uint16 index, uint32 value);
 
-	inline void addUnicodeUpdate(uint16 type, const UnicodeString& val) {
-		startUpdate(type);
-		insertUnicode(val);
-	}
+	void removeListFloatElement(uint16 index, float value);
 
-	inline void startList(uint32 cnt, uint32 updcnt) {
-		insertInt(cnt);
-		insertInt(updcnt);
-	}
+	void removeListLongElement(uint16 index, uint64 value);
 
-	inline void addListIntElement(uint16 index, uint32 value) {
-		insertByte(0x01);
-		insertShort(index);
-		insertInt(value);
-	}
+	void removeListLongElement(uint16 index);
 
-	inline void addListFloatElement(uint16 index, float value) {
-		insertByte(0x01);
-		insertShort(index);
-		insertFloat(value);
-	}
+	void removeListAsciiElement(const String& value);
 
-	inline void addListLongElement(uint16 index, uint64 value) {
-		insertByte(0x01);
-		insertShort(index);
-		insertLong(value);
-	}
-
-	inline void addListAsciiElement(const String& value) {
-		insertByte(0x00);
-		insertAscii(value.toCharArray());
-	}
-
-	inline void removeListIntElement(uint16 index, uint32 value) {
-		insertByte(0x02);
-		insertShort(index);
-		insertInt(value);
-	}
-
-	inline void removeListFloatElement(uint16 index, float value) {
-		insertByte(0x02);
-		insertShort(index);
-		insertFloat(value);
-	}
-
-	inline void removeListLongElement(uint16 index, uint64 value) {
-		insertByte(0x02);
-		insertShort(index);
-		insertLong(value);
-	}
-
-	inline void removeListLongElement(uint16 index) {
-		insertByte(0x03);
-		insertShort(index);
-	}
-
-	inline void removeListAsciiElement(const String& value) {
-		insertByte(0x01);
-		insertAscii(value.toCharArray());
-	}
-
-	inline void close() {
-		insertInt(23, size() - 27);
-		insertShort(27, updateCount);
-	}
+	void close();
 
 };

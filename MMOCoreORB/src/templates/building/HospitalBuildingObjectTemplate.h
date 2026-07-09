@@ -16,39 +16,19 @@ class HospitalBuildingObjectTemplate : public SharedBuildingObjectTemplate {
 	int mindWoundRegenRate;
 
 public:
-	HospitalBuildingObjectTemplate() : medicalRating(0), healthWoundRegenRate(0), actionWoundRegenRate(0), mindWoundRegenRate(0) {
-	}
+	HospitalBuildingObjectTemplate();
 
-	~HospitalBuildingObjectTemplate() {
-	}
+	~HospitalBuildingObjectTemplate();
 
-	void readObject(LuaObject* templateData) {
-		SharedBuildingObjectTemplate::readObject(templateData);
+	void readObject(LuaObject* templateData);
 
-		medicalRating = templateData->getIntField("medicalRating");
-		healthWoundRegenRate = templateData->getIntField("healthWoundRegenRate");
-		actionWoundRegenRate = templateData->getIntField("actionWoundRegenRate");
-		mindWoundRegenRate = templateData->getIntField("mindWoundRegenRate");
+	bool isHospitalBuildingObjectTemplate();
 
-	}
+	int getMedicalRating();
 
-	bool isHospitalBuildingObjectTemplate() {
-		return true;
-	}
+	int getHealthWoundRegenRate();
 
-	inline int getMedicalRating() {
-		return medicalRating;
-	}
+	int getActionWoundRegenRate();
 
-	inline int getHealthWoundRegenRate() {
-		return healthWoundRegenRate;
-	}
-
-	inline int getActionWoundRegenRate() {
-		return actionWoundRegenRate;
-	}
-
-	inline int getMindWoundRegenRate() {
-		return mindWoundRegenRate;
-	}
+	int getMindWoundRegenRate();
 };

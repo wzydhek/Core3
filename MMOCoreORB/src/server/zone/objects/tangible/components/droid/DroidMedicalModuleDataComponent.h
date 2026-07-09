@@ -26,13 +26,13 @@ public:
 	void fillAttributeList(AttributeListMessage* msg, CreatureObject* droid);
 	void loadSkillMods(CreatureObject* player);
 	void unloadSkillMods(CreatureObject* player);
-	bool skillsByRange() { return true;}
-	int getBatteryDrain() { return 0;}
+	bool skillsByRange();
+	int getBatteryDrain();
 	String toString() const;
 	// crafting droid module specific
 	void onCall();
 	void onStore();
-	bool isStackable() { return true; }
+	bool isStackable();
 	void copy(BaseDroidModuleComponent* other);
 	void addToStack(BaseDroidModuleComponent* other);
 	void updateCraftingValues(CraftingValues* values, bool firstUpdate);

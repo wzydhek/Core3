@@ -11,6 +11,10 @@
 #include "server/zone/objects/player/sessions/SlicingSession.h"
 #include "server/zone/Zone.h"
 
+ShipStationContainerComponent::ShipStationContainerComponent() {
+	setLoggingName("ShipStationContainerComponent");
+}
+
 bool ShipStationContainerComponent::transferObject(SceneObject* sceneObject, SceneObject* object, int containmentType, bool notifyClient, bool allowOverflow, bool notifyRoot) const {
 	if (sceneObject == object) {
 		return false;

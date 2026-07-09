@@ -34,12 +34,12 @@ public:
 	void handlePetCommand(String cmd, CreatureObject* speaker) ;
 	int getBatteryDrain();
 	String toString() const;
-	const String& getMessage() const { return message; }
-	bool isActive(){ return active; }
+	const String& getMessage() const;
+	bool isActive();
 	void onCall();
 	void deactivate();
 	void onStore();
-	bool isStackable() { return false; }
+	bool isStackable();
 };
 
 } // droid

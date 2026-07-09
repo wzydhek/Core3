@@ -1359,3 +1359,12 @@ bool PathFinderManager::getSpawnPointInArea(const Sphere& area, Zone *zone, Vect
 
 	return false;
 }
+
+int NavCollision::compareTo(const NavCollision* rhs) const {
+	if (fabs(dist - rhs->dist) < 0.001f)
+		return 0;
+	else if (dist < rhs->dist)
+		return 1;
+	else
+		return -1;
+}

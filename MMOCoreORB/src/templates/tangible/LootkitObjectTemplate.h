@@ -21,83 +21,30 @@ protected:
 
 
 public:
-	LootkitObjectTemplate() : deleteComponents(false) {
+	LootkitObjectTemplate();
 
-	}
+	~LootkitObjectTemplate();
 
-	~LootkitObjectTemplate() {
+	void readObject(LuaObject* templateData);
 
-	}
+	VectorMap<uint32, bool> getComponents() const;
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	VectorMap<uint32, String> getAttributes() const;
 
-		deleteComponents = templateData->getByteField("deleteComponents");
+	Vector<uint32> getComps() const;
 
-		components.removeAll();
-		attributes.removeAll();
-		comps.removeAll();
-		reward.removeAll();
+	Vector<uint32> getReward() const;
 
-		LuaObject collectibleComponents = templateData->getObjectField("collectibleComponents");
-		for (int i = 1; i <= collectibleComponents.getTableSize(); ++i) {
-			components.put(collectibleComponents.getStringAt(i).hashCode(), false);
-			comps.add(i-1,collectibleComponents.getStringAt(i).hashCode());
-		}
-		collectibleComponents.pop();
+	bool getDeleteComponents() const;
 
-		LuaObject collectibleComponentsAttributes = templateData->getObjectField("attributes");
-		for (int i = 1; i <= collectibleComponentsAttributes.getTableSize(); ++i) {
-			attributes.put(comps.get(i-1), collectibleComponentsAttributes.getStringAt(i));
-		}
-		collectibleComponentsAttributes.pop();
+	void setDeleteComponents(bool deleteComponents);
 
-		LuaObject rewards = templateData->getObjectField("collectibleReward");
-		for (int i = 1; i <= rewards.getTableSize(); ++i) {
-			reward.add(i-1,rewards.getStringAt(i).hashCode());
-		}
-		rewards.pop();
+	void setComponents(VectorMap<uint32, bool> components);
 
-	}
+	void setAttributes(VectorMap<uint32, String> attributes);
 
-	VectorMap<uint32, bool> getComponents() const {
-		return components;
-	}
+	void setComps(Vector<uint32> comps);
 
-	VectorMap<uint32, String> getAttributes() const {
-		return attributes;
-	}
-
-	Vector<uint32> getComps() const {
-		return comps;
-	}
-
-	Vector<uint32> getReward() const {
-		return reward;
-	}
-
-	bool getDeleteComponents() const {
-		return deleteComponents;
-	}
-
-	void setDeleteComponents(bool deleteComponents) {
-		this->deleteComponents = deleteComponents;
-	}
-
-	void setComponents(VectorMap<uint32, bool> components) {
-		this->components = components;
-	}
-
-	void setAttributes(VectorMap<uint32, String> attributes) {
-		this->attributes = attributes;
-	}
-
-	void setComps(Vector<uint32> comps) {
-		this->comps = comps;
-	}
-
-	void setReward(Vector<uint32> reward) {
-		this->reward = reward;
-	}
+	void setReward(Vector<uint32> reward);
 
 };

@@ -8,6 +8,7 @@
 #pragma once
 
 #include "engine/util/json_utils.h"
+#include "engine/util/u3d/Vector3.h"
 
 class SpaceLaunchPoint : public Object {
 	String groundZoneName;
@@ -15,79 +16,31 @@ class SpaceLaunchPoint : public Object {
 	Vector3 location;
 
 public:
-	SpaceLaunchPoint() : Object() {
-		groundZoneName = "";
-		cityName = "";
-	}
+	SpaceLaunchPoint();
 
-	SpaceLaunchPoint(const SpaceLaunchPoint& point) : Object() {
-		initialize(point);
-	}
+	SpaceLaunchPoint(const SpaceLaunchPoint& point);
 
-	SpaceLaunchPoint& operator=(const SpaceLaunchPoint& point) {
-		if (this == &point)
-			return *this;
+	SpaceLaunchPoint& operator=(const SpaceLaunchPoint& point);
 
-		initialize(point);
+	friend void to_json(nlohmann::json& j, const SpaceLaunchPoint& l);
 
-		return *this;
-	}
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-	friend void to_json(nlohmann::json& j, const SpaceLaunchPoint& l) {
-		j["groundZoneName"] = l.groundZoneName;
-		j["cityName"] = l.cityName;
-		j["location"] = l.location;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		groundZoneName.toBinaryStream(stream);
-		cityName.toBinaryStream(stream);
-		location.toBinaryStream(stream);
+	void initialize(const SpaceLaunchPoint& point);
 
-		return true;
-	}
+	void setGroundZoneName(String zoneName);
 
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		groundZoneName.parseFromBinaryStream(stream);
-		cityName.parseFromBinaryStream(stream);
-		location.parseFromBinaryStream(stream);
+	void setCityName(String name);
 
-		return true;
-	}
+	void setLocation(float x, float z, float y);
 
-	void initialize(const SpaceLaunchPoint& point) {
-		groundZoneName = point.groundZoneName;
-		cityName = point.cityName;
-		location = point.location;
-	}
+	void setLocation(Vector3 loc);
 
-	inline void setGroundZoneName(String zoneName) {
-		groundZoneName = zoneName;
-	}
+	String getGoundZoneName();
 
-	inline void setCityName(String name) {
-		cityName = name;
-	}
+	String getCityName();
 
-	inline void setLocation(float x, float z, float y) {
-		location.setX(x);
-		location.setZ(z);
-		location.setY(y);
-	}
-
-	inline void setLocation(Vector3 loc) {
-		location = loc;
-	}
-
-	inline String getGoundZoneName() {
-		return groundZoneName;
-	}
-
-	inline String getCityName() {
-		return cityName;
-	}
-
-	inline Vector3 getLocation() {
-		return location;
-	}
+	Vector3 getLocation();
 };

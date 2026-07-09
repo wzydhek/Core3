@@ -5,41 +5,13 @@
 #pragma once
 
 #include "engine/service/proto/BaseMessage.h"
+#include "server/zone/objects/creature/CreatureObject.h"
+#include "server/zone/objects/player/sessions/MigrateStatsSession.h"
 
 class StatMigrationTargetsMessage : public BaseMessage {
 public:
-	StatMigrationTargetsMessage(CreatureObject* creo) : BaseMessage() {
-		insertShort(0x09);
-		insertInt(0xEFAC38C4);  // CRC
+	StatMigrationTargetsMessage(CreatureObject* creo);
 
-		const DeltaVector<int>* baseHam = creo->getBaseHAM();
-
-		for (int i = 0; i < 9; ++i) {
-			insertInt(baseHam->get(i));
-		}
-
-		insertInt(0); // Points Remaining
-
-		setCompression(true);
-	}
-
-	StatMigrationTargetsMessage(CreatureObject* creo, MigrateStatsSession* stats) {
-		insertShort(0x09);
-		insertInt(0xEFAC38C4);  // CRC
-
-		int totalLimit = PlayerCreationManager::instance()->getTotalAttributeLimit(creo->getSpeciesName());
-
-		for (int i = 0; i < 9; ++i) {
-			int val = stats->getAttribtueToModify(i);
-
-			totalLimit -= val;
-
-			insertInt(val);
-		}
-
-		insertInt(totalLimit);
-
-		setCompression(true);
-	}
+	StatMigrationTargetsMessage(CreatureObject* creo, MigrateStatsSession* stats);
 
 };

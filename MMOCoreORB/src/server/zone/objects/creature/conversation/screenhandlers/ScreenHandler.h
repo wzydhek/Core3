@@ -18,12 +18,11 @@ class ScreenHandler {
 protected:
 	String nextScreenId;
 public:
-	ScreenHandler() {}
-	~ScreenHandler() {}
+	ScreenHandler();
 
-	String getNextScreenId() {
-		return nextScreenId;
-	}
+	~ScreenHandler();
+
+	String getNextScreenId();
 
 	virtual ConversationScreen* handleScreen(CreatureObject* conversingPlayer, SceneObject* conversingNPC, int selectedOption, ConversationScreen* conversationScreen) = 0;
 };

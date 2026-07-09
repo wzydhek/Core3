@@ -18,87 +18,25 @@ class BugCategory : public Object {
 	Vector<BugCategory> children;
 
 public:
-	BugCategory() {
-		categoryId = 0;
-		unk1 = 0;
-		unk2 = 0;
-	}
+	BugCategory();
 
-	BugCategory(const UnicodeString& name, uint32 id, byte u1 = 1, byte u2 = 1) {
-		categoryName = name;
-		categoryId = id;
-		unk1 = u1;
-		unk2 = u2;
-	}
+	BugCategory(const UnicodeString& name, uint32 id, byte u1 = 1, byte u2 = 1);
 
-	BugCategory(const BugCategory& cat) : Object() {
-		categoryName = cat.categoryName;
-		categoryId = cat.categoryId;
-		unk1 = cat.unk1;
-		unk2 = cat.unk2;
+	BugCategory(const BugCategory& cat);
 
-		children = cat.children;
-	}
+	BugCategory& operator=(const BugCategory& cat);
 
-	BugCategory& operator= (const BugCategory& cat) {
-		if (this == &cat)
-			return *this;
+	void addCategory(const BugCategory& cat);
 
-		categoryName = cat.categoryName;
-		categoryId = cat.categoryId;
-		unk1 = cat.unk1;
-		unk2 = cat.unk2;
+	int compareTo(const BugCategory& cat) const;
 
-		children = cat.children;
+	void insertToMessage(Message* message);
 
-		return *this;
-	}
+	void setCategoryName(const UnicodeString& name);
 
-	void addCategory(const BugCategory& cat) {
-		children.add(cat);
-	}
+	void setCategoryId(uint32 id);
 
-	int compareTo(const BugCategory& cat) const {
-		if (categoryId < cat.categoryId)
-			return 1;
-		else if (categoryId > cat.categoryId)
-			return -1;
-		else
-			return 0;
-	}
+	void setUnk1(byte u1);
 
-	void insertToMessage(Message* message) {
-		message->insertUnicode(categoryName);
-		message->insertInt(categoryId);
-
-		message->insertInt(children.size());
-
-		for (int i = 0; i < children.size(); ++i) {
-			BugCategory* category = &children.get(i);
-
-			if (category == nullptr)
-				continue;
-
-			category->insertToMessage(message);
-		}
-
-		message->insertByte(unk1);
-		message->insertByte(unk2);
-	}
-
-	inline void setCategoryName(const UnicodeString& name) {
-		categoryName = name;
-	}
-
-	inline void setCategoryId(uint32 id) {
-		categoryId = id;
-	}
-
-	inline void setUnk1(byte u1) {
-		unk1 = u1;
-	}
-
-	inline void setUnk2(byte u2) {
-		unk2 = u2;
-	}
+	void setUnk2(byte u2);
 };

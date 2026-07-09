@@ -175,3 +175,15 @@ void DroidAutoRepairModuleDataComponent::copy(BaseDroidModuleComponent* other){
 	info( "copy autoRepairPower=" + String::valueOf(autoRepairPower) );
 
 }
+
+bool DroidAutoRepairModuleDataComponent::isActive() {
+	return active;
+}
+
+float DroidAutoRepairModuleDataComponent::getAutoRepairPower() {
+	return autoRepairPower;
+}
+
+bool DroidAutoRepairModuleDataComponent::isStackable() {
+	return true;
+}

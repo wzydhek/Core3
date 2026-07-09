@@ -1007,3 +1007,27 @@ void SkillManager::getPlayerDroidCommands(PlayerObject* ghost, Vector<String>& p
 			playerDroidCommands.add(droidCommands.get(i));
 	}
 }
+
+Skill* SkillManager::getSkill(const String& skillName) const {
+	return skillMap.get(skillName.hashCode()).get();
+}
+
+Skill* SkillManager::getSkill(uint32 hashCode) const {
+	return skillMap.get(hashCode).get();
+}
+
+Ability* SkillManager::getAbility(const String& abilityName) const {
+	return abilityMap.get(abilityName).get();
+}
+
+PerformanceManager* SkillManager::getPerformanceManager() {
+	return performanceManager;
+}
+
+bool SkillManager::isApprenticeshipEnabled() const {
+	return apprenticeshipEnabled;
+}
+
+int SkillManager::getDroidProgramSize(uint32 programHash) {
+	return droidProgramSizes.get(programHash);
+}

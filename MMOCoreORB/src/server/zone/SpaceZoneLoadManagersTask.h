@@ -14,18 +14,7 @@ class SpaceZoneLoadManagersTask : public Task {
 	ManagedReference<ZoneServer*> zoneServer;
 	ManagedReference<SpaceZone*> zone;
 public:
-	SpaceZoneLoadManagersTask(ZoneServer* server, SpaceZone* zone) {
-		this->zone = zone;
-		zoneServer = server;
-	}
+	SpaceZoneLoadManagersTask(ZoneServer* server, SpaceZone* zone);
 
-	void run() {
-		if (zone == nullptr)
-			return;
-
-		if (zone->hasManagersStarted())
-			return;
-
-		zone->startManagers();
-	}
+	void run();
 };

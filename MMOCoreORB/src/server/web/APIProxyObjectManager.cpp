@@ -28,7 +28,10 @@
 namespace server {
  namespace web3 {
 
-int APIProxyObjectManager::writeObjectJSON(uint64 oid, bool recursive, bool parents, JSONSerializationType& objects, int maxDepth) {
+APIProxyObjectManager::APIProxyObjectManager() : BaseAPIProxy("Object") {
+ }
+
+ int APIProxyObjectManager::writeObjectJSON(uint64 oid, bool recursive, bool parents, JSONSerializationType& objects, int maxDepth) {
 	int countFound = 0;
 
 	auto obj = Core::lookupObject(oid).castTo<ManagedObject*>();

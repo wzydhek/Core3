@@ -37,42 +37,11 @@ protected:
 	SynchronizedSortedVector<uint64> notifiedPlayers;
 
 public:
-	TurretDataComponent() {
-		maxRange = 80.f;
-		attackSpeed = 1.f;
+	TurretDataComponent();
 
-		nextAutoFireTime.updateToCurrentTime();
+	~TurretDataComponent();
 
-		templateData = nullptr;
-		controller = nullptr;
-		manualTarget = nullptr;
-		turretTask = nullptr;
-
-		maxMineRange = 32.f;
-		explodeDelay.updateToCurrentTime();
-	}
-
-	~TurretDataComponent() {
-	}
-
-	void writeJSON(nlohmann::json& j) const {
-		DataObjectComponent::writeJSON(j);
-
-		SERIALIZE_JSON_MEMBER(maxRange);
-		SERIALIZE_JSON_MEMBER(attackSpeed);
-		SERIALIZE_JSON_MEMBER(nextAutoFireTime);
-
-		if (templateData) {
-			j["templateData"] = templateData->getTemplateFileName();
-		} else {
-			j["templateData"] = "";
-		}
-
-		SERIALIZE_JSON_MEMBER(controller);
-		SERIALIZE_JSON_MEMBER(manualTarget);
-		SERIALIZE_JSON_MEMBER(lastAutoTarget);
-		SERIALIZE_JSON_MEMBER(numberOfPlayersInRange);
-	}
+	void writeJSON(nlohmann::json& j) const;
 
 	void initializeTransientMembers();
 	void fillAttributeList(AttributeListMessage* alm);
@@ -91,99 +60,50 @@ public:
 	 * Setters
 	 */
 
-	void setController(CreatureObject* creature) {
-		controller = creature;
-	}
+	void setController(CreatureObject* creature);
 
-	void setManualTarget(CreatureObject* creature) {
-		manualTarget = creature;
-	}
+	void setManualTarget(CreatureObject* creature);
 
-	uint32 incrementNumberOfPlayersInRange() {
-		return numberOfPlayersInRange.increment();
-	}
+	uint32 incrementNumberOfPlayersInRange();
 
-	uint32 decrementNumberOfPlayersInRange() {
-		return numberOfPlayersInRange.decrement();
-	}
+	uint32 decrementNumberOfPlayersInRange();
 
-	void addNotifiedPlayer(const uint64 oid) {
-		notifiedPlayers.put(oid);
-	}
+	void addNotifiedPlayer(const uint64 oid);
 
-	void removeNotifiedPlayer(const uint64 oid) {
-		notifiedPlayers.drop(oid);
-	}
+	void removeNotifiedPlayer(const uint64 oid);
 
-	void updateMineCooldown(uint64 cooldown) {
-		explodeDelay.updateToCurrentTime();
-		explodeDelay.addMiliTime(cooldown);
-	}
+	void updateMineCooldown(uint64 cooldown);
 
 	/*
 	 * Getters
 	 */
 
-	int getRescheduleDelay() {
-		int delay = 0;
+	int getRescheduleDelay();
 
-		if (nextAutoFireTime.isFuture()) {
-			delay = Time().miliDifference(nextAutoFireTime);
-		}
+	CreatureObject* getController();
 
-		return delay;
-	}
+	CreatureObject* getManualTarget();
 
-	CreatureObject* getController() {
-		return controller.get();
-	}
+	int getMaxRange();
 
-	CreatureObject* getManualTarget() {
-		return manualTarget.get();
-	}
+	float getAttackSpeed();
 
-	int getMaxRange() {
-		return maxRange;
-	}
+	Task* getFireTask();
 
-	float getAttackSpeed() {
-		return attackSpeed;
-	}
+	uint32 getNumberOfPlayersInRange();
 
-	Task* getFireTask() {
-		return turretTask;
-	}
+	int getMineCount();
 
-	uint32 getNumberOfPlayersInRange() {
-		return numberOfPlayersInRange.get();
-	}
+	float getMaxMineRange();
 
-	int getMineCount() {
-		return mines.size();
-	}
+	bool compareAndSetNumberOfPlayersInRange(uint32 oldVal, uint32 newVal);
 
-	float getMaxMineRange() {
-		return maxMineRange;
-	}
+	bool canExplodeMine();
 
-	bool compareAndSetNumberOfPlayersInRange(uint32 oldVal, uint32 newVal) {
-		return numberOfPlayersInRange.compareAndSet(oldVal, newVal);
-	}
+	bool isTurretData();
 
-	bool canExplodeMine() {
-		return explodeDelay.isPast();
-	}
-
-	bool isTurretData() {
-		return true;
-	}
-
-	bool hasNotifiedPlayer(const uint64 oid) {
-		return notifiedPlayers.contains(oid);
-	}
+	bool hasNotifiedPlayer(const uint64 oid);
 
 private:
-	void addSerializableVariables() {
-		addSerializableVariable("mines", &mines);
-	}
+	void addSerializableVariables();
 };

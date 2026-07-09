@@ -12,60 +12,30 @@
 
 class GameServerLagResponse : public BaseMessage {
 public:
-	GameServerLagResponse() : BaseMessage() {
-		insertShort(1); // figure out
-		insertInt(0x789A4E0A);
-
-	}
+	GameServerLagResponse();
 };
 
 class ConnectionServerLagResponse : public BaseMessage {
 public:
-	ConnectionServerLagResponse() : BaseMessage() {
-		insertShort(1); // figure out
-		insertInt(0x1590F63C);
-
-	}
+	ConnectionServerLagResponse();
 };
 
 class LagReportCallback : public MessageCallback {
 	uint32 connectionServerLag;
 	uint32 gameServerLag;
 public:
-	LagReportCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server), connectionServerLag(0), gameServerLag(0) {
+	LagReportCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-		connectionServerLag = message->parseInt();
-		gameServerLag = message->parseInt();
-	}
-
-	void run() {
-	}
+	void run();
 };
 
 class LagRequestCallback : public MessageCallback {
 public:
-	LagRequestCallback(ZoneClientSession* client, ZoneProcessServer* server) :
-		MessageCallback(client, server) {
+	LagRequestCallback(ZoneClientSession* client, ZoneProcessServer* server);
 
-	}
+	void parse(Message* message);
 
-	void parse(Message* message) {
-	}
-
-	void run() {
-		ManagedReference<ZoneClientSession*> session = client.get();
-
-		if (session == nullptr)
-			return;
-
-		ConnectionServerLagResponse* connectionServer = new ConnectionServerLagResponse();
-		session->sendMessage(connectionServer);
-
-		GameServerLagResponse* gameServer = new GameServerLagResponse();
-		session->sendMessage(gameServer);
-	}
+	void run();
 };

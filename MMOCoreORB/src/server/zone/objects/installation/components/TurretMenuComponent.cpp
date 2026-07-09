@@ -17,6 +17,7 @@
 #include "server/zone/managers/collision/CollisionManager.h"
 #include "server/zone/managers/gcw/GCWManager.h"
 #include "server/zone/objects/player/FactionStatus.h"
+#include "server/zone/managers/radial/RadialOptions.h"
 
 void TurretMenuComponent::fillObjectMenuResponse(SceneObject* sceneObject, ObjectMenuResponse* menuResponse, CreatureObject* player) const {
 	if (sceneObject == nullptr || !sceneObject->isTurret() || sceneObject->getZone() == nullptr) {

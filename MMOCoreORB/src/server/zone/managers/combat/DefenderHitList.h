@@ -26,125 +26,59 @@ class DefenderHitList : public Object {
 	Vector<int> poolsToWound;
 
 public:
-	DefenderHitList() {
-		defender = nullptr;
-		hit = 0;
-		hitLocation = 0;
-		animationCRC = 0;
-		initialDamage = 0;
-		damageMultiplier = 0;
-		foodMitigation = 0;
-		jediMitigation = 0;
-		forceFeedback = 0;
-		forceAbsorb = 0;
-		psgMitigation = 0;
-		armorMitigation = 0;
-	}
+	DefenderHitList();
 
-	~DefenderHitList() {
-	}
+	~DefenderHitList();
 
-	void setDefender(TangibleObject* tano) {
-		defender = tano;
-	}
+	void setDefender(TangibleObject* tano);
 
-	void setHit(int val) {
-		hit = val;
-	}
+	void setHit(int val);
 
-	void setHitLocation(int val) {
-		hitLocation = val;
-	}
+	void setHitLocation(int val);
 
-	void setAnimationCRC(uint32 val) {
-		animationCRC = val;
-	}
+	void setAnimationCRC(uint32 val);
 
-	void setInitialDamage(int initDam) {
-		initialDamage = initDam;
-	}
+	void setInitialDamage(int initDam);
 
-	void setDamageMultiplier(float damageMulti) {
-		damageMultiplier = damageMulti;
-	}
+	void setDamageMultiplier(float damageMulti);
 
-	void setFoodMitigation(int fMit) {
-		foodMitigation = fMit;
-	}
+	void setFoodMitigation(int fMit);
 
-	void setJediMitigation(int jediArmMit) {
-		jediMitigation = jediArmMit;
-	}
+	void setJediMitigation(int jediArmMit);
 
-	void setForceFeedback(int feedbackDam) {
-		forceFeedback = feedbackDam;
-	}
+	void setForceFeedback(int feedbackDam);
 
-	void setForceAbsorb(int amountAbsorbed) {
-		forceAbsorb = amountAbsorbed;
-	}
+	void setForceAbsorb(int amountAbsorbed);
 
-	void setPsgMitigation(int psgMit) {
-		psgMitigation = psgMit;
-	}
+	void setPsgMitigation(int psgMit);
 
-	void setArmorMitigation(int armorMit) {
-		armorMitigation = armorMit;
-	}
+	void setArmorMitigation(int armorMit);
 
-	void setPoolsToWound(const Vector<int>& woundPools) {
-		poolsToWound = woundPools;
-	}
+	void setPoolsToWound(const Vector<int>& woundPools);
 
-	ManagedReference<TangibleObject*> getDefender() {
-		return defender.get();
-	}
+	ManagedReference<TangibleObject*> getDefender();
 
-	inline int getHit() {
-		return hit;
-	}
+	int getHit();
 
-	inline int getHitLocation() {
-		return hitLocation;
-	}
+	int getHitLocation();
 
-	inline uint32 getAnimationCRC() {
-		return animationCRC;
-	}
+	uint32 getAnimationCRC();
 
-	inline int getInitialDamage() {
-		return initialDamage;
-	}
+	int getInitialDamage();
 
-	inline float getDamageMultiplier() {
-		return damageMultiplier;
-	}
+	float getDamageMultiplier();
 
-	inline int getFoodMitigation() {
-		return foodMitigation;
-	}
+	int getFoodMitigation();
 
-	inline int getJediMitigation() {
-		return jediMitigation;
-	}
+	int getJediMitigation();
 
-	inline int getForceFeedback() {
-		return forceFeedback;
-	}
+	int getForceFeedback();
 
-	inline int getForceAbsorb () {
-		return forceAbsorb;
-	}
+	int getForceAbsorb();
 
-	inline int getPsgMitigation() {
-		return psgMitigation;
-	}
+	int getPsgMitigation();
 
-	inline int getArmorMitigation() {
-		return armorMitigation;
-	}
+	int getArmorMitigation();
 
-	const Vector<int>& getPoolsToWound() {
-		return poolsToWound;
-	}
+	const Vector<int>& getPoolsToWound();
 };

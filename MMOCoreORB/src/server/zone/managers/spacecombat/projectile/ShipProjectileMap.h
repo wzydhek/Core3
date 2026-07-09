@@ -10,52 +10,21 @@ private:
 	Vector<ShipProjectile*> projectileVector;
 
 public:
-	ShipProjectileMapEntry() : Object() {
+	ShipProjectileMapEntry();
 
-	}
+	~ShipProjectileMapEntry();
 
-	~ShipProjectileMapEntry() {
-		for (int i = projectileVector.size(); -1 > --i;) {
-			remove(i);
-		}
-	}
+	ShipProjectileMapEntry(ShipObject* ship);
 
-	ShipProjectileMapEntry(ShipObject* ship) : Object() {
-		shipRef = ship;
-	}
+	ShipObject* getShip();
 
-	ShipObject* getShip() {
-		return shipRef.get().get();
-	}
+	ShipProjectile* getProjectile(int index);
 
-	ShipProjectile* getProjectile(int index) {
-		if (projectileVector.size() > index) {
-			return projectileVector.get(index);
-		}
+	void add(ShipProjectile* projectile);
 
-		return nullptr;
-	}
+	void remove(int index);
 
-	void add(ShipProjectile* projectile) {
-		projectileVector.add(projectile);
-	}
-
-	void remove(int index) {
-		if (projectileVector.size() > index) {
-			auto entry = projectileVector.get(index);
-
-			if (entry != nullptr) {
-				delete entry;
-				entry = nullptr;
-			}
-
-			projectileVector.remove(index);
-		}
-	}
-
-	int size() const {
-		return projectileVector.size();
-	}
+	int size() const;
 };
 
 class ShipProjectileMap {
@@ -64,114 +33,23 @@ private:
 	mutable ReadWriteLock sync;
 
 public:
-	ShipProjectileMap() {
-		projectileMap.setNoDuplicateInsertPlan();
-	}
+	ShipProjectileMap();
 
-	ShipObject* getShip(int mapIndex) {
-		ReadLocker lock(&sync);
+	ShipObject* getShip(int mapIndex);
 
-		if (projectileMap.size() > mapIndex) {
-			return projectileMap.elementAt(mapIndex).getValue().getShip();
-		}
+	ShipProjectileMapEntry* getEntry(int mapIndex);
 
-		return nullptr;
-	}
+	ShipProjectileMapEntry* getEntry(ShipObject* ship);
 
-	ShipProjectileMapEntry* getEntry(int mapIndex) {
-		ReadLocker lock(&sync);
+	ShipProjectile* getProjectile(int mapIndex, int entryIndex);
 
-		if (projectileMap.size() > mapIndex) {
-			return &projectileMap.elementAt(mapIndex).getValue();
-		}
+	void addProjectile(ShipObject* ship, ShipProjectile* projectile);
 
-		return nullptr;
-	}
+	void removeProjectile(int mapIndex, int entryIndex);
 
-	ShipProjectileMapEntry* getEntry(ShipObject* ship) {
-		ReadLocker lock(&sync);
+	void removeShip(int mapIndex);
 
-		uint64 objectID = ship->getObjectID();
-		int index = projectileMap.find(objectID);
+	int entrySize(int mapIndex) const;
 
-		if (index != -1) {
-			return getEntry(index);
-		}
-
-		return nullptr;
-	}
-
-	ShipProjectile* getProjectile(int mapIndex, int entryIndex) {
-		ReadLocker lock(&sync);
-
-		auto entry = getEntry(mapIndex);
-
-		if (entry != nullptr) {
-			return entry->getProjectile(entryIndex);
-		}
-
-		return nullptr;
-	}
-
-	void addProjectile(ShipObject* ship, ShipProjectile* projectile) {
-		Locker lock(&sync);
-
-		uint64 objectID = ship->getObjectID();
-		int index = projectileMap.find(objectID);
-
-		if (index == -1) {
-			auto element = VectorMapEntry<uint64, ShipProjectileMapEntry>(objectID, ShipProjectileMapEntry(ship));
-			projectileMap.add(std::move(element));
-			index = projectileMap.size() - 1;
-		}
-
-		auto entry = getEntry(index);
-
-		if (entry != nullptr) {
-			entry->add(projectile);
-		}
-	}
-
-	void removeProjectile(int mapIndex, int entryIndex) {
-		Locker lock(&sync);
-
-		auto entry = getEntry(mapIndex);
-
-		if (entry != nullptr) {
-			entry->remove(entryIndex);
-		}
-	}
-
-	void removeShip(int mapIndex) {
-		Locker lock(&sync);
-
-		if (projectileMap.size() > mapIndex) {
-			auto entry = getEntry(mapIndex);
-			if (entry == nullptr) {
-				return;
-			}
-
-			for (int i = 0; i < entry->size(); ++i) {
-				entry->remove(i);
-			}
-
-			projectileMap.remove(mapIndex);
-		}
-	}
-
-	int entrySize(int mapIndex) const {
-		ReadLocker lock(&sync);
-
-		if (projectileMap.size() > mapIndex) {
-			return projectileMap.elementAt(mapIndex).getValue().size();
-		}
-
-		return 0;
-	}
-
-	int mapSize() const {
-		ReadLocker lock(&sync);
-
-		return projectileMap.size();
-	}
+	int mapSize() const;
 };

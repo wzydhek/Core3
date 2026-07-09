@@ -17,49 +17,21 @@ class EnhancePackTemplate : public SharedTangibleObjectTemplate {
 	byte attribute;
 
 public:
-	EnhancePackTemplate() {
-		medicineUse = 0;
-		effectiveness = 0;
-		absorption = 0;
-		duration = 0;
-		attribute = 0;
-	}
+	EnhancePackTemplate();
 
-	~EnhancePackTemplate() {
+	~EnhancePackTemplate();
 
-	}
+	void readObject(LuaObject* templateData);
 
-	void readObject(LuaObject* templateData) {
-		SharedTangibleObjectTemplate::readObject(templateData);
+	int getMedicineUse();
 
-		medicineUse = templateData->getIntField("medicineUse");
-		effectiveness = templateData->getFloatField("effectiveness");
-		absorption = templateData->getFloatField("absorption");
-		duration = templateData->getFloatField("duration");
-		attribute = templateData->getIntField("attribute");
-    }
+	float getEffectiveness();
 
-	inline int getMedicineUse() {
-		return medicineUse;
-	}
+	float getAbsorption();
 
-	inline float getEffectiveness() {
-		return effectiveness;
-	}
+	byte getAttribute();
 
-	inline float getAbsorption() {
-		return absorption;
-	}
+	float getDuration();
 
-	inline byte getAttribute() {
-		return attribute;
-	}
-
-	inline float getDuration() {
-		return duration;
-	}
-
-	bool isEnhancePackTemplate() {
-		return true;
-	}
+	bool isEnhancePackTemplate();
 };

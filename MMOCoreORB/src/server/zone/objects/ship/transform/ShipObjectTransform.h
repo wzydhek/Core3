@@ -40,13 +40,7 @@ protected:
 	float nextRotation;
 
 public:
-	ShipObjectTransform() : Object() {
-		serverTime = 0ull;
-		deltaTime = 0.f;
-
-		nextDistance = 0.f;
-		nextRotation = 0.f;
-	}
+	ShipObjectTransform();
 
 	ShipObjectTransform(ShipObject* ship);
 
@@ -64,25 +58,15 @@ public:
 
 	void broadcastTransform(ShipObject* ship);
 
-	const SpaceTransform& getPreviousTransform() const {
-		return previousTransform;
-	}
+	const SpaceTransform& getPreviousTransform() const;
 
-	const SpaceTransform& getCurrentTransform() const {
-		return currentTransform;
-	}
+	const SpaceTransform& getCurrentTransform() const;
 
-	const SpaceTransform& getNextTransform() const {
-		return nextTransform;
-	}
+	const SpaceTransform& getNextTransform() const;
 
-	float getNextDistance() const {
-		return nextDistance;
-	}
+	float getNextDistance() const;
 
-	float getNextRotation() const {
-		return nextRotation;
-	}
+	float getNextRotation() const;
 
 private:
 	void setTransform(ShipObject* ship);
@@ -101,37 +85,14 @@ private:
 
 	void updateShip(ShipObject* ship);
 
-	void setDeltaTime() {
-		uint64 miliTime = System::getMiliTime();
-		uint64 miliDiff = miliTime - serverTime;
+	void setDeltaTime();
 
-		serverTime = miliTime;
-		deltaTime = Math::clamp(0.f, miliDiff * 0.001f, (float)DELTA_MAX);
-	}
+	bool isScheduled() const;
 
-	bool isScheduled() const {
-		return (System::getMiliTime() - serverTime) >= (uint64)(DELTA_MIN * 1000);
-	}
+	bool isStaticUpdate() const;
 
-	bool isStaticUpdate() const {
-		return deltaTime < DELTA_MIN || (nextRotation <= ROTATION_EPSILON && nextDistance <= POSITION_EPSILON && currentTransform.getSpeed() <= 0.f);
-	}
-
-	bool isInertiaUpdate() const {
-		return currentTransform.getSpeed() == previousTransform.getSpeed() && currentTransform.getRotation() == previousTransform.getRotation() && currentTransform.getVelocity() == previousTransform.getVelocity();
-	}
+	bool isInertiaUpdate() const;
 
 public:
-	String toDebugString() const {
-		StringBuffer msg;
-		msg << "ShipObjectTransform: "
-			<< "  deltaTime:         " << deltaTime << endl
-			<< "  currentTransform:  " << endl << currentTransform.toDebugString() << endl
-			<< "  nextTransform:     " << endl << nextTransform.toDebugString() << endl
-			<< "  transformType:     " << endl << transformType.toDebugString() << endl
-			<< "  nextRotation:      " << nextRotation << endl
-			<< "  nextDistance:      " << nextDistance << endl;
-
-		return msg.toString();
-	}
+	String toDebugString() const;
 };

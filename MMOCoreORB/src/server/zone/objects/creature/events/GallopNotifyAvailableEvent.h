@@ -10,24 +10,8 @@ class GallopNotifyAvailableEvent : public Task {
 	ManagedWeakReference<CreatureObject*> creo;
 
 public:
-	GallopNotifyAvailableEvent(CreatureObject* cr) : Task() {
-		creo = cr;
-	}
+	GallopNotifyAvailableEvent(CreatureObject* cr);
 
-	void run() {
-		ManagedReference<CreatureObject*> mount = creo.get();
-
-		if (mount == nullptr)
-			return;
-
-		Locker locker(mount);
-
-		mount->removePendingTask("gallop_notify");
-
-		ManagedReference<CreatureObject*> owner = mount->getLinkedCreature().get();
-
-		if (owner != nullptr)
-			owner->sendSystemMessage("@combat_effects:mount_not_tired"); // Your mount is no longer winded.
-	}
+	void run();
 
 };

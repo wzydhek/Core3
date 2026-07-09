@@ -6,52 +6,20 @@
 #pragma once
 
 #include "server/zone/packets/DeltaMessage.h"
+#include "server/zone/objects/scene/SceneObject.h"
+#include "server/zone/objects/manufactureschematic/ManufactureSchematic.h"
 
 class ManufactureSchematicObjectDeltaMessage3 : public DeltaMessage {
 public:
-	ManufactureSchematicObjectDeltaMessage3(SceneObject* schematic)
-			: DeltaMessage(schematic->getObjectID(), 0x4D53434F, 3) {
-	}
+	ManufactureSchematicObjectDeltaMessage3(SceneObject* schematic);
 
-	void updateComplexity(float complexity) {
-		addFloatUpdate(0, complexity);
-	}
+	void updateComplexity(float complexity);
 
-	void updateName(String name) {
-		addUnicodeUpdate(2, name);
-	}
+	void updateName(String name);
 
-	void updateCondition(int condition) {
-		addIntUpdate(4, condition);
-	}
+	void updateCondition(int condition);
 
-	void updateManufactureLimit(int limit) {
-		addIntUpdate(5, limit);
-	}
+	void updateManufactureLimit(int limit);
 
-	void updateCraftingValues(ManufactureSchematic* manufactureSchematic){
-
-		CraftingValues* craftingValues = manufactureSchematic->getCraftingValues();
-
-		String name;
-		float value;
-
-		int count = craftingValues->getValuesToSendSize();
-
-		startUpdate(5);
-
-		startList(count, count);
-
-		for (int i = 0; i < count; ++i){
-
-			insertByte(0);
-			insertAscii("crafting");
-			insertInt(0);
-			name = craftingValues->getValuesToSend(i);
-			value = craftingValues->getCurrentValue(name);
-			insertAscii(name);
-			insertFloat(value);
-
-		}
-	}
+	void updateCraftingValues(ManufactureSchematic* manufactureSchematic);
 };

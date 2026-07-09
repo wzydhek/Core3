@@ -61,85 +61,45 @@ public:
 
 	static int checkArgumentCount(lua_State* L, int args);
 
-	int size() {
-		return hashTable.size();
-	}
+	int size();
 
-	HashTableIterator<uint32, Reference<CreatureTemplate*> > iterator() {
-		return hashTable.iterator();
-	}
+	HashTableIterator<uint32, Reference<CreatureTemplate*>> iterator();
 
-	HashTableIterator<uint32, Reference<LairTemplate*> > lairTemplateIterator() {
-		return lairTemplates.iterator();
-	}
+	HashTableIterator<uint32, Reference<LairTemplate*>> lairTemplateIterator();
 
-	HashTableIterator<uint32, Reference<SpawnGroup*> > spawnGroupIterator() {
-		return spawnGroupMap.iterator();
-	}
+	HashTableIterator<uint32, Reference<SpawnGroup*>> spawnGroupIterator();
 
-	HashTableIterator<uint32, Reference<SpawnGroup*> > destroyMissionGroupIterator() {
-		return destroyMissionGroupMap.iterator();
-	}
+	HashTableIterator<uint32, Reference<SpawnGroup*>> destroyMissionGroupIterator();
 
-	CreatureTemplate* getTemplate(uint32 crc) {
-		return hashTable.get(crc);
-	}
+	CreatureTemplate* getTemplate(uint32 crc);
 
-	PatrolPathTemplate* getPatrolPathTemplate(const String& name) {
-		return patrolPaths.get(name);
-	}
+	PatrolPathTemplate* getPatrolPathTemplate(const String& name);
 
-	CreatureTemplate* getTemplate(const String& ascii) {
-		return hashTable.get(ascii.hashCode());
-	}
+	CreatureTemplate* getTemplate(const String& ascii);
 
-	MobileOutfitGroup* getMobileOutfitGroup(const String& name) {
-		return outfits.get(name);
-	}
+	MobileOutfitGroup* getMobileOutfitGroup(const String& name);
 
-	ConversationTemplate* getConversationTemplate(const String& name) {
-		return conversations.get(name.hashCode()).get();
-	}
+	ConversationTemplate* getConversationTemplate(const String& name);
 
-	ConversationTemplate* getConversationTemplate(uint32 crc) {
-		return conversations.get(crc).get();
-	}
+	ConversationTemplate* getConversationTemplate(uint32 crc);
 
-	const Vector<String>& getWeapons(uint32 crc) {
-		return weaponMap.get(crc);
-	}
+	const Vector<String>& getWeapons(uint32 crc);
 
-	const Vector<String>& getWeapons(const String& ascii) {
-		return weaponMap.get(ascii.hashCode());
-	}
+	const Vector<String>& getWeapons(const String& ascii);
 
-	SpawnGroup* getSpawnGroup(uint32 crc) {
-		return spawnGroupMap.get(crc);
-	}
+	SpawnGroup* getSpawnGroup(uint32 crc);
 
-	LairTemplate* getLairTemplate(uint32 crc) {
-		return lairTemplates.get(crc);
-	}
+	LairTemplate* getLairTemplate(uint32 crc);
 
-	SpawnGroup* getDestroyMissionGroup(uint32 crc) {
-		return destroyMissionGroupMap.get(crc);
-	}
+	SpawnGroup* getDestroyMissionGroup(uint32 crc);
 
-	AiSpeciesData* getAiSpeciesData(uint32 speciesID) {
-		return aiSpeciesData.get(speciesID);
-	}
+	AiSpeciesData* getAiSpeciesData(uint32 speciesID);
 
-	const Vector<String>& getDressGroup(uint32 crc) {
-		return dressMap.get(crc);
-	}
+	const Vector<String>& getDressGroup(uint32 crc);
 
-	const Vector<String>& getDressGroup(const String& ascii) {
-		return dressMap.get(ascii.hashCode());
-	}
+	const Vector<String>& getDressGroup(const String& ascii);
 
-	float getGlobalAttackSpeedOverride() const {
-		return globalAttackSpeedOverride;
-	}
+	float getGlobalAttackSpeedOverride() const;
 
 };
 

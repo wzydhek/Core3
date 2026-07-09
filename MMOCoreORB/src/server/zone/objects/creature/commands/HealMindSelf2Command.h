@@ -9,8 +9,5 @@
 class HealMindSelf2Command : public ForceHealQueueCommand {
 public:
 
-	HealMindSelf2Command(const String& name, ZoneProcessServer* server)
-		: ForceHealQueueCommand(name, server) {
-
-	}
+	HealMindSelf2Command(const String& name, ZoneProcessServer* server);
 };

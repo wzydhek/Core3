@@ -14,20 +14,8 @@ class ClearClientEvent : public Task {
 	ManagedReference<ZoneClientSession*> client;
 
 public:
-	ClearClientEvent(CreatureObject* pl, ZoneClientSession* cl) : Task() {
-		player = pl;
-		client = cl;
-	}
+	ClearClientEvent(CreatureObject* pl, ZoneClientSession* cl);
 
-	void run() {
-		if (player == nullptr || client == nullptr)
-			return;
-
-		Locker _locker(player);
-
-		if (player->getClient() == client)
-			player->setClient(nullptr);
-	}
-
+	void run();
 
 };

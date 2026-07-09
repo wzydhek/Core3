@@ -9,7 +9,5 @@
 
 class FrsTimeMap : public VectorMap<uint64, Time> {
 public:
-	FrsTimeMap() : VectorMap<uint64, Time>() {
-		setNoDuplicateInsertPlan();
-	}
+	FrsTimeMap();
 };

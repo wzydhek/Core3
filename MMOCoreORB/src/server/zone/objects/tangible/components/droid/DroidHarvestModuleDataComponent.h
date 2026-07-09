@@ -45,56 +45,30 @@ public:
 	String toString() const;
 	void onCall();
 
-	int getHarvestInterest() {
-		return interest;
-	}
+	int getHarvestInterest();
 
 	void onStore();
 	void setHarvestInterest(CreatureObject* player, int option);
 	void updateCraftingValues(CraftingValues* values, bool firstUpdate);
 	void setActive(bool newActive);
 
-	bool isActive() {
-		return active;
-	}
+	bool isActive();
 
-	float getHarvestPower(){
-		return harvestBonus;
-	}
+	float getHarvestPower();
 
-	virtual bool isStackable() {
-		return true;
-	}
+	virtual bool isStackable();
 
 	virtual void addToStack(BaseDroidModuleComponent* other);
 	virtual void copy(BaseDroidModuleComponent* other);
 	void creatureHarvestCheck(CreatureObject* target);
 
-	bool hasMoreTargets() {
-		return harvestTargets.size() > 0;
-	}
+	bool hasMoreTargets();
 
-	void addHarvestTarget(uint64 target, bool first = false) {
-		if (first)
-			harvestTargets.add(0,target);
-		else
-			harvestTargets.add(target);
-	}
+	void addHarvestTarget(uint64 target, bool first = false);
 
-	void removeHarvestTarget(uint64 target) {
-		harvestTargets.remove(target);
-	}
+	void removeHarvestTarget(uint64 target);
 
-	uint64 getNextHarvestTarget() {
-		uint64 harvTar = 0;
-
-		if (harvestTargets.size() > 0) {
-			harvTar = harvestTargets.get(0);
-			harvestTargets.remove(0);
-		}
-
-		return harvTar;
-	}
+	uint64 getNextHarvestTarget();
 };
 
 

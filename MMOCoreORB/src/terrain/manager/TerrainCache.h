@@ -44,15 +44,9 @@ public:
 
 	float getHeight(float x, float y);
 
-	int getClearCount() const {
-		return clearCount;
-	}
+	int getClearCount() const;
 
-	int getClearHeightsCount() const {
-		return clearHeightsCount;
-	}
+	int getClearHeightsCount() const;
 
-	int getEvictCount() const {
-		return evictCount;
-	}
+	int getEvictCount() const;
 };

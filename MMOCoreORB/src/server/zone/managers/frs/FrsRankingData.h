@@ -1,5 +1,8 @@
 #pragma once
 
+#include "system/lang/Object.h"
+#include "system/lang/String.h"
+
 namespace server {
 namespace zone {
 namespace managers {
@@ -12,36 +15,19 @@ protected:
 	String skillName, robeTemplate;
 
 public:
-	FrsRankingData(int frsRank, String skill, int reqExp, int cap, String robeTemp) : Object() {
-		rank = frsRank;
-		skillName = skill;
-		requiredXp = reqExp;
-		playerCap = cap;
-		robeTemplate = robeTemp;
-	}
+	FrsRankingData(int frsRank, String skill, int reqExp, int cap, String robeTemp);
 
-	~FrsRankingData() {
-	}
+	~FrsRankingData();
 
-	int getRequiredExperience() const {
-		return requiredXp;
-	}
+	int getRequiredExperience() const;
 
-	int getPlayerCap() const {
-		return playerCap;
-	}
+	int getPlayerCap() const;
 
-	int getRank() const {
-		return rank;
-	}
+	int getRank() const;
 
-	const String& getSkillName() const {
-		return skillName;
-	}
+	const String& getSkillName() const;
 
-	const String& getRobeTemplate() const {
-		return robeTemplate;
-	}
+	const String& getRobeTemplate() const;
 
 };
 
@@ -49,3 +35,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::managers::frs;

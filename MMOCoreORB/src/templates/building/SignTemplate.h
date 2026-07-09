@@ -14,42 +14,16 @@ class SignTemplate : public ChildObject {
 	String suiItem;
 
 public:
-	SignTemplate() : ChildObject() {
+	SignTemplate();
 
-	}
+	SignTemplate(const SignTemplate& obj);
 
-	SignTemplate(const SignTemplate& obj) : ChildObject( obj ) {
-		requiredSkill = obj.requiredSkill;
-		suiItem = obj.suiItem;
-	}
+	SignTemplate& operator=(const SignTemplate& obj);
 
-	SignTemplate& operator=(const SignTemplate& obj) {
-		if (this == &obj)
-			return *this;
+	void parseFromLua(LuaObject* luaObject);
 
-		position = obj.position;
-		direction = obj.direction;
-		templateFile = obj.templateFile;
-		cellid = obj.cellid;
-		containmentType = obj.containmentType;
-		requiredSkill = obj.requiredSkill;
-		suiItem = obj.suiItem;
+	const String& getSuiItem() const;
 
-		return *this;
-	}
-
-	void parseFromLua(LuaObject* luaObject) {
-		ChildObject::parseFromLua(luaObject);
-		requiredSkill = luaObject->getStringField("requiredSkill");
-		suiItem = luaObject->getStringField("suiItem");
-	}
-
-	inline const String& getSuiItem() const {
-		return suiItem;
-	}
-
-	inline const String& getRequiredSkill() const {
-		return requiredSkill;
-	}
+	const String& getRequiredSkill() const;
 
 };

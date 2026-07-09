@@ -36,6 +36,9 @@ VendorDataComponent::VendorDataComponent() : AuctionTerminalDataComponent(), adB
 	addSerializableVariables();
 }
 
+VendorDataComponent::~VendorDataComponent() {
+}
+
 void VendorDataComponent::addSerializableVariables() {
 	addSerializableVariable("ownerId", &ownerId);
 	addSerializableVariable("initialized", &initialized);
@@ -458,4 +461,178 @@ void VendorDataComponent::scheduleVendorCheckTask(int delay) {
 void VendorDataComponent::cancelVendorCheckTask() {
 	if (vendorCheckTask != nullptr)
 		vendorCheckTask->cancel();
+}
+
+void VendorDataComponent::setOwnerId(uint64 id) {
+	ownerId = id;
+}
+
+uint64 VendorDataComponent::getOwnerId() {
+	return ownerId;
+}
+
+bool VendorDataComponent::isVendorData() {
+	return true;
+}
+
+void VendorDataComponent::setInitialized(bool val) {
+	initialized = val;
+	updateUID();
+
+	ManagedReference<SceneObject*> strongParent = parent.get();
+	if (strongParent == nullptr)
+		return;
+
+	originalDirection = strongParent->getDirectionAngle();
+	setVendorSearchEnabled(true);
+}
+
+void VendorDataComponent::setDisabled(bool isDisabled) {
+	disabled = isDisabled;
+}
+
+void VendorDataComponent::setRegistered(bool reg) {
+	registered = reg;
+
+	/// This is just a precaution in case somehow items get lost
+	/// and this would link up a missing auction list unless it was totally
+	/// gone
+	if (registered)
+		updateUID();
+}
+
+int VendorDataComponent::getOwnershipRightsOf(CreatureObject* player) {
+	if (!initialized)
+		return 2; // mark not initalized
+
+	if (player->getObjectID() == ownerId) // Player owns this vendor
+		return 0;
+	else if (ownerId != 0) // someone else owns the vendor and its not a bazaar
+		return 1;
+	else
+		return 2; // the vendor hasn't been initalized yet or it belongs to no one (bazaar)
+}
+
+bool VendorDataComponent::isVendorOwner(CreatureObject* player) {
+	return player->getObjectID() == ownerId;
+}
+
+bool VendorDataComponent::isInitialized() {
+	return initialized;
+}
+
+bool VendorDataComponent::isVendorSearchEnabled() {
+	return vendorSearchEnabled;
+}
+
+bool VendorDataComponent::isDisabled() {
+	return disabled;
+}
+
+bool VendorDataComponent::isRegistered() {
+	return registered;
+}
+
+void VendorDataComponent::awardUseXP() {
+	if (time(0) - lastXpAward.getTime() > USEXPINTERVAL * 60) {
+		awardUsageXP++;
+		lastXpAward.updateToCurrentTime();
+	}
+}
+
+bool VendorDataComponent::isAdBarkingEnabled() {
+	Locker locker(&adBarkingMutex);
+	return adBarking;
+}
+
+void VendorDataComponent::setAdBarking(bool value) {
+	Locker locker(&adBarkingMutex);
+	vendorBarks.removeAll();
+	adBarking = value;
+}
+
+bool VendorDataComponent::isEmpty() {
+	ManagedReference<AuctionManager*> auctionManager = auctionMan.get();
+
+	if (auctionManager == nullptr)
+		return false;
+
+	ManagedReference<AuctionsMap*> auctionsMap = auctionManager->getAuctionMap();
+	if (auctionsMap == nullptr) {
+		return false;
+	}
+
+	return auctionsMap->getVendorItemCount(parent.get(), true) == 0;
+}
+
+void VendorDataComponent::setEmpty() {
+	mail1Sent = false;
+
+	emptyTimer.updateToCurrentTime();
+}
+
+int VendorDataComponent::getMaint() {
+	return maintAmount;
+}
+
+bool VendorDataComponent::isOnStrike() {
+	return maintAmount <= 0;
+}
+
+void VendorDataComponent::setAdPhrase(const String& message) {
+	barkMessage = message;
+}
+
+void VendorDataComponent::setAdMood(const String& mood) {
+	barkMood = mood;
+}
+
+void VendorDataComponent::setAdAnimation(const String& animation) {
+	barkAnimation = animation;
+}
+
+String VendorDataComponent::getAdPhrase() {
+	return barkMessage;
+}
+
+String VendorDataComponent::getAdMood() {
+	return barkMood;
+}
+
+String VendorDataComponent::getAdAnimation() {
+	return barkAnimation;
+}
+
+bool VendorDataComponent::hasBarkTarget(uint64 targetID) {
+	Locker locker(&adBarkingMutex);
+	return vendorBarks.contains(targetID);
+}
+
+void VendorDataComponent::addBarkTarget(uint64 targetID) {
+	Locker locker(&adBarkingMutex);
+	vendorBarks.add(targetID);
+}
+
+bool VendorDataComponent::canBark() {
+	Locker locker(&adBarkingMutex);
+	return (time(0) - lastBark > BARKINTERVAL);
+}
+
+void VendorDataComponent::resetLastBark() {
+	Locker locker(&adBarkingMutex);
+	lastBark = time(0);
+}
+
+void VendorDataComponent::removeBarkTarget(uint64 targetID) {
+	Locker locker(&adBarkingMutex);
+	vendorBarks.removeElement(targetID);
+}
+
+void VendorDataComponent::removeAllVendorBarks() {
+	Locker locker(&adBarkingMutex);
+	vendorBarks.removeAll();
+}
+
+float VendorDataComponent::getOriginalDirection() {
+	return originalDirection;
 }

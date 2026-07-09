@@ -38,84 +38,22 @@ public:
 
 
 public:
-	SpawnDensityMap() : Object(), Serializable() {
-		addSerializableVariables();
-	}
+	SpawnDensityMap();
 
-	SpawnDensityMap(const SpawnDensityMap& map) : Object(), Serializable() {
-		seed = map.seed;
-		modifier = map.modifier;
-		density = map.density;
-		minX = map.minX;
-		maxX = map.maxX;
-		minY = map.minY;
-		maxY = map.maxY;
+	SpawnDensityMap(const SpawnDensityMap& map);
 
-		totalUnits = map.totalUnits;
-		unitsHarvested = map.unitsHarvested;
+	SpawnDensityMap(bool ore, short concentration, float minx, float maxx, float miny, float maxy);
 
-		addSerializableVariables();
-	}
+	~SpawnDensityMap();
 
-	SpawnDensityMap(bool ore, short concentration,
-			float minx, float maxx, float miny, float maxy) : Object(), Serializable() {
-		initialize(ore, concentration);
-		minX = minx;
-		maxX = maxx;
-		minY = miny;
-		maxY = maxy;
-	}
+	friend void to_json(nlohmann::json& j, const SpawnDensityMap& m);
 
-	~SpawnDensityMap() {
-
-	}
-
-	friend void to_json(nlohmann::json& j, const SpawnDensityMap& m) {
-		j["seed"] = m.seed;
-		j["modifier"] = m.modifier;
-		j["density"] = m.density;
-		j["totalUnits"] = m.totalUnits;
-		j["unitsHarvested"] = m.unitsHarvested;
-		j["minX"] = m.minX;
-		j["maxX"] = m.maxX;
-		j["minY"] = m.minY;
-		j["maxY"] = m.maxY;
-	}
-
-	SpawnDensityMap& operator=(const SpawnDensityMap& map) {
-		if (this == &map)
-			return *this;
-
-		seed = map.seed;
-		modifier = map.modifier;
-		density = map.density;
-		minX = map.minX;
-		maxX = map.maxX;
-		minY = map.minY;
-		maxY = map.maxY;
-
-		totalUnits = map.totalUnits;
-		unitsHarvested = map.unitsHarvested;
-
-		return *this;
-	}
+	SpawnDensityMap& operator=(const SpawnDensityMap& map);
 
 
-	float getDensityAt(float x, float y) const {
-		x -= minX;
-		y = maxY - y;
-		float value = SimplexNoise::noise(x * modifier, y * modifier, seed * modifier);
+	float getDensityAt(float x, float y) const;
 
-		if(value < 0)
-			return 0;
-
-		return value * density;
-	}
-
-	void print() const {
-		System::out << "Seed: " << seed << " Modifier: "
-				<< modifier << " Density: " << density << endl;
-	}
+	void print() const;
 
 private:
 	/**
@@ -123,45 +61,10 @@ private:
 	 * \param ore Boolean value to see if map is ore
 	 * \param concentration to determine density
 	 */
-	void initialize(bool ore, short concentration) {
-		seed = System::random(time(0));
-
-		if(ore)
-			modifier = .00015f;
-		else
-			modifier = .0006f;
-
-		switch(concentration) {
-		case 1:
-			density = (System::random(9) + 90) / 100.0f;
-			break;
-		case 2:
-			density = (System::random(20) + 75) / 100.0f;
-			break;
-		case 3:
-			density = (System::random(25) + 50) / 100.0f;
-			break;
-		default:
-			density = (System::random(25) + 50) / 100.0f;
-		}
-
-		totalUnits = System::random(5000000) + 5000000;
-
-		addSerializableVariables();
-	}
+	void initialize(bool ore, short concentration);
 
 	/**
 	 * Adds the variables needing to be serialized
 	 */
-	void addSerializableVariables() {
-		addSerializableVariable("seed", &seed);
-		addSerializableVariable("modifier", &modifier);
-		addSerializableVariable("density", &density);
-		addSerializableVariable("totalUnits", &totalUnits);
-		addSerializableVariable("unitsHarvested", &unitsHarvested);
-		addSerializableVariable("minX", &minX);
-		addSerializableVariable("maxX", &maxX);
-		addSerializableVariable("minY", &minY);
-		addSerializableVariable("maxY", &maxY);
-	}
+	void addSerializableVariables();
 };

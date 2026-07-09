@@ -40,3 +40,8 @@ void CrcStringTable::readObject(IffStream* iffStream) {
 
 	iffStream->closeForm('CSTB');
 }
+
+
+VectorMap<uint32, String> CrcStringTable::getTableData() {
+	return tableData;
+}

@@ -8,42 +8,11 @@
 #pragma once
 
 #include "server/zone/objects/player/sui/SuiCallback.h"
+#include "server/zone/objects/player/sui/SuiBox.h"
 
 class SurveyDroidSessionSuiCallback : public SuiCallback {
 public:
-	SurveyDroidSessionSuiCallback(ZoneServer* server)
-		: SuiCallback(server) {
-	}
+	SurveyDroidSessionSuiCallback(ZoneServer* server);
 
-	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args) {
-		bool cancelPressed = (eventIndex == 1);
-
-		if (!suiBox->isListBox())
-			return;
-
-		if (args->size() < 1)
-			return;
-
-		ManagedReference<Facade*> facade = player->getActiveSession(SessionFacadeType::INTERPLANETARYSURVEYDROID);
-		ManagedReference<InterplanetarySurveyDroidSession*> session = dynamic_cast<InterplanetarySurveyDroidSession*>(facade.get());
-
-		if (session == nullptr) {
-			ManagedReference<TangibleObject*> obj = cast<TangibleObject*>( suiBox->getUsingObject().get().get());
-			if (obj != nullptr) {
-				Locker crosslock(obj, player);
-				obj->dropActiveSession(SessionFacadeType::INTERPLANETARYSURVEYDROID);
-			}
-			return;
-		}
-
-		if (cancelPressed) {
-			session->cancelSession();
-			return;
-		}
-
-		uint64 idx = Long::unsignedvalueOf(args->get(0).toString());
-		SuiListBox* box = cast<SuiListBox*>( suiBox);
-		session->handleMenuSelect(player, idx, box);
-
-	}
+	void run(CreatureObject* player, SuiBox* suiBox, uint32 eventIndex, Vector<UnicodeString>* args);
 };

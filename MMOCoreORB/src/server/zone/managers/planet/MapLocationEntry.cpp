@@ -18,6 +18,20 @@
 #include "templates/building/CloningBuildingObjectTemplate.h"
 #include "templates/faction/Factions.h"
 
+MapLocationEntry::MapLocationEntry() {
+	icon = 0;
+}
+
+MapLocationEntry::MapLocationEntry(SceneObject* obj) {
+	setObject(obj);
+}
+
+MapLocationEntry::MapLocationEntry(const MapLocationEntry& entry) : Object() {
+	object = entry.object;
+	icon = entry.icon;
+	displayName = entry.displayName;
+}
+
 uint64 MapLocationEntry::getObjectID() const {
 	return object->getObjectID();
 }
@@ -182,4 +196,20 @@ bool MapLocationEntry::insertToMessage(BaseMessage* message, CreatureObject* pla
 	message->insertByte(icon);
 
 	return true;
+}
+
+SceneObject* MapLocationEntry::getObject() const {
+	return object;
+}
+
+byte MapLocationEntry::getIcon() const {
+	return icon;
+}
+
+/**
+ * Sets the icon used at this location: 0 = None, 1 = Moon, 2 = Star
+ * @param ico The icon to use
+ */
+void MapLocationEntry::setIcon(byte ico) {
+	icon = ico;
 }
