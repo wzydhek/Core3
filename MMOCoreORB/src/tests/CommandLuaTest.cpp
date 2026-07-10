@@ -13,6 +13,7 @@
 #include "server/zone/managers/objectcontroller/command/CommandList.h"
 #include "conf/ConfigManager.h"
 #include "server/zone/objects/creature/commands/CombatQueueCommand.h"
+#include "server/zone/managers/combat/CombatManager.h"
 
 class CommandLuaTest : public ::testing::Test {
 public:

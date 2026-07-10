@@ -1,4 +1,4 @@
-#include "BitMapFamily.h"
+#include "BitmapFamily.h"
 #include "templates/manager/DataArchiveStore.h"
 
 BitMapFamily::BitMapFamily() : var1(0) {

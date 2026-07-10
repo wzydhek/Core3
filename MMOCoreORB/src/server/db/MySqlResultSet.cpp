@@ -1,3 +1,9 @@
+#include "system/platform.h"
+
+#ifdef PLATFORM_WIN
+#include <WinSock2.h>
+#endif
+
 #include "MySqlResultSet.h"
 
 

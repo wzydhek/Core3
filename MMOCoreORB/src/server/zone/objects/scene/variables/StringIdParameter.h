@@ -49,7 +49,6 @@ public:
 	StringIdParameter& operator=(StringIdParameter&& par);
 #endif
 
-	friend void to_json(nlohmann::json& j, const StringIdParameter& p);
 
 	void set(const StringId* sid);
 	void set(const StringId& sid);
@@ -78,10 +77,12 @@ public:
 
 	const String& getStringIDParameter() const;
 
+	friend void to_json(nlohmann::json& j, const StringIdParameter& p);
+
 	friend class server::chat::StringIdChatParameter;
 };
 
-
+void to_json(nlohmann::json& j, const StringIdParameter& p);
 }
 }
 }

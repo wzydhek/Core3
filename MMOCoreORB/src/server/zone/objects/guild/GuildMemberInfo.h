@@ -17,6 +17,7 @@ namespace guild {
 
 	class GuildObject;
 
+
 	class GuildMemberInfo : public Object {
 		uint64 playerID;
 		String guildTitle;
@@ -33,8 +34,6 @@ namespace guild {
 		int compareTo(const GuildMemberInfo& gmi) const;
 
 		GuildMemberInfo& operator=(const GuildMemberInfo& gmi);
-
-		friend void to_json(nlohmann::json& j, const GuildMemberInfo& m);
 
 		bool toBinaryStream(ObjectOutputStream* stream);
 
@@ -59,9 +58,14 @@ namespace guild {
 		void togglePermission(uint8 permission);
 
 		bool hasPermission(uint8 permission);
+
+		friend void to_json(nlohmann::json& j, const GuildMemberInfo& m);
 	};
-}
-}
+
+			void to_json(nlohmann::json& j, const GuildMemberInfo& m);
+
+	} // namespace guild
+	}
 }
 }
 

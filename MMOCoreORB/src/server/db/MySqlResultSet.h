@@ -5,7 +5,6 @@ Distribution of this file for usage outside of Core3 is prohibited.
 
 #pragma once
 
-#include <WinSock2.h>
 #include <mysql.h>
 #include "system/lang/Long.h"
 #include "engine/db/ResultSet.h"
