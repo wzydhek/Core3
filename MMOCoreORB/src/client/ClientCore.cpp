@@ -2,18 +2,22 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
+#if defined(_MSC_VER)
+#define __PRETTY_FUNCTION__ __FUNCSIG__
+#endif
+
 #include <boost/program_options.hpp>
 #include <fstream>
 #include "engine/util/JSONSerializationType.h"
-#include "client/zone/Zone.h"
-#include "client/zone/managers/object/ObjectManager.h"
+#include "zone/Zone.h"
+#include "zone/managers/object/ObjectManager.h"
 
 #include "ClientCore.h"
 
-#include "client/login/LoginSession.h"
-#include "client/ActionBase.h"
-#include "client/ActionManager.h"
-#include "server/zone/packets/charcreation/ClientCreateCharacter.h"
+#include "login/LoginSession.h"
+#include "ActionBase.h"
+#include "ActionManager.h"
+#include "zone/packets/charcreation/ClientCreateCharacter.h"
 
 int exit_result = 1;
 
@@ -631,7 +635,11 @@ void ClientCoreOptions::loadEnvFile(const String& filename) {
 			if (tokenizer.hasMoreTokens()) {
 				String value;
 				tokenizer.finalToken(value);
+#ifdef WIN32
+				_putenv_s(key.toCharArray(), value.toCharArray());
+#else
 				setenv(key.toCharArray(), value.toCharArray(), 1);
+#endif
 			}
 		}
 	}

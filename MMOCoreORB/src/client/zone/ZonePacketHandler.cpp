@@ -1,12 +1,12 @@
 #include "Zone.h"
 #include "ZonePacketHandler.h"
 #include "ClientCore.h"
-#include "client/zone/objects/scene/SceneObject.h"
-#include "server/zone/packets/zone/SelectCharacter.h"
-#include "server/zone/packets/zone/CmdSceneReady.h"
-#include "client/zone/managers/object/ObjectManager.h"
-#include "client/zone/managers/objectcontroller/ObjectController.h"
-#include "server/zone/packets/charcreation/ClientCreateCharacter.h"
+#include "objects/scene/SceneObject.h"
+#include "packets/zone/SelectCharacter.h"
+#include "packets/zone/CmdSceneReady.h"
+#include "managers/object/ObjectManager.h"
+#include "managers/objectcontroller/ObjectController.h"
+#include "packets/charcreation/ClientCreateCharacter.h"
 
 ZonePacketHandler::ZonePacketHandler(const String& s, Zone* z, ClientCore* clientCore) : Logger(s) {
 	zone = z;

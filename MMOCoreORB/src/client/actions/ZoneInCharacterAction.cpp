@@ -6,12 +6,12 @@
  * Requires active zone connection
  */
 
-#include "client/ActionBase.h"
-#include "client/ActionResult.h"
-#include "client/ActionManager.h"
-#include "client/ClientCore.h"
-#include "client/zone/Zone.h"
-#include "server/zone/packets/zone/SelectCharacter.h"
+#include "ActionBase.h"
+#include "ActionResult.h"
+#include "ActionManager.h"
+#include "ClientCore.h"
+#include "zone/Zone.h"
+#include "zone/packets/zone/SelectCharacter.h"
 
 class ZoneInCharacterAction : public ActionBase {
 	// Result

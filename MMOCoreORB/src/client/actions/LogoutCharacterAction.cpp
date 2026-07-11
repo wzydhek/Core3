@@ -4,11 +4,11 @@
  * Cleanly logs out from zone server (cleanup action)
  */
 
-#include "client/ActionBase.h"
-#include "client/ActionResult.h"
-#include "client/ActionManager.h"
-#include "client/ClientCore.h"
-#include "client/zone/Zone.h"
+#include "ActionBase.h"
+#include "ActionResult.h"
+#include "ActionManager.h"
+#include "ClientCore.h"
+#include "zone/Zone.h"
 
 class LogoutCharacterAction : public ActionBase {
 	// Result

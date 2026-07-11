@@ -5,11 +5,11 @@
  * Stores selection in core.targetCharacterOid and core.targetGalaxyId
  */
 
-#include "client/ActionBase.h"
-#include "client/ActionResult.h"
-#include "client/ActionManager.h"
-#include "client/ClientCore.h"
-#include "client/login/LoginSession.h"
+#include "ActionBase.h"
+#include "ActionResult.h"
+#include "ActionManager.h"
+#include "ClientCore.h"
+#include "login/LoginSession.h"
 
 class SelectContextAction : public ActionBase {
 	// Configuration

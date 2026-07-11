@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\client">
+      <UniqueIdentifier>{bf88394d-7d89-4c2a-a5d5-08ebce1010e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\client">
+      <UniqueIdentifier>{250a0a68-da2a-4923-95b2-af518439e994}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\client\actions">
+      <UniqueIdentifier>{3150010a-d581-4be1-94e6-ff38962ae18b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\login">
+      <UniqueIdentifier>{20ee70a1-cef3-4845-8c02-e85465fac145}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\client\login">
+      <UniqueIdentifier>{4c4d9122-730f-49a6-b08d-6f2f497feed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\zone">
+      <UniqueIdentifier>{a786319e-a94d-4080-9342-ccc4a2d1692a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\client\zone">
+      <UniqueIdentifier>{af52dc6f-7b2f-4f94-b3d0-7c6789b22360}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\zone\managers">
+      <UniqueIdentifier>{1cff5d66-f24c-409e-ad2f-4c97503979cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\zone\objects">
+      <UniqueIdentifier>{65f75ad5-0e11-4c26-bed5-1cbb1bfd488c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\zone\packets">
+      <UniqueIdentifier>{9e760105-14b1-407a-b0ba-c51e817ae29a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\client\zone\managers">
+      <UniqueIdentifier>{580d0feb-709a-4704-8445-a214a88de2b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\client\zone\objects">
+      <UniqueIdentifier>{a253dc98-113b-432e-b8a0-c6805107b988}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\zone\managers\object">
+      <UniqueIdentifier>{ee2539b0-3a81-473c-b5c8-89f84347f597}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\zone\managers\objectcontroller">
+      <UniqueIdentifier>{5f7edfd4-6cc4-40a2-b53b-2769faa4730d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\client\zone\managers\objectcontroller">
+      <UniqueIdentifier>{233dc13e-f68c-42b9-aebd-a3862d7e09b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\client\zone\managers\object">
+      <UniqueIdentifier>{b9452908-5afc-4c6f-bc50-9c6c5aaa453c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\zone\objects\scene">
+      <UniqueIdentifier>{0395934a-ec1c-43f3-ac75-4b1dcc138942}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\client\zone\objects\scene">
+      <UniqueIdentifier>{fa9729eb-fd7c-4ffc-9302-f7f8e853e294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\zone\packets\charcreation">
+      <UniqueIdentifier>{46c94061-49b4-4a1b-8dd1-74efa428caa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\login\objects">
+      <UniqueIdentifier>{241172f5-e65b-4633-b187-6b52b59be09f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\conf">
+      <UniqueIdentifier>{c195d93a-4e0d-425b-a39b-ec667f6325cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\db">
+      <UniqueIdentifier>{86f24b1c-b9e7-437b-a9e8-d454606e1e32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\login\packets">
+      <UniqueIdentifier>{1c9b936e-76a9-45cd-8a90-980216e95117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\zone\packets\zone">
+      <UniqueIdentifier>{93c85722-a507-4e29-af33-72e0acf378a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\client\zone\packets\object">
+      <UniqueIdentifier>{6c2a8855-e8a5-47ee-bde1-468cd43d5d2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\MMOCoreORB\src\client\ActionManager.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\ClientCore.cpp">
+      <Filter>Source Files\client</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\ConnectToZoneAction.cpp">
+      <Filter>Source Files\client\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\CreateCharacterAction.cpp">
+      <Filter>Source Files\client\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\LoginAccountAction.cpp">
+      <Filter>Source Files\client\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\LogoutCharacterAction.cpp">
+      <Filter>Source Files\client\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\SelectContextAction.cpp">
+      <Filter>Source Files\client\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\ZoneInCharacterAction.cpp">
+      <Filter>Source Files\client\actions</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\login\LoginClient.cpp">
+      <Filter>Source Files\client\login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\login\LoginPacketHandler.cpp">
+      <Filter>Source Files\client\login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\login\LoginSession.cpp">
+      <Filter>Source Files\client\login</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\Zone.cpp">
+      <Filter>Source Files\client\zone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\ZoneClient.cpp">
+      <Filter>Source Files\client\zone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\ZoneClientThread.cpp">
+      <Filter>Source Files\client\zone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\ZonePacketHandler.cpp">
+      <Filter>Source Files\client\zone</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\managers\object\ObjectManager.cpp">
+      <Filter>Source Files\client\zone\managers\object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\objects\scene\SceneObject.cpp">
+      <Filter>Source Files\client\zone\objects\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\managers\objectcontroller\ObjectController.cpp">
+      <Filter>Source Files\client\zone\managers\objectcontroller</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\MMOCoreORB\src\client\ActionBase.h">
+      <Filter>Header Files\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\ActionManager.h">
+      <Filter>Header Files\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\ActionResult.h">
+      <Filter>Header Files\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\ClientCore.h">
+      <Filter>Header Files\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\ClientProxy.h">
+      <Filter>Header Files\client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\login\LoginClient.h">
+      <Filter>Header Files\client\login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\login\LoginClientThread.h">
+      <Filter>Header Files\client\login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\login\LoginMessageProcessorTask.h">
+      <Filter>Header Files\client\login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\login\LoginPacketHandler.h">
+      <Filter>Header Files\client\login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\login\LoginSession.h">
+      <Filter>Header Files\client\login</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\Zone.h">
+      <Filter>Header Files\client\zone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\ZoneClient.h">
+      <Filter>Header Files\client\zone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\ZoneClientThread.h">
+      <Filter>Header Files\client\zone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\ZoneMessageProcessorTask.h">
+      <Filter>Header Files\client\zone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\ZonePacketHandler.h">
+      <Filter>Header Files\client\zone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\managers\object\ObjectManager.h">
+      <Filter>Header Files\client\zone\managers\object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\managers\objectcontroller\ObjectController.h">
+      <Filter>Header Files\client\zone\managers\objectcontroller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\objects\ObjectMap.h">
+      <Filter>Header Files\client\zone\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\objects\scene\SceneObject.h">
+      <Filter>Header Files\client\zone\objects\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\ClientRandomNameRequestPacket.h">
+      <Filter>Header Files\client\zone\packets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\charcreation\ClientCreateCharacter.h">
+      <Filter>Header Files\client\zone\packets\charcreation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\login\objects\GalaxyList.h">
+      <Filter>Header Files\client\login\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\login\objects\Galaxy.h">
+      <Filter>Header Files\client\login\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\conf\ConfigManager.h">
+      <Filter>Header Files\client\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\db\ServerDatabase.h">
+      <Filter>Header Files\client\db</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\login\objects\CharacterListEntry.h">
+      <Filter>Header Files\client\login\objects</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\login\packets\AccountVersionMessage.h">
+      <Filter>Header Files\client\login\packets</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\zone\ClientIdMessage.h">
+      <Filter>Header Files\client\zone\packets\zone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\zone\CmdSceneReady.h">
+      <Filter>Header Files\client\zone\packets\zone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\zone\SelectCharacter.h">
+      <Filter>Header Files\client\zone\packets\zone</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\object\ObjectControllerMessage.h">
+      <Filter>Header Files\client\zone\packets\object</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

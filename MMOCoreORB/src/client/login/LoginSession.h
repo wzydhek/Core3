@@ -11,8 +11,8 @@
 #include "engine/log/Logger.h"
 #include "system/util/Optional.h"
 #include "engine/util/JSONSerializationType.h"
-#include "server/login/objects/GalaxyList.h"
-#include "server/login/objects/CharacterListEntry.h"
+#include "login/objects/GalaxyList.h"
+#include "login/objects/CharacterListEntry.h"
 
 class LoginClient;
 

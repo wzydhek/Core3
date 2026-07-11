@@ -5,7 +5,7 @@
 #pragma once
 
 #include "ZoneClient.h"
-#include "client/zone/ZoneClientThread.h"
+#include "ZoneClientThread.h"
 #include "engine/util/JSONSerializationType.h"
 
 class ObjectController;

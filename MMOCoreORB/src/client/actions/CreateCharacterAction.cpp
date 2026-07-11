@@ -5,13 +5,13 @@
  * Extracted from ZonePacketHandler for action framework
  */
 
-#include "client/ActionBase.h"
-#include "client/ActionResult.h"
-#include "client/ActionManager.h"
-#include "client/ClientCore.h"
-#include "client/zone/Zone.h"
-#include "server/zone/packets/charcreation/ClientCreateCharacter.h"
-#include "client/zone/packets/ClientRandomNameRequestPacket.h"
+#include "ActionBase.h"
+#include "ActionResult.h"
+#include "ActionManager.h"
+#include "ClientCore.h"
+#include "zone/Zone.h"
+#include "zone/packets/charcreation/ClientCreateCharacter.h"
+#include "zone/packets/ClientRandomNameRequestPacket.h"
 
 class CreateCharacterAction : public ActionBase {
 	// Configuration

@@ -1,10 +1,10 @@
 #include "Zone.h"
 #include "ZoneClientThread.h"
 #include "ClientCore.h"
-#include "client/zone/objects/scene/SceneObject.h"
-#include "server/zone/packets/zone/ClientIdMessage.h"
-#include "client/zone/managers/objectcontroller/ObjectController.h"
-#include "client/zone/managers/object/ObjectManager.h"
+#include "objects/scene/SceneObject.h"
+#include "packets/zone/ClientIdMessage.h"
+#include "managers/objectcontroller/ObjectController.h"
+#include "managers/object/ObjectManager.h"
 
 Zone::Zone(ClientCore* core, uint32 account, const String& sessionID, const String& galaxyAddress, uint32 galaxyPort) : Thread(), Mutex("Zone"), Logger("Zone") {
 	clientCore = core;

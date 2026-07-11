@@ -5,7 +5,7 @@
 #pragma once
 
 #include "engine/engine.h"
-#include "client/zone/ZonePacketHandler.h"
+#include "ZonePacketHandler.h"
 
 class Zone;
 class ZonePacketHandler;
@@ -43,7 +43,11 @@ public:
 		Socket* socket = client->getSocket();
 
 		if (socket != nullptr) {
+#ifdef WIN32
+			socket->shutdown(SD_BOTH);
+#else
 			socket->shutdown(SHUT_RDWR);
+#endif
 			socket->close();
 		}
 

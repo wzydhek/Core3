@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{be417599-de1b-4cd1-9563-5e465b125455}</ProjectGuid>
+    <RootNamespace>core3client</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)swg\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)swg\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)swg\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)swg\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_TIMESPEC_DEFINED;_DEBUG;_CONSOLE;__x86_64__;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\MMOCoreORB\src\client;$(SolutionDir)..\MMOCoreORB\utils\engine3\MMOEngine\src;$(SolutionDir)libs\boost;$(SolutionDir)libs\lua\include;$(SolutionDir)libs\pthreads\include;$(SolutionDir)libs\db\include;$(SolutionDir)libs\mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>engine3.lib;pthreadVC2.lib;luaWin64Debug.lib;libdb53d.lib;zlibWin64Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug\;$(SolutionDir)libs\pthreads\lib\x64\;$(SolutionDir)libs\lua\lib\;$(SolutionDir)libs\db\lib\;$(SolutionDir)libs\zlib\lib\;$(SolutionDir)libs\boost\stage\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_TIMESPEC_DEFINED;_DEBUG;_CONSOLE;__x86_64__;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\MMOCoreORB\src\client;$(SolutionDir)..\MMOCoreORB\utils\engine3\MMOEngine\src;$(SolutionDir)libs\boost;$(SolutionDir)libs\lua\include;$(SolutionDir)libs\pthreads\include;$(SolutionDir)libs\db\include;$(SolutionDir)libs\mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>engine3.lib;pthreadVC2.lib;luaWin64Debug.lib;libdb53d.lib;zlibWin64Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug\;$(SolutionDir)libs\pthreads\lib\x64\;$(SolutionDir)libs\lua\lib\;$(SolutionDir)libs\db\lib\;$(SolutionDir)libs\zlib\lib\;$(SolutionDir)libs\boost\stage\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_TIMESPEC_DEFINED;_DEBUG;_CONSOLE;__x86_64__;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\MMOCoreORB\src\client;$(SolutionDir)..\MMOCoreORB\utils\engine3\MMOEngine\src;$(SolutionDir)libs\boost;$(SolutionDir)libs\lua\include;$(SolutionDir)libs\pthreads\include;$(SolutionDir)libs\db\include;$(SolutionDir)libs\mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>engine3.lib;pthreadVC2.lib;luaWin64Debug.lib;libdb53d.lib;zlibWin64Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug\;$(SolutionDir)libs\pthreads\lib\x64\;$(SolutionDir)libs\lua\lib\;$(SolutionDir)libs\db\lib\;$(SolutionDir)libs\zlib\lib\;$(SolutionDir)libs\boost\stage\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_TIMESPEC_DEFINED;_DEBUG;_CONSOLE;__x86_64__;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\MMOCoreORB\src\client;$(SolutionDir)..\MMOCoreORB\utils\engine3\MMOEngine\src;$(SolutionDir)libs\boost;$(SolutionDir)libs\lua\include;$(SolutionDir)libs\pthreads\include;$(SolutionDir)libs\db\include;$(SolutionDir)libs\mysql\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>engine3.lib;pthreadVC2.lib;luaWin64Debug.lib;libdb53d.lib;zlibWin64Debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)x64\Debug\;$(SolutionDir)libs\pthreads\lib\x64\;$(SolutionDir)libs\lua\lib\;$(SolutionDir)libs\db\lib\;$(SolutionDir)libs\zlib\lib\;$(SolutionDir)libs\boost\stage\lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\MMOCoreORB\src\client\ActionManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\ConnectToZoneAction.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\CreateCharacterAction.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\LoginAccountAction.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\LogoutCharacterAction.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\SelectContextAction.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\actions\ZoneInCharacterAction.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\ClientCore.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\login\LoginClient.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\login\LoginPacketHandler.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\login\LoginSession.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\managers\objectcontroller\ObjectController.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\managers\object\ObjectManager.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\objects\scene\SceneObject.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\Zone.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\ZoneClient.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\ZoneClientThread.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\client\zone\ZonePacketHandler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\MMOCoreORB\src\client\ActionBase.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\ActionManager.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\ActionResult.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\ClientCore.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\ClientProxy.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\conf\ConfigManager.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\db\ServerDatabase.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\login\LoginClient.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\login\LoginClientThread.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\login\LoginMessageProcessorTask.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\login\LoginPacketHandler.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\login\LoginSession.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\login\objects\CharacterListEntry.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\login\objects\Galaxy.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\login\objects\GalaxyList.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\login\packets\AccountVersionMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\managers\objectcontroller\ObjectController.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\managers\object\ObjectManager.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\objects\ObjectMap.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\objects\scene\SceneObject.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\charcreation\ClientCreateCharacter.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\ClientRandomNameRequestPacket.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\object\ObjectControllerMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\zone\ClientIdMessage.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\zone\CmdSceneReady.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\packets\zone\SelectCharacter.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\Zone.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\ZoneClient.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\ZoneClientThread.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\ZoneMessageProcessorTask.h" />
+    <ClInclude Include="..\MMOCoreORB\src\client\zone\ZonePacketHandler.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

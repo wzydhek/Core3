@@ -8,7 +8,7 @@
 #include "LoginClient.h"
 #include "LoginClientThread.h"
 
-#include "server/login/packets/AccountVersionMessage.h"
+#include "login/packets/AccountVersionMessage.h"
 
 #include "LoginSession.h"
 
@@ -104,7 +104,11 @@ void LoginSession::cleanup() {
 
 		Socket* socket = login->getClient()->getSocket();
 		if (socket != nullptr) {
+#ifdef PLATFORM_WIN
+			socket->shutdown(SD_BOTH);
+#else
 			socket->shutdown(SHUT_RDWR);
+#endif
 			socket->close();
 		}
 

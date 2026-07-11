@@ -5,7 +5,7 @@
 #pragma once
 
 #include "system/lang.h"
-#include "server/login/objects/GalaxyList.h"
+#include "login/objects/GalaxyList.h"
 
 class Zone;
 class ActionBase;

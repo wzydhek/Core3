@@ -5,13 +5,13 @@
  * Cleans up login connection and establishes zone connection
  */
 
-#include "client/ActionBase.h"
-#include "client/ActionResult.h"
-#include "client/ActionManager.h"
-#include "client/ClientCore.h"
-#include "client/login/LoginSession.h"
-#include "client/zone/Zone.h"
-#include "server/login/objects/CharacterListEntry.h"
+#include "ActionBase.h"
+#include "ActionResult.h"
+#include "ActionManager.h"
+#include "ClientCore.h"
+#include "login/LoginSession.h"
+#include "zone/Zone.h"
+#include "login/objects/CharacterListEntry.h"
 
 class ConnectToZoneAction : public ActionBase {
 	ConnectToZoneResult result;

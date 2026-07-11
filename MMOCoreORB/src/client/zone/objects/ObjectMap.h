@@ -1,6 +1,6 @@
 #pragma once
 
-#include "client/zone/objects/scene/SceneObject.h"
+#include "scene/SceneObject.h"
 
 class ObjectMap : public HashTable<uint64, Reference<SceneObject*> > {
 	int maxConnections;

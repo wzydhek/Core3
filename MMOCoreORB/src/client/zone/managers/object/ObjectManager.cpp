@@ -6,10 +6,10 @@
  */
 
 #include "ObjectManager.h"
-#include "client/zone/objects/scene/SceneObject.h"
-#include "client/zone/objects/ObjectMap.h"
+#include "zone/objects/scene/SceneObject.h"
+#include "zone/objects/ObjectMap.h"
 
-#include "client/zone/Zone.h"
+#include "zone/Zone.h"
 
 ObjectFactory<SceneObject* (LuaObject*), uint32> ObjectManager::objectFactory;
 Lua* ObjectManager::luaInstance = nullptr;
