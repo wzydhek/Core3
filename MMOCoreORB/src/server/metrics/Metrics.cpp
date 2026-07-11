@@ -1,9 +1,5 @@
 #include "Metrics.h"
 
-Metrics::Metrics() {
-	active = ConfigManager::instance()->shouldUseMetrics();
-}
-
 Metrics::Metrics(const char* path) : path(path) {
 	active = ConfigManager::instance()->shouldUseMetrics();
 }

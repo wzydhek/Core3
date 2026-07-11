@@ -15,7 +15,9 @@ namespace metrics {
 		bool active;
 
 	public:
-		Metrics();
+		Metrics() {
+			active = ConfigManager::instance()->shouldUseMetrics();
+		}
 
 		Metrics(const char* path);
 
