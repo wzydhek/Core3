@@ -11,6 +11,11 @@
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 #include "engine/util/ObjectFactory.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace components {
+
 class ComponentManager : public Singleton<ComponentManager>, public Object, public ReadWriteLock {
 protected:
 	HashTable<String, Reference<SceneObjectComponent*> > components;
@@ -43,3 +48,10 @@ public:
 
 	int size();
 };
+
+} // namespace components
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::components;

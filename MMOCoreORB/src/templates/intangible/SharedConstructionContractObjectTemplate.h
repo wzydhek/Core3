@@ -9,14 +9,19 @@
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
-class SharedConstructionContractObjectTemplate : public SharedIntangibleObjectTemplate {
+namespace templates {
+namespace intangible {
 
+class SharedConstructionContractObjectTemplate : public SharedIntangibleObjectTemplate {
 public:
 	SharedConstructionContractObjectTemplate();
 
 	~SharedConstructionContractObjectTemplate();
 
 	void readObject(IffStream* iffStream);
-
-
 };
+
+} // namespace intangible
+} // namespace templates
+
+using namespace templates::intangible;

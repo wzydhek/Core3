@@ -19,11 +19,6 @@ namespace variables {
 
 template <class TaskOwner>
 class OrderedTaskExecutioner;
-}
-}
-} // namespace objects
-} // namespace zone
-} // namespace server
 
 class PendingTasksMap : public Object {
 protected:
@@ -69,3 +64,11 @@ public:
 
 	Reference<Task*> popNextOrderedTask();
 };
+
+} // namespace variables
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::variables;

@@ -11,6 +11,9 @@
 #include "server/zone/ZoneServer.h"
 #include "server/chat/ChatManager.h"
 
+namespace server {
+namespace zone {
+
 class ShutdownTask : public Task {
 	int minutesRemaining;
 	int shutdownFlags;;
@@ -20,3 +23,8 @@ public:
 
 	void run();
 };
+
+} // namespace zone
+} // namespace server
+
+using namespace server::zone;

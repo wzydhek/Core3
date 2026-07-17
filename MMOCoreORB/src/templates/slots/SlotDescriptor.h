@@ -9,6 +9,9 @@
 
 #include "templates/IffTemplate.h"
 
+namespace templates {
+namespace slots {
+
 class SlotDescriptor : public IffTemplate {
 	Vector<String> slots;
 
@@ -21,3 +24,8 @@ public:
 
 	const Vector<String>* getSlots() const;
 };
+
+} // namespace slots
+} // namespace templates
+
+using namespace templates::slots;

@@ -11,6 +11,10 @@
 #include "server/zone/packets/object/transform/Transform.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
 
 class DataTransform : public ObjectControllerMessage {
 public:
@@ -44,3 +48,10 @@ public:
 
 	void updateTransform(CreatureObject* creO, SceneObject* parent, const Vector3& position) const;
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

@@ -9,6 +9,10 @@
 
 #include "templates/tangible/DeedTemplate.h"
 
+namespace templates {
+namespace tangible {
+namespace ship {
+
 class ShipDeedTemplate : public DeedTemplate {
 	String shipControlDevice;
 	int shipType;
@@ -26,3 +30,9 @@ public:
 
 	bool isShipDeedTemplate();
 };
+
+} // namespace ship
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible::ship;

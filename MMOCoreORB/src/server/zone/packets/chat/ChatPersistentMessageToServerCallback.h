@@ -12,6 +12,11 @@
 #include "server/chat/WaypointChatParameterVector.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace chat {
+
 class ChatPersistentMessageToServerCallback : public MessageCallback {
 	UnicodeString header;
 	UnicodeString body;
@@ -33,3 +38,10 @@ public:
 	void run();
 
 };
+
+} // namespace chat
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::chat;

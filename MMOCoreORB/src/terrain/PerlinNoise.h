@@ -17,6 +17,8 @@
 #include "Random.h"
 #include <cmath>
 
+namespace terrain {
+
 class PerlinNoise {
 	int p[B + B + 2];
 	//float g3[B + B + 2][3];
@@ -50,3 +52,7 @@ public:
 	void init();
 
 };
+
+} // namespace terrain
+
+using namespace terrain;

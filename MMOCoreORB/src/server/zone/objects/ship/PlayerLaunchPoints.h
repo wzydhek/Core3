@@ -4,6 +4,11 @@
 #include "engine/util/u3d/Vector3.h"
 #include "system/util/VectorMap.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+
 class PlayerLaunchPoints : public Object {
 protected:
 	VectorMap<String, Vector<Vector3>> spawnLocations;
@@ -27,3 +32,10 @@ public:
 
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

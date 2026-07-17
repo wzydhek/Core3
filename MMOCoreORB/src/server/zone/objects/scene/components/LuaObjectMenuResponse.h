@@ -12,10 +12,9 @@
 
 namespace server {
 namespace zone {
-namespace packets {
-namespace object {
-
-	class ObjectMenuResponse;
+namespace objects {
+namespace scene {
+namespace components {
 
 	class LuaObjectMenuResponse {
 	public:
@@ -37,7 +36,10 @@ namespace object {
 	};
 
 
-}
-}
-}
-}
+} // namespace components
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::components;

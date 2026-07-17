@@ -14,6 +14,11 @@
 #include "server/zone/objects/player/sessions/survey/SurveySession.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
 
 class SampleTask : public Task {
 
@@ -33,3 +38,11 @@ public:
 	bool isCancelled();
 
 };
+
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner;

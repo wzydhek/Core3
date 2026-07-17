@@ -9,16 +9,17 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
-class LootkitObjectTemplate: public SharedTangibleObjectTemplate {
-protected:
+namespace templates {
+namespace tangible {
 
+class LootkitObjectTemplate : public SharedTangibleObjectTemplate {
+protected:
 	VectorMap<uint32, bool> components;
 	VectorMap<uint32, String> attributes;
 	Vector<uint32> comps;
 	Vector<uint32> reward;
 
 	bool deleteComponents;
-
 
 public:
 	LootkitObjectTemplate();
@@ -46,5 +47,9 @@ public:
 	void setComps(Vector<uint32> comps);
 
 	void setReward(Vector<uint32> reward);
-
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

@@ -8,8 +8,10 @@
 #pragma once
 
 #include "FactionRank.h"
+#include "templates/datatables/DataTableIff.h"
 
-class DataTableIff;
+namespace templates {
+namespace faction {
 
 class FactionRanks {
 protected:
@@ -25,3 +27,8 @@ public:
 
 	int getCount();
 };
+
+} // namespace faction
+} // namespace templates
+
+using namespace templates::faction;

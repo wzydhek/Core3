@@ -1,17 +1,14 @@
 #pragma once
 
-namespace server {
-	namespace zone {
-		namespace objects {
-			namespace ship {
-				class ShipObject;
-			}
-		}
-	}
-}
-
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "ShipSquadronFormation.h"
+
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+class ShipObject;
+namespace squadron {
 
 class ShipSquadronDataEntry : public Object {
 protected:
@@ -83,3 +80,11 @@ public:
 
 	float getFormationSpeed() const;
 };
+
+} // namespace squadron
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::squadron;

@@ -1,5 +1,8 @@
 #pragma once
 
+namespace templates {
+namespace faction {
+
 namespace Factions {
 	enum {
 		FACTIONNEUTRAL = 0,
@@ -7,3 +10,8 @@ namespace Factions {
 		FACTIONREBEL = 0x16148850
 	};
 }
+
+} // namespace faction
+} // namespace templates
+
+using namespace templates::faction;

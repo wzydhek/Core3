@@ -10,6 +10,9 @@
 #include "templates/params/PaletteColorCustomizationVariable.h"
 #include "templates/params/Param.h"
 
+namespace templates {
+namespace params {
+
 class PaletteColorCustomizationVariables : public Param {
 protected:
 	//QMap<QString, PaletteColorCustomizationVariable*> variables;
@@ -30,3 +33,8 @@ public:
 
 	void parseType1(IffStream* source);
 };
+
+} // namespace params
+} // namespace templates
+
+using namespace templates::params;

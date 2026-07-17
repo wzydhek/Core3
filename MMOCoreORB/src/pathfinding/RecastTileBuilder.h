@@ -23,7 +23,13 @@
 #include "pathfinding/recast/Recast.h"
 #include "RecastPolygon.h"
 
+namespace templates {
+namespace appearance {
 class MeshData;
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;
 
 struct rcChunkyTriMesh;
 

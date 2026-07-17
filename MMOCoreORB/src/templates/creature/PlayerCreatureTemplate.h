@@ -10,6 +10,9 @@
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 #include "templates/customization/CustomizationDataMap.h"
 
+namespace templates {
+namespace creature {
+
 class PlayerCreatureTemplate : public SharedCreatureObjectTemplate {
 	CustomizationDataMap dataMap;
 	Vector<String> startingSkills;
@@ -43,3 +46,8 @@ public:
 
 	bool isPlayerCreatureTemplate() const override;
 };
+
+} // namespace creature
+} // namespace templates
+
+using namespace templates::creature;

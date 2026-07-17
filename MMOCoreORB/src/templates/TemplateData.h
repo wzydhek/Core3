@@ -9,6 +9,8 @@
 
 #include "system/lang/Object.h"
 
+namespace templates {
+
 class TemplateData : public virtual Object {
 public:
 	constexpr const static bool is_virtual_object = true;
@@ -17,3 +19,7 @@ public:
 
 	}
 };
+
+} // namespace templates
+
+using namespace templates;

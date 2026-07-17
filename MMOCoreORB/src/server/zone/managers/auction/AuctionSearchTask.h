@@ -28,3 +28,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::managers::auction;

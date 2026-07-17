@@ -13,6 +13,12 @@
 #include "server/zone/objects/creature/buffs/ConcealBuff.h"
 #include "server/zone/objects/creature/ai/AiAgent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace events {
+
 class CamoTask : public Task {
 	ManagedWeakReference<CreatureObject*> player;
 	ManagedWeakReference<CreatureObject*> creature;
@@ -24,3 +30,11 @@ public:
 
 	void run();
 };
+
+} // namespace events
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::events;

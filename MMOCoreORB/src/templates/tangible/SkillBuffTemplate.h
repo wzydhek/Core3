@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class SkillBuffTemplate : public SharedTangibleObjectTemplate {
 	int duration;
 	VectorMap<String, float> modifiers;
@@ -33,3 +36,8 @@ public:
 	unsigned int getBuffCRC();
 
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

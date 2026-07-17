@@ -7,6 +7,11 @@
 #include "ObjectControllerMessage.h"
 #include "server/chat/StringIdChatParameter.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class SpatialChat: public ObjectControllerMessage {
 public:
 	SpatialChat(uint64 senderID, uint64 targetID, uint64 chatTargetID, const UnicodeString& message, uint16 volume, uint32 spatialChatType, uint32 moodType, uint32 chatFlags, uint8 languageID);
@@ -15,3 +20,10 @@ public:
 
 	SpatialChat(uint64 senderID, uint64 targetID, uint64 chatTargetID, const StringIdChatParameter& stringid, uint16 volume, uint16 spatialChatType, uint16 moodType, uint32 chatFlags, uint8 languageID);
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

@@ -8,6 +8,11 @@
 #include "server/chat/StringIdChatParameterVector.h"
 #include "server/chat/PersistentMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace chat {
+
 class ChatPersistentMessageToClient : public BaseMessage {
 	void insertParameters(PersistentMessage* mail);
 
@@ -18,3 +23,10 @@ public:
 
 	ChatPersistentMessageToClient(PersistentMessage* mail, const String& serverName, bool sendBody);
 };
+
+} // namespace chat
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::chat;

@@ -4,6 +4,12 @@
 #include "server/zone/objects/player/sui/messagebox/SuiMessageBox.h"
 #include "server/zone/objects/player/sui/callbacks/BaseShutdownSuiCallback.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace gcw {
+namespace tasks {
+
 class BaseShutdownTask : public Task {
 	ManagedWeakReference<BuildingObject*> building;
 	ManagedWeakReference<GCWManager*> gcwMan;
@@ -15,3 +21,11 @@ public:
 
 	void run();
 };
+
+} // namespace tasks
+} // namespace gcw
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::gcw::tasks;

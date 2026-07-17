@@ -4,9 +4,14 @@
 
 #pragma once
 
+namespace terrain {
 
 class Terrain {
 public:
 	const static char* getZoneName(int terrainid);
 
 };
+
+} // namespace terrain
+
+using namespace terrain;

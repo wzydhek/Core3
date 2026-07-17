@@ -9,9 +9,15 @@
 
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace firework {
+namespace components {
+
 class FireworkMenuComponent : public TangibleObjectMenuComponent {
 public:
-
 	/**
 	 * Fills the radial options, needs to be overriden
 	 * @pre { this object is locked }
@@ -29,5 +35,13 @@ public:
 	 * @returns 0 if successfull
 	 */
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
-
 };
+
+} // namespace components
+} // namespace firework
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::firework::components;

@@ -10,6 +10,11 @@
 
 //TODO: This needs more research!
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class NpcConversationMessage : public ObjectControllerMessage {
 public:
 
@@ -17,3 +22,10 @@ public:
 
 	NpcConversationMessage(CreatureObject* creo, StringIdChatParameter& stringid);
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

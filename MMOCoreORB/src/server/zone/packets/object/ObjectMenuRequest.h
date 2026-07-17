@@ -11,6 +11,11 @@
 #include "ObjectControllerMessageCallback.h"
 #include "ObjectMenuResponse.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class RadialClientItem {
 	uint8 index;
 	uint8 parentid;
@@ -54,3 +59,10 @@ public:
 
 	void run();
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

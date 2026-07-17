@@ -4,6 +4,12 @@
 #include "server/zone/objects/ship/ShipMissileData.h"
 #include "server/zone/packets/jtl/UpdateMissileMessage.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace spacecombat {
+namespace projectile {
+
 class ShipMissile : public ShipProjectile {
 protected:
 	ManagedWeakReference<ShipObject*> targetRef;
@@ -61,3 +67,11 @@ public:
 	void debugProjectilePath(ShipObject* ship);
 #endif //SHIPPROJECTILE_DEBUG
 };
+
+} // namespace projectile
+} // namespace spacecombat
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::spacecombat::projectile;

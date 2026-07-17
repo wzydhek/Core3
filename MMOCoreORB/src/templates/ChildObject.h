@@ -10,6 +10,8 @@
 #include "engine/util/u3d/Quaternion.h"
 #include "engine/lua/LuaObject.h"
 
+namespace templates {
+
 class ChildObject : public Object {
 protected:
 	Vector3 position;
@@ -52,3 +54,7 @@ public:
 
 	int getComponentSlot() const;
 };
+
+} // namespace templates
+
+using namespace templates;

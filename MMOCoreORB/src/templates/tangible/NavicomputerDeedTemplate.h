@@ -9,6 +9,9 @@
 
 #include "templates/tangible/DeedTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class NavicomputerDeedTemplate : public DeedTemplate {
 	String controlDeviceObjectTemplate;
 	String datapadObjectTemplate;
@@ -24,3 +27,8 @@ public:
 
 	const String& getDatapadObjectTemplate() const;
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

@@ -10,6 +10,12 @@
 #include "CombatQueueCommand.h"
 #include "server/zone/objects/group/GroupObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class SquadLeaderCommand : public CombatQueueCommand {
 protected:
 	String action;
@@ -39,3 +45,11 @@ public:
 
 	void setAction(String action);
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

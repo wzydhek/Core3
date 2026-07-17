@@ -9,6 +9,12 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace variables {
+
 class Ability : public Object {
 	String abilityName;
 
@@ -29,3 +35,11 @@ public:
 
 	bool toBinaryStream(ObjectOutputStream* stream);
 };
+
+} // namespace variables
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::variables;

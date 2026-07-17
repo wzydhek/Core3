@@ -12,6 +12,12 @@
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 #include "server/zone/objects/draftschematic/DraftSchematic.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace variables {
+
 class SchematicList : public DeltaVector<ManagedReference<DraftSchematic* > > {
 protected:
 
@@ -49,3 +55,11 @@ public:
 
 	void insertToMessage(BaseMessage* msg) const override;
 };
+
+} // namespace variables
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::variables;

@@ -88,7 +88,7 @@ void DamageOverTime::addSerializableVariables() {
 	addSerializableVariable("secondaryStrength", &secondaryStrength);
 }
 
-void to_json(nlohmann::json& j, const DamageOverTime& t) {
+void server::zone::objects::creature::damageovertime::to_json(nlohmann::json& j, const DamageOverTime& t) {
 	j["attackerID"] = t.attackerID;
 	j["type"] = t.type;
 	j["attribute"] = t.attribute;

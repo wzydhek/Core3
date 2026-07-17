@@ -9,8 +9,13 @@
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
-class BuildingDataComponent : public DataObjectComponent {
+namespace server {
+namespace zone {
+namespace objects {
+namespace building {
+namespace components {
 
+class BuildingDataComponent : public DataObjectComponent {
 public:
 	BuildingDataComponent();
 
@@ -20,3 +25,11 @@ public:
 
 	bool isBuildingData();
 };
+
+} // namespace components
+} // namespace building
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::building::components;

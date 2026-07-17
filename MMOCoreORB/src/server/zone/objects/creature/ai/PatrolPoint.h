@@ -10,6 +10,12 @@
 #include "server/zone/objects/cell/CellObject.h"
 #include "server/zone/objects/scene/WorldCoordinates.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace ai {
+
 class PatrolPoint : public Serializable {
 	WorldCoordinates position;
 
@@ -40,12 +46,7 @@ public:
 
 	void addSerializableVariables();
 
-	friend void to_json(nlohmann::json& j, const PatrolPoint& p) {
-		j["position"] = p.position;
-		j["reached"] = p.reached;
-		j["direction"] = p.direction;
-		j["estimatedTimeOfArrival"] = p.estimatedTimeOfArrival;
-	}
+	friend void to_json(nlohmann::json& j, const PatrolPoint& p);
 
 	Vector3 getWorldPosition();
 
@@ -94,3 +95,11 @@ public:
 	 */
 	String toString() const;
 };
+
+} // namespace ai
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::ai;

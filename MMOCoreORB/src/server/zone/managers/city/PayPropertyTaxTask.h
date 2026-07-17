@@ -9,6 +9,11 @@
 
 #include "server/zone/objects/region/CityRegion.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace city {
+
 class PayPropertyTaxTask : public Task {
 	ManagedWeakReference<CityRegion*> cityObject;
 	float amount;
@@ -17,3 +22,10 @@ public:
 
 	void run();
 };
+
+} // namespace city
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::city;

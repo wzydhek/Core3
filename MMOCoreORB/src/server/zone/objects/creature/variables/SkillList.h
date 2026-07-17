@@ -8,6 +8,12 @@
 #include "engine/util/json_utils.h"
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace variables {
+
 class Skill;
 
 class SkillList : public DeltaVector<Reference<Skill*> > {
@@ -30,3 +36,11 @@ public:
 
 	friend void to_json(nlohmann::json& j, const SkillList& s);
 };
+
+} // namespace variables
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::variables;

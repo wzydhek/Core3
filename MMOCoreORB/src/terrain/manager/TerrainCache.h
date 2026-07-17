@@ -12,6 +12,8 @@
 #include "engine/util/u3d/BasicQuadTree.h"
 #include "system/lang/Pair.h"
 
+namespace terrain {
+
 class TerrainManager;
 class TerrainGenerator;
 
@@ -50,3 +52,7 @@ public:
 
 	int getEvictCount() const;
 };
+
+} // namespace terrain
+
+using namespace terrain;

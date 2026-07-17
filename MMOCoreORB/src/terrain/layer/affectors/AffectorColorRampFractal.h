@@ -10,6 +10,10 @@
 #include "../ProceduralRule.h"
 #include "AffectorProceduralRule.h"
 
+namespace terrain {
+namespace layer {
+namespace affectors {
+
 class AffectorColorRampFractal : public ProceduralRule<'ACRF'>, public AffectorProceduralRule {
 	int familyId; // fractal family id
 	byte var2;
@@ -22,3 +26,9 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

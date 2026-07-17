@@ -42,7 +42,7 @@ ShipPermissionList& ShipPermissionList::operator=(const ShipPermissionList& list
 	return *this;
 }
 
-void to_json(nlohmann::json& j, const ShipPermissionList& p) {
+void server::zone::objects::ship::to_json(nlohmann::json& j, const ShipPermissionList& p) {
 	j["permissionLists"] = p.permissionLists;
 	j["idPermissionLists"] = p.idPermissionLists;
 	j["ownerName"] = p.ownerName;

@@ -15,6 +15,11 @@
 #include "server/zone/managers/spacecombat/projectile/ShipProjectile.h"
 #include "server/zone/objects/ship/ShipProjectileData.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace jtl {
+
 class CreateProjectileMessage : public BaseMessage {
 private:
 	constexpr static float directionScale = PackedPosition::positionScale * ShipProjectile::positionScale;
@@ -48,3 +53,10 @@ public:
 
 	const char* getTaskName();
 };
+
+} // namespace jtl
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::jtl;

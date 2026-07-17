@@ -11,6 +11,12 @@
 #include "engine/util/json_utils.h"
 #include "DataObjectComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace components {
+
 class DataObjectComponentReference : public Reference<DataObjectComponent*> {
 public:
 	bool toBinaryStream(ObjectOutputStream* stream);
@@ -20,3 +26,11 @@ public:
 };
 
 void to_json(nlohmann::json& j, const DataObjectComponentReference& ref);
+
+} // namespace components
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::components;

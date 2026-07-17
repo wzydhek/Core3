@@ -33,8 +33,24 @@ using namespace server::zone::objects::creature;
 using namespace server::zone::objects::tangible::deed::structure;
 using namespace server::zone::objects::structure;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace deed {
+namespace components {
+
 class PlaceStructureComponent : public SceneObjectComponent {
 public:
 	virtual int placeStructure(StructureDeed* deed, CreatureObject* creature, float x, float y, int angle) const;
 	virtual int notifyStructurePlaced(StructureDeed* deed, CreatureObject* creature, StructureObject* structure) const;
 };
+
+} // namespace components
+} // namespace deed
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::deed::components;

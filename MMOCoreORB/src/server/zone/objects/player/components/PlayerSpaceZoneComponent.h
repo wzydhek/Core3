@@ -10,6 +10,12 @@
 #include "server/zone/objects/scene/components/SpaceZoneComponent.h"
 #include "server/zone/TreeEntry.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace components {
+
 class PlayerSpaceZoneComponent : public SpaceZoneComponent{
 public:
 	PlayerSpaceZoneComponent() {
@@ -31,3 +37,11 @@ public:
 	void updateZoneWithParent(SceneObject* sceneObject, SceneObject* newParent, bool lightUpdate, bool sendPackets = true) const;
 
 };
+
+} // namespace components
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::components;

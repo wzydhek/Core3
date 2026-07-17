@@ -4,6 +4,12 @@
 #include "ShipProjectile.h"
 #include "server/zone/objects/ship/ShipObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace spacecombat {
+namespace projectile {
+
 class ShipProjectileMapEntry : public Object {
 private:
 	ManagedWeakReference<ShipObject*> shipRef;
@@ -53,3 +59,11 @@ public:
 
 	int mapSize() const;
 };
+
+} // namespace projectile
+} // namespace spacecombat
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::spacecombat::projectile;

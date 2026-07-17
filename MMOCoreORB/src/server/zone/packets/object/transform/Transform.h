@@ -1,10 +1,14 @@
-#ifndef TRANSFORM_H_
-#define TRANSFORM_H_
+#pragma once
 
 // #define TRANSFORM_DEBUG
 
 #include "server/zone/objects/scene/SceneObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+namespace transform {
 
 class Transform {
 protected:
@@ -25,7 +29,7 @@ public:
 	const static int MAX_DELTA = 800; // maximum ms before high priority update
 
 	const static int SYNC_DELTA = 10000; // minimum ms before synchronize update
-	const static int SYNC_COUNT = 50; // minimum moveCount for synchronize update
+	const static int SYNC_COUNT = 50;	 // minimum moveCount for synchronize update
 
 	const static int INVALID_POSITION = 1;
 	const static int TIME_VALIDATED = 2;
@@ -96,4 +100,10 @@ public:
 #endif // TRANSFORM_DEBUG
 };
 
-#endif // TRANSFORM_H_
+} // namespace transform
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object::transform;

@@ -10,6 +10,11 @@
 #include "engine/engine.h"
 #include "server/zone/objects/tangible/Container.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+
 class RelockLootContainerEvent: public Task {
 	ManagedReference<Container*> container;
 
@@ -19,3 +24,10 @@ public:
 	void run();
 
 };
+
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible;

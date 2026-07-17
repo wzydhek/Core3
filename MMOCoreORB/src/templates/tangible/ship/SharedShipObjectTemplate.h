@@ -10,6 +10,10 @@
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "server/zone/objects/ship/ComponentSlots.h"
 
+namespace templates {
+namespace tangible {
+namespace ship {
+
 class SharedShipObjectTemplate : public SharedTangibleObjectTemplate {
 	StringParam interiorLayoutFileName;
 	StringParam cockpitFilename;
@@ -93,3 +97,9 @@ public:
 
 	void readObject(IffStream* iffStream);
 };
+
+} // namespace ship
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible::ship;

@@ -56,7 +56,7 @@ void StringId::setStringId(const String& fullPath) {
 	}
 }
 
-void server::zone::objects::scene::variables::to_json(nlohmann::json& j, const server::zone::objects::scene::variables::StringId& str) {
+void server::zone::objects::scene::variables::to_json(nlohmann::json& j, const StringId& str) {
 	j["file"] = str.getFile();
 	j["filler"] = str.getFiller();
 	j["stringID"] = str.getStringID();

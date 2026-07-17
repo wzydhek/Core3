@@ -9,13 +9,19 @@
 
 #include "templates/SharedUniverseObjectTemplate.h"
 
-class SharedJediManagerTemplate : public SharedUniverseObjectTemplate {
+namespace templates {
+namespace universe {
 
+class SharedJediManagerTemplate : public SharedUniverseObjectTemplate {
 public:
 	SharedJediManagerTemplate();
 
 	~SharedJediManagerTemplate();
 
 	void readObject(IffStream* iffStream);
-
 };
+
+} // namespace universe
+} // namespace templates
+
+using namespace templates::universe;

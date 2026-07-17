@@ -7,6 +7,12 @@
 #include "QueueCommand.h"
 #include "server/zone/objects/scene/SceneObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class DismountCommand : public QueueCommand {
 	Vector<uint32> restrictedBuffCRCs;
 	uint32 gallopCRC;
@@ -21,3 +27,10 @@ public:
 	void removeMountBuffs(CreatureObject* vehicle) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

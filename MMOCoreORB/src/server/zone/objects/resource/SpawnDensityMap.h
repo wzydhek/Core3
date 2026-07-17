@@ -14,6 +14,11 @@
 #include "engine/util/json_utils.h"
 #include "simplexnoise/SimplexNoise.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace resource {
+
 /*
  * This class represents the Simplex Noise map of a resource
  */
@@ -68,3 +73,10 @@ private:
 	 */
 	void addSerializableVariables();
 };
+
+} // namespace resource
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::resource;

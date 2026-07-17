@@ -9,7 +9,17 @@
 
 #include "../InformationHeader.h"
 
-class TerrainGenerator;
+namespace terrain {
+
+	class TerrainGenerator;
+
+} // namespace terrain
+
+using namespace terrain;
+
+namespace terrain {
+namespace layer {
+namespace filters {
 
 class FilterRectangle {
 public:
@@ -59,3 +69,9 @@ public:
 	bool isType(int type) const;
 
 };
+
+} // namespace filters
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::filters;

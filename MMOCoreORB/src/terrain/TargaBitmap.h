@@ -7,6 +7,8 @@
 
 #pragma once
 
+namespace terrain {
+
 class TargaHeader {
 public:
 	char  idlength;
@@ -60,3 +62,7 @@ public:
 
 	unsigned char getData(int offset) const;
 };
+
+} // namespace terrain
+
+using namespace terrain;

@@ -9,6 +9,9 @@
 
 #include "../IffTemplate.h"
 
+namespace templates {
+namespace building {
+
 class InteriorNode : public Object {
 	Matrix4 transform;
 	String templateFile;
@@ -35,3 +38,8 @@ public:
 
 	const Vector<Reference<InteriorNode*>>& getChildren() const;
 };
+
+} // namespace building
+} // namespace templates
+
+using namespace templates::building;

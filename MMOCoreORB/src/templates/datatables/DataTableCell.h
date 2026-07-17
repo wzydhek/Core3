@@ -10,6 +10,9 @@
 #include "system/lang.h"
 #include "engine/util/iffstream/chunks/Chunk.h"
 
+namespace templates {
+namespace datatables {
+
 class DataTableCell {
 public:
 	DataTableCell();
@@ -120,3 +123,8 @@ public:
 
 	String toString() const;
 };
+
+} // namespace datatables
+} // namespace templates
+
+using namespace templates::datatables;

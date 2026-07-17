@@ -12,6 +12,8 @@
 #include "templates/appearance/AppearanceTemplate.h"
 #include "templates/building/InteriorLayoutTemplate.h"
 
+namespace templates {
+
 class PortalLayoutMap : public HashTable<String, Reference<PortalLayout*> > {
 public:
 	PortalLayoutMap();
@@ -31,3 +33,7 @@ class InteriorMap : public HashTable<String, Reference<InteriorLayoutTemplate*> 
 public:
 	InteriorMap();
 };
+
+} // namespace templates
+
+using namespace templates;

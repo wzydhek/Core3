@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class CurePackTemplate : public SharedTangibleObjectTemplate {
 	float effectiveness;
 	uint64 state;
@@ -35,3 +38,8 @@ public:
 
 	bool isCurePackTemplate();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

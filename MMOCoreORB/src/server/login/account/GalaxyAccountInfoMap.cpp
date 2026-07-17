@@ -38,7 +38,7 @@ bool GalaxyAccountInfoMap::parseFromBinaryStream(ObjectInputStream* stream) {
 	return true;
 }
 
-void to_json(nlohmann::json& j, const GalaxyAccountInfoMap& p) {
+void server::login::account::to_json(nlohmann::json& j, const GalaxyAccountInfoMap& p) {
 	for (auto& element : p) {
 		GalaxyAccountInfo *value = element.getValue();
 		const String& key = element.getKey();

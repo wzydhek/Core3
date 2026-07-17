@@ -7,6 +7,11 @@
 #include "server/zone/managers/spacecollision/SpaceCollisionResult.h"
 #include "server/zone/objects/ship/ShipObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace spacecombat {
+
 class SpaceCombatManager : public Singleton<SpaceCombatManager>, public Logger, public Object {
 public:
 	SpaceCombatManager();
@@ -89,3 +94,10 @@ public:
 
 	void addCountermeasure(ShipObject* ship, ShipCountermeasure* counter);
 };
+
+} // namespace spacecombat
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::spacecombat;

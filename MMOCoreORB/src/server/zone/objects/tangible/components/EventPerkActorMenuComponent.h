@@ -10,6 +10,12 @@
 
 #include "server/zone/objects/tangible/components/EventPerkMenuComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class EventPerkActorMenuComponent : public EventPerkMenuComponent {
 public:
 	/**
@@ -31,3 +37,11 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

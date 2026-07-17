@@ -9,6 +9,11 @@
 
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace charcreation {
+
 class ClientCreateCharacterCallback : public MessageCallback {
 	String customization;
 
@@ -55,3 +60,10 @@ public:
 
 	int getSpecies() const;
 };
+
+} // namespace charcreation
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::charcreation;

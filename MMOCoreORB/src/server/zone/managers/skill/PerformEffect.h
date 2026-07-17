@@ -2,6 +2,11 @@
 
 #include "templates/datatables/DataTableRow.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace skill {
+
 class PerformEffect {
 	int effectIndex;
 	String effectName;
@@ -60,3 +65,10 @@ public:
 
 	void parseDataTableRow(int idx, DataTableRow* row);
 };
+
+} // namespace skill
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::skill;

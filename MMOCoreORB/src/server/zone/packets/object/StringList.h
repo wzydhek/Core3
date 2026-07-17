@@ -7,6 +7,11 @@
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class StringList : public ObjectControllerMessage {
 	uint8 optionCount;
 
@@ -24,3 +29,10 @@ public:
 
 	int getOptionCount();
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

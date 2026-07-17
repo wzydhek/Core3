@@ -9,6 +9,11 @@
 
 #include "engine/lua/LuaObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace city {
+
 class CitySpecialization : public Object {
 	String name;
 	int cost;
@@ -31,3 +36,10 @@ public:
 
 	const VectorMap<String, int>* getSkillMods() const;
 };
+
+} // namespace city
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::city;

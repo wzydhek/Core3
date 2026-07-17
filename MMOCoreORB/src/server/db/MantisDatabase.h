@@ -14,6 +14,9 @@ namespace conf {
 	class ConfigManager;
 }
 
+namespace server {
+namespace db {
+
 class MantisDatabase {
 	static UniqueReference<ArrayList<UniqueReference<Database*> >* > databases;
 	static AtomicInteger currentDB;
@@ -30,3 +33,8 @@ public:
 
 	static const String& getTablePrefix();
 };
+
+} // namespace chat
+} // namespace server
+
+using namespace server::db;

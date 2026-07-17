@@ -11,6 +11,12 @@
 #include "server/zone/packets/ship/ShipObjectMessage3.h"
 #include "server/zone/packets/ship/ShipObjectMessage6.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace events {
+
 class DestroyShipTask: public Task {
 private:
 	ManagedWeakReference<ShipObject*> weakShip;
@@ -23,3 +29,11 @@ public:
 
 	void run();
 };
+
+} // namespace events
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::events;

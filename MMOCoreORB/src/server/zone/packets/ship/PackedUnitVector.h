@@ -10,6 +10,11 @@
 #include "engine/util/u3d/Vector3.h"
 #include "engine/service/proto/BaseMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ship {
+
 template<class T>inline const T clamp(const T &minT, const T &t, const T &maxT) {
 	return (t < minT) ? minT : ((t > maxT) ? maxT : t);
 }
@@ -40,3 +45,10 @@ public:
 
 	Vector3 get();
 };
+
+} // namespace ship
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ship;

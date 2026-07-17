@@ -7,6 +7,12 @@
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace manufactureschematic {
+namespace ingredientslots {
+
 class IngredientSlot : public Serializable, public Logger {
 
 protected:
@@ -124,3 +130,11 @@ public:
 
 
 };
+
+} // namespace ingredientslots
+} // namespace manufactureschematic
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::manufactureschematic::ingredientslots;

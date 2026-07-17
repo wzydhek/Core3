@@ -3,6 +3,9 @@
 #include "engine/engine.h"
 #include "server/zone/Octree.h"
 
+namespace server {
+namespace zone {
+
 #ifdef WITH_STM
 	class OctreeReference : public TransactionalReference<Octree*> {
 #else
@@ -14,3 +17,8 @@
 
 		server::zone::Octree* operator=(server::zone::Octree* obj);
 	};
+
+} // namespace zone
+} // namespace server
+
+using namespace server::zone;

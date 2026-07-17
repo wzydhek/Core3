@@ -3,6 +3,11 @@
 #include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+
 class ShipTurretData: public Object {
 protected:
 	String chassisName;
@@ -43,3 +48,10 @@ public:
 
 	void setMaxPitch(float maxP);
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

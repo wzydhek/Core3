@@ -10,6 +10,10 @@
 #include "../ProceduralRule.h"
 #include "Boundary.h"
 
+namespace terrain {
+namespace layer {
+namespace boundaries {
+
 class BoundaryCircle : public Boundary {
 	float centerX;
 	float centerY;
@@ -39,3 +43,9 @@ public:
 
 	float getMaxY() const final;
 };
+
+} // namespace boundaries
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::boundaries;

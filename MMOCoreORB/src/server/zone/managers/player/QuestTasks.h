@@ -6,6 +6,11 @@
 #include "templates/datatables/DataTableIff.h"
 #include "templates/datatables/DataTableRow.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace player {
+
 class UnknownDatatableException : public sys::lang::Exception {
 public:
 	UnknownDatatableException();
@@ -163,3 +168,10 @@ public:
 
 	QuestTask* getTask(int taskNumber);
 };
+
+} // namespace player
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::player;

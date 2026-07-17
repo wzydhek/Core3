@@ -204,7 +204,7 @@ void BlueprintEntry::print() {
 	System::out << "*******************" << endl;
 }
 
-void to_json(nlohmann::json& j, const BlueprintEntry& entry) {
+void server::zone::objects::manufactureschematic::factoryblueprint::to_json(nlohmann::json& j, const BlueprintEntry& entry) {
 	j["type"] = entry.type;
 	j["key"] = entry.key;
 	j["displayedName"] = entry.displayedName;

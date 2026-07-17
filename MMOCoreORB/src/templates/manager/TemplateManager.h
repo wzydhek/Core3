@@ -19,12 +19,12 @@
 #include "templates/manager/PlanetMapSubCategoryList.h"
 #include "templates/manager/PlanetMapSubCategory.h"
 #include "templates/manager/PortalLayoutMap.h"
+#include "templates/appearance/PaletteTemplate.h"
+
+namespace templates {
 
 class TemplateCRCMap;
 class ClientTemplateCRCMap;
-
-class TreeDirectory;
-class PaletteTemplate;
 
 class TemplateManager : public Singleton<TemplateManager>, public Logger, public Object {
 	TemplateCRCMap* templateCRCMap;
@@ -157,3 +157,7 @@ public:
 
 	friend class SharedObjectTemplate;
 };
+
+} // namespace templates
+
+using namespace templates;

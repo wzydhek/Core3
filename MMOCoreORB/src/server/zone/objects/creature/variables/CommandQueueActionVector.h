@@ -10,6 +10,12 @@
 #include "engine/engine.h"
 #include "CommandQueueAction.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace variables {
+
 template <class O>
 class CommandReference : public Reference<O> {
 public:
@@ -53,3 +59,11 @@ public:
 
 	Object* clone(void* object);
 };
+
+} // namespace variables
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::variables;

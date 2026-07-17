@@ -69,7 +69,7 @@ void SpacePatrolPoint::addSerializableVariables() {
 	addSerializableVariable("estimatedTimeOfArrival", &estimatedTimeOfArrival);
 }
 
-void to_json(nlohmann::json& j, const SpacePatrolPoint& p) {
+void server::zone::objects::ship::ai::to_json(nlohmann::json& j, const SpacePatrolPoint& p) {
 	j["position"] = p.position;
 	j["reached"] = p.reached;
 	j["evadePoint"] = p.evadePoint;

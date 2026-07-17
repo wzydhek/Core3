@@ -13,6 +13,12 @@
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 #include "server/zone/managers/combat/CreatureAttackData.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class CombatQueueCommand : public QueueCommand {
 protected:
 	float minDamage;
@@ -250,3 +256,10 @@ public:
 	float getFrsDarkMaxDamageModifier() const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

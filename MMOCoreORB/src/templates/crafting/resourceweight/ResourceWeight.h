@@ -7,6 +7,10 @@
 #include "system/lang.h"
 #include "engine/service/proto/BaseMessage.h"
 
+namespace templates {
+namespace crafting {
+namespace resourceweight {
+
 class ResourceWeight : public Object {
 private:
 
@@ -66,3 +70,9 @@ public:
 	short getCombineType();
 
 };
+
+} // namespace resourceweight
+} // namespace crafting
+} // namespace templates
+
+using namespace templates::crafting::resourceweight;

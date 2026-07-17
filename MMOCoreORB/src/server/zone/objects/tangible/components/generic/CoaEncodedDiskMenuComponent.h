@@ -7,6 +7,13 @@
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+namespace generic {
+
 class CoaEncodedDiskMenuComponent : public TangibleObjectMenuComponent {
 public:
 
@@ -33,3 +40,12 @@ private:
 
 	bool isDecoded(TangibleObject* disk) const;
 };
+
+} // namespace generic
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components::generic;

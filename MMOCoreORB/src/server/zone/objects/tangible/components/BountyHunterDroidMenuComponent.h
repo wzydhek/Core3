@@ -10,6 +10,12 @@
 #include "TangibleObjectMenuComponent.h"
 #include "server/zone/objects/mission/MissionObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class BountyHunterDroidMenuComponent : public TangibleObjectMenuComponent {
 public:
 
@@ -98,3 +104,11 @@ private:
 	 */
 	MissionObject* getBountyHunterMission(CreatureObject* player) const;
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

@@ -7,6 +7,11 @@
 
 #pragma once
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace radial {
+
 class RadialOptions {
 public:
 	enum {
@@ -247,3 +252,10 @@ public:
 		EQUIP_DROID_ON_SHIP
 	};
 };
+
+} // namespace radial
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::radial;

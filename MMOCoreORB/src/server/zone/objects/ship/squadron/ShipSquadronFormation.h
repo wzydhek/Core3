@@ -2,6 +2,12 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace squadron {
+
 class ShipSquadronFormation {
 public:
 	enum Type : int {
@@ -21,3 +27,11 @@ private:
 
 	static Vector3 getFormationWedge(int index, float radius);
 };
+
+} // namespace squadron
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::squadron;

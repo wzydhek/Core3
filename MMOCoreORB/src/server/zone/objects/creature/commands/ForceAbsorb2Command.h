@@ -6,6 +6,12 @@
 
 #include "JediQueueCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class ForceAbsorb2Command : public JediQueueCommand {
 public:
 
@@ -15,3 +21,11 @@ public:
 
 	void handleBuff(SceneObject* creature, ManagedObject* object, int64 param) const override;
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

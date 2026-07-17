@@ -10,6 +10,9 @@
 #include "system/lang/Object.h"
 #include "system/io/ObjectInputStream.h"
 
+namespace templates {
+namespace appearance {
+
 class PaletteColor : public Object {
 	uint8 red;
 	uint8 green;
@@ -31,3 +34,8 @@ public:
 
 	uint8 getBlue();
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

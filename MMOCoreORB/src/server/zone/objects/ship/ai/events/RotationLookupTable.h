@@ -3,6 +3,13 @@
 #include "engine/engine.h"
 #include "server/zone/packets/ship/PackedQuaternion.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace ai {
+namespace events {
+
 class RotationLookupTable : public Singleton<RotationLookupTable>, public Object, public Logger {
 protected:
 	const static int Y_STEPS = 90;
@@ -32,3 +39,12 @@ public:
 
 	Quaternion getDirection(float yaw, float pitch, float roll);
 };
+
+} // namespace events
+} // namespace ai
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::ai::events;

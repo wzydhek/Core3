@@ -9,6 +9,10 @@
 
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace zone {
 
 class ClientIdMessageCallback : public MessageCallback {
 	uint32 gameBits{};
@@ -32,3 +36,10 @@ public:
 
 	uint32 getAccountID() const;
 };
+
+} // namespace zone
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::zone;

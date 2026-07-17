@@ -12,6 +12,9 @@
 #include "templates/building/SignTemplate.h"
 #include "server/zone/managers/gcw/SecurityPatrolSpawn.h"
 
+namespace templates {
+namespace building {
+
 class SharedBuildingObjectTemplate : public SharedStructureObjectTemplate {
 	StringParam terrainModificationFileName;
 	StringParam interiorLayoutFileName;
@@ -80,3 +83,8 @@ public:
 
 	const SecurityPatrolSpawn* getSecurityPatrol(int idx) const;
 };
+
+} // namespace building
+} // namespace templates
+
+using namespace templates::building;

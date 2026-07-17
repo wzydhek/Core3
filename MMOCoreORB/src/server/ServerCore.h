@@ -26,9 +26,18 @@ namespace conf {
 	class ConfigManager;
 }
 
+namespace server {
+namespace db {
 class ServerDatabase;
 class MantisDatabase;
+} // namespace db
+namespace status {
 class StatusServer;
+}
+} // namespace server
+
+using namespace server::db;
+using namespace server::status;
 
 #ifdef WITH_REST_API
 namespace server {

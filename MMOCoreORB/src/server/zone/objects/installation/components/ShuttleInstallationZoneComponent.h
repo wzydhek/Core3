@@ -24,6 +24,12 @@ namespace server {
 using namespace server::zone::objects::scene;
 using namespace server::zone;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace installation {
+namespace components {
+
 class ShuttleInstallationZoneComponent : public StructureZoneComponent {
 
 public:
@@ -31,3 +37,11 @@ public:
 	void notifyRemoveFromZone(SceneObject* sceneObject) const;
 	void destroyObjectFromWorld(SceneObject* sceneObject, bool sendSelfDestroy) const;
 };
+
+} // namespace components
+} // namespace installation
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::installation::components;

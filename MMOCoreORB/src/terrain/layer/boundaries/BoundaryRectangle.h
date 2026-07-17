@@ -11,6 +11,10 @@
 #include "Boundary.h"
 #include "../../ProceduralTerrainAppearance.h"
 
+namespace terrain {
+namespace layer {
+namespace boundaries {
+
 class BoundaryRectangle : public Boundary {
 	float x0;
 	float y0;
@@ -68,3 +72,9 @@ public:
 
 	float getMaxY() const final;
 };
+
+} // namespace boundaries
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::boundaries;

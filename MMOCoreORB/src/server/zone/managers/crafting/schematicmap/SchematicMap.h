@@ -16,6 +16,12 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "DraftSchematicGroup.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace crafting {
+namespace schematicmap {
+
 class SchematicMap : public Singleton<SchematicMap>, public Lua {
 
 	VectorMap<uint32, Reference<DraftSchematic* > > schematicCrcMap;
@@ -50,3 +56,11 @@ private:
 	void loadDraftSchematicFile(String file);
 	void buildSchematicGroups();
 };
+
+} // namespace schematicmap
+} // namespace crafting
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::crafting::schematicmap;

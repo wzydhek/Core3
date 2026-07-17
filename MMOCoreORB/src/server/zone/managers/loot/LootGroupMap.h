@@ -7,12 +7,21 @@
 
 #pragma once
 
+namespace templates {
 class LootItemTemplate;
+}
+
+using namespace templates;
 
 #include "templates/LootGroupTemplate.h"
 #include "engine/log/Logger.h"
 #include "engine/util/Singleton.h"
 #include "engine/lua/Lua.h"
+
+namespace server {
+namespace zone {
+namespace managers {
+namespace loot {
 
 class LootGroupMap : public Singleton<LootGroupMap>, public Object, public Logger {
 public:
@@ -61,3 +70,10 @@ private:
 	static int addLootGroupTemplate(lua_State* L);
 	static int addLootItemTemplate(lua_State* L);
 };
+
+} // namespace loot
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::loot;

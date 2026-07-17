@@ -9,6 +9,8 @@
 
 #include "TemplateVariable.h"
 
+namespace terrain {
+
 template<int chunkType>
 class TerrainMap : public TemplateVariable<chunkType> {
 	byte* rawMap;
@@ -41,3 +43,7 @@ public:
 		return rawMap;
 	}
 };
+
+} // namespace terrain
+
+using namespace terrain;

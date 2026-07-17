@@ -10,6 +10,9 @@
 #include "engine/util/u3d/Quaternion.h"
 #include "engine/util/iffstream/IffStream.h"
 
+namespace templates {
+namespace snapshot {
+
 class WorldSnapshotNode : public Object {
 	Vector<WorldSnapshotNode> childNodes;
 
@@ -53,3 +56,8 @@ public:
 
 	WorldSnapshotNode* getNode(int idx);
 };
+
+} // namespace snapshot
+} // namespace templates
+
+using namespace templates::snapshot;

@@ -9,6 +9,11 @@
 
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace vendor {
+
 class VendorSelectionNode : public Object {
 
 	String nodeTitle;
@@ -56,3 +61,10 @@ public:
 	String& getTemplatePath();
 
 };
+
+} // namespace vendor
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::vendor;

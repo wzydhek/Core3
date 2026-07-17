@@ -5,10 +5,15 @@
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
 #include "server/zone/objects/building/BuildingObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace terminal {
+namespace components {
+
 class DestructibleBuildingMenuComponent : public ObjectMenuComponent {
-
 public:
-
 	/**
 	 * Fills the radial options, needs to be overriden
 	 * @pre { this object is locked }
@@ -28,5 +33,13 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 	virtual int sendSelfDestructMessage(BuildingObject* building, const String& message) const;
-
 };
+
+} // namespace components
+} // namespace terminal
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::terminal::components;

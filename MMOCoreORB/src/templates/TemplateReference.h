@@ -10,6 +10,8 @@
 #include "templates/manager/TemplateManager.h"
 #include "engine/util/json_utils.h"
 
+namespace templates {
+
 template<class O> class TemplateReference : public Reference<O> {
 #ifdef ODB_SERIALIZATION
 	int crc = 0;
@@ -128,3 +130,7 @@ public:
 #endif
 	}
 };
+
+} // namespace templates
+
+using namespace templates;

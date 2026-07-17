@@ -2,6 +2,11 @@
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace loot {
+
 class LootAttributeType {
 public:
 	enum RandomType : uint32 {
@@ -20,3 +25,10 @@ public:
 
 	static int getObjectAttributeType(uint32 objectType, const String& attribute);
 };
+
+} // namespace loot
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::loot;

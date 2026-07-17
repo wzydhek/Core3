@@ -4,6 +4,13 @@
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
 #include "server/zone/objects/building/BuildingObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace terminal {
+namespace components {
+
 class EnclaveTerminalMenuComponent : public ObjectMenuComponent {
 
 public:
@@ -18,3 +25,12 @@ private:
 	int getTerminalType(SceneObject* terminal) const;
 
 };
+
+} // namespace components
+} // namespace terminal
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::terminal::components;

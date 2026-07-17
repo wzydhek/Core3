@@ -12,7 +12,14 @@
 
 #include "ResourcePool.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
 class ResourceSpawner;
+namespace resourcepool {
+
 
 /**
  * The manual pool contains resources manually
@@ -67,3 +74,12 @@ private:
 
 	friend class ResourceSpawner;
 };
+
+} // namespace resourcepool
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner::resourcepool;

@@ -12,6 +12,12 @@
 #include "server/zone/packets/DeltaMessage.h"
 #include "engine/util/json_utils.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace variables {
+
 template <class K>
 class AutoDeltaSet : public Variable {
 protected:
@@ -130,3 +136,11 @@ public:
 		return set.iterator();
 	}
 };
+
+} // namespace variables
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::variables;

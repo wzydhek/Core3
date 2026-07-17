@@ -7,6 +7,12 @@
 #include "QueueCommand.h"
 #include "server/zone/objects/scene/SceneObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class GetAttributesBatchCommand : public QueueCommand {
 public:
 
@@ -21,3 +27,10 @@ public:
 	void sendAttributes(CreatureObject* creature, SceneObject* object, int incr) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

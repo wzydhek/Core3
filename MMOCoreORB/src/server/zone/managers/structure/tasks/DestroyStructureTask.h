@@ -15,6 +15,12 @@
 #include "server/zone/packets/object/PlayClientEffectObjectMessage.h"
 #include "server/zone/packets/scene/PlayClientEffectLocMessage.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace structure {
+namespace tasks {
+
 class DestroyStructureTask : public Task {
 protected:
 	ManagedReference<StructureObject*> structureObject;
@@ -26,3 +32,11 @@ public:
 
 	void run();
 };
+
+} // namespace tasks
+} // namespace structure
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::structure::tasks;

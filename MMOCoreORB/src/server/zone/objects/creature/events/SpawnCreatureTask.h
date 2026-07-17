@@ -12,6 +12,12 @@
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/managers/creature/CreatureManager.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace events {
+
 class SpawnCreatureTask : public Task {
 	uint32 templateCRC;
 	float x, z, y, respawn;
@@ -24,3 +30,11 @@ public:
 
 	void run();
 };
+
+} // namespace events
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::events;

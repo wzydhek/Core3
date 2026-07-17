@@ -10,6 +10,9 @@
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
 
+namespace templates {
+namespace tangible {
+
 class PowerupStat: public virtual Serializable {
 protected:
 	SerializableString attributeToModify;
@@ -47,3 +50,9 @@ public:
 
 	void setValue(float v);
 };
+
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

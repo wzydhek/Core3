@@ -6,6 +6,13 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/scene/components/AttributeListComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+namespace generic {
+
 class XpPurchaseAttributeListComponent: public AttributeListComponent {
 public:
 
@@ -18,3 +25,12 @@ public:
 	void fillAttributeList(AttributeListMessage* alm, CreatureObject* creature, SceneObject* object) const;
 
 };
+
+} // namespace generic
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components::generic;

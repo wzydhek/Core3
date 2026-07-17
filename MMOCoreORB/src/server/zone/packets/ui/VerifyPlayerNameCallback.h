@@ -9,6 +9,11 @@
 
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ui {
+
 class VerifyPlayerNameCallback : public MessageCallback {
 	UnicodeString name;
 	uint64 playerID;
@@ -21,3 +26,10 @@ public:
 
 	void run();
 };
+
+} // namespace ui
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ui;

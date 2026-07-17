@@ -11,6 +11,10 @@
 #include "../affectors/AffectorRiver.h"
 #include "Boundary.h"
 
+namespace terrain {
+namespace layer {
+namespace boundaries {
+
 class BoundaryPolyline : public Boundary {
 	Vector<Point2D*> points;
 	float lineWidth;
@@ -45,3 +49,9 @@ public:
 	float getMaxY() const final;
 
 };
+
+} // namespace boundaries
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::boundaries;

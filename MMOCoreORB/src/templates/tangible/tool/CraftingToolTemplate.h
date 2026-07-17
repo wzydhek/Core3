@@ -9,6 +9,10 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+namespace tool {
+
 class CraftingToolTemplate : public SharedTangibleObjectTemplate {
 private:
 
@@ -33,3 +37,9 @@ public:
 	const Vector<uint32>& getTabs() const;
 
 };
+
+} // namespace tool
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible::tool;

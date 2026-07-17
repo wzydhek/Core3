@@ -52,7 +52,7 @@ CreatureTemplate* CreatureTemplateReference::operator=(CreatureTemplate* obj) {
 	return obj;
 }
 
-void to_json(nlohmann::json& j, const CreatureTemplateReference& r) {
+void server::zone::objects::creature::ai::variables::to_json(nlohmann::json& j, const CreatureTemplateReference& r) {
 #ifdef ODB_SERIALIZATION
 	j = r.templateString;
 #else

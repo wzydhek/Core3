@@ -40,6 +40,11 @@ using namespace server::zone::objects::structure;
 using namespace server::zone::objects::tangible;
 using namespace server::zone::objects::tangible::deed::structure;
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace structure {
+
 class StructureManager : public Singleton<StructureManager>, public Logger, public Object {
 	ZoneServer* server;
 	TemplateManager* templateManager;
@@ -193,3 +198,10 @@ public:
 
 	void promptMaintenanceDroid(StructureObject* structure, CreatureObject* creature);
 };
+
+} // namespace structure
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::structure;

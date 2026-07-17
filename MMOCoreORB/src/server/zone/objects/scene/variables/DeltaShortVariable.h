@@ -9,6 +9,12 @@
 
 #include "DeltaBasicVariable.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace variables {
+
 template<int BaselineName, uint8 Type, int DeltaID>
 class DeltaShortVariable : public DeltaBasicVariable<uint64> {
 public:
@@ -28,3 +34,11 @@ public:
 		obj->broadcastMessage(msg, true);
 	}
 };
+
+} // namespace variables
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::variables;

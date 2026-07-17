@@ -10,6 +10,11 @@
 	#include "server/zone/packets/ui/CreateClientPathMessage.h"
 #endif // SPACECOLLISION_DEBUG
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace spacecollision {
+
 class SpaceCollisionEntry {
 protected:
 	ManagedWeakReference<SceneObject*> object;
@@ -66,3 +71,10 @@ public:
 	String debugCollisionHardpoints(ShipObject* targetShip, const Vector3& targetPosition, const Matrix4& targetRotation, const ShipCollisionData* targetData, CreateClientPathMessage* path);
 #endif // SPACECOLLISION_DEBUG
 };
+
+} // namespace spacecollision
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::spacecollision;

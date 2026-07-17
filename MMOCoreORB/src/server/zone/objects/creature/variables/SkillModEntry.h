@@ -7,6 +7,12 @@
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace variables {
+
 class SkillModEntry : public virtual Object {
 private:
 	int skillMod;
@@ -37,3 +43,11 @@ public:
 
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
+
+} // namespace variables
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::variables;

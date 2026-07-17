@@ -17,6 +17,8 @@
 #include "layer/Layer.h"
 #include "BitmapGroup.h"
 
+namespace terrain {
+
 class ProceduralTerrainAppearance;
 
 class TerrainGenerator : public TemplateVariable<'TGEN'> {
@@ -63,3 +65,7 @@ public:
 	const MapFractal* getMfrc(int idx) const;
 
 };
+
+} // namespace terrain
+
+using namespace terrain;

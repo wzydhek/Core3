@@ -4,6 +4,10 @@
 
 #pragma once
 
+namespace templates {
+namespace params {
+namespace creature {
+
 class ObjectFlag {
 public:
 	enum {
@@ -47,3 +51,9 @@ public:
 		HERBIVORE				= 0x02
 	};
 };
+
+} // namespace creature
+} // namespace params
+} // namespace templates
+
+using namespace templates::params::creature;

@@ -9,6 +9,11 @@
 
 #include "server/zone/objects/region/space/SpaceRegion.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace space {
+
 class SpaceRegionMap : public ReadWriteLock, public Object, public Logger {
 	VectorMap<String, ManagedReference<SpaceRegion*> > regions;
 
@@ -37,3 +42,10 @@ public:
 
 	int getTotalRegions();
 };
+
+} // namespace space
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::space;

@@ -9,6 +9,9 @@
 
 #include "BaseBoundingVolume.h"
 
+namespace templates {
+namespace collision {
+
 class SphereVolume : public BaseBoundingVolume {
 protected:
 	AABB bbox;
@@ -23,3 +26,8 @@ public:
 	virtual osg::ref_ptr<osg::Node> draw() const;
 #endif
 };
+
+} // namespace collision
+} // namespace templates
+
+using namespace templates::collision;

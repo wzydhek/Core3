@@ -9,6 +9,13 @@
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+namespace generic {
+
 class DataStorageUnitDataComponent : public DataObjectComponent {
 protected:
 	byte id;
@@ -26,3 +33,12 @@ public:
 private:
 	void addSerializableVariables();
 };
+
+} // namespace generic
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components::generic;

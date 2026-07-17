@@ -496,7 +496,7 @@ void DamageOverTimeList::sendDecreaseMessage(CreatureObject* victim, uint64 type
 	}
 }
 
-void to_json(nlohmann::json& j, const DamageOverTimeList& l) {
+void server::zone::objects::creature::damageovertime::to_json(nlohmann::json& j, const DamageOverTimeList& l) {
 	const VectorMap<uint64, Vector<DamageOverTime>>& map = l;
 
 	to_json(j, map);

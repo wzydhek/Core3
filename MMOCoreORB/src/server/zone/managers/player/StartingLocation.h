@@ -10,6 +10,11 @@
 #include "templates/datatables/DataTableRow.h"
 #include "engine/service/Message.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace player {
+
 class StartingLocation : public Object {
 	String zoneName;
 	String location;
@@ -51,3 +56,10 @@ public:
 
 	String getLocation() const;
 };
+
+} // namespace player
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::player;

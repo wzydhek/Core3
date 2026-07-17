@@ -30,9 +30,23 @@ using namespace server::zone::objects::scene;
 using namespace server::zone::objects::building;
 using namespace server::zone;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace building {
+namespace components {
+
 class ShuttleZoneComponent : public GroundZoneComponent {
 
 public:
 	void notifyInsertToZone(SceneObject* sceneObject, Zone* zone) const;
 	void notifyRemoveFromZone(SceneObject* sceneObject) const;
 };
+
+} // namespace components
+} // namespace building
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::building::components;

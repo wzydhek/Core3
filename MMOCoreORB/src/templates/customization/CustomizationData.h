@@ -9,6 +9,9 @@
 
 #include "templates/datatables/DataTableRow.h"
 
+namespace templates {
+namespace customization {
+
 class CustomizationData : public Object {
 	String speciesGender;
 	String customizationGroup;
@@ -91,3 +94,8 @@ public:
 	void setMaxScale(float max);
 
 };
+
+} // namespace customization
+} // namespace templates
+
+using namespace templates::customization;

@@ -60,9 +60,10 @@ public:
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 
 	String toString() const;
+
+	friend void to_json(nlohmann::json& k, const StringId& str);
 };
 
-void to_json(nlohmann::json& k, const server::zone::objects::scene::variables::StringId& str);
 
 }
 }

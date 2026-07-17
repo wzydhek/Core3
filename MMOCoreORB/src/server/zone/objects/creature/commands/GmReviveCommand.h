@@ -7,6 +7,12 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "QueueCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class GmReviveCommand : public QueueCommand {
 public:
 
@@ -19,3 +25,10 @@ public:
 	void repairShip(CreatureObject* player, SceneObject* shipSceneO) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

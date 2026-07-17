@@ -10,8 +10,18 @@
 #include "../ProceduralRule.h"
 #include "AffectorProceduralRule.h"
 
-class TerrainGenerator;
-class MapFractal;
+namespace terrain {
+
+	class TerrainGenerator;
+	class MapFractal;
+
+} // namespace terrain
+
+using namespace terrain;
+
+namespace terrain {
+namespace layer {
+namespace affectors {
 
 class AffectorHeightFractal : public ProceduralRule<'AHFR'>, public AffectorProceduralRule {
 	int fractalId; // fractal group id in MGRP
@@ -33,3 +43,9 @@ public:
 
 	bool isEnabled();
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

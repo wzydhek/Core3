@@ -8,6 +8,12 @@
 #include "server/zone/objects/tangible/pharmaceutical/EnhancePack.h"
 #include "server/zone/objects/creature/buffs/Buff.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class HealEnhanceCommand : public QueueCommand {
 	float mindCost;
 	float range;
@@ -36,3 +42,10 @@ public:
 	int doQueueCommand(CreatureObject* enhancer, const uint64& target, const UnicodeString& arguments) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

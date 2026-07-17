@@ -2,6 +2,9 @@
 
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 
+namespace templates {
+namespace creature {
+
 class VehicleObjectTemplate : public SharedCreatureObjectTemplate {
 	int decayRate, decayCycle;
 
@@ -19,3 +22,8 @@ public:
 	int getDecayCycle();
 
 };
+
+} // namespace creature
+} // namespace templates
+
+using namespace templates::creature;

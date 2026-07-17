@@ -10,6 +10,11 @@
 #include "../MessageCallback.h"
 #include "ObjectControllerMessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class TeleportAckCallback : public MessageCallback {
 	uint32 movementCounter;
 	ObjectControllerMessageCallback* objectControllerMain;
@@ -21,3 +26,10 @@ public:
 
 	void run();
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

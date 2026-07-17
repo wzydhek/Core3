@@ -169,3 +169,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::objects::creature::ai::bt;

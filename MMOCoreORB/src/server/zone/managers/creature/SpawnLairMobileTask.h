@@ -10,6 +10,11 @@
 #include "server/zone/objects/tangible/LairObject.h"
 #include "server/zone/managers/creature/LairObserver.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace creature {
+
 class SpawnLairMobileTask : public Task {
 	ManagedWeakReference<LairObject*> lairWeak;
 	int spawnNumber;
@@ -21,3 +26,10 @@ public:
 
 	void run();
 };
+
+} // namespace creature
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::creature;

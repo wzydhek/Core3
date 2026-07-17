@@ -18,7 +18,14 @@
  * resource_tree table in the datatable
  */
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
 class ResourceSpawner;
+namespace resourcetree {
+
 
 class ResourceTree : public Logger {
 private:
@@ -85,3 +92,12 @@ private:
 	void setRecycleToolType(ResourceTreeEntry* entry);
 
 };
+
+} // namespace resourcetree
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner::resourcetree;

@@ -9,6 +9,9 @@
 
 #include "templates/tangible/DeedTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class DroidDeedTemplate : public DeedTemplate {
 	String controlDeviceObjectTemplate;
 	String mobileTemplate;
@@ -27,3 +30,8 @@ public:
 
 	int getSpecies() const;
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

@@ -11,6 +11,13 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/managers/auction/AuctionsMap.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+namespace vendor {
+
 class VendorDataComponent: public AuctionTerminalDataComponent {
 protected:
 	uint64 ownerId;
@@ -161,3 +168,12 @@ public:
 private:
 	void addSerializableVariables();
 };
+
+} // namespace vendor
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components::vendor;

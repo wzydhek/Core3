@@ -9,6 +9,9 @@
 
 #include "templates/building/SharedBuildingObjectTemplate.h"
 
+namespace templates {
+namespace building {
+
 class CampStructureTemplate : public SharedBuildingObjectTemplate {
 protected:
 	uint16 experience;
@@ -46,3 +49,8 @@ public:
 	int getMindWoundRegenRate();
 
 };
+
+} // namespace building
+} // namespace templates
+
+using namespace templates::building;

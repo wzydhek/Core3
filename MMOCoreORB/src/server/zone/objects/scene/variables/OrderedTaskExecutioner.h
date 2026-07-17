@@ -10,8 +10,6 @@
 
 #include "engine/engine.h"
 
-class PendingTasksMap;
-
 namespace server {
 namespace zone {
 namespace objects {
@@ -20,6 +18,8 @@ namespace scene {
 class SceneObject;
 
 namespace variables {
+
+class PendingTasksMap;
 
 template <class TaskOwner>
 class OrderedTaskExecutioner : public Task {
@@ -82,3 +82,5 @@ public:
 } // namespace objects
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::objects::scene::variables;

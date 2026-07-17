@@ -9,6 +9,9 @@
 
 #include "templates/tangible/SharedResourceContainerObjectTemplate.h"
 
+namespace templates {
+namespace resource {
+
 class ResourceSpawnTemplate : public SharedResourceContainerObjectTemplate {
 private:
 
@@ -19,3 +22,8 @@ public:
 
 	void readObject(LuaObject* templateData);
 };
+
+} // namespace resource
+} // namespace templates
+
+using namespace templates::resource;

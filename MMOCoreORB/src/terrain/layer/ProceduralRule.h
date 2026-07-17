@@ -10,6 +10,9 @@
 #include "../TemplateVariable.h"
 #include "InformationHeader.h"
 
+namespace terrain {
+namespace layer {
+
 template<int formType>
 class ProceduralRule : public TemplateVariable<formType> {
 protected:
@@ -25,3 +28,8 @@ public:
 	}
 
 };
+
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer;

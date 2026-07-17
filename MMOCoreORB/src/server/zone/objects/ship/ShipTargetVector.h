@@ -7,10 +7,6 @@ namespace server {
 		namespace objects {
 			namespace ship {
 				class ShipObject;
-			}
-		}
-	}
-}
 
 class ShipTargetVector : public Object, public Logger {
 public:
@@ -50,3 +46,10 @@ private:
 
 	String toDebugString() const;
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

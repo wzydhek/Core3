@@ -9,6 +9,9 @@
 
 //#define DEBUG_ATTRIBUTES_MAP
 
+namespace templates {
+namespace crafting {
+
 class AttributesMap : public Object, public Logger {
 	Mutex mutex;
 
@@ -98,3 +101,8 @@ public:
 
 	void removeAll();
 };
+
+} // namespace crafting
+} // namespace templates
+
+using namespace templates::crafting;

@@ -13,6 +13,11 @@
 #include "server/zone/managers/stringid/StringIdManager.h"
 #include "server/zone/managers/resource/InterplanetarySurvey.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+
 class InterplanetarySurveyTask : public Task {
 	ManagedReference<InterplanetarySurvey*> surveyData;
 
@@ -23,3 +28,10 @@ public:
 	void run();
 
 };
+
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource;

@@ -12,7 +12,14 @@
 
 #include "ResourcePool.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
 class ResourceSpawner;
+namespace resourcepool {
+
 
 /**
  * The FixedPool class represents the resource pool
@@ -20,9 +27,8 @@ class ResourceSpawner;
  * Iron and the JTL resources.  It spawns random
  * resources based on the scripted entries.
  */
-class FixedPool: public ResourcePool {
+class FixedPool : public ResourcePool {
 private:
-
 public:
 	/**
 	 * Ctor
@@ -50,7 +56,6 @@ public:
 	void print();
 
 private:
-
 	/**
 	 * Adds resource to this pool
 	 * \param resourceSpawn Spawn object to add to the pool
@@ -69,3 +74,12 @@ private:
 
 	friend class ResourceSpawner;
 };
+
+} // namespace resourcepool
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner::resourcepool;

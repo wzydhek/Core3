@@ -10,6 +10,12 @@
 #include "TangibleObjectMenuComponent.h"
 #include "server/zone/objects/area/CampSiteActiveArea.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class CampTerminalMenuComponent : public TangibleObjectMenuComponent {
 public:
 	/**
@@ -38,3 +44,11 @@ public:
 
 	void awardCampExperience(PlayerObject* ghost, CampSiteActiveArea* campArea) const;
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

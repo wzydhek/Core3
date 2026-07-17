@@ -6,6 +6,12 @@
 
 #include "SquadLeaderCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class FormupCommand : public SquadLeaderCommand {
 public:
 
@@ -16,3 +22,11 @@ public:
 	bool doFormUp(CreatureObject* leader, GroupObject* group) const;
 
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

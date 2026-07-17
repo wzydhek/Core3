@@ -35,6 +35,12 @@ using namespace server::zone::objects::scene;
 using namespace server::zone::objects::creature;
 using namespace server::zone::packets::object;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace components {
+
 class ObjectMenuComponent : public SceneObjectComponent, public Logger {
 public:
 
@@ -57,3 +63,11 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
+
+} // namespace components
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::components;

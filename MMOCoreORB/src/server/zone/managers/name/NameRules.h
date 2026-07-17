@@ -2,6 +2,11 @@
 
 #include "engine/lua/Lua.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace name {
+
 class NameRules: public Object {
 	int nameChance;
 	int minSyllables, maxSyllables;
@@ -51,3 +56,10 @@ public:
 
 	const String& getSpecialChars() const;
 };
+
+} // namespace name
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::name;

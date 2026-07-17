@@ -9,6 +9,10 @@
 
 #include "templates/building/SharedBuildingObjectTemplate.h"
 
+
+namespace templates {
+namespace building {
+
 class RecreationBuildingObjectTemplate : public SharedBuildingObjectTemplate {
 	int medicalRating;
 	int healthWoundRegenRate;
@@ -32,3 +36,8 @@ public:
 
 	int getMindWoundRegenRate();
 };
+
+} // namespace building
+} // namespace templates
+
+using namespace templates::building;

@@ -33,9 +33,9 @@ public:
 	void run();
 };
 
-}
-}
-}
-}
+} // namespace chat
+} // namespace packets
+} // namespace zone
+} // namespace server
 
 using namespace server::zone::packets::chat;

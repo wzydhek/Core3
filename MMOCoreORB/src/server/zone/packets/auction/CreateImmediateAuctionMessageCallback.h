@@ -9,6 +9,11 @@
 
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace auction {
+
 class CreateImmediateAuctionMessageCallback : public MessageCallback {
 	uint64 objectID;
 	uint64 vendorID;
@@ -26,3 +31,10 @@ public:
 	void run();
 
 };
+
+} // namespace auction
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::auction;

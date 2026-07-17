@@ -10,71 +10,56 @@
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace ai {
+namespace variables {
+
 class CreatureAttack {
 protected:
 	String command;
 	String arguments;
 
 public:
-	CreatureAttack() {}
+	CreatureAttack();
 
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		bool val = command.toBinaryStream(stream);
-		bool val2 = arguments.toBinaryStream(stream);
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-		return val && val2;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		bool val = command.parseFromBinaryStream(stream);
-		bool val2 = arguments.parseFromBinaryStream(stream);
+	friend void to_json(nlohmann::json& j, const CreatureAttack& a);
 
-		return val && val2;
-	}
+	const String& getCommand() const;
 
-	friend void to_json(nlohmann::json& j, const CreatureAttack& a) {
-		j["command"] = a.command;
-		j["arguments"] = a.arguments;
-	}
+	const String& getArguments() const;
 
-	const String& getCommand() const {
-		return command;
-	}
+	void setCommand(const String& c);
 
-	const String& getArguments() const {
-		return arguments;
-	}
-
-	void setCommand(const String& c) {
-		command = c;
-	}
-
-	void setArguments(const String& a) {
-		arguments = a;
-	}
+	void setArguments(const String& a);
 };
 
 class CreatureAttackMap : public Vector<CreatureAttack> {
 public:
-	CreatureAttackMap() {}
-	virtual ~CreatureAttackMap() {}
+	CreatureAttackMap();
 
-	void addAttack(String c, String a) {
-		CreatureAttack attack;
-		attack.setCommand(c);
-		attack.setArguments(a);
-		add(attack);
-	}
+	virtual ~CreatureAttackMap();
 
-	const String& getCommand(int i) const {
-		return get(i).getCommand();
-	}
+	void addAttack(String c, String a);
 
-	const String& getArguments(int i) const {
-		return get(i).getArguments();
-	}
+	const String& getCommand(int i) const;
 
-	int getRandomAttackNumber() const {
-		return System::random(size() - 1);
-	}
+	const String& getArguments(int i) const;
+
+	int getRandomAttackNumber() const;
 };
+
+} // namespace variables
+} // namespace ai
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::ai::variables;

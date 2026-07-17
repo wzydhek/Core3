@@ -9,6 +9,11 @@
 
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace zone {
+
 class CmdSceneReadyCallback : public MessageCallback {
 public:
 	CmdSceneReadyCallback(ZoneClientSession* client, ZoneProcessServer* server);
@@ -17,3 +22,10 @@ public:
 
 	void run();
 };
+
+} // namespace zone
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::zone;

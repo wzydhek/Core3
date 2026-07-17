@@ -5,6 +5,13 @@
 #include "engine/engine.h"
 #include "system/util/VectorMap.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace firework {
+namespace components {
+
 class FireworkShowDataComponent : public DataObjectComponent {
 
 private:
@@ -43,3 +50,12 @@ public:
 
 	void swapFireworkPositions(int index, int index2);
 };
+
+} // namespace components
+} // namespace firework
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::firework::components;

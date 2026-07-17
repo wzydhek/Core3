@@ -10,6 +10,11 @@
 #include "system/util/ArrayList.h"
 #include "engine/util/json_utils.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+
 class SpeedModChange {
 	float newSpeed;
 	Time timeStamp;
@@ -69,3 +74,10 @@ public:
 class SpeedMultiplierModChanges : public ArrayList<SpeedModChange> {
 
 };
+
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature;

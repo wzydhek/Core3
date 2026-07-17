@@ -6,9 +6,12 @@
 
 #include "engine/service/proto/BaseMessage.h"
 
+namespace templates {
+namespace crafting {
+namespace draftslot {
+
 class DraftSlot : public Object {
 private:
-
 	String stringIdFile;
 	String stringIdName;
 
@@ -25,13 +28,7 @@ private:
 	float contribution;
 
 public:
-	enum {
-		RESOURCESLOT,
-		IDENTICALSLOT,
-		MIXEDSLOT,
-		OPTIONALIDENTICALSLOT,
-		OPTIONALMIXEDSLOT
-	};
+	enum { RESOURCESLOT, IDENTICALSLOT, MIXEDSLOT, OPTIONALIDENTICALSLOT, OPTIONALMIXEDSLOT };
 
 public:
 	DraftSlot();
@@ -40,25 +37,31 @@ public:
 
 	void insertToMessage(BaseMessage* msg);
 
-    float getContribution() const;
-	
+	float getContribution() const;
+
 	String getStringIdFile() const;
-	
+
 	String getStringIdName() const;
 
-    uint32 getQuantity() const;
+	uint32 getQuantity() const;
 
-    String getResourceType() const;
+	String getResourceType() const;
 
-    int getSlotType() const;
+	int getSlotType() const;
 
-    void setContribution(float contribution);
+	void setContribution(float contribution);
 
-    void setQuantity(uint32 quantity);
+	void setQuantity(uint32 quantity);
 
-    void setResourceType(String resourceType);
+	void setResourceType(String resourceType);
 
-    void setSlotType(int slotType);
+	void setSlotType(int slotType);
 
-    void setStringId(String file, String name);
+	void setStringId(String file, String name);
 };
+
+} // namespace draftslot
+} // namespace crafting
+} // namespace templates
+
+using namespace templates::crafting::draftslot;

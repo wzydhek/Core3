@@ -46,3 +46,5 @@ public:
 }
 }
 }
+
+using namespace server::zone::managers::creature;

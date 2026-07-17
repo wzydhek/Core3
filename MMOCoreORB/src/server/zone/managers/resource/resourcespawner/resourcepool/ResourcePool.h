@@ -12,7 +12,13 @@
 
 #include "server/zone/objects/resource/ResourceSpawn.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
 class ResourceSpawner;
+namespace resourcepool {
 
 /**
  * Abstract parent of all ResourcePool objects
@@ -87,3 +93,12 @@ private:
 
 	friend class ResourceSpawner;
 };
+
+} // namespace resourcepool
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner::resourcepool;

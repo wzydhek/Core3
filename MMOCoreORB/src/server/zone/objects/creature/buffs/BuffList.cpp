@@ -35,7 +35,7 @@ BuffList& BuffList::operator=(const BuffList& bf) {
 	return *this;
 }
 
-void to_json(nlohmann::json& j, const BuffList& l) {
+void server::zone::objects::creature::buffs::to_json(nlohmann::json& j, const BuffList& l) {
 	j["spiceActive"] = l.spiceActive;
 	j["buffList"] = l.buffList;
 }

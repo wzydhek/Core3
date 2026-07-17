@@ -9,6 +9,11 @@
 
 #include "ObjectControllerMessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class JtlShipListRequestCallback : public MessageCallback {
 	ObjectControllerMessageCallback* objectControllerMain;
 
@@ -21,3 +26,10 @@ public:
 
 	void run();
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

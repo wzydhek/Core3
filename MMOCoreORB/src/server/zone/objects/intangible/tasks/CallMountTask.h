@@ -11,6 +11,12 @@
 #include "server/zone/objects/intangible/ControlDevice.h"
 #include "server/zone/objects/intangible/VehicleControlDevice.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace intangible {
+namespace tasks {
+
 class CallMountTask : public Task {
 	ManagedReference<CreatureObject*> player;
 	ManagedReference<VehicleControlDevice*> device;
@@ -21,3 +27,11 @@ public:
 
 	void run();
 };
+
+} // namespace tasks
+} // namespace intangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::intangible::tasks;

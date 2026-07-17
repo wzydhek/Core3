@@ -9,8 +9,9 @@
 
 #include "templates/crafting/resourceweight/ResourceWeight.h"
 #include "templates/SharedObjectTemplate.h"
+#include "templates/footprint/StructureFootprint.h"
 
-class StructureFootprint;
+namespace templates {
 
 class SharedTangibleObjectTemplate : public SharedObjectTemplate {
 protected:
@@ -151,3 +152,7 @@ public:
 
 	bool isSharedTangibleObjectTemplate() const override;
 };
+
+} // namespace templates
+
+using namespace templates;

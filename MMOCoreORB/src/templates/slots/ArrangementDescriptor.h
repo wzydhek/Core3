@@ -9,6 +9,9 @@
 
 #include "templates/IffTemplate.h"
 
+namespace templates {
+namespace slots {
+
 class ArrangementDescriptor : public IffTemplate {
 	Vector< Vector<String> > arrangementSlots;
 
@@ -21,3 +24,8 @@ public:
 
 	const Vector<Vector<String>>& getArrangementSlots() const;
 };
+
+} // namespace slots
+} // namespace templates
+
+using namespace templates::slots;

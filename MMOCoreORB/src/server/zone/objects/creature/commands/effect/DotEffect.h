@@ -9,6 +9,13 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+namespace effect {
+
 class DotEffect : public Object {
 protected:
 	uint32 dotType;
@@ -74,3 +81,12 @@ public:
 	float getSecondaryPercent() const;
 
 };
+
+} // namespace effect
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands::effect;

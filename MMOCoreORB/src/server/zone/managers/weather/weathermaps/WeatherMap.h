@@ -14,6 +14,12 @@
 #include "system/io/Serializable.h"
 #include "system/lang/Object.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace weather {
+namespace weathermaps {
+
 /*
  * This class represents the Simplex Noise map of planetary weather
  */
@@ -58,3 +64,11 @@ private:
 	 */
 	void addSerializableVariables();
 };
+
+} // namespace weathermaps
+} // namespace weather
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::weather::weathermaps;

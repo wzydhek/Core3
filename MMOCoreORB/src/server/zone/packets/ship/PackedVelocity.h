@@ -9,6 +9,11 @@
 
 #include "PackedUnitVector.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ship {
+
 class PackedVelocity {
 protected:
 	const static constexpr float velocityScale = 32767.f / 512.f;
@@ -32,3 +37,10 @@ public:
 
 	float getSpeed();
 };
+
+} // namespace ship
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ship;

@@ -47,7 +47,7 @@ bool CooldownTimer::toBinaryStream(ObjectOutputStream* stream) {
 	return true;
 }
 
-void to_json(nlohmann::json& j, const CooldownTimer& t) {
+void server::zone::objects::creature::variables::to_json(nlohmann::json& j, const CooldownTimer& t) {
 	j["timeStamp"] = t.timeStamp;
 }
 

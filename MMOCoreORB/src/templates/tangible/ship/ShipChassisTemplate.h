@@ -9,6 +9,10 @@
 
 #include "templates/tangible/ship/ShipComponentTemplate.h"
 
+namespace templates {
+namespace tangible {
+namespace ship {
+
 class ShipChassisTemplate : public ShipComponentTemplate {
 	String chassisDeed;
 	String certificationRequired;
@@ -39,3 +43,9 @@ public:
 
 	bool isShipChassisTemplate();
 };
+
+} // namespace ship
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible::ship;

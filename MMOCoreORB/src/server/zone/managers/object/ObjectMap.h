@@ -6,6 +6,11 @@
 
 #include "server/zone/objects/scene/SceneObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace object {
+
 class ObjectMap : public Object {
 	HashTable<uint64, ManagedReference<SceneObject*> > objects;
 
@@ -24,3 +29,10 @@ public:
 
 	HashTable<uint64, ManagedReference<SceneObject*>>* getMap();
 };
+
+} // namespace object
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::object;

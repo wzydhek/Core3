@@ -11,6 +11,12 @@
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/managers/gcw/GCWManager.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace gcw {
+namespace tasks {
+
 class DestroyFactionInstallationTask : public Task {
 	ManagedReference<InstallationObject*> installation;
 
@@ -20,3 +26,11 @@ public:
 	void run();
 
 };
+
+} // namespace tasks
+} // namespace gcw
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::gcw::tasks;

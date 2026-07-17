@@ -10,6 +10,8 @@
 #include "MapFractal.h"
 #include "MapFamily.h"
 
+namespace terrain {
+
 class MapGroup : public TemplateVariable<'MGRP'> {
 	Vector<MapFamily*> mfams;
 	VectorMap<uint32, MapFractal*> mfrcs;
@@ -30,3 +32,7 @@ public:
 
 
 };
+
+} // namespace terrain
+
+using namespace terrain;

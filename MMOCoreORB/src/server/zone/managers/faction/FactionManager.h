@@ -11,6 +11,11 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "templates/faction/FactionRanks.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace faction {
+
 class FactionManager : public Singleton<FactionManager>, public Logger, public Object {
 	FactionMap factionMap;
 	FactionRanks factionRanks;
@@ -76,3 +81,10 @@ protected:
 	void loadFactionRanks();
 	void loadLuaConfig(String file);
 };
+
+} // namespace faction
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::faction;

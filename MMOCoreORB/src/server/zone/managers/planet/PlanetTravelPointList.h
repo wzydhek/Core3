@@ -9,6 +9,11 @@
 
 #include "PlanetTravelPoint.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace planet {
+
 class PlanetTravelPointList : public VectorMap<String, Reference<PlanetTravelPoint*> >, public ReadWriteLock {
 	String zoneName;
 public:
@@ -29,3 +34,10 @@ public:
 
 	void removePlayerCityTravelPoint(const String& pointName);
 };
+
+} // namespace planet
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::planet;

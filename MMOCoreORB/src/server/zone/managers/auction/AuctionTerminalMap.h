@@ -11,6 +11,11 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/auction/AuctionItem.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace auction {
+
 class AuctionTerminalMap : public VectorMap<uint64, Reference<TerminalItemList*> >, public Logger, public ReadWriteLock {
 
 	TerminalGalaxyList galaxyListing;
@@ -52,3 +57,10 @@ private:
 	void getRegionListing(TerminalListVector* terminals, TerminalRegionList* regionList);
 
 };
+
+} // namespace auction
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::auction;

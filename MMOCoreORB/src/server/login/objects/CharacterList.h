@@ -12,6 +12,10 @@
 	#include "server/login/SWGRealmsAPI.h"
 #endif
 
+namespace server {
+namespace login {
+namespace objects {
+
 class CharacterList : public Vector<CharacterListEntry> {
 	uint32 accountid;
 	String username;
@@ -23,3 +27,9 @@ public:
 
 	void update();
 };
+
+} // namespace objects
+} // namespace login
+} // namespace server
+
+using namespace server::login::objects;

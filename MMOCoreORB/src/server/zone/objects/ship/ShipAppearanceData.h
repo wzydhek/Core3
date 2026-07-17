@@ -4,8 +4,12 @@
 #include "templates/manager/DataArchiveStore.h"
 #include "templates/datatables/DataTableIff.h"
 #include "server/zone/objects/ship/ComponentSlots.h"
+#include "templates/datatables/DataTableRow.h"
 
-class DataTableRow;
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
 
 class ShipAppearanceData : public Object {
 protected:
@@ -28,3 +32,10 @@ public:
 
 	int size() const;
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

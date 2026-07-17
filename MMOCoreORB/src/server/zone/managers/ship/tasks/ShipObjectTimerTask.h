@@ -3,68 +3,72 @@
 #include "engine/engine.h"
 #include "server/zone/objects/ship/ai/ShipAiAgent.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace ship {
+namespace tasks {
+
 class ShipObjectTimerTask : public Task, public Logger {
-	public:
-		enum Timers : int {
-			MIN = 0,
-			MID = 1,
-			MAX = 2,
-			SIZE = 3
-		};
+public:
+	enum Timers : int { MIN = 0, MID = 1, MAX = 2, SIZE = 3 };
 
-		enum Intervals : int {
-			TIME_MIN = 200,
-			TIME_MID = 1000,
-			TIME_MAX = 2000,
-			TIME_SLEEP = 5000
-		};
+	enum Intervals : int { TIME_MIN = 200, TIME_MID = 1000, TIME_MAX = 2000, TIME_SLEEP = 5000 };
 
-		static const int ITERATOR_MID = TIME_MID / TIME_MIN;
-		static const int ITERATOR_MAX = TIME_MAX / TIME_MIN;
-		static const int SCHEDULE_MIN = TIME_MIN * 0.125f;
-		static const int SCHEDULE_MAX = TIME_MIN;
+	static const int ITERATOR_MID = TIME_MID / TIME_MIN;
+	static const int ITERATOR_MAX = TIME_MAX / TIME_MIN;
+	static const int SCHEDULE_MIN = TIME_MIN * 0.125f;
+	static const int SCHEDULE_MAX = TIME_MIN;
 
-	protected:
-		Vector<ManagedReference<ShipObject*>> shipVector;
-		Vector<ManagedReference<ShipAiAgent*>> agentVector;
-		Vector<ManagedWeakReference<ShipObject*>> queueVector;
+protected:
+	Vector<ManagedReference<ShipObject*>> shipVector;
+	Vector<ManagedReference<ShipAiAgent*>> agentVector;
+	Vector<ManagedWeakReference<ShipObject*>> queueVector;
 
-		Vector<uint64> timers;
-		Vector<uint32> deltas;
+	Vector<uint64> timers;
+	Vector<uint32> deltas;
 
-		uint64 startTime;
-		uint32 iterator;
-		uint32 priority;
-		uint32 taskCrc;
+	uint64 startTime;
+	uint32 iterator;
+	uint32 priority;
+	uint32 taskCrc;
 
-		HashSet<ShipObject*> shipSet;
-		mutable ReadWriteLock mutex;
+	HashSet<ShipObject*> shipSet;
+	mutable ReadWriteLock mutex;
 
-	public:
-		ShipObjectTimerTask(const String& taskQueueName);
+public:
+	ShipObjectTimerTask(const String& taskQueueName);
 
-		void addShip(ShipObject* ship);
+	void addShip(ShipObject* ship);
 
-		void run();
+	void run();
 
-		uint32 getTaskCrc() const;
+	uint32 getTaskCrc() const;
 
-	private:
-		void updateTimers();
+private:
+	void updateTimers();
 
-		uint32 getDeltaTime(int index) const;
+	uint32 getDeltaTime(int index) const;
 
-		bool getAsyncPriority(int iteratorMax, int index) const;
+	bool getAsyncPriority(int iteratorMax, int index) const;
 
-		uint32 getScheduleInterval();
+	uint32 getScheduleInterval();
 
-		void updateAgents();
+	void updateAgents();
 
-		void updateShips();
+	void updateShips();
 
-		void updateVectors();
+	void updateVectors();
 
-		bool isShipValid(ShipObject* ship) const;
+	bool isShipValid(ShipObject* ship) const;
 
-		String toDebugString(const String& message) const;
-	};
+	String toDebugString(const String& message) const;
+};
+
+} // namespace tasks
+} // namespace ship
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::ship::tasks;

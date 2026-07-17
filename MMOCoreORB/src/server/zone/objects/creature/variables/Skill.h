@@ -15,6 +15,12 @@ class SkillManager;
 
 using namespace server::zone::managers::skill;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace variables {
+
 class Skill : public Object {
 protected:
 	WeakReference<Skill*> parentNode;
@@ -141,3 +147,11 @@ private:
 
 	friend class server::zone::managers::skill::SkillManager;
 };
+
+} // namespace variables
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::variables;

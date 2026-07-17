@@ -12,6 +12,12 @@
 
 //#define SHUTTLE_TIMER_DEBUG
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace building {
+namespace tasks {
+
 class ShuttleDepartureTask : public Task, public Logger {
 	ManagedWeakReference<CreatureObject*> shuttleObject;
 
@@ -48,3 +54,11 @@ public:
 
 	void setShuttleType(int type);
 };
+
+} // namespace tasks
+} // namespace building
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::building::tasks;

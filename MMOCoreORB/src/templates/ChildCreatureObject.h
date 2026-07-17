@@ -11,6 +11,8 @@
 #include "engine/util/u3d/Vector3.h"
 #include "engine/lua/LuaObject.h"
 
+namespace templates {
+
 class ChildCreatureObject : public Object {
 	Vector3 position;
 
@@ -53,3 +55,7 @@ public:
 
 	int getRespawnTimer() const;
 };
+
+} // namespace templates
+
+using namespace templates;

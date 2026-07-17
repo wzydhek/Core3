@@ -6,6 +6,11 @@
 #include "templates/tangible/ship/SharedShipObjectTemplate.h"
 #include "server/zone/objects/ship/ShipCollisionHardpoint.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+
 class ShipCollisionData : public Object, public Logger {
 public:
 	enum CollisionVolumeType : int {
@@ -81,3 +86,10 @@ public:
 
 	String toDebugString(bool includeHardpoints = true) const;
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

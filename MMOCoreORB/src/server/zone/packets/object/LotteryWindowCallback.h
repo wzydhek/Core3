@@ -10,6 +10,11 @@
 #include "server/zone/packets/MessageCallback.h"
 #include "ObjectControllerMessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class LotteryWindowCallback : public MessageCallback {
 	uint64 containerID;
 
@@ -25,3 +30,10 @@ public:
 
 	void run();
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

@@ -5,10 +5,19 @@
  *      Author: xyborn
  */
 
-#ifndef CITIESALLOWED_H_
-#define CITIESALLOWED_H_
+#pragma once
+
+namespace server {
+namespace zone {
+namespace managers {
+namespace city {
 
 class CitiesAllowed : public HashTable<String, Vector<byte> > {
 };
 
-#endif /* CITIESALLOWED_H_ */
+} // namespace city
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::city;

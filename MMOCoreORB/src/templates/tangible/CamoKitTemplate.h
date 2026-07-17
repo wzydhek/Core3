@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class CamoKitTemplate : public SharedTangibleObjectTemplate {
 	String effectiveZone;
 
@@ -24,3 +27,8 @@ public:
     bool isCamoKitTemplate();
 
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

@@ -10,6 +10,9 @@
 #include "engine/engine.h"
 #include "server/zone/QuadTree.h"
 
+namespace server {
+namespace zone {
+
 #ifdef WITH_STM
 	class QuadTreeReference : public TransactionalReference<QuadTree*> {
 #else
@@ -21,3 +24,8 @@
 
 		server::zone::QuadTree* operator=(server::zone::QuadTree* obj);
 	};
+
+} // namespace zone
+} // namespace server
+
+using namespace server::zone;

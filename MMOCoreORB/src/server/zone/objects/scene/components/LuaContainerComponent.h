@@ -28,6 +28,12 @@ namespace server {
 using namespace server::zone::objects::scene;
 using namespace server::zone::objects::creature;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace components {
+
 class LuaContainerComponent : public ContainerComponent {
 	String luaClassName;
 
@@ -79,3 +85,11 @@ public:
 	virtual int notifyObjectRemoved(SceneObject* sceneObject, SceneObject* object, SceneObject* destination) const;
 
 };
+
+} // namespace components
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::components;

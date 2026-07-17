@@ -38,7 +38,7 @@ bool SchematicList::toBinaryStream(ObjectOutputStream* stream) {
 	return true;
 }
 
-void to_json(nlohmann::json& j, const SchematicList& l) {
+void server::zone::objects::player::variables::to_json(nlohmann::json& j, const SchematicList& l) {
 	to_json(j, l.rewardedSchematics);
 }
 

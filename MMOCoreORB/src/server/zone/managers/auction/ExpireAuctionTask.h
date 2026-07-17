@@ -9,6 +9,11 @@
 
 #include "server/zone/managers/auction/AuctionManager.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace auction {
+
 class ExpireAuctionTask : public Task {
 	ManagedWeakReference<AuctionManager*> auctionManager;
 	ManagedWeakReference<AuctionItem*> item;
@@ -18,3 +23,10 @@ public:
 
 	void run();
 };
+
+} // namespace auction
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::auction;

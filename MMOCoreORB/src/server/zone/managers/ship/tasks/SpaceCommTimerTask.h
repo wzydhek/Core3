@@ -12,6 +12,12 @@
 #include "server/zone/packets/object/StopNpcConversation.h"
 #include "server/zone/objects/player/sessions/ConversationSession.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace ship {
+namespace tasks {
+
 class SpaceCommTimerTask : public Task, public Logger {
 	ManagedWeakReference<CreatureObject*> play;
 	uint64 shipID;
@@ -24,3 +30,11 @@ public:
 
 	void run();
 };
+
+} // namespace tasks
+} // namespace ship
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::ship::tasks;

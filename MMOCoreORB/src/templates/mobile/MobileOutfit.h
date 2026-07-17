@@ -10,6 +10,9 @@
 #include "system/lang.h"
 #include "engine/lua/LuaObject.h"
 
+namespace templates {
+namespace mobile {
+
 class OutfitTangibleObject : public Object {
 	String objectTemplate;
 	VectorMap<String, uint8> customizationVariables;
@@ -41,3 +44,8 @@ public:
 	Vector<OutfitTangibleObject>* getObjects();
 
 };
+
+} // namespace mobile
+} // namespace templates
+
+using namespace templates::mobile;

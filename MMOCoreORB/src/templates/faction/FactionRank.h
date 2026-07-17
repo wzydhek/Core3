@@ -9,6 +9,9 @@
 
 #include "templates/datatables/DataTableRow.h"
 
+namespace templates {
+namespace faction {
+
 class FactionRank : public Object {
 protected:
 	String name;
@@ -42,3 +45,8 @@ public:
 	void setName(const String& name);
 
 };
+
+} // namespace faction
+} // namespace templates
+
+using namespace templates::faction;

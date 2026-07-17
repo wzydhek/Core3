@@ -9,6 +9,9 @@
 
 #include "templates/params/Param.h"
 
+namespace templates {
+namespace params {
+
 template <class V> class TemplateBase : public Param {
 protected:
 	V value;
@@ -112,3 +115,8 @@ public:
 		//unknown = unk;
 	}
 };
+
+} // namespace params
+} // namespace templates
+
+using namespace templates::params;

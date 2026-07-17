@@ -13,6 +13,9 @@
 #include "templates/appearance/FloorMesh.h"
 #include "templates/appearance/AppearanceTemplate.h"
 
+namespace templates {
+namespace appearance {
+
 class CellPortal : public Object {
 	bool solid;
 	int geometryIndex;
@@ -89,3 +92,8 @@ public:
 	void loadVersion4(IffStream* iffStream);
 	void loadVersion5(IffStream* iffStream);
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

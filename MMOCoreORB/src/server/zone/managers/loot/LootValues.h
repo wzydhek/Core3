@@ -9,7 +9,12 @@
 	//#define LOOTVALUES_DEBUG
 #endif // LOOTVALUES_DEBUG
 
-class LootValues: public CraftingValues, public LootAttributeType {
+namespace server {
+namespace zone {
+namespace managers {
+namespace loot {
+
+	class LootValues: public CraftingValues, public LootAttributeType {
 public:
 	constexpr static float EPSILON = 5e-7f;
 	constexpr static float DISTMAX = 0.95f;
@@ -106,3 +111,10 @@ public:
 	String toDebugString();
 #endif // LOOTVALUES_DEBUG
 };
+
+} // namespace loot
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::loot;

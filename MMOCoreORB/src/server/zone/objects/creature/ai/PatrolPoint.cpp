@@ -166,3 +166,10 @@ void PatrolPoint::addEstimatedTimeOfArrival(uint32 mili) {
 String PatrolPoint::toString() const {
 	return position.toString();
 }
+
+void server::zone::objects::creature::ai::to_json(nlohmann::json& j, const PatrolPoint& p) {
+	j["position"] = p.position;
+	j["reached"] = p.reached;
+	j["direction"] = p.direction;
+	j["estimatedTimeOfArrival"] = p.estimatedTimeOfArrival;
+}

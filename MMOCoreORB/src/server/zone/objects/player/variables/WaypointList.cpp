@@ -16,7 +16,7 @@ int WaypointList::set(uint64 key, WaypointObject* value, DeltaMessage* message, 
 	return pos;
 }
 
-void to_json(nlohmann::json& j, const WaypointList& w) {
+void server::zone::objects::player::variables::to_json(nlohmann::json& j, const WaypointList& w) {
 	const DeltaVectorMap<uint64, ManagedReference<WaypointObject*>>& vm = w;
 
 	to_json(j, vm);

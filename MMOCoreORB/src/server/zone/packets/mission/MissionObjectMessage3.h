@@ -14,6 +14,11 @@
  * Talk to Ramsey for more details.
  */
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace mission {
+
 class MissionObjectMessage3 : public BaseLineMessage {
 
 public:
@@ -21,3 +26,10 @@ public:
 	MissionObjectMessage3(MissionObject* mi);
 
 };
+
+} // namespace mission
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::mission;

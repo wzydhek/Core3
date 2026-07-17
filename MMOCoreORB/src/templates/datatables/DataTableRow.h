@@ -9,6 +9,9 @@
 
 #include "templates/datatables/DataTableCell.h"
 
+namespace templates {
+namespace datatables {
+
 class DataTableRow {
 	Vector<DataTableCell*> cells;
 
@@ -30,3 +33,8 @@ public:
 		cells.get(idx)->getValue(out);
 	}
 };
+
+} // namespace datatables
+} // namespace templates
+
+using namespace templates::datatables;

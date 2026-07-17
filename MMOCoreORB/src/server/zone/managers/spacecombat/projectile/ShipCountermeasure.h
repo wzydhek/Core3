@@ -4,6 +4,12 @@
 #include "server/zone/objects/ship/ShipCountermeasureData.h"
 #include "server/zone/packets/jtl/UpdateMissileMessage.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace spacecombat {
+namespace projectile {
+
 class ShipCountermeasure : public ShipProjectile {
 public:
 	const static unsigned int countermeasureDuration = 1000;
@@ -18,19 +24,27 @@ public:
 
 	bool isCountermeasure() const;
 
-// get
+	// get
 	int getEffectMin() const;
 
 	int getEffectMax() const;
 
 	int getDifficulty() const;
 
-// set
+	// set
 	void readCountermeasureData(const ShipCountermeasureData* data);
 
 	void updatePosition(int deltaTime, int totalTime);
 
 #ifdef SHIPPROJECTILE_DEBUG
 	void debugProjectile(ShipObject* ship, int hitResult);
-#endif //SHIPPROJECTILE_DEBUG
+#endif // SHIPPROJECTILE_DEBUG
 };
+
+} // namespace projectile
+} // namespace spacecombat
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::spacecombat::projectile;

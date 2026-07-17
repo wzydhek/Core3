@@ -9,6 +9,12 @@
 #include "server/zone/objects/resource/ResourceContainer.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace manufactureschematic {
+namespace ingredientslots {
+
 class ResourceSlot: public IngredientSlot {
 
 	int quantity;
@@ -45,3 +51,11 @@ public:
 	Vector<int> getQuantityVector();
 
 };
+
+} // namespace ingredientslots
+} // namespace manufactureschematic
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::manufactureschematic::ingredientslots;

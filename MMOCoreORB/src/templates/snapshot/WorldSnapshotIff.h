@@ -10,6 +10,9 @@
 #include "templates/IffTemplate.h"
 #include "templates/snapshot/WorldSnapshotNode.h"
 
+namespace templates {
+namespace snapshot {
+
 class WorldSnapshotIff : public IffTemplate {
 	Vector<WorldSnapshotNode> nodes;
 	Vector<String> objectTemplateNameList;
@@ -25,3 +28,8 @@ public:
 
 	String getObjectTemplateName(int idx) const;
 };
+
+} // namespace snapshot
+} // namespace templates
+
+using namespace templates::snapshot;

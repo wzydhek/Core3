@@ -4,6 +4,11 @@
 #include "server/zone/objects/installation/InstallationObject.h"
 #include "server/zone/objects/resource/ResourceSpawn.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace harvester {
+
 class HarvesterObjectMessage7 : public BaseLineMessage {
 public:
 	HarvesterObjectMessage7(InstallationObject* hino);
@@ -18,3 +23,10 @@ public:
 
 	void insertHopperItems(InstallationObject* hino);
 };
+
+} // namespace harvester
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::harvester;

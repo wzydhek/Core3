@@ -9,6 +9,13 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+namespace effect {
+
 class StateEffect : public Object {
 protected:
 	uint8 effectType;
@@ -62,3 +69,12 @@ public:
 
 	void setStateStrength(uint32 stateStrength);
 };
+
+} // namespace effect
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands::effect;

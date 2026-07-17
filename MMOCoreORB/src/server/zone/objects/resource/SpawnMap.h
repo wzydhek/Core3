@@ -13,6 +13,10 @@
 #include "engine/engine.h"
 #include "SpawnDensityMap.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace resource {
 
 class SpawnMap : public SynchronizedVectorMap<String, SpawnDensityMap> {
 
@@ -22,3 +26,10 @@ public:
 	~SpawnMap();
 
 };
+
+} // namespace resource
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::resource;

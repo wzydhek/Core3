@@ -10,6 +10,11 @@
 #include "engine/service/proto/BaseMessage.h"
 #include "../MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ui {
+
 class CommoditiesItemTypeListResponse : public BaseMessage {
 public:
 	CommoditiesItemTypeListResponse();
@@ -25,3 +30,10 @@ public:
 
 	void run();
 };
+
+} // namespace ui
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ui;

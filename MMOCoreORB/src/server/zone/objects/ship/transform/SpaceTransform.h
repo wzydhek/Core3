@@ -1,6 +1,11 @@
 #pragma once
 
 #include "engine/engine.h"
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace transform {
 
 class SpaceTransform : public Object {
 protected:
@@ -35,3 +40,11 @@ public:
 
 	String toDebugString() const;
 };
+
+} // namespace transform
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::transform;

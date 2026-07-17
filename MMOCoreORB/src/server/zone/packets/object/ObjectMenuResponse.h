@@ -60,9 +60,9 @@ public:
 	RadialMenuItem* getRootMenuItem();
 };
 
-}
-}
-}
-}
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
 
 using namespace server::zone::packets::object;

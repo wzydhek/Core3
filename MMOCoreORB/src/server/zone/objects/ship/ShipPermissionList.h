@@ -8,6 +8,11 @@
 #include "engine/util/json_utils.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+
 class ShipPermissionList : public Object {
 	VectorMap<String, SortedVector<String> > permissionLists;
 	VectorMap<String, SortedVector<uint64> > idPermissionLists;
@@ -102,3 +107,10 @@ public:
 
 	void migrateLists(ZoneServer* zoneServer, uint64 ownerObjectID);
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

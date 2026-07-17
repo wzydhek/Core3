@@ -7,6 +7,10 @@
 
 #pragma once
 
+namespace templates {
+namespace params {
+namespace creature {
+
 class CreatureEmote {
 public:
 
@@ -27,3 +31,9 @@ public:
 		WHAP     = 366
 	};
 };
+
+} // namespace creature
+} // namespace params
+} // namespace templates
+
+using namespace templates::params::creature;

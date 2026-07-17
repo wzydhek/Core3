@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class SharedStructureObjectTemplate : public SharedTangibleObjectTemplate {
 protected:
 	SortedVector<String> allowedZones;
@@ -69,3 +72,8 @@ public:
 
 	virtual bool isSharedStructureObjectTemplate();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

@@ -10,6 +10,8 @@
 #include "TemplateVariable.h"
 #include "TerrainMap.h"
 
+namespace terrain {
+
 class TerrainMaps : public IffTemplateVariable {
 	float var1;
 	float var2;
@@ -25,3 +27,7 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);
 };
+
+} // namespace terrain
+
+using namespace terrain;

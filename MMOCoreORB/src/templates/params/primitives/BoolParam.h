@@ -9,6 +9,10 @@
 
 #include "templates/params/TemplateBase.h"
 
+namespace templates {
+namespace params {
+namespace primitives {
+
 class BoolParam : public TemplateBase<bool> {
 public:
 	BoolParam();
@@ -29,3 +33,9 @@ public:
 
 	virtual bool parse(engine::util::Chunk* source);
 };
+
+} // namespace primitives
+} // namespace params
+} // namespace templates
+
+using namespace templates::params::primitives;

@@ -7,9 +7,17 @@
 
 #pragma once
 
-class ProceduralTerrainAppearance;
+namespace terrain {
+	class ProceduralTerrainAppearance;
+}
+
+using namespace terrain;
 
 #include "../ProceduralRule.h"
+
+namespace terrain {
+namespace layer {
+namespace boundaries {
 
 class Boundary {
 protected:
@@ -51,3 +59,9 @@ public:
 
 	bool isEnabled() const;
 };
+
+} // namespace boundaries
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::boundaries;

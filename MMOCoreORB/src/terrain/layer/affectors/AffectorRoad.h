@@ -13,7 +13,17 @@
 #include "../../TerrainGenerator.h"
 #include "AffectorRiver.h"
 
+namespace terrain {
+
 class TerrainGenerator;
+
+} // namespace affectors
+
+using namespace terrain;
+
+namespace terrain {
+namespace layer {
+namespace affectors {
 
 // #define DEBUG_AFFECTOR_ROAD
 
@@ -23,82 +33,29 @@ class RoadRectangle {
 	float width, height, direction;
 
 public:
-	RoadRectangle(float x0, float y0, float x1, float y1, float startX, float startY, float roadWidth, float dir) {
-		lowerLeftX = x0;
-		lowerLeftY = y0;
-		upperRightX = x1;
-		upperRightY = y1;
-		roadStartX = startX;
-		roadStartY = startY;
-		direction = dir;
+	RoadRectangle(float x0, float y0, float x1, float y1, float startX, float startY, float roadWidth, float dir);
 
-		centerX = ((lowerLeftX + upperRightX) / 2.f);
-		centerY = ((lowerLeftY + upperRightY) / 2.f);
+	~RoadRectangle();
 
-		width = roadWidth;
-		height = Math::sqrt(Math::sqr(upperRightX - lowerLeftX) + Math::sqr(upperRightY - lowerLeftY));
-	}
+	bool containsPoint(float x, float y) const;
 
-	~RoadRectangle() {
-	}
+	float getLowerLeftX() const;
 
-	bool containsPoint(float x, float y) const {
-#ifdef DEBUG_AFFECTOR_ROAD
-		Logger::console.info(true) << "RoadRectangle::containsPoint - centerX: " << centerX << " centerY: " << centerY << " width: " << width << " height: " << height;
-#endif
+	float getLowerLeftY() const;
 
-		float deltaX = centerX - x;
-		float deltaY = centerY - y;
+	float getUpperRightX() const;
 
-		float rotatedX = deltaX * Math::cos(-direction) + deltaY * Math::sin(-direction);
-		float rotatedY = deltaX * Math::sin(-direction) - deltaY * Math::cos(-direction);
+	float getUpperRightY() const;
 
-		bool result = (fabs(rotatedX) <= width / 2.f) && (fabs(rotatedY) <= height / 2.f);
+	float getRoadStartX();
 
-#ifdef DEBUG_AFFECTOR_ROAD
-		if (result)
-			Logger::console.info(true) << "Rectangle Contains Point - Center X: " << centerX << " Center Y: " << centerY <<  " X: " << x << " Y: " << y << " rotatedX: " << rotatedX << " rotatedY: " << rotatedY;
-#endif
+	float getRoadStartY();
 
-		// Check if the point is inside the bounding box
-		return result;
-	}
+	float getRoadCenterX();
 
-	float getLowerLeftX() const {
-		return lowerLeftX;
-	}
+	float getRoadCenterY();
 
-	float getLowerLeftY() const {
-		return lowerLeftY;
-	}
-
-	float getUpperRightX() const {
-		return upperRightX;
-	}
-
-	float getUpperRightY() const {
-		return upperRightY;
-	}
-
-	float getRoadStartX(){
-		return roadStartX;
-	}
-
-	float getRoadStartY() {
-		return roadStartY;
-	}
-
-	float getRoadCenterX() {
-		return centerX;
-	}
-
-	float getRoadCenterY() {
-		return centerY;
-	}
-
-	float getDirection() {
-		return direction;
-	}
+	float getDirection();
 };
 
 class AffectorRoad : public ProceduralRule<'AROA'>, public AffectorProceduralRule {
@@ -141,3 +98,9 @@ public:
 
 	bool isEnabled();
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

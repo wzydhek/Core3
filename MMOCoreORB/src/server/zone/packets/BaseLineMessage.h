@@ -8,6 +8,10 @@
 #include "server/zone/objects/scene/variables/StringId.h"
 #include "server/zone/objects/scene/SceneObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+
 class BaseLineMessage: public BaseMessage {
 public:
 	BaseLineMessage(const SceneObject* obj, uint32 name, uint8 type, uint16 opcnt);
@@ -21,3 +25,9 @@ public:
 	void insertCustomName(const UnicodeString& name);
 
 };
+
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets;

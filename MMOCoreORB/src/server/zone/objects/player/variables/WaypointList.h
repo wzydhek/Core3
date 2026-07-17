@@ -9,6 +9,12 @@
 #include "server/zone/objects/scene/variables/DeltaVectorMap.h"
 #include "server/zone/objects/waypoint/WaypointObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace variables {
+
 class WaypointList : public DeltaVectorMap<uint64, ManagedReference<WaypointObject*> > {
 public:
 
@@ -28,3 +34,11 @@ public:
 
 	WaypointObject* getWaypointAt(float x, float y, String planet) const;
 };
+
+} // namespace variables
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::variables;

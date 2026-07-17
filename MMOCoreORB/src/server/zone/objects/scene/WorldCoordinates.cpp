@@ -121,7 +121,7 @@ bool WorldCoordinates::operator==(const WorldCoordinates& c) {
 	return (point == c.point) && (cell == c.cell);
 }
 
-void to_json(nlohmann::json& j, const WorldCoordinates& c) {
+void server::zone::objects::scene::to_json(nlohmann::json& j, const WorldCoordinates& c) {
 	j["point"] = c.point;
 	j["cell"] = c.cell;
 }

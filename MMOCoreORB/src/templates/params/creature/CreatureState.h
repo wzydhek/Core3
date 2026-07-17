@@ -8,6 +8,10 @@
 #include "templates/datatables/DataTableRow.h"
 #include "templates/manager/TemplateManager.h"
 
+namespace templates {
+namespace params {
+namespace creature {
+
 class CreatureState : public Singleton<CreatureState>, public Logger, public Object {
 public:
 	HashTable<String, uint64> states;
@@ -59,3 +63,9 @@ public:
 
 	String getName(const uint64 state, bool initialCap = false) const;
 };
+
+} // namespace creature
+} // namespace params
+} // namespace templates
+
+using namespace templates::params::creature;

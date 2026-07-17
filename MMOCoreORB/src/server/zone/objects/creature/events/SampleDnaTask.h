@@ -7,6 +7,12 @@
 #include "templates/params/creature/CreatureAttribute.h"
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace events {
+
 class SampleDnaTask : public Task {
 
 private:
@@ -30,3 +36,11 @@ public:
 
 	void award(int cl, float rollMod, int skillMod);
 };
+
+} // namespace events
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::events;

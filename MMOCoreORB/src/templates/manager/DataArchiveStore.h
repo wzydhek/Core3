@@ -15,6 +15,8 @@
 #include "engine/util/iffstream/IffStream.h"
 #include "tre3/TreeArchive.h"
 
+namespace templates {
+
 class DataArchiveStore : public Singleton<DataArchiveStore>, public Logger,
 		public ReadWriteLock, public Object {
 	TreeArchive* treeDirectory;
@@ -33,3 +35,7 @@ public:
 
 
 };
+
+} // namespace templates
+
+using namespace templates;

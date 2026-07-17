@@ -9,6 +9,12 @@
 
 #include "TangibleObjectMenuComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class CloningTerminalMenuComponent : public TangibleObjectMenuComponent {
 public:
 
@@ -33,3 +39,11 @@ public:
 	// Check if player has cloning coupon in their inventory
 	virtual bool hasCloningCoupon(CreatureObject* object) const;
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

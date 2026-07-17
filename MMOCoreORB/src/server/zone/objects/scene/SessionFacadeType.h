@@ -7,6 +7,11 @@
 
 #pragma once
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+
 class SessionFacadeType {
 public:
 
@@ -42,3 +47,10 @@ public:
 	};
 
 };
+
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene;

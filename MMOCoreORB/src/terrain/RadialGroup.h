@@ -9,6 +9,8 @@
 
 #include "RadialFamily.h"
 
+namespace terrain {
+
 class RadialGroup : public TemplateVariable<'RGRP'> {
 	Vector<RadialFamily*> data;
 public:
@@ -20,3 +22,7 @@ public:
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0003'>);
 
 };
+
+} // namespace terrain
+
+using namespace terrain;

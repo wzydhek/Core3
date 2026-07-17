@@ -11,6 +11,12 @@
 #include "engine/util/json_utils.h"
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace variables {
+
 class Ability;
 
 /**
@@ -47,3 +53,11 @@ class AbilityListMigrator : public DeltaVector<Ability*> {
 
 		bool parseFromBinaryStream(ObjectInputStream* stream);
 	};
+
+} // namespace variables
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::variables;

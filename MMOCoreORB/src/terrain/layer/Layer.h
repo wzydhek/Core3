@@ -18,6 +18,10 @@ class FilterProceduralRule;*/
 #include "affectors/AffectorProceduralRule.h"
 #include "filters/FilterProceduralRule.h"
 
+
+namespace terrain {
+namespace layer {
+
 class Layer : public TemplateVariable<'LAYR'> {
 	InformationHeader infoHeader;
 
@@ -76,3 +80,8 @@ public:
 
 	const String& getDescription() const;
 };
+
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer;

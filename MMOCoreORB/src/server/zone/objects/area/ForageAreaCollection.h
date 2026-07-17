@@ -8,6 +8,11 @@
 #include "server/zone/managers/minigames/events/ForageCleanupEvent.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace area {
+
 class ForageAreaCollection : public Object {
 
 protected:
@@ -23,3 +28,10 @@ public:
 	bool checkForageAreas(short forageX, short forageY, const String& planet, int forageAreaType);
 
 };
+
+} // namespace area
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::area;

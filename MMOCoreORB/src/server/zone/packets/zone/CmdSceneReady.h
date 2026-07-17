@@ -6,6 +6,11 @@
 
 #include "engine/service/proto/BaseMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace zone {
+
 class CmdSceneReady : public BaseMessage {
 public:
 	CmdSceneReady();
@@ -13,3 +18,10 @@ public:
 	static void parse(Packet* pack);
 
 };
+
+} // namespace zone
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::zone;

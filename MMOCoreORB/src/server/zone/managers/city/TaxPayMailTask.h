@@ -5,13 +5,17 @@
  *      Author: victor
  */
 
-#ifndef TAXPAYMAILTASK_H_
-#define TAXPAYMAILTASK_H_
+#pragma once
 
 #include "server/chat/ChatManager.h"
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/managers/credit/CreditManager.h"
 #include "server/zone/objects/transaction/TransactionLog.h"
+
+namespace server {
+namespace zone {
+namespace managers {
+namespace city {
 
 class TaxPayMailTask : public Task {
 	Vector<uint64> citizens;
@@ -29,4 +33,9 @@ public:
 
 };
 
-#endif /* TAXNOPAYMAILTASK_H_ */
+} // namespace city
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::city;

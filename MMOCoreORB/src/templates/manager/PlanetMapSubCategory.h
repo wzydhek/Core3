@@ -7,6 +7,8 @@
 #include "templates/datatables/DataTableRow.h"
 #include "server/zone/managers/planet/MapLocationType.h"
 
+namespace templates {
+
 class PlanetMapSubCategory : public Object {
 	String name;
 	int nameCRC;
@@ -41,3 +43,7 @@ public:
 
 	bool isFactionVisibleOnly() const;
 };
+
+} // namespace templates
+
+using namespace templates;

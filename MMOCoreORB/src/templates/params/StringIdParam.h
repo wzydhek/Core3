@@ -10,6 +10,9 @@
 #include "templates/params/TemplateBase.h"
 #include "templates/params/primitives/StringParam.h"
 
+namespace templates {
+namespace params {
+
 class StringIdParamData {
 	StringParam file;
 	StringParam stringId;
@@ -55,3 +58,8 @@ public:
 	String getFullString() const;
 
 };
+
+} // namespace params
+} // namespace templates
+
+using namespace templates::params;

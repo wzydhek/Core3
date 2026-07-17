@@ -24,3 +24,5 @@ namespace server {
     } // namespace mysql
   } // namespace db
 } // namespace engine
+
+using namespace server::db::mysql;

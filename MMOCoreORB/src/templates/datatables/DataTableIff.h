@@ -9,6 +9,9 @@
 
 #include "templates/IffTemplate.h"
 
+namespace templates {
+namespace datatables {
+
 class DataTableRow;
 
 class DataTableIff : public IffTemplate {
@@ -54,3 +57,8 @@ public:
 
 	int getTotalColumns() const;
 };
+
+} // namespace datatables
+} // namespace templates
+
+using namespace templates::datatables;

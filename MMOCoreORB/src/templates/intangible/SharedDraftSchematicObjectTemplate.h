@@ -9,6 +9,9 @@
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
+namespace templates {
+namespace intangible {
+
 class SharedDraftSchematicObjectTemplate : public SharedIntangibleObjectTemplate {
 public:
 	SharedDraftSchematicObjectTemplate();
@@ -19,3 +22,8 @@ public:
 
 	void readObject(LuaObject* templateData);
 };
+
+} // namespace intangible
+} // namespace templates
+
+using namespace templates::intangible;

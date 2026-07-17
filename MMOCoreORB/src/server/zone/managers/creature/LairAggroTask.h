@@ -10,6 +10,11 @@
 #include "server/zone/managers/creature/LairObserver.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace creature {
+
 class LairAggroTask : public Task {
 	ManagedWeakReference<TangibleObject*> weakLair;
 	ManagedWeakReference<LairObserver*> weakObserver;
@@ -21,3 +26,10 @@ public:
 
 	void run();
 };
+
+} // namespace creature
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::creature;

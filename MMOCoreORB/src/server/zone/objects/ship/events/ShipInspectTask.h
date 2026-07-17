@@ -12,6 +12,12 @@
 
 #include "server/zone/objects/ship/ShipObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace events {
+
 class ShipInspectTask: public Task, public Logger {
 
 protected:
@@ -23,3 +29,11 @@ public:
 
 	void run();
 };
+
+} // namespace events
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::events;

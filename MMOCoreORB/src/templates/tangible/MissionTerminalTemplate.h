@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class MissionTerminalTemplate : public SharedTangibleObjectTemplate {
 	String missionTerminalType;
 
@@ -23,3 +26,8 @@ public:
 
 	bool isMissionTerminalTemplate();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

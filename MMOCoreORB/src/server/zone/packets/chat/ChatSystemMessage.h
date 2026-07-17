@@ -7,6 +7,11 @@
 #include "engine/service/proto/BaseMessage.h"
 #include "server/chat/StringIdChatParameter.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace chat {
+
 class ChatSystemMessage : public BaseMessage {
 
 public:
@@ -20,3 +25,10 @@ public:
 
 	ChatSystemMessage(StringIdChatParameter& sid, byte displayType = DISPLAY_CHATANDSCREEN);
 };
+
+} // namespace chat
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::chat;

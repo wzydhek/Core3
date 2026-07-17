@@ -9,6 +9,10 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+namespace tool {
+
 class RepairToolTemplate : public SharedTangibleObjectTemplate {
 	uint32 mask;
 	String boostSkill;
@@ -33,3 +37,9 @@ public:
 	bool isRepairToolTemplate() const override;
 
 };
+
+} // namespace tool
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible::tool;

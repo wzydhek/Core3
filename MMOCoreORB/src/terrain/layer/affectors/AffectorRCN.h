@@ -10,6 +10,10 @@
 #include "../ProceduralRule.h"
 #include "AffectorProceduralRule.h"
 
+namespace terrain {
+namespace layer {
+namespace affectors {
+
 class AffectorRCN : public ProceduralRule<'ARCN'>, public AffectorProceduralRule {
 	int familyId;
 	int var2;
@@ -24,3 +28,9 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0002'>);
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

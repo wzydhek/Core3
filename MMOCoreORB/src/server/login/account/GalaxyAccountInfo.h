@@ -11,6 +11,10 @@
 #include "system/util/SynchronizedVectorMap.h"
 #include "engine/util/json.hpp"
 
+namespace server {
+namespace login {
+namespace account {
+
 class GalaxyAccountInfo : public Object {
 protected:
 	SynchronizedVectorMap<uint32_t, String> chosenVeteranRewards; // milestone, templateFile
@@ -33,3 +37,8 @@ public:
 
 	friend void to_json(nlohmann::json& j, const GalaxyAccountInfo& p);
 };
+} // namespace account
+} // namespace login
+} // namespace server
+
+using namespace server::login::account;

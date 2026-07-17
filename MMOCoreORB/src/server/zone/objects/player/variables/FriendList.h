@@ -9,6 +9,12 @@
 
 #include "PlayerList.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace variables {
+
 class FriendList : public PlayerList<7> {
 protected:
 	Vector<String> reverseTable;
@@ -39,3 +45,11 @@ public:
 	int reversePlayerCount();
 
 };
+
+} // namespace variables
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::variables;

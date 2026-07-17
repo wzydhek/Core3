@@ -5,6 +5,11 @@
 
 #define SPACE_COLLISION_DEBUG
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace spacecollision {
+
 class SpaceCollisionManager : public Singleton<SpaceCollisionManager>, public Logger, public Object {
 public:
 	const static constexpr float MISS = FLT_MAX;
@@ -40,3 +45,10 @@ private:
 
 	Vector3 getAxisAlignedVector(const Vector3& vector, const Matrix4& rotation);
 };
+
+} // namespace spacecollision
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::spacecollision;

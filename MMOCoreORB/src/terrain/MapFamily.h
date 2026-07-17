@@ -10,6 +10,8 @@
 #include "TemplateVariable.h"
 #include "MapFractal.h"
 
+namespace terrain {
+
 class MapFamily : public TemplateVariable<'MFAM'> {
 	int var1;
 	String var2;
@@ -27,3 +29,7 @@ public:
 
 	const String& getName() const;
 };
+
+} // namespace terrain
+
+using namespace terrain;

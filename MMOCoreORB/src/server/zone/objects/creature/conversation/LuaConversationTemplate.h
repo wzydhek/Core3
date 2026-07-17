@@ -10,6 +10,12 @@
 #include "ConversationTemplate.h"
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace conversation {
+
 class LuaConversationTemplate {
 public:
 	// Constants
@@ -29,3 +35,11 @@ private:
 	// The pointer to the 'real object' defined in object.cc
 	Reference<ConversationTemplate*> realObject;
 };
+
+} // namespace conversation
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::conversation;

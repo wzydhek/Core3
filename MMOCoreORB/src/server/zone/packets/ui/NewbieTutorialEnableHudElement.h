@@ -9,6 +9,11 @@
 
 #include "engine/service/proto/BaseMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ui {
+
 /* Valid elements found:
  * radar
  * toolbar
@@ -29,3 +34,10 @@ public:
 	NewbieTutorialEnableHudElement(const String& element, bool enable = true, float blinkCount = 0.f);
 
 };
+
+} // namespace ui
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ui;

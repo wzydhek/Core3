@@ -10,6 +10,9 @@
 #include "templates/appearance/PaletteColor.h"
 #include "system/util/Vector.h"
 
+namespace templates {
+namespace appearance {
+
 class PaletteTemplate : public Object {
 	Vector<PaletteColor> colors;
 public:
@@ -21,3 +24,8 @@ public:
 
 	int getColorCount() const;
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

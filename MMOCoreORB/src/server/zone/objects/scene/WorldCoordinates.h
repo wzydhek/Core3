@@ -23,6 +23,11 @@ namespace server {
 
 using namespace server::zone::objects::scene;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+
 class WorldCoordinates : public Object {
 protected:
 	Vector3 point;
@@ -85,3 +90,10 @@ public:
 
 	String toStringData() const;
 };
+
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene;

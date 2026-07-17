@@ -12,6 +12,11 @@
 #include "PackedVelocity.h"
 #include "PackedRotationRate.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ship {
+
 class ShipUpdateTransformMessage : public BaseMessage {
 public:
 	ShipUpdateTransformMessage(ShipObject* ship, uint32 syncStamp = 0);
@@ -28,3 +33,10 @@ public:
 
 	void writePackedDirection(const Quaternion* direction);
 };
+
+} // namespace ship
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ship;

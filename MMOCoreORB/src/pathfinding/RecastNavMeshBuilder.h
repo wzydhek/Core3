@@ -26,9 +26,15 @@
 #include "terrain/manager/TerrainManager.h"
 #include "pathfinding/RecastTileBuilder.h"
 
-class RecastNavMesh;
-
+namespace templates {
+namespace appearance {
 class MeshData;
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;
+
+class RecastNavMesh;
 
 class RecastNavMeshBuilder : public Object, Logger {
 protected:

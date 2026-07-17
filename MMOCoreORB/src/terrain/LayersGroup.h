@@ -9,6 +9,8 @@
 
 #include "layer/Layer.h"
 
+namespace terrain {
+
 class LayersGroup : public TemplateVariable<'LYRS'> {
 	Vector<Layer*> layers;
 public:
@@ -25,3 +27,7 @@ public:
 
 	const Vector<Layer*>* getLayers() const;
 };
+
+} // namespace terrain
+
+using namespace terrain;

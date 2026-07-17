@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class ArmorObjectTemplate : public SharedTangibleObjectTemplate {
 	int healthEncumbrance;
 	int actionEncumbrance;
@@ -32,7 +35,6 @@ class ArmorObjectTemplate : public SharedTangibleObjectTemplate {
 	uint8 hitLocation;
 
 public:
-
 	// hit locations (for serverside armor checks)
 	enum SuitLocations { NOLOCATION = 0x0, CHEST = 0x1, ARMS = 0x2, LEGS = 0x4, HEAD = 0x8 };
 
@@ -104,3 +106,8 @@ public:
 
 	bool isArmorObjectTemplate();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

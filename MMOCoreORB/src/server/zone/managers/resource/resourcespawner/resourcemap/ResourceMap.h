@@ -28,11 +28,18 @@ namespace listbox {
 
 using namespace server::zone::objects::player::sui::listbox;
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
+namespace resourcemap {
+
 /**
  * TypeResourceMap is a container class for VectorMap<String, ManagedReference<ResourceSpawn* > >
  * It indexes
  */
-class TypeResourceMap : public Vector<ManagedReference<ResourceSpawn* > > {
+class TypeResourceMap : public Vector<ManagedReference<ResourceSpawn*>> {
 public:
 	TypeResourceMap();
 
@@ -42,7 +49,7 @@ public:
 /**
  * ZoneResourceMap is a container class for VectorMap<String, ManagedReference<ResourceSpawn* > >
  */
-class ZoneResourceMap : public VectorMap<String, ManagedReference<ResourceSpawn* > > {
+class ZoneResourceMap : public VectorMap<String, ManagedReference<ResourceSpawn*>> {
 public:
 	ZoneResourceMap();
 
@@ -54,9 +61,8 @@ public:
  * by unique spawn name.  Also contains a map of active
  * resources separated by a zone id
  */
-class ResourceMap : public VectorMap<String, ManagedReference<ResourceSpawn* > > {
+class ResourceMap : public VectorMap<String, ManagedReference<ResourceSpawn*>> {
 private:
-
 	VectorMap<String, ZoneResourceMap*> zoneResourceMap;
 	VectorMap<String, TypeResourceMap*> typeResourceMap;
 
@@ -70,21 +76,21 @@ public:
 	 * map for surveying and sampling/.
 	 * \param resname The unique name of the resource spawn
 	 * \param resourceSpawn The ResourceSpawn object to be added
-	*/
-	void add(const String& resname, ManagedReference<ResourceSpawn* > resourceSpawn);
+	 */
+	void add(const String& resname, ManagedReference<ResourceSpawn*> resourceSpawn);
 
 	/**
 	 * Removes resource from  global spawn map
 	 * \param resourceSpawn The ResourceSpawn object to be removed
-	*/
-	void remove(ManagedReference<ResourceSpawn* > resourceSpawn);
+	 */
+	void remove(ManagedReference<ResourceSpawn*> resourceSpawn);
 
 	/**
 	 * Removes resource from the zone spawn map
 	 * \param resourceSpawn The ResourceSpawn object to be removed
 	 * \param zoneid The zone that is despawning resource
-	*/
-	void remove(ManagedReference<ResourceSpawn* > resourceSpawn, String zoneName);
+	 */
+	void remove(ManagedReference<ResourceSpawn*> resourceSpawn, String zoneName);
 
 	/**
 	 * Get's the density value of resource at given point
@@ -93,14 +99,14 @@ public:
 	 * \param x The value of the x coordinate
 	 * \param y The value of the y coordinate
 	 * \return Value between -1 and 1 indicating density
-	*/
+	 */
 	float getDensityAt(const String& resourcename, String zoneName, float x, float y) const;
 
 	/**
 	 * Get's the density value of resource at given point
 	 * \param zoneid ID of zone being requesting
 	 * \return ZoneResourceMap* value of the zoneid requested
-	*/
+	 */
 	ZoneResourceMap* getZoneResourceList(String zoneName);
 
 	/**
@@ -116,7 +122,7 @@ public:
 	 * Adds the resources in particular map to SUI for resource deed
 	 * @param sui Listbox
 	 * @param nodeName name of resource
-	*/
+	 */
 	void addToSuiListBox(SuiListBox* sui, const String& nodeName);
 
 	/**
@@ -133,3 +139,12 @@ public:
 	 */
 	void getAttributeSubset(ResourceMap& subMap, const String& attributeName);
 };
+
+} // namespace resourcemap
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner::resourcemap;

@@ -11,6 +11,8 @@
 #include "Random.h"
 #include "PerlinNoise.h"
 
+namespace terrain {
+
 class MapFractal : public TemplateVariable<'MFRC'> {
 	PerlinNoise* noise;
 	trn::ptat::Random* rand;
@@ -78,3 +80,7 @@ public:
 
 	void setCombination(int comb);
 };
+
+} // namespace terrain
+
+using namespace terrain;

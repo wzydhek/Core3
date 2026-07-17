@@ -3,6 +3,12 @@
 #include "server/zone/managers/gcw/GCWManager.h"
 #include "server/zone/objects/building/components/DestructibleBuildingDataComponent.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace gcw {
+namespace tasks {
+
 class UplinkTerminalResetTask : public Task {
 	ManagedReference<BuildingObject*> building;
 	ManagedReference<GCWManager*> gcwManager;
@@ -13,3 +19,11 @@ public:
 
 	void run();
 };
+
+} // namespace tasks
+} // namespace gcw
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::gcw::tasks;

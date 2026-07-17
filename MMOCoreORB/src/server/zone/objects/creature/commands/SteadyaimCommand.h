@@ -6,6 +6,12 @@
 
 #include "SquadLeaderCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class SteadyaimCommand : public SquadLeaderCommand {
 public:
 
@@ -16,3 +22,11 @@ public:
 	bool doSteadyAim(CreatureObject* leader, GroupObject* group, int amount) const;
 
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

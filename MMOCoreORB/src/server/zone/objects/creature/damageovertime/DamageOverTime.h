@@ -10,17 +10,24 @@
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
 
+//namespace server {
+//namespace zone {
+//namespace objects {
+//namespace creature {
+//}
+//} // namespace objects
+//} // namespace zone
+//} // namespace server
+//
+//using namespace server::zone::objects::creature;
+
+
 namespace server {
 namespace zone {
 namespace objects {
 namespace creature {
 class CreatureObject;
-}
-} // namespace objects
-} // namespace zone
-} // namespace server
-
-using namespace server::zone::objects::creature;
+namespace damageovertime {
 
 class DamageOverTime : public Serializable, public Logger {
 protected:
@@ -113,3 +120,11 @@ public:
 
 	int getSecondaryStrength();
 };
+
+} // namespace damageovertime
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::damageovertime;

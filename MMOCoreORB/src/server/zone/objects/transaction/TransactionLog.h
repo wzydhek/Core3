@@ -14,6 +14,11 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/creature/credits/CreditObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace transaction {
+
 // clang-format off
 enum class TrxCode {
 	// From string/en/money/acct_n.stf
@@ -311,3 +316,10 @@ private:
 
 	static bool isStat(TrxCode code);
 };
+
+} // namespace transaction
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::transaction;

@@ -11,6 +11,9 @@
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "templates/crafting/draftslot/DraftSlot.h"
 
+namespace templates {
+namespace intangible {
+
 class DraftSchematicObjectTemplate : public SharedDraftSchematicObjectTemplate {
 protected:
 
@@ -157,3 +160,8 @@ public:
 	const String& getFactoryCrateType() const;
 
 };
+
+} // namespace intangible
+} // namespace templates
+
+using namespace templates::intangible;

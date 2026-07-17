@@ -11,6 +11,11 @@
 #include "engine/util/u3d/AABB.h"
 #include "server/zone/managers/collision/NavMeshJob.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace collision {
+
 class NavMeshManager : public Singleton<NavMeshManager>, public Logger, public Object {
 
 protected:
@@ -49,3 +54,10 @@ public:
 	static const String MeshQueue; //"NavMeshBuilder";
 
 };
+
+} // namespace collision
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::collision;

@@ -7,6 +7,11 @@
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace trade {
+
 class DenyTradeMessage : public BaseMessage {
 public:
 	DenyTradeMessage();
@@ -20,3 +25,10 @@ public:
 
 	void run();
 };
+
+} // namespace trade
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::trade;

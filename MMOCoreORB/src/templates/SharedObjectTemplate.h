@@ -21,8 +21,16 @@
 #include "templates/params/primitives/BoolParam.h"
 #include "templates/params/primitives/FloatParam.h"
 
+namespace templates {
+namespace appearance {
 class PortalLayout;
 class AppearanceTemplate;
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;
+
+namespace templates {
 
 class SharedObjectTemplate : public LuaTemplate, public IffTemplate, public Logger {
 protected:
@@ -572,3 +580,7 @@ public:
 
 	virtual bool isNavUpdatesEnabled();
 };
+
+} // namespace templates
+
+using namespace templates;

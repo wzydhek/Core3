@@ -10,6 +10,8 @@
 #include "templates/TemplateData.h"
 #include "engine/lua/LuaObject.h"
 
+namespace templates {
+
 class LuaTemplate : public virtual TemplateData {
 public:
 	virtual void readObject(LuaObject* templateData) = 0;
@@ -18,3 +20,7 @@ public:
 
 	}
 };
+
+} // namespace templates
+
+using namespace templates;

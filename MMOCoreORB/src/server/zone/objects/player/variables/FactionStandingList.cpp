@@ -41,7 +41,7 @@ void FactionStandingList::addSerializableVariables() {
 	addSerializableVariable("factions", &factions);
 }
 
-void to_json(nlohmann::json& j, const FactionStandingList& l) {
+void server::zone::objects::player::variables::to_json(nlohmann::json& j, const FactionStandingList& l) {
 	j["factionRank"] = l.factionRank;
 	j["rebelPoints"] = l.rebelPoints;
 	j["imperialPoints"] = l.imperialPoints;

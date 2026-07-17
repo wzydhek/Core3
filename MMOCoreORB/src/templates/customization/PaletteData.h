@@ -9,6 +9,9 @@
 
 #include "templates/datatables/DataTableRow.h"
 
+namespace templates {
+namespace customization {
+
 class PaletteData : public Object {
 protected:
 	String name;
@@ -64,3 +67,8 @@ public:
 
 	String getName();
 };
+
+} // namespace customization
+} // namespace templates
+
+using namespace templates::customization;

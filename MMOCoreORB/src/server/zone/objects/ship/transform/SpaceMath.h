@@ -1,19 +1,17 @@
 #pragma once
 
-namespace server {
-	namespace zone {
-		namespace objects {
-			namespace ship {
-				class ShipObject;
-			}
-		}
-	}
-}
-
 #include "engine/engine.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/ship/ai/events/RotationLookupTable.h"
 #include "server/zone/objects/ship/transform/SpaceTransform.h"
+
+
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+class ShipObject;
+namespace transform {
 
 class SpaceMath {
 public:
@@ -57,3 +55,11 @@ public:
 
 	static Quaternion rotationToQuaternion(const Vector3& rotation, bool precision = true);
 };
+
+} // namespace transform
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::transform;

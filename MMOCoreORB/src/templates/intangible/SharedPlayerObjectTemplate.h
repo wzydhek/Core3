@@ -9,6 +9,9 @@
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
+namespace templates {
+namespace intangible {
+
 class SharedPlayerObjectTemplate : public SharedIntangibleObjectTemplate {
 protected:
 	SortedVector<String> playerDefaultGroupPermissions;
@@ -27,3 +30,8 @@ public:
 	const SortedVector<String>* getPlayerDefaultGroupPermissions() const;
 
 };
+
+} // namespace intangible
+} // namespace templates
+
+using namespace templates::intangible;

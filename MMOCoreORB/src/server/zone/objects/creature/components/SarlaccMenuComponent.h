@@ -2,6 +2,12 @@
 
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace components {
+
 class SarlaccMenuComponent : public TangibleObjectMenuComponent {
 public:
 
@@ -24,3 +30,11 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
+
+} // namespace components
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::components;

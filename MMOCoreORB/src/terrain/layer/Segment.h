@@ -9,6 +9,9 @@
 
 #include "../TemplateVariable.h"
 
+namespace terrain {
+namespace layer {
+
 class Point3D {
 public:
 	float x, z, y;
@@ -48,3 +51,8 @@ public:
 
 	bool isFlatRoad();
 };
+
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer;

@@ -12,6 +12,13 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/managers/player/PlayerManager.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace sessions {
+namespace sui {
+
 class PlayerManagementSessionSuiCallback : public SuiCallback {
 public:
 	PlayerManagementSessionSuiCallback(ZoneServer* server);
@@ -30,3 +37,12 @@ public:
 
 	void runUnbanSummaryCallback(CreatureObject* player, SuiBox* suiBox, bool cancelPressed, Vector<UnicodeString>* args);
 };
+
+} // namespace sui
+} // namespace sessions
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::sessions::sui;

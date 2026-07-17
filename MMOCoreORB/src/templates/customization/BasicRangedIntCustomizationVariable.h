@@ -9,6 +9,9 @@
 
 #include "templates/params/RangedIntCustomizationVariable.h"
 
+namespace templates {
+namespace customization {
+
 class BasicRangedIntCustomizationVariable : public RangedIntCustomizationVariable {
 
 public:
@@ -22,3 +25,8 @@ public:
 
 	int getDefaultValue();
 };
+
+} // namespace customization
+} // namespace templates
+
+using namespace templates::customization;

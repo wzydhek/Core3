@@ -9,6 +9,11 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace holocron {
+
 class BugCategory : public Object {
 	UnicodeString categoryName;
 	uint32 categoryId;
@@ -40,3 +45,10 @@ public:
 
 	void setUnk2(byte u2);
 };
+
+} // namespace holocron
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::holocron;

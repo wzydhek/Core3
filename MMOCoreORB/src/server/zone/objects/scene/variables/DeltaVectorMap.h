@@ -11,6 +11,12 @@
 #include "engine/util/json_utils.h"
 #include "server/zone/packets/DeltaMessage.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace variables {
+
 class DeltaMapCommands {
 public:
 	enum Commands : uint8 {
@@ -191,3 +197,11 @@ public:
 		vectorMap.setNullValue(val);
 	}
 };
+
+} // namespace variables
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::variables;

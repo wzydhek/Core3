@@ -10,6 +10,11 @@
 #include "server/zone/MessageCallbackFactory.h"
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class ObjectControllerMessageCallback : public MessageCallback {
 	uint32 priority;
 	uint32 type;
@@ -35,3 +40,10 @@ public:
 	uint64 getObjectID() const;
 
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

@@ -10,6 +10,9 @@
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "templates/tangible/CharacterBuilderMenuNode.h"
 
+namespace templates {
+namespace tangible {
+
 class CharacterBuilderTerminalTemplate : public SharedTangibleObjectTemplate {
 	Reference<CharacterBuilderMenuNode*> rootNode;
 	Vector<int> glowyBadgeIds;
@@ -28,3 +31,8 @@ public:
 
     const Vector<String>& getVillageBranchUnlocks() const;
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

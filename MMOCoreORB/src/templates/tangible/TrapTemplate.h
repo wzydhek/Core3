@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class TrapTemplate: public SharedTangibleObjectTemplate {
 protected:
 	int skillRequired;
@@ -70,3 +73,8 @@ public:
 
 	bool isAoeTrap();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

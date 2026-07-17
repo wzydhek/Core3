@@ -7,6 +7,10 @@
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/scene/variables/StringId.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+
 class DeltaMessage : public BaseMessage {
 	int updateCount;
 
@@ -56,3 +60,9 @@ public:
 	void close();
 
 };
+
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets;

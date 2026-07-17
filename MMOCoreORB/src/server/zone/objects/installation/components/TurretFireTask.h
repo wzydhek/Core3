@@ -17,6 +17,12 @@
 #include "server/zone/objects/tangible/terminal/components/TurretControlTerminalDataComponent.h"
 #include "TurretDataComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace installation {
+namespace components {
+
 class TurretFireTask : public Task {
 	ManagedWeakReference<TurretObject*> weakTurret;
 	ManagedWeakReference<TangibleObject*> weakTerminal;
@@ -39,3 +45,11 @@ public:
 
 	void setTerminal(TangibleObject* terminal);
 };
+
+} // namespace components
+} // namespace installation
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::installation::components;

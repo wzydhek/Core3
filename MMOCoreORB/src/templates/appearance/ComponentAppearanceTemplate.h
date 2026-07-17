@@ -10,6 +10,9 @@
 #include "templates/appearance/AppearanceTemplate.h"
 #include "templates/manager/TemplateManager.h"
 
+namespace templates {
+namespace appearance {
+
 class ComponentMeshAppearanceTemplate : public Object {
 	Matrix4 transform;
 	Matrix4 inverseTransform;
@@ -56,3 +59,8 @@ public:
 	virtual Vector<Reference<MeshData*>> getTransformedMeshData(const Matrix4& parentTransform) const;
 
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

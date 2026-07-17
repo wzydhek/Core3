@@ -9,6 +9,12 @@
 
 #include "system/lang.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace buffs {
+
 class BuffCRC {
 public:
 	// TEST
@@ -216,3 +222,11 @@ public:
 
 	uint32 static getMedicalBuff(uint8 attribute);
 };
+
+} // namespace buffs
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::buffs;

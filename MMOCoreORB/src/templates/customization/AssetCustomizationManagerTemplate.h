@@ -11,6 +11,9 @@
 #include "templates/IffTemplate.h"
 #include "templates/customization/CustomizationVariable.h"
 
+namespace templates {
+namespace customization {
+
 class AssetCustomizationManagerTemplate : public IffTemplate, public Singleton<AssetCustomizationManagerTemplate> {
 	byte* ulstTable;
 	int ulstTableCount;
@@ -89,3 +92,8 @@ private:
 	void* getCustomizationVariablesFromMap(uint16 key, uint64 a2, bool skipSharedOwner, VectorMap<String, Reference<CustomizationVariable*> >& result);
 
 };
+
+} // namespace customization
+} // namespace templates
+
+using namespace templates::customization;

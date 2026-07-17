@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class ElevatorTerminalTemplate : public SharedTangibleObjectTemplate {
 	byte movementType;
 
@@ -32,3 +35,8 @@ public:
 
 	bool isMovingDown();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

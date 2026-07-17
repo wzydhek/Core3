@@ -2,6 +2,12 @@
 
 #include "TangibleObjectMenuComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class HeroRingMenuComponent : public TangibleObjectMenuComponent {
 public:
 
@@ -26,3 +32,11 @@ public:
 	virtual String getCooldownString(uint32 delta) const;
 
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

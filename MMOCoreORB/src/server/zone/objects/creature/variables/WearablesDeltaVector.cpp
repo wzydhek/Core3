@@ -31,7 +31,7 @@ int WearablesDeltaVector::writeObjectMembers(ObjectOutputStream* stream) {
 	return 1 + DeltaVector<ManagedReference<TangibleObject*>>::writeObjectMembers(stream);
 }
 
-void to_json(nlohmann::json& j, const WearablesDeltaVector& vec) {
+void server::zone::objects::creature::variables::to_json(nlohmann::json& j, const WearablesDeltaVector& vec) {
 	j["protectionArmorMap"] = vec.protectionArmorMap;
 
 	const DeltaVector<ManagedReference<TangibleObject*>>& dv = vec;

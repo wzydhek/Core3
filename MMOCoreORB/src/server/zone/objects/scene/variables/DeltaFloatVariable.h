@@ -11,6 +11,12 @@
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/scene/SceneObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace variables {
+
 template<int BaselineName, uint8 Type, int DeltaID>
 class DeltaFloatVariable : public DeltaBasicVariable<float> {
 public:
@@ -44,3 +50,11 @@ public:
 		msg->addFloatUpdate(DeltaID, object);
 	}
 };
+
+} // namespace variables
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::variables;

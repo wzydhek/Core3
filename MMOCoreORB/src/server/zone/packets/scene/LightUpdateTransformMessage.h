@@ -15,6 +15,11 @@
 	#define UNRELIABLE_LIGHT_BASE_CLASS BaseMessage
 #endif
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace scene {
+
 class LightUpdateTransformMessage : public UNRELIABLE_LIGHT_BASE_CLASS {
 public:
 	LightUpdateTransformMessage(SceneObject* scno);
@@ -22,3 +27,10 @@ public:
 	LightUpdateTransformMessage(SceneObject* scno, float posX, float posZ, float posY);
 
 };
+
+} // namespace scene
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::scene;

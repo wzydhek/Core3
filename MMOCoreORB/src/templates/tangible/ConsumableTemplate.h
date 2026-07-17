@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class ConsumableTemplate : public SharedTangibleObjectTemplate {
 	int duration;
 	int filling;
@@ -84,3 +87,8 @@ public:
 	String& getSpeciesRestriction();
 
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

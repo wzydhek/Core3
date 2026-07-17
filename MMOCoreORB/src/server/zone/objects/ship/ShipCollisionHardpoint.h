@@ -3,6 +3,11 @@
 #include "engine/engine.h"
 #include "templates/appearance/AppearanceTemplate.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+
 class ShipCollisionHardpoint : public Object {
 protected:
 	const AppearanceTemplate* appearance;
@@ -73,3 +78,10 @@ public:
 
 	String matrixToDebugString() const;
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

@@ -11,6 +11,11 @@
 //  1 - You are not allowed to retrieve that item
 // 12 - Inventory full
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace auction {
+
 class RetrieveAuctionItemResponseMessage : public BaseMessage {
 public:
 	const static int NOTALLOWED = 1;
@@ -22,3 +27,10 @@ public:
 	RetrieveAuctionItemResponseMessage(uint64 objectid, int status);
 	
 };
+
+} // namespace auction
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::auction;

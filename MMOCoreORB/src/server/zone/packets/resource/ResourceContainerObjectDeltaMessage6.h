@@ -7,6 +7,11 @@
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/resource/ResourceContainer.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace resource {
+
 class ResourceContainerObjectDeltaMessage6 : public DeltaMessage {
 public:
 	ResourceContainerObjectDeltaMessage6(ResourceContainer* rcno);
@@ -16,3 +21,10 @@ public:
 	void setResourceType(String& resource_type);
 	
 };
+
+} // namespace resource
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::resource;

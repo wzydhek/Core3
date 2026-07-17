@@ -12,6 +12,11 @@
 #include "server/zone/objects/ship/ShipObject.h"
 #include "server/zone/managers/spacecombat/projectile/ShipMissile.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace jtl {
+
 class CreateMissileMessage : public BaseMessage {
 	enum PlayerMissileType : int {
 		CONCUSSION_MK1 = 0,
@@ -45,3 +50,10 @@ public:
 
 	CreateMissileMessage(ShipObject* source, ShipObject* target, const ShipMissile* missile);
 };
+
+} // namespace jtl
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::jtl;

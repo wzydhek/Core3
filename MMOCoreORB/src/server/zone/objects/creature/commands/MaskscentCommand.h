@@ -6,6 +6,12 @@
 
 #include "QueueCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class MaskscentCommand : public QueueCommand {
 public:
 	MaskscentCommand(const String& name, ZoneProcessServer* server);
@@ -17,3 +23,10 @@ public:
 	bool checkMaskScent(CreatureObject* creature) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

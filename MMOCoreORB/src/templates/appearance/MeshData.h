@@ -9,6 +9,9 @@
 
 #include "engine/engine.h"
 
+namespace templates {
+namespace appearance {
+
 class MeshTriangle {
 protected:
 	int verts[3];
@@ -68,3 +71,8 @@ public:
 	friend class MeshAppearanceTemplate;
 
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

@@ -20,7 +20,7 @@ FrsData& FrsData::operator=(const FrsData& data) {
 	return *this;
 }
 
-void to_json(nlohmann::json& j, const FrsData& f) {
+void server::zone::objects::player::variables::to_json(nlohmann::json& j, const FrsData& f) {
 	j["councilType"] = f.councilType;
 	j["rank"] = f.rank;
 }

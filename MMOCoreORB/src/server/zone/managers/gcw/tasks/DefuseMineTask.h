@@ -11,6 +11,12 @@
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 #include "server/zone/objects/installation/components/MinefieldAttackTask.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace gcw {
+namespace tasks {
+
 class DefuseMineTask : public Task {
 	const static uint32 MAX_CHANCE = 1000;
 	const static uint32 ROLL_CHANCE = 750;
@@ -24,3 +30,11 @@ public:
 
 	void run();
 };
+
+} // namespace tasks
+} // namespace gcw
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::gcw::tasks;

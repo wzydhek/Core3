@@ -10,6 +10,13 @@
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 #include "server/zone/objects/tangible/firework/FireworkObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace firework {
+namespace components {
+
 class FireworkShowMenuComponent : public TangibleObjectMenuComponent {
 public:
 
@@ -42,3 +49,12 @@ public:
 	void showData(CreatureObject* player, FireworkObject* firework) const;
 
 };
+
+} // namespace components
+} // namespace firework
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::firework::components;

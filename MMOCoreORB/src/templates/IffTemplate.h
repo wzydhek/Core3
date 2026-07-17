@@ -10,6 +10,8 @@
 #include "engine/util/iffstream/IffStream.h"
 #include "templates/TemplateData.h"
 
+namespace templates {
+
 class IffTemplate : public virtual TemplateData {
 public:
 	virtual void readObject(IffStream* templateData) = 0;
@@ -18,3 +20,7 @@ public:
 
 	}
 };
+
+} // namespace templates
+
+using namespace templates;

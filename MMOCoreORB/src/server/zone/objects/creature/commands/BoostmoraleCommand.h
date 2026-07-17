@@ -7,6 +7,12 @@
 #include "SquadLeaderCommand.h"
 #include "server/zone/objects/group/GroupObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class BoostmoraleCommand : public SquadLeaderCommand {
 public:
 
@@ -19,3 +25,11 @@ public:
 	bool distributeWounds(CreatureObject* leader, GroupObject* group, int* wounds) const;
 
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

@@ -9,6 +9,12 @@
 
 // #define DEBUG_CUSTOMIZATION_PARSING 1
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace variables {
+
 class CustomizationVariables : public VectorMap<uint8, int16> {
 #if DEBUG_CUSTOMIZATION_PARSING
 	bool debug = false;
@@ -53,3 +59,11 @@ public:
 	friend void to_json(nlohmann::json& j, const CustomizationVariables& vars);
 
 };
+
+} // namespace variables
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::variables;

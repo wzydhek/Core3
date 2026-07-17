@@ -9,6 +9,12 @@
 
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace installation {
+namespace components {
+
 class ScannerDataComponent : public DataObjectComponent, public Logger {
 protected:
 	int maxrange;
@@ -26,3 +32,11 @@ public:
 
 	bool isScannerData();
 };
+
+} // namespace components
+} // namespace installation
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::installation::components;

@@ -9,6 +9,12 @@
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace events {
+
 class AnimationTask : public Task {
 	ManagedReference<CreatureObject*> creature;
 	String animation;
@@ -17,3 +23,11 @@ public:
 
 	void run();
 };
+
+} // namespace events
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::events;

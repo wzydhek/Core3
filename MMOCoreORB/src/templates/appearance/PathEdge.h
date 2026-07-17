@@ -9,6 +9,9 @@
 
 #include "engine/util/iffstream/IffStream.h"
 
+namespace templates {
+namespace appearance {
+
 class PathEdge {
 	int from, to;
 
@@ -32,3 +35,8 @@ public:
 
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

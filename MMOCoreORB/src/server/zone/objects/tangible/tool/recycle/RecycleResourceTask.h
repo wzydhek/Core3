@@ -11,6 +11,13 @@
 #include "server/zone/objects/transaction/TransactionLog.h"
 #include "server/zone/objects/creature/commands/TransferItemMiscCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace tool {
+namespace recycle {
+
 class RecycleResourceTask : public Task {
 private:
 	ManagedReference<RecycleTool*> recycler;
@@ -27,3 +34,12 @@ public:
 
 	void removeFromRecycler(const String& reason);
 };
+
+} // namespace recycle
+} // namespace tool
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::tool::recycle;

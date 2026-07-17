@@ -9,6 +9,10 @@
 
 #include "ObjectControllerMessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
 
 class CraftingAddIngredientCallback : public MessageCallback {
 	uint64 objectID;
@@ -23,3 +27,10 @@ public:
 
 	void run();
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

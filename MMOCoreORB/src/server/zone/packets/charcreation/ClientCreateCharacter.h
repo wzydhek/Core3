@@ -7,6 +7,11 @@
 
 #include "engine/service/proto/BaseMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace charcreation {
+
 class ClientCreateCharacter : public BaseMessage {
 public:
 	// Full constructor matching Core3 server parsing
@@ -15,3 +20,10 @@ public:
 	// Simple constructor for backward compatibility
 	ClientCreateCharacter(const UnicodeString& name);
 };
+
+} // namespace charcreation
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::charcreation;

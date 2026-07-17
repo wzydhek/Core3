@@ -9,6 +9,9 @@
 
 #include "system/lang.h"
 
+namespace templates {
+namespace customization {
+
 class CustomizationVariable : public Object {
 public:
 	CustomizationVariable() {
@@ -19,3 +22,8 @@ public:
 
 	}
 };
+
+} // namespace customization
+} // namespace templates
+
+using namespace templates::customization;

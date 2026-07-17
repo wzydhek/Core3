@@ -10,6 +10,12 @@
 #include "LootGroups.h"
 #include "engine/lua/LuaObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace loot {
+namespace lootgroup {
+
 class LootGroupCollectionEntry : public Object {
 	LootGroups lootGroups;
 
@@ -28,3 +34,11 @@ public:
 
 	const LootGroups* getLootGroups() const;
 };
+
+} // namespace lootgroup
+} // namespace loot
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::loot::lootgroup;

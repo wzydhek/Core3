@@ -11,6 +11,13 @@
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/objects/intangible/PetControlDevice.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+namespace pet {
+
 class PetEmoteCommand : public QueueCommand {
 public:
 	PetEmoteCommand(const String& name, ZoneProcessServer* server);
@@ -25,3 +32,12 @@ public:
 
 	int summon(AiAgent* pet, PetControlDevice* controlDevice) const;
 };
+
+} // namespace pet
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands::pet;

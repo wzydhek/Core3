@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class LiveSampleTemplate: public SharedTangibleObjectTemplate {
 protected:
 
@@ -23,3 +26,8 @@ public:
 
 	String getAnimation();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

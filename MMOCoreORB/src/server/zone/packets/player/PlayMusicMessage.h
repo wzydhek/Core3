@@ -6,9 +6,21 @@
 
 #include "engine/service/proto/BaseMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace player {
+
 class PlayMusicMessage : public BaseMessage {
 public:
 
     PlayMusicMessage(const String& soundFile, uint64 target = 0, int unkInt = 1, bool unkBool = false);
 	
 };
+
+} // namespace player
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::player;

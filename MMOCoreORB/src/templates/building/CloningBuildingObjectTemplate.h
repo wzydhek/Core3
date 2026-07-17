@@ -10,6 +10,9 @@
 #include "templates/building/SharedBuildingObjectTemplate.h"
 #include "templates/building/CloneSpawnPoint.h"
 
+namespace templates {
+namespace building {
+
 class CloningBuildingObjectTemplate : public SharedBuildingObjectTemplate {
 	Vector<CloneSpawnPoint> spawningPoints;
 	int facilityType;
@@ -33,3 +36,8 @@ public:
 
 	Vector<CloneSpawnPoint>* getCloneSpawnPoints();
 };
+
+} // namespace building
+} // namespace templates
+
+using namespace templates::building;

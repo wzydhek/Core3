@@ -9,6 +9,11 @@
 
 #include "templates/datatables/DataTableRow.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace skill {
+
 class SkillInfo : public Object {
 	WeakReference<SkillInfo*> parentSkill;
 
@@ -52,3 +57,10 @@ public:
 
 	void parseFromDataTableRow(DataTableRow* row);
 };
+
+} // namespace skill
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::skill;

@@ -10,6 +10,12 @@
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/Zone.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace events {
+
 class DespawnCreatureTask : public Task {
 	ManagedReference<AiAgent*> agent;
 
@@ -18,3 +24,11 @@ public:
 
 	void run();
 };
+
+} // namespace events
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::events;

@@ -38,6 +38,11 @@
 #define _REGISTERLEAF(name) factory.reg(#name, new BehaviorCreator<leaf::name>)
 #define _REGISTERDECO(name) factory.reg(#name, new BehaviorCreator<decorator::name>)
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace creature {
+
 class BehaviorCreatorHelper {
 public:
 	virtual ~BehaviorCreatorHelper() {}
@@ -118,3 +123,10 @@ private:
 
 	static int addAiTemplate(lua_State* L);
 };
+
+} // namespace creature
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::creature;

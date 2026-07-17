@@ -25,6 +25,9 @@ namespace server {
 using namespace server::zone;
 using namespace server::zone::objects::area;
 
+namespace server {
+namespace zone {
+
 class SpaceZoneContainerComponent : public ContainerComponent, public Logger {
 protected:
 	bool insertActiveArea(Zone* zone, ActiveArea* activeArea) const;
@@ -36,3 +39,8 @@ public:
 
 	virtual bool removeObject(SceneObject* sceneObject, SceneObject* object, SceneObject* destination, bool notifyClient, bool nullifyParent) const;
 };
+
+} // namespace zone
+} // namespace server
+
+using namespace server::zone;

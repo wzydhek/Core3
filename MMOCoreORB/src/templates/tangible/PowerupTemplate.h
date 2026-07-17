@@ -10,6 +10,9 @@
 #include "templates/SharedTangibleObjectTemplate.h"
 #include "templates/tangible/PowerupStat.h"
 
+namespace templates {
+namespace tangible {
+
 class PowerupTemplate: public SharedTangibleObjectTemplate {
 protected:
 
@@ -42,3 +45,8 @@ public:
 
 	void parseVariableData(const String& varName, LuaObject* data);
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

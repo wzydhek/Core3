@@ -5,6 +5,12 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/ship/ShipDeltaVector.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace variables {
+
 template <class K, class V, int BaselineName, uint8 DeltaType, int DeltaIndex>
 class DeltaAutoMap : public DeltaVectorMap<K,V> {
 public:
@@ -43,3 +49,11 @@ public:
 		}
 	}
 };
+
+} // namespace variables
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::variables;

@@ -10,6 +10,9 @@
 #include "engine/engine.h"
 #include "server/zone/SpaceZone.h"
 
+namespace server {
+namespace zone {
+
 class SpaceZoneLoadManagersTask : public Task {
 	ManagedReference<ZoneServer*> zoneServer;
 	ManagedReference<SpaceZone*> zone;
@@ -18,3 +21,8 @@ public:
 
 	void run();
 };
+
+} // namespace zone
+} // namespace server
+
+using namespace server::zone;

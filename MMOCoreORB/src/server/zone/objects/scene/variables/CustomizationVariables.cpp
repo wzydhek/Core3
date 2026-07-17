@@ -266,7 +266,7 @@ bool CustomizationVariables::parseFromBinaryStream(ObjectInputStream* stream) {
 	return true;
 }
 
-void to_json(nlohmann::json& j, const CustomizationVariables& vars) {
+void server::zone::objects::scene::variables::to_json(nlohmann::json& j, const CustomizationVariables& vars) {
 	String binData;
 	vars.getData(binData);
 

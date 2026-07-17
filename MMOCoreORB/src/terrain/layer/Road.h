@@ -10,6 +10,9 @@
 #include "../TemplateVariable.h"
 #include "Segment.h"
 
+namespace terrain {
+namespace layer {
+
 class Road : public TemplateVariable<'ROAD'> {
 	Vector<Segment*> sgmts;
 
@@ -22,3 +25,8 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);
 };
+
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer;

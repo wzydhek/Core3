@@ -11,6 +11,12 @@
 #include "engine/util/json_utils.h"
 #include "DamageOverTime.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace damageovertime {
+
 class DamageOverTimeList : private VectorMap<uint64, Vector<DamageOverTime>>, public Logger {
 protected:
 	Time nextTick;
@@ -57,3 +63,11 @@ public:
 
 	bool isNextTickPast();
 };
+
+} // namespace damageovertime
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::damageovertime;

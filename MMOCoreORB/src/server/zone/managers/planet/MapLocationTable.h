@@ -23,6 +23,11 @@ class SceneObject;
 
 using namespace server::zone::objects::scene;
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace planet {
+
 class MapLocationTable : public Object, public ReadWriteLock {
 	VectorMap<String, SortedVector<MapLocationEntry> > locations;
 
@@ -51,3 +56,10 @@ public:
 
 	int size() const;
 };
+
+} // namespace planet
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::planet;

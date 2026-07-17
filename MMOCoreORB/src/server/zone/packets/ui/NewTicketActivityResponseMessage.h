@@ -10,6 +10,11 @@
 #include "engine/service/proto/BaseMessage.h"
 #include "../MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ui {
+
 class NewTicketActivityResponseMessage : public BaseMessage {
 public:
 	NewTicketActivityResponseMessage(byte flag, uint32 ticketid);
@@ -25,3 +30,10 @@ public:
 
 	void run();
 };
+
+} // namespace ui
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ui;

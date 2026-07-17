@@ -10,6 +10,12 @@
 #include "server/zone/objects/player/sessions/ConversationSession.h"
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace sessions {
+
 class LuaConversationSession {
 public:
 	// Constants
@@ -30,3 +36,11 @@ private:
 	// The pointer to the 'real object' defined in object.cc
 	Reference<ConversationSession*> realObject;
 };
+
+} // namespace sessions
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::sessions;

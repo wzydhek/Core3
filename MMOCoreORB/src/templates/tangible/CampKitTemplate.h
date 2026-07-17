@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class CampKitTemplate : public SharedTangibleObjectTemplate {
 	String spawnObjectTemplate;
 
@@ -19,3 +22,8 @@ public:
 
 	bool isCampKitTemplate();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

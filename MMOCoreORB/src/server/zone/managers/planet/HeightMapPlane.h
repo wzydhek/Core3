@@ -2,6 +2,11 @@
 
 #include "system/lang.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace planet {
+
 class HeightMapPlane {
 	byte* buffer;
 
@@ -24,3 +29,10 @@ public:
 	// setters
 	void setIndex(int idx);
 };
+
+} // namespace planet
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::planet;

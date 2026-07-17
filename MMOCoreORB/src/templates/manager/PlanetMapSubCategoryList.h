@@ -5,6 +5,8 @@
 #include "system/util/HashTable.h"
 #include "PlanetMapSubCategory.h"
 
+namespace templates {
+
 class PlanetMapSubCategory;
 
 class PlanetMapSubCategoryList : public HashTable<int, Reference<PlanetMapSubCategory*>> {
@@ -23,3 +25,7 @@ public:
 
 	Reference<PlanetMapSubCategory*> put(const String& key, const Reference<PlanetMapSubCategory*>& value);
 };
+
+} // namespace templates
+
+using namespace templates;

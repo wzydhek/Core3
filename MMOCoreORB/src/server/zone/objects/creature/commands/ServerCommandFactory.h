@@ -9,6 +9,12 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 template<typename KeyType, typename ParamType1, typename ParamType2, typename ParamType3> class MethodFactory;
 
 template<typename ClassType, typename ParamType1, typename ParamType2, typename ParamType3> int RunMethod(ParamType1 param1, ParamType2 param2, ParamType3 param3) {
@@ -49,3 +55,11 @@ public:
 protected:
 	HashTable<KeyType, RunMethodFunc> methodFactory;
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

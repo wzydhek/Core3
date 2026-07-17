@@ -9,6 +9,12 @@
 
 #include "CombatQueueCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class HeavyWeaponQueueCommand : public CombatQueueCommand {
 public:
 
@@ -19,3 +25,11 @@ public:
 	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const;
 
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

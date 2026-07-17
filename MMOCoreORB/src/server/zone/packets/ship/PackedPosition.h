@@ -11,6 +11,11 @@
 #include "PackedUnitVector.h"
 #include "engine/service/proto/BaseMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ship {
+
 class PackedPosition {
 public:
 	static const constexpr float positionScale = 32767.f / 8000.f;
@@ -34,3 +39,10 @@ public:
 
 	Vector3 get();
 };
+
+} // namespace ship
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ship;

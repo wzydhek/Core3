@@ -10,6 +10,11 @@
 #include "server/zone/objects/region/SpawnArea.h"
 #include "server/zone/Zone.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace creature {
+
 class SpawnAreaMap : public SynchronizedVectorMap<uint32, ManagedReference<SpawnArea*> > , public Logger {
 protected:
 
@@ -32,3 +37,10 @@ public:
 
 	void addNoSpawnArea(ManagedReference<SpawnArea*> area);
 };
+
+} // namespace creature
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::creature;

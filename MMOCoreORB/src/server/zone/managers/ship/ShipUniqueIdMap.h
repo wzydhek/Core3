@@ -3,6 +3,11 @@
 #include "engine/engine.h"
 #include "server/zone/objects/ship/ShipObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace ship {
+
 class ShipUniqueIdMap : public Object, public Logger {
 private:
 	const static int INDEXMAX = std::numeric_limits<uint16>::max();
@@ -26,3 +31,10 @@ public:
 
 	int size() const;
 };
+
+} // namespace ship
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::ship;

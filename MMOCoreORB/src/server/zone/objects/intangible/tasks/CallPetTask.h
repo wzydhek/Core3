@@ -5,6 +5,12 @@
 #include "server/zone/objects/intangible/ControlDevice.h"
 #include "server/zone/objects/intangible/PetControlDevice.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace intangible {
+namespace tasks {
+
 class CallPetTask : public Task {
 	ManagedReference<CreatureObject*> player;
 	ManagedReference<PetControlDevice*> device;
@@ -15,3 +21,11 @@ public:
 
 	void run();
 };
+
+} // namespace tasks
+} // namespace intangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::intangible::tasks;

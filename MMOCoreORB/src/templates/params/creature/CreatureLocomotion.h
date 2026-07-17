@@ -7,6 +7,10 @@
 
 #pragma once
 
+namespace templates {
+namespace params {
+namespace creature {
+
 class CreatureLocomotion {
 public:
 	enum {
@@ -41,3 +45,9 @@ public:
 		FAST
 	};
 };
+
+} // namespace creature
+} // namespace params
+} // namespace templates
+
+using namespace templates::params::creature;

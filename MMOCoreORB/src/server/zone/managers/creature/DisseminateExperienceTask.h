@@ -11,6 +11,11 @@
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "system/util/SynchronizedVector.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace creature {
+
 class DisseminateExperienceTask : public Task {
 	ManagedWeakReference<TangibleObject*> lair;
 
@@ -26,3 +31,10 @@ public:
 
 	void run();
 };
+
+} // namespace creature
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::creature;

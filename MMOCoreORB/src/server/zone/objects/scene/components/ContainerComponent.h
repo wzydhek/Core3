@@ -26,6 +26,12 @@ namespace server {
 using namespace server::zone::objects::scene;
 using namespace server::zone::objects::creature;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace components {
+
 enum ContainerType {
 	NONE = 0,        // Nothing is allowed to be put in this object
 	SLOTTED = 1,    // Only allowed to put into slots (transferType >= 4)
@@ -84,3 +90,11 @@ public:
 	 */
 	virtual int notifyObjectRemoved(SceneObject* sceneObject, SceneObject* object, SceneObject* destination) const;
 };
+
+} // namespace components
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::components;

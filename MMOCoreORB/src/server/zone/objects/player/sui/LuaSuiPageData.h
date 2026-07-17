@@ -10,6 +10,12 @@
 #include "engine/engine.h"
 #include "server/zone/objects/player/sui/SuiPageData.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace sui {
+
 class LuaSuiPageData {
 public:
 	static const char className[];
@@ -42,3 +48,11 @@ public:
 private:
 	Reference<SuiPageData*> realObject;
 };
+
+} // namespace sui
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::sui;

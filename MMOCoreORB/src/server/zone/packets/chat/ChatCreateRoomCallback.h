@@ -9,6 +9,11 @@
 
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace chat {
+
 class ChatCreateRoomCallback : public MessageCallback {
 	uint8 moderationFlag; //0=not-moderated, 1=moderated
 	uint8 permissionFlag; //0=private, 1=public
@@ -25,3 +30,10 @@ public:
 	void run();
 
 };
+
+} // namespace chat
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::chat;

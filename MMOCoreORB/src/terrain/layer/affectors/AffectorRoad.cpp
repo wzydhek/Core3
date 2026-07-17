@@ -13,6 +13,83 @@
 #include "../Road.h"
 #include "../HeightData.h"
 
+RoadRectangle::RoadRectangle(float x0, float y0, float x1, float y1, float startX, float startY, float roadWidth, float dir) {
+	lowerLeftX = x0;
+	lowerLeftY = y0;
+	upperRightX = x1;
+	upperRightY = y1;
+	roadStartX = startX;
+	roadStartY = startY;
+	direction = dir;
+
+	centerX = ((lowerLeftX + upperRightX) / 2.f);
+	centerY = ((lowerLeftY + upperRightY) / 2.f);
+
+	width = roadWidth;
+	height = Math::sqrt(Math::sqr(upperRightX - lowerLeftX) + Math::sqr(upperRightY - lowerLeftY));
+}
+
+RoadRectangle::~RoadRectangle() {
+}
+
+bool RoadRectangle::containsPoint(float x, float y) const {
+#ifdef DEBUG_AFFECTOR_ROAD
+	Logger::console.info(true) << "RoadRectangle::containsPoint - centerX: " << centerX << " centerY: " << centerY << " width: " << width << " height: " << height;
+#endif
+
+	float deltaX = centerX - x;
+	float deltaY = centerY - y;
+
+	float rotatedX = deltaX * Math::cos(-direction) + deltaY * Math::sin(-direction);
+	float rotatedY = deltaX * Math::sin(-direction) - deltaY * Math::cos(-direction);
+
+	bool result = (fabs(rotatedX) <= width / 2.f) && (fabs(rotatedY) <= height / 2.f);
+
+#ifdef DEBUG_AFFECTOR_ROAD
+	if (result)
+		Logger::console.info(true) << "Rectangle Contains Point - Center X: " << centerX << " Center Y: " << centerY << " X: " << x << " Y: " << y << " rotatedX: " << rotatedX << " rotatedY: " << rotatedY;
+#endif
+
+	// Check if the point is inside the bounding box
+	return result;
+}
+
+float RoadRectangle::getLowerLeftX() const {
+	return lowerLeftX;
+}
+
+float RoadRectangle::getLowerLeftY() const {
+	return lowerLeftY;
+}
+
+float RoadRectangle::getUpperRightX() const {
+	return upperRightX;
+}
+
+float RoadRectangle::getUpperRightY() const {
+	return upperRightY;
+}
+
+float RoadRectangle::getRoadStartX() {
+	return roadStartX;
+}
+
+float RoadRectangle::getRoadStartY() {
+	return roadStartY;
+}
+
+float RoadRectangle::getRoadCenterX() {
+	return centerX;
+}
+
+float RoadRectangle::getRoadCenterY() {
+	return centerY;
+}
+
+float RoadRectangle::getDirection() {
+	return direction;
+}
+
 AffectorRoad::AffectorRoad() : coordinateCount(0), width(0.f), familyID(0), featheringType(0), featheringAmount(0), featheringShader(0), featheringShaderDistance(0.5f) {
 	affectorType = HEIGHTROAD;
 }

@@ -30,7 +30,7 @@ SpawnDensityMap::SpawnDensityMap(bool ore, short concentration, float minx, floa
 SpawnDensityMap::~SpawnDensityMap() {
 }
 
-void to_json(nlohmann::json& j, const SpawnDensityMap& m) {
+void server::zone::objects::resource::to_json(nlohmann::json& j, const SpawnDensityMap& m) {
 	j["seed"] = m.seed;
 	j["modifier"] = m.modifier;
 	j["density"] = m.density;

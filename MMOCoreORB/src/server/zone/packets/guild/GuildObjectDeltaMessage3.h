@@ -10,6 +10,11 @@
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/guild/GuildObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace guild {
+
 class GuildObjectDeltaMessage3 : public DeltaMessage {
 public:
 	GuildObjectDeltaMessage3(uint64 oid);
@@ -20,3 +25,10 @@ public:
 
 	void removeAllGuilds();
 };
+
+} // namespace guild
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::guild;

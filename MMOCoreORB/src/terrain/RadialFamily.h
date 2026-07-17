@@ -9,6 +9,8 @@
 
 #include "TemplateVariable.h"
 
+namespace terrain {
+
 class RadialData {
 public:
 	String ascii; // + 8 4byte vars
@@ -37,3 +39,7 @@ public:
 
 	void readObject(IffStream* iffStream);
 };
+
+} // namespace terrain
+
+using namespace terrain;

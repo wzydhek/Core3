@@ -6,6 +6,11 @@
 
 #include "engine/service/proto/BaseMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace resource {
+
 class SurveyMessage : public BaseMessage {
 public:
 	int listSize;
@@ -17,3 +22,10 @@ public:
 	void updateSize();
 
 };
+
+} // namespace resource
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::resource;

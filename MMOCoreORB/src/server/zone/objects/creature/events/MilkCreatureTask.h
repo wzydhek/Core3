@@ -9,6 +9,12 @@
 #include "engine/engine.h"
 #include "server/zone/objects/creature/ai/Creature.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace events {
+
 class MilkCreatureTask : public Task {
 
 private:
@@ -27,3 +33,11 @@ public:
 
 	void updateMilkState(const short milkState);
 };
+
+} // namespace events
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::events;

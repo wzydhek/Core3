@@ -17,6 +17,11 @@
  *  0x03 = Callback
  */
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class RadialMenuItem : public Object {
 	uint8 radialID;
 	uint8 callback;
@@ -71,3 +76,10 @@ public:
 
 	int getItemIndex();
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

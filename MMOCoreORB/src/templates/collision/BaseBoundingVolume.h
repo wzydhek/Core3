@@ -9,6 +9,9 @@
 
 #include "engine/engine.h"
 
+namespace templates {
+namespace collision {
+
 class BaseBoundingVolume : public Object, public Logger {
 protected:
 	Sphere bsphere; // All volumes have an enclosing sphere
@@ -32,3 +35,8 @@ public:
 	
 	virtual void read(IffStream *iff);
 };
+
+} // namespace collision
+} // namespace templates
+
+using namespace templates::collision;

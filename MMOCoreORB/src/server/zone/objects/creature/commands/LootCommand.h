@@ -8,6 +8,12 @@
 #include "server/zone/objects/creature/ai/AiAgent.h"
 #include "server/zone/objects/scene/SceneObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class LootCommand : public QueueCommand {
 
 public:
@@ -25,3 +31,10 @@ public:
 	int pickupOwnedItems(AiAgent* ai, CreatureObject* creature, SceneObject* lootContainer) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

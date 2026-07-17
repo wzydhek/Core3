@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class DnaSampleTemplate: public SharedTangibleObjectTemplate {
 protected:
 
@@ -149,3 +152,8 @@ public:
 
 	bool isDnaSampleTemplate();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

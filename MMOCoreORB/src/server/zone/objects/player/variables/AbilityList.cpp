@@ -58,7 +58,7 @@ bool AbilityList::toBinaryStream(ObjectOutputStream* stream) {
 	return true;
 }
 
-void to_json(nlohmann::json& j, const AbilityList& l) {
+void server::zone::objects::player::variables::to_json(nlohmann::json& j, const AbilityList& l) {
 	Vector<String> names;
 	l.getStringList(names);
 

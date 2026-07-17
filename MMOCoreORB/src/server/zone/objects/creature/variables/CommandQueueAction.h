@@ -44,6 +44,12 @@ namespace commands {
 
 using namespace server::zone::objects::creature::commands;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace variables {
+
 class CommandQueueAction : public Object {
 	ManagedReference<CreatureObject*> creature;
 	uint64 target;
@@ -81,3 +87,11 @@ public:
 	UnicodeString getArguments();
 
 };
+
+} // namespace variables
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::variables;

@@ -12,6 +12,13 @@
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/Zone.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+namespace vendor {
+
 class AuctionTerminalDataComponent : public DataObjectComponent {
 protected:
 
@@ -36,3 +43,12 @@ public:
 private:
 	void addSerializableVariables();
 };
+
+} // namespace vendor
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components::vendor;

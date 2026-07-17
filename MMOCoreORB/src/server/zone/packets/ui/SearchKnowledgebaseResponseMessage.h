@@ -6,6 +6,11 @@
 
 #include "engine/service/proto/BaseMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ui {
+
 class SearchKnowledgebaseResponseMessage : public BaseMessage {
 	int articleCount;
 public:
@@ -19,3 +24,10 @@ public:
 
 
 };
+
+} // namespace ui
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ui;

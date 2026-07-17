@@ -7,7 +7,17 @@
 
 #pragma once
 
+namespace terrain {
+
 class TerrainGenerator;
+
+} // namespace terrain
+
+using namespace terrain;
+
+namespace terrain {
+namespace layer {
+namespace affectors {
 
 class AffectorProceduralRule {
 protected:
@@ -39,3 +49,9 @@ public:
 	virtual bool isEnabled();
 
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

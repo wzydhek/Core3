@@ -35,9 +35,14 @@ using namespace server::zone::objects::scene;
 using namespace server::zone::objects::creature;
 using namespace server::zone::packets::scene;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace components {
+
 class AttributeListComponent : public SceneObjectComponent, public Logger {
 public:
-
 	/**
 	 * Fills the Attributes
 	 * @pre { this object is locked }
@@ -45,5 +50,12 @@ public:
 	 * @param menuResponse ObjectMenuResponse that will be sent to the client
 	 */
 	virtual void fillAttributeList(AttributeListMessage* alm, CreatureObject* creature, SceneObject* object) const;
-
 };
+
+} // namespace components
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::components;

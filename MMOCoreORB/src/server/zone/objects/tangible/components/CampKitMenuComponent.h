@@ -9,6 +9,12 @@
 
 #include "TangibleObjectMenuComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class CampKitMenuComponent : public TangibleObjectMenuComponent {
 public:
 	const static int MAP_REGISTER_MOD = 65;
@@ -32,3 +38,11 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

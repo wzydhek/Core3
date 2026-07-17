@@ -9,6 +9,12 @@
 
 #include "TangibleObjectMenuComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class CityDecorationMenuComponent : public TangibleObjectMenuComponent {
 public:
 
@@ -32,3 +38,11 @@ public:
 
 	bool isInInventory(SceneObject* sceneObject, CreatureObject* player) const;
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

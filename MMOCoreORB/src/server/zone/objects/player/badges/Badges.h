@@ -12,6 +12,12 @@
 #include "server/zone/managers/player/BadgeList.h"
 #include "Badge.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace badges {
+
 class Badges : public Serializable, public ReadWriteLock {
 	uint32 badgeBitmask[5];
 	uint8 badgeTypeCounts[6];
@@ -51,3 +57,11 @@ public:
 
 	void setNumBadges(uint8 value);
 };
+
+} // namespace badges
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::badges;

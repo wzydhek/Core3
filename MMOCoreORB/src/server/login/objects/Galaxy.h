@@ -11,6 +11,10 @@
 	#include "conf/ConfigManager.h"
 #endif // USE_RANDOM_EXTRA_PORTS
 
+namespace server {
+namespace login {
+namespace objects {
+
 class Galaxy {
 	uint32 id = 0;
 	String name;
@@ -66,3 +70,9 @@ public:
 
 	String toStringData() const;
 };
+
+} // namespace objects
+} // namespace login
+} // namespace server
+
+using namespace server::login::objects;

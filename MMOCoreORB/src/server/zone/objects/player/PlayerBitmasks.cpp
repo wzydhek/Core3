@@ -30,7 +30,7 @@ void PlayerBitmasks::addSerializableVariables() {
 	addSerializableVariable("playerBitmask4", &playerBitmask[3]);
 }
 
-void to_json(nlohmann::json& j, const PlayerBitmasks& b) {
+void server::zone::objects::player::to_json(nlohmann::json& j, const PlayerBitmasks& b) {
 	auto array = nlohmann::json::array();
 
 	for (int i = 0; i < 4; ++i) {

@@ -9,6 +9,11 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class CombatAction : public StandaloneObjectControllerMessage {
 	int defenderSize;
 
@@ -22,9 +27,7 @@ public:
 
 	CombatAction(CreatureObject* attacker, uint32 animcrc, long weaponID);
 
-
 	CombatAction(TangibleObject* attacker, CreatureObject* defender, uint32 animcrc, uint8 hit, long wpnID = 0);
-
 
 	CombatAction(CreatureObject* attacker, CreatureObject* defender, uint32 animcrc, uint8 hit, long wpnID);
 
@@ -34,3 +37,10 @@ public:
 
 	void addDefender(CreatureObject* defender, uint8 hit);
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

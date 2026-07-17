@@ -15,6 +15,12 @@
 #include "server/zone/objects/installation/components/MinefieldDataComponent.h"
 #include "server/zone/objects/installation/components/TurretDataComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace installation {
+namespace components {
+
 class MinefieldAttackTask : public Task {
 	ManagedWeakReference<TangibleObject*> weakMinefield;
 	ManagedWeakReference<CreatureObject*> weakTarget;
@@ -24,3 +30,11 @@ public:
 
 	void run();
 };
+
+} // namespace components
+} // namespace installation
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::installation::components;

@@ -7,6 +7,16 @@
 
 #pragma once
 
-class AuctionEventsMap : public VectorMap<uint64, Reference<Task*> >, public Mutex {
+namespace server {
+namespace zone {
+namespace managers {
+namespace auction {
 
-};
+class AuctionEventsMap : public VectorMap<uint64, Reference<Task*>>, public Mutex {};
+
+} // namespace auction
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::auction;

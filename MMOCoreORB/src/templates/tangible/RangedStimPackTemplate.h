@@ -9,6 +9,9 @@
 
 #include "StimPackTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class RangedStimPackTemplate : public StimPackTemplate {
 	float effectiveness;
 	float range;
@@ -32,3 +35,8 @@ public:
 
 	bool isRangedStimPackTemplate();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

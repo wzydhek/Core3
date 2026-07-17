@@ -56,7 +56,7 @@ bool GroupMember::parseFromString(const String& str, int version) {
 	return creature.parseFromString(str, version);
 }
 
-void to_json(nlohmann::json& j, const GroupMember& m) {
+void server::zone::objects::group::to_json(nlohmann::json& j, const GroupMember& m) {
 	String name;
 
 	j["creature"] = m.creature;

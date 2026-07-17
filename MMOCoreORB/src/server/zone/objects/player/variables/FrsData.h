@@ -7,6 +7,12 @@
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace variables {
+
 class FrsData : public Object {
 	int councilType;
 	int rank;
@@ -34,3 +40,11 @@ public:
 
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
+
+} // namespace variables
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::variables;

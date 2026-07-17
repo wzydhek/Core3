@@ -9,6 +9,9 @@
 
 #include "templates/tangible/SharedStructureObjectTemplate.h"
 
+namespace templates {
+namespace installation {
+
 class SharedInstallationObjectTemplate : public SharedStructureObjectTemplate {
 	uint32 installationType;
 	unsigned int armorRating;
@@ -64,3 +67,8 @@ public:
 
 	const String& getFactionString() const;
 };
+
+} // namespace installation
+} // namespace templates
+
+using namespace templates::installation;

@@ -9,6 +9,8 @@
 
 #include "templates/SharedObjectTemplate.h"
 
+namespace templates {
+
 class SharedCellObjectTemplate : public SharedObjectTemplate {
 protected:
 
@@ -19,3 +21,7 @@ public:
 
 	void readObject(IffStream* iffStream);
 };
+
+} // namespace templates
+
+using namespace templates;

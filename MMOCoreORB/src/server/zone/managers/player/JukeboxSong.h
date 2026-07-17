@@ -3,6 +3,11 @@
 #include "system/lang/Object.h"
 #include "system/lang/String.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace player {
+
 class JukeboxSong : public Object {
 
 protected:
@@ -21,3 +26,10 @@ public:
 
 	String getStringId();
 };
+
+} // namespace player
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::player;

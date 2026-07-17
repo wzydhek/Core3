@@ -10,6 +10,10 @@
 #include "../ProceduralRule.h"
 #include "FilterProceduralRule.h"
 
+namespace terrain {
+namespace layer {
+namespace filters {
+
 class FilterShader : public FilterProceduralRule {
 	int shaderId;
 
@@ -20,3 +24,9 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>);
 };
+
+} // namespace filters
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::filters;

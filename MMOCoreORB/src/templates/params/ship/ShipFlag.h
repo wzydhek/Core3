@@ -5,6 +5,10 @@
 
 #pragma once
 
+namespace templates {
+namespace params {
+namespace ship {
+
 class ShipFlag {
 public:
 	enum {
@@ -34,3 +38,9 @@ public:
 	WAVE_ATTACK - Ships that are spawned for wave attacks during escort missions.
 	DISABLED_INVULNERABLE - Used to flag ships invulnerable for a brief period after being disabled.
 */
+
+} // namespace ship
+} // namespace params
+} // namespace templates
+
+using namespace templates::params::ship;

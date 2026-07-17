@@ -22,4 +22,6 @@ class UnloadContainerTask : public Task {
    }
   }
  }
-}
+} // namespace server
+
+ using namespace server::zone::objects::scene;

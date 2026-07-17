@@ -1,5 +1,10 @@
 #pragma once
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace mission {
+
 namespace MissionTypes {
 	enum {
 		DESTROY = 0x74EF9BE3, // generic
@@ -16,3 +21,10 @@ namespace MissionTypes {
 		SURVEY = 0x19C9FAC1 // artisan
 	};
 }
+
+} // namespace mission
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::mission;

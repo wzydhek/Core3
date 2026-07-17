@@ -53,7 +53,7 @@ bool FriendList::toBinaryStream(ObjectOutputStream* stream) {
 	return true;
 }
 
-void to_json(nlohmann::json& j, const FriendList& l) {
+void server::zone::objects::player::variables::to_json(nlohmann::json& j, const FriendList& l) {
 	const DeltaVector<String>& dv = l;
 
 	j["reverseTable"] = l.reverseTable;

@@ -9,6 +9,11 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace object {
+
 class ObjectVersionUpdateManager : public Singleton<ObjectVersionUpdateManager>, public Logger, public Object {
 
 public:
@@ -38,3 +43,10 @@ public:
 	int run();
 
 };
+
+} // namespace object
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::object;

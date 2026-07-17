@@ -9,6 +9,13 @@
 
 #include "../TangibleObjectMenuComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+namespace generic {
+
 class CreatureHabitatMenuComponent : public TangibleObjectMenuComponent {
 public:
 
@@ -38,3 +45,12 @@ private:
 	ManagedReference<TangibleObject*> getLiveCreatures( TangibleObject* creatureHabitat ) const;
 
 };
+
+} // namespace generic
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components::generic;

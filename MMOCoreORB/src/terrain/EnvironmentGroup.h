@@ -9,6 +9,8 @@
 
 #include "EnvironmentData.h"
 
+namespace terrain {
+
 class EnvironmentGroup : public TemplateVariable<'EGRP'> {
 	Vector<EnvironmentData*> data;
 
@@ -22,3 +24,7 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0002'>);
 };
+
+} // namespace terrain
+
+using namespace terrain;

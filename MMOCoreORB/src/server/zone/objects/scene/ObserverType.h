@@ -7,6 +7,11 @@
 
 #pragma once
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+
 class ObserverType {
 public:
 	const static int LAIR = 1;
@@ -15,3 +20,10 @@ public:
 	const static int SCREENPLAY = 4;
 	const static int SPACE_SPAWN = 5;
 };
+
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene;

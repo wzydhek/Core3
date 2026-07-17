@@ -12,6 +12,11 @@
 
 //#define DEBUG_PLAYERBITMASKS
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+
 class PlayerBitmasks : public Serializable, public ReadWriteLock {
 	uint32 playerBitmask[4];
 public:
@@ -44,3 +49,10 @@ public:
 
 	uint32 getBitmask(int index) const;
 };
+
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player;

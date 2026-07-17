@@ -9,6 +9,8 @@
 
 #include "TemplateVariable.h"
 
+namespace terrain {
+
 class ShaderVar {
 public:
 	String name;
@@ -30,3 +32,7 @@ public:
 
 	void readObject(IffStream* iffStream);
 };
+
+} // namespace terrain
+
+using namespace terrain;

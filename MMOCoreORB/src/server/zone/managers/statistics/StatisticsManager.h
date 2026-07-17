@@ -12,6 +12,11 @@
 #include "server/zone/managers/creature/AiMap.h"
 #include "server/zone/managers/space/SpaceAiMap.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace statistics {
+
 class StatisticsManager : public Singleton<StatisticsManager>, public Logger, public Object {
 	const static int CONSOLE_REPORT_INTERVAL = 1000;
 
@@ -77,3 +82,10 @@ public:
 private:
 	void resetMissionStatistics();
 };
+
+} // namespace statistics
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::statistics;

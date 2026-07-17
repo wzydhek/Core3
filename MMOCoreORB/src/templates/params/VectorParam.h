@@ -9,6 +9,9 @@
 
 #include "templates/params/Param.h"
 
+namespace templates {
+namespace params {
+
 /*
 template <class Type>
 class VectorParamData {
@@ -95,3 +98,8 @@ public:
 		}
 	}
 };
+
+} // namespace params
+} // namespace templates
+
+using namespace templates::params;

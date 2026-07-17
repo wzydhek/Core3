@@ -12,6 +12,9 @@
 #include "templates/customization/PaletteData.h"
 #include "templates/customization/HairAssetData.h"
 
+namespace templates {
+namespace customization {
+
 class CustomizationIdManager : public Object, public Logger, public Singleton<CustomizationIdManager> {
 	HashTable<String, int> customizationIds;
 	HashTable<int, String> reverseIds;
@@ -37,3 +40,8 @@ public:
 
 	bool canBeBald(const int objectCRC);
 };
+
+} // namespace customization
+} // namespace templates
+
+using namespace templates::customization;

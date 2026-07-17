@@ -13,6 +13,11 @@
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/objects/player/sui/SuiPageData.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ui {
+
 class SuiCreatePageMessage : public BaseMessage {
 	int optionOffset;
 	int optionCount;
@@ -52,3 +57,10 @@ public:
 	int getOptionCount();
 
 };
+
+} // namespace ui
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ui;

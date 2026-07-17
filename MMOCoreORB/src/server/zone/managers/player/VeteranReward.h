@@ -11,6 +11,11 @@
 #include "system/lang/String.h"
 #include "engine/lua/LuaObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace player {
+
 class VeteranReward : public Object {
 
 protected:
@@ -49,3 +54,10 @@ public:
 
 	bool isJtlReward();
 };
+
+} // namespace player
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::player;

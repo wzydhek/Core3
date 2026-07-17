@@ -8,14 +8,20 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "SceneObjectFactory.h"
 
+namespace templates {
 class TemplateManager;
-class DeleteCharactersTask;
+}
+
+using namespace templates;
+
 
 namespace server {
 namespace zone {
 
 	namespace managers {
 	namespace object {
+
+		class DeleteCharactersTask;
 
 	class ObjectManager : public DOBObjectManager, public Singleton<ObjectManager>, public Object {
 		Reference<ZoneProcessServer*> server;

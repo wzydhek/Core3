@@ -19,6 +19,10 @@
 
 #include <limits>
 
+namespace terrain {
+namespace layer {
+namespace boundaries {
+
 class BoundaryPolygon : public Boundary {
 	Vector<Point2D*> vertices;
 	int localWaterTableEnabled;
@@ -65,3 +69,9 @@ public:
 #if defined (__clang__) && (__clang_major__ >= 18)
 	#pragma clang diagnostic pop
 #endif
+
+} // namespace boundaries
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::boundaries;

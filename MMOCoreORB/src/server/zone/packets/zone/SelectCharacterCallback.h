@@ -14,6 +14,11 @@
 
 // #define DEBUG_SELECT_CHAR_CALLBACK
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace zone {
+
 class SelectCharacterCallback : public MessageCallback {
 	uint64 characterID;
 public:
@@ -31,3 +36,10 @@ public:
 
 	void run();
 };
+
+} // namespace zone
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::zone;

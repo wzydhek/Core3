@@ -10,13 +10,16 @@
 #include "system/lang/Object.h"
 #include "system/lang/String.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace area {
+
 class ForageArea : public Object {
-
 protected:
-
 	enum {
-		SIZE   = 10, //Determines the side length of the forage area 'box' (in meters).
-		EXPIRE = 30  //Determines the age when each area expires (in minutes).
+		SIZE = 10,	// Determines the side length of the forage area 'box' (in meters).
+		EXPIRE = 30 // Determines the age when each area expires (in minutes).
 	};
 
 	String planet;
@@ -26,11 +29,16 @@ protected:
 	Time expiration;
 
 public:
-
 	uint8 uses;
 
-     ForageArea(short playerX, short playerY, const String& plt, int forageAreaType);
+	ForageArea(short playerX, short playerY, const String& plt, int forageAreaType);
 
-     int checkPermission(short playerX, short playerY, const String& playerPlanet, int forageAreaType);
-
+	int checkPermission(short playerX, short playerY, const String& playerPlanet, int forageAreaType);
 };
+
+} // namespace area
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::area;

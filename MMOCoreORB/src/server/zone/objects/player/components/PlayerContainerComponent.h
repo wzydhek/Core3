@@ -9,6 +9,12 @@
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace components {
+
 class PlayerContainerComponent : public ContainerComponent {
 public:
 	/**
@@ -34,3 +40,11 @@ public:
 	int notifyObjectRemoved(SceneObject* sceneObject, SceneObject* object, SceneObject* destination) const;
 
 };
+
+} // namespace components
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::components;

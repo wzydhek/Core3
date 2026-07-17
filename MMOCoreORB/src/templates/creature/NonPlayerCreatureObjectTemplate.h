@@ -9,6 +9,9 @@
 
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 
+namespace templates {
+namespace creature {
+
 class NonPlayerCreatureObjectTemplate : public SharedCreatureObjectTemplate {
 
 public:
@@ -21,3 +24,8 @@ public:
 
 	bool isNonPlayerCreatureObjectTemplate();
 };
+
+} // namespace creature
+} // namespace templates
+
+using namespace templates::creature;

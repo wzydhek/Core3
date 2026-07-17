@@ -7,6 +7,11 @@
 #include "engine/service/proto/BaseMessage.h"
 #include "server/zone/Zone.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace scene {
+
 class ServerTimeMessage : public BaseMessage {
 public:
 	ServerTimeMessage(uint64 time);
@@ -14,3 +19,10 @@ public:
 	ServerTimeMessage(Zone* zone);
 	
 };
+
+} // namespace scene
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::scene;

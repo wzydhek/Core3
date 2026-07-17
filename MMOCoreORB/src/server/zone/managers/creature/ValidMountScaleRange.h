@@ -3,6 +3,11 @@
 #include "templates/datatables/DataTableRow.h"
 #include "templates/params/primitives/StringParam.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace creature {
+
 class ValidMountScaleRange : public Object {
 protected:
 	StringParam appearanceFilename;
@@ -26,3 +31,10 @@ public:
 	float getValidScaleMax();
 
 };
+
+} // namespace creature
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::creature;

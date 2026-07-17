@@ -6,6 +6,12 @@
 
 #include "QueueCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class FindCommand : public QueueCommand {
 public:
 	FindCommand(const String& name, ZoneProcessServer* server);
@@ -15,3 +21,10 @@ public:
 	int clearFind(CreatureObject* player) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

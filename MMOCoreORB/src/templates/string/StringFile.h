@@ -10,6 +10,9 @@
 #include "system/lang.h"
 #include "engine/log/Logger.h"
 
+namespace templates {
+namespace string {
+
 class StringFile : public Logger {
 	HashTable<String, UnicodeString> stringMap;
 
@@ -26,3 +29,8 @@ public:
 protected:
 	bool checkHeader(ObjectInputStream* inputFile);
 };
+
+} // namespace string
+} // namespace templates
+
+using namespace templates::string;

@@ -26,6 +26,11 @@
  * 14 - Over 20,000 credits
 */
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace auction {
+
 class ItemSoldMessage : public BaseMessage {
 
 public:
@@ -48,3 +53,10 @@ public:
 
 	static String statusToString(int status);
 };
+
+} // namespace auction
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::auction;

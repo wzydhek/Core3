@@ -13,6 +13,11 @@
 //  8 - You must be the owner of an item to cancel the sale
 // 15 - That auction has already been completed. It is too late to cancel.
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace auction {
+
 class CancelLiveAuctionResponseMessage : public BaseMessage {
 public:
 	const static int SUCCESS = 0;
@@ -24,3 +29,10 @@ public:
 	CancelLiveAuctionResponseMessage(uint64 objectid, int status);
 
 };
+
+} // namespace auction
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::auction;

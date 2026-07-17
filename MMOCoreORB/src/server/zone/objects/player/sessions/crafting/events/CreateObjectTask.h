@@ -8,8 +8,15 @@
 #include "server/zone/objects/tangible/tool/CraftingTool.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
-class CreateObjectTask : public Task {
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace sessions {
+namespace crafting {
+namespace events {
 
+class CreateObjectTask : public Task {
 	ManagedReference<CraftingTool*> craftingTool;
 	ManagedReference<CreatureObject*> crafter;
 	bool practice;
@@ -19,3 +26,13 @@ public:
 
 	void run();
 };
+
+} // namespace events
+} // namespace crafting
+} // namespace sessions
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::sessions::crafting::events;

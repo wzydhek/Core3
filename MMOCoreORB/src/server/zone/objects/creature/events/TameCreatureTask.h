@@ -9,6 +9,12 @@
 #include "server/zone/objects/creature/events/SpawnCreatureTask.h"
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace events {
+
 class TameCreatureTask : public Task {
 
 private:
@@ -28,3 +34,11 @@ public:
 
 	void resetStatus();
 };
+
+} // namespace events
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::events;

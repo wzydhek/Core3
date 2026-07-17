@@ -9,6 +9,11 @@
 
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace player {
+
 class CharacterNameMap : public Object {
 	HashTable<String, uint64> names;
 	HashTable<uint64, String> reverseTable;
@@ -38,3 +43,10 @@ public:
 
 	HashTable<String, uint64> getNames();
 };
+
+} // namespace player
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::player;

@@ -42,3 +42,5 @@ public:
 } // namespace managers
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::managers::ship;

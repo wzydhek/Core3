@@ -9,6 +9,12 @@
 #include "server/zone/objects/scene/variables/DeltaVectorMap.h"
 #include "server/zone/managers/skill/SkillModManager.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace variables {
+
 class SkillModGroup : public VectorMap<String, int> {
 public:
 	SkillModGroup();
@@ -46,3 +52,11 @@ public:
 
 	String getPrintableSkillModList() const;
 };
+
+} // namespace variables
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::variables;

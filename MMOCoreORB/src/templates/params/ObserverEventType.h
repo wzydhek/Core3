@@ -7,6 +7,9 @@
 
 #pragma once
 
+namespace templates {
+namespace params {
+
 class ObserverEventType {
 public:
 	enum {
@@ -115,3 +118,8 @@ public:
 		HERD,						// ManagedObject arg1 = AiAgent, long arg2 = 0
 	};
 };
+
+} // namespace params
+} // namespace templates
+
+using namespace templates::params;

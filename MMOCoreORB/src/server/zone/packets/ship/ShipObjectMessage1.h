@@ -7,6 +7,11 @@
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/ship/ShipObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ship {
+
 class ShipObjectMessage1 : public BaseLineMessage {
 protected:
 	enum index : int {
@@ -53,3 +58,10 @@ protected:
 public:
 	ShipObjectMessage1(ShipObject* ship);
 };
+
+} // namespace ship
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ship;

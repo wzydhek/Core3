@@ -28,6 +28,12 @@ class FactoryObject;
 
 using namespace server::zone::objects::installation::factory;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace manufactureschematic {
+namespace factoryblueprint {
+
 /**
  * This class defines a collective entry that makes up a single blueprint item
  * Ex.  If a schematic contains 2 identical ingredients, they will combine to
@@ -142,3 +148,11 @@ private:
 	/// Adds members to be serialized
 	void addSerializableVariables();
 };
+
+} // namespace factoryblueprint
+} // namespace manufactureschematic
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::manufactureschematic::factoryblueprint;

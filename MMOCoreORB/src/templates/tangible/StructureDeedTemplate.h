@@ -9,6 +9,9 @@
 
 #include "templates/tangible/DeedTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class StructureDeedTemplate : public DeedTemplate {
 	String placementComponent;
 
@@ -19,3 +22,8 @@ public:
 
 	const String& getStructurePlacementComponent();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

@@ -9,6 +9,11 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace director {
+
 class DirectorSharedMemory : public Object {
 	HashTable<String, uint64> hashTable;
 	HashTable<String, String> stringTable;
@@ -46,3 +51,10 @@ public:
 
 	Object* clone(void* object);
 };
+
+} // namespace director
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::director;

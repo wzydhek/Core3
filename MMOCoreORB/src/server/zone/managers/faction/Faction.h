@@ -9,6 +9,11 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace faction {
+
 class Faction : public Object {
 	String factionName;
 	bool playerAllowed;
@@ -44,3 +49,10 @@ public:
 
 	float getAdjustFactor() const;
 };
+
+} // namespace faction
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::faction;

@@ -9,6 +9,11 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace vendor {
+
 class Outfit : public Object {
 	String outfitName;
 
@@ -32,3 +37,9 @@ public:
 	int getClothingSize();
 
 };
+} // namespace vendor
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::vendor;

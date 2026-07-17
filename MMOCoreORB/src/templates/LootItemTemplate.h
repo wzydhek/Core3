@@ -14,6 +14,8 @@
 #include "server/zone/objects/scene/SceneObjectType.h"
 #include "server/zone/managers/loot/LootAttributeType.h"
 
+namespace templates {
+
 class LootItemTemplate: public LuaTemplate, public Logger {
 protected:
 	String templateName;
@@ -90,3 +92,7 @@ public:
 
 	const VectorMap<String, SortedVector<int>>* getStaticDotValues() const;
 };
+
+} // namespace templates
+
+using namespace templates;

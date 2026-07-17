@@ -13,6 +13,12 @@
 
 #include "SpaceQueueCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class InspectCommand : public SpaceQueueCommand {
 	constexpr static float INSPECT_RANGE = 150.f;
 	constexpr static uint32 INSPECT_COOLDOWN = 5000;
@@ -22,3 +28,11 @@ public:
 
 	int doQueueCommand(CreatureObject* creature, const uint64& target, const UnicodeString& arguments) const;
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

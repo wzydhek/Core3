@@ -12,6 +12,12 @@
 #include "server/zone/objects/transaction/TransactionLog.h"
 #include "server/zone/objects/scene/SceneObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class ServerLootCommand {
 	const static int GENERALERROR = 0;
 	const static int SUCCESS = 1;
@@ -35,3 +41,11 @@ public:
 
 	static void sendSystemMessage(CreatureObject* creature, const String& systemMessage);
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

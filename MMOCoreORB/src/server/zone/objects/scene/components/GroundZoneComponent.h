@@ -32,6 +32,12 @@ using namespace server::zone;
 
 #include "server/zone/TreeEntry.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace components {
+
 class GroundZoneComponent : public SceneObjectComponent, public Logger {
 protected:
 	void insertChildObjectsToZone(SceneObject* sceneObject, Zone* zone) const;
@@ -106,3 +112,11 @@ public:
 										SortedVector<ManagedReference<TreeEntry *> > &closeSceneObjects,
 										SceneObject *sceneObject, SceneObject *vectorOwner);
 };
+
+} // namespace components
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::components;

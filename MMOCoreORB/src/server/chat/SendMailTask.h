@@ -12,6 +12,9 @@
 #include "server/zone/objects/player/PlayerObject.h"
 #include "server/chat/PersistentMessage.h"
 
+namespace server {
+namespace chat {
+
 class SendMailTask : public Task {
 	ManagedReference<CreatureObject*> receiver;
 	ManagedReference<PersistentMessage*> mail;
@@ -21,3 +24,8 @@ public:
 
 	void run() final;
 };
+
+} // namespace chat
+} // namespace server
+
+using namespace server::chat;

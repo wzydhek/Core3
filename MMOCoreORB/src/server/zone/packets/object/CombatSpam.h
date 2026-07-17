@@ -8,6 +8,11 @@
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class CombatSpam : public StandaloneObjectControllerMessage {
 public:
 
@@ -17,3 +22,10 @@ public:
 	CombatSpam(CreatureObject* receiver, const UnicodeString& uniString, byte color);
 
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

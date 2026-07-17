@@ -7,6 +7,9 @@
 #include "system/lang.h"
 #include "engine/log/Logger.h"
 
+namespace templates {
+namespace crafting {
+
 /*
  * The Values class is just a container for values calculated in crafting
  * Each "Value" has 3 properties, maxPercentage, currentPercentage, currentValue.
@@ -78,3 +81,8 @@ public:
 	void resetValue();
 
 };
+
+} // namespace crafting
+} // namespace templates
+
+using namespace templates::crafting;

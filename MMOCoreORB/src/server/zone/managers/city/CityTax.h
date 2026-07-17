@@ -9,6 +9,11 @@
 
 #include "engine/lua/LuaObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace city {
+
 class CityTax : public Object {
 	int minValue;
 	int maxValue;
@@ -48,3 +53,10 @@ public:
 
 	const String& getEmailBody() const;
 };
+
+} // namespace city
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::city;

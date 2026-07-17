@@ -13,6 +13,13 @@
 #include "server/zone/objects/tangible/deed/eventperk/EventPerkDeed.h"
 #include "server/zone/objects/player/sessions/NpcActorCreationSession.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace sessions {
+namespace sui {
+
 class NpcActorSuiCallback : public SuiCallback {
 public:
 	NpcActorSuiCallback(ZoneServer* server);
@@ -21,3 +28,12 @@ public:
 
 	void clearSession(CreatureObject* player);
 };
+
+} // namespace sui
+} // namespace sessions
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::sessions::sui;

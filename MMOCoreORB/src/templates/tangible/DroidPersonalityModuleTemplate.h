@@ -7,6 +7,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class DroidPersonalityModuleTemplate : public SharedTangibleObjectTemplate {
 
 protected:
@@ -32,3 +35,8 @@ public:
 
 	bool isDroidPersonalityModuleTemplate();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

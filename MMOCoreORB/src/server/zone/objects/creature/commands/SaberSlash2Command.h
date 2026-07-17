@@ -7,6 +7,12 @@
 #include "JediCombatQueueCommand.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class SaberSlash2Command : public JediCombatQueueCommand {
 public:
 
@@ -17,3 +23,11 @@ public:
 	String getAnimation(TangibleObject* attacker, TangibleObject* defender, WeaponObject* weapon, uint8 hitLocation, int damage) const;
 
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

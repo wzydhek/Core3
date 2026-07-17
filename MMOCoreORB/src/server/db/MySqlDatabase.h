@@ -73,4 +73,6 @@ namespace server {
 
     } // namespace mysql
   } // namespace db
-} // namespace engine
+} // namespace server
+
+using namespace server::db::mysql;

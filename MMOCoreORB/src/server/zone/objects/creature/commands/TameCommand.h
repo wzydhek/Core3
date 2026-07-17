@@ -2,10 +2,15 @@
 				Copyright <SWGEmu>
 		See file COPYING for copying conditions.*/
 
-#ifndef TAMECOMMAND_H_
-#define TAMECOMMAND_H_
+#pragma once
 
 #include "QueueCommand.h"
+
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
 
 class TameCommand : public QueueCommand {
 public:
@@ -16,5 +21,10 @@ public:
 
 };
 
-#endif //TAMECOMMAND_H_
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
 
+using namespace server::zone::objects::creature::commands;

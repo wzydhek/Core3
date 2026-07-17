@@ -10,6 +10,8 @@
 #include "templates/SharedObjectTemplate.h"
 #include "building/SharedBuildingObjectTemplate.h"
 
+namespace templates {
+
 class SharedStaticObjectTemplate : public SharedBuildingObjectTemplate {
 protected:
 
@@ -24,3 +26,7 @@ public:
 	void readObject(IffStream* iffStream);
 
 };
+
+} // namespace templates
+
+using namespace templates;

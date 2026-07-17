@@ -9,6 +9,11 @@
 
 #include "VeteranReward.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace player {
+
 class VeteranRewardList : public Vector<VeteranReward> {
 
 public:
@@ -16,3 +21,10 @@ public:
 	VeteranRewardList();
 
 };
+
+} // namespace player
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::player;

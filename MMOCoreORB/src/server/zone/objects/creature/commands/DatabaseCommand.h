@@ -6,6 +6,12 @@
 
 #include "QueueCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class DatabaseCommand : public QueueCommand {
 public:
 
@@ -20,3 +26,10 @@ private:
 	void doSQLQuery(CreatureObject* creature, String db, uint64 objectID) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

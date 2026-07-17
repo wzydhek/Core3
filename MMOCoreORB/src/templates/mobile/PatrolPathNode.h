@@ -10,6 +10,9 @@
 #include "templates/LuaTemplate.h"
 #include "engine/util/u3d/Vector3.h"
 
+namespace templates {
+namespace mobile {
+
 class PatrolPathNode : public Object {
 	String id, link;
 	Vector3 position;
@@ -48,3 +51,8 @@ public:
 	void setPosition(Vector3 position);
 
 };
+
+} // namespace mobile
+} // namespace templates
+
+using namespace templates::mobile;

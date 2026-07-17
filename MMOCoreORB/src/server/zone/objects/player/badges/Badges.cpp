@@ -55,7 +55,7 @@ void Badges::addSerializableVariables() {
 	addSerializableVariable("badgeTotal", &badgeTotal);
 }
 
-void to_json(nlohmann::json& j, const Badges& b) {
+void server::zone::objects::player::badges::to_json(nlohmann::json& j, const Badges& b) {
 	auto array = nlohmann::json::array();
 
 	for (int i = 0; i < 5; ++i) {

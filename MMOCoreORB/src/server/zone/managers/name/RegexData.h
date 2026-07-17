@@ -3,6 +3,11 @@
 #include "engine/engine.h"
 #include <regex>
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace name {
+
 class RegexData : public Object {
 
 protected:
@@ -21,3 +26,10 @@ public:
 
 	String getRegexPhrase() const;
 };
+
+} // namespace name
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::name;

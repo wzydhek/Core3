@@ -15,6 +15,10 @@
 #include "server/zone/objects/ship/ShipObject.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ship {
 
 class ShipUpdateTransformCallback : public MessageCallback {
 private:
@@ -97,3 +101,10 @@ public:
 	void sendDebugPath(CreatureObject* pilot, ShipObject* ship, const Vector3& nextPosition);
 #endif // SHIP_TRANSFORM_DEBUG
 };
+
+} // namespace ship
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ship;

@@ -12,6 +12,13 @@
 
 #include "ResourceAttribute.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
+namespace resourcetree {
+
 /**
  * The ResourceTreeEntry class represents an
  * entry on the ResourceTree node tree
@@ -355,3 +362,12 @@ public:
 	 */
 	void toString() const;
 };
+
+} // namespace resourcetree
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner::resourcetree;

@@ -10,6 +10,9 @@
 #include "system/lang/Object.h"
 #include "engine/util/iffstream/IffStream.h"
 
+namespace templates {
+namespace slots {
+
 class SlotId : public Object {
 	String slotName;
 	bool isAnythingSlot;
@@ -35,3 +38,8 @@ public:
 
 	const String& getSlotName() const;
 };
+
+} // namespace slots
+} // namespace templates
+
+using namespace templates::slots;

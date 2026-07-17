@@ -11,6 +11,11 @@
 #include "server/db/ServerDatabase.h"
 #include "server/ServerCore.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace player {
+
 class OnlineZoneClientMap : public HashTable<uint32, Vector<Reference<ZoneClientSession*> > >, private Logger {
 protected:
 	HashTable<String, Reference<SortedVector<uint32>*> > ip_list;
@@ -34,3 +39,10 @@ private:
 	void insertLogEntry(uint32 accountId, int galaxyId, const String& ipAddress, int logout, int onlineCount);
 #endif // !WITH_SWGREALMS_API
 };
+
+} // namespace player
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::player;

@@ -73,3 +73,5 @@ protected:
 } // namespace managers
 } // namespace zone
 } // namespace server
+
+using namespace server::zone::managers::objectcontroller::command;

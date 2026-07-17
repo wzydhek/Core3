@@ -9,6 +9,11 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace player {
+
 class PermissionLevel : public Object{
 protected:
 	int permissionLevel, priviledgeFlag;
@@ -66,3 +71,10 @@ public:
 
 	bool containsLevel(String name);
 };
+
+} // namespace player
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::player;

@@ -10,6 +10,8 @@
 #include "BitmapFamily.h"
 #include "TargaBitmap.h"
 
+namespace terrain {
+
 class BitmapGroup : public TemplateVariable<'MGRP'> {
 	Vector<BitMapFamily*> mfams;
 	VectorMap<uint32, TargaBitmap*> mfrcs;
@@ -26,3 +28,7 @@ public:
 	TargaBitmap* getBitmap(int index);
 
 };
+
+} // namespace terrain
+
+using namespace terrain;

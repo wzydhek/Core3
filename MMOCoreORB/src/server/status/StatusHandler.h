@@ -9,6 +9,9 @@
 
 #include "StatusServer.h"
 
+namespace server {
+namespace status {
+
 class StatusHandler: public ServiceHandler {
 	StatusServer* statusServerRef;
 
@@ -29,4 +32,8 @@ public:
 
 };
 
+} // namespace ping
+} // namespace server
+
+using namespace server::status;
 using namespace server::zone;

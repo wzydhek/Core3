@@ -10,6 +10,10 @@
 #include "../ProceduralRule.h"
 #include "FilterProceduralRule.h"
 
+namespace terrain {
+namespace layer {
+namespace filters {
+
 class FilterDirection : public FilterProceduralRule {
 	float minDegree;//+20h
 	float min;//+28h
@@ -62,3 +66,9 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>);
 };
+
+} // namespace filters
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::filters;

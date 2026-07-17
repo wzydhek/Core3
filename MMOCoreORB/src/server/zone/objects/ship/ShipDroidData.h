@@ -2,6 +2,11 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+
 class ShipDroidData {
 public:
 	enum DroidType : int {
@@ -14,3 +19,10 @@ public:
 
 	static uint32 getDroidType(uint32 droidCrc);
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

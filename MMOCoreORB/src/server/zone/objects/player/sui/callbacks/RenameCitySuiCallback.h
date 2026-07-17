@@ -14,6 +14,13 @@
 #include "server/zone/managers/name/NameManager.h"
 #include "server/zone/managers/planet/PlanetManager.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace sui {
+namespace callbacks {
+
 class RenameCitySuiCallback : public SuiCallback {
 	ManagedWeakReference<Zone*> zne;
 	ManagedWeakReference<CityRegion*> city;
@@ -23,3 +30,12 @@ public:
 
 	void run(CreatureObject* creature, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args);
 };
+
+} // namespace callbacks
+} // namespace sui
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::sui::callbacks;

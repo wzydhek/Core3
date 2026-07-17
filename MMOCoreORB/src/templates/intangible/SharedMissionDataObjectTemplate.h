@@ -9,14 +9,19 @@
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
-class SharedMissionDataObjectTemplate : public SharedIntangibleObjectTemplate {
+namespace templates {
+namespace intangible {
 
+class SharedMissionDataObjectTemplate : public SharedIntangibleObjectTemplate {
 public:
 	SharedMissionDataObjectTemplate();
 
 	~SharedMissionDataObjectTemplate();
 
 	void readObject(IffStream* iffStream);
-
-
 };
+
+} // namespace intangible
+} // namespace templates
+
+using namespace templates::intangible;

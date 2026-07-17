@@ -4,6 +4,11 @@
 #include "server/zone/managers/name/NameUnique.h"
 #include "engine/lua/Lua.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace name {
+
 class NameData: public Object {
 	NameRules* firstNameRules;
 	NameRules* lastNameRules;
@@ -59,3 +64,10 @@ public:
 
 	bool specialSyllablesContains(const String& fragment) const;
 };
+
+} // namespace name
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::name;

@@ -16,6 +16,7 @@ namespace zone {
 namespace objects {
 namespace ship {
 namespace ai {
+
 class ShipAiAgent;
 
 class LuaShipAiAgent : public LuaShipObject {
@@ -65,6 +66,7 @@ public:
 private:
 	ShipAiAgent* realObject;
 };
+
 } // namespace ai
 } // namespace ship
 } // namespace objects

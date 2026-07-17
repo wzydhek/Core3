@@ -8,6 +8,12 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/transaction/TransactionLog.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class TransferItemMiscCommand : public QueueCommand {
 public:
 	TransferItemMiscCommand(const String& name, ZoneProcessServer* server);
@@ -17,3 +23,10 @@ public:
 	static int doTransferItemMisc(CreatureObject* creature, SceneObject* objectToTransfer, SceneObject* destinationObject, int transferType, TransactionLog& trx);
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

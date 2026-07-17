@@ -10,6 +10,12 @@
 
 // #define DEBUG_COMPONENT_SLOT
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace manufactureschematic {
+namespace ingredientslots {
+
 class ComponentSlot: public IngredientSlot {
 	/// Indexed by <object, parent>
 	Vector<ManagedReference<TangibleObject*> > contents;
@@ -46,3 +52,11 @@ public:
 	// of 1's that equals how many items are in the slot
 	Vector<int> getQuantityVector();
 };
+
+} // namespace ingredientslots
+} // namespace manufactureschematic
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::manufactureschematic::ingredientslots;

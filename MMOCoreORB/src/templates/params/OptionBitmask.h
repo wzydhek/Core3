@@ -4,6 +4,9 @@
 
 #pragma once
 
+namespace templates {
+namespace params {
+
 class OptionBitmask {
 public:
 	enum {
@@ -39,3 +42,8 @@ public:
 		LOCKED               = 0x10000000,
 	};
 };
+
+} // namespace params
+} // namespace templates
+
+using namespace templates::params;

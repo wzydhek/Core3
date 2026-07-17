@@ -6,6 +6,9 @@
 
 #include "PingClient.h"
 
+namespace server {
+namespace ping {
+
 class PingServer : public DatagramServiceThread, public ServiceHandler {
 public:
 	PingServer();
@@ -29,3 +32,8 @@ public:
 	void printInfo();
 
 };
+
+} // namespace ping
+} // namespace server
+
+using namespace server::ping;

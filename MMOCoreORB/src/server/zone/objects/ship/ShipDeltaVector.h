@@ -8,10 +8,6 @@ namespace zone {
 namespace objects {
 namespace ship {
 class ShipObject;
-}
-} // namespace objects
-} // namespace zone
-} // namespace server
 
 class ShipDeltaVector : public Object {
 protected:
@@ -50,3 +46,10 @@ public:
 
 	int size();
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

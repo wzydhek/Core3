@@ -6,9 +6,12 @@ namespace server {
 namespace zone {
 namespace managers {
 namespace sui {
-	class SuiManager;
+class SuiManager;
+}
+using namespace server::zone::managers::sui;
 
-	class LuaSkillManager {
+namespace skill {
+class LuaSkillManager {
 	public:
 		static const char className[];
 		static Luna<LuaSkillManager>::RegType Register[];
@@ -30,4 +33,4 @@ namespace sui {
 }
 }
 
-using namespace server::zone::managers::sui;
+using namespace server::zone::managers::skill;

@@ -11,6 +11,9 @@
 #include "engine/util/u3d/Quaternion.h"
 #include "engine/lua/LuaObject.h"
 
+namespace templates {
+namespace building {
+
 class CloneSpawnPoint : public Object {
 	Coordinate coordinate;
 	Quaternion direction;
@@ -36,3 +39,8 @@ public:
 
 	int getCellID();
 };
+
+} // namespace building
+} // namespace templates
+
+using namespace templates::building;

@@ -10,6 +10,11 @@
 #include "system/util/SortedVector.h"
 #include "server/zone/objects/auction/AuctionItem.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace auction {
+
 class TerminalItemList : public SortedVector<ManagedReference<AuctionItem*> >, public ReadWriteLock {
 protected:
 	bool searchable;
@@ -46,3 +51,10 @@ class TerminalGalaxyList : public VectorMap<String, Reference<TerminalPlanetList
 class TerminalListVector : public SortedVector<Reference<TerminalItemList*> > {
 
 };
+
+} // namespace auction
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::auction;

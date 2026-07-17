@@ -10,8 +10,18 @@
 #include "../ProceduralRule.h"
 #include "FilterProceduralRule.h"
 
+namespace terrain {
+
 class TerrainGenerator;
 class MapFractal;
+
+} // namespace terrain
+
+using namespace terrain;
+
+namespace terrain {
+namespace layer {
+namespace filters {
 
 class FilterFractal : public FilterProceduralRule {
 	int fractalId; // Fractal Group ID to modify (MGRP)
@@ -28,3 +38,9 @@ public:
 
 	float process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator, FilterRectangle* rect);
 };
+
+} // namespace filters
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::filters;

@@ -40,4 +40,4 @@ public:
 } // namespace zone
 } // namespace server
 
-using namespace server::zone::objects::ship::events;
+using namespace server::zone::objects::ship::ai::events;

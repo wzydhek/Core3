@@ -23,6 +23,12 @@
 #include "server/zone/objects/intangible/PetControlDevice.h"
 #include "server/zone/managers/stringid/StringIdManager.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace events {
+
 class SpawnHelperDroidTask: public Task {
 	ManagedWeakReference<CreatureObject*> player;
 
@@ -31,3 +37,11 @@ public:
 
 	void run();
 };
+
+} // namespace events
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::events;

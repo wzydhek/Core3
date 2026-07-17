@@ -10,6 +10,10 @@
 #include "../ProceduralRule.h"
 #include "AffectorProceduralRule.h"
 
+namespace terrain {
+namespace layer {
+namespace affectors {
+
 class AffectorColorConstant : public ProceduralRule<'ACCN'>, public AffectorProceduralRule {
 	int id; // never tested
 	byte r;
@@ -23,3 +27,9 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>);
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

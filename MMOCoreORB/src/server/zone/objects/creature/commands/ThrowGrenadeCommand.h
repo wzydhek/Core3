@@ -7,6 +7,12 @@
 #include "CombatQueueCommand.h"
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class ThrowGrenadeCommand : public CombatQueueCommand {
 public:
 	ThrowGrenadeCommand(const String& name, ZoneProcessServer* server);
@@ -17,3 +23,11 @@ public:
 
 	float getCommandDuration(CreatureObject* object, const UnicodeString& arguments) const;
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

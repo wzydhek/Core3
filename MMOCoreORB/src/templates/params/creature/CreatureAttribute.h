@@ -6,6 +6,10 @@
 
 #include "system/lang.h"
 
+namespace templates {
+namespace params {
+namespace creature {
+
 class CreatureEncumbrance {
 public:
 	static const uint8 HEALTH;
@@ -34,3 +38,9 @@ public:
 
 	static String getName(const uint8 attribute, bool initialCap = false);
 };
+
+} // namespace creature
+} // namespace params
+} // namespace templates
+
+using namespace templates::params::creature;

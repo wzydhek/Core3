@@ -9,6 +9,10 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+namespace tool {
+
 class SurveyToolTemplate : public SharedTangibleObjectTemplate {
 private:
 	int toolType;
@@ -31,3 +35,9 @@ public:
 
 	const String& getSampleAnimation() const;
 };
+
+} // namespace tool
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible::tool;

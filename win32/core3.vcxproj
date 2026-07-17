@@ -939,10 +939,13 @@
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\CreatureImplementation.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\CreatureTemplate.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\DroidObjectImplementation.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\events\AiBehaviorEvent.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\events\AiRecoveryEvent.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\HelperDroidObjectImplementation.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\LuaAiAgent.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\NonPlayerCreatureObjectImplementation.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\PatrolPoint.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\variables\CreatureAttackMap.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\variables\CreatureTemplateReference.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\BuffAttribute.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\buffs\BuffCRC.cpp" />

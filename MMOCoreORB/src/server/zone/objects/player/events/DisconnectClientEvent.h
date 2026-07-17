@@ -13,6 +13,12 @@
 	#include "server/login/SWGRealmsAPI.h"
 #endif // WITH_SWGREALMS_API
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace events {
+
 class DisconnectClientEvent : public Task {
 	ManagedReference<CreatureObject*> player;
 	ManagedReference<ZoneClientSession*> client;
@@ -29,3 +35,11 @@ public:
 	void run();
 
 };
+
+} // namespace events
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::events;

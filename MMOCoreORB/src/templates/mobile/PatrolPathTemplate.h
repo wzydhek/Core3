@@ -9,6 +9,9 @@
 
 #include "templates/mobile/PatrolPathNode.h"
 
+namespace templates {
+namespace mobile {
+
 class PatrolPathTemplate : public Object {
 	VectorMap<String, PatrolPathNode> pathMap;
 public:
@@ -20,3 +23,8 @@ public:
 
 	void readObject(LuaObject* luaObject);
 };
+
+} // namespace mobile
+} // namespace templates
+
+using namespace templates::mobile;

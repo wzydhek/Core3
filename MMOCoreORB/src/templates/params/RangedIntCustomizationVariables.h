@@ -10,6 +10,9 @@
 #include "engine/util/iffstream/IffStream.h"
 #include "templates/params/RangedIntCustomizationVariable.h"
 
+namespace templates {
+namespace params {
+
 class RangedIntCustomizationVariables : public Param {
 protected:
 	//QMap<QString, PaletteColorCustomizationVariable*> variables;
@@ -29,3 +32,8 @@ public:
 
 	void parseType1(IffStream* source);
 };
+
+} // namespace params
+} // namespace templates
+
+using namespace templates::params;

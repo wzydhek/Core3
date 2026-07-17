@@ -4,6 +4,10 @@
 
 #pragma once
 
+namespace templates {
+namespace params {
+namespace creature {
+
 class PlayerArrangement {
 public:
 	enum {
@@ -30,3 +34,9 @@ public:
 		SHIP_GUNNER7_POB	= 24,
 	};
 };
+
+} // namespace creature
+} // namespace params
+} // namespace templates
+
+using namespace templates::params::creature;

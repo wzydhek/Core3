@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class EnhancePackTemplate : public SharedTangibleObjectTemplate {
 	int medicineUse;
 	float effectiveness;
@@ -35,3 +38,8 @@ public:
 
 	bool isEnhancePackTemplate();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

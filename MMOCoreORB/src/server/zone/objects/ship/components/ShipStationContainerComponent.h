@@ -13,9 +13,23 @@
 
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace components {
+
 class ShipStationContainerComponent : public ContainerComponent, public Logger {
 public:
 	ShipStationContainerComponent();
 
 	bool transferObject(SceneObject* sceneObject, SceneObject* object, int containmentType, bool notifyClient = false, bool allowOverflow = false, bool notifyRoot = true) const override;
 };
+
+} // namespace components
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::components;

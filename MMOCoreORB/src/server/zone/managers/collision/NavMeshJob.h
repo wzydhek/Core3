@@ -10,6 +10,11 @@
 #include "server/zone/objects/pathfinding/NavArea.h"
 #include "engine/util/u3d/AABB.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace collision {
+
 class NavMeshJob : public Object {
 protected:
 	WeakReference<NavArea*> area;
@@ -43,3 +48,10 @@ public:
 	void addArea(const AABB& area);
 
 };
+
+} // namespace collision
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::collision;

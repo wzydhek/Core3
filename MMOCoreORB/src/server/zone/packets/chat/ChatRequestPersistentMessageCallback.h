@@ -9,6 +9,11 @@
 
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace chat {
+
 class ChatRequestPersistentMessageCallback : public MessageCallback {
 	uint32 mailid;
 
@@ -20,3 +25,10 @@ public:
 	void run();
 
 };
+
+} // namespace chat
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::chat;

@@ -3,6 +3,9 @@
 
 #include "templates/tangible/DeedTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class EventPerkDeedTemplate : public DeedTemplate {
 private:
 	int perkType;
@@ -33,3 +36,8 @@ public:
 	bool isAllowedZone(const String& zoneName);
 
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

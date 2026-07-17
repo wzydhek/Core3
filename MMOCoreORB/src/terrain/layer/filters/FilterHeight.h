@@ -10,6 +10,10 @@
 #include "../ProceduralRule.h"
 #include "FilterProceduralRule.h"
 
+namespace terrain {
+namespace layer {
+namespace filters {
+
 class FilterHeight : public FilterProceduralRule {
 	float minHeight;
 	float maxHeight;
@@ -24,3 +28,9 @@ public:
 	float process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator, FilterRectangle* rect);
 
 };
+
+} // namespace filters
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::filters;

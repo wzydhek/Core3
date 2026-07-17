@@ -16,6 +16,12 @@
 
 //#define ENABLE_CITY_TRAVEL_LIMIT
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class BoardShuttleCommand : public QueueCommand {
 public:
 
@@ -34,3 +40,10 @@ private:
 	Coordinate findRandomizedArrivalPoint(CreatureObject* targetShuttleObject, PlanetManager* planetManager, Zone* arrivalZone, PlanetTravelPoint* arrivalPoint, int tries) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

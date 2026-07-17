@@ -10,6 +10,11 @@
 #include "engine/service/proto/BaseMessage.h"
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ui {
+
 class CreateClientPathMessage : public BaseMessage {
 	int coordinateCount;
 public:
@@ -25,3 +30,10 @@ public:
 
 	void drawBoundingBox(const Vector3& position, const Matrix4& rotation, const AABB& box);
 };
+
+} // namespace ui
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ui;

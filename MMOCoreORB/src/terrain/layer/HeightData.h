@@ -12,6 +12,9 @@
 
 // #define DEBUG_AFFECTOR_ROAD
 
+namespace terrain {
+namespace layer {
+
 class HeightData : public TemplateVariable<'HDTA'> {
 	Vector<Segment*> segments;
 
@@ -24,3 +27,8 @@ public:
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0001'>);
 	void findNearestHeight(float& baseValue, Vector3 worldPosition, Vector3 roadStart, Vector3 roadCenter, float direction);
 };
+
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer;

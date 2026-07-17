@@ -10,6 +10,11 @@
 #include "ObjectControllerMessageCallback.h"
 #include "server/zone/objects/player/sessions/ImageDesignData.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class ImageDesignRejectMessageCallback : public MessageCallback {
 	uint64 designer;
 	uint64 target;
@@ -27,3 +32,10 @@ public:
 
 	void run();
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

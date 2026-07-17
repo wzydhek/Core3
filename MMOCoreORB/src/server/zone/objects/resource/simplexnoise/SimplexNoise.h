@@ -35,32 +35,45 @@
 
 #pragma once
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace resource {
+namespace simplexnoise {
+
 class SimplexNoise {
+public:
+	SimplexNoise() {
+	}
+	~SimplexNoise() {
+	}
 
-  public:
-    SimplexNoise() {}
-    ~SimplexNoise() {}
+	/** 1D, 2D, 3D and 4D float Perlin noise
+	 */
+	static float noise(float x);
+	static float noise(float x, float y);
+	static float noise(float x, float y, float z);
+	static float noise(float x, float y, float z, float w);
 
-/** 1D, 2D, 3D and 4D float Perlin noise
- */
-    static float noise( float x );
-    static float noise( float x, float y );
-    static float noise( float x, float y, float z );
-    static float noise( float x, float y, float z, float w );
+	/** 1D, 2D, 3D and 4D float Perlin noise, with a specified integer period
+	 */
+	static float pnoise(float x, int px);
+	static float pnoise(float x, float y, int px, int py);
+	static float pnoise(float x, float y, float z, int px, int py, int pz);
+	static float pnoise(float x, float y, float z, float w, int px, int py, int pz, int pw);
 
-/** 1D, 2D, 3D and 4D float Perlin noise, with a specified integer period
- */
-    static float pnoise( float x, int px );
-    static float pnoise( float x, float y, int px, int py );
-    static float pnoise( float x, float y, float z, int px, int py, int pz );
-    static float pnoise( float x, float y, float z, float w,
-                              int px, int py, int pz, int pw );
-
-  private:
-    static const unsigned char perm[];
-    static float  grad( int hash, float x );
-    static float  grad( int hash, float x, float y );
-    static float  grad( int hash, float x, float y , float z );
-    static float  grad( int hash, float x, float y, float z, float t );
-
+private:
+	static const unsigned char perm[];
+	static float grad(int hash, float x);
+	static float grad(int hash, float x, float y);
+	static float grad(int hash, float x, float y, float z);
+	static float grad(int hash, float x, float y, float z, float t);
 };
+
+} // namespace simplexnoise
+} // namespace resource
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::resource::simplexnoise;

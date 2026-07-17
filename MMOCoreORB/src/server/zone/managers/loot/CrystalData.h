@@ -2,6 +2,11 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace loot {
+
 class CrystalData : public Object {
 	int minDamage;
 	int maxDamage;
@@ -62,3 +67,10 @@ public:
 	int getMaxWoundChance() const;
 
 };
+
+} // namespace loot
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::loot;

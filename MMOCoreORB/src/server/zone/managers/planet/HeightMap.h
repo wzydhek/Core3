@@ -3,6 +3,11 @@
 #include "engine/engine.h"
 #include "HeightMapPlane.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace planet {
+
 class HeightMap : public ReadWriteLock, public Logger, public Object {
 	FileInputStream* reader;
 	File* file;
@@ -43,3 +48,10 @@ protected:
 
 	int getPlanePosition(float x, float y);
 };
+
+} // namespace planet
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::planet;

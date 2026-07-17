@@ -48,7 +48,7 @@ bool SkillModEntry::toBinaryStream(ObjectOutputStream* stream) {
 	return TypeInfo<int>::toBinaryStream(&skillMod, stream) && TypeInfo<int>::toBinaryStream(&skillBonus, stream);
 }
 
-void to_json(nlohmann::json& j, const SkillModEntry& e) {
+void server::zone::objects::creature::variables::to_json(nlohmann::json& j, const SkillModEntry& e) {
 	j["skillMod"] = e.skillMod;
 	j["skillBonus"] = e.skillBonus;
 }

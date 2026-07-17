@@ -15,8 +15,21 @@
 #include "server/zone/objects/tangible/weapon/WeaponObject.h"
 #include "server/zone/objects/tangible/wearables/ArmorObject.h"
 
-class CreatureAttackData;
+
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
 class CombatQueueCommand;
+}
+using namespace server::zone::objects::creature::commands;
+}
+}
+namespace managers {
+namespace combat {
+
+class CreatureAttackData;
 
 class CombatManager : public Singleton<CombatManager>, public Logger, public Object {
 public:
@@ -277,3 +290,10 @@ protected:
 
 	float getWeaponPostureModifier(uint32 attackWeaponMask) const;
 };
+
+} // namespace combat
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::combat;

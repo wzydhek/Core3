@@ -6,6 +6,11 @@
 
 #include "system/lang.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+
 const static char* Species[] = {
     "human", // human male
     "trandoshan", // trandoshan male
@@ -176,3 +181,10 @@ public:
 	static unsigned int* getAttribLimits(int raceid);
 
 };
+
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player;

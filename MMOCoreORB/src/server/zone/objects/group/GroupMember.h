@@ -21,6 +21,11 @@ class CreatureObject;
 
 using namespace server::zone::objects::creature;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace group {
+
 class GroupMember : public Variable {
 	ManagedReference<CreatureObject*> creature;
 
@@ -57,3 +62,10 @@ public:
 
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
+
+} // namespace group
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::group;

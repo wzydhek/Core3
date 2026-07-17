@@ -2,6 +2,11 @@
 
 #include "templates/datatables/DataTableRow.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace player {
+
 class QuestInfo : public Object {
 
 protected:
@@ -32,3 +37,10 @@ public:
 
 	void parseDataTableRow(DataTableRow* row);
 };
+
+} // namespace player
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::player;

@@ -9,6 +9,12 @@
 
 #include "server/zone/managers/gcw/GCWManager.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace gcw {
+namespace tasks {
+
 class BaseDestructionTask : public Task {
 	ManagedWeakReference<GCWManager*> gcwManager;
 	ManagedWeakReference<BuildingObject*> buildingObject;
@@ -20,3 +26,11 @@ public:
 
 	int getCountdown();
 };
+
+} // namespace tasks
+} // namespace gcw
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::gcw::tasks;

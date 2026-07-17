@@ -7,6 +7,11 @@
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/resource/ResourceContainer.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace resource {
+
 class ResourceContainerObjectDeltaMessage3 : public DeltaMessage {
 private:
 	ManagedReference<ResourceContainer*> container;
@@ -17,3 +22,10 @@ public:
 	void updateQuantity();
 	
 };
+
+} // namespace resource
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::resource;

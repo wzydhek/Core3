@@ -9,6 +9,9 @@
 
 #include "templates/IffTemplate.h"
 
+namespace templates {
+namespace creation {
+
 class SkillDataForm : public IffTemplate {
 	VectorMap<String, String> professionInfoPaths;
 
@@ -25,3 +28,8 @@ public:
 
 	const String& getSkillNameAt(int idx) const;
 };
+
+} // namespace creation
+} // namespace templates
+
+using namespace templates::creation;

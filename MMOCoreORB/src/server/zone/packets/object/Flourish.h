@@ -7,8 +7,20 @@
 #include "ObjectControllerMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class Flourish : public ObjectControllerMessage {
 public:
 	Flourish(CreatureObject* creo, int flourishid);
 
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

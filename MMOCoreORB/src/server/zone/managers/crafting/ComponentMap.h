@@ -16,6 +16,11 @@
 #include "system/util/VectorMap.h"
 #include "system/lang/String.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace crafting {
+
 class ComponentMapEntry : public Object {
 	uint32 id;
 	String templateFilename;
@@ -56,3 +61,10 @@ public:
 
 	const VectorMap<uint32, uint32>& getVisibleCRC(uint32 tempCRC, uint32 slotCRC) const;
 };
+
+} // namespace crafting
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::crafting;

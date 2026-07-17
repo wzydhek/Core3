@@ -7,8 +7,20 @@
 #include "server/zone/packets/BaseLineMessage.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace tangible {
+
 class TangibleObjectMessage9 : public BaseLineMessage {
 public:
 	TangibleObjectMessage9(const TangibleObject* tano);
 
 };
+
+} // namespace tangible
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::tangible;

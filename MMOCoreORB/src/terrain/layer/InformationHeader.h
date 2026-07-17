@@ -9,6 +9,9 @@
 
 #include "../TemplateVariable.h"
 
+namespace terrain {
+namespace layer {
+
 class InformationHeader : public TemplateVariable<'IHDR'> {
 	int var1;
 	String description;
@@ -26,3 +29,8 @@ public:
 
 	const String& getDescription() const;
 };
+
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer;

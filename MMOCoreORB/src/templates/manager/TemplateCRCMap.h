@@ -10,6 +10,8 @@
 #include "templates/SharedObjectTemplate.h"
 #include "templates/TemplateReference.h"
 
+namespace templates {
+
 class TemplateCRCMap : public HashTable<uint32, TemplateReference<SharedObjectTemplate*> > {
 	int hash(const uint32& k) const override;
 
@@ -23,3 +25,7 @@ class ClientTemplateCRCMap : public HashTable<uint32, String> {
 public:
 	ClientTemplateCRCMap();
 };
+
+} // namespace templates
+
+using namespace templates;

@@ -9,6 +9,8 @@
 
 #include "TemplateVariable.h"
 
+namespace terrain {
+
 class EnvironmentData : public TemplateVariable<'EFAM'> {
 	int environmentId;
 	String environmentName;
@@ -24,3 +26,7 @@ public:
 	void parseFromIffStream(engine::util::IffStream* iffStream);
 
 };
+
+} // namespace terrain
+
+using namespace terrain;

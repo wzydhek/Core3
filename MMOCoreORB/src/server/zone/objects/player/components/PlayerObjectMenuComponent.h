@@ -9,6 +9,12 @@
 
 #include "server/zone/objects/scene/components/ObjectMenuComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace components {
+
 class PlayerObjectMenuComponent : public ObjectMenuComponent {
 public:
 
@@ -31,3 +37,11 @@ public:
 	virtual int handleObjectMenuSelect(SceneObject* sceneObject, CreatureObject* player, byte selectedID) const;
 
 };
+
+} // namespace components
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::components;

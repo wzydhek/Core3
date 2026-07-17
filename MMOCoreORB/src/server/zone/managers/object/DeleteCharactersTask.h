@@ -12,6 +12,11 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/zone/objects/transaction/TransactionLog.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace object {
+
 class DeleteCharactersTask : public Task, public Logger {
 	SortedVector<uint64> deletedCharacters;
 #ifdef WITH_SWGREALMS_API
@@ -25,3 +30,10 @@ public:
 
 	void updateDeletedCharacters();
 };
+
+} // namespace object
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::object;

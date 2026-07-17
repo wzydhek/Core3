@@ -12,6 +12,11 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/player/PlayerObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace city {
+
 class CityDecorationTask : public Task {
 	ManagedReference<CreatureObject*> mayor;
 	ManagedReference<TangibleObject*> obj;
@@ -32,3 +37,10 @@ public:
 	void removeDecoration();
 
 };
+
+} // namespace city
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::city;

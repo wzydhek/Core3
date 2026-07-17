@@ -11,8 +11,14 @@
 #include "server/zone/CloseObjectsVector.h"
 #include "templates/appearance/AppearanceTemplate.h"
 
+namespace templates {
+namespace appearance {
 class PathNode;
 class FloorMesh;
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;
 
 namespace server {
 namespace zone {
@@ -42,6 +48,11 @@ using namespace server::zone::objects::scene;
 using namespace server::zone::objects::creature;
 using namespace server::zone::objects::ship;
 using namespace server::zone;
+
+namespace server {
+namespace zone {
+namespace managers {
+namespace collision {
 
 class CollisionManager : public Singleton<CollisionManager> {
 public:
@@ -88,3 +99,10 @@ public:
 
 	static Vector3 getAxisAlignedVector(const Vector3& vector, const Matrix4& rotation);
 };
+
+} // namespace collision
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::collision;

@@ -9,6 +9,9 @@
 
 #include "BaseBoundingVolume.h"
 
+namespace templates {
+namespace collision {
+
 class CompositeVolume : public BaseBoundingVolume {
 protected:
 	Vector<Reference<BaseBoundingVolume*> > volumes;
@@ -25,3 +28,8 @@ public:
 	virtual osg::ref_ptr<osg::Node> draw() const;
 #endif
 };
+
+} // namespace collision
+} // namespace templates
+
+using namespace templates::collision;

@@ -32,6 +32,11 @@
 #define _REGISTERSPACELEAF(name) factory.reg(#name, new SpaceBehaviorCreator<leafspace::name>)
 #define _REGISTERSPACEDECO(name) factory.reg(#name, new SpaceBehaviorCreator<decoratorspace::name>)
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace space {
+
 class SpaceBehaviorCreatorHelper {
 public:
 	virtual ~SpaceBehaviorCreatorHelper() {
@@ -113,3 +118,10 @@ private:
 
 	static int addSpaceAiTemplate(lua_State* L);
 };
+
+} // namespace space
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::space;

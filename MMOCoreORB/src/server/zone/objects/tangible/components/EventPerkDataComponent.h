@@ -5,6 +5,12 @@
 #include "server/zone/objects/tangible/deed/eventperk/EventPerkDeed.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class EventPerkDataComponent : public DataObjectComponent {
 protected:
 	ManagedReference<EventPerkDeed*> deed;
@@ -35,3 +41,11 @@ public:
 
 	bool isEventPerkData();
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

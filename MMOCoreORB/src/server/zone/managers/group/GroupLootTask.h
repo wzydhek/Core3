@@ -13,6 +13,11 @@
 #include "server/zone/objects/player/sessions/LootLotterySession.h"
 #include "server/zone/objects/transaction/TransactionLog.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace group {
+
 class GroupLootTask : public Task {
 	ManagedReference<GroupObject*> group;
 	ManagedReference<CreatureObject*> player;
@@ -30,3 +35,10 @@ public:
 	bool membersInRange();
 
 };
+
+} // namespace group
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::group;

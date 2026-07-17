@@ -12,6 +12,8 @@
 #include "templates/params/primitives/IntegerParam.h"
 #include "templates/customization/CustomizationVariable.h"
 
+namespace templates {
+namespace params {
 
 class RangedIntCustomizationVariable : public CustomizationVariable, public Param {
 protected:
@@ -38,3 +40,8 @@ public:
 	const String& getVariableName() const;
 
 };
+
+} // namespace params
+} // namespace templates
+
+using namespace templates::params;

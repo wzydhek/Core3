@@ -9,6 +9,11 @@
 
 #include "ObjectControllerMessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class MissionAcceptCallback : public MessageCallback {
 	uint64 missionObjectID;
 	uint64 terminalObjectID;
@@ -22,3 +27,10 @@ public:
 
 	void run();
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

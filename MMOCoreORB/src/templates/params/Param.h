@@ -10,6 +10,9 @@
 #include "system/lang.h"
 #include "engine/util/iffstream/IffStream.h"
 
+namespace templates {
+namespace params {
+
 class Param {
 	uint32 type;
 
@@ -48,3 +51,8 @@ public:
 
 	bool isStringId() const;
 };
+
+} // namespace params
+} // namespace templates
+
+using namespace templates::params;

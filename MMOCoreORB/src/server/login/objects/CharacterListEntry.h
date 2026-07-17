@@ -6,6 +6,10 @@
 
 #include "system/lang/Object.h"
 
+namespace server {
+namespace login {
+namespace objects {
+
 class CharacterListEntry : public Object {
 private:
 	uint64 objectID = 0;
@@ -89,3 +93,9 @@ public:
 
 	String toStringData() const;
 };
+
+} // namespace objects
+} // namespace login
+} // namespace server
+
+using namespace server::login::objects;

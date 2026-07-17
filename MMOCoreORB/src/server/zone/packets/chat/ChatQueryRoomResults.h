@@ -10,6 +10,11 @@
 #include "engine/service/proto/BaseMessage.h"
 #include "server/chat/room/ChatRoom.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace chat {
+
 class ChatQueryRoomResults : public BaseMessage {
 public:
 
@@ -24,3 +29,10 @@ public:
 	void fillBannedList(ChatRoom* room);
 
 };
+
+} // namespace chat
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::chat;

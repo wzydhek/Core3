@@ -21,7 +21,7 @@ PlayerQuestData& PlayerQuestData::operator=(const PlayerQuestData& data) {
 	return *this;
 }
 
-void to_json(nlohmann::json& j, const PlayerQuestData& d) {
+void server::zone::objects::player::variables::to_json(nlohmann::json& j, const PlayerQuestData& d) {
 	j["ownerId"] = d.ownerId;
 	j["activeStepBitmask"] = d.activeStepBitmask;
 	j["completedStepBitmask"] = d.completedStepBitmask;

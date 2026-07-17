@@ -22,7 +22,12 @@ namespace server {
  }
 }
 
-class ValidatedPosition : public Serializable {
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+
+ class ValidatedPosition : public Serializable {
 	SerializableVector3 point;
 	uint64 parent;
 public:
@@ -54,3 +59,10 @@ private:
 	void addSerVariables();
 
 };
+
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player;

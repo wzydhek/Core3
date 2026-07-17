@@ -12,6 +12,10 @@
 
 #define defaultValue 1.5707964
 
+namespace terrain {
+namespace layer {
+namespace filters {
+
 class FilterSlope : public FilterProceduralRule {
 	float minAngle; // +32
 	float max; // +40
@@ -34,3 +38,9 @@ public:
 	float process(float x, float y, float transformValue, float& baseValue, TerrainGenerator* terrainGenerator);
 
 };
+
+} // namespace filters
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::filters;

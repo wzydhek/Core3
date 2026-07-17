@@ -7,6 +7,11 @@
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/intangible/IntangibleObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace intangible {
+
 class IntangibleObjectDeltaMessage3 : public DeltaMessage {
 	IntangibleObject* itno;
 
@@ -19,3 +24,10 @@ public:
 
 	void updateStatus(uint32 value);
 };
+
+} // namespace intangible
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::intangible;

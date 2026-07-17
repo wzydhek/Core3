@@ -9,6 +9,11 @@
 
 #include "templates/datatables/DataTableRow.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace skill {
+
 class PerformanceType {
 public:
 	enum {
@@ -110,3 +115,10 @@ public:
 	void parseDataTableRow(int idx, DataTableRow* row);
 
 };
+
+} // namespace skill
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::skill;

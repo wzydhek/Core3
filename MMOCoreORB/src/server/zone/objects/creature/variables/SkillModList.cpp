@@ -48,7 +48,7 @@ void SkillModList::addSerializableVariables() {
 	addSerializableVariable("mods", &mods);
 }
 
-void to_json(nlohmann::json& j, const SkillModList& map) {
+void server::zone::objects::creature::variables::to_json(nlohmann::json& j, const SkillModList& map) {
 	j["mods"] = map.mods;
 
 	const DeltaVectorMap<String, SkillModEntry>& vm = map;

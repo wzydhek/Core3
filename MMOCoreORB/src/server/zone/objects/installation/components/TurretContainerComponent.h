@@ -11,6 +11,12 @@
 #include "server/zone/objects/scene/components/ContainerComponent.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace installation {
+namespace components {
+
 class TurretContainerComponent : public ContainerComponent {
 public:
 	bool checkContainerPermission(SceneObject* sceneObject, CreatureObject* creature, uint16 permission) const;
@@ -36,3 +42,11 @@ public:
 	 */
 	int notifyObjectRemoved(SceneObject* sceneObject, SceneObject* object, SceneObject* destination) const;
 };
+
+} // namespace components
+} // namespace installation
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::installation::components;

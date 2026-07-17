@@ -10,6 +10,11 @@
 #include "engine/engine.h"
 #include "HuntingTargetEntry.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace planet {
+
 class HuntingTargetMap :private ReadWriteLock, public Object {
 	VectorMap<int, SortedVector<HuntingTargetEntry> > targets;
 
@@ -20,3 +25,10 @@ public:
 
 	HuntingTargetEntry* getRandomTarget(int lev);
 };
+
+} // namespace planet
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::planet;

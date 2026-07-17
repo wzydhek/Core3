@@ -11,6 +11,12 @@
 #include "server/zone/objects/tangible/threat/ThreatMap.h"
 #include "server/zone/objects/tangible/threat/ThreatMapObserver.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace threat {
+
 class ThreatMapClearObserversTask : public Task {
 	ThreatMap threatMap;
 	ManagedReference<ThreatMapObserver*> threatMapObserver;
@@ -20,3 +26,11 @@ public:
 
 	void run();
 };
+
+} // namespace threat
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::threat;

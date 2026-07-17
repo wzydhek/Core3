@@ -11,6 +11,11 @@
 #include <atomic>
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace planet {
+
 class PlanetTravelPoint : public Object {
 	ManagedWeakReference<CreatureObject*> shuttleObject;
 
@@ -85,3 +90,10 @@ public:
 
 	String toString() const;
 };
+
+} // namespace planet
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::planet;

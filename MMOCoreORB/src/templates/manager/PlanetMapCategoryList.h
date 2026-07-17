@@ -11,6 +11,8 @@
 #include "system/util/HashTable.h"
 #include "PlanetMapCategory.h"
 
+namespace templates {
+
 class PlanetMapCategory;
 
 class PlanetMapCategoryList : public HashTable<int, Reference<PlanetMapCategory*> > {
@@ -29,3 +31,7 @@ public:
 
 	Reference<PlanetMapCategory*> put(const String& key, const Reference<PlanetMapCategory*>& value);
 };
+
+} // namespace templates
+
+using namespace templates;

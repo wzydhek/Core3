@@ -10,6 +10,8 @@
 #include "TemplateVariable.h"
 #include "TerrainAppearance.h"
 
+namespace terrain {
+
 class SpaceTerrainAppearance : public TemplateVariable<'STAT'>, public Logger, public TerrainAppearance {
 protected:
 	void parseSKYB(engine::util::IffStream* iffStream);
@@ -34,3 +36,7 @@ public:
 	float getSize() const override;
 
 };
+
+} // namespace terrain
+
+using namespace terrain;

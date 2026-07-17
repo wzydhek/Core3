@@ -12,7 +12,13 @@
 
 #include "ResourcePool.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
 class ResourceSpawner;
+namespace resourcepool {
 
 /**
  * The native pool class represents all of the
@@ -79,3 +85,12 @@ public:
 
 	friend class ResourceSpawner;
 };
+
+} // namespace resourcepool
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner::resourcepool;

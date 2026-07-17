@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class SharedBattlefieldMarkerObjectTemplate : public SharedTangibleObjectTemplate {
 
 public:
@@ -21,3 +24,8 @@ public:
 	void readObject(IffStream* iffStream);
 
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

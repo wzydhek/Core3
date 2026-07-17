@@ -6,6 +6,11 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+
 class Components {
 public:
 	const static int CHASSIS = -1;
@@ -34,3 +39,10 @@ public:
 
 	static String shipComponentSlotToString(int slot);
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

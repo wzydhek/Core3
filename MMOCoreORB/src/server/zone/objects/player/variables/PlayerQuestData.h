@@ -10,6 +10,12 @@
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace variables {
+
 class PlayerQuestData : public Object {
 	uint64 ownerId;
 	uint16 activeStepBitmask;
@@ -247,3 +253,11 @@ public:
 
 	void setQuestCounter(int questCounter);
 };
+
+} // namespace variables
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::variables;

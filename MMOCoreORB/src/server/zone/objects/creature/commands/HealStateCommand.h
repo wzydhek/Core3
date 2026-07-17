@@ -7,6 +7,12 @@
 #include "QueueCommand.h"
 #include "server/zone/objects/tangible/pharmaceutical/StatePack.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class HealStateCommand : public QueueCommand {
 	float mindCost;
 	float range;
@@ -33,3 +39,10 @@ public:
 
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

@@ -10,6 +10,9 @@
 #include "templates/appearance/PathNode.h"
 #include "templates/IffTemplate.h"
 
+namespace templates {
+namespace appearance {
+
 class FloorMesh;
 
 class PathGraph : public IffTemplate {
@@ -69,3 +72,8 @@ public:
 	PathGraphType getType() const;
 
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

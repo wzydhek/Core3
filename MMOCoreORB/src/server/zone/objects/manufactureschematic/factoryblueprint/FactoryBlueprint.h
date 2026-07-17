@@ -11,6 +11,12 @@
 #include "BlueprintEntry.h"
 #include "server/zone/objects/installation/factory/FactoryObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace manufactureschematic {
+namespace factoryblueprint {
+
 class FactoryBlueprint  : public Serializable  {
 private:
 	Vector<BlueprintEntry> completeEntries;
@@ -45,3 +51,11 @@ public:
 
 	friend void to_json(nlohmann::json& j, const FactoryBlueprint& p);
 };
+
+} // namespace factoryblueprint
+} // namespace manufactureschematic
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::manufactureschematic::factoryblueprint;

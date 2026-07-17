@@ -6,6 +6,11 @@
 
 #pragma once
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+
 namespace ShipComponentFlag {
 	enum {
 		DISABLED				= 0x0001,
@@ -18,3 +23,10 @@ namespace ShipComponentFlag {
 		DISABLED_NEEDS_POWER	= 0x0080
 	};
 }
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

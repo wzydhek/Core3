@@ -10,6 +10,11 @@
 #include "engine/engine.h"
 #include "system/lang/String.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace auction {
+
 class VuidString : public String {
 public:
 
@@ -25,3 +30,10 @@ public:
 
 	int compareTo(const VuidString& str) const;
 };
+
+} // namespace auction
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::auction;

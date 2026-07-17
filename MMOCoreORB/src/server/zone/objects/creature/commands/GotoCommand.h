@@ -7,6 +7,12 @@
 #include "QueueCommand.h"
 #include "server/zone/objects/waypoint/WaypointObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class GotoCommand : public QueueCommand {
 public:
 	GotoCommand(const String& name, ZoneProcessServer* server);
@@ -19,3 +25,10 @@ private:
 	float calculateWaypointManhattanDistance(CreatureObject* creature, WaypointObject* wp) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

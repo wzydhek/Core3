@@ -10,6 +10,12 @@
 #include "ConversationScreen.h"
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace conversation {
+
 class LuaConversationScreen {
 public:
 	// Constants
@@ -45,3 +51,11 @@ private:
 
 	static void setDialogText(StringIdParameter* param, lua_State* L, bool forceString = false);
 };
+
+} // namespace conversation
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::conversation;

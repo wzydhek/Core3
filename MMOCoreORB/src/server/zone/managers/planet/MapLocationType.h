@@ -6,6 +6,11 @@
 
 #include "system/lang/String.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace planet {
+
 class MapLocationType {
 public:
 
@@ -91,3 +96,10 @@ public:
 	static String getMapLocationName(uint8 maptype);
 
 };
+
+} // namespace planet
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::planet;

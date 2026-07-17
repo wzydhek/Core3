@@ -9,6 +9,11 @@
 
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace trade {
+
 class AbortTradeMessageCallback : public MessageCallback {
 public:
 	AbortTradeMessageCallback(ZoneClientSession* client, ZoneProcessServer* server);
@@ -17,3 +22,10 @@ public:
 
 	void run();
 };
+
+} // namespace trade
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::trade;

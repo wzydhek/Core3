@@ -9,9 +9,10 @@
 
 #include "templates/SharedObjectTemplate.h"
 
+namespace templates {
+
 class SharedIntangibleObjectTemplate : public SharedObjectTemplate {
 protected:
-
 
 public:
 	SharedIntangibleObjectTemplate();
@@ -23,3 +24,7 @@ public:
 	void readObject(LuaObject* templateData);
 
 };
+
+} // namespace templates
+
+using namespace templates;

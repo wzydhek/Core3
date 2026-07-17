@@ -9,6 +9,8 @@
 
 #include "templates/datatables/DataTableRow.h"
 
+namespace templates {
+
 class PlanetMapCategory : public Object {
 	String name;
 	int nameCRC;
@@ -44,3 +46,7 @@ public:
 	bool isFactionVisibleOnly() const;
 
 };
+
+} // namespace templates
+
+using namespace templates;

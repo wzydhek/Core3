@@ -6,6 +6,12 @@
 
 #include "QueueCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class SnoopCommand : public QueueCommand {
 public:
 	SnoopCommand(const String& name, ZoneProcessServer* server);
@@ -31,3 +37,10 @@ public:
 	int sendSkillModifiers(CreatureObject* creature, CreatureObject* targetCreature) const;
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

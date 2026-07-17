@@ -9,6 +9,9 @@
 
 #include "engine/lua/LuaObject.h"
 
+namespace templates {
+namespace tangible {
+
 class CharacterBuilderMenuNode : public Object {
 	WeakReference<CharacterBuilderMenuNode*> parentNode;
 
@@ -51,3 +54,8 @@ public:
 
 	CharacterBuilderMenuNode* getChildNodeAt(int index);
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

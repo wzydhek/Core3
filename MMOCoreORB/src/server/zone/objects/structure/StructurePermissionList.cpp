@@ -53,7 +53,7 @@ StructurePermissionList& StructurePermissionList::operator=(const StructurePermi
 	return *this;
 }
 
-void to_json(nlohmann::json& j, const StructurePermissionList& p) {
+void server::zone::objects::structure::to_json(nlohmann::json& j, const StructurePermissionList& p) {
 	j["permissionLists"] = p.permissionLists;
 	j["idPermissionLists"] = p.idPermissionLists;
 	j["ownerName"] = p.ownerName;

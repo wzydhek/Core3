@@ -10,7 +10,18 @@
 #include "../ProceduralRule.h"
 #include "AffectorProceduralRule.h"
 
-class TerrainGenerator;
+namespace terrain {
+
+	class TerrainGenerator;
+
+} // namespace terrain
+
+using namespace terrain;
+
+namespace terrain {
+namespace layer {
+namespace affectors {
+
 
 class AffectorHeightConstant : public ProceduralRule<'AHCN'>, public AffectorProceduralRule {
 	int operationType; // id?
@@ -35,3 +46,9 @@ public:
 
 	bool isEnabled();
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

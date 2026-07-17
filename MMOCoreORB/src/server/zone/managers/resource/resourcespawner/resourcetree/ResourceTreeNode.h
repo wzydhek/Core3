@@ -13,6 +13,13 @@
 #include "ResourceTreeEntry.h"
 #include "server/zone/objects/player/sui/listbox/SuiListBox.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
+namespace resourcetree {
+
 class ResourceTreeNode {
 private:
 	String name;
@@ -59,3 +66,12 @@ private:
 			const Vector<String> excludes) const;
 
 };
+
+} // namespace resourcetree
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner::resourcetree;

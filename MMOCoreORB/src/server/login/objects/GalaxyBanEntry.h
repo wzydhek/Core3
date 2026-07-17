@@ -6,6 +6,10 @@
 
 #include "system/lang/Object.h"
 
+namespace server {
+namespace login {
+namespace objects {
+
 class GalaxyBanEntry : public Object {
 private:
 	uint32 accountID = 0;
@@ -48,3 +52,9 @@ public:
 
 	uint32 getBanAdmin() const;
 };
+
+} // namespace objects
+} // namespace login
+} // namespace server
+
+using namespace server::login::objects;

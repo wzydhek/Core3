@@ -15,6 +15,8 @@
 
 #include "TerrainCache.h"
 
+namespace terrain {
+
 class ProceduralTerrainAppearance;
 
 class TerrainManager : public Logger, public Object {
@@ -81,3 +83,7 @@ public:
 		MOCK_METHOD2(getHeight,float(float x, float y));
 	};
 #endif
+
+} // namespace terrain
+
+using namespace terrain;

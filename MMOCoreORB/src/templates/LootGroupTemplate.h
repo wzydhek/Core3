@@ -10,6 +10,8 @@
 #include "system/lang.h"
 #include "engine/lua/LuaObject.h"
 
+namespace templates {
+
 class LootGroupTemplate : public Object {
 	String templateName;
 
@@ -34,3 +36,7 @@ public:
 
 	const String& getTemplateName() const;
 };
+
+} // namespace templates
+
+using namespace templates;

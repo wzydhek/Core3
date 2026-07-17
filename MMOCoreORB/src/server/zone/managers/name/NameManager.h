@@ -31,6 +31,11 @@ class CreatureObject;
 
 using namespace server::zone::objects::creature;
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace name {
+
 class NameManagerResult {
 public:
 	static const uint8 DECLINED_EMPTY = 0;
@@ -65,7 +70,7 @@ public:
 	static const int SCOUTTROOPER = 12; // XX-123
 	static const int DARKTROOPER = 13;	// XX-123
 	static const int SWAMPTROOPER = 14; // XX-123
-	static const int TIEPILOT = 15; // XX-123
+	static const int TIEPILOT = 15;		// XX-123
 
 	static const int GUILD_NAME = 31;
 	static const int GUILD_ABBREV = 32;
@@ -76,11 +81,6 @@ public:
 	static const int FRAG_SPECIAL = 43;
 	static const int FRAG_MIXED = 44;
 };
-
-namespace server {
-namespace zone {
-namespace managers {
-namespace name {
 
 class NameManager : public Singleton<NameManager>, public Logger, public Object {
 	ManagedReference<ZoneProcessServer*> server;

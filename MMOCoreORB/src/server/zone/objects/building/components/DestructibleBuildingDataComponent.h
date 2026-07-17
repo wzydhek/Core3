@@ -12,6 +12,12 @@
 #include "system/util/Vector.h"
 #include "server/zone/objects/scene/SceneObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace building {
+namespace components {
+
 class DestructibleBuildingDataComponent : public BuildingDataComponent, public Logger {
 
 private:
@@ -217,3 +223,11 @@ private:
 	int writeObjectMembers(ObjectOutputStream* stream);
 	bool readObjectMember(ObjectInputStream* stream, const String& name);
 };
+
+} // namespace components
+} // namespace building
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::building::components;

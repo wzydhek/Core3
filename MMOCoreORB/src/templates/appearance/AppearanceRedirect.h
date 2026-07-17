@@ -9,6 +9,9 @@
 
 #include "templates/IffTemplate.h"
 
+namespace templates {
+namespace appearance {
+
 class AppearanceRedirect : public IffTemplate {
 	String redirectFile;
 public:
@@ -18,3 +21,8 @@ public:
 
 	String getRedirectFile();
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

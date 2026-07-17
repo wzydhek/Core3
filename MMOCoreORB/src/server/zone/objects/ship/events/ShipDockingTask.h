@@ -5,6 +5,12 @@
 #include "server/zone/packets/ship/ShipUpdateTransformMessage.h"
 #include "server/zone/packets/scene/PlayClientEffectLocMessage.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace events {
+
 class ShipDockingTask: public Task, public Logger {
 private:
 	const static int DURATION_MIN = 10000;
@@ -81,3 +87,11 @@ private:
 
 	Vector3 getRotationAxis(const Vector3& axis);
 };
+
+} // namespace events
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::events;

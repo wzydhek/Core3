@@ -15,6 +15,9 @@
 #include "templates/appearance/AppearanceTemplate.h"
 #include "templates/appearance/PathGraph.h"
 
+namespace templates {
+namespace appearance {
+
 class PortalGeometry : public Object {
 	Reference<MeshData*> geometry;
 	AABB boundingBox;
@@ -79,3 +82,8 @@ public:
 
 	static uint32 loadCRC(IffStream* iffStream);
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

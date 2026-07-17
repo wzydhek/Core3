@@ -10,6 +10,12 @@
 	#include "server/zone/packets/chat/ChatSystemMessage.h"
 #endif // SHIPPROJECTILE_DEBUG
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace spacecombat {
+namespace projectile {
+
 class ShipProjectile: public Object, public Logger {
 public:
 	const static constexpr float positionScale = 7800.f;
@@ -93,3 +99,11 @@ public:
 	virtual void debugProjectilePath(ShipObject* ship);
 #endif //SHIPPROJECTILE_DEBUG
 };
+
+} // namespace projectile
+} // namespace spacecombat
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::spacecombat::projectile;

@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class SharedWeaponObjectTemplate: public SharedTangibleObjectTemplate {
 protected:
 	StringParam weaponEffect;
@@ -251,3 +254,8 @@ public:
 
 	void setWeaponType(uint32 weaponType);
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

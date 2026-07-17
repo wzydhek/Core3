@@ -10,6 +10,9 @@
 #include "system/lang.h"
 #include "templates/datatables/DataTableRow.h"
 
+namespace templates {
+namespace customization {
+
 class HairAssetData : public Object {
 	String sharedTemplate;
 	String playerTemplate;
@@ -37,3 +40,8 @@ public:
 
 	int getSkillModValue() const;
 };
+
+} // namespace customization
+} // namespace templates
+
+using namespace templates::customization;

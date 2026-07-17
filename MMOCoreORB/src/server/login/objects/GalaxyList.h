@@ -12,6 +12,10 @@
 	#include "server/login/SWGRealmsAPI.h"
 #endif
 
+namespace server {
+namespace login {
+namespace objects {
+
 class GalaxyList {
 	Vector<Galaxy> galaxies;
 	Galaxy current;
@@ -42,3 +46,9 @@ public:
 
 	int size() const;
 };
+
+} // namespace objects
+} // namespace login
+} // namespace server
+
+using namespace server::login::objects;

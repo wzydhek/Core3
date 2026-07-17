@@ -10,6 +10,10 @@
 #include "../ProceduralRule.h"
 #include "AffectorProceduralRule.h"
 
+namespace terrain {
+namespace layer {
+namespace affectors {
+
 class AffectorPassable : public ProceduralRule<'APAS'>, public AffectorProceduralRule {
 	float var1, var2;
 
@@ -20,3 +24,9 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0000'>);
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

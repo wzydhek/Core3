@@ -9,6 +9,11 @@
 
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace chat {
+
 class ChatLeaveRoomCallback : public MessageCallback {
 
 	String roomPath;
@@ -22,3 +27,10 @@ public:
 	void run();
 
 };
+
+} // namespace chat
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::chat;

@@ -11,7 +11,12 @@
 #include "server/zone/objects/tangible/misc/DroidProgrammingChip.h"
 
 
-#define DEBUG_DROID_COMMAND
+//#define DEBUG_DROID_COMMAND
+
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
 
 class DroidCommandProgrammingCallback : public MessageCallback {
 protected:
@@ -37,3 +42,10 @@ public:
 
 	bool hasSpaceForCommand(SceneObject* datapad, int capacity, int commandSize);
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

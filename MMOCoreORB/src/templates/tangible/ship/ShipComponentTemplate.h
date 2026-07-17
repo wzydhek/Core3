@@ -2,6 +2,10 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+namespace ship {
+
 class ShipComponentTemplate: public SharedTangibleObjectTemplate {
 protected:
 	VectorMap<String, float> attributeMap;
@@ -22,3 +26,9 @@ public:
 
 	const String& getComponentDataName() const;
 };
+
+} // namespace ship
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible::ship;

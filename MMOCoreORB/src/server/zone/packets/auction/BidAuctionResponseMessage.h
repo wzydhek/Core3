@@ -15,6 +15,11 @@
 
 #include "engine/service/proto/BaseMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace auction {
+
 class BidAuctionResponseMessage : public BaseMessage {
 public:
 	const static int SUCCEDED = 0;
@@ -31,3 +36,10 @@ public:
 	BidAuctionResponseMessage(uint64 objectid, int status);
 	
 };
+
+} // namespace auction
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::auction;

@@ -14,6 +14,12 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "ResourceSpawner.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
+
 class ResourceSpawner;
 
 class SampleResultsTask : public Task {
@@ -30,3 +36,11 @@ public:
 	void run();
 
 };
+
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner;

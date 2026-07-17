@@ -9,6 +9,11 @@
 
 #include <system/lang/String.h>
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+
 class SceneObjectType {
 public:
 
@@ -403,3 +408,10 @@ public:
 public:
 	static const String typeToString(int gameObjectType);
 };
+
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene;

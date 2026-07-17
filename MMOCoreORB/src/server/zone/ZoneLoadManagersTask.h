@@ -9,6 +9,9 @@
 #include "engine/engine.h"
 #include "server/zone/Zone.h"
 
+namespace server {
+namespace zone {
+
 class ZoneLoadManagersTask : public Task {
 	ManagedReference<ZoneServer*> zoneServer;
 	ManagedReference<Zone*> zone;
@@ -17,3 +20,8 @@ public:
 
 	void run();
 };
+
+} // namespace zone
+} // namespace server
+
+using namespace server::zone;

@@ -2,6 +2,12 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace components {
+
 class ShipComponentAttributes {
 public:
 	static const Vector<String> ATTRIBUTES;
@@ -35,3 +41,11 @@ const Vector<String> ShipComponentAttributes::ATTRIBUTES = {
 	"ship_component_weapon_energy_per_shot", "energy_per_shot",
 	"ship_component_weapon_refire_rate", "refire_rate"
 };
+
+} // namespace components
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::components;

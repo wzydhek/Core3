@@ -1,20 +1,17 @@
 #pragma once
 
-namespace server {
-	namespace zone {
-		namespace objects {
-			namespace ship {
-				class ShipObject;
-			}
-		}
-	}
-}
 
 #include "engine/engine.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/ship/transform/SpaceMath.h"
 #include "server/zone/objects/ship/transform/SpaceTransform.h"
 #include "server/zone/objects/ship/transform/SpaceTransformType.h"
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+class ShipObject;
+namespace transform {
 
 class ShipObjectTransform : public Object {
 public:
@@ -96,3 +93,11 @@ private:
 public:
 	String toDebugString() const;
 };
+
+} // namespace transform
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::transform;

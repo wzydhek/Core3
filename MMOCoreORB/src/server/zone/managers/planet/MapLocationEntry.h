@@ -10,7 +10,11 @@
 
 #include "engine/engine.h"
 
+namespace templates {
 class PlanetMapCategory;
+}
+
+using namespace templates;
 
 namespace server {
 namespace zone {
@@ -30,6 +34,11 @@ namespace creature {
 
 using namespace server::zone::objects::scene;
 using namespace server::zone::objects::creature;
+
+namespace server {
+namespace zone {
+namespace managers {
+namespace planet {
 
 class MapLocationEntry : public Object {
 	Reference<SceneObject*> object;
@@ -63,3 +72,10 @@ public:
 	 */
 	void setIcon(byte ico);
 };
+
+} // namespace planet
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::planet;

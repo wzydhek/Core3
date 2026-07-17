@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class InstrumentObjectTemplate : public SharedTangibleObjectTemplate {
 	int instrumentType;
 
@@ -21,3 +24,8 @@ public:
 
 	bool isInstrumentObjectTemplate() const override;
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

@@ -16,6 +16,11 @@
 
 // #define DEBUG_QUEUE
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+
 class CommandQueueTask;
 
 class CommandQueue : public Object, public Logger {
@@ -71,3 +76,10 @@ public:
 
 	void run();
 };
+
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature;

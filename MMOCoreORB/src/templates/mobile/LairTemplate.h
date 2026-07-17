@@ -10,6 +10,9 @@
 #include "engine/lua/LuaObject.h"
 #include "templates/faction/Factions.h"
 
+namespace templates {
+namespace mobile {
+
 class LairTemplate : public Object {
 public:
 	enum MobType {CREATURE, NPC};
@@ -66,3 +69,8 @@ public:
 
 	BuildingType getBuildingType() const;
 };
+
+} // namespace mobile
+} // namespace templates
+
+using namespace templates::mobile;

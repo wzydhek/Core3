@@ -9,6 +9,9 @@
 
 #include "templates/appearance/AppearanceTemplate.h"
 
+namespace templates {
+namespace appearance {
+
 class DetailAppearanceTemplate : public AppearanceTemplate {
 	const AppearanceTemplate* firstMesh;
 public:
@@ -38,3 +41,8 @@ public:
 	virtual Vector<Reference<MeshData*>> getTransformedMeshData(const Matrix4& parentTransform) const;
 
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

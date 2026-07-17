@@ -12,6 +12,9 @@
 #include "templates/appearance/PathNode.h"
 #include "templates/appearance/PathGraph.h"
 
+namespace templates {
+namespace appearance {
+
 //#define RENDER_EXTERNAL_FLOOR_MESHES_ONLY
 
 class MeshData;
@@ -179,3 +182,8 @@ public:
 
 	friend class FloorMeshTriangleNode;
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

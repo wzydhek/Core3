@@ -10,6 +10,12 @@
 #include "../BuffAttribute.h"
 #include "BuffCRC.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace buffs {
+
 class BuffType {
 public:
 	enum {
@@ -25,3 +31,11 @@ public:
 		TRAP
 	};
 };
+
+} // namespace buffs
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::buffs;

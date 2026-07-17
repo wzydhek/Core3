@@ -11,11 +11,23 @@
 #include "TerrainAppearance.h"
 #include "engine/util/u3d/AABB.h"
 
+namespace terrain {
+namespace layer {
+	class Layer;
+namespace boundaries {
+	class Boundary;
+}
+}
+}
+
+using namespace terrain::layer;
+using namespace terrain::layer::boundaries;
+
+namespace terrain {
+
 class TerrainGenerator;
-class Boundary;
 class TerrainMaps;
 
-class Layer;
 
 class ProceduralTerrainAppearance : public TemplateVariable<'PTAT'>, public Logger, public TerrainAppearance {
 	TerrainGenerator* terrainGenerator;
@@ -114,3 +126,7 @@ public:
 	TerrainGenerator* removeTerrainModification(uint64 objectid);
 
 };
+
+} // namespace terrain
+
+using namespace terrain;

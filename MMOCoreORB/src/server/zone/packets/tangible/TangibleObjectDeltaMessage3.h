@@ -7,6 +7,11 @@
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/tangible/TangibleObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace tangible {
+
 class TangibleObjectDeltaMessage3 : public DeltaMessage {
 	ManagedReference<TangibleObject*> tano;
 
@@ -29,3 +34,10 @@ public:
 
 	void updateOptionsBitmask();
 };
+
+} // namespace tangible
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::tangible;

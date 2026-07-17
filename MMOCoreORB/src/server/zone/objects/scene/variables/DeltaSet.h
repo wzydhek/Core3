@@ -10,6 +10,12 @@
 #include "engine/engine.h"
 #include "server/zone/packets/DeltaMessage.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace variables {
+
 template <class K, class V> class DeltaSet : public Serializable {
 protected:
 	VectorMap<K, V> vectorMap;
@@ -236,3 +242,11 @@ public:
 		return updateCounter;
 	}
 };
+
+} // namespace variables
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::variables;

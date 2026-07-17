@@ -57,6 +57,11 @@ namespace server {
 
 using namespace server::zone::objects::creature::ai;
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace group {
+
 class GroupManager : public Singleton<GroupManager>, public Object, public Logger {
 
 public:
@@ -94,3 +99,10 @@ public:
 
 	void joinGroupEntertainingSession(CreatureObject* player);
 };
+
+} // namespace group
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::group;

@@ -67,7 +67,6 @@ private:
 	float distFromHome;
 };
 
-
 class ExitCombat : public BehaviorSpace {
 public:
 	ExitCombat(const String& className, const uint32 id, const LuaObject& args);

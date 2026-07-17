@@ -10,6 +10,12 @@
 #include "engine/engine.h"
 #include "engine/util/json_utils.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace variables {
+
 class CooldownTimer : public Variable {
 	Time timeStamp;
 
@@ -72,3 +78,11 @@ public:
 
 
 };
+
+} // namespace variables
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::variables;

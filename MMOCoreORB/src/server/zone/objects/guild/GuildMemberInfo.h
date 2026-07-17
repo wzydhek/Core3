@@ -62,7 +62,7 @@ namespace guild {
 		friend void to_json(nlohmann::json& j, const GuildMemberInfo& m);
 	};
 
-			void to_json(nlohmann::json& j, const GuildMemberInfo& m);
+			//void to_json(nlohmann::json& j, const GuildMemberInfo& m);
 
 	} // namespace guild
 	}

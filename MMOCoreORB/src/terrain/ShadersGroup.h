@@ -9,6 +9,8 @@
 
 #include "ShaderFamily.h"
 
+namespace terrain {
+
 class ShadersGroup : public TemplateVariable<'SGRP'> {
 	Vector<ShaderFamily*> data;
 
@@ -23,3 +25,7 @@ public:
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0006'>);
 
 };
+
+} // namespace terrain
+
+using namespace terrain;

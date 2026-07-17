@@ -9,6 +9,11 @@
 #include "engine/log/Logger.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace skill {
+
 class PerformanceManager: public Logger {
 	HashTable<String, String> danceMap;
 	HashTable<String, int> instrumentIdMap;
@@ -61,3 +66,10 @@ public:
 	void performanceMessageToDroidOwner(CreatureObject* droid, CreatureObject* target, const String& table, const String& text);
 
 };
+
+} // namespace skill
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::skill;

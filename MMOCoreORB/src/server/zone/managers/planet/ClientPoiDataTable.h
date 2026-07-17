@@ -10,6 +10,11 @@
 #include "templates/datatables/DataTableIff.h"
 #include "templates/datatables/DataTableRow.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace planet {
+
 class PoiData : public Object {
 protected:
 	String name;
@@ -46,3 +51,10 @@ public:
 
 	int size();
 };
+
+} // namespace planet
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::planet;

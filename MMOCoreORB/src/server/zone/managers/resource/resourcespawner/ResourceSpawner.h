@@ -39,13 +39,19 @@ namespace listbox {
 
 using namespace server::zone::objects::player::sui::listbox;
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
+
 /**
  * The ResourceSpawner class represents all the functions related to ResourceSpawns
  * Including spawning, despawning rules,
  */
 class ResourceSpawner : public Logger, public Object {
 private:
-	ManagedReference<ZoneServer* > server;
+	ManagedReference<ZoneServer*> server;
 	ManagedReference<ZoneProcessServer*> processor;
 
 	NameManager* nameManager;
@@ -72,8 +78,7 @@ private:
 	int samplingMultiplier;
 
 public:
-	ResourceSpawner(ManagedReference<ZoneServer* > serv,
-			ZoneProcessServer* impl);
+	ResourceSpawner(ManagedReference<ZoneServer*> serv, ZoneProcessServer* impl);
 	~ResourceSpawner();
 
 	void init();
@@ -86,8 +91,7 @@ public:
 	void addZone(const String& zoneName);
 	void removeZone(const String& zoneName);
 	void addJtlResource(const String& resourceName);
-	void setSpawningParameters(bool loadFromScript, const int dur, const int throt,
-			const int override, const int spawnquantity);
+	void setSpawningParameters(bool loadFromScript, const int dur, const int throt, const int override, const int spawnquantity);
 
 	void spawnScriptResources();
 	bool writeAllSpawnsToScript();
@@ -140,8 +144,8 @@ public:
 	String dumpResources();
 
 	String getPlanetByIndex(int index) const;
-private:
 
+private:
 	void loadResourceSpawns();
 	String makeResourceName(const String& randomNameClass);
 	int randomizeValue(int min, int max);
@@ -155,3 +159,11 @@ private:
 	friend class ResourceManager;
 	friend class NativePool;
 };
+
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner;

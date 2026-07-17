@@ -65,7 +65,7 @@ bool SkillList::toBinaryStream(ObjectOutputStream* stream) {
 	return true;
 }
 
-void to_json(nlohmann::json& j, const SkillList& s) {
+void server::zone::objects::creature::variables::to_json(nlohmann::json& j, const SkillList& s) {
 #ifdef ODB_SERIALIZATION
 	j = s.skills;
 #else

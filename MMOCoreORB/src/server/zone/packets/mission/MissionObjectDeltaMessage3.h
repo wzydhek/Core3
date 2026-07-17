@@ -8,6 +8,11 @@
 #include "server/zone/objects/mission/MissionObject.h"
 #include "server/zone/objects/waypoint/WaypointObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace mission {
+
 class MissionObjectDeltaMessage3 : public DeltaMessage {
 	MissionObject* miso;
 
@@ -39,3 +44,10 @@ public:
 	void updateWaypoint(WaypointObject* way);
 
 };
+
+} // namespace mission
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::mission;

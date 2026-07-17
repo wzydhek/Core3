@@ -4,7 +4,9 @@
 
 #pragma once
 
+namespace server {
 namespace login {
+namespace objects {
 
 const static char* Race[] = {
     "object/creature/player/human_male.iff", // human male
@@ -29,4 +31,8 @@ const static char* Race[] = {
     "object/creature/player/ithorian_female.iff"  // DA E7   -   ithorian female
 };
 
-}
+} // namespace objects
+} // namespace login
+} // namespace server
+
+using namespace server::login::objects;

@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class DeedTemplate : public SharedTangibleObjectTemplate {
 	String generatedObjectTemplate;
 
@@ -21,3 +24,8 @@ public:
 
 	const String& getGeneratedObjectTemplate() const;
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

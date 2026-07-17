@@ -6,6 +6,12 @@
 
 #include "JediQueueCommand.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class ForceHealQueueCommand : public JediQueueCommand {
 public:
 	// Introducing our own enums since those will support being used in bitsets
@@ -133,3 +139,11 @@ public:
 	void setAllowedTarget(unsigned int t);
 
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

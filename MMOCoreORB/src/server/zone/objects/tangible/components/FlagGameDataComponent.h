@@ -4,6 +4,12 @@
 #include "server/zone/objects/scene/components/DataObjectComponent.h"
 #include "server/zone/objects/tangible/eventperk/FlagGame.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class FlagGameDataComponent : public DataObjectComponent {
 protected:
 	ManagedReference<FlagGame*> game;
@@ -29,3 +35,11 @@ public:
 
 	bool isFlagGameData();
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

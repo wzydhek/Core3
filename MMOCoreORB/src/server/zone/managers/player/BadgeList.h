@@ -2,6 +2,11 @@
 
 #include "server/zone/objects/player/badges/Badge.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace player {
+
 class BadgeList : public Singleton<BadgeList>, public Logger, public Object {
 	// idx to Badge
 	VectorMap<unsigned int, const Badge*> badges;
@@ -37,3 +42,10 @@ public:
 	const VectorMap<unsigned int, const Badge*>* getMap() const;
 
 };
+
+} // namespace player
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::player;

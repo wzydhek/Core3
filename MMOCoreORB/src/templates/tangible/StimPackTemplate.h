@@ -9,12 +9,14 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class StimPackTemplate : public SharedTangibleObjectTemplate {
 	int medicineUse;
 	int medicineClass;
 	float effectiveness;
 	Vector<byte> attributes;
-
 
 public:
 	const static int STIM_A = 1;
@@ -39,3 +41,8 @@ public:
 
 	Vector<byte> getAttributes();
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

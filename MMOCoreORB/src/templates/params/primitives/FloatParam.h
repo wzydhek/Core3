@@ -9,6 +9,10 @@
 
 #include "templates/params/TemplateBase.h"
 
+namespace templates {
+namespace params {
+namespace primitives {
+
 class FloatParam : public TemplateBase<float> {
 	float min;
 	float max;
@@ -40,3 +44,9 @@ public:
 
 	float getMax() const;
 };
+
+} // namespace primitives
+} // namespace params
+} // namespace templates
+
+using namespace templates::params::primitives;

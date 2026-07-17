@@ -10,6 +10,8 @@
 #include "system/lang/Object.h"
 #include "engine/util/iffstream/IffStream.h"
 
+namespace terrain {
+
 class TerrainAppearance : public Object {
 public:
 	virtual bool load(engine::util::IffStream* iffStream) = 0;
@@ -23,3 +25,7 @@ public:
 		return false;
 	}
 };
+
+} // namespace terrain
+
+using namespace terrain;

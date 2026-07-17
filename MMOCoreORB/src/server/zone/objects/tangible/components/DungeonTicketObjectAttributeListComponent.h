@@ -5,6 +5,12 @@
 #include "server/zone/objects/tangible/TangibleObject.h"
 #include "server/zone/objects/tangible/ticket/TicketObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class DungeonTicketObjectAttributeListComponent: public AttributeListComponent {
 public:
 
@@ -17,3 +23,11 @@ public:
 	void fillAttributeList(AttributeListMessage* alm, CreatureObject* creature, SceneObject* object) const;
 
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

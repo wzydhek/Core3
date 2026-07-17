@@ -13,9 +13,25 @@
 #include "server/zone/managers/name/NameManager.h"
 #include "server/zone/objects/player/sui/inputbox/SuiInputBox.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace sui {
+namespace callbacks {
+
 class NameComponentSuiCallback : public SuiCallback {
 public:
 	NameComponentSuiCallback(ZoneServer* serv);
 
 	void run(CreatureObject* player, SuiBox* sui, uint32 eventIndex, Vector<UnicodeString>* args);
 };
+
+} // namespace callbacks
+} // namespace sui
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::sui::callbacks;

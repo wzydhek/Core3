@@ -4,6 +4,11 @@
 #include "engine/util/u3d/Vector3.h"
 #include "engine/lua/LuaObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace gcw {
+
 class SecurityPatrolSpawn : public Object {
 protected:
 	String patrol;
@@ -32,3 +37,10 @@ public:
 
 	int getFaction() const;
 };
+
+} // namespace gcw
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::gcw;

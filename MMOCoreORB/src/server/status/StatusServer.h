@@ -8,6 +8,9 @@
 #include "server/zone/ZoneServer.h"
 #include "conf/ConfigManager.h"
 
+namespace server {
+namespace status {
+
 class StatusHandler;
 
 class StatusServer: public StreamServiceThread {
@@ -38,3 +41,8 @@ public:
 
 	bool testZone();
 };
+
+} // namespace status
+} // namespace server
+
+using namespace server::status;

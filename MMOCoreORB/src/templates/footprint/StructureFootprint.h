@@ -9,6 +9,9 @@
 
 #include "templates/IffTemplate.h"
 
+namespace templates {
+namespace footprint {
+
 class StructureFootprint : public IffTemplate {
 	int rowSize;
 	int colSize;
@@ -46,3 +49,8 @@ public:
 
 	float getColChunkSize() const;
 };
+
+} // namespace footprint
+} // namespace templates
+
+using namespace templates::footprint;

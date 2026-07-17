@@ -9,6 +9,11 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/manufactureschematic/ManufactureSchematic.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace manufactureschematic {
+
 class ManufactureSchematicObjectDeltaMessage3 : public DeltaMessage {
 public:
 	ManufactureSchematicObjectDeltaMessage3(SceneObject* schematic);
@@ -23,3 +28,10 @@ public:
 
 	void updateCraftingValues(ManufactureSchematic* manufactureSchematic);
 };
+
+} // namespace manufactureschematic
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::manufactureschematic;

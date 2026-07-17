@@ -2,15 +2,16 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
-class XpPurchaseTemplate: public SharedTangibleObjectTemplate {
-protected:
+namespace templates {
+namespace tangible {
 
+class XpPurchaseTemplate : public SharedTangibleObjectTemplate {
+protected:
 	String requiredSkill;
 	String xpType;
 	String grantType, grantName;
 	int xpAmount;
 	bool noRemove;
-
 
 public:
 	XpPurchaseTemplate();
@@ -30,5 +31,9 @@ public:
 	bool isNoRemove();
 
 	int getXpAmount();
-
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

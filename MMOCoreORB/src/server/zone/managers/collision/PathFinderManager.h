@@ -23,8 +23,20 @@ namespace server {
 
 using namespace server::zone::objects::cell;
 
+namespace templates {
+namespace appearance {
 class FloorMesh;
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;
+
 class dtQueryFilter;
+
+namespace server {
+namespace zone {
+namespace managers {
+namespace collision {
 
 class NavCollision : public Object {
 protected:
@@ -82,3 +94,10 @@ private:
 	dtQueryFilter m_spawnFilter;
 	ThreadLocal<dtNavMeshQuery*> m_navQuery;
 };
+
+} // namespace collision
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::collision;

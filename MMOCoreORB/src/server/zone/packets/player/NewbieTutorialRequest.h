@@ -27,6 +27,11 @@
  * equipToolbar
  */
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace player {
+
 class NewbieTutorialRequest : public BaseMessage {
 public:
    /**
@@ -63,3 +68,10 @@ public:
 	void run();
 
 };
+
+} // namespace player
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::player;

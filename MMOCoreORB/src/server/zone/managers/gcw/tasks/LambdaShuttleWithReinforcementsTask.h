@@ -19,6 +19,12 @@
 #include "server/zone/objects/player/FactionStatus.h"
 #include "templates/faction/Factions.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace gcw {
+namespace tasks {
+
 class LambdaShuttleWithReinforcementsTask : public Task {
 public:
 	enum ReinforcementType { LAMBDASHUTTLEATTACK, LAMBDASHUTTLESCAN, LAMBDASHUTTLEONLY, CONTAINMENTTEAM };
@@ -138,3 +144,11 @@ public:
 
 	void run();
 };
+
+} // namespace tasks
+} // namespace gcw
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::gcw::tasks;

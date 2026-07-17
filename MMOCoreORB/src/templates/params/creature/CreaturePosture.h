@@ -9,6 +9,10 @@
 #include "templates/manager/TemplateManager.h"
 #include "CreatureLocomotion.h"
 
+namespace templates {
+namespace params {
+namespace creature {
+
 class CreatureMovementEntry : public Variable {
 public:
 	UnsignedCharacter posture;
@@ -93,3 +97,9 @@ public:
 
 	int getMeleeDefenseMod(uint8 loc) const;
 };
+
+} // namespace creature
+} // namespace params
+} // namespace templates
+
+using namespace templates::params::creature;

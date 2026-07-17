@@ -7,6 +7,12 @@
 #include "QueueCommand.h"
 #include "server/zone/objects/structure/StructureObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class TransferstructureCommand : public QueueCommand {
 public:
 
@@ -20,3 +26,10 @@ public:
 
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

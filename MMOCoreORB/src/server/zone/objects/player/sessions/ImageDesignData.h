@@ -10,6 +10,12 @@
 #include "engine/engine.h"
 #include "server/zone/objects/scene/variables/CustomizationVariables.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace sessions {
+
 class ImageDesignData : public Object {
 protected:
 	String hairTemplate;
@@ -69,3 +75,11 @@ public:
 
 	String getHoloEmote();
 };
+
+} // namespace sessions
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::sessions;

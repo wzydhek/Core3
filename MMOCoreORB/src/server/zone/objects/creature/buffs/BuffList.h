@@ -8,6 +8,12 @@
 #include "engine/util/json_utils.h"
 #include "server/zone/objects/creature/buffs/Buff.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace buffs {
+
 class BuffList : public Serializable {
 protected:
 	bool spiceActive;
@@ -52,3 +58,11 @@ public:
 
 	bool hasTrapBuff() const;
 };
+
+} // namespace buffs
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::buffs;

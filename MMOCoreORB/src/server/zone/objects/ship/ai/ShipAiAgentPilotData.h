@@ -2,6 +2,12 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace ai {
+
 class ShipAiAgentPilotData : public Object {
 public:
 	const static int DATA_SIZE = 16;
@@ -61,3 +67,11 @@ public:
 
 	float getEngineRollAccel() const;
 };
+
+} // namespace ai
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::ai;

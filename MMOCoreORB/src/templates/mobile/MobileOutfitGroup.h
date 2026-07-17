@@ -10,6 +10,9 @@
 #include "templates/mobile/MobileOutfit.h"
 #include "templates/LuaTemplate.h"
 
+namespace templates {
+namespace mobile {
+
 class MobileOutfitGroup : public Object {
 	Vector<MobileOutfit> outfits;
 public:
@@ -24,3 +27,8 @@ public:
 	Vector<MobileOutfit>* getOutfits();
 
 };
+
+} // namespace mobile
+} // namespace templates
+
+using namespace templates::mobile;

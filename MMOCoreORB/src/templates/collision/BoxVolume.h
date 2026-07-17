@@ -9,6 +9,9 @@
 
 #include "BaseBoundingVolume.h"
 
+namespace templates {
+namespace collision {
+
 class BoxVolume : public BaseBoundingVolume {
 protected:
 	AABB bbox;
@@ -26,3 +29,8 @@ public:
 #endif
 
 };
+
+} // namespace collision
+} // namespace templates
+
+using namespace templates::collision;

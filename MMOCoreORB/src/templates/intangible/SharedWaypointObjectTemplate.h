@@ -9,6 +9,9 @@
 
 #include "templates/SharedIntangibleObjectTemplate.h"
 
+namespace templates {
+namespace intangible {
+
 class SharedWaypointObjectTemplate : public SharedIntangibleObjectTemplate {
 
 public:
@@ -19,3 +22,8 @@ public:
 	void readObject(IffStream* iffStream);
 
 };
+
+} // namespace intangible
+} // namespace templates
+
+using namespace templates::intangible;

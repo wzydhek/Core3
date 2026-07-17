@@ -8,7 +8,6 @@
 #include "server/zone/objects/player/variables/Ability.h"
 #include "server/zone/objects/creature/variables/Skill.h"
 
-class PerformanceManager;
 
 namespace server {
 namespace zone {
@@ -38,6 +37,7 @@ namespace server {
 namespace zone {
 namespace managers {
 namespace skill {
+class PerformanceManager;
 
 class SkillManager : public Singleton<SkillManager>, public Logger, public Object {
 	PerformanceManager* performanceManager;

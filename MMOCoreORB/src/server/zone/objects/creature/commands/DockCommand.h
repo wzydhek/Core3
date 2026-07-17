@@ -7,6 +7,12 @@
 #include "SpaceQueueCommand.h"
 #include "server/zone/objects/ship/ShipObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class DockCommand : public SpaceQueueCommand {
 private:
 	constexpr static float DOCKING_RANGE = 200.f;
@@ -21,3 +27,11 @@ private:
 
 	void setDocking(ShipObject* ship, ShipObject* target) const;
 };
+
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

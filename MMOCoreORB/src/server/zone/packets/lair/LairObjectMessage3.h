@@ -9,7 +9,19 @@
 
 //class LairObject;
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace lair {
+
 class LairObjectMessage3 : public TangibleObjectMessage3 {
 public:
 	LairObjectMessage3(LairObject* tano);
 };
+
+} // namespace lair
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::lair;

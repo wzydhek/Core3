@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class DiceTemplate: public SharedTangibleObjectTemplate {
 protected:
 
@@ -41,3 +44,8 @@ public:
 	bool isConfigurable();
 
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

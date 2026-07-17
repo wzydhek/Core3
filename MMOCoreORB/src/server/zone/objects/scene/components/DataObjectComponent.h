@@ -26,6 +26,12 @@ class SceneObject;
 
 using namespace server::zone::objects::scene;
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+namespace components {
+
 class DataObjectComponent : public SceneObjectComponent, public Serializable {
 protected:
 	ManagedWeakReference<SceneObject*> parent;
@@ -89,3 +95,11 @@ public:
 	virtual bool isGamblingTerminalData();
 
 };
+
+} // namespace components
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene::components;

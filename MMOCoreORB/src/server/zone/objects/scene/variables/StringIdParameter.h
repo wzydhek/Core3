@@ -82,7 +82,6 @@ public:
 	friend class server::chat::StringIdChatParameter;
 };
 
-void to_json(nlohmann::json& j, const StringIdParameter& p);
 }
 }
 }

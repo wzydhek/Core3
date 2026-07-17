@@ -10,14 +10,17 @@
 #include "templates/collision/BoundingVolumeFactory.h"
 #include "templates/appearance/MeshData.h"
 
+namespace templates {
+namespace appearance {
+
 class AppearanceTemplate : public Object {
 	String floorName;
 	String fileName;
 	BaseBoundingVolume* volume = nullptr;
 	BaseBoundingVolume* collisionVolume = nullptr;
 	VectorMap<String, Matrix4> hardpoints;
-public:
 
+public:
 	virtual uint32 getType() const;
 
 	const String& getFloorMesh() const;
@@ -36,18 +39,21 @@ public:
 	 * Checks for intersection against ray, stops on any intersection
 	 * @return intersectionDistance, triangle which it intersects
 	 */
-	virtual bool intersects(const Ray& ray, float distance, float& intersectionDistance, Triangle*& triangle,
-							bool checkPrimitives = false) const = 0;
+	virtual bool intersects(const Ray& ray, float distance, float& intersectionDistance, Triangle*& triangle, bool checkPrimitives = false) const = 0;
 
 	/**
 	 * Checks for all intersections
 	 */
-	virtual int intersects(const Ray& ray, float maxDistance, SortedVector <IntersectionResult>& result) const = 0;
-
+	virtual int intersects(const Ray& ray, float maxDistance, SortedVector<IntersectionResult>& result) const = 0;
 
 	virtual void readObject(IffStream* iffStream);
 
 	virtual ~AppearanceTemplate();
 
-	virtual Vector <Reference<MeshData*>> getTransformedMeshData(const Matrix4& parentTransform) const = 0;
+	virtual Vector<Reference<MeshData*>> getTransformedMeshData(const Matrix4& parentTransform) const = 0;
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

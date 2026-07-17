@@ -10,6 +10,11 @@
 #include "server/zone/objects/region/CityRegion.h"
 #include "server/zone/objects/region/Region.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace planet {
+
 class RegionMap : public ReadWriteLock, public Object, public Logger {
 	VectorMap<String, ManagedReference<CityRegion*> > cityRegions;
 
@@ -60,3 +65,10 @@ public:
 
 	int getTotalRegions();
 };
+
+} // namespace planet
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::planet;

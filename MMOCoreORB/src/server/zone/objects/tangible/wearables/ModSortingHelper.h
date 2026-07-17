@@ -7,6 +7,12 @@
 #include "system/lang/String.h"
 #include "system/util/VectorMap.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace wearables {
+
 /**
  * Rename for clarity/convenience
  */
@@ -42,3 +48,10 @@ public:
 	 */
 	int compareTo(const Mod& e) const;
 };
+} // namespace wearables
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::wearables;

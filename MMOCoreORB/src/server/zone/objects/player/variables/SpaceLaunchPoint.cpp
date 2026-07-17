@@ -18,7 +18,7 @@ SpaceLaunchPoint& SpaceLaunchPoint::operator=(const SpaceLaunchPoint& point) {
 	return *this;
 }
 
-void to_json(nlohmann::json& j, const SpaceLaunchPoint& l) {
+void server::zone::objects::player::variables::to_json(nlohmann::json& j, const SpaceLaunchPoint& l) {
 	j["groundZoneName"] = l.groundZoneName;
 	j["cityName"] = l.cityName;
 	j["location"] = l.location;

@@ -10,7 +10,20 @@
 #include "server/zone/objects/creature/commands/effect/StateEffect.h"
 #include "server/zone/objects/creature/commands/effect/DotEffect.h"
 
+
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
 class CombatQueueCommand;
+}
+}
+}
+using namespace server::zone::objects::creature::commands;
+
+namespace managers {
+namespace combat {
 
 class CreatureAttackData {
 protected:
@@ -152,3 +165,10 @@ public:
 	bool changesDefenderPosture() const;
 	bool changesAttackerPosture() const;
 };
+
+} // namespace combat
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::combat;

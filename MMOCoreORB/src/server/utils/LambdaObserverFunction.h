@@ -9,6 +9,9 @@
 #include <functional>
 #include "engine/core/LambdaFunction.h"
 
+namespace server {
+namespace utils {
+
 /*
  * Usage:
 registerObserver(ObserverEventType::CREATUREREVIVED, new LambdaObserver(
@@ -31,3 +34,8 @@ public:
 	}
 
 };
+
+} // namespace utils
+} // namespace server
+
+using namespace server::utils;

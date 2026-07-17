@@ -10,6 +10,11 @@
 #include "engine/engine.h"
 #include "server/zone/objects/scene/SceneObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+
 class PositionUpdateTask : public Task {
 	ManagedReference<SceneObject*> object;
 	ManagedReference<TreeEntry*> entry;
@@ -18,3 +23,10 @@ public:
 
 	void run();
 };
+
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene;

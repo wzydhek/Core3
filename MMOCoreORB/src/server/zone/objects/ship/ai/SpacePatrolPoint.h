@@ -10,6 +10,12 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/scene/WorldCoordinates.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace ai {
+
 class SpacePatrolPoint : public Serializable {
 	WorldCoordinates position;
 
@@ -92,3 +98,11 @@ public:
 	 */
 	String toString() const;
 };
+
+} // namespace ai
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::ai;

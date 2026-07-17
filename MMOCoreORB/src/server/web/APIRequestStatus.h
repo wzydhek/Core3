@@ -60,3 +60,5 @@ namespace server {
 	};
  }
 }
+
+using namespace server::web3;

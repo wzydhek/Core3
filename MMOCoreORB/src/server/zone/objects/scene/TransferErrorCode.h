@@ -7,6 +7,11 @@
 
 #pragma once
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+
 class TransferErrorCode {
 public:
 	const static int SUCCESS = 0;
@@ -26,3 +31,10 @@ public:
 	const static int CANTADD = 14;
 	const static int NOTNEARBANK = 15;
 };
+
+} // namespace scene
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::scene;

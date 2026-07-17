@@ -9,6 +9,12 @@
 
 #include "LootGroupCollectionEntry.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace loot {
+namespace lootgroup {
+
 class LootGroupCollection {
 	Vector<LootGroupCollectionEntry> entries;
 
@@ -21,3 +27,11 @@ public:
 
 	const LootGroupCollectionEntry* get(int i) const;
 };
+
+} // namespace lootgroup
+} // namespace loot
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::loot::lootgroup;

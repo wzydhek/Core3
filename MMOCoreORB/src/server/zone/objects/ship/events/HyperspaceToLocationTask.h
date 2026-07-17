@@ -11,6 +11,12 @@
 
 //#define DEBUG_HYPERSPACE
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+namespace events {
+
 class HyperspaceToLocationTask : public Task {
 	WeakReference<CreatureObject*> play;
 	WeakReference<ShipObject*> ship;
@@ -29,3 +35,11 @@ public:
 	void stopPacketLoggingForShip(ShipObject* shipObject);
 #endif // DEBUG_HYPERSPACE
 };
+
+} // namespace events
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship::events;

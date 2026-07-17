@@ -20,8 +20,8 @@ namespace server {
 
 	};
 
-    } // namespace mysql
-  } // namespace db
-} // namespace engine
+} // namespace mysql
+} // namespace db
+} // namespace server
 
-using namespace engine::db::mysql;
+using namespace server::db::mysql;

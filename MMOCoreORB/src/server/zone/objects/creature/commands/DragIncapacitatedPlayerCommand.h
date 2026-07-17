@@ -8,6 +8,12 @@
 #include "server/zone/objects/scene/SceneObject.h"
 #include "server/zone/objects/scene/WorldCoordinates.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace commands {
+
 class DragIncapacitatedPlayerCommand : public QueueCommand {
 	float maxMovement;
 	bool needsConsent;
@@ -23,3 +29,10 @@ public:
 
 };
 
+} // namespace commands
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::commands;

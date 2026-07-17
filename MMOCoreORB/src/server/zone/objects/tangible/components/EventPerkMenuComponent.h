@@ -3,6 +3,12 @@
 
 #include "server/zone/objects/tangible/components/TangibleObjectMenuComponent.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace tangible {
+namespace components {
+
 class EventPerkMenuComponent : public TangibleObjectMenuComponent {
 public:
 
@@ -26,3 +32,11 @@ public:
 
 	virtual void destroyEventPerk(SceneObject* sceneObject) const;
 };
+
+} // namespace components
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::components;

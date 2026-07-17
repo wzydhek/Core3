@@ -13,6 +13,11 @@
 #include "server/zone/managers/player/PlayerManager.h"
 #include "server/chat/ChatManager.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace guild {
+
 class UpdateWarStatusTask : public Task {
 	ZoneServer* server;
 
@@ -24,3 +29,10 @@ public:
 
 	void run();
 };
+
+} // namespace guild
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::guild;

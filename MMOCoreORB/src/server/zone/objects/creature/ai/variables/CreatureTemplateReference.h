@@ -10,6 +10,13 @@
 #include "engine/util/json_utils.h"
 #include "server/zone/objects/creature/ai/CreatureTemplate.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace ai {
+namespace variables {
+
 class CreatureTemplateReference : public Reference<CreatureTemplate*> {
 #ifdef ODB_SERIALIZATION
 	String templateString;
@@ -21,3 +28,12 @@ public:
 
 	friend void to_json(nlohmann::json& j, const CreatureTemplateReference& r);
 };
+
+} // namespace variables
+} // namespace ai
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::ai::variables;

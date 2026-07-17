@@ -10,12 +10,15 @@
 #include "TemplateVariable.h"
 #include "TargaBitmap.h"
 
+namespace terrain {
+
 class BitMapFamily : public TemplateVariable<'MFAM'> {
 	int var1;
 	String name;
 	String file;
 
 	TargaBitmap map;
+
 public:
 	BitMapFamily();
 
@@ -29,3 +32,7 @@ public:
 
 	const String& getFile() const;
 };
+
+} // namespace terrain
+
+using namespace terrain;

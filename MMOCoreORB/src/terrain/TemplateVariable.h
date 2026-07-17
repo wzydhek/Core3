@@ -9,6 +9,8 @@
 
 #include "engine/util/iffstream/IffStream.h"
 
+namespace terrain {
+
 template <int version> struct Version {
    enum { value = version };
 };
@@ -48,3 +50,7 @@ public:
 
 	}
 };
+
+} // namespace terrain
+
+using namespace terrain;

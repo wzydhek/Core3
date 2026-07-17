@@ -6,6 +6,9 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace ping {
+
 class PingClient : public BaseClientProxy {
 public:
 	PingClient(DatagramServiceThread* serv, Socket* sock, SocketAddress& addr);
@@ -16,3 +19,8 @@ public:
 
 	void sendMessage(Message* msg);
 };
+
+} // namespace ping
+} // namespace server
+
+using namespace server::ping;

@@ -12,6 +12,10 @@
 #include "../Road.h"
 #include "../HeightData.h"
 
+namespace terrain {
+namespace layer {
+namespace affectors {
+
 class Point2D  {
 public:
 	float x, y;
@@ -56,3 +60,9 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0005'>);
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

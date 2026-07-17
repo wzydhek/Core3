@@ -7,6 +7,11 @@
 #include "engine/engine.h"
 #include "templates/datatables/DataTableRow.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
+
 class ShipProjectileData : public Object {
 protected:
 	String name;
@@ -44,3 +49,10 @@ public:
 
 	float getSquaredRange() const;
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

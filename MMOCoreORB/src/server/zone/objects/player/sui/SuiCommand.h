@@ -9,6 +9,12 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace sui {
+
 class SuiCommand : public Object {
 public:
 	static const int SCT_none = 0x00;
@@ -45,3 +51,11 @@ public:
 
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
+
+} // namespace sui
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::sui;

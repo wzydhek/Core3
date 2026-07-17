@@ -2,6 +2,10 @@
 
 #include "templates/tangible/ContainerTemplate.h"
 
+namespace templates {
+namespace tangible {
+namespace tool {
+
 class RecycleToolTemplate : public ContainerTemplate {
 private:
 
@@ -21,3 +25,9 @@ public:
 
 	bool isRecycleToolTemplate() const override;
 };
+
+} // namespace tool
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible::tool;

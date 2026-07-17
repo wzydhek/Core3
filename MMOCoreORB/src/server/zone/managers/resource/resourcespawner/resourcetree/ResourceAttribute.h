@@ -12,6 +12,13 @@
 
 #include "server/zone/managers/crafting/CraftingManager.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace resource {
+namespace resourcespawner {
+namespace resourcetree {
+
 /**
  * The resource attribute class stores the name
  * of a resource attribute and the min / max value
@@ -56,3 +63,12 @@ public:
 
 	int getIndex() const;
 };
+
+} // namespace resourcetree
+} // namespace resourcespawner
+} // namespace resource
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::resource::resourcespawner::resourcetree;

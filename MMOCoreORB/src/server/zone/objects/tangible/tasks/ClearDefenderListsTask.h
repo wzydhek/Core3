@@ -9,6 +9,15 @@
 
 #include "server/zone/objects/tangible/TangibleObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace scene {
+class SceneObject;
+}
+namespace tangible {
+namespace tasks {
+
 class ClearDefenderListsTask : public Task {
 	DeltaVector<ManagedReference<SceneObject* > > defenderList;
 	ManagedReference<TangibleObject*> tangibleObject;
@@ -17,3 +26,11 @@ public:
 
 	void run();
 };
+
+} // namespace tasks
+} // namespace tangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::tangible::tasks;

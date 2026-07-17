@@ -16,6 +16,12 @@
 
 // #define DEBUG_SHIP_STORE
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace intangible {
+namespace tasks {
+
 class StoreShipTask : public Task, public Logger {
 	ManagedWeakReference<CreatureObject*> play;
 	ManagedWeakReference<ShipControlDevice*> shipDev;
@@ -29,3 +35,11 @@ public:
 
 	bool removeDroid(ShipObject* ship, CreatureObject* player);
 };
+
+} // namespace tasks
+} // namespace intangible
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::intangible::tasks;

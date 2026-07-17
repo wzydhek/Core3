@@ -36,7 +36,7 @@ DataObjectComponent* DataObjectComponentReference::operator= (DataObjectComponen
 	return obj;
 }
 
-void to_json(nlohmann::json& j, const DataObjectComponentReference& ref) {
+void server::zone::objects::scene::components::to_json(nlohmann::json& j, const DataObjectComponentReference& ref) {
 	auto object = ref.get();
 
 	if (object != nullptr)

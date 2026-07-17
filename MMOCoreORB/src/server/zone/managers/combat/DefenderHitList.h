@@ -10,6 +10,11 @@ Author: Hakry
 
 using namespace server::zone::objects::tangible;
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace combat {
+
 class DefenderHitList : public Object {
 	ManagedWeakReference<TangibleObject*> defender;
 	int hit;
@@ -82,3 +87,10 @@ public:
 
 	const Vector<int>& getPoolsToWound();
 };
+
+} // namespace combat
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::combat;

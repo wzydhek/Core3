@@ -9,14 +9,19 @@
 
 #include "templates/SharedUniverseObjectTemplate.h"
 
-class SharedGroupObjectTemplate : public SharedUniverseObjectTemplate {
+namespace templates {
+namespace universe {
 
+class SharedGroupObjectTemplate : public SharedUniverseObjectTemplate {
 public:
 	SharedGroupObjectTemplate();
 
 	~SharedGroupObjectTemplate();
 
 	void readObject(IffStream* iffStream);
-
-
 };
+
+} // namespace universe
+} // namespace templates
+
+using namespace templates::universe;

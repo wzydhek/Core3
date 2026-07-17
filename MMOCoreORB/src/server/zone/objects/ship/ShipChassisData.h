@@ -6,8 +6,12 @@
 
 #include "engine/engine.h"
 #include "ComponentSlots.h"
+#include "templates/datatables/DataTableRow.h"
 
-class DataTableRow;
+namespace server {
+namespace zone {
+namespace objects {
+namespace ship {
 
 class ShipChassisData : public Object {
 
@@ -72,3 +76,10 @@ public:
 
 	const ComponentSlotData* getComponentSlotData(int slotIndex) const;
 };
+
+} // namespace ship
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::ship;

@@ -11,6 +11,12 @@
 #include "SuiCommand.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace player {
+namespace sui {
+
 class SuiPageData : public Logger, public Object {
 	int32 id;
 	String rootPage;
@@ -69,3 +75,11 @@ private:
 	void init(const String& rootPage, const uint64& targetNetworkId, const float& forceCloseDistance);
 
 };
+
+} // namespace sui
+} // namespace player
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::player::sui;

@@ -8,6 +8,11 @@
 #include "server/zone/objects/creature/CreatureObject.h"
 #include "server/zone/objects/creature/credits/CreditObject.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace credit {
+
 class CreditManager : public Singleton<CreditManager>, public Logger, public Object {
 public:
 	CreditManager();
@@ -20,3 +25,10 @@ public:
 	static bool verifyCashCredits(uint64 creatureID, int amount);
 	static Reference<CreditObject*> getCreditObject(uint64 creoID);
 };
+
+} // namespace credit
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::credit;

@@ -12,6 +12,9 @@
 
 #include "engine/lua/Lua.h"
 
+namespace templates {
+namespace creature {
+
 class SharedCreatureObjectTemplate: public SharedTangibleObjectTemplate {
 protected:
 	IntegerParam gender;
@@ -143,3 +146,8 @@ public:
 	void setWaterModPercent(float waterModPercent);
 
 };
+
+} // namespace creature
+} // namespace templates
+
+using namespace templates::creature;

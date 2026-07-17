@@ -7,6 +7,11 @@
 #include "server/zone/packets/DeltaMessage.h"
 #include "server/zone/objects/creature/CreatureObject.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace creature {
+
 class CreatureObjectDeltaMessage3 : public DeltaMessage {
 	CreatureObject* creo;
 
@@ -39,3 +44,10 @@ public:
 
 	// 0x11 - Wounds update handled in CreatureObjectImplementation
 };
+
+} // namespace creature
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::creature;

@@ -9,6 +9,8 @@
 
 #include "templates/SharedObjectTemplate.h"
 
+namespace templates {
+
 class SharedUniverseObjectTemplate : public SharedObjectTemplate {
 protected:
 
@@ -21,3 +23,7 @@ public:
 	void readObject(IffStream* iffStream);
 
 };
+
+} // namespace templates
+
+using namespace templates;

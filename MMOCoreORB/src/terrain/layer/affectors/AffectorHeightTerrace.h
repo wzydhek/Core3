@@ -10,6 +10,10 @@
 #include "../ProceduralRule.h"
 #include "AffectorProceduralRule.h"
 
+namespace terrain {
+namespace layer {
+namespace affectors {
+
 class AffectorHeightTerrace : public ProceduralRule<'AHTR'>, public AffectorProceduralRule {
 	float flatRatio;
 	float height;
@@ -25,3 +29,9 @@ public:
 
 	bool isEnabled();
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

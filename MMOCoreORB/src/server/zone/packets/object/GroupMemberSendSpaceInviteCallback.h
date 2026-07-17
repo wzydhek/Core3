@@ -6,6 +6,11 @@
 
 #include "ObjectControllerMessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace object {
+
 class GroupMemberSendSpaceInviteCallback : public MessageCallback {
 	ObjectControllerMessageCallback* objectControllerMain;
 	uint64 groupMemberID;
@@ -17,3 +22,10 @@ public:
 
 	void run();
 };
+
+} // namespace object
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::object;

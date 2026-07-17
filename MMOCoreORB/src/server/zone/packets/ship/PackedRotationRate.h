@@ -10,6 +10,11 @@
 #include "engine/engine.h"
 #include "engine/service/proto/BaseMessage.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace ship {
+
 float const PI_2 = 3.14159265358979323846f / 2.f;
 
 class PackedRotationRate {
@@ -32,3 +37,10 @@ public:
 
 	void write(Message* message);
 };
+
+} // namespace ship
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::ship;

@@ -10,10 +10,9 @@
 #include "server/zone/objects/scene/SceneObject.h"
 
 namespace server {
- namespace zone {
-  namespace objects {
-   namespace tangible {
-
+namespace zone {
+namespace objects {
+namespace tangible {
 
 class DespawnLairOnPlayerDisappear : public Task {
 	WeakReference<SceneObject*> lair;
@@ -23,9 +22,9 @@ public:
     void run();
 };
 
-   }
-  }
- }
+}
+}
+}
 }
 
 using namespace server::zone::objects::tangible;

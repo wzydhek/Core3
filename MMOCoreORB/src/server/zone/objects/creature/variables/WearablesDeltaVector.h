@@ -14,6 +14,12 @@
 #include "server/zone/objects/tangible/wearables/ArmorObject.h"
 #include "templates/tangible/ArmorObjectTemplate.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+namespace variables {
+
 class WearablesDeltaVector : public DeltaVector<ManagedReference<TangibleObject*> > {
 private:
 	// note: duplicate of CombatManager::hitlocations.
@@ -57,3 +63,11 @@ public:
 
 	void removeArmor(uint8 hitLocation, ManagedReference<ArmorObject*> armor);
 };
+
+} // namespace variables
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature::variables;

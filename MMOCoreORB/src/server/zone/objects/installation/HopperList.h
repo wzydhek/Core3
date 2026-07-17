@@ -10,6 +10,11 @@
 #include "server/zone/objects/scene/variables/DeltaVector.h"
 #include "server/zone/objects/resource/ResourceContainer.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace installation {
+
 class HopperList : public DeltaVector<ManagedReference<ResourceContainer*> > {
 public:
 
@@ -19,3 +24,10 @@ public:
 
 	void insertToMessage(BaseMessage* msg) const override;
 };
+
+} // namespace installation
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::installation;

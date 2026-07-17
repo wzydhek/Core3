@@ -9,6 +9,8 @@
 
 #include "FloraFamily.h"
 
+namespace terrain {
+
 class FloraGroup : public TemplateVariable<'FGRP'> {
 	Vector<FloraFamily*> data;
 public:
@@ -19,3 +21,7 @@ public:
 
 	void parseFromIffStream(engine::util::IffStream* iffStream, Version<'0008'>);
 };
+
+} // namespace terrain
+
+using namespace terrain;

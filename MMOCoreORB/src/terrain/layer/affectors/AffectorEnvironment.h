@@ -10,6 +10,10 @@
 #include "../ProceduralRule.h"
 #include "AffectorProceduralRule.h"
 
+namespace terrain {
+namespace layer {
+namespace affectors {
+
 class AffectorEnvironment : public ProceduralRule<'AENV'>, public AffectorProceduralRule {
 	int environmentId;
 	int var2;
@@ -26,3 +30,9 @@ public:
 
 	bool isEnabled();
 };
+
+} // namespace affectors
+} // namespace layer
+} // namespace terrain
+
+using namespace terrain::layer::affectors;

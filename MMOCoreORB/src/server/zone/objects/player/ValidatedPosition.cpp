@@ -36,7 +36,7 @@ ValidatedPosition& ValidatedPosition::operator=(const ValidatedPosition& a) {
 	return *this;
 }
 
-void to_json(nlohmann::json& j, const ValidatedPosition& pos) {
+void server::zone::objects::player::to_json(nlohmann::json& j, const ValidatedPosition& pos) {
 	j["point"] = pos.point;
 	j["parent"] = pos.parent;
 }

@@ -9,6 +9,9 @@
 
 #include "templates/params/RangedIntCustomizationVariable.h"
 
+namespace templates {
+namespace params {
+
 class PaletteColorCustomizationVariable : public RangedIntCustomizationVariable {
 protected:
 	StringParam palettePathName;
@@ -38,3 +41,8 @@ public:
 	const String& getVariableName() const;
 
 };
+
+} // namespace params
+} // namespace templates
+
+using namespace templates::params;

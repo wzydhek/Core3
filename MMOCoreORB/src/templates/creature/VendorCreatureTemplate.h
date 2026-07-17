@@ -9,6 +9,9 @@
 
 #include "templates/creature/SharedCreatureObjectTemplate.h"
 
+namespace templates {
+namespace creature {
+
 class VendorCreatureTemplate : public SharedCreatureObjectTemplate {
 	Vector<String> outfits;
 	Vector<String> hairFile;
@@ -41,3 +44,8 @@ public:
 	bool isVendorCreatureTemplate();
 
 };
+
+} // namespace creature
+} // namespace templates
+
+using namespace templates::creature;

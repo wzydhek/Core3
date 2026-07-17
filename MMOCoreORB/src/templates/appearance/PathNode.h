@@ -10,6 +10,9 @@
 #include "engine/util/u3d/Vector3.h"
 #include "templates/appearance/PathEdge.h"
 
+namespace templates {
+namespace appearance {
+
 class PathGraph;
 
 class PathNode {
@@ -82,3 +85,8 @@ public:
 
 	String toStringData() const;
 };
+
+} // namespace appearance
+} // namespace templates
+
+using namespace templates::appearance;

@@ -12,6 +12,12 @@
 
 #include "server/zone/objects/draftschematic/DraftSchematic.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace crafting {
+namespace schematicmap {
+
 class DraftSchematicGroup : public Vector<ManagedReference<DraftSchematic*> > {
 
 public:
@@ -23,3 +29,11 @@ public:
 
 	void print();
 };
+
+} // namespace schematicmap
+} // namespace crafting
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::crafting::schematicmap;

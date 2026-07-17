@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class DroidComponentTemplate : public SharedTangibleObjectTemplate {
 
 public:
@@ -21,3 +24,8 @@ public:
 	bool isDroidComponentTemplate();
 
 };
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

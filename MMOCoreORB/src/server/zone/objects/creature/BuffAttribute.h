@@ -6,6 +6,11 @@
 
 #include "engine/engine.h"
 
+namespace server {
+namespace zone {
+namespace objects {
+namespace creature {
+
 class BuffAttribute {
 public:
 	enum {
@@ -39,3 +44,10 @@ public:
 
 	static String getName(const uint8 attribute, bool initialCap = false);
 };
+
+} // namespace creature
+} // namespace objects
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::objects::creature;

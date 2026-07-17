@@ -9,6 +9,11 @@
 
 #include "system/util/VectorMap.h"
 
+namespace server {
+namespace zone {
+namespace managers {
+namespace mission {
+
 class LairObjectsToSpawnMap : public VectorMap<int, Vector<uint32> > {
 public:
 	const static int MAXPLANETS = 10;
@@ -21,3 +26,10 @@ public:
 
 	uint32 getRandomTemplate(int planetID) const;
 };
+
+} // namespace mission
+} // namespace managers
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::managers::mission;

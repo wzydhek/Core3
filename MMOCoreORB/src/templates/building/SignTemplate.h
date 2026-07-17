@@ -9,6 +9,9 @@
 
 #include "templates/ChildObject.h"
 
+namespace templates {
+namespace building {
+
 class SignTemplate : public ChildObject {
 	String requiredSkill;
 	String suiItem;
@@ -27,3 +30,8 @@ public:
 	const String& getRequiredSkill() const;
 
 };
+
+} // namespace building
+} // namespace templates
+
+using namespace templates::building;

@@ -9,6 +9,9 @@
 
 #include "templates/SharedTangibleObjectTemplate.h"
 
+namespace templates {
+namespace tangible {
+
 class GamblingTerminalTemplate : public SharedTangibleObjectTemplate {
 	int machineType;
 
@@ -25,3 +28,9 @@ public:
 
 	bool isGamblingTerminalTemplate();
 };
+
+
+} // namespace tangible
+} // namespace templates
+
+using namespace templates::tangible;

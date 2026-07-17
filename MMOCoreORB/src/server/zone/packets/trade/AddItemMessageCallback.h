@@ -9,6 +9,11 @@
 
 #include "server/zone/packets/MessageCallback.h"
 
+namespace server {
+namespace zone {
+namespace packets {
+namespace trade {
+
 class AddItemMessageCallback : public MessageCallback {
 	uint64 id;
 
@@ -19,3 +24,10 @@ public:
 
 	void run();
 };
+
+} // namespace trade
+} // namespace packets
+} // namespace zone
+} // namespace server
+
+using namespace server::zone::packets::trade;
