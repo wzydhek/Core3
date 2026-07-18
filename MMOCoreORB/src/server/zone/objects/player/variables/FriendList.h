@@ -46,6 +46,8 @@ public:
 
 };
 
+void to_json(nlohmann::json& j, const FriendList& l);
+
 } // namespace variables
 } // namespace player
 } // namespace objects

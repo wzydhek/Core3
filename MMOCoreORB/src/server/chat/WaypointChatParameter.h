@@ -79,6 +79,8 @@ public:
 	bool isActive() const;
 };
 
+void to_json(nlohmann::json& j, const WaypointChatParameter& p);
+
 }
 }
 

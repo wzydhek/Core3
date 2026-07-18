@@ -15,58 +15,57 @@ namespace zone {
 namespace objects {
 namespace guild {
 
-	class GuildObject;
+class GuildObject;
 
+class GuildMemberInfo : public Object {
+	uint64 playerID;
+	String guildTitle;
+	uint8 permissions;
+	uint64 declaredAllegiance; // TODO: remove after wipe
 
-	class GuildMemberInfo : public Object {
-		uint64 playerID;
-		String guildTitle;
-		uint8 permissions;
-		uint64 declaredAllegiance; // TODO: remove after wipe
+public:
+	GuildMemberInfo();
 
-	public:
-		GuildMemberInfo();
+	GuildMemberInfo(uint64 playerid);
 
-		GuildMemberInfo(uint64 playerid);
+	GuildMemberInfo(const GuildMemberInfo& gmi);
 
-		GuildMemberInfo(const GuildMemberInfo& gmi);
+	int compareTo(const GuildMemberInfo& gmi) const;
 
-		int compareTo(const GuildMemberInfo& gmi) const;
+	GuildMemberInfo& operator=(const GuildMemberInfo& gmi);
 
-		GuildMemberInfo& operator=(const GuildMemberInfo& gmi);
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-		bool toBinaryStream(ObjectOutputStream* stream);
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
-		bool parseFromBinaryStream(ObjectInputStream* stream);
+	uint64 getPlayerID();
 
-		uint64 getPlayerID();
+	void setPlayerID(uint64 playerid);
 
-		void setPlayerID(uint64 playerid);
+	String& getGuildTitle();
 
-		String& getGuildTitle();
+	void setGuildTitle(const String& title);
 
-		void setGuildTitle(const String& title);
+	uint8 getPermissions();
 
-		uint8 getPermissions();
+	void setPermissions(uint8 permission);
 
-		void setPermissions(uint8 permission);
+	void addPermission(uint8 permission);
 
-		void addPermission(uint8 permission);
+	void removePermission(uint8 permission);
 
-		void removePermission(uint8 permission);
+	void togglePermission(uint8 permission);
 
-		void togglePermission(uint8 permission);
+	bool hasPermission(uint8 permission);
 
-		bool hasPermission(uint8 permission);
+	friend void to_json(nlohmann::json& j, const GuildMemberInfo& m);
+};
 
-		friend void to_json(nlohmann::json& j, const GuildMemberInfo& m);
-	};
+void to_json(nlohmann::json& j, const GuildMemberInfo& m);
 
-			//void to_json(nlohmann::json& j, const GuildMemberInfo& m);
-
-	} // namespace guild
-	}
-}
-}
+} // namespace guild
+} // namespace objects
+} // namespace zone
+} // namespace server
 
 using namespace server::zone::objects::guild;

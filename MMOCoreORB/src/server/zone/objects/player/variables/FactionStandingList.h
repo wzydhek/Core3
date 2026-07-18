@@ -71,6 +71,8 @@ public:
 	void insertToMessage(BaseMessage* message) const;
 };
 
+void to_json(nlohmann::json& j, const FactionStandingList& l);
+
 } // namespace variables
 } // namespace player
 } // namespace objects

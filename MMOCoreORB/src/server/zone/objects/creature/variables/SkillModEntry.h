@@ -44,6 +44,8 @@ public:
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
 
+void to_json(nlohmann::json& j, const SkillModEntry& e);
+
 } // namespace variables
 } // namespace creature
 } // namespace objects

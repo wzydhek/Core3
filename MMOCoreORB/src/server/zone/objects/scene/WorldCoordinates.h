@@ -91,6 +91,8 @@ public:
 	String toStringData() const;
 };
 
+void to_json(nlohmann::json& j, const WorldCoordinates& c);
+
 } // namespace scene
 } // namespace objects
 } // namespace zone

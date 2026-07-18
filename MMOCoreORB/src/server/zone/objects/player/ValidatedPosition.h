@@ -60,6 +60,8 @@ private:
 
 };
 
+void to_json(nlohmann::json& j, const ValidatedPosition& pos);
+
 } // namespace player
 } // namespace objects
 } // namespace zone

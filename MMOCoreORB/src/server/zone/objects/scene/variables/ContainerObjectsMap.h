@@ -90,6 +90,9 @@ namespace server {
 
 		   friend void to_json(nlohmann::json& k, const ContainerObjectsMap& map);
 	   };
+
+void to_json(nlohmann::json& k, const ContainerObjectsMap& map);
+
 	   }
    }
   }

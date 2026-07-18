@@ -23,6 +23,8 @@ public:
 	friend void to_json(nlohmann::json& j, const GalaxyAccountInfoMap& p);
 };
 
+void to_json(nlohmann::json& j, const GalaxyAccountInfoMap& p);
+
 } // namespace account
 } // namespace login
 } // namespace server

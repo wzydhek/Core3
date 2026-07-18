@@ -51,6 +51,8 @@ public:
 	Vector3 getLocation();
 };
 
+void to_json(nlohmann::json& j, const SpaceLaunchPoint& l);
+
 } // namespace variables
 } // namespace player
 } // namespace objects

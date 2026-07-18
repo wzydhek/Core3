@@ -121,6 +121,8 @@ public:
 	int getSecondaryStrength();
 };
 
+void to_json(nlohmann::json& j, const DamageOverTime& t);
+
 } // namespace damageovertime
 } // namespace creature
 } // namespace objects

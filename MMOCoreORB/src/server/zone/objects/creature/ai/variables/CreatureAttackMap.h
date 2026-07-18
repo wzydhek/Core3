@@ -55,6 +55,8 @@ public:
 	int getRandomAttackNumber() const;
 };
 
+void to_json(nlohmann::json& j, const CreatureAttack& a);
+
 } // namespace variables
 } // namespace ai
 } // namespace creature

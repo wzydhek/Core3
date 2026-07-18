@@ -64,6 +64,7 @@ public:
 	friend void to_json(nlohmann::json& k, const StringId& str);
 };
 
+void to_json(nlohmann::json& k, const StringId& str);
 
 }
 }

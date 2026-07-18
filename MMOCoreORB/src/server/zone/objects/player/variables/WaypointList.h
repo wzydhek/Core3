@@ -35,6 +35,8 @@ public:
 	WaypointObject* getWaypointAt(float x, float y, String planet) const;
 };
 
+void to_json(nlohmann::json& j, const WaypointList& w);
+
 } // namespace variables
 } // namespace player
 } // namespace objects

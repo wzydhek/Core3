@@ -254,6 +254,8 @@ public:
 	void setQuestCounter(int questCounter);
 };
 
+void to_json(nlohmann::json& j, const PlayerQuestData& d);
+
 } // namespace variables
 } // namespace player
 } // namespace objects

@@ -60,6 +60,8 @@ public:
 
 };
 
+void to_json(nlohmann::json& j, const CustomizationVariables& vars);
+
 } // namespace variables
 } // namespace scene
 } // namespace objects

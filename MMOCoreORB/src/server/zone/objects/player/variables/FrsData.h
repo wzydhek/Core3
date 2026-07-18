@@ -41,6 +41,8 @@ public:
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
 
+void to_json(nlohmann::json& j, const FrsData& f);
+
 } // namespace variables
 } // namespace player
 } // namespace objects

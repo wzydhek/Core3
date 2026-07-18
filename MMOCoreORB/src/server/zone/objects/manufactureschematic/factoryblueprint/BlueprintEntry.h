@@ -149,6 +149,8 @@ private:
 	void addSerializableVariables();
 };
 
+void to_json(nlohmann::json& j, const BlueprintEntry& p);
+
 } // namespace factoryblueprint
 } // namespace manufactureschematic
 } // namespace objects

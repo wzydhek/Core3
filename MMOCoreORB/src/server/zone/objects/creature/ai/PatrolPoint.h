@@ -46,8 +46,6 @@ public:
 
 	void addSerializableVariables();
 
-	friend void to_json(nlohmann::json& j, const PatrolPoint& p);
-
 	Vector3 getWorldPosition();
 
 	virtual bool isInRange(SceneObject* obj, float range);
@@ -94,7 +92,11 @@ public:
 	 * Returns the string representation of the vector in (x, y, z) format plus the cellID.
 	 */
 	String toString() const;
+
+	friend void to_json(nlohmann::json& j, const PatrolPoint& p);
 };
+
+void to_json(nlohmann::json& j, const PatrolPoint& p);
 
 } // namespace ai
 } // namespace creature

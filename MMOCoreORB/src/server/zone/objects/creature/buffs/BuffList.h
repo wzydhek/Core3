@@ -59,6 +59,8 @@ public:
 	bool hasTrapBuff() const;
 };
 
+void to_json(nlohmann::json& j, const BuffList& l);
+
 } // namespace buffs
 } // namespace creature
 } // namespace objects

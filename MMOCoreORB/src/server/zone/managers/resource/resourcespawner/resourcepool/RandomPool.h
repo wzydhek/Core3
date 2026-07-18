@@ -18,7 +18,7 @@ namespace managers {
 namespace resource {
 namespace resourcespawner {
 class ResourceSpawner;
-namespace resourcepool {
+// namespace resourcepool {
 
 /**
  * The random pool consists of a pool of X size
@@ -86,11 +86,12 @@ private:
 	friend class ResourceSpawner;
 };
 
-} // namespace resourcepool
+//} // namespace resourcepool
 } // namespace resourcespawner
 } // namespace resource
 } // namespace managers
 } // namespace zone
 } // namespace server
 
-using namespace server::zone::managers::resource::resourcespawner::resourcepool;
+// using namespace server::zone::managers::resource::resourcespawner::resourcepool;
+using namespace server::zone::managers::resource::resourcespawner;

@@ -75,9 +75,9 @@ public:
 	Object* clone();
 
 	Object* clone(void* object);
-
-
 };
+
+void to_json(nlohmann::json& j, const CooldownTimer& t);
 
 } // namespace variables
 } // namespace creature

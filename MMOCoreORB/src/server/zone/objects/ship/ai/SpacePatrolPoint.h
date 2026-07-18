@@ -99,6 +99,8 @@ public:
 	String toString() const;
 };
 
+void to_json(nlohmann::json& j, const SpacePatrolPoint& p);
+
 } // namespace ai
 } // namespace ship
 } // namespace objects

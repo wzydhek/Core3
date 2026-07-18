@@ -53,6 +53,8 @@ public:
 	String getPrintableSkillModList() const;
 };
 
+void to_json(nlohmann::json& j, const SkillModList& map);
+
 } // namespace variables
 } // namespace creature
 } // namespace objects

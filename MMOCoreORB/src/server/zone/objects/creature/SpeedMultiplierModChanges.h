@@ -20,60 +20,32 @@ class SpeedModChange {
 	Time timeStamp;
 
 public:
-	SpeedModChange() {
-		newSpeed = 0;
-	}
+	SpeedModChange();
 
-	SpeedModChange(float speed) {
-		newSpeed = speed;
-		timeStamp.updateToCurrentTime();
-	}
+	SpeedModChange(float speed);
 
-	SpeedModChange(float speed, Time& tm) {
-		newSpeed = speed;
-		timeStamp = tm;
-	}
+	SpeedModChange(float speed, Time& tm);
 
-	SpeedModChange(const SpeedModChange& a) {
-		newSpeed = a.newSpeed;
-		timeStamp = a.timeStamp;
-	}
+	SpeedModChange(const SpeedModChange& a);
 
-	SpeedModChange& operator=(const SpeedModChange& a) {
-		newSpeed = a.newSpeed;
-		timeStamp = a.timeStamp;
+	SpeedModChange& operator=(const SpeedModChange& a);
 
-		return *this;
-	}
+	float getNewSpeed() const;
 
-	inline float getNewSpeed() const {
-		return newSpeed;
-	}
+	const Time& getTimeStamp() const;
 
-	inline const Time& getTimeStamp() const {
-		return timeStamp;
-	}
+	bool parseFromBinaryStream(ObjectInputStream* stream);
 
-	bool parseFromBinaryStream(ObjectInputStream* stream) {
-		//TypeInfo<float>::parseFromBinaryStream(&newSpeed, stream);
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-
-		return false;
-	}
-
-	bool toBinaryStream(ObjectOutputStream* stream) {
-		return false;
-	}
-
-	friend void to_json(nlohmann::json& j, const SpeedModChange& v) {
-		j["newSpeed"] = v.newSpeed;
-		j["timeStamp"] = v.timeStamp;
-	}
+	friend void to_json(nlohmann::json& j, const SpeedModChange& v);
 };
 
 class SpeedMultiplierModChanges : public ArrayList<SpeedModChange> {
 
 };
+
+void to_json(nlohmann::json& j, const SpeedModChange& v);
 
 } // namespace creature
 } // namespace objects

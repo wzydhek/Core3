@@ -63,6 +63,8 @@ public:
 	bool parseFromBinaryStream(ObjectInputStream* stream);
 };
 
+void to_json(nlohmann::json& j, const GroupMember& m);
+
 } // namespace group
 } // namespace objects
 } // namespace zone

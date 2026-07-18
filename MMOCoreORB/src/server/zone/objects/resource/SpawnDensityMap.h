@@ -74,6 +74,8 @@ private:
 	void addSerializableVariables();
 };
 
+void to_json(nlohmann::json& j, const SpawnDensityMap& m);
+
 } // namespace resource
 } // namespace objects
 } // namespace zone

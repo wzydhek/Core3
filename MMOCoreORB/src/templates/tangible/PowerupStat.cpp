@@ -69,3 +69,10 @@ float PowerupStat::getValue() const {
 void PowerupStat::setValue(float v) {
 	value = v;
 }
+
+void templates::tangible::to_json(nlohmann::json& j, const PowerupStat& s) {
+	j["attributeToModify"] = s.attributeToModify;
+	j["name"] = s.name;
+	j["pupAttribute"] = s.pupAttribute;
+	j["value"] = s.value;
+}

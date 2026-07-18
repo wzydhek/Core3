@@ -24,7 +24,7 @@ namespace managers {
 namespace resource {
 namespace resourcespawner {
 class ResourceSpawner;
-namespace resourcetree {
+//namespace resourcetree {
 
 
 class ResourceTree : public Logger {
@@ -93,11 +93,12 @@ private:
 
 };
 
-} // namespace resourcetree
+//} // namespace resourcetree
 } // namespace resourcespawner
 } // namespace resource
 } // namespace managers
 } // namespace zone
 } // namespace server
 
-using namespace server::zone::managers::resource::resourcespawner::resourcetree;
+//using namespace server::zone::managers::resource::resourcespawner::resourcetree;
+using namespace server::zone::managers::resource::resourcespawner;

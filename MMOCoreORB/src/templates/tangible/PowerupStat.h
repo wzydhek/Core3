@@ -31,12 +31,7 @@ public:
 
 	bool operator==(const PowerupStat& stat);
 
-	friend void to_json(nlohmann::json& j, const PowerupStat& s) {
-		j["attributeToModify"] = s.attributeToModify;
-		j["name"] = s.name;
-		j["pupAttribute"] = s.pupAttribute;
-		j["value"] = s.value;
-	}
+	friend void to_json(nlohmann::json& j, const PowerupStat& s);
 
 	void addSerializableVariables();
 
@@ -51,6 +46,7 @@ public:
 	void setValue(float v);
 };
 
+void to_json(nlohmann::json& j, const PowerupStat& s);
 
 } // namespace tangible
 } // namespace templates

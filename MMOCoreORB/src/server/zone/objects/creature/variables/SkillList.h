@@ -37,6 +37,8 @@ public:
 	friend void to_json(nlohmann::json& j, const SkillList& s);
 };
 
+void to_json(nlohmann::json& j, const SkillList& s);
+
 } // namespace variables
 } // namespace creature
 } // namespace objects

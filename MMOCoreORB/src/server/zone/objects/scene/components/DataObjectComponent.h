@@ -96,6 +96,8 @@ public:
 
 };
 
+void to_json(nlohmann::json& j, const DataObjectComponent& comp);
+
 } // namespace components
 } // namespace scene
 } // namespace objects

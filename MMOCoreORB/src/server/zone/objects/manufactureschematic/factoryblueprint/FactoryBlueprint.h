@@ -52,6 +52,8 @@ public:
 	friend void to_json(nlohmann::json& j, const FactoryBlueprint& p);
 };
 
+void to_json(nlohmann::json& j, const FactoryBlueprint& p);
+
 } // namespace factoryblueprint
 } // namespace manufactureschematic
 } // namespace objects

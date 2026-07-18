@@ -58,6 +58,8 @@ public:
 	void setNumBadges(uint8 value);
 };
 
+void to_json(nlohmann::json& j, const Badges& b);
+
 } // namespace badges
 } // namespace player
 } // namespace objects

@@ -64,6 +64,8 @@ public:
 	void removeArmor(uint8 hitLocation, ManagedReference<ArmorObject*> armor);
 };
 
+void to_json(nlohmann::json& j, const WearablesDeltaVector& vec);
+
 } // namespace variables
 } // namespace creature
 } // namespace objects

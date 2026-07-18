@@ -56,6 +56,8 @@ public:
 	void insertToMessage(BaseMessage* msg) const override;
 };
 
+void to_json(nlohmann::json& j, const SchematicList& l);
+
 } // namespace variables
 } // namespace player
 } // namespace objects

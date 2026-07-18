@@ -108,6 +108,8 @@ public:
 	void migrateLists(ZoneServer* zoneServer, uint64 ownerObjectID);
 };
 
+void to_json(nlohmann::json& j, const ShipPermissionList& p);
+
 } // namespace ship
 } // namespace objects
 } // namespace zone

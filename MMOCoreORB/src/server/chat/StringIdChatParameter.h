@@ -181,6 +181,8 @@ public:
 	const StringIdParameter* getNU() const;
 };
 
+void to_json(nlohmann::json& j, const StringIdChatParameter& p);
+
 }
 }
 

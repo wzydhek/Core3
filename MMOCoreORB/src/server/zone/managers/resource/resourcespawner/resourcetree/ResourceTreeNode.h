@@ -18,7 +18,7 @@ namespace zone {
 namespace managers {
 namespace resource {
 namespace resourcespawner {
-namespace resourcetree {
+//namespace resourcetree {
 
 class ResourceTreeNode {
 private:
@@ -67,11 +67,12 @@ private:
 
 };
 
-} // namespace resourcetree
+//} // namespace resourcetree
 } // namespace resourcespawner
 } // namespace resource
 } // namespace managers
 } // namespace zone
 } // namespace server
 
-using namespace server::zone::managers::resource::resourcespawner::resourcetree;
+// using namespace server::zone::managers::resource::resourcespawner::resourcetree;
+using namespace server::zone::managers::resource::resourcespawner;

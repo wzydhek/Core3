@@ -64,6 +64,8 @@ public:
 	bool isNextTickPast();
 };
 
+void to_json(nlohmann::json& j, const DamageOverTimeList& l);
+
 } // namespace damageovertime
 } // namespace creature
 } // namespace objects

@@ -50,6 +50,8 @@ public:
 	uint32 getBitmask(int index) const;
 };
 
+void to_json(nlohmann::json& j, const PlayerBitmasks& b);
+
 } // namespace player
 } // namespace objects
 } // namespace zone

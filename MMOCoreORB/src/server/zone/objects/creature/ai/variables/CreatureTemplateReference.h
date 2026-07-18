@@ -29,6 +29,8 @@ public:
 	friend void to_json(nlohmann::json& j, const CreatureTemplateReference& r);
 };
 
+void to_json(nlohmann::json& j, const CreatureTemplateReference& r);
+
 } // namespace variables
 } // namespace ai
 } // namespace creature

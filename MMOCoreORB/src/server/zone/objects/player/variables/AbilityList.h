@@ -45,14 +45,16 @@ public:
 
 // This is used solely for the ObjectVersionUpdateManager
 class AbilityListMigrator : public DeltaVector<Ability*> {
-	public:
-		Vector<String> names;
-		uint32 updateCounter;
+public:
+	Vector<String> names;
+	uint32 updateCounter;
 
-		bool toBinaryStream(ObjectOutputStream* stream);
+	bool toBinaryStream(ObjectOutputStream* stream);
 
-		bool parseFromBinaryStream(ObjectInputStream* stream);
-	};
+	bool parseFromBinaryStream(ObjectInputStream* stream);
+};
+
+void to_json(nlohmann::json& j, const AbilityList& l);
 
 } // namespace variables
 } // namespace player
