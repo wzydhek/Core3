@@ -1906,6 +1906,7 @@
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\events\ThrowTrapTask.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\events\VehicleDecayTask.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\LuaCreatureObject.cpp" />
+    <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\SpeedMultiplierModChanges.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\sui\JukeboxSelectionSuiCallback.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\sui\LoadStimpackSuiCallback.cpp" />
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\sui\LotteryDroidSuiCallback.cpp" />

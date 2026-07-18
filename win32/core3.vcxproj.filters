@@ -10309,6 +10309,9 @@
     <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\ai\variables\CreatureAttackMap.cpp">
       <Filter>src\server\zone\objects\creature\ai\variables</Filter>
     </ClCompile>
+    <ClCompile Include="..\MMOCoreORB\src\server\zone\objects\creature\SpeedMultiplierModChanges.cpp">
+      <Filter>src\server\zone\objects\creature</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\MMOCoreORB\src\conf\CommandManager.h">
