@@ -4,10 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.37301.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core3", "core3.vcxproj", "{96D1D8C4-A075-497E-B9E6-B5A03EDC4678}"
+	ProjectSection(ProjectDependencies) = postProject
+		{51E69088-BC53-4E6D-8E81-87DF0ECAA3B7} = {51E69088-BC53-4E6D-8E81-87DF0ECAA3B7}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "engine3", "engine3.vcxproj", "{51E69088-BC53-4E6D-8E81-87DF0ECAA3B7}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core3client", "core3client.vcxproj", "{BE417599-DE1B-4CD1-9563-5E465B125455}"
+	ProjectSection(ProjectDependencies) = postProject
+		{51E69088-BC53-4E6D-8E81-87DF0ECAA3B7} = {51E69088-BC53-4E6D-8E81-87DF0ECAA3B7}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
