@@ -102,7 +102,7 @@ void DroidCommandProgrammingCallback::run() {
 
 	auto deviceSceneO = zoneServer->getObject(controlDeviceID);
 
-	if (deviceSceneO == nullptr || !deviceSceneO->isPetControlDevice()) {
+	if (deviceSceneO == nullptr || !deviceSceneO->isPetControlDevice() || !deviceSceneO->isASubChildOf(player)) {
 		return;
 	}
 
@@ -133,6 +133,10 @@ void DroidCommandProgrammingCallback::run() {
 		auto module = zoneServer->getObject(modulesToRemove.get(i));
 
 		if (module == nullptr) {
+			continue;
+		}
+
+		if (!module->isASubChildOf(datapad) || module->getGameObjectType() != SceneObjectType::DROIDPROGRAMMINGCHIP) {
 			continue;
 		}
 
@@ -193,7 +197,7 @@ void DroidCommandProgrammingCallback::run() {
 	for (int i = 0; i < modulesToAdd.size(); i++) {
 		auto programmedModule = zoneServer->getObject(modulesToAdd.get(i)).castTo<DroidProgrammingChip*>();
 
-		if (programmedModule == nullptr || programmedModule->getGameObjectType() != SceneObjectType::DROIDPROGRAMMINGCHIP) {
+		if (programmedModule == nullptr || !programmedModule->isASubChildOf(player) || programmedModule->getGameObjectType() != SceneObjectType::DROIDPROGRAMMINGCHIP) {
 			continue;
 		}
 

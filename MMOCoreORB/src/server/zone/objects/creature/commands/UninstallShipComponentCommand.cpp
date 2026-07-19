@@ -38,6 +38,10 @@ int UninstallShipComponentCommand::doQueueCommand(CreatureObject* creature, cons
 	if (ship == nullptr)
 		return GENERALERROR;
 
+	// Only the ship owner may uninstall components (prevents stripping/stealing components from another player's ship by OID)
+	if (ship->getOwner().get() != creature)
+		return GENERALERROR;
+
 	Locker locker(ship, creature);
 
 	ship->uninstall(creature, slot, true);

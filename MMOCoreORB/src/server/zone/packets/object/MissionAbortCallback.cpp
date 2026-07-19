@@ -38,6 +38,14 @@ void MissionAbortCallback::run() {
 		return;
 	}
 
+	// The mission must actually belong to the player aborting it (missions live directly in the player's datapad).
+	// Prevents aborting/destroying another player's mission by supplying an arbitrary mission OID.
+	ManagedReference<SceneObject*> datapad = player->getDatapad();
+
+	if (datapad == nullptr || missionObject->getParent().get() != datapad) {
+		return;
+	}
+
 	MissionManager* missionMan = zoneServer->getMissionManager();
 
 	if (missionMan == nullptr) {
